@@ -1,0 +1,82 @@
+name: weekly-wochenbrief
+
+# Weekly cron for the Journal Watch pipeline (build-plan.md 5.5).
+#
+# One workflow serves both repos:
+#   - Private repo (real profile + all secrets present) -> LIVE run: fetch,
+#     enrich, rank, synthesize, send to Telegram, then commit the brief and the
+#     advanced seen.json ledger back to the repo so history is the archive.
+#   - Method repo (public, no Telegram secrets) -> DRY run: everything except
+#     the send, nothing committed. Keeps scheduled runs green without secrets.
+# The mode is chosen by whether the Telegram secrets exist, so the same file
+# copies into journal-watch-privat with no edits.
+
+on:
+  schedule:
+    # 04:00 UTC every Friday. ~06:00 Berlin in summer (CEST), ~05:00 in winter
+    # (CET). cron has no DST; a fixed early-morning UTC slot lands the brief
+    # before the workday either way. See README DST note.
+    - cron: "0 4 * * 5"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run the pipeline but do not send or commit"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # commit the brief + seen.json (uses the default GITHUB_TOKEN)
+
+concurrency:
+  group: weekly-wochenbrief
+  cancel-in-progress: false
+
+jobs:
+  wochenbrief:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run weekly pipeline
+        id: run
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FORCE_DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          if [ "${FORCE_DRY_RUN:-false}" = "true" ] \
+             || [ -z "${TELEGRAM_BOT_TOKEN:-}" ] \
+             || [ -z "${TELEGRAM_CHAT_ID:-}" ]; then
+            echo "mode=dry" >> "$GITHUB_OUTPUT"
+            echo "No Telegram secrets (or dry_run requested) -> dry run."
+            python scripts/run_weekly.py --dry-run
+          else
+            echo "mode=live" >> "$GITHUB_OUTPUT"
+            python scripts/run_weekly.py
+          fi
+
+      - name: Commit brief + ledger
+        if: steps.run.outputs.mode == 'live'
+        run: |
+          set -euo pipefail
+          git config user.name  "journal-watch bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # -f because seen.json is gitignored in the method repo; this step only
+          # runs in live mode (private repo), where committing it is intended.
+          git add -f 03_brief/briefe/ 01_fetch/output/seen.json
+          if git diff --cached --quiet; then
+            echo "nothing to commit."
+          else
+            git commit -m "Wochenbrief $(date -u +%F)"
+            git push
+          fi

@@ -1,0 +1,17 @@
+# Secrets — never commit
+.env
+
+# Method-repo run artifacts (committed in the private repo, not here)
+01_fetch/output/candidates.json
+01_fetch/output/seen.json
+02_rank/output/selected.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# PDF inbox (personal)
+04_feedback/pdf-inbox/*
+!04_feedback/pdf-inbox/.gitkeep
