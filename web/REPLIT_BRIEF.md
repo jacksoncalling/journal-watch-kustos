@@ -52,15 +52,38 @@ Mobile-first. One prominent question box, submit, then a clean cited answer.
 ## Run it
 
 ```bash
-pip install -r requirements.txt            # pipeline deps
+pip install -r requirements.txt            # pipeline deps (anthropic, google-genai)
 pip install -r web/requirements-app.txt    # fastapi + uvicorn
-# .env in the repo root holds GEMINI_API_KEY / ANTHROPIC_API_KEY (already used by
-# the pipeline). Add a pilot password:
+# locally, .env in the repo root holds the keys; add a pilot password:
 KUSTOS_APP_PASSWORD=changeme uvicorn app:app --app-dir web --port 8000
 ```
 
 One service, on Replit. No Supabase, no Vercel, no Render. Dossiers can stay in
 the repo/files; a database is not needed for the pilot.
+
+## Deploying on Replit (the setup steps)
+
+The `.env` is gitignored and is NOT in the repo, so Replit has no keys until you
+add them. Set these as **Replit Secrets**:
+
+- `GEMINI_API_KEY`      required (primary: synthesis and query planning)
+- `ANTHROPIC_API_KEY`   optional (fallback provider)
+- `KUSTOS_APP_PASSWORD` required, or `/praxis` returns 503 (fails closed by design)
+
+Telegram secrets are NOT needed here; they belong to the weekly brief, not this app.
+
+Install **both** requirements files (above). Run command for hosting (bind all
+interfaces and use Replit's port):
+
+```bash
+uvicorn app:app --app-dir web --host 0.0.0.0 --port $PORT
+```
+
+**Request timeout matters.** One dossier takes 30 to ~110 seconds. Pick a
+deployment that allows a request that long: a **Reserved VM** is safest. On
+Autoscale, raise the request timeout above ~120s, or the proxy will cut the
+request mid-run and the page will look broken. This is the single most likely
+deploy-time surprise.
 
 ## Auth and scope (pilot)
 
