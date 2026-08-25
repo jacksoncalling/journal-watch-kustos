@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praxis-Check Journey</title>
+<style>
+  :root{
+    --bg:#f2f5f4; --surface:#ffffff; --surface-2:#e9efec;
+    --ink:#16211f; --muted:#57655f; --line:#dbe4e0;
+    --accent:#1f6f6b; --accent-deep:#17554f; --tension:#8f631a;
+    --stufe1:#1f6f6b; --stufe1-ink:#ffffff;
+    --stufe2:#7c9e95; --stufe2-ink:#12241f;
+    --stufe3:#b9c3be; --stufe3-ink:#22302b;
+    --font-display:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
+    --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --maxw:960px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1513; --surface:#151e1b; --surface-2:#1b2621;
+      --ink:#e6ecea; --muted:#93a39c; --line:#26332f;
+      --accent:#3fa79f; --accent-deep:#6fc3ba; --tension:#d7aa58;
+      --stufe1:#3fa79f; --stufe1-ink:#07120f;
+      --stufe2:#4d6f68; --stufe2-ink:#e6ecea;
+      --stufe3:#38473f; --stufe3-ink:#cdd8d3;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1513; --surface:#151e1b; --surface-2:#1b2621;
+    --ink:#e6ecea; --muted:#93a39c; --line:#26332f;
+    --accent:#3fa79f; --accent-deep:#6fc3ba; --tension:#d7aa58;
+    --stufe1:#3fa79f; --stufe1-ink:#07120f;
+    --stufe2:#4d6f68; --stufe2-ink:#e6ecea;
+    --stufe3:#38473f; --stufe3-ink:#cdd8d3;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--font-body);font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(20px,5vw,56px) clamp(16px,4vw,40px) 80px;}
+
+  .eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-deep);}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;text-wrap:balance;line-height:1.14;}
+  a{color:var(--accent-deep);}
+
+  /* hero */
+  .hero{border-bottom:1px solid var(--line);padding-bottom:clamp(28px,5vw,48px);margin-bottom:44px;}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.3rem);margin:.5em 0 .3em;letter-spacing:-.01em;}
+  .hero .lede{font-size:clamp(1.05rem,2.3vw,1.22rem);color:var(--ink);max-width:40ch;margin:0 0 1.2em;}
+  .hero .lede b{color:var(--accent-deep);font-weight:600;}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--font-mono);
+    font-size:.74rem;color:var(--muted);letter-spacing:.03em;}
+  .meta span{white-space:nowrap;}
+
+  /* section frame */
+  section{margin:56px 0;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;
+    border-bottom:1px solid var(--line);padding-bottom:12px;}
+  .sec-head h2{font-size:clamp(1.3rem,3vw,1.7rem);margin:0;}
+  .sec-head .n{font-family:var(--font-mono);font-size:.8rem;color:var(--muted);}
+
+  /* borrow / change */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media (max-width:660px){.split{grid-template-columns:1fr;}}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 20px 8px;}
+  .panel.tension{border-color:color-mix(in srgb,var(--tension) 40%,var(--line));}
+  .panel h3{font-size:1.02rem;margin:0 0 4px;display:flex;align-items:center;gap:9px;}
+  .panel .tag{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:3px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);}
+  .panel.tension .tag{background:color-mix(in srgb,var(--tension) 20%,transparent);color:var(--tension);}
+  .panel ul{list-style:none;margin:14px 0 0;padding:0;}
+  .panel li{padding:11px 0;border-top:1px solid var(--line);font-size:.96rem;}
+  .panel li b{color:var(--accent-deep);font-weight:600;}
+  .panel.tension li b{color:var(--tension);}
+  .panel li span{display:block;color:var(--muted);font-size:.86rem;margin-top:2px;}
+
+  /* journey */
+  .stage{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--line);}
+  .stage:first-of-type{border-top:none;}
+  @media (max-width:560px){.stage{grid-template-columns:1fr;gap:10px;}}
+  .stage .num{font-family:var(--font-display);font-size:2.2rem;color:var(--accent);line-height:1;
+    font-variant-numeric:tabular-nums;}
+  .stage h3{font-size:1.22rem;margin:.1em 0 .5em;}
+  .stage .ctx{color:var(--muted);font-size:.94rem;margin:0 0 .9em;}
+  .stage .ctx b{color:var(--ink);font-weight:600;}
+  .stage .rows{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0 0 12px;font-size:.95rem;}
+  @media (max-width:560px){.stage .rows{grid-template-columns:1fr;gap:2px 0;}}
+  .stage .rows dt{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);padding-top:5px;}
+  .stage .rows dd{margin:0;}
+  .stage .why{border-left:2px solid var(--accent);padding:2px 0 2px 14px;color:var(--ink);
+    font-size:.92rem;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 7%,transparent),transparent);}
+  .stage .why.t{border-left-color:var(--tension);
+    background:linear-gradient(90deg,color-mix(in srgb,var(--tension) 9%,transparent),transparent);}
+  .stage .why b{font-weight:600;}
+
+  /* phone wireframes */
+  .screens{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;align-items:start;}
+  .phone{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:14px;
+    box-shadow:0 6px 24px -12px rgba(0,0,0,.28);font-family:var(--font-body);}
+  .phone .cap{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);text-align:center;margin:2px 0 12px;}
+  .scr{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:13px;min-height:300px;
+    display:flex;flex-direction:column;}
+  .scr .bar{display:flex;align-items:baseline;gap:6px;margin-bottom:10px;}
+  .scr .bar .b1{font-weight:700;font-size:.92rem;}
+  .scr .bar .b2{font-size:.7rem;color:var(--muted);}
+  .box{border:1px solid var(--line);border-radius:9px;background:var(--surface);padding:9px;font-size:.78rem;
+    color:var(--ink);line-height:1.4;}
+  .box.ph{color:var(--muted);}
+  .btn{margin-top:9px;background:var(--accent);color:#fff;border-radius:9px;padding:9px;text-align:center;
+    font-weight:600;font-size:.82rem;}
+  :root[data-theme="dark"] .btn,:root:not([data-theme="light"]) .btn{color:#07120f;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#07120f;}}
+  .hintline{font-size:.66rem;color:var(--muted);margin-top:8px;}
+  .load{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted);}
+  .load .ring{width:24px;height:24px;border:2.5px solid var(--line);border-top-color:var(--accent);border-radius:50%;
+    animation:spin 1s linear infinite;}
+  @media (prefers-reduced-motion:reduce){.load .ring{animation:none;}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .load .steps{font-size:.72rem;text-align:center;line-height:1.7;}
+  .load .steps .on{color:var(--accent-deep);font-weight:600;}
+  .doc h4{font-family:var(--font-body);font-weight:700;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent-deep);margin:11px 0 4px;}
+  .doc h4:first-child{margin-top:0;}
+  .doc p{font-size:.76rem;margin:0 0 6px;line-height:1.45;}
+  .doc .pmid{color:var(--accent-deep);font-family:var(--font-mono);font-size:.7rem;}
+  .kontro{border:1px solid color-mix(in srgb,var(--tension) 42%,var(--line));border-radius:9px;
+    background:color-mix(in srgb,var(--tension) 8%,transparent);padding:8px 9px;margin:4px 0 6px;}
+  .kontro .kh{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--tension);margin-bottom:3px;}
+  .kontro p{font-size:.74rem;margin:0;}
+  .src{border-top:1px solid var(--line);padding:9px 0 2px;}
+  .src .t{font-size:.74rem;line-height:1.35;}
+  .src .m{font-size:.66rem;color:var(--muted);margin:2px 0 5px;}
+  .chips{display:flex;flex-wrap:wrap;gap:5px;}
+  .chip{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.03em;padding:2px 7px;border-radius:999px;}
+  .s1{background:var(--stufe1);color:var(--stufe1-ink);}
+  .s2{background:var(--stufe2);color:var(--stufe2-ink);}
+  .s3{background:var(--stufe3);color:var(--stufe3-ink);}
+  .prov{background:transparent;border:1px solid var(--line);color:var(--muted);}
+  .doi{color:var(--accent-deep);}
+
+  /* principles */
+  .princ{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:660px){.princ{grid-template-columns:1fr;}}
+  .pr{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:17px 18px;}
+  .pr .k{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .pr h3{font-size:1.05rem;margin:5px 0 6px;}
+  .pr p{margin:0;font-size:.92rem;color:var(--ink);}
+  .pr .cite{display:block;margin-top:8px;font-size:.78rem;color:var(--muted);font-style:italic;}
+
+  /* open questions */
+  .open{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:22px 24px;}
+  .open h3{font-size:1.1rem;margin:0 0 4px;}
+  .open p.sub{color:var(--muted);font-size:.92rem;margin:0 0 14px;}
+  .open ul{margin:0;padding-left:0;list-style:none;display:grid;gap:9px;}
+  .open li{display:grid;grid-template-columns:auto 1fr;gap:10px;font-size:.94rem;align-items:baseline;}
+  .open li code{font-family:var(--font-mono);font-size:.72rem;background:var(--surface);border:1px solid var(--line);
+    border-radius:5px;padding:2px 6px;color:var(--accent-deep);white-space:nowrap;}
+
+  footer{margin-top:64px;border-top:1px solid var(--line);padding-top:20px;
+    font-size:.82rem;color:var(--muted);}
+  footer .disc{font-style:italic;margin-top:6px;}
+
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(10px);animation:rise .7s ease forwards;}
+    @keyframes rise{to{opacity:1;transform:none;}}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="eyebrow">User-Journey Sketch &nbsp;·&nbsp; Reference interaction: OpenEvidence</div>
+    <h1>A phone she can ask between cases.</h1>
+    <p class="lede">She is moving into <b>cardiac anesthesia</b>, learning a new field under time pressure. She found a VPN into OpenEvidence, and it hung with nothing loading. The interaction model is right. It has to work where that one didn't. This is the journey for the Praxis-Check on her phone.</p>
+    <div class="meta">
+      <span>Grounded in Interview 1 &middot; 2026-08-16</span>
+      <span>Situations A &amp; B</span>
+      <span>One cardiac anesthetist</span>
+      <span>Output in German</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head"><h2>What we borrow, what we change</h2></div>
+    <p style="max-width:62ch;color:var(--muted);margin:0 0 22px;">OpenEvidence is the reference: ask a clinical question in plain language, get a cited, structured answer. We keep that shape. Where it failed her, and where her need is sharper than a generic answer engine, we go further.</p>
+    <div class="split">
+      <div class="panel">
+        <h3>Borrow <span class="tag">from OpenEvidence</span></h3>
+        <ul>
+          <li><b>One question box, natural language.</b><span>She asks in her own words. No boolean syntax, no filters. The query planner does the translation.</span></li>
+          <li><b>A structured, cited answer.</b><span>Not a chat transcript. A document she can scan.</span></li>
+          <li><b>Sources as first-class citizens.</b><span>Every claim points somewhere she can open.</span></li>
+        </ul>
+      </div>
+      <div class="panel tension">
+        <h3>Change <span class="tag">go further</span></h3>
+        <ul>
+          <li><b>Never a blank hang.</b><span>An honest, moving loading state. Her OpenEvidence session died on a page that never loaded. Trust dies there.</span></li>
+          <li><b>An explicit "where the literature disagrees" section.</b><span>She asked for exactly this. Smoothing it into false consensus is the failure mode.</span></li>
+          <li><b>Evidence level and provenance set in code.</b><span>Shown as chips she can audit. German. Works on the hospital network.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">01&ndash;06</span><h2>The journey</h2></div>
+
+    <div class="stage">
+      <div class="num">01</div>
+      <div>
+        <div class="eyebrow">The trigger</div>
+        <h3>A question forms, in the OR or in teaching</h3>
+        <p class="ctx"><b>Situation A:</b> around releasing the aortic cross-clamp, the timing of a drug and of cortisone is critical, and every anesthetist does it differently. She wonders whether there is evidence behind the variants or only habit. <b>Situation B:</b> a trainee asks "why do you do it this way?" and she refuses to answer "we have always done it like that."</p>
+        <dl class="rows">
+          <dt>She does</dt><dd>Pulls out her phone in the few minutes between cases.</dd>
+        </dl>
+        <p class="why"><b>Why:</b> the tool meets an occasion, not a schedule. That is why this is the Praxis-Check and not the weekly brief.</p>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="num">02</div>
+      <div>
+        <div class="eyebrow">The ask</div>
+        <h3>She types the question in her own words</h3>
+        <p class="ctx">German prose, the way she would say it to a colleague. No search operators, no filters to configure, no field to leave blank.</p>
+        <dl class="rows">
+          <dt>She sees</dt><dd>A single, prominent question box and one button. Nothing else competing for attention.</dd>
+        </dl>
+        <p class="why"><b>Why:</b> no librarian syntax. She is a clinician, not a search operator. The Hybrid planner turns her prose into the Europe PMC query behind the scenes.</p>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="num">03</div>
+      <div>
+        <div class="eyebrow">The wait</div>
+        <h3>Thirty to ninety seconds, narrated honestly</h3>
+        <p class="ctx">A real search plus a synthesis takes time. The question is not whether it is instant, but whether she can tell it is working.</p>
+        <dl class="rows">
+          <dt>She sees</dt><dd>A moving status: "Suche in Europe PMC", then "Studien werden bewertet", then "Dossier wird geschrieben".</dd>
+        </dl>
+        <p class="why t"><b>Why:</b> never a blank hang. This is the exact thing OpenEvidence failed at behind the VPN. The loader is a trust device, not a spinner.</p>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="num">04</div>
+      <div>
+        <div class="eyebrow">The read</div>
+        <h3>A dossier, not a chat blob</h3>
+        <p class="ctx">Worked example, her pilot question: corticosteroids and drug timing around the aortic cross-clamp. The dossier surfaces the SIRS trial (methylprednisolone, 7507 patients) and the DECS trial (dexamethasone, 4494 patients), and names the real split.</p>
+        <dl class="rows">
+          <dt>She sees</dt><dd>Kopf, then Evidenzlage, Was ist Standard, Wo die Literatur uneins ist, Offene Fragen, Quellen.</dd>
+        </dl>
+        <p class="why"><b>Why:</b> the structure answers her two questions directly. "Is there evidence behind the variance?" (Evidenzlage). "Is this still standard?" (Was ist Standard). "Where is the field split?" (Kontroverse).</p>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="num">05</div>
+      <div>
+        <div class="eyebrow">The trust</div>
+        <h3>She checks the receipts</h3>
+        <p class="ctx">A clinician does not take an answer on faith. Credibility is something she can audit in seconds.</p>
+        <dl class="rows">
+          <dt>She sees</dt><dd>Evidence-level chips (Stufe 1 to 3), a VOLLTEXT or NUR ABSTRACT tag, and tappable DOIs she opens with her own hospital access.</dd>
+        </dl>
+        <p class="why"><b>Why:</b> provenance is the trust currency. Nothing is asserted without a source she can open, no paywall is circumvented, and no dose is ever held up as advice.</p>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="num">06</div>
+      <div>
+        <div class="eyebrow">The act</div>
+        <h3>She answers the trainee, or reconsiders the practice</h3>
+        <p class="ctx">Now she can tell the junior "here is the current evidence, and here is where it is contested," instead of "we have always done it this way." Or she carries the controversy into a conversation about the variance in the OR.</p>
+        <dl class="rows">
+          <dt>She does</dt><dd>Quotes it, forwards it, or files it in her head for the next case.</dd>
+        </dl>
+        <p class="why t"><b>Why:</b> the output is usable in the moment it was needed, forwardable and honest about disagreement. That honesty is the value over "just googling."</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>The screens</h2></div>
+    <p style="max-width:62ch;color:var(--muted);margin:0 0 24px;">Mobile-first, the way she will actually hold it. Real content from the pilot question. These render in the product's own colours, not the document's.</p>
+    <div class="screens">
+
+      <div class="phone">
+        <div class="cap">01 &middot; Ask</div>
+        <div class="scr">
+          <div class="bar"><span class="b1">Kustos</span><span class="b2">Praxis-Check</span></div>
+          <div class="box">Kortikosteroid-Gabe und Medikamenten-Timing rund um das L&ouml;sen der Aortenklemme: aktuelle Evidenz, was ist Standard, wo ist die Kontroverse?</div>
+          <div class="btn">Dossier erstellen</div>
+          <div class="hintline">Ein Lauf dauert etwa 30 bis 90 Sekunden.</div>
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="cap">02 &middot; Waiting</div>
+        <div class="scr">
+          <div class="bar"><span class="b1">Kustos</span><span class="b2">Praxis-Check</span></div>
+          <div class="load">
+            <div class="ring"></div>
+            <div class="steps">
+              Suche in Europe PMC<br>
+              <span class="on">Studien werden bewertet&hellip;</span><br>
+              Dossier wird geschrieben
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="cap">03 &middot; Dossier</div>
+        <div class="scr doc">
+          <div class="bar"><span class="b1">Kustos</span><span class="b2">Praxis-Check</span></div>
+          <h4>Evidenzlage</h4>
+          <p>Meta-Analysen zeigen weniger postoperatives Vorhofflimmern unter Kortikosteroid-Prophylaxe <span class="pmid">(PMID 19332460)</span>. Die gro&szlig;en RCTs SIRS und DECS fanden jedoch keinen Vorteil bei Mortalit&auml;t <span class="pmid">(PMID 26460660, 23117776)</span>.</p>
+          <div class="kontro">
+            <div class="kh">Wo die Literatur uneins ist</div>
+            <p>Weniger Vorhofflimmern gegen keinen Nutzen bei harten Endpunkten, plus erh&ouml;hte Hyperglyk&auml;mie. Die Lager sind sich uneinig.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="cap">04 &middot; Sources</div>
+        <div class="scr doc">
+          <div class="bar"><span class="b1">Kustos</span><span class="b2">Quellen</span></div>
+          <div class="src" style="border-top:none;padding-top:2px;">
+            <div class="t">Methylprednisolone in patients undergoing cardiac surgery (SIRS)</div>
+            <div class="m">Lancet, 2015 &middot; PMID 26460660</div>
+            <div class="chips"><span class="chip s1">Stufe 1</span><span class="chip prov">VOLLTEXT</span><span class="chip doi">doi.org &#8599;</span></div>
+          </div>
+          <div class="src">
+            <div class="t">Intraoperative high-dose dexamethasone (DECS)</div>
+            <div class="m">JAMA, 2012 &middot; PMID 23117776</div>
+            <div class="chips"><span class="chip s1">Stufe 1</span><span class="chip prov">NUR ABSTRACT</span><span class="chip doi">doi.org &#8599;</span></div>
+          </div>
+          <div class="src">
+            <div class="t">Corticosteroids and atrial fibrillation, meta-analysis</div>
+            <div class="m">JAMA, 2009 &middot; PMID 19332460</div>
+            <div class="chips"><span class="chip s2">Stufe 2</span><span class="chip prov">VOLLTEXT</span><span class="chip doi">doi.org &#8599;</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Principles, and where they come from</h2></div>
+    <div class="princ">
+      <div class="pr">
+        <div class="k">Access</div>
+        <h3>Works where OpenEvidence didn't</h3>
+        <p>Reachable on her network, fast enough, and never a dead hang. The whole case rests on this: even the workaround was dead.</p>
+        <span class="cite">Interview, F1: the VPN login worked, then the app hung on a page that never loaded.</span>
+      </div>
+      <div class="pr">
+        <div class="k">Value</div>
+        <h3>Controversy is the product, not a bug</h3>
+        <p>"Wo die Literatur uneins ist" is her advantage over googling. We surface the split, we never simulate consensus.</p>
+        <span class="cite">Interview, Situation B and Lesart 3: she wants to see where the field is in tension.</span>
+      </div>
+      <div class="pr">
+        <div class="k">Trust</div>
+        <h3>Provenance is the trust currency</h3>
+        <p>Evidence levels plus named sources she opens herself. Credibility she can audit, not a confident voice she has to believe.</p>
+        <span class="cite">Interview, Part 2, F4 and F5: which sources she trusts, still to confirm.</span>
+      </div>
+      <div class="pr">
+        <div class="k">Boundary</div>
+        <h3>The dosage line is sacred</h3>
+        <p>It summarises what studies report about strategies, drug choice, and timing. It is never a dose lookup at the patient. The footer stays.</p>
+        <span class="cite">Interview, Lesart 4: Situation A touches drugs and timing; the line is explicit.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="open">
+      <h3>Still open from the interview, and it shapes these screens</h3>
+      <p class="sub">Four questions were left open. Two of them land directly on stages 04 and 05, so the trust design above is a hypothesis until the five-minute follow-up closes them.</p>
+      <ul>
+        <li><code>F2</code><span>What she reaches for today instead of OpenEvidence. Tells us what Kustos is really competing with.</span></li>
+        <li><code>F5</code><span>What makes an AI answer credible or suspect to her. This is the exact brief for the trust screen (stage 05).</span></li>
+        <li><code>F7</code><span>Her reading moment and how long she will give it. Sets how much a dossier can carry on a phone.</span></li>
+        <li><code>F9</code><span>What "worth it" looks like after four weeks. The success test we design toward.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Grounded in Interview 1, 2026-08-16. Reference interaction: OpenEvidence. Product: Kustos Praxis-Check.
+    <div class="disc">Kein Ersatz f&uuml;r klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard pr&uuml;fen.</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

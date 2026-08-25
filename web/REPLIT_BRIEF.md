@@ -39,6 +39,9 @@ full**, including its `## Quellen` and the footer. Do not summarize or trim it.
 
 ## Interaction reference: OpenEvidence
 
+The visual target is `web/journey-sketch.html` (open it in a browser): the user
+journey and mobile wireframes, grounded in the user interview. Match that flow.
+
 Mobile-first. One prominent question box, submit, then a clean cited answer.
 
 - She is on her phone at work, so design for a narrow screen first.
