@@ -1,4 +1,4 @@
-# Journal Watch — Handoff / Status (2026-08-23)
+# Journal Watch: Handoff / Status (2026-08-23)
 
 Status snapshot for picking this up in a fresh session. The spec is
 `~/step-into-more/projects/journal-watch/build-plan.md` (HQ). This file is the
@@ -25,8 +25,9 @@ done: git init + first push, the private instantiation with the real profile
 | Send | `scripts/send_telegram.py` | Live-verified. Splits at paper boundaries under 4096 chars, plain text, tappable links. `--whoami` finds the chat id. |
 | Orchestrate | `scripts/run_weekly.py` | Verified 2026-08-23. Chains the 5 stages as subprocesses, fails loud (nonzero exit) on any stage error. Writes `seen.json` ONLY after send returns 0. `--dry-run` runs fetch..synthesize, skips send + ledger. Full `--dry-run` ran green live (Gemini brief written, nothing sent, ledger untouched). |
 | Automate | `.github/workflows/weekly.yml` | Built 2026-08-23, not yet run on GitHub (repo not pushed). Cron Fri 04:00 UTC + `workflow_dispatch` (with `dry_run` input). Auto-detects live vs dry by whether Telegram secrets exist, so it copies unchanged into the private repo. Commits brief + `seen.json` only on a live run. |
+| Praxis-Check | `scripts/praxis_check.py`, `05_praxis-check/`, `.github/workflows/praxis-check.yml` | **Slice 1.5, built + `--dry-run`-verified live 2026-08-23, code-reviewed + hardened 2026-08-24.** On-demand dossier. Imports and composes the slice-1 functions (fetch/enrich/rank/synthesize/send), one additive optional-param change to `search_topic` (weekly callers unaffected). All-time search (no `FIRST_PDATE`), no `seen.json`. Hybrid query building: explicit `\`\`\`query` block used verbatim, else one bounded LLM planning call. **Ranking: `sort=CITED desc` + `page_size=200` so old landmark trials surface (the plain date-default returned only the newest 50 and missed them), plus a Praxis-only title-relevance bonus so citation-sort does not float famous off-topic papers.** Deep dossier (~20 papers, `max_items` per question). `## Quellen` (Stufe + provenance + links) assembled in code; model cites inline `(PMID …)` only. `workflow_dispatch`-triggered, commits the dossier. Verified live on the pilot: surfaces the SIRS + DECS landmark RCTs and the real AF-vs-mortality controversy (Gemini Flash, ~25K in / 2.4K out tokens). |
 
-Config: `profil/profile.md` (demo "Dr. Demo" profile — 3 cardiac-anesthesia
+Config: `profil/profile.md` (demo "Dr. Demo" profile, 3 cardiac-anesthesia
 topics, provider choice, journals). `03_brief/CONTEXT.md` is the brief contract
 (fed into the synthesis system prompt). Secrets in gitignored `.env`.
 
@@ -51,7 +52,7 @@ python scripts/synthesize.py
 python scripts/send_telegram.py
 ```
 
-## Known gaps & issues (correctness first — verify these in review)
+## Known gaps & issues (correctness first, verify these in review)
 
 1. ~~**`seen.json` is never written -> no cross-week dedup.**~~ **FIXED
    2026-08-23.** `run_weekly.py` writes `seen.json` after a confirmed send
@@ -63,7 +64,7 @@ python scripts/send_telegram.py
    Chains the 5 stages, fails loud on any nonzero exit. See the stage table.
 3. **Not a git repo / not on GitHub.** `git init` never run here. Step 7 (Action)
    and step 8 (private repo) both need this. Before ANY push: this is the method
-   repo, keep it clean — `.env`, `candidates.json`, `selected.json`, `seen.json`
+   repo, keep it clean: `.env`, `candidates.json`, `selected.json`, `seen.json`
    are gitignored; confirm no real data leaks (the demo profile is fake, good).
 4. ~~**`enrich.py` `_section(...)` bogus second arg.**~~ **FIXED 2026-08-23**
    (now `_section(xml, "results")`).
@@ -80,9 +81,9 @@ python scripts/send_telegram.py
    back to the DOI landing and duplicates the DOI link. Suppress or relabel when
    `url_for_pdf` is absent.
 8. **Telegram send** has no 429/retry handling (fine for a weekly job; note it).
-9. **ICM completeness:** missing root `CLAUDE.md`/`README.md` router and the
-   `CONTEXT.md` contracts for `01_fetch/`, `02_rank/`, `04_feedback/` (plan §4).
-   The pipeline runs without them, but the workspace isn't fully "walkable" yet.
+9. **ICM completeness:** root `CLAUDE.md`/`README.md` router done. `CONTEXT.md`
+   written for `01_fetch/` and `02_rank/` (2026-08-23). Still missing:
+   `04_feedback/CONTEXT.md` (slice 1.5 stage, not built yet).
 
 ## Code review (2026-08-23, applied)
 
@@ -114,7 +115,7 @@ Two review items were NOT applied, deliberately:
 
 ## Remaining work (roadmap, prioritized)
 
-- ~~**Step 7 — automation.**~~ **DONE 2026-08-23** (`run_weekly.py` +
+- ~~**Step 7, automation.**~~ **DONE 2026-08-23** (`run_weekly.py` +
   `.github/workflows/weekly.yml`). Not yet exercised on GitHub (repo unpushed).
 - **git init + first clean push (method repo), NEXT.** No push yet. Before it:
   confirm `.env` and the run artifacts (`candidates.json`, `selected.json`,
@@ -122,7 +123,7 @@ Two review items were NOT applied, deliberately:
   runs once the repo is on GitHub; a `workflow_dispatch` dry-run is the first
   smoke test there.
 - ~~**Code review.**~~ **DONE 2026-08-23** (see the Code review section above).
-- **Step 8 — private instantiation:** copy method repo -> `~/journal-watch-privat/`,
+- **Step 8, private instantiation:** copy method repo -> `~/journal-watch-privat/`,
   drop in her real `profile.md` (real topics from the follow-up interview + her
   trusted journals), set `TELEGRAM_CHAT_ID` to HER chat, enable the schedule.
 - **RSS** (`fetch_rss.py`): deferred; needs real feed URLs verified per journal,
@@ -141,4 +142,4 @@ not the product. Keep future work scoped to discrete fresh sessions.
 
 A fresh session should: read this file + `build-plan.md`, run `/code-review` on
 `scripts/`, then build `run_weekly.py` + the Action. Don't reload the whole
-history — these two docs are the state.
+history. These two docs are the state.

@@ -17,42 +17,25 @@ database: config, memory, and every brief live as files in this repo. Story:
 | Why she needs it (interview) | `../step-into-more/projects/journal-watch/interview-notes/2026-08-16-interview-1.md` |
 | Config: topics, journals, provider | `profil/profile.md` (demo "Dr. Demo") |
 | Learned memory | `profil/kanon.md` |
-| 01 fetch | `scripts/fetch_europepmc.py`, `scripts/enrich.py` |
-| 02 rank | `scripts/rank.py` (+ `test_rank.py`) |
+| 01 fetch | `01_fetch/CONTEXT.md`, `scripts/fetch_europepmc.py`, `scripts/enrich.py` |
+| 02 rank | `02_rank/CONTEXT.md`, `scripts/rank.py` (+ `test_rank.py`) |
 | 03 brief | `03_brief/CONTEXT.md`, `scripts/synthesize.py`, `scripts/providers.py` |
 | 04 feedback | `04_feedback/` (slice 1.5) |
+| 05 praxis-check | `05_praxis-check/CONTEXT.md`, `05_praxis-check/dossier-vertrag.md`, `scripts/praxis_check.py` |
 | Orchestrator + weekly cron | `scripts/run_weekly.py`, `.github/workflows/weekly.yml` |
 | GitHub | https://github.com/jacksoncalling/journal-watch-kustos |
 
 ## Current state (2026-08-23)
 
-Slice 1 (the Wochenbrief) is built, code-reviewed, and pushed to GitHub. Pipeline
-fetch, enrich, rank, synthesize, send is chained by `run_weekly.py`; `seen.json` is
-written only after a confirmed send. Gaps and history live in `HANDOFF.md`.
-
-**Next build: the Praxis-Check (slice 1.5), the on-demand search.** Second artifact
-type and her strongest need. A fresh window can start here directly (below).
-
-## Next build: Praxis-Check (the search function)
-
-Occasion-driven, not weekly: "for procedure/decision X, what is the current
-evidence, what is standard, where is the controversy?" One dossier per question.
-Full spec: `build-plan.md` §7. Origin and pilot question: `interview-1.md` (Lesart
-point 2, and open point 4).
-
-First moves, reusing the slice-1 pipeline (do not rebuild it):
-1. Scaffold `05_praxis-check/` as an ICM stage: a `CONTEXT.md` contract, a `fragen/`
-   input folder (one Markdown question per file), an `output/` for dossiers.
-2. Write a script that reuses fetch/rank/synthesize with a deeper, non-windowed
-   search per question (drop the `FIRST_PDATE` weekly window, widen results, swap the
-   weekly-brief prompt for a dossier prompt).
-3. Trigger by `workflow_dispatch`; deliver the dossier via Telegram and commit it.
-
-**Build it the ICM way.** Invoke `/icm-architect` when designing the stage and follow
-its invariants: one folder one job, a `CONTEXT.md` naming inputs, process, outputs and
-the human check, numbered order, factory (prompts, schema) kept apart from product
-(dossiers). Once scaffolded, the full stage contract lives in `05_praxis-check/CONTEXT.md`,
-not here.
+Two artifact types are built. **Slice 1 (the Wochenbrief):** fetch, enrich, rank,
+synthesize, send, chained by `run_weekly.py`; `seen.json` written only after a
+confirmed send; weekly cron. Code-reviewed, pushed to GitHub. **Slice 1.5 (the
+Praxis-Check):** the on-demand dossier, built 2026-08-23. It reuses the slice-1
+functions by import (no rebuild, weekly scripts untouched), searches all-time per
+question, and writes one dossier per question. Triggered by `workflow_dispatch`,
+not cron. Full stage contract: `05_praxis-check/CONTEXT.md`. Gaps and history:
+`HANDOFF.md`. `01_fetch` and `02_rank` now carry `CONTEXT.md`; `04_feedback` still
+lacks one.
 
 ## Guardrails (non-negotiable, from build-plan §3)
 
@@ -72,6 +55,10 @@ not here.
 ```bash
 python scripts/run_weekly.py            # full weekly run
 python scripts/run_weekly.py --dry-run  # fetch..synthesize, no send, no ledger
+
+python scripts/praxis_check.py            # dossier for the newest fragen/*.md
+python scripts/praxis_check.py --dry-run  # fetch..synthesize, write, no send
+python scripts/praxis_check.py --plan-only  # resolve + print the search query
 ```
 
 Secrets in gitignored `.env` (see `.env.example`): `GEMINI_API_KEY`, `ANTHROPIC_API_KEY`,
@@ -82,5 +69,8 @@ Secrets in gitignored `.env` (see `.env.example`): `GEMINI_API_KEY`, `ANTHROPIC_
 - ICM workspace: truth is small and singular (`profile.md`, `kanon.md`, the briefs and
   dossiers); generated views are disposable. Keep this file thin; new content lives in the
   stage folder it belongs to, with a pointer here.
-- LLM judgment is used once per artifact (synthesis). Everything else is deterministic code.
+- LLM judgment over content is used once per artifact (synthesis). Everything else is
+  deterministic code. One bounded exception: the Praxis-Check's Hybrid query building may
+  add a second LLM call that only translates the question into a search string (never a
+  clinical claim), and only when the question file carries no explicit `query` block.
 - Not a git repo behavior note: commit and push only when asked.

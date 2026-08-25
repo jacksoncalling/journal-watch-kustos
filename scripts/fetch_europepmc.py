@@ -106,14 +106,25 @@ def fetch_json(url: str, ua: str) -> dict:
     raise RuntimeError(f"Europe PMC request failed after retry: {last_err}\n{url}")
 
 
-def search_topic(query: str, start: str, end: str, ua: str) -> list[dict]:
+def search_topic(query: str, start: str, end: str, ua: str,
+                 sort: str | None = None, page_size: int | None = None) -> list[dict]:
+    """Europe PMC search over [start .. end].
+
+    `sort` and `page_size` are optional and default to the weekly behaviour:
+    with sort=None no sort param is sent (Europe PMC then orders by date, which
+    is fine inside a 7-day window). The Praxis-Check passes sort="CITED desc" so
+    an all-time search surfaces the most-cited landmark papers instead of just
+    the newest 50. Weekly callers omit both, so their behaviour is unchanged.
+    """
     dated = f"({query}) AND FIRST_PDATE:[{start} TO {end}]"
     params = {
         "query": dated,
         "format": "json",
         "resultType": "core",
-        "pageSize": str(PAGE_SIZE),
+        "pageSize": str(page_size if page_size is not None else PAGE_SIZE),
     }
+    if sort:
+        params["sort"] = sort
     url = BASE + "?" + urllib.parse.urlencode(params)
     data = fetch_json(url, ua)
     return data.get("resultList", {}).get("result", [])

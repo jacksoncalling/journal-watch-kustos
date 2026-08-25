@@ -1,0 +1,85 @@
+name: praxis-check
+
+# On-demand research dossier (slice 1.5, build-plan.md 7). Occasion-driven, so
+# there is NO cron: it runs only when triggered by hand (workflow_dispatch),
+# after a question file has been added to 05_praxis-check/fragen/.
+#
+# One workflow serves both repos, same as weekly.yml:
+#   - Private repo (Telegram secrets present) -> LIVE: fetch, rank, enrich,
+#     synthesize, send the dossier to Telegram, commit the dossier.
+#   - Method repo (no Telegram secrets) -> DRY: everything except the send,
+#     dossier still committed so the demo dossier is part of the repo.
+# The mode is chosen by whether the Telegram secrets exist, so the file copies
+# into journal-watch-privat with no edits.
+
+on:
+  workflow_dispatch:
+    inputs:
+      frage:
+        description: "Path to the question file (blank = newest in fragen/)"
+        type: string
+        default: ""
+      dry_run:
+        description: "Run the pipeline but do not send"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # commit the dossier (uses the default GITHUB_TOKEN)
+
+concurrency:
+  group: praxis-check
+  cancel-in-progress: false
+
+jobs:
+  praxis-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run praxis-check
+        id: run
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FORCE_DRY_RUN: ${{ inputs.dry_run }}
+          FRAGE: ${{ inputs.frage }}
+        run: |
+          set -euo pipefail
+          # Array so a question path containing spaces stays a single argv entry.
+          FRAGE_ARGS=()
+          if [ -n "${FRAGE:-}" ]; then
+            FRAGE_ARGS=(--frage "${FRAGE}")
+          fi
+          if [ "${FORCE_DRY_RUN:-false}" = "true" ] \
+             || [ -z "${TELEGRAM_BOT_TOKEN:-}" ] \
+             || [ -z "${TELEGRAM_CHAT_ID:-}" ]; then
+            echo "mode=dry" >> "$GITHUB_OUTPUT"
+            echo "No Telegram secrets (or dry_run requested) -> dry run."
+            python scripts/praxis_check.py --dry-run "${FRAGE_ARGS[@]}"
+          else
+            echo "mode=live" >> "$GITHUB_OUTPUT"
+            python scripts/praxis_check.py "${FRAGE_ARGS[@]}"
+          fi
+
+      - name: Commit dossier
+        run: |
+          set -euo pipefail
+          git config user.name  "journal-watch bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add 05_praxis-check/output/
+          if git diff --cached --quiet; then
+            echo "nothing to commit."
+          else
+            git commit -m "Praxis-Check dossier $(date -u +%F)"
+            git push
+          fi

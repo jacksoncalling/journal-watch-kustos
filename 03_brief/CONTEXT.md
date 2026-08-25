@@ -1,4 +1,4 @@
-# 03_brief — Vertrag (Synthese)
+# 03_brief: Vertrag (Synthese)
 
 Der Vertrag für den Wochenbrief. Menschenlesbar, und zugleich der stabile Teil
 des Synthese-Prompts (`synthesize.py` liest diese Datei wörtlich in den System-
