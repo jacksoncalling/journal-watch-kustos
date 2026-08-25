@@ -1,0 +1,11 @@
+# Web layer only (the OpenEvidence-style skin over the Praxis-Check pipeline).
+# Kept separate from the repo-root requirements.txt so the weekly GitHub Action
+# and the CLI stay lean; only the hosted app installs these.
+#
+#   pip install -r web/requirements-app.txt
+#
+# The app also needs the pipeline's own deps (repo-root requirements.txt) and the
+# same .env keys (GEMINI_API_KEY / ANTHROPIC_API_KEY), plus KUSTOS_APP_PASSWORD.
+
+fastapi>=0.110
+uvicorn[standard]>=0.29

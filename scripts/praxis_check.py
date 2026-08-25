@@ -30,6 +30,7 @@ import json
 import re
 import sys
 import time
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
@@ -51,12 +52,19 @@ ALL_TIME_START = "1900-01-01"   # disables the weekly window: landmark trials in
 PRAXIS_SORT = "CITED desc"      # most-cited first, so landmark papers surface all-time
 PRAXIS_PAGE_SIZE = 200          # deep pool: landmarks sit far down the citation ranking,
                                 #   so a 50-wide pool would never fetch them
+PRAXIS_SEARCH_TIMEOUT = 60      # a 200-record core response is large; 30s can trip
 DEFAULT_MAX_ITEMS = 20
 MAX_PLANNED_QUERIES = 3
 TITLE_HIT_WEIGHT = 40           # per query concept found in a paper's TITLE
 TITLE_HIT_CAP = 3               # bonus caps at 3 hits (+120), enough to lift an
                                 #   on-topic RCT over an off-topic but highly-cited guideline
 STOP_TOKENS = {"and", "or", "not", "src", "med", "first", "pdate"}
+
+
+class PraxisError(Exception):
+    """A run that could not produce a dossier (no candidates, no queries, no
+    provider). A normal `Exception` (not SystemExit) so a web caller's
+    `except Exception` handles it and turns it into a clean error response."""
 
 
 # --------------------------------------------------------------------------- #
@@ -104,6 +112,31 @@ def parse_question(path: Path) -> dict:
         "title": title,
         "frage": frage,
         "kontext": kontext,
+        "max_items": max_items,
+        "explicit_query": explicit_query,
+    }
+
+
+def _slugify(text: str) -> str:
+    s = re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-")
+    return (s[:60].rstrip("-")) or "frage"
+
+
+def question_from_text(text: str, max_items: int = DEFAULT_MAX_ITEMS,
+                       explicit_query: str = "") -> dict:
+    """Build the same question dict from a raw string (a web form or a Telegram
+    message) instead of a fragen/*.md file. This is the seam the web app calls:
+    it hands the pipeline an in-memory question and gets a dossier back, so the
+    interface never touches the search/synthesis/guardrail code."""
+    text = (text or "").strip()
+    first = text.splitlines()[0].strip() if text else "Praxis-Check"
+    title = first if len(first) <= 90 else first[:88].rsplit(" ", 1)[0] + "…"
+    return {
+        "path": None,
+        "slug": _slugify(title),
+        "title": title,
+        "frage": text,
+        "kontext": "",
         "max_items": max_items,
         "explicit_query": explicit_query,
     }
@@ -169,8 +202,8 @@ def resolve_queries(q: dict, cfg: dict) -> list[str]:
     print("query: none in file, planning via LLM (Hybrid fallback)")
     planned = plan_queries(q, cfg)
     if not planned:
-        raise SystemExit("query planning produced nothing and no explicit query "
-                         "was given; add a ```query block to the question file.")
+        raise PraxisError("query planning produced no usable search query; "
+                          "try rephrasing the question or add an explicit query")
     return planned
 
 
@@ -182,7 +215,8 @@ def run_search(queries: list[str], ua: str) -> list[dict]:
     by_key: dict[str, dict] = {}
     for i, query in enumerate(queries):
         results = fetch.search_topic(query, ALL_TIME_START, end, ua,
-                                     sort=PRAXIS_SORT, page_size=PRAXIS_PAGE_SIZE)
+                                     sort=PRAXIS_SORT, page_size=PRAXIS_PAGE_SIZE,
+                                     timeout=PRAXIS_SEARCH_TIMEOUT)
         print(f"  q{i+1}: {len(results)} hits  |  {query[:70]}")
         for rec in results:
             key = fetch.dedupe_key(rec)
@@ -382,38 +416,37 @@ def send_dossier(path: Path) -> int:
 
 
 # --------------------------------------------------------------------------- #
-# main
+# callable core: question dict in -> dossier out. Shared by the CLI and the web
+# app, so the guardrails (finalize, code-built Quellen, citation validation)
+# live in exactly one place and every interface goes through them.
 # --------------------------------------------------------------------------- #
-def main(argv: list[str]) -> int:
-    ap = argparse.ArgumentParser(description="Journal Watch Praxis-Check (dossier).")
-    ap.add_argument("--frage", help="path to a specific question file")
-    ap.add_argument("--dry-run", action="store_true",
-                    help="fetch..synthesize + write dossier, but do not send")
-    ap.add_argument("--plan-only", action="store_true",
-                    help="resolve and print the search query, then stop")
-    args = ap.parse_args(argv)
+@dataclass
+class DossierResult:
+    dossier: str
+    queries: list[str]
+    selected: list[dict]
 
-    profile_text = PROFILE.read_text(encoding="utf-8")
+
+def build_dossier(q: dict, *, profile_text: str | None = None) -> DossierResult:
+    """The whole pipeline for one question, returning the finished dossier
+    markdown. Writes nothing and sends nothing; callers decide what to do with
+    the result. Raises PraxisError on a hard failure so a web caller can turn it
+    into a clean error response instead of a traceback."""
+    if profile_text is None:
+        profile_text = PROFILE.read_text(encoding="utf-8")
     cfg = synth.parse_synthese_config(profile_text)
     contact = fetch.parse_profile(profile_text)["contact_email"] or "unknown@example.com"
     ua = f"journal-watch/0.1 (+{contact})"
 
-    q = parse_question(pick_question(args.frage))
-    print(f"question: {q['path'].name}  |  max_items={q['max_items']}")
-    print(f"title: {q['title']}")
-
     queries = resolve_queries(q, cfg)
     for query in queries:
         print(f"  -> {query}")
-    if args.plan_only:
-        return 0
 
     print("\n=== fetch (all-time) ===")
     cands = run_search(queries, ua)
     print(f"  {len(cands)} unique candidates")
     if not cands:
-        print("no candidates found for this question.", file=sys.stderr)
-        return 1
+        raise PraxisError("no candidates found for this question")
 
     print("\n=== rank (all-time, recency as bonus) ===")
     ranked = rank_all(cands, profile_text, queries)
@@ -429,18 +462,51 @@ def main(argv: list[str]) -> int:
     print("\n=== synthesize (one LLM call) ===")
     body = synthesize_dossier(q, selected, cfg, profile_text)
     if body is None:
-        print("No provider produced a dossier (missing keys, errors, refusals).",
-              file=sys.stderr)
-        return 1
+        raise PraxisError("no provider produced a dossier (missing keys, errors, "
+                          "or refusals)")
     validate_citations(body, selected)
     dossier = finalize(body, queries, selected, q)
+    return DossierResult(dossier=dossier, queries=queries, selected=selected)
 
-    OUTPUT.mkdir(parents=True, exist_ok=True)
+
+def dossier_filename(q: dict) -> str:
     # Strip a leading YYYY-MM-DD from the slug so a dated question filename does
     # not double the date in the dossier name.
     slug = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", q["slug"])
-    out = OUTPUT / f"{date.today().isoformat()}-{slug}.md"
-    out.write_text(dossier, encoding="utf-8")
+    return f"{date.today().isoformat()}-{slug}.md"
+
+
+# --------------------------------------------------------------------------- #
+# main (CLI): question FILE in -> write dossier -> send via Telegram
+# --------------------------------------------------------------------------- #
+def main(argv: list[str]) -> int:
+    ap = argparse.ArgumentParser(description="Journal Watch Praxis-Check (dossier).")
+    ap.add_argument("--frage", help="path to a specific question file")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="fetch..synthesize + write dossier, but do not send")
+    ap.add_argument("--plan-only", action="store_true",
+                    help="resolve and print the search query, then stop")
+    args = ap.parse_args(argv)
+
+    profile_text = PROFILE.read_text(encoding="utf-8")
+    q = parse_question(pick_question(args.frage))
+    print(f"question: {q['path'].name}  |  max_items={q['max_items']}")
+    print(f"title: {q['title']}")
+
+    try:
+        if args.plan_only:
+            cfg = synth.parse_synthese_config(profile_text)
+            for query in resolve_queries(q, cfg):
+                print(f"  -> {query}")
+            return 0
+        result = build_dossier(q, profile_text=profile_text)
+    except PraxisError as e:
+        print(f"{e}.", file=sys.stderr)
+        return 1
+
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    out = OUTPUT / dossier_filename(q)
+    out.write_text(result.dossier, encoding="utf-8")
     print(f"\nwrote dossier -> {out}")
 
     if args.dry_run:

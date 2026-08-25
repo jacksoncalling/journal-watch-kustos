@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kustos · Praxis-Check</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1a2230; --muted:#5b6675;
+    --line:#e4e8ee; --accent:#1f6f6b; --accent-ink:#ffffff;
+    --link:#1462c9; --warn-bg:#fdf3e7; --warn-ink:#8a5a1a; --err:#b3261e;
+    --maxw:720px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#0f1319; --card:#161c25; --ink:#e7ecf2; --muted:#9aa6b4;
+      --line:#28313d; --accent:#2f9a94; --link:#7fb2ff; --warn-bg:#2a2013;
+      --warn-ink:#e3bd82; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 16px 64px;}
+  header{display:flex;align-items:baseline;gap:10px;padding:8px 0 4px;}
+  header h1{font-size:19px;margin:0;letter-spacing:.2px;}
+  header .tag{color:var(--muted);font-size:13px;}
+  .lede{color:var(--muted);font-size:14px;margin:2px 0 18px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+  label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px;}
+  textarea,input[type=password]{width:100%;border:1px solid var(--line);
+    border-radius:10px;background:transparent;color:var(--ink);
+    padding:11px 12px;font:inherit;resize:vertical;}
+  textarea{min-height:92px;}
+  .row{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap;}
+  .pw{flex:1;min-width:160px;}
+  button{appearance:none;border:0;border-radius:10px;background:var(--accent);
+    color:var(--accent-ink);font:600 15px/1 inherit;padding:12px 18px;cursor:pointer;}
+  button:disabled{opacity:.55;cursor:default;}
+  .hint{color:var(--muted);font-size:12.5px;margin-top:10px;}
+  .status{display:none;margin-top:18px;align-items:center;gap:12px;color:var(--muted);}
+  .status.on{display:flex;}
+  .spin{width:18px;height:18px;border:2px solid var(--line);
+    border-top-color:var(--accent);border-radius:50%;animation:sp 0.8s linear infinite;}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .err{display:none;margin-top:16px;color:var(--err);font-size:14px;}
+  .err.on{display:block;}
+  .out{display:none;margin-top:22px;}
+  .out.on{display:block;}
+  .out h1{font-size:20px;margin:.2em 0 .5em;}
+  .out h2{font-size:16px;margin:1.4em 0 .4em;padding-top:.6em;border-top:1px solid var(--line);}
+  .out h3{font-size:14.5px;margin:1.1em 0 .3em;color:var(--muted);}
+  .out p{margin:.5em 0;}
+  .out ol,.out ul{margin:.4em 0 .8em;padding-left:1.3em;}
+  .out li{margin:.28em 0;}
+  .out a{color:var(--link);word-break:break-word;}
+  .out code{background:rgba(127,127,127,.14);padding:.06em .35em;border-radius:5px;
+    font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .disclaimer{margin-top:24px;font-size:12.5px;color:var(--warn-ink);
+    background:var(--warn-bg);border-radius:10px;padding:10px 12px;}
+  footer{margin-top:26px;color:var(--muted);font-size:12px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1>Kustos</h1><span class="tag">Praxis-Check</span></header>
+  <p class="lede">Eine klinische Frage stellen. Zurück kommt ein Dossier: aktuelle Evidenz, was Standard ist, wo die Literatur uneins ist. Mit Quellen.</p>
+
+  <div class="card">
+    <label for="q">Deine Frage</label>
+    <textarea id="q" placeholder="z. B. Kortikosteroid-Gabe und Medikamenten-Timing rund um das Lösen der Aortenklemme: aktuelle Evidenz und Kontroversen?"></textarea>
+    <div class="row">
+      <input class="pw" id="pw" type="password" placeholder="Passwort" autocomplete="current-password">
+      <button id="go">Dossier erstellen</button>
+    </div>
+    <div class="hint">Ein Lauf dauert etwa 30 bis 90 Sekunden (Suche, Bewertung, Synthese).</div>
+  </div>
+
+  <div class="status" id="status"><div class="spin"></div><span id="statusText">Suche läuft…</span></div>
+  <div class="err" id="err"></div>
+
+  <div class="out" id="out"></div>
+
+  <div class="disclaimer" id="disc" style="display:none">
+    Kein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.
+  </div>
+
+  <footer>Kustos · privates Pilot-Werkzeug · nicht öffentlich teilen</footer>
+</div>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const q=$("q"), pw=$("pw"), go=$("go"), status=$("status"), statusText=$("statusText"),
+        err=$("err"), out=$("out"), disc=$("disc");
+
+  // Remember the password for this browser only (pilot convenience, not security).
+  try{ pw.value = localStorage.getItem("kustos_pw") || ""; }catch(e){}
+
+  const MSGS = ["Suche in Europe PMC…","Studien werden bewertet…",
+    "Volltexte werden geladen…","Dossier wird geschrieben…","Fast fertig…"];
+  let timer=null;
+  function startStatus(){
+    let i=0; statusText.textContent=MSGS[0]; status.classList.add("on");
+    timer=setInterval(()=>{ i=(i+1)%MSGS.length; statusText.textContent=MSGS[i]; }, 6000);
+  }
+  function stopStatus(){ clearInterval(timer); status.classList.remove("on"); }
+
+  // Minimal markdown -> HTML for the dossier shape (headings, bold, lists, links).
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
+  function inline(s){
+    s = esc(s);
+    s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/(https?:\/\/[^\s)]+)(?![^<]*>)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+    return s;
+  }
+  function render(md){
+    const lines = md.replace(/\r/g,"").split("\n");
+    let html="", list=null;
+    const closeList=()=>{ if(list){ html+= (list==="ol"?"</ol>":"</ul>"); list=null; } };
+    for(let raw of lines){
+      const line = raw.replace(/\s+$/,"");
+      if(!line.trim()){ closeList(); continue; }
+      let m;
+      if((m=line.match(/^#\s+(.*)/))){ closeList(); html+="<h1>"+inline(m[1])+"</h1>"; continue; }
+      if((m=line.match(/^##\s+(.*)/))){ closeList(); html+="<h2>"+inline(m[1])+"</h2>"; continue; }
+      if((m=line.match(/^###\s+(.*)/))){ closeList(); html+="<h3>"+inline(m[1])+"</h3>"; continue; }
+      if((m=line.match(/^\s*\d+\.\s+(.*)/))){ if(list!=="ol"){closeList();html+="<ol>";list="ol";} html+="<li>"+inline(m[1])+"</li>"; continue; }
+      if((m=line.match(/^\s*[-*]\s+(.*)/))){ if(list!=="ul"){closeList();html+="<ul>";list="ul";} html+="<li>"+inline(m[1])+"</li>"; continue; }
+      if(list){ // continuation line of a source entry -> append to last item
+        // Function replacement so a "$" in the text is not read as a backref.
+        html = html.replace(/<\/li>$/, () => "<br>"+inline(line.trim())+"</li>"); continue;
+      }
+      html+="<p>"+inline(line.trim())+"</p>";
+    }
+    closeList();
+    return html;
+  }
+
+  async function ask(){
+    const question=q.value.trim();
+    if(question.length<10){ showErr("Bitte eine ausführlichere Frage stellen."); return; }
+    try{ localStorage.setItem("kustos_pw", pw.value); }catch(e){}
+    err.classList.remove("on"); out.classList.remove("on"); disc.style.display="none";
+    go.disabled=true; startStatus();
+    try{
+      const r = await fetch("/praxis", {method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({question, password: pw.value})});
+      const data = await r.json().catch(()=>({}));
+      if(!r.ok){ showErr(data.detail || ("Fehler "+r.status)); return; }
+      out.innerHTML = render(data.dossier || "");
+      out.classList.add("on"); disc.style.display="block";
+      out.scrollIntoView({behavior:"smooth", block:"start"});
+    }catch(e){
+      showErr("Netzwerkfehler. Bitte erneut versuchen.");
+    }finally{
+      go.disabled=false; stopStatus();
+    }
+  }
+  function showErr(msg){ err.textContent=msg; err.classList.add("on"); }
+
+  go.addEventListener("click", ask);
+  q.addEventListener("keydown", e=>{ if((e.metaKey||e.ctrlKey)&&e.key==="Enter") ask(); });
+})();
+</script>
+</body>
+</html>

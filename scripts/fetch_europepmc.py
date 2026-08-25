@@ -89,16 +89,18 @@ def window_start(seen: dict) -> str:
 # --------------------------------------------------------------------------- #
 # HTTP
 # --------------------------------------------------------------------------- #
-def fetch_json(url: str, ua: str) -> dict:
+def fetch_json(url: str, ua: str, timeout: int = 30) -> dict:
     req = urllib.request.Request(url, headers={"User-Agent": ua})
     last_err = None
     for attempt in range(2):  # one retry
         try:
-            with urllib.request.urlopen(req, timeout=30) as r:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
                 return json.load(r)
-        except (urllib.error.HTTPError, urllib.error.URLError) as e:
+        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as e:
+            # A socket read timeout raises TimeoutError (no .code); a large
+            # response (e.g. the Praxis-Check pageSize=200) can trip it, so it
+            # must be retried, not fatal. Non-5xx HTTP errors are not retried.
             code = getattr(e, "code", None)
-            # Retry only on transient server-side failures / network blips.
             if code is not None and not (500 <= code < 600):
                 raise
             last_err = e
@@ -107,14 +109,16 @@ def fetch_json(url: str, ua: str) -> dict:
 
 
 def search_topic(query: str, start: str, end: str, ua: str,
-                 sort: str | None = None, page_size: int | None = None) -> list[dict]:
+                 sort: str | None = None, page_size: int | None = None,
+                 timeout: int = 30) -> list[dict]:
     """Europe PMC search over [start .. end].
 
-    `sort` and `page_size` are optional and default to the weekly behaviour:
-    with sort=None no sort param is sent (Europe PMC then orders by date, which
-    is fine inside a 7-day window). The Praxis-Check passes sort="CITED desc" so
-    an all-time search surfaces the most-cited landmark papers instead of just
-    the newest 50. Weekly callers omit both, so their behaviour is unchanged.
+    `sort`, `page_size` and `timeout` are optional and default to the weekly
+    behaviour: with sort=None no sort param is sent (Europe PMC then orders by
+    date, which is fine inside a 7-day window). The Praxis-Check passes
+    sort="CITED desc", a deeper page_size, and a longer timeout so an all-time
+    search surfaces the most-cited landmark papers (a 200-record response is
+    larger and slower). Weekly callers omit all three, so they are unchanged.
     """
     dated = f"({query}) AND FIRST_PDATE:[{start} TO {end}]"
     params = {
@@ -126,7 +130,7 @@ def search_topic(query: str, start: str, end: str, ua: str,
     if sort:
         params["sort"] = sort
     url = BASE + "?" + urllib.parse.urlencode(params)
-    data = fetch_json(url, ua)
+    data = fetch_json(url, ua, timeout=timeout)
     return data.get("resultList", {}).get("result", [])
 
 
