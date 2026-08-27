@@ -1,0 +1,1 @@
+- [GitHub connector push limits](github-connector-push.md) — large file writes may be blocked by the connector gateway; use the workspace Git UI/native Git auth for source pushes.

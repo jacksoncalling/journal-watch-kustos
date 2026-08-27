@@ -388,8 +388,15 @@
       const sourceHeading = out.querySelector(".source-heading");
       if(sourceHeading && sourceHeading.nextElementSibling){
         let sibling = sourceHeading.nextElementSibling;
+        let sourceNumber = 1;
         while(sibling && (sibling.tagName === "OL" || sibling.tagName === "UL")){
           sibling.classList.add("source-list");
+          if(sibling.tagName === "OL"){
+            sibling.setAttribute("start", String(sourceNumber));
+            const itemCount = Array.from(sibling.children)
+              .filter(child => child.tagName === "LI").length;
+            sourceNumber += itemCount || 1;
+          }
           sibling = sibling.nextElementSibling;
         }
       }
