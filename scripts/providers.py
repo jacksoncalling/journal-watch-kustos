@@ -33,16 +33,20 @@ class SynthResult:
 
 
 # --------------------------------------------------------------------------- #
-def synth_anthropic(system: str, user: str, model: str, key: str) -> SynthResult:
+def synth_anthropic(system: str, user: str, model: str, key: str,
+                    temperature: float | None = None) -> SynthResult:
     import anthropic
     client = anthropic.Anthropic(api_key=key)
-    with client.messages.stream(
-        model=model,
-        max_tokens=MAX_TOKENS,
-        thinking={"type": "adaptive"},   # 4.6 family: must be explicit
-        system=system,
-        messages=[{"role": "user", "content": user}],
-    ) as stream:
+    # temperature=None: synthesis default (adaptive thinking). temperature set:
+    # a deterministic planner call; thinking is dropped because extended thinking
+    # pins temperature to 1, and the planner should not think anyway.
+    kwargs = dict(model=model, max_tokens=MAX_TOKENS, system=system,
+                  messages=[{"role": "user", "content": user}])
+    if temperature is None:
+        kwargs["thinking"] = {"type": "adaptive"}   # 4.6 family: must be explicit
+    else:
+        kwargs["temperature"] = temperature
+    with client.messages.stream(**kwargs) as stream:
         msg = stream.get_final_message()
 
     # "refusal" is a real Anthropic stop_reason (Claude 4+; stop_details is
@@ -60,18 +64,21 @@ def synth_anthropic(system: str, user: str, model: str, key: str) -> SynthResult
 
 
 # --------------------------------------------------------------------------- #
-def synth_gemini(system: str, user: str, model: str, key: str) -> SynthResult:
+def synth_gemini(system: str, user: str, model: str, key: str,
+                 temperature: float | None = None) -> SynthResult:
     from google import genai
     from google.genai import types
 
     client = genai.Client(api_key=key)
+    gen_cfg = dict(system_instruction=system, max_output_tokens=MAX_TOKENS)
+    if temperature is not None:
+        gen_cfg["temperature"] = temperature   # 0 pins the planner (greedy decode)
+        gen_cfg["seed"] = 7                     # fixed seed: Gemini needs temp+seed
+                                                #   for reproducibility (temp 0 alone drifts)
     resp = client.models.generate_content(
         model=model,
         contents=user,
-        config=types.GenerateContentConfig(
-            system_instruction=system,
-            max_output_tokens=MAX_TOKENS,
-        ),
+        config=types.GenerateContentConfig(**gen_cfg),
     )
 
     # Block / refusal detection: no candidates, an explicit block_reason, or a

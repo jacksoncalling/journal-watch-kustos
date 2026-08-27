@@ -71,8 +71,13 @@ def parse_synthese_config(text: str) -> dict:
     }
 
 
-def run_provider(name: str, system: str, user: str, cfg: dict):
-    """Returns SynthResult, or None if the provider's key is missing."""
+def run_provider(name: str, system: str, user: str, cfg: dict,
+                 temperature: float | None = None):
+    """Returns SynthResult, or None if the provider's key is missing.
+
+    `temperature` defaults to None (each provider's own default, unchanged for
+    the weekly brief and the dossier). The Praxis-Check planner passes 0 to pin
+    query generation to greedy, reproducible decoding."""
     key_env = providers.KEY_ENV.get(name)
     key = load_env(key_env) if key_env else None
     if not key:
@@ -81,7 +86,7 @@ def run_provider(name: str, system: str, user: str, cfg: dict):
     model = cfg["model"].get(name, providers.DEFAULT_MODEL.get(name))
     fn = providers.PROVIDERS[name]
     try:
-        return fn(system, user, model, key)
+        return fn(system, user, model, key, temperature)
     except Exception as e:  # network / API error -> let caller try fallback
         print(f"  [{name}] error: {type(e).__name__}: {e}", file=sys.stderr)
         return None

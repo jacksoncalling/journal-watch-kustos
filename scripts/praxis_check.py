@@ -157,12 +157,15 @@ def question_from_text(text: str, max_items: int = DEFAULT_MAX_ITEMS,
 # --------------------------------------------------------------------------- #
 # provider calls (reuse synthesize's provider seam for BOTH planning + dossier)
 # --------------------------------------------------------------------------- #
-def call_llm(system: str, user: str, cfg: dict, purpose: str) -> str:
+def call_llm(system: str, user: str, cfg: dict, purpose: str,
+             temperature: float | None = None) -> str:
     """Run the configured provider order (primary, then fallback). Returns the
-    text, or '' if every provider missed / errored / refused."""
+    text, or '' if every provider missed / errored / refused. `temperature=0`
+    pins the query planner to reproducible decoding; the dossier call leaves it
+    None (provider default)."""
     order = [cfg["primary"]] + ([cfg["fallback"]] if cfg["fallback"] else [])
     for name in order:
-        r = synth.run_provider(name, system, user, cfg)
+        r = synth.run_provider(name, system, user, cfg, temperature)
         if r is None:
             continue
         if r.refused:
@@ -190,7 +193,7 @@ def plan_queries(q: dict, cfg: dict) -> list[str]:
     user = (f"Frage: {q['frage']}\n\n"
             + (f"Kontext: {q['kontext']}\n\n" if q['kontext'] else "")
             + "Gib die Europe-PMC-Queries aus.")
-    text = call_llm(PLAN_SYSTEM, user, cfg, "query-planung")
+    text = call_llm(PLAN_SYSTEM, user, cfg, "query-planung", temperature=0)
     queries: list[str] = []
     for line in text.splitlines():
         s = line.strip().strip("`").strip()
