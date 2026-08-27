@@ -93,6 +93,9 @@ def praxis(ask: Ask) -> dict:
     q = pc.question_from_text(question)
     try:
         result = pc.build_dossier(q)
+    except pc.DailyLimitError:
+        raise HTTPException(status_code=429,
+                            detail="Tageslimit erreicht. Bitte morgen erneut versuchen.")
     except pc.PraxisError as e:
         raise HTTPException(status_code=422,
                             detail=f"Keine Belege gefunden ({e}).")

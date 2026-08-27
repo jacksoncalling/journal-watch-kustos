@@ -81,6 +81,12 @@ class PraxisError(Exception):
     `except Exception` handles it and turns it into a clean error response."""
 
 
+class DailyLimitError(PraxisError):
+    """The daily dossier cap is reached. A PraxisError subclass so the CLI's
+    `except PraxisError` still catches it, but the web layer can catch it first
+    and return a rate-limit response (429) distinct from 'no candidates' (422)."""
+
+
 # --------------------------------------------------------------------------- #
 # question file
 # --------------------------------------------------------------------------- #
@@ -574,11 +580,11 @@ def _read_usage() -> dict:
 
 
 def check_daily_cap(cap: int) -> None:
-    """Raise PraxisError if today's dossier count already reached the cap."""
+    """Raise DailyLimitError if today's dossier count already reached the cap."""
     u = _read_usage()
     if u["count"] >= cap:
-        raise PraxisError(f"daily limit reached ({u['count']}/{cap} dossiers "
-                          "today); please try again tomorrow")
+        raise DailyLimitError(f"daily limit reached ({u['count']}/{cap} dossiers "
+                              "today); please try again tomorrow")
 
 
 def record_dossier() -> None:
