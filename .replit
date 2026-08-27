@@ -1,4 +1,5 @@
 modules = ["python-3.11"]
+entrypoint = "web/app.py"
 [workflows]
 runButton = "Project"
 
@@ -29,3 +30,7 @@ channel = "stable-25_05"
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[deployment]
+deploymentTarget = "vm"
+run = ["uvicorn", "app:app", "--app-dir", "web", "--host", "0.0.0.0", "--port", "5000"]
