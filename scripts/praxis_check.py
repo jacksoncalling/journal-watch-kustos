@@ -45,6 +45,7 @@ STAGE = ROOT / "05_praxis-check"
 FRAGEN = STAGE / "fragen"
 OUTPUT = STAGE / "output"
 VERTRAG = STAGE / "dossier-vertrag.md"
+USAGE = STAGE / "usage.json"      # daily dossier-count ledger (cost guard)
 PROFILE = ROOT / "profil" / "profile.md"
 KANON = ROOT / "profil" / "kanon.md"
 
@@ -54,6 +55,7 @@ PRAXIS_PAGE_SIZE = 200          # deep pool: landmarks sit far down the citation
                                 #   so a 50-wide pool would never fetch them
 PRAXIS_SEARCH_TIMEOUT = 60      # a 200-record core response is large; 30s can trip
 DEFAULT_MAX_ITEMS = 20
+DEFAULT_DAILY_CAP = 50          # max dossiers/day if profile.md sets no override
 MAX_PLANNED_QUERIES = 3
 TITLE_HIT_WEIGHT = 40           # per query concept found in a paper's TITLE
 TITLE_HIT_CAP = 3               # bonus caps at 3 hits (+120), enough to lift an
@@ -548,6 +550,45 @@ def send_dossier(path: Path) -> int:
 # app, so the guardrails (finalize, code-built Quellen, citation validation)
 # live in exactly one place and every interface goes through them.
 # --------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------- #
+# daily usage cap: a file-based ledger (like seen.json) so a runaway loop or a
+# few eager testers cannot run the API bill up without bound. Global per day,
+# enforced in build_dossier so the CLI and the web app share one guard. The
+# provider-side budget alert (AI Studio) is the hard backstop under this.
+# --------------------------------------------------------------------------- #
+def daily_cap(profile_text: str) -> int:
+    m = re.search(r"max_dossiers_per_day\s*:\s*(\d+)", profile_text)
+    return int(m.group(1)) if m else DEFAULT_DAILY_CAP
+
+
+def _read_usage() -> dict:
+    today = date.today().isoformat()
+    if USAGE.exists():
+        try:
+            d = json.loads(USAGE.read_text(encoding="utf-8"))
+            if d.get("date") == today:
+                return {"date": today, "count": int(d.get("count", 0))}
+        except Exception:
+            pass                      # unreadable/other-day ledger -> fresh day
+    return {"date": today, "count": 0}
+
+
+def check_daily_cap(cap: int) -> None:
+    """Raise PraxisError if today's dossier count already reached the cap."""
+    u = _read_usage()
+    if u["count"] >= cap:
+        raise PraxisError(f"daily limit reached ({u['count']}/{cap} dossiers "
+                          "today); please try again tomorrow")
+
+
+def record_dossier() -> None:
+    """Count one completed dossier against today's cap. Called only on success,
+    so a run that finds no candidates does not consume a slot."""
+    u = _read_usage()
+    u["count"] += 1
+    USAGE.write_text(json.dumps(u), encoding="utf-8")
+
+
 @dataclass
 class DossierResult:
     dossier: str
@@ -555,14 +596,22 @@ class DossierResult:
     selected: list[dict]
 
 
-def build_dossier(q: dict, *, profile_text: str | None = None) -> DossierResult:
+def build_dossier(q: dict, *, profile_text: str | None = None,
+                  enforce_limit: bool = True) -> DossierResult:
     """The whole pipeline for one question, returning the finished dossier
     markdown. Writes nothing and sends nothing; callers decide what to do with
     the result. Raises PraxisError on a hard failure so a web caller can turn it
-    into a clean error response instead of a traceback."""
+    into a clean error response instead of a traceback.
+
+    `enforce_limit` gates the run on a global daily cap (`max_dossiers_per_day`
+    in profile.md, default 50) so a loop or eager testers cannot run the bill up.
+    The benchmark harness passes False so evaluation runs are never blocked and
+    never consume the users' daily quota."""
     if profile_text is None:
         profile_text = PROFILE.read_text(encoding="utf-8")
     cfg = synth.parse_synthese_config(profile_text)
+    if enforce_limit:
+        check_daily_cap(daily_cap(profile_text))
     contact = fetch.parse_profile(profile_text)["contact_email"] or "unknown@example.com"
     ua = f"journal-watch/0.1 (+{contact})"
 
@@ -616,6 +665,8 @@ def build_dossier(q: dict, *, profile_text: str | None = None) -> DossierResult:
     validate_citations(body, selected)
     scan_dose_directives(body)
     dossier = finalize(body, queries, selected, q)
+    if enforce_limit:
+        record_dossier()      # count only on success, after synthesis spend
     return DossierResult(dossier=dossier, queries=queries, selected=selected)
 
 

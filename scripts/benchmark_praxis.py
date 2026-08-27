@@ -128,7 +128,8 @@ def build_with_retry(q: dict, profile_text: str, attempts: int = 3):
     the whole batch. Pipeline code stays untouched; this wrapper lives here."""
     for i in range(1, attempts + 1):
         try:
-            return pc.build_dossier(q, profile_text=profile_text)
+            return pc.build_dossier(q, profile_text=profile_text,
+                                    enforce_limit=False)  # eval never eats quota
         except pc.PraxisError:
             raise                       # a real "no candidates" is not retryable
         except Exception as e:          # network/transport blips are

@@ -33,6 +33,16 @@ liegt im Code, nicht im Modell.
 - `uhrzeit`: "06:00 Europe/Berlin"
 - `max_items`: 7
 
+## Nutzungslimit (nur Praxis-Check)
+
+Globaler Tageslimit-Schutz gegen Kostenausreisser (Loop, Bug, eifrige Tester).
+Zaehlt fertige Dossiers pro Tag in `05_praxis-check/usage.json`; ist das Limit
+erreicht, lehnt `build_dossier` freundlich ab, bis der naechste Tag beginnt. Der
+Benchmark laeuft mit `enforce_limit=False` und zaehlt nicht mit. Harte Grenze
+darunter: das Budget-Alert in AI Studio / Gemini.
+
+- `max_dossiers_per_day`: 50
+
 ## Themen
 
 Jedes Thema hat eine explizite Europe-PMC-Query. `SRC:MED` beschränkt auf

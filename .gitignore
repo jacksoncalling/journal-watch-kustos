@@ -5,6 +5,7 @@
 01_fetch/output/candidates.json
 01_fetch/output/seen.json
 02_rank/output/selected.json
+05_praxis-check/usage.json
 
 # Python
 __pycache__/
