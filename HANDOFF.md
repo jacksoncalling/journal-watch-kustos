@@ -1,8 +1,38 @@
-# Journal Watch: Handoff / Status (2026-08-23)
+# Journal Watch: Handoff / Status (2026-08-27)
 
 Status snapshot for picking this up in a fresh session. The spec is
 `~/step-into-more/projects/journal-watch/build-plan.md` (HQ). This file is the
 "where we actually are" and "what's left" companion that lives with the code.
+
+## Update 2026-08-27 (read this first, supersedes older items below)
+
+Since the 2026-08-23 snapshot the Praxis-Check retrieval gained a **deterministic
+gate layer**, the **planner was pinned**, a **cost guard** was added, and the
+**web layer was verified end to end**. Freshest state is `CLAUDE.md` "Current
+state"; this is the short version.
+
+- **Gate layer** (`scripts/praxis_check.py` + a `## Domain-Gate` block in
+  `profil/profile.md`): subject-actor gate (require the intervention term, not
+  just context), retraction gate, MeSH negative gate (drop animal/oncology with
+  no cardiac MeSH), cardiac-MeSH ranking bonus, plus synthesis guards
+  (zero-citation warning, dose-directive scan) and a `dossier-vertrag` reframe
+  (Kernbefund-first, tangential-endpoint exclusion). Tuned on a 7-question cardiac
+  benchmark (`scripts/benchmark_praxis.py`), held on 4 more untuned questions.
+- **Planner pinned** (temperature 0 + fixed seed) so the same question returns the
+  same queries. Retrieval uses NO embeddings/vector store, by design.
+- **Cost guard:** global daily cap (`max_dossiers_per_day` in profile.md, default
+  50) enforced in `build_dossier`; ledger `05_praxis-check/usage.json`. Over the
+  cap raises `DailyLimitError`, and the web app returns HTTP 429.
+- **Web layer verified live** through the browser (real question -> gated, cited
+  dossier, footer intact). Deploy-ready; remaining work is Replit-side config
+  (Reserved VM for the 30 to 110s request, secrets).
+
+**The "Refinements" roadmap near the bottom is DONE, do not re-implement it.**
+Tighter anesthesia queries and controversy tuning are covered by the gate layer +
+vertrag reframe (deterministic, not prompt-only); OA-PDF cosmetic (#7) fixed
+2026-08-27 (OA-PDF vs OA-Link + DOI-duplicate suppression). A rebuild of these in
+`scripts/` would duplicate or regress the verified pipeline, and any planner-prompt
+change risks the determinism pin.
 
 ## TL;DR
 
@@ -78,9 +108,10 @@ python scripts/send_telegram.py
 6. **Thin test coverage.** Only `test_rank.py` (evidence mapping). Fetch parsing,
    enrich, the synthesis post-processing (anchor injection, dash strip), and the
    Telegram splitter were all verified ad hoc but have no committed tests.
-7. **OA-PDF cosmetic:** when Unpaywall has no direct PDF, the "OA-PDF" link falls
-   back to the DOI landing and duplicates the DOI link. Suppress or relabel when
-   `url_for_pdf` is absent.
+7. ~~**OA-PDF cosmetic:** when Unpaywall has no direct PDF, the "OA-PDF" link
+   falls back to the DOI landing and duplicates the DOI link.~~ **FIXED
+   2026-08-27** (`synthesize.fact_line`): a DOI-duplicate OA link is suppressed,
+   and the label is OA-PDF for a real file vs OA-Link for a landing page.
 8. **Telegram send** has no 429/retry handling (fine for a weekly job; note it).
 9. **ICM completeness:** root `CLAUDE.md`/`README.md` router done. `CONTEXT.md`
    written for `01_fetch/` and `02_rank/` (2026-08-23). Still missing:
@@ -129,9 +160,15 @@ Two review items were NOT applied, deliberately:
   trusted journals), set `TELEGRAM_CHAT_ID` to HER chat, enable the schedule.
 - **RSS** (`fetch_rss.py`): deferred; needs real feed URLs verified per journal,
   best paired with building her real profile.
-- **Refinements:** OA-PDF cosmetic (#7), controversy tuning, tighter
-  anesthesia-focused queries (broad "cardiac surgery" queries pulled some
-  basic-science papers).
+- ~~**Refinements:** OA-PDF cosmetic (#7), controversy tuning, tighter
+  anesthesia-focused queries.~~ **ALL DONE 2026-08-27** (see the "Update
+  2026-08-27" section at the top): tighter queries + controversy handled by the
+  deterministic gate layer + vertrag reframe; OA-PDF cosmetic fixed. Do not
+  re-implement in `scripts/`.
+- **Deploy the web app on Replit (NEXT):** reset the Replit instance onto the
+  current `main` (verified, pinned, gated), then set Secrets + a Reserved VM.
+- **Per-user quota:** today's cap is global; per-user fairness needs the web
+  layer's user identity.
 
 ## Cost note
 
