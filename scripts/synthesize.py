@@ -136,15 +136,31 @@ def build_user_message(selected: dict) -> str:
 # --------------------------------------------------------------------------- #
 # authoritative fact line: built in code from the [[PMID:...]] anchor
 # --------------------------------------------------------------------------- #
+def _is_pdf_url(url: str) -> bool:
+    """Direct PDF vs a landing page. Unpaywall sometimes returns a DOI or landing
+    URL, which should read as OA-Link, not OA-PDF; when unsure, prefer OA-Link."""
+    u = url.lower().split("?", 1)[0].split("#", 1)[0]
+    return u.endswith(".pdf") or "/pdf" in u
+
+
+def _same_link(a: str | None, b: str | None) -> bool:
+    return bool(a and b and a.rstrip("/").lower() == b.rstrip("/").lower())
+
+
 def fact_line(cand: dict) -> str:
     prov = provenance(cand)
     links = []
-    if cand.get("doi"):
-        links.append(f"https://doi.org/{cand['doi']}")
+    doi_url = f"https://doi.org/{cand['doi']}" if cand.get("doi") else None
+    if doi_url:
+        links.append(doi_url)
     if cand.get("pmid"):
         links.append(f"https://pubmed.ncbi.nlm.nih.gov/{cand['pmid']}")
-    if cand.get("oaUrl"):
-        links.append(f"OA-PDF: {cand['oaUrl']}")
+    oa = cand.get("oaUrl")
+    # Gap #7: suppress an OA link that only repeats the DOI landing page, and
+    # label a real file OA-PDF vs a landing page OA-Link (never mislabel a DOI).
+    if oa and not _same_link(oa, doi_url):
+        label = "OA-PDF" if _is_pdf_url(oa) else "OA-Link"
+        links.append(f"{label}: {oa}")
     return f"[Stufe {cand['stufe']}] {prov}\n" + " · ".join(links)
 
 
