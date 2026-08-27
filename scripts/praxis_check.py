@@ -58,7 +58,19 @@ MAX_PLANNED_QUERIES = 3
 TITLE_HIT_WEIGHT = 40           # per query concept found in a paper's TITLE
 TITLE_HIT_CAP = 3               # bonus caps at 3 hits (+120), enough to lift an
                                 #   on-topic RCT over an off-topic but highly-cited guideline
+CARDIAC_MESH_BONUS = 40         # confirmed on-domain via MeSH (like one title hit);
+                                #   a bonus, not a filter, so MeSH-less papers are not sunk
 STOP_TOKENS = {"and", "or", "not", "src", "med", "first", "pdate"}
+
+# Prescriptive dosing/selection verbs. A hit in the MODEL BODY (scanned before
+# finalize adds the footer) is a possible dose-as-advice breach. Kept tight to
+# dose/administration/model-selection so common German imperatives do not trip
+# it, and so the mandatory footer ("Dosierungsangaben", "prüfen") never matches.
+DOSE_DIRECTIVE = re.compile(
+    r"\b(dosieren|verabreichen|titrieren|applizieren)\s+sie\b"
+    r"|\bw[äa]hlen\s+sie\b[^.]{0,40}\bmodell\b"
+    r"|\bempfohlene\s+dosis\b",
+    re.I)
 
 
 class PraxisError(Exception):
@@ -210,6 +222,16 @@ def resolve_queries(q: dict, cfg: dict) -> list[str]:
 # --------------------------------------------------------------------------- #
 # search + rank + enrich (reused slice-1 functions, composed here)
 # --------------------------------------------------------------------------- #
+def mesh_of(rec: dict) -> list[str]:
+    """MeSH descriptor names (lowercased) from a raw Europe PMC record. Captured
+    here in the Praxis-Check, not in the shared weekly normalise(), so the weekly
+    scripts stay untouched. Empty list when the record carries no MeSH (~25% of
+    the all-time pool: non-MEDLINE sources), in which case the MeSH gate abstains
+    and the string subject gate decides."""
+    ml = (rec.get("meshHeadingList") or {}).get("meshHeading") or []
+    return [m["descriptorName"].lower() for m in ml if m.get("descriptorName")]
+
+
 def run_search(queries: list[str], ua: str) -> list[dict]:
     end = date.today().isoformat()
     by_key: dict[str, dict] = {}
@@ -227,26 +249,100 @@ def run_search(queries: list[str], ua: str) -> list[dict]:
                 if label not in by_key[key]["matchedTopics"]:
                     by_key[key]["matchedTopics"].append(label)
             else:
-                by_key[key] = fetch.normalise(rec, [label])
+                norm = fetch.normalise(rec, [label])
+                norm["mesh"] = mesh_of(rec)
+                by_key[key] = norm
         time.sleep(0.25)
     return list(by_key.values())
 
 
+def parse_domain(text: str) -> dict:
+    """Read the Domain-Gate block from profile.md: cardiac-context MeSH anchors
+    (ranking bonus) and negative MeSH anchors (hard drop). Both are lists of
+    lowercased substrings matched against a paper's MeSH descriptors. Domain-wide
+    and fixed, so they hold for every cardiac-anaesthesia question, not one."""
+    cardiac: list[str] = []
+    negative: list[str] = []
+    section: list[str] | None = None
+    for line in text.splitlines():
+        s = line.strip()
+        if s.startswith("### ") and "cardiac" in s.lower():
+            section = cardiac
+            continue
+        if s.startswith("### ") and ("negative" in s.lower() or "drop" in s.lower()):
+            section = negative
+            continue
+        if s.startswith("## "):          # left the Domain-Gate block (h2, not h3)
+            section = None
+            continue
+        if section is not None:
+            m = re.match(r"^-\s+(.+?)\s*$", s)
+            if m:
+                section.append(m.group(1).lower())
+    return {"cardiac": cardiac, "negative": negative}
+
+
+def _mesh_hit(mesh: list[str], anchors: list[str]) -> bool:
+    return any(any(a in d for a in anchors) for d in mesh)
+
+
+def off_domain(cand: dict, domain: dict) -> bool:
+    """True if a paper's MeSH marks it animal/oncology AND carries no cardiac
+    context (so it is out of her field). No MeSH -> not gated here."""
+    mesh = cand.get("mesh") or []
+    if not mesh or not domain["negative"]:
+        return False
+    return (_mesh_hit(mesh, domain["negative"])
+            and not _mesh_hit(mesh, domain["cardiac"]))
+
+
+def _concepts_from(fragment: str) -> set[str]:
+    """Salient terms from a query fragment: quoted phrases plus bare tokens,
+    minus boolean/field operators and wildcards."""
+    terms: set[str] = set()
+    for phrase in re.findall(r'"([^"]+)"', fragment):
+        terms.add(phrase.lower().strip())
+    bare = re.sub(r'"[^"]+"', " ", fragment)       # drop quoted spans first
+    for tok in re.findall(r"[A-Za-z][A-Za-z-]{3,}", bare):
+        t = tok.lower().rstrip("*")
+        if t not in STOP_TOKENS:
+            terms.add(t)
+    return terms
+
+
 def query_concepts(queries: list[str]) -> set[str]:
-    """Salient topic terms from the resolved query: quoted phrases plus bare
-    tokens, minus boolean/field operators and wildcards. Used to score how
+    """All salient topic terms across the resolved queries. Used to score how
     on-topic a paper's TITLE is (a citation-sorted all-time pool otherwise floats
     famous but off-topic papers that match the broad OR terms only in passing)."""
     terms: set[str] = set()
     for q in queries:
-        for phrase in re.findall(r'"([^"]+)"', q):
-            terms.add(phrase.lower().strip())
-        bare = re.sub(r'"[^"]+"', " ", q)          # drop quoted spans first
-        for tok in re.findall(r"[A-Za-z][A-Za-z-]{3,}", bare):
-            t = tok.lower().rstrip("*")
-            if t not in STOP_TOKENS:
-                terms.add(t)
+        terms |= _concepts_from(q)
     return terms
+
+
+def subject_concepts(queries: list[str]) -> set[str]:
+    """Concepts from the FIRST AND-facet of each query, i.e. the intervention or
+    drug the question is actually about. The planner reliably places the subject
+    first (corticosteroid, tranexamic, dexmedetomidine, ...), so requiring at
+    least one of these in a paper's title/abstract stops highly-cited but
+    off-subject perioperative reviews (lidocaine, liraglutide, selenium) from
+    ranking top just because they match the broad context facet (cardiac surgery,
+    perioperative). This is the sharpened relevance floor: gate on the subject
+    actor, not on any shared word."""
+    subj: set[str] = set()
+    for q in queries:
+        first = re.split(r"(?i)\bAND\b", q, maxsplit=1)[0]
+        subj |= _concepts_from(first)
+    return subj
+
+
+def is_retracted(pub_types: list[str]) -> bool:
+    """True if Europe PMC marks the record as a retracted article or a retraction
+    notice. Such records are dropped before ranking so a dossier never rests on
+    retracted evidence. (Europe PMC pubType coverage lags the literature; this is
+    the cheap 80/20, not a full Retraction Watch cross-check.)"""
+    joined = " ".join(pub_types or []).lower()
+    return "retracted publication" in joined or "retraction of publication" in joined
 
 
 def title_bonus(cand: dict, concepts: set[str]) -> int:
@@ -256,10 +352,13 @@ def title_bonus(cand: dict, concepts: set[str]) -> int:
 
 
 def rank_all(cands: list[dict], profile_text: str,
-             queries: list[str]) -> list[dict]:
+             queries: list[str], domain: dict | None = None) -> list[dict]:
     prof = rank.parse_profile(profile_text)
     kanon_kw = rank.kanon_keywords(KANON)
     concepts = query_concepts(queries)
+    subj = subject_concepts(queries)
+    if domain is None:
+        domain = parse_domain(profile_text)
     today = date.today()
     ranked = []
     for c in cands:
@@ -268,10 +367,21 @@ def rank_all(cands: list[dict], profile_text: str,
         tb = title_bonus(c, concepts)              # Praxis-only topical relevance
         total += tb
         breakdown["title_relevance"] = tb
+        cb = CARDIAC_MESH_BONUS if _mesh_hit(c.get("mesh") or [],
+                                             domain["cardiac"]) else 0
+        total += cb
+        breakdown["cardiac_mesh"] = cb
         item = dict(c)
         item["stufe"] = stufe
         item["score"] = round(total, 1)
         item["score_breakdown"] = breakdown
+        # Subject-actor gate: does the paper mention the intervention at all, or
+        # only the broad context? Absent a subject set, treat all as on-subject.
+        # Match a trailing-plural query term against a singular in the paper too
+        # ("corticosteroids" in the query vs "corticosteroid" in the abstract).
+        hay = f"{c.get('title','')} {c.get('abstract','')}".lower()
+        item["on_subject"] = (not subj) or any(
+            t in hay or (t.endswith("s") and t[:-1] in hay) for t in subj)
         ranked.append(item)
     ranked.sort(key=lambda x: x["score"], reverse=True)
     return ranked
@@ -329,10 +439,25 @@ def validate_citations(dossier: str, selected: list[dict]) -> None:
     for grp in re.findall(r"\(PMID\s+([\d,\s]+)\)", dossier):
         for pmid in re.findall(r"\d+", grp):
             cited.add(pmid)
+    if not cited:
+        print("  WARN: dossier has NO inline (PMID ...) citations; the contract "
+              "requires inline provenance on load-bearing claims", file=sys.stderr)
     unknown = cited - known
     if unknown:
         print(f"  WARN: dossier cites {len(unknown)} PMID(s) not in the selected "
               f"set (possible hallucination): {sorted(unknown)}", file=sys.stderr)
+
+
+def scan_dose_directives(body: str) -> None:
+    """Warn if the model wrote a prescriptive dosing/selection directive (a
+    dose-as-advice guardrail breach). Scans the model body BEFORE finalize adds
+    the footer, so the mandatory footer's own wording never trips it. Warn only,
+    never rewrite: a false positive must not silently mangle the prose."""
+    if DOSE_DIRECTIVE.search(body):
+        n = len(DOSE_DIRECTIVE.findall(body))
+        print(f"  WARN: {n} prescriptive dosing/selection phrase(s) in the dossier "
+              f"body (possible dose-as-advice breach); review before sending",
+              file=sys.stderr)
 
 
 def assemble_quellen(selected: list[dict]) -> str:
@@ -438,22 +563,43 @@ def build_dossier(q: dict, *, profile_text: str | None = None) -> DossierResult:
     contact = fetch.parse_profile(profile_text)["contact_email"] or "unknown@example.com"
     ua = f"journal-watch/0.1 (+{contact})"
 
+    domain = parse_domain(profile_text)
     queries = resolve_queries(q, cfg)
     for query in queries:
         print(f"  -> {query}")
 
     print("\n=== fetch (all-time) ===")
     cands = run_search(queries, ua)
+    n_raw = len(cands)
+    cands = [c for c in cands if not is_retracted(c.get("pubTypes", []))]
+    n_ret = n_raw - len(cands)
+    if n_ret:
+        print(f"  dropped {n_ret} retracted/retraction-notice record(s)")
+    n_before = len(cands)
+    cands = [c for c in cands if not off_domain(c, domain)]
+    n_dom = n_before - len(cands)
+    if n_dom:
+        print(f"  dropped {n_dom} off-domain record(s) (animal/oncology MeSH, no cardiac)")
     print(f"  {len(cands)} unique candidates")
     if not cands:
         raise PraxisError("no candidates found for this question")
 
-    print("\n=== rank (all-time, recency as bonus) ===")
-    ranked = rank_all(cands, profile_text, queries)
-    selected = ranked[: q["max_items"]]
-    print(f"  ranked {len(ranked)}, selected top {len(selected)}")
+    print("\n=== rank (all-time, recency as bonus, subject-gated, MeSH-aware) ===")
+    ranked = rank_all(cands, profile_text, queries, domain)
+    # Subject-actor gate: prefer papers that mention the intervention, not just
+    # the broad context. Both partitions stay score-sorted, so on-subject papers
+    # always outrank off-subject ones regardless of citations, and off-subject
+    # only backfills when a small literature cannot fill max_items on its own.
+    on = [r for r in ranked if r["on_subject"]]
+    off = [r for r in ranked if not r["on_subject"]]
+    selected = (on + off)[: q["max_items"]]
+    backfill = max(0, len(selected) - len(on))
+    print(f"  ranked {len(ranked)} ({len(on)} on-subject), selected top "
+          f"{len(selected)}"
+          + (f", {backfill} off-subject backfill" if backfill else ""))
     for s in selected[:10]:
-        print(f"    Stufe {s['stufe']}  score {s['score']:>6}  "
+        flag = " " if s["on_subject"] else "~"     # ~ marks an off-subject backfill
+        print(f"   {flag}Stufe {s['stufe']}  score {s['score']:>6}  "
               f"{(s.get('journalAbbrev') or '?')[:24]:<24}  {(s.get('title') or '')[:44]}")
 
     print("\n=== enrich (top N) ===")
@@ -465,6 +611,7 @@ def build_dossier(q: dict, *, profile_text: str | None = None) -> DossierResult:
         raise PraxisError("no provider produced a dossier (missing keys, errors, "
                           "or refusals)")
     validate_citations(body, selected)
+    scan_dose_directives(body)
     dossier = finalize(body, queries, selected, q)
     return DossierResult(dossier=dossier, queries=queries, selected=selected)
 

@@ -25,17 +25,53 @@ database: config, memory, and every brief live as files in this repo. Story:
 | Orchestrator + weekly cron | `scripts/run_weekly.py`, `.github/workflows/weekly.yml` |
 | GitHub | https://github.com/jacksoncalling/journal-watch-kustos |
 
-## Current state (2026-08-23)
+## Current state (Updated 2026-08-27)
 
-Two artifact types are built. **Slice 1 (the Wochenbrief):** fetch, enrich, rank,
-synthesize, send, chained by `run_weekly.py`; `seen.json` written only after a
-confirmed send; weekly cron. Code-reviewed, pushed to GitHub. **Slice 1.5 (the
-Praxis-Check):** the on-demand dossier, built 2026-08-23. It reuses the slice-1
-functions by import (no rebuild, weekly scripts untouched), searches all-time per
-question, and writes one dossier per question. Triggered by `workflow_dispatch`,
-not cron. Full stage contract: `05_praxis-check/CONTEXT.md`. Gaps and history:
-`HANDOFF.md`. `01_fetch` and `02_rank` now carry `CONTEXT.md`; `04_feedback` still
-lacks one.
+**What's working.** Both artifact types ship. **Slice 1 (Wochenbrief):** fetch,
+enrich, rank, synthesize, send, chained by `run_weekly.py`; weekly cron;
+code-reviewed, pushed. **Slice 1.5 (Praxis-Check):** on-demand dossier, reuses
+slice-1 functions by import (weekly scripts untouched), all-time search per
+question. This session added a **deterministic gate layer** to the Praxis-Check
+retrieval, tuned against a new 7-question cardiac-anaesthesia benchmark
+(`scripts/benchmark_praxis.py`, questions inline, her real domain from Interview
+1). The layers, all in `praxis_check.py` + a `## Domain-Gate` block in
+`profile.md`: (1) subject-actor gate (require the intervention term, not just
+context) with a soft on/off partition + backfill; (2) retraction gate (drop
+`Retracted Publication` / `Retraction of Publication`); (3) MeSH negative gate
+(hard-drop animal/oncology records with no cardiac MeSH; ~150 dropped across the
+7 questions, zero per-question tuning); (4) cardiac-MeSH ranking bonus (+40,
+surfaced the NEJM MYRIAD trial that earlier runs buried); (5) synthesis guards
+(zero-citation warning, dose-directive scanner) + vertrag reframe (Kernbefund
+first, evidence-attributed not advice; tangential-endpoint exclusion). Benchmark
+result: offsub 0/20, 0 phantom, 0 dose-directives, controversy present on all 7;
+tier mix now reads as honest thin-vs-thick evidence rather than false breadth.
+**Retrieval uses NO embeddings/vector store by design** (boolean Europe PMC +
+deterministic scoring + string/MeSH matching; only the query planner and
+synthesis are LLM calls). Full stage contract: `05_praxis-check/CONTEXT.md`.
+Gaps and history: `HANDOFF.md`. `04_feedback` still lacks a `CONTEXT.md`.
+
+**Known issues.** (1) **Planner nondeterminism** is now the main ceiling: the
+LLM query planner returns different queries every run (one run produced a 0-hit
+query), so the benchmark is not yet a clean regression gate. (2) **Human
+off-context leaks** survive the gates (e.g. the WOMAN obstetric TXA trial ranked
+into the TXA question): the negative gate only catches animal/oncology, so a
+human paper in the wrong specialty passes the subject gate and merely sinks. (3)
+This session's changes are **uncommitted**; `05_praxis-check/CONTEXT.md` still
+describes the pre-gate ranking and should be refreshed.
+
+**What's next.** (1) **Pin the planner + add a deterministic MeSH synonym layer.**
+Set the planner to temperature 0 / fixed model for reproducibility, AND add a
+controlled-vocabulary block to `profile.md` mapping her domain's abbreviations to
+full MeSH entry terms (TCI -> target-controlled infusion; TIVA -> total
+intravenous anaesthesia; ABW -> adjusted/corrected body weight; TXA -> tranexamic
+acid; NIRS -> near-infrared spectroscopy; ...), expanded into queries before
+search. This is the "controlled vocabulary" layer of the Ontology Pipeline
+(Talisman): MeSH is already a professionally maintained medical thesaurus, so we
+consume it, we do not build a graph. Deterministic abbrev->term expansion also
+directly cuts the planner nondeterminism that is the current ceiling. (2) Commit
+the gate layer + refresh `05_praxis-check/CONTEXT.md`. (3) Optional later lever:
+targeted full-text passage extraction for OA papers (helps her timing/dosing
+questions; paywalled landmarks remain out of reach by guardrail).
 
 ## Guardrails (non-negotiable, from build-plan §3)
 

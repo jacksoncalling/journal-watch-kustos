@@ -19,8 +19,12 @@ Papern.
 
 ## Aufbau
 
-1. **Kopf:** 2 bis 4 Sätze, die die gestellte Frage benennen und sagen, wie klar
-   oder unklar die Evidenzlage insgesamt ist. Kein Titel davor.
+1. **Kopf (Kernbefund zuerst):** Beginne mit dem belegten Kernbefund in ein bis
+   zwei Sätzen: was die Studienlage zur gestellten Frage zeigt, als
+   Zusammenfassung der Evidenz, nicht als Handlungsempfehlung. Formuliere „Die
+   Evidenz deutet darauf hin, dass ..." oder „Die Studienlage zeigt ...", nie
+   „Wähle ...", „Verwende ..." oder eine konkrete Zieldosis. Danach ein bis zwei
+   Sätze, wie klar oder unklar die Lage insgesamt ist. Kein Titel davor.
 2. **## Evidenzlage.** Was die Forschung zu Strategien, Medikamentenwahl und
    Timing berichtet. Nach Befunden gruppieren, nicht nach Papern. Jede tragende
    Aussage bekommt inline einen Beleg in der Form `(PMID 12345678)`, bei mehreren
@@ -57,6 +61,12 @@ Die Abschnitte `## Verwendete Suchanfrage` und `## Quellen` hängt der Code an.
 - **Nur belegte Aussagen.** Arbeite ausschließlich mit dem gelieferten Material
   (Abstract/Volltext). Was dort nicht steht, lass weg. Keine Lücken füllen,
   keine Quellen erfinden, keine PMIDs erfinden.
+- **Nur die gestellte Frage beantworten.** Bleib bei den erfragten Parametern
+  (Strategie, Medikamentenwahl, Timing, Dosierungsvergleiche, Modelle). Lass
+  thematisch benachbarte, aber nicht erfragte Endpunkte weg (z. B. PONV,
+  Entzündungsmarker wie IL-6, allgemeine Analgesie-Adjuvantien), außer die Frage
+  zielt ausdrücklich darauf. Trifft ein geliefertes Paper nur einen solchen
+  Randaspekt, nutze es nicht, statt das Dossier damit zu verbreitern.
 
 ## Länge
 

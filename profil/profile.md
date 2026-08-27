@@ -69,3 +69,99 @@ Zeitschriften, die im Ranking einen kleinen Bonus bekommen (02_rank):
 - "Anaesthesia"
 - "Anesth Analg"
 - "J Cardiothorac Vasc Anesth"
+
+## Domain-Gate (nur Praxis-Check)
+
+Nur der Praxis-Check nutzt diese Listen (05_praxis-check). Sie arbeiten auf den
+MeSH-Schlagworten, die Europe PMC pro Paper vergibt (Deckung ~75 %; Paper ohne
+MeSH werden nicht geMeSH-gegatet, sondern fallen auf den String-Subjektfilter
+zurück). Jeder Eintrag ist ein Teilstring, der gegen die MeSH-Deskriptoren
+(kleingeschrieben) geprüft wird. Domänenweit und fix, also für jede
+Kardioanästhesie-Frage gültig, nicht pro Frage getunt.
+
+### Cardiac-context MeSH (Bonus)
+
+Paper, die per MeSH klar im Feld liegen, bekommen einen kleinen Ranking-Bonus
+(kein Filter, damit die MeSH-losen 25 % nicht fälschlich fallen).
+- cardiac surg
+- cardiopulmonary bypass
+- coronary artery bypass
+- cardioplegi
+- heart arrest, induced
+- extracorporeal circulation
+- myocardial reperfusion
+- heart valve
+- cardiovascular surgical
+
+### Negative MeSH (Drop)
+
+Reine Tierstudien und Onkologie ohne Herzbezug werden deterministisch verworfen,
+bevor gerankt wird (nur wenn KEIN Cardiac-context-MeSH vorliegt, damit ein
+humanes Mehrorgan-Paper mit Nieren-/Leber-MeSH nicht mitgerissen wird).
+- animals
+- mice
+- rats
+- neoplasm
+- carcinoma
+
+## Controlled Vocabulary (nur Praxis-Check)
+
+Die kontrollierte-Vokabular-Schicht (Ontology-Pipeline, erste Stufe). Jede Zeile
+ist EIN Konzept: bevorzugter Begriff links vom `:`, gleichwertige Schreibweisen,
+Abkürzungen und Markennamen rechts, mit `|` getrennt (analog MeSH preferred term
++ entry terms). Kommt eine dieser Oberflächenformen in einer geplanten Query vor,
+expandiert der Code sie deterministisch zur ODER-Gruppe aller Formen
+(Mehrwortphrasen werden dabei in Anführungszeichen gesetzt). Zweck: Recall (Paper
+die ausschreiben vs. abkürzen) und Determinismus (die Expansion ist fix, nicht
+dem Planer überlassen). Britische und amerikanische Schreibweisen bewusst beide
+gelistet. Von Hand gepflegt, das IST die Vokabulararbeit; MeSH liefert die Belege,
+kein Graph nötig.
+
+Noch inert: aktiv erst, wenn der Planer-Expansionsschritt gebaut ist (siehe
+CLAUDE.md Current State, nächster Schritt). Ergänzungen willkommen, das ist ihr
+Fachvokabular.
+
+**Verfahren & Narkosetiefe**
+- total intravenous anaesthesia : TIVA | total intravenous anesthesia
+- target-controlled infusion : TCI | target controlled infusion
+- inhalational anaesthetic : volatile anaesthetic | volatile anesthetic | inhalational anesthetic | inhaled anaesthetic
+- bispectral index : BIS
+
+**Substanzen**
+- propofol : Diprivan
+- dexmedetomidine : Precedex | Dexdor
+- remifentanil : Ultiva
+
+**Neuromuskuläre Antagonisierung**
+- sugammadex : Bridion
+- neostigmine : Prostigmin
+- neuromuscular blockade reversal : reversal of neuromuscular blockade | NMB reversal | decurarization
+
+**Herzchirurgie & HLM**
+- cardiopulmonary bypass : CPB | heart-lung machine | HLM | extracorporeal circulation
+- coronary artery bypass : CABG | coronary artery bypass grafting
+- aortic cross-clamp : aortic cross-clamping | aortic cross clamp | aortic clamping | aortic unclamping | aortic clamp release
+- del Nido cardioplegia : del Nido solution | del Nido
+- reperfusion : reperfusion injury | ischaemia-reperfusion | ischemia-reperfusion
+
+**Gerinnung**
+- tranexamic acid : TXA | Cyklokapron
+
+**Zerebrales Monitoring**
+- near-infrared spectroscopy : NIRS | cerebral oximetry | rSO2 | regional cerebral oxygen saturation
+
+**Outcomes**
+- postoperative atrial fibrillation : POAF | new-onset atrial fibrillation | post-operative atrial fibrillation
+- postoperative delirium : POD | post-operative delirium
+- acute kidney injury : AKI | acute renal failure
+- systemic inflammatory response syndrome : SIRS
+
+**Perioperative Programme**
+- enhanced recovery after surgery : ERAS | fast-track surgery
+- remote ischaemic preconditioning : RIPC | remote ischemic preconditioning
+
+**Gewichtsmaße (Dosierungsfragen)**
+- total body weight : TBW
+- adjusted body weight : ABW | corrected body weight
+- ideal body weight : IBW
+- lean body weight : LBW | fat-free mass
