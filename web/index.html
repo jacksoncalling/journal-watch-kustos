@@ -3,166 +3,414 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f1f5f2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%231f6f6b'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='17' fill='%231f6f6b'%3EK%3C/text%3E%3C/svg%3E">
 <title>Kustos · Praxis-Check</title>
 <style>
   :root{
-    --bg:#f6f7f9; --card:#ffffff; --ink:#1a2230; --muted:#5b6675;
-    --line:#e4e8ee; --accent:#1f6f6b; --accent-ink:#ffffff;
-    --link:#1462c9; --warn-bg:#fdf3e7; --warn-ink:#8a5a1a; --err:#b3261e;
-    --maxw:720px;
+    --bg:#f1f5f2; --surface:#ffffff; --surface-soft:#e7efeb;
+    --ink:#16211f; --muted:#5b6a64; --line:#d8e3de;
+    --accent:#1f6f6b; --accent-deep:#17554f; --accent-ink:#ffffff;
+    --link:#176e68; --tension:#8b611c;
+    --warn-bg:#f7efe1; --warn-ink:#765016; --err:#a83b34;
+    --display:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --maxw:760px;
   }
   @media (prefers-color-scheme:dark){
-    :root{ --bg:#0f1319; --card:#161c25; --ink:#e7ecf2; --muted:#9aa6b4;
-      --line:#28313d; --accent:#2f9a94; --link:#7fb2ff; --warn-bg:#2a2013;
-      --warn-ink:#e3bd82; }
+    :root{
+      --bg:#0e1513; --surface:#151e1b; --surface-soft:#1b2924;
+      --ink:#e6ecea; --muted:#98a9a1; --line:#293933;
+      --accent:#43a79e; --accent-deep:#70c6bc; --accent-ink:#07120f;
+      --link:#75c9c0; --tension:#d7aa58; --warn-bg:#2b2418; --warn-ink:#d9b87b;
+      --err:#ef8a80;
+    }
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-text-size-adjust:100%;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 16px 64px;}
-  header{display:flex;align-items:baseline;gap:10px;padding:8px 0 4px;}
-  header h1{font-size:19px;margin:0;letter-spacing:.2px;}
-  header .tag{color:var(--muted);font-size:13px;}
-  .lede{color:var(--muted);font-size:14px;margin:2px 0 18px;}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
-  label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px;}
-  textarea,input[type=password]{width:100%;border:1px solid var(--line);
-    border-radius:10px;background:transparent;color:var(--ink);
-    padding:11px 12px;font:inherit;resize:vertical;}
-  textarea{min-height:92px;}
-  .row{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap;}
-  .pw{flex:1;min-width:160px;}
-  button{appearance:none;border:0;border-radius:10px;background:var(--accent);
-    color:var(--accent-ink);font:600 15px/1 inherit;padding:12px 18px;cursor:pointer;}
-  button:disabled{opacity:.55;cursor:default;}
-  .hint{color:var(--muted);font-size:12.5px;margin-top:10px;}
-  .status{display:none;margin-top:18px;align-items:center;gap:12px;color:var(--muted);}
-  .status.on{display:flex;}
-  .spin{width:18px;height:18px;border:2px solid var(--line);
-    border-top-color:var(--accent);border-radius:50%;animation:sp 0.8s linear infinite;}
-  @keyframes sp{to{transform:rotate(360deg)}}
-  .err{display:none;margin-top:16px;color:var(--err);font-size:14px;}
-  .err.on{display:block;}
-  .out{display:none;margin-top:22px;}
-  .out.on{display:block;}
-  .out h1{font-size:20px;margin:.2em 0 .5em;}
-  .out h2{font-size:16px;margin:1.4em 0 .4em;padding-top:.6em;border-top:1px solid var(--line);}
-  .out h3{font-size:14.5px;margin:1.1em 0 .3em;color:var(--muted);}
-  .out p{margin:.5em 0;}
-  .out ol,.out ul{margin:.4em 0 .8em;padding-left:1.3em;}
-  .out li{margin:.28em 0;}
-  .out a{color:var(--link);word-break:break-word;}
-  .out code{background:rgba(127,127,127,.14);padding:.06em .35em;border-radius:5px;
-    font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
-  .disclaimer{margin-top:24px;font-size:12.5px;color:var(--warn-ink);
-    background:var(--warn-bg);border-radius:10px;padding:10px 12px;}
-  footer{margin-top:26px;color:var(--muted);font-size:12px;text-align:center;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  button,input,textarea{font:inherit}
+  .shell{max-width:var(--maxw);margin:0 auto;padding:20px 16px 68px;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:2px 0 34px;}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
+  .brand-mark{width:28px;height:28px;border:1.5px solid var(--accent);border-radius:50%;
+    display:grid;place-items:center;color:var(--accent);font-family:var(--display);font-size:18px;line-height:1;}
+  .brand-name{font-weight:700;letter-spacing:.02em;}
+  .brand-tag{color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;margin-left:3px;}
+  .pilot{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--muted);
+    text-transform:uppercase;}
+  .hero{padding:18px 0 32px;border-bottom:1px solid var(--line);}
+  .eyebrow{color:var(--accent-deep);font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;
+    text-transform:uppercase;}
+  .hero h1{font-family:var(--display);font-size:clamp(2.25rem,9vw,4.15rem);font-weight:600;
+    line-height:1.05;letter-spacing:-.025em;max-width:11ch;margin:13px 0 16px;}
+  .hero p{font-size:1.05rem;line-height:1.55;max-width:38ch;margin:0;color:var(--muted);}
+  .hero p strong{color:var(--ink);font-weight:600;}
+  .ask-section{padding-top:28px;}
+  .ask-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;
+    padding:15px;box-shadow:0 14px 36px -28px rgba(22,33,31,.5);}
+  .ask-label{display:block;color:var(--muted);font-size:.75rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;margin:2px 3px 8px;}
+  textarea,input[type=password]{
+    width:100%;border:1px solid var(--line);border-radius:12px;background:var(--bg);
+    color:var(--ink);padding:13px 14px;outline:none;transition:border-color .18s,box-shadow .18s;
+  }
+  textarea{display:block;min-height:142px;resize:vertical;line-height:1.5;}
+  textarea::placeholder,input::placeholder{color:var(--muted);opacity:.82}
+  textarea:focus,input[type=password]:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 16%,transparent);}
+  .ask-controls{display:flex;gap:9px;align-items:center;margin-top:10px;}
+  .password-wrap{position:relative;flex:1;min-width:0;}
+  .password-wrap input{padding-right:42px;}
+  .toggle-password{position:absolute;right:5px;top:5px;width:34px;height:34px;border:0;
+    border-radius:8px;background:transparent;color:var(--muted);font-size:.75rem;cursor:pointer;}
+  .toggle-password:hover,.toggle-password:focus-visible{background:var(--surface-soft);color:var(--ink);}
+  .primary{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;
+    border:0;border-radius:11px;background:var(--accent);color:var(--accent-ink);
+    padding:11px 16px;font-weight:700;font-size:.93rem;white-space:nowrap;cursor:pointer;
+    transition:transform .18s,background .18s,opacity .18s;
+  }
+  .primary:hover:not(:disabled){background:var(--accent-deep);transform:translateY(-1px);}
+  .primary:disabled{cursor:wait;opacity:.56;}
+  .key-hint{margin:11px 3px 1px;color:var(--muted);font-size:.77rem;line-height:1.45;}
+  .key-hint strong{color:var(--accent-deep);font-weight:600;}
+  .status{display:none;margin:25px 2px 0;color:var(--muted);}
+  .status.on{display:block;}
+  .status-head{display:flex;align-items:center;gap:11px;}
+  .ring{width:23px;height:23px;flex:0 0 auto;border:2.5px solid var(--line);
+    border-top-color:var(--accent);border-radius:50%;animation:spin .9s linear infinite;}
+  .status-title{color:var(--ink);font-weight:650;}
+  .status-time{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted);}
+  .status-note{margin:7px 0 0 34px;font-size:.83rem;}
+  .steps{list-style:none;margin:15px 0 0 34px;padding:0;border-left:1px solid var(--line);}
+  .steps li{position:relative;padding:2px 0 2px 14px;color:var(--muted);font-size:.79rem;}
+  .steps li::before{content:"";position:absolute;left:-4px;top:9px;width:7px;height:7px;
+    border:1px solid var(--line);border-radius:50%;background:var(--bg);}
+  .steps li.active{color:var(--accent-deep);font-weight:700;}
+  .steps li.active::before{border-color:var(--accent);background:var(--accent);}
+  .error{display:none;margin-top:18px;padding:11px 13px;border:1px solid color-mix(in srgb,var(--err) 35%,var(--line));
+    border-radius:10px;background:color-mix(in srgb,var(--err) 7%,transparent);color:var(--err);font-size:.87rem;}
+  .error.on{display:block;}
+  .result{display:none;margin-top:34px;}
+  .result.on{display:block;}
+  .result-intro{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);
+    padding-bottom:10px;margin-bottom:18px;}
+  .result-intro h2{font-family:var(--display);font-size:1.65rem;font-weight:600;line-height:1.1;margin:0;}
+  .result-intro span{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .dossier{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 17px;
+    overflow-wrap:anywhere;box-shadow:0 14px 36px -30px rgba(22,33,31,.5);}
+  .dossier h1,.dossier h2,.dossier h3{font-family:var(--display);font-weight:600;line-height:1.18;
+    text-wrap:pretty;}
+  .dossier h1{font-size:1.8rem;letter-spacing:-.015em;margin:.08em 0 .65em;}
+  .dossier h2{font-size:1.37rem;border-top:1px solid var(--line);padding-top:19px;margin:1.75em 0 .55em;}
+  .dossier h3{font-size:1.08rem;margin:1.35em 0 .35em;color:var(--accent-deep);}
+  .dossier p{margin:.7em 0;}
+  .dossier ol,.dossier ul{margin:.65em 0 1em;padding-left:1.35em;}
+  .dossier li{margin:.38em 0;padding-left:2px;}
+  .dossier li::marker{color:var(--accent);}
+  .dossier strong{font-weight:700;color:var(--ink);}
+  .dossier a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;
+    text-underline-offset:2px;word-break:break-word;}
+  .dossier a:hover{color:var(--accent-deep);}
+  .dossier code{background:var(--surface-soft);border:1px solid var(--line);border-radius:5px;
+    padding:.08em .35em;font: .82em/1.4 var(--mono);}
+  .dossier blockquote{border-left:2px solid var(--accent);margin:1em 0;padding:2px 0 2px 14px;color:var(--muted);}
+  .dossier hr{border:0;border-top:1px solid var(--line);margin:1.5em 0;}
+  .dossier .source-list{background:var(--surface-soft);border-radius:10px;padding:10px 13px 10px 27px;}
+  .dossier .source-list a{font-weight:600;}
+  .dossier .source-list li{margin:.52em 0;}
+  .dossier .source-list code{font-size:.76em;}
+  .disclaimer{margin:18px 0 0;padding:12px 13px;background:var(--warn-bg);border-radius:10px;
+    color:var(--warn-ink);font-size:.78rem;line-height:1.5;}
+  .new-question{display:none;margin:18px 0 0;width:100%;border:1px solid var(--line);border-radius:10px;
+    color:var(--accent-deep);background:transparent;padding:10px 14px;font-weight:700;cursor:pointer;}
+  .new-question:hover{background:var(--surface-soft);}
+  footer{margin-top:42px;border-top:1px solid var(--line);padding-top:17px;color:var(--muted);
+    font-size:.74rem;line-height:1.55;}
+  footer strong{color:var(--ink);font-weight:650;}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (min-width:620px){
+    .shell{padding-left:30px;padding-right:30px;}
+    .topbar{padding-top:8px;}
+    .ask-card{padding:18px;}
+    .dossier{padding:30px 32px;}
+    .new-question{width:auto;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .ring{animation:none}
+    .primary{transition:none}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header><h1>Kustos</h1><span class="tag">Praxis-Check</span></header>
-  <p class="lede">Eine klinische Frage stellen. Zurück kommt ein Dossier: aktuelle Evidenz, was Standard ist, wo die Literatur uneins ist. Mit Quellen.</p>
+<main class="shell">
+  <nav class="topbar" aria-label="Kustos">
+    <a class="brand" href="/" aria-label="Kustos Startseite">
+      <span class="brand-mark" aria-hidden="true">K</span>
+      <span class="brand-name">Kustos</span>
+      <span class="brand-tag">Praxis-Check</span>
+    </a>
+    <span class="pilot">privater Pilot</span>
+  </nav>
 
-  <div class="card">
-    <label for="q">Deine Frage</label>
-    <textarea id="q" placeholder="z. B. Kortikosteroid-Gabe und Medikamenten-Timing rund um das Lösen der Aortenklemme: aktuelle Evidenz und Kontroversen?"></textarea>
-    <div class="row">
-      <input class="pw" id="pw" type="password" placeholder="Passwort" autocomplete="current-password">
-      <button id="go">Dossier erstellen</button>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="eyebrow">Aktuelle medizinische Evidenz</div>
+    <h1 id="hero-title">Eine Frage, die eine Antwort verdient.</h1>
+    <p>Schreibe deine klinische Frage in deinen eigenen Worten. Kustos erstellt daraus ein <strong>zitiertes Dossier</strong>: Evidenzlage, Standard, Kontroversen und Quellen.</p>
+  </section>
+
+  <section class="ask-section" aria-labelledby="ask-title">
+    <div class="ask-card">
+      <form id="askForm">
+        <label class="sr-only" for="username">Benutzername</label>
+        <input class="sr-only" id="username" type="text" value="pilot" autocomplete="username" tabindex="-1" aria-hidden="true">
+        <label class="ask-label" id="ask-title" for="q">Deine klinische Frage</label>
+        <textarea id="q" required minlength="10" maxlength="2000" placeholder="z. B. Kortikosteroid-Gabe und Medikamenten-Timing rund um das Lösen der Aortenklemme: aktuelle Evidenz, was ist Standard, wo ist die Kontroverse?"></textarea>
+        <div class="ask-controls">
+          <div class="password-wrap">
+            <label class="sr-only" for="pw">Passwort</label>
+            <input id="pw" type="password" placeholder="Pilot-Passwort" autocomplete="current-password">
+            <button class="toggle-password" id="togglePassword" type="button" aria-label="Passwort anzeigen" title="Passwort anzeigen">•••</button>
+          </div>
+          <button class="primary" id="go" type="submit">Dossier erstellen <span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="key-hint"><strong>30 bis 90 Sekunden</strong> pro Lauf. Suche, Bewertung und Synthese laufen nacheinander.</p>
+      </form>
     </div>
-    <div class="hint">Ein Lauf dauert etwa 30 bis 90 Sekunden (Suche, Bewertung, Synthese).</div>
-  </div>
 
-  <div class="status" id="status"><div class="spin"></div><span id="statusText">Suche läuft…</span></div>
-  <div class="err" id="err"></div>
+    <div class="status" id="status" role="status" aria-live="polite" aria-atomic="true">
+      <div class="status-head">
+        <span class="ring" aria-hidden="true"></span>
+        <span class="status-title" id="statusTitle">Suche in Europe PMC</span>
+        <span class="status-time" id="statusTime">0:00</span>
+      </div>
+      <p class="status-note">Die Recherche läuft. Du kannst dieses Fenster offen lassen.</p>
+      <ol class="steps" aria-label="Fortschritt">
+        <li id="step0" class="active">Suche in Europe PMC</li>
+        <li id="step1">Studien werden bewertet</li>
+        <li id="step2">Volltexte werden geladen</li>
+        <li id="step3">Dossier wird geschrieben</li>
+      </ol>
+    </div>
 
-  <div class="out" id="out"></div>
+    <div class="error" id="err" role="alert"></div>
+  </section>
 
-  <div class="disclaimer" id="disc" style="display:none">
-    Kein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.
-  </div>
+  <section class="result" id="result" aria-labelledby="result-title">
+    <div class="result-intro">
+      <h2 id="result-title">Dein Dossier</h2>
+      <span>vollständige Ausgabe</span>
+    </div>
+    <article class="dossier" id="out"></article>
+    <div class="disclaimer">Kein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.</div>
+    <button class="new-question" id="newQuestion" type="button">Neue Frage stellen</button>
+  </section>
 
-  <footer>Kustos · privates Pilot-Werkzeug · nicht öffentlich teilen</footer>
-</div>
+  <footer>
+    <strong>Kustos · Praxis-Check</strong> · privates Pilot-Werkzeug · nicht öffentlich teilen.
+    <br>Kein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.
+  </footer>
+</main>
 
 <script>
 (function(){
   const $ = id => document.getElementById(id);
-  const q=$("q"), pw=$("pw"), go=$("go"), status=$("status"), statusText=$("statusText"),
-        err=$("err"), out=$("out"), disc=$("disc");
+  const form=$("askForm"), q=$("q"), pw=$("pw"), go=$("go"), status=$("status"),
+        statusTitle=$("statusTitle"), statusTime=$("statusTime"), err=$("err"),
+        result=$("result"), out=$("out"), newQuestion=$("newQuestion"),
+        togglePassword=$("togglePassword");
+  const phases = [
+    "Suche in Europe PMC",
+    "Studien werden bewertet",
+    "Volltexte werden geladen",
+    "Dossier wird geschrieben"
+  ];
+  let phaseTimer=null, clockTimer=null, startedAt=0;
 
-  // Remember the password for this browser only (pilot convenience, not security).
+  const srStyle = document.createElement("style");
+  srStyle.textContent = ".sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}";
+  document.head.appendChild(srStyle);
+
   try{ pw.value = localStorage.getItem("kustos_pw") || ""; }catch(e){}
 
-  const MSGS = ["Suche in Europe PMC…","Studien werden bewertet…",
-    "Volltexte werden geladen…","Dossier wird geschrieben…","Fast fertig…"];
-  let timer=null;
-  function startStatus(){
-    let i=0; statusText.textContent=MSGS[0]; status.classList.add("on");
-    timer=setInterval(()=>{ i=(i+1)%MSGS.length; statusText.textContent=MSGS[i]; }, 6000);
-  }
-  function stopStatus(){ clearInterval(timer); status.classList.remove("on"); }
+  togglePassword.addEventListener("click", function(){
+    const showing = pw.type === "text";
+    pw.type = showing ? "password" : "text";
+    togglePassword.textContent = showing ? "•••" : "◉";
+    togglePassword.setAttribute("aria-label", showing ? "Passwort anzeigen" : "Passwort verbergen");
+    togglePassword.title = showing ? "Passwort anzeigen" : "Passwort verbergen";
+  });
 
-  // Minimal markdown -> HTML for the dossier shape (headings, bold, lists, links).
-  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
-  function inline(s){
-    s = esc(s);
-    s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
-    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-    s = s.replace(/(https?:\/\/[^\s)]+)(?![^<]*>)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
-    return s;
+  function formatTime(seconds){
+    const mins = Math.floor(seconds / 60);
+    return mins + ":" + String(seconds % 60).padStart(2, "0");
   }
-  function render(md){
-    const lines = md.replace(/\r/g,"").split("\n");
-    let html="", list=null;
-    const closeList=()=>{ if(list){ html+= (list==="ol"?"</ol>":"</ul>"); list=null; } };
-    for(let raw of lines){
+  function updatePhase(index){
+    statusTitle.textContent = phases[index];
+    phases.forEach((_, i) => {
+      const step = $("step" + i);
+      step.classList.toggle("active", i === index);
+      if(i < index) step.classList.add("done");
+      else step.classList.remove("done");
+    });
+  }
+  function startStatus(){
+    startedAt = Date.now();
+    updatePhase(0);
+    status.classList.add("on");
+    statusTime.textContent = "0:00";
+    let phase = 0;
+    phaseTimer = setInterval(function(){
+      phase = Math.min(phase + 1, phases.length - 1);
+      updatePhase(phase);
+    }, 7000);
+    clockTimer = setInterval(function(){
+      statusTime.textContent = formatTime(Math.floor((Date.now() - startedAt) / 1000));
+    }, 1000);
+  }
+  function stopStatus(){
+    clearInterval(phaseTimer);
+    clearInterval(clockTimer);
+    phaseTimer = null;
+    clockTimer = null;
+    status.classList.remove("on");
+  }
+
+  function esc(value){
+    return String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+  function safeUrl(value){
+    return /^https?:\/\//i.test(value) ? value : "";
+  }
+  function inline(value){
+    let text = esc(value);
+    const tokens = [];
+    const token = html => {
+      const key = "\u0000" + tokens.length + "\u0000";
+      tokens.push(html);
+      return key;
+    };
+    text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/gi, function(_, label, url){
+      const safe = safeUrl(url);
+      return safe ? token('<a href="' + safe + '" target="_blank" rel="noopener noreferrer">' + label + "</a>") : label;
+    });
+    text = text.replace(/&lt;(https?:\/\/[^&]+)&gt;/gi, function(_, url){
+      const safe = safeUrl(url);
+      return safe ? token('<a href="' + safe + '" target="_blank" rel="noopener noreferrer">' + url + "</a>") : url;
+    });
+    text = text.replace(/`([^`]+)`/g, function(_, code){ return token("<code>" + code + "</code>"); });
+    text = text.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    text = text.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    text = text.replace(/(^|[\s(])((?:https?:\/\/)[^\s<)]+)/gi, function(_, prefix, url){
+      const punctuation = /[.,;:!?]$/.test(url) ? url.slice(-1) : "";
+      const clean = punctuation ? url.slice(0, -1) : url;
+      const safe = safeUrl(clean);
+      return prefix + (safe ? token('<a href="' + safe + '" target="_blank" rel="noopener noreferrer">' + clean + "</a>") : url) + punctuation;
+    });
+    return text.replace(/\u0000(\d+)\u0000/g, (_, index) => tokens[Number(index)]);
+  }
+  function renderMarkdown(markdown){
+    const lines = String(markdown || "").replace(/\r/g,"").split("\n");
+    let html = "", list = null, lastListItem = false;
+    const closeList = () => {
+      if(list){ html += list === "ol" ? "</ol>" : "</ul>"; list = null; }
+      lastListItem = false;
+    };
+    for(const raw of lines){
       const line = raw.replace(/\s+$/,"");
       if(!line.trim()){ closeList(); continue; }
-      let m;
-      if((m=line.match(/^#\s+(.*)/))){ closeList(); html+="<h1>"+inline(m[1])+"</h1>"; continue; }
-      if((m=line.match(/^##\s+(.*)/))){ closeList(); html+="<h2>"+inline(m[1])+"</h2>"; continue; }
-      if((m=line.match(/^###\s+(.*)/))){ closeList(); html+="<h3>"+inline(m[1])+"</h3>"; continue; }
-      if((m=line.match(/^\s*\d+\.\s+(.*)/))){ if(list!=="ol"){closeList();html+="<ol>";list="ol";} html+="<li>"+inline(m[1])+"</li>"; continue; }
-      if((m=line.match(/^\s*[-*]\s+(.*)/))){ if(list!=="ul"){closeList();html+="<ul>";list="ul";} html+="<li>"+inline(m[1])+"</li>"; continue; }
-      if(list){ // continuation line of a source entry -> append to last item
-        // Function replacement so a "$" in the text is not read as a backref.
-        html = html.replace(/<\/li>$/, () => "<br>"+inline(line.trim())+"</li>"); continue;
+      let match;
+      if(/^[-*_]{3,}\s*$/.test(line)){ closeList(); html += "<hr>"; continue; }
+      if((match=line.match(/^###\s+(.*)/))){ closeList(); html += "<h3>" + inline(match[1]) + "</h3>"; continue; }
+      if((match=line.match(/^##\s+(.*)/))){
+        closeList();
+        const sourceClass = /quellen/i.test(match[1]) ? ' class="source-heading"' : "";
+        html += "<h2" + sourceClass + ">" + inline(match[1]) + "</h2>";
+        continue;
       }
-      html+="<p>"+inline(line.trim())+"</p>";
+      if((match=line.match(/^#\s+(.*)/))){ closeList(); html += "<h1>" + inline(match[1]) + "</h1>"; continue; }
+      if((match=line.match(/^\s*(\d+)[.)]\s+(.*)/))){
+        if(list !== "ol"){ closeList(); html += "<ol>"; list = "ol"; }
+        html += "<li>" + inline(match[2]) + "</li>"; lastListItem = true; continue;
+      }
+      if((match=line.match(/^\s*[-*+]\s+(.*)/))){
+        if(list !== "ul"){ closeList(); html += "<ul>"; list = "ul"; }
+        html += "<li>" + inline(match[1]) + "</li>"; lastListItem = true; continue;
+      }
+      if((match=line.match(/^\s*>\s?(.*)/))){
+        closeList(); html += "<blockquote>" + inline(match[1]) + "</blockquote>"; continue;
+      }
+      if(list && lastListItem){
+        html = html.replace(/<\/li>$/, function(close){ return "<br>" + inline(line.trim()) + close; });
+        continue;
+      }
+      closeList();
+      html += "<p>" + inline(line.trim()) + "</p>";
     }
     closeList();
     return html;
   }
-
-  async function ask(){
-    const question=q.value.trim();
-    if(question.length<10){ showErr("Bitte eine ausführlichere Frage stellen."); return; }
+  function showError(message){
+    err.textContent = message;
+    err.classList.add("on");
+  }
+  async function ask(event){
+    event.preventDefault();
+    const question = q.value.trim();
+    if(question.length < 10){ showError("Bitte eine ausführlichere Frage stellen."); q.focus(); return; }
     try{ localStorage.setItem("kustos_pw", pw.value); }catch(e){}
-    err.classList.remove("on"); out.classList.remove("on"); disc.style.display="none";
-    go.disabled=true; startStatus();
+    err.classList.remove("on");
+    result.classList.remove("on");
+    newQuestion.style.display = "none";
+    go.disabled = true;
+    go.setAttribute("aria-busy", "true");
+    startStatus();
     try{
-      const r = await fetch("/praxis", {method:"POST", headers:{"Content-Type":"application/json"},
-        body: JSON.stringify({question, password: pw.value})});
-      const data = await r.json().catch(()=>({}));
-      if(!r.ok){ showErr(data.detail || ("Fehler "+r.status)); return; }
-      out.innerHTML = render(data.dossier || "");
-      out.classList.add("on"); disc.style.display="block";
-      out.scrollIntoView({behavior:"smooth", block:"start"});
-    }catch(e){
-      showErr("Netzwerkfehler. Bitte erneut versuchen.");
+      const response = await fetch("/praxis", {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({question, password:pw.value})
+      });
+      const data = await response.json().catch(() => ({}));
+      if(!response.ok){
+        showError(data.detail || ("Fehler " + response.status));
+        return;
+      }
+      // The backend owns the dossier. Render its complete markdown response as-is.
+      out.innerHTML = renderMarkdown(data.dossier || "");
+      const sourceHeading = out.querySelector(".source-heading");
+      if(sourceHeading && sourceHeading.nextElementSibling){
+        let sibling = sourceHeading.nextElementSibling;
+        while(sibling && (sibling.tagName === "OL" || sibling.tagName === "UL")){
+          sibling.classList.add("source-list");
+          sibling = sibling.nextElementSibling;
+        }
+      }
+      result.classList.add("on");
+      newQuestion.style.display = "block";
+      result.scrollIntoView({behavior:"smooth", block:"start"});
+    }catch(error){
+      showError("Netzwerkfehler. Bitte erneut versuchen.");
     }finally{
-      go.disabled=false; stopStatus();
+      go.disabled = false;
+      go.removeAttribute("aria-busy");
+      stopStatus();
     }
   }
-  function showErr(msg){ err.textContent=msg; err.classList.add("on"); }
-
-  go.addEventListener("click", ask);
-  q.addEventListener("keydown", e=>{ if((e.metaKey||e.ctrlKey)&&e.key==="Enter") ask(); });
+  form.addEventListener("submit", ask);
+  newQuestion.addEventListener("click", function(){
+    result.classList.remove("on");
+    newQuestion.style.display = "none";
+    q.focus();
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
 })();
 </script>
 </body>

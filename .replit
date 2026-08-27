@@ -1,0 +1,31 @@
+modules = ["python-3.11"]
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Kustos Praxis-Check"
+
+[[workflows.workflow]]
+name = "Kustos Praxis-Check"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "uvicorn app:app --app-dir web --host 0.0.0.0 --port 5000"
+waitForPort = 5000
+
+[nix]
+channel = "stable-25_05"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
