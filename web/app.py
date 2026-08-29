@@ -16,7 +16,8 @@ Run locally (from the repo root):
 
 API:
   GET  /         -> the chat page (web/index.html)
-  POST /praxis   -> { question, password } -> { dossier, queries, count }
+  POST /praxis   -> { question, password }
+                 -> { dossier, queries, count, citations }
 """
 from __future__ import annotations
 
@@ -106,4 +107,5 @@ def praxis(ask: Ask) -> dict:
 
     return {"dossier": result.dossier,
             "queries": result.queries,
-            "count": len(result.selected)}
+            "count": len(result.selected),
+            "citations": pc.citation_view(result.selected)}

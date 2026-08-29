@@ -30,12 +30,50 @@ mode to avoid. Producing the dossier must mean *running the backend code*.
 
 - `GET  /`        serves the chat page (`web/index.html`)
 - `POST /praxis`  body `{ "question": "...", "password": "..." }`
-  returns `{ "dossier": "<markdown>", "queries": [...], "count": N }`
+  returns `{ "dossier": "<markdown>", "queries": [...], "count": N, "citations": [...] }`
 
 `/praxis` calls `praxis_check.build_dossier(...)`, the exact pipeline the CLI uses.
 Keep that call. You may redesign the page freely (Replit design system welcome),
 but the page must POST to `/praxis` and **render the returned `dossier` markdown in
 full**, including its `## Quellen` and the footer. Do not summarize or trim it.
+
+### `citations`: the payload for tappable references
+
+`citations` is one object per paper in the dossier's source list, in the same
+order as `## Quellen`, so it can back tappable inline citations or a reference
+list without any extra parsing on your side. Every field is set by the Python
+pipeline (evidence tier, study type, provenance), never by the model, so
+**render what is here, do not compute your own Stufe or study-type label**.
+
+Example object:
+
+```json
+{
+  "pmid": "35786218",
+  "title": "Does methylprednisolone provide protective effect ...",
+  "journal": "Perfusion",
+  "year": 2022,
+  "study_type": "Beobachtungsstudie",
+  "stufe": 3,
+  "doi": "10.1177/02676591221113650",
+  "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35786218",
+  "oa_url": null,
+  "full_text": false,
+  "snippet": "first ~240 chars of abstract, for a tap-to-preview card"
+}
+```
+
+- `stufe` is 1 (strongest) to 3 (weakest); `study_type` is the plain-language
+  name for the same tier (`"Meta-Analyse"`, `"Systematic Review"`, `"RCT"`,
+  `"Beobachtungsstudie"`, `"Leitlinie"`, `"Review"`, `"Case Report"`,
+  `"Editorial"`, or the fallback `"Studie"`). They are derived from the same
+  publication-type data, so they never disagree.
+- `doi` and `oa_url` can be `null`; only render a link when the field is set.
+  `full_text` is `true` only when the pipeline actually pulled a full-text
+  excerpt (PMC open access), not just when `oa_url` is present.
+- The dossier markdown still carries inline `(PMID 12345678)` anchors; match
+  those against `citations[].pmid` to build a tap target. Do not invent a
+  citation for a PMID that is not in this array.
 
 ## Interaction reference: OpenEvidence
 

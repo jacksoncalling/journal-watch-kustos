@@ -471,6 +471,44 @@ def scan_dose_directives(body: str) -> None:
               file=sys.stderr)
 
 
+SNIPPET_CHARS = 240  # tap-to-preview card length, plain truncation of the abstract
+
+
+def citation_view(selected: list[dict]) -> list[dict]:
+    """One JSON-serializable object per selected paper, for the web API's
+    `citations` field (Work package A, A2). Drawn ONLY from fields the pipeline
+    already set (rank.evidence_level via `stufe`, A1's study_type_label,
+    enrich_top's `oaUrl`/`fullTextExcerpt`); fetches nothing new. Same
+    provenance guarantee as `assemble_quellen`: stufe, study_type and full_text
+    are set here in code, never by the model."""
+    out = []
+    for c in selected:
+        pmid = c.get("pmid")
+        year = None
+        d = c.get("date") or ""
+        m = re.match(r"^(\d{4})", d)
+        if m:
+            year = int(m.group(1))
+        abstract = (c.get("abstract") or "").strip()
+        snippet = abstract[:SNIPPET_CHARS].rstrip()
+        if len(abstract) > SNIPPET_CHARS:
+            snippet += "…"
+        out.append({
+            "pmid": pmid,
+            "title": c.get("title"),
+            "journal": c.get("journal"),
+            "year": year,
+            "study_type": rank.study_type_label(c.get("pubTypes", [])),
+            "stufe": c.get("stufe"),
+            "doi": c.get("doi"),
+            "pubmed_url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}" if pmid else None,
+            "oa_url": c.get("oaUrl"),
+            "full_text": bool(c.get("fullTextExcerpt")),
+            "snippet": snippet,
+        })
+    return out
+
+
 def assemble_quellen(selected: list[dict]) -> str:
     lines = ["## Quellen", ""]
     for i, c in enumerate(selected, 1):

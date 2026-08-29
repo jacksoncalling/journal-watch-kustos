@@ -53,6 +53,38 @@ def evidence_level(pub_types: list[str]) -> int:
     return 3
 
 
+def study_type_label(pub_types: list[str]) -> str:
+    """Map Europe PMC pubTypes to a short, human-facing study-type name.
+
+    Reuses the exact same substring checks as `evidence_level` (same `has()`
+    logic, same pub-type strings), so the label and the Stufe are always
+    derived from the same facts and can never disagree: Stufe is the tier,
+    this is the plain name for it.
+    """
+    types = [p.lower() for p in (pub_types or [])]
+
+    def has(*subs: str) -> bool:
+        return any(any(sub in t for sub in subs) for t in types)
+
+    if has("meta-analysis"):
+        return "Meta-Analyse"
+    if has("systematic review"):
+        return "Systematic Review"
+    if has("randomized controlled trial", "randomised controlled trial"):
+        return "RCT"
+    if has("observational study", "cohort"):
+        return "Beobachtungsstudie"
+    if has("guideline"):
+        return "Leitlinie"
+    if has("review"):
+        return "Review"
+    if has("case report"):
+        return "Case Report"
+    if has("editorial"):
+        return "Editorial"
+    return "Studie"
+
+
 EVIDENCE_WEIGHT = {1: 3, 2: 2, 3: 1}
 
 
