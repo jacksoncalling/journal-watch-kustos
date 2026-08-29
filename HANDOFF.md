@@ -4,7 +4,48 @@ Status snapshot for picking this up in a fresh session. The spec is
 `~/step-into-more/projects/journal-watch/build-plan.md` (HQ). This file is the
 "where we actually are" and "what's left" companion that lives with the code.
 
-## Update 2026-08-27 (read this first, supersedes older items below)
+## Update 2026-08-30 (read this first, supersedes older items below)
+
+Ran a three-tool head-to-head (OpenEvidence, Heidi, Kustos) on a clinician's own
+Aortenbogen case and turned the read into a **Fields of Inquiry** map + plan
+(`05_praxis-check/fields-of-inquiry-map.html`,
+`05_praxis-check/PLAN-fields-of-inquiry.md`). Key reframe: what she loved (inline
+tappable citations, study type at a glance) is data Kustos **already computes and
+hides**; the "missing American journals" worry is **false** (`SRC:MED` is MEDLINE,
+the US-run index). So the cheap wins are presentation, not new retrieval.
+
+Two backend packages built, reviewed, and committed this session (nothing pushed;
+frontend waits on Replit tokens, back 2026-09-01):
+
+- **WP-A, citations contract (commit `13633a9`).** `rank.study_type_label()` (human
+  study-type name from the same pub-type facts as the Stufe, so they never
+  disagree), `praxis_check.citation_view()` (JSON-serializable per-paper objects
+  built only from already-computed fields, nothing fetched), and `POST /praxis` now
+  also returns `citations[]`. `dossier`/`queries`/`count` unchanged, so the CLI and
+  Telegram are untouched. Contract documented in `web/REPLIT_BRIEF.md`.
+- **WP-B, streaming + parallel enrich (commit `0d3e2d2`).** `build_dossier` refactored
+  into a generator `dossier_stages()` that both paths drain, so nothing forks the
+  guardrails. New `POST /praxis/stream` emits SSE (`searching`, `found`, `synthesis`,
+  `done` | `error`) with the same auth/length gate run synchronously up front (real
+  401/400/429). **Stage-streaming, not token-streaming**: the provider call blocks on
+  the `refusal` stop_reason check, so `synthesis` arrives as one chunk; the early
+  `searching`/`found` events carry the perceived speedup. `enrich_top()` now runs its
+  independent Unpaywall + full-text round-trips in a ThreadPoolExecutor,
+  allSettled-shaped (one paper's miss never sinks the batch), order/fields/counts
+  unchanged.
+
+Reviewed clean (0 critical/high; 4 low, the only one fixed was a stale comment).
+`POST /praxis` is byte-compatible; benchmark and weekly scripts untouched.
+
+**What's next (this initiative).** Frontend lane on Replit: **A4** (render inline
+PMIDs as tap targets + study-type badges from `citations[]`) and **B3** (progressive
+render against the SSE contract), both spec'd in `web/REPLIT_BRIEF.md` +
+`PLAN-fields-of-inquiry.md`. Then the genuine-research backlog: **F4** (guidelines /
+currency, sequence AFTER the `PLAN-evidence-quality.md` cited-only fix or leaks
+worsen) and **F5** (format-fit by question shape). Guardrail for the frontend: render
+`stufe`/`study_type`/links as-is, never recompute client-side.
+
+## Update 2026-08-27 (superseded by 2026-08-30 above for the Praxis-Check web work)
 
 Since the 2026-08-23 snapshot the Praxis-Check retrieval gained a **deterministic
 gate layer**, the **planner was pinned**, a **cost guard** was added, and the
@@ -169,6 +210,11 @@ Two review items were NOT applied, deliberately:
   current `main` (verified, pinned, gated), then set Secrets + a Reserved VM.
 - **Per-user quota:** today's cap is global; per-user fairness needs the web
   layer's user identity.
+- **Evidence-quality fixes** from the Amboss vs Kustos test (2026-08-27):
+  `05_praxis-check/PLAN-evidence-quality.md`. Order: strip phantom PMIDs ->
+  cited-only Quellen -> Kernbefund evidence-weighting (validate) -> length ->
+  off-context leaks (defer). Web deploy on Replit is DONE (backend synced to
+  `main` + Replit UI redesign merged, verified live).
 
 ## Cost note
 
