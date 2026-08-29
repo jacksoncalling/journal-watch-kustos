@@ -75,6 +75,61 @@ Example object:
   those against `citations[].pmid` to build a tap target. Do not invent a
   citation for a PMID that is not in this array.
 
+## Streaming: `POST /praxis/stream` (Work package B, F1)
+
+The 90 second wait cannot be tuned down (it is a deep 200-paper search + per-paper
+enrich + one real synthesis call, and shortening any of those is the freshness and
+provenance we are selling, see PLAN-fields-of-inquiry.md). So instead of tuning the
+wait, this endpoint makes it **feel** fast: it emits progress as each pipeline stage
+lands, using the exact same guarded pipeline as `/praxis` (same `build_dossier`
+internals, so nothing in the safety layer is duplicated or skipped).
+
+Request body is identical to `/praxis`: `{ "question": "...", "password": "..." }`.
+Auth and length validation happen synchronously before the stream opens, so a bad
+password or too-short question still returns a normal `401`/`400`/`503`/`429`, not
+an SSE error. Once the stream has started, a real HTTP status is no longer possible
+(the response already committed to `200` and `text/event-stream`), so a mid-run
+failure (the rare daily-cap race, no candidates found, provider error) arrives as
+an `error` event carrying the status it would have been.
+
+Response is `text/event-stream`. Each event is one SSE block:
+
+```
+event: <name>
+data: <json>
+
+```
+
+Events, in order:
+
+1. **`searching`** as soon as the search query is resolved (LLM-planned or
+   explicit): `{ "queries": ["..."] }`
+2. **`found`** once ranking + enrich (OA links, full-text) finish, same
+   `citations[]` shape as `/praxis`: `{ "count": N, "citations": [ {A2 objects} ] }`
+3. **`synthesis`** once the one synthesis call returns. This is the raw model
+   prose only (no `## Quellen`, no `Verwendete Suchanfrage`, no footer, those are
+   code-appended after): `{ "text": "..." }`. **Not token-by-token**: the
+   provider call blocks on `get_final_message()` so it can check the Anthropic
+   `refusal` stop_reason and try the fallback provider before any text is
+   trusted, so this arrives as one chunk. Show it the moment it lands rather
+   than waiting for `done`.
+4. **`done`** the finished dossier, same shape as the whole `/praxis` response
+   so you can treat it as the authoritative final state:
+   `{ "dossier": "...", "queries": [...], "count": N, "citations": [...] }`
+
+Error path, instead of `4`:
+
+- **`error`**: `{ "status": 401 | 422 | 429 | 500, "detail": "..." }`. Render
+  `detail` the same way you would a failed `/praxis` call; `status` mirrors what
+  the non-streaming endpoint would have returned for the same failure.
+
+Recommended render: show the queries the moment `searching` arrives, render the
+citation cards from `found` (same tap-to-preview cards as the non-streaming path,
+A4), then swap in the `synthesis` prose, then replace everything with `done`'s
+`dossier` once it lands (it is byte-identical prose plus the code-appended
+Quellen/Suchanfrage/footer). Keep the existing `/praxis` call as a fallback if a
+host's proxy does not support SSE cleanly; both hit the identical pipeline.
+
 ## Interaction reference: OpenEvidence
 
 The visual target is `web/journey-sketch.html` (open it in a browser): the user
