@@ -47,7 +47,12 @@ result: offsub 0/20, 0 phantom, 0 dose-directives, controversy present on all 7;
 tier mix now reads as honest thin-vs-thick evidence rather than false breadth.
 **Retrieval uses NO embeddings/vector store by design** (boolean Europe PMC +
 deterministic scoring + string/MeSH matching; only the query planner and
-synthesis are LLM calls). Full stage contract: `05_praxis-check/CONTEXT.md`.
+synthesis are LLM calls). Framed in Ontology-Pipeline terms (Talisman), this is a
+deterministic **semantic layer** (controlled vocabulary + MeSH domain-gating +
+structured scoring) sitting between the raw boolean retrieval and the single
+synthesis call; it **consumes MeSH as the medical thesaurus rather than building a
+knowledge graph**, and is the reusable core for future ICM apps. Full stage
+contract: `05_praxis-check/CONTEXT.md`.
 Gaps and history: `HANDOFF.md`. `04_feedback` still lacks a `CONTEXT.md`.
 
 **Known issues.** (1) **Planner nondeterminism** is now the main ceiling: the
