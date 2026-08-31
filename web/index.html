@@ -117,6 +117,12 @@
   .dossier a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;
     text-underline-offset:2px;word-break:break-word;}
   .dossier a:hover{color:var(--accent-deep);}
+  .pmid-citation{display:inline;padding:0;border:0;background:none;color:var(--link);
+    font:inherit;font-weight:700;text-decoration:underline;text-decoration-style:dotted;
+    text-decoration-thickness:1px;text-underline-offset:3px;cursor:pointer;}
+  .pmid-citation:hover{color:var(--accent-deep);}
+  .pmid-citation:focus-visible,.source-inspect:focus-visible,.citation-close:focus-visible{
+    outline:3px solid color-mix(in srgb,var(--accent) 34%,transparent);outline-offset:2px;}
   .dossier code{background:var(--surface-soft);border:1px solid var(--line);border-radius:5px;
     padding:.08em .35em;font: .82em/1.4 var(--mono);}
   .dossier blockquote{border-left:2px solid var(--accent);margin:1em 0;padding:2px 0 2px 14px;color:var(--muted);}
@@ -125,6 +131,45 @@
   .dossier .source-list a{font-weight:600;}
   .dossier .source-list li{margin:.52em 0;}
   .dossier .source-list code{font-size:.76em;}
+  .source-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:5px;
+    font-family:var(--body);font-size:.72rem;line-height:1.35;}
+  .citation-badge{display:inline-flex;align-items:center;min-height:23px;padding:2px 7px;
+    border:1px solid var(--line);border-radius:999px;background:var(--surface);
+    color:var(--muted);font-weight:700;white-space:nowrap;}
+  .citation-badge.study{color:var(--accent-deep);}
+  .citation-badge.tier{color:var(--tension);}
+  .citation-badge.full{color:var(--accent-deep);}
+  .citation-badge.abstract{color:var(--muted);}
+  .source-inspect{min-height:28px;border:1px solid var(--accent);border-radius:7px;
+    background:transparent;color:var(--accent-deep);padding:3px 8px;font-size:.72rem;
+    font-weight:700;cursor:pointer;}
+  .source-inspect:hover{background:var(--surface);}
+  .citation-preview[hidden]{display:none;}
+  .citation-preview{position:fixed;z-index:20;inset:0;display:grid;place-items:center;
+    padding:16px;background:rgba(16,28,24,.48);}
+  .citation-dialog{position:relative;width:min(100%,540px);max-height:min(82vh,680px);overflow:auto;
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    padding:22px 20px 20px;box-shadow:0 24px 70px rgba(0,0,0,.24);}
+  .citation-dialog h2{font-family:var(--display);font-size:1.35rem;line-height:1.2;
+    font-weight:600;margin:0 42px 5px 0;}
+  .citation-kicker{margin:0 0 14px;color:var(--muted);font: .68rem/1.4 var(--mono);
+    letter-spacing:.08em;text-transform:uppercase;}
+  .citation-close{position:absolute;right:13px;top:12px;width:35px;height:35px;border:0;
+    border-radius:8px;background:transparent;color:var(--muted);font-size:1.35rem;
+    line-height:1;cursor:pointer;}
+  .citation-close:hover{background:var(--surface-soft);color:var(--ink);}
+  .citation-title{font-weight:700;line-height:1.4;margin:0 0 9px;}
+  .citation-journal{color:var(--muted);font-size:.82rem;margin:0 0 12px;}
+  .citation-dialog .source-meta{margin:0 0 14px;}
+  .citation-snippet{border-left:2px solid var(--accent);margin:13px 0;padding:2px 0 2px 12px;
+    color:var(--muted);font-size:.86rem;line-height:1.55;}
+  .citation-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px;padding-top:14px;
+    border-top:1px solid var(--line);}
+  .citation-links a{display:inline-flex;align-items:center;min-height:34px;padding:5px 10px;
+    border:1px solid var(--line);border-radius:8px;background:var(--surface-soft);
+    color:var(--accent-deep);font-size:.78rem;font-weight:700;text-decoration:none;}
+  .citation-links a:hover{border-color:var(--accent);background:var(--surface);}
+  body.citation-open{overflow:hidden;}
   .disclaimer{margin:18px 0 0;padding:12px 13px;background:var(--warn-bg);border-radius:10px;
     color:var(--warn-ink);font-size:.78rem;line-height:1.5;}
   .new-question{display:none;margin:18px 0 0;width:100%;border:1px solid var(--line);border-radius:10px;
@@ -146,10 +191,15 @@
     .ring{animation:none}
     .primary{transition:none}
   }
+  @media (max-width:619px){
+    .citation-preview{align-items:end;padding:0;}
+    .citation-dialog{width:100%;max-height:89vh;border-radius:17px 17px 0 0;
+      padding:21px 16px 18px;}
+  }
 </style>
 </head>
 <body>
-<main class="shell">
+<main class="shell" id="appShell">
   <nav class="topbar" aria-label="Kustos">
     <a class="brand" href="/" aria-label="Kustos Startseite">
       <span class="brand-mark" aria-hidden="true">K</span>
@@ -218,13 +268,26 @@
   </footer>
 </main>
 
+<div class="citation-preview" id="citationPreview" hidden>
+  <div class="citation-dialog" role="dialog" aria-modal="true"
+       aria-labelledby="citationPreviewTitle" tabindex="-1">
+    <button class="citation-close" id="citationClose" type="button"
+            aria-label="Quellenansicht schließen">×</button>
+    <p class="citation-kicker">Quelle prüfen</p>
+    <h2 id="citationPreviewTitle">Publikation</h2>
+    <div id="citationPreviewBody"></div>
+  </div>
+</div>
+
 <script>
 (function(){
   const $ = id => document.getElementById(id);
-  const form=$("askForm"), q=$("q"), pw=$("pw"), go=$("go"), status=$("status"),
+  const appShell=$("appShell"), form=$("askForm"), q=$("q"), pw=$("pw"), go=$("go"), status=$("status"),
         statusTitle=$("statusTitle"), statusTime=$("statusTime"), err=$("err"),
         result=$("result"), out=$("out"), newQuestion=$("newQuestion"),
-        togglePassword=$("togglePassword");
+        togglePassword=$("togglePassword"), citationPreview=$("citationPreview"),
+        citationPreviewTitle=$("citationPreviewTitle"),
+        citationPreviewBody=$("citationPreviewBody"), citationClose=$("citationClose");
   const phases = [
     "Suche in Europe PMC",
     "Studien werden bewertet",
@@ -232,6 +295,8 @@
     "Dossier wird geschrieben"
   ];
   let phaseTimer=null, clockTimer=null, startedAt=0;
+  const citations = new Map();
+  let citationTrigger = null;
 
   const srStyle = document.createElement("style");
   srStyle.textContent = ".sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}";
@@ -289,6 +354,22 @@
   function safeUrl(value){
     return /^https?:\/\//i.test(value) ? value : "";
   }
+  function setCitations(items){
+    citations.clear();
+    if(!Array.isArray(items)) return;
+    items.forEach(function(item){
+      if(!item || item.pmid === null || item.pmid === undefined) return;
+      const pmid = String(item.pmid).trim();
+      if(/^\d+$/.test(pmid)) citations.set(pmid, item);
+    });
+  }
+  function citationButton(pmid){
+    const citation = citations.get(pmid);
+    if(!citation) return "PMID " + esc(pmid);
+    return '<button class="pmid-citation" type="button" data-pmid="' + esc(pmid)
+      + '" aria-haspopup="dialog" aria-label="Quelle PMID ' + esc(pmid)
+      + ' anzeigen">PMID ' + esc(pmid) + "</button>";
+  }
   function inline(value){
     let text = esc(value);
     const tokens = [];
@@ -297,6 +378,12 @@
       tokens.push(html);
       return key;
     };
+    text = text.replace(/\bPMID\s+(\d+(?:\s*,\s*\d+)*)/gi, function(_, group){
+      return group.split(/\s*,\s*/).map(pmid => {
+        const rendered = citationButton(pmid);
+        return rendered.indexOf("<button") === 0 ? token(rendered) : rendered;
+      }).join(", ");
+    });
     text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/gi, function(_, label, url){
       const safe = safeUrl(url);
       return safe ? token('<a href="' + safe + '" target="_blank" rel="noopener noreferrer">' + label + "</a>") : label;
@@ -357,6 +444,116 @@
     closeList();
     return html;
   }
+  function appendBadge(parent, text, className){
+    if(text === null || text === undefined || text === "") return;
+    const badge = document.createElement("span");
+    badge.className = "citation-badge" + (className ? " " + className : "");
+    badge.textContent = text;
+    parent.appendChild(badge);
+  }
+  function appendCitationBadges(parent, citation){
+    if(citation.study_type) appendBadge(parent, citation.study_type, "study");
+    if(citation.stufe !== null && citation.stufe !== undefined){
+      appendBadge(parent, "Stufe " + String(citation.stufe), "tier");
+    }
+    if(typeof citation.full_text === "boolean"){
+      appendBadge(parent, citation.full_text ? "Volltext" : "Nur Abstract",
+        citation.full_text ? "full" : "abstract");
+    }
+    if(citation.provenance) appendBadge(parent, String(citation.provenance), "");
+  }
+  function appendCitationLink(parent, label, url){
+    const safe = safeUrl(url);
+    if(!safe) return;
+    const link = document.createElement("a");
+    link.href = safe;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = label;
+    parent.appendChild(link);
+  }
+  function doiUrl(citation){
+    if(!citation.doi) return "";
+    return safeUrl("https://doi.org/" + encodeURI(String(citation.doi))) ||
+      "";
+  }
+  function renderCitationPreview(citation){
+    citationPreviewTitle.textContent = citation.pmid ? "PMID " + String(citation.pmid) : "Publikation";
+    citationPreviewBody.replaceChildren();
+
+    const title = document.createElement("p");
+    title.className = "citation-title";
+    title.textContent = citation.title || "Titel nicht angegeben";
+    citationPreviewBody.appendChild(title);
+
+    const journalBits = [];
+    if(citation.journal) journalBits.push(String(citation.journal));
+    if(citation.year !== null && citation.year !== undefined && citation.year !== ""){
+      journalBits.push(String(citation.year));
+    }
+    if(journalBits.length){
+      const journal = document.createElement("p");
+      journal.className = "citation-journal";
+      journal.textContent = journalBits.join(" · ");
+      citationPreviewBody.appendChild(journal);
+    }
+
+    const badges = document.createElement("div");
+    badges.className = "source-meta";
+    appendCitationBadges(badges, citation);
+    citationPreviewBody.appendChild(badges);
+
+    if(citation.snippet){
+      const snippet = document.createElement("p");
+      snippet.className = "citation-snippet";
+      snippet.textContent = citation.snippet;
+      citationPreviewBody.appendChild(snippet);
+    }
+
+    const links = document.createElement("div");
+    links.className = "citation-links";
+    appendCitationLink(links, "PubMed ↗", citation.pubmed_url);
+    appendCitationLink(links, "DOI ↗", doiUrl(citation));
+    appendCitationLink(links, "Open Access ↗", citation.oa_url);
+    if(links.children.length) citationPreviewBody.appendChild(links);
+  }
+  function openCitation(pmid, trigger){
+    const citation = citations.get(pmid);
+    if(!citation) return;
+    citationTrigger = trigger || null;
+    renderCitationPreview(citation);
+    citationPreview.hidden = false;
+    appShell.setAttribute("inert", "");
+    appShell.setAttribute("aria-hidden", "true");
+    document.body.classList.add("citation-open");
+    citationClose.focus();
+  }
+  function closeCitation(){
+    citationPreview.hidden = true;
+    appShell.removeAttribute("inert");
+    appShell.removeAttribute("aria-hidden");
+    document.body.classList.remove("citation-open");
+    if(citationTrigger && document.contains(citationTrigger)) citationTrigger.focus();
+    citationTrigger = null;
+  }
+  function enhanceSourceLists(){
+    out.querySelectorAll(".source-list li").forEach(function(item){
+      const matches = Array.from(item.textContent.matchAll(/\bPMID\s+(\d+)/gi));
+      const citation = matches.length ? citations.get(matches[0][1]) : null;
+      if(!citation) return;
+      const meta = document.createElement("div");
+      meta.className = "source-meta";
+      appendCitationBadges(meta, citation);
+      const inspect = document.createElement("button");
+      inspect.className = "source-inspect";
+      inspect.type = "button";
+      inspect.textContent = "Quelle prüfen";
+      inspect.setAttribute("aria-haspopup", "dialog");
+      inspect.addEventListener("click", function(){ openCitation(String(citation.pmid), inspect); });
+      meta.appendChild(inspect);
+      item.appendChild(meta);
+    });
+  }
   function showError(message){
     err.textContent = message;
     err.classList.add("on");
@@ -384,6 +581,7 @@
         return;
       }
       // The backend owns the dossier. Render its complete markdown response as-is.
+      setCitations(data.citations);
       out.innerHTML = renderMarkdown(data.dossier || "");
       const sourceHeading = out.querySelector(".source-heading");
       if(sourceHeading && sourceHeading.nextElementSibling){
@@ -400,6 +598,7 @@
           sibling = sibling.nextElementSibling;
         }
       }
+      enhanceSourceLists();
       result.classList.add("on");
       newQuestion.style.display = "block";
       result.scrollIntoView({behavior:"smooth", block:"start"});
@@ -411,6 +610,35 @@
       stopStatus();
     }
   }
+  out.addEventListener("click", function(event){
+    const button = event.target.closest(".pmid-citation");
+    if(button) openCitation(button.getAttribute("data-pmid"), button);
+  });
+  citationClose.addEventListener("click", closeCitation);
+  citationPreview.addEventListener("click", function(event){
+    if(event.target === citationPreview) closeCitation();
+  });
+  document.addEventListener("keydown", function(event){
+    if(event.key === "Escape" && !citationPreview.hidden) closeCitation();
+    if(event.key === "Tab" && !citationPreview.hidden){
+      const focusable = Array.from(citationPreview.querySelectorAll(
+        'button:not([disabled]),a[href],input:not([disabled]),[tabindex]:not([tabindex="-1"])'
+      ));
+      if(!focusable.length){
+        event.preventDefault();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if(event.shiftKey && document.activeElement === first){
+        event.preventDefault();
+        last.focus();
+      }else if(!event.shiftKey && document.activeElement === last){
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
   form.addEventListener("submit", ask);
   newQuestion.addEventListener("click", function(){
     result.classList.remove("on");
