@@ -1,1 +1,2 @@
 - [GitHub connector push limits](github-connector-push.md) — large file writes may be blocked by the connector gateway; use the workspace Git UI/native Git auth for source pushes.
+- [Post-merge hooks on Nix Python](post-merge-hooks.md) — install Python dependencies into project-local .pythonlibs; system pip targets immutable /nix/store.
