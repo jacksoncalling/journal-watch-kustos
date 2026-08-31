@@ -240,7 +240,7 @@
         <span class="status-title" id="statusTitle">Suche in Europe PMC</span>
         <span class="status-time" id="statusTime">0:00</span>
       </div>
-      <p class="status-note">Die Recherche läuft. Du kannst dieses Fenster offen lassen.</p>
+      <p class="status-note" id="statusNote">Die Recherche läuft. Du kannst dieses Fenster offen lassen.</p>
       <ol class="steps" aria-label="Fortschritt">
         <li id="step0" class="active">Suche in Europe PMC</li>
         <li id="step1">Studien werden bewertet</li>
@@ -283,18 +283,12 @@
 (function(){
   const $ = id => document.getElementById(id);
   const appShell=$("appShell"), form=$("askForm"), q=$("q"), pw=$("pw"), go=$("go"), status=$("status"),
-        statusTitle=$("statusTitle"), statusTime=$("statusTime"), err=$("err"),
+         statusTitle=$("statusTitle"), statusNote=$("statusNote"), statusTime=$("statusTime"), err=$("err"),
         result=$("result"), out=$("out"), newQuestion=$("newQuestion"),
         togglePassword=$("togglePassword"), citationPreview=$("citationPreview"),
         citationPreviewTitle=$("citationPreviewTitle"),
         citationPreviewBody=$("citationPreviewBody"), citationClose=$("citationClose");
-  const phases = [
-    "Suche in Europe PMC",
-    "Studien werden bewertet",
-    "Volltexte werden geladen",
-    "Dossier wird geschrieben"
-  ];
-  let phaseTimer=null, clockTimer=null, startedAt=0;
+  let clockTimer=null, startedAt=0;
   const citations = new Map();
   let citationTrigger = null;
 
@@ -316,33 +310,27 @@
     const mins = Math.floor(seconds / 60);
     return mins + ":" + String(seconds % 60).padStart(2, "0");
   }
-  function updatePhase(index){
-    statusTitle.textContent = phases[index];
-    phases.forEach((_, i) => {
+  function updateProgress(index, title, note){
+    statusTitle.textContent = title;
+    if(note) statusNote.textContent = note;
+    for(let i = 0; i < 4; i++){
       const step = $("step" + i);
       step.classList.toggle("active", i === index);
       if(i < index) step.classList.add("done");
       else step.classList.remove("done");
-    });
+    }
   }
   function startStatus(){
     startedAt = Date.now();
-    updatePhase(0);
+    updateProgress(0, "Recherche wird vorbereitet", "Die Recherche läuft. Du kannst dieses Fenster offen lassen.");
     status.classList.add("on");
     statusTime.textContent = "0:00";
-    let phase = 0;
-    phaseTimer = setInterval(function(){
-      phase = Math.min(phase + 1, phases.length - 1);
-      updatePhase(phase);
-    }, 7000);
     clockTimer = setInterval(function(){
       statusTime.textContent = formatTime(Math.floor((Date.now() - startedAt) / 1000));
     }, 1000);
   }
   function stopStatus(){
-    clearInterval(phaseTimer);
     clearInterval(clockTimer);
-    phaseTimer = null;
     clockTimer = null;
     status.classList.remove("on");
   }
@@ -558,6 +546,88 @@
     err.textContent = message;
     err.classList.add("on");
   }
+  function responseError(statusCode, detail){
+    const fallback = {
+      400: "Bitte überprüfe deine Frage und versuche es erneut.",
+      401: "Das Passwort ist nicht korrekt.",
+      429: "Das Tageslimit ist erreicht. Bitte morgen erneut versuchen.",
+      503: "Die App ist momentan nicht vollständig konfiguriert."
+    };
+    return detail || fallback[statusCode] || ("Fehler " + statusCode);
+  }
+  function parseSse(response, onEvent){
+    if(!response.body) throw new Error("SSE wird von diesem Browser nicht unterstützt.");
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let eventName = "";
+    let dataLines = [];
+
+    function dispatch(){
+      if(!dataLines.length) return;
+      const name = eventName || "message";
+      const raw = dataLines.join("\n");
+      eventName = "";
+      dataLines = [];
+      let data;
+      try{
+        data = JSON.parse(raw);
+      }catch(error){
+        throw new Error("Ungültige Antwort aus der Recherche.");
+      }
+      onEvent(name, data);
+    }
+    function line(line){
+      if(line === ""){ dispatch(); return; }
+      if(line.charAt(0) === ":") return;
+      const separator = line.indexOf(":");
+      const field = separator === -1 ? line : line.slice(0, separator);
+      const value = separator === -1 ? "" : line.slice(separator + 1).replace(/^ /, "");
+      if(field === "event") eventName = value;
+      else if(field === "data") dataLines.push(value);
+    }
+    return (async function(){
+      try{
+        while(true){
+          const chunk = await reader.read();
+          if(chunk.done) break;
+          buffer += decoder.decode(chunk.value, {stream:true});
+          const lines = buffer.split(/\r?\n/);
+          buffer = lines.pop();
+          lines.forEach(line);
+        }
+        buffer += decoder.decode();
+        if(buffer) line(buffer);
+        dispatch();
+      }catch(error){
+        await reader.cancel().catch(() => {});
+        throw error;
+      }
+    })();
+  }
+  function renderDossier(data){
+    setCitations(data.citations);
+    out.innerHTML = renderMarkdown(data.dossier || "");
+    const sourceHeading = out.querySelector(".source-heading");
+    if(sourceHeading && sourceHeading.nextElementSibling){
+      let sibling = sourceHeading.nextElementSibling;
+      let sourceNumber = 1;
+      while(sibling && (sibling.tagName === "OL" || sibling.tagName === "UL")){
+        sibling.classList.add("source-list");
+        if(sibling.tagName === "OL"){
+          sibling.setAttribute("start", String(sourceNumber));
+          const itemCount = Array.from(sibling.children)
+            .filter(child => child.tagName === "LI").length;
+          sourceNumber += itemCount || 1;
+        }
+        sibling = sibling.nextElementSibling;
+      }
+    }
+    enhanceSourceLists();
+    result.classList.add("on");
+    newQuestion.style.display = "block";
+    result.scrollIntoView({behavior:"smooth", block:"start"});
+  }
   async function ask(event){
     event.preventDefault();
     const question = q.value.trim();
@@ -570,40 +640,43 @@
     go.setAttribute("aria-busy", "true");
     startStatus();
     try{
-      const response = await fetch("/praxis", {
+      const response = await fetch("/praxis/stream", {
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({question, password:pw.value})
       });
-      const data = await response.json().catch(() => ({}));
       if(!response.ok){
-        showError(data.detail || ("Fehler " + response.status));
+        const data = await response.json().catch(() => ({}));
+        showError(responseError(response.status, data.detail));
         return;
       }
-      // The backend owns the dossier. Render its complete markdown response as-is.
-      setCitations(data.citations);
-      out.innerHTML = renderMarkdown(data.dossier || "");
-      const sourceHeading = out.querySelector(".source-heading");
-      if(sourceHeading && sourceHeading.nextElementSibling){
-        let sibling = sourceHeading.nextElementSibling;
-        let sourceNumber = 1;
-        while(sibling && (sibling.tagName === "OL" || sibling.tagName === "UL")){
-          sibling.classList.add("source-list");
-          if(sibling.tagName === "OL"){
-            sibling.setAttribute("start", String(sourceNumber));
-            const itemCount = Array.from(sibling.children)
-              .filter(child => child.tagName === "LI").length;
-            sourceNumber += itemCount || 1;
-          }
-          sibling = sibling.nextElementSibling;
+      let completed = false;
+      await parseSse(response, function(eventName, data){
+        if(eventName === "searching"){
+          const queries = Array.isArray(data.queries) ? data.queries : [];
+          const queryNote = queries.length
+            ? "Suchanfrage geklärt. " + queries.length + " Suchanfragen laufen in Europe PMC."
+            : "Die Suchanfrage läuft in Europe PMC.";
+          updateProgress(0, "Suche in Europe PMC", queryNote);
+        }else if(eventName === "found"){
+          const count = Number.isFinite(Number(data.count)) ? Number(data.count) : 0;
+          updateProgress(3, count + " " + (count === 1 ? "Quelle" : "Quellen") + " gefunden",
+            "Belege bewertet und Volltexte geprüft. Die Synthese wird geschrieben.");
+        }else if(eventName === "synthesis"){
+          updateProgress(3, "Dossier wird geschrieben",
+            "Die Evidenz ist ausgewertet. Das vollständige Dossier wird zusammengestellt.");
+        }else if(eventName === "done"){
+          completed = true;
+          renderDossier(data);
+        }else if(eventName === "error"){
+          throw new Error(responseError(data.status, data.detail));
         }
-      }
-      enhanceSourceLists();
-      result.classList.add("on");
-      newQuestion.style.display = "block";
-      result.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+      if(!completed) throw new Error("Die Recherche wurde unerwartet unterbrochen. Bitte erneut versuchen.");
     }catch(error){
-      showError("Netzwerkfehler. Bitte erneut versuchen.");
+      showError(error && error.message
+        ? error.message
+        : "Netzwerkfehler. Bitte erneut versuchen.");
     }finally{
       go.disabled = false;
       go.removeAttribute("aria-busy");
