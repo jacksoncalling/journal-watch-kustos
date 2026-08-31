@@ -26,6 +26,7 @@ claims, so every provenance guarantee (Stufe + links set in code) is untouched.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import re
 import sys
@@ -398,31 +399,56 @@ def rank_all(cands: list[dict], profile_text: str,
     return ranked
 
 
+ENRICH_MAX_WORKERS = 8   # parallel network round trips (B2). Two independent
+                          # services (Unpaywall, EBI full text), so a modest
+                          # worker cap speeds the batch without hammering either.
+
+
+def _oa_lookup(c: dict, email: str, ua: str) -> str | None:
+    try:
+        return enrich.unpaywall_oa_url(c["doi"], email, ua)
+    except Exception as e:
+        print(f"  unpaywall error {c['doi']}: {e}", file=sys.stderr)
+        return None
+
+
+def _fulltext_lookup(c: dict, ua: str) -> str | None:
+    try:
+        return enrich.fulltext_excerpt(c["pmcid"], ua)
+    except Exception as e:
+        print(f"  fulltext error {c['pmcid']}: {e}", file=sys.stderr)
+        return None
+
+
 def enrich_top(selected: list[dict], ua: str, email: str) -> None:
     """OA link + full-text excerpt for the selected papers only (in place). The
-    corpus is large, so enrich AFTER ranking, not before."""
+    corpus is large, so enrich AFTER ranking, not before.
+
+    The per-paper round trips are independent network calls (Unpaywall for the
+    OA link, EBI for the full-text excerpt), so they run in a ThreadPoolExecutor
+    instead of one at a time. Python analogue of Promise.allSettled, never
+    Promise.all: `_oa_lookup`/`_fulltext_lookup` already catch their own
+    exceptions and return None on a miss, so one paper's 404/timeout/not-OA
+    never sinks the batch, same as the previous serial loop. `selected` keeps
+    its order (mutated in place by object, not by completion order); the
+    summary counts and their wording are unchanged."""
+    oa_jobs = [c for c in selected if c.get("doi") and not c.get("oaUrl")]
+    ft_jobs = [c for c in selected if c.get("pmcid") and not c.get("fullTextExcerpt")]
+
     oa = ft = 0
-    for c in selected:
-        if c.get("doi") and not c.get("oaUrl"):
-            try:
-                u = enrich.unpaywall_oa_url(c["doi"], email, ua)
-            except Exception as e:
-                print(f"  unpaywall error {c['doi']}: {e}", file=sys.stderr)
-                u = None
+    with concurrent.futures.ThreadPoolExecutor(max_workers=ENRICH_MAX_WORKERS) as ex:
+        oa_futures = {ex.submit(_oa_lookup, c, email, ua): c for c in oa_jobs}
+        ft_futures = {ex.submit(_fulltext_lookup, c, ua): c for c in ft_jobs}
+        for fut in concurrent.futures.as_completed(oa_futures):
+            u = fut.result()
             if u:
-                c["oaUrl"] = u
+                oa_futures[fut]["oaUrl"] = u
                 oa += 1
-            time.sleep(0.2)
-        if c.get("pmcid") and not c.get("fullTextExcerpt"):
-            try:
-                x = enrich.fulltext_excerpt(c["pmcid"], ua)
-            except Exception as e:
-                print(f"  fulltext error {c['pmcid']}: {e}", file=sys.stderr)
-                x = None
+        for fut in concurrent.futures.as_completed(ft_futures):
+            x = fut.result()
             if x:
-                c["fullTextExcerpt"] = x
+                ft_futures[fut]["fullTextExcerpt"] = x
                 ft += 1
-            time.sleep(0.2)
     print(f"  enriched top {len(selected)}: +{oa} OA links, +{ft} full-text")
 
 
@@ -469,6 +495,44 @@ def scan_dose_directives(body: str) -> None:
         print(f"  WARN: {n} prescriptive dosing/selection phrase(s) in the dossier "
               f"body (possible dose-as-advice breach); review before sending",
               file=sys.stderr)
+
+
+SNIPPET_CHARS = 240  # tap-to-preview card length, plain truncation of the abstract
+
+
+def citation_view(selected: list[dict]) -> list[dict]:
+    """One JSON-serializable object per selected paper, for the web API's
+    `citations` field (Work package A, A2). Drawn ONLY from fields the pipeline
+    already set (rank.evidence_level via `stufe`, A1's study_type_label,
+    enrich_top's `oaUrl`/`fullTextExcerpt`); fetches nothing new. Same
+    provenance guarantee as `assemble_quellen`: stufe, study_type and full_text
+    are set here in code, never by the model."""
+    out = []
+    for c in selected:
+        pmid = c.get("pmid")
+        year = None
+        d = c.get("date") or ""
+        m = re.match(r"^(\d{4})", d)
+        if m:
+            year = int(m.group(1))
+        abstract = (c.get("abstract") or "").strip()
+        snippet = abstract[:SNIPPET_CHARS].rstrip()
+        if len(abstract) > SNIPPET_CHARS:
+            snippet += "…"
+        out.append({
+            "pmid": pmid,
+            "title": c.get("title"),
+            "journal": c.get("journal"),
+            "year": year,
+            "study_type": rank.study_type_label(c.get("pubTypes", [])),
+            "stufe": c.get("stufe"),
+            "doi": c.get("doi"),
+            "pubmed_url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}" if pmid else None,
+            "oa_url": c.get("oaUrl"),
+            "full_text": bool(c.get("fullTextExcerpt")),
+            "snippet": snippet,
+        })
+    return out
 
 
 def assemble_quellen(selected: list[dict]) -> str:
@@ -552,11 +616,6 @@ def send_dossier(path: Path) -> int:
 
 
 # --------------------------------------------------------------------------- #
-# callable core: question dict in -> dossier out. Shared by the CLI and the web
-# app, so the guardrails (finalize, code-built Quellen, citation validation)
-# live in exactly one place and every interface goes through them.
-# --------------------------------------------------------------------------- #
-# --------------------------------------------------------------------------- #
 # daily usage cap: a file-based ledger (like seen.json) so a runaway loop or a
 # few eager testers cannot run the API bill up without bound. Global per day,
 # enforced in build_dossier so the CLI and the web app share one guard. The
@@ -595,6 +654,11 @@ def record_dossier() -> None:
     USAGE.write_text(json.dumps(u), encoding="utf-8")
 
 
+# --------------------------------------------------------------------------- #
+# callable core: question dict in -> dossier out. Shared by the CLI and the web
+# app, so the guardrails (finalize, code-built Quellen, citation validation)
+# live in exactly one place and every interface goes through them.
+# --------------------------------------------------------------------------- #
 @dataclass
 class DossierResult:
     dossier: str
@@ -602,12 +666,24 @@ class DossierResult:
     selected: list[dict]
 
 
-def build_dossier(q: dict, *, profile_text: str | None = None,
-                  enforce_limit: bool = True) -> DossierResult:
-    """The whole pipeline for one question, returning the finished dossier
-    markdown. Writes nothing and sends nothing; callers decide what to do with
-    the result. Raises PraxisError on a hard failure so a web caller can turn it
-    into a clean error response instead of a traceback.
+def dossier_stages(q: dict, *, profile_text: str | None = None,
+                   enforce_limit: bool = True):
+    """Generator over the guarded pipeline: resolve queries, fetch, filter,
+    rank, enrich, synthesize, finalize. `build_dossier` below just drains this
+    generator; the web app's streaming endpoint (Work package B1) iterates it
+    directly to emit progress as each stage lands. One implementation, two
+    consumers, so nothing forks the guardrails (finalize, citation validation,
+    dose-directive scan, the daily cap) that live here.
+
+    Yields `(stage, payload)` tuples, in order:
+      ("queries",  {"queries": [...]})                      resolved search queries
+      ("selected", {"selected": [...], "count": N})          post rank + enrich
+      ("synthesis", {"text": "..."})                         raw model prose, pre-finalize
+      ("done", {"dossier": "...", "queries": [...], "selected": [...]})
+
+    Raises `PraxisError` (or `DailyLimitError`) on a hard failure, same as
+    `build_dossier` always has; a caller draining the generator sees the
+    exception at the point in the pipeline where it happened.
 
     `enforce_limit` gates the run on a global daily cap (`max_dossiers_per_day`
     in profile.md, default 50) so a loop or eager testers cannot run the bill up.
@@ -625,6 +701,7 @@ def build_dossier(q: dict, *, profile_text: str | None = None,
     queries = resolve_queries(q, cfg)
     for query in queries:
         print(f"  -> {query}")
+    yield ("queries", {"queries": queries})
 
     print("\n=== fetch (all-time) ===")
     cands = run_search(queries, ua)
@@ -662,6 +739,7 @@ def build_dossier(q: dict, *, profile_text: str | None = None,
 
     print("\n=== enrich (top N) ===")
     enrich_top(selected, ua, contact)
+    yield ("selected", {"selected": selected, "count": len(selected)})
 
     print("\n=== synthesize (one LLM call) ===")
     body = synthesize_dossier(q, selected, cfg, profile_text)
@@ -670,9 +748,32 @@ def build_dossier(q: dict, *, profile_text: str | None = None,
                           "or refusals)")
     validate_citations(body, selected)
     scan_dose_directives(body)
+    yield ("synthesis", {"text": body})
+
     dossier = finalize(body, queries, selected, q)
     if enforce_limit:
         record_dossier()      # count only on success, after synthesis spend
+    yield ("done", {"dossier": dossier, "queries": queries, "selected": selected})
+
+
+def build_dossier(q: dict, *, profile_text: str | None = None,
+                  enforce_limit: bool = True) -> DossierResult:
+    """The whole pipeline for one question, returning the finished dossier
+    markdown. Writes nothing and sends nothing; callers decide what to do with
+    the result. Raises PraxisError on a hard failure so a web caller can turn it
+    into a clean error response instead of a traceback.
+
+    Drains `dossier_stages` (see above) to a single result; this is the
+    non-streaming shape the CLI, the benchmark harness, and `POST /praxis` all
+    still use unchanged."""
+    dossier = queries = selected = None
+    for stage, payload in dossier_stages(q, profile_text=profile_text,
+                                         enforce_limit=enforce_limit):
+        if stage == "queries":
+            queries = payload["queries"]
+        elif stage == "done":
+            dossier = payload["dossier"]
+            selected = payload["selected"]
     return DossierResult(dossier=dossier, queries=queries, selected=selected)
 
 

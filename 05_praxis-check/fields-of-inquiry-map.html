@@ -1,0 +1,328 @@
+<title>Kustos Fields of Inquiry</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  /* ---- Tokens: light (bare :root) ---- */
+  :root{
+    --paper:#f3f4f6;
+    --surface:#ffffff;
+    --surface-2:#eceef1;
+    --ink:#171e2b;
+    --ink-soft:#48515f;
+    --ink-faint:#79828f;
+    --rule:#dbe0e6;
+    --rule-strong:#c3cad3;
+    --accent:#0f6e72;        /* petrol: evidence, clinical, not corporate blue */
+    --accent-ink:#0a4d50;
+    --accent-wash:#e2eeee;
+    --good:#2f7a54;          /* cheap / ship now */
+    --good-wash:#e2efe7;
+    --care:#a9701a;          /* careful / research */
+    --care-wash:#f3e9d6;
+    --strat:#6a4a8c;         /* strategic decision */
+    --strat-wash:#ece3f2;
+    --shadow:0 1px 2px rgba(23,30,43,.05),0 6px 18px rgba(23,30,43,.06);
+    --maxw:1120px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#10141b;
+      --surface:#171d26;
+      --surface-2:#1e2530;
+      --ink:#e9edf2;
+      --ink-soft:#aab3c0;
+      --ink-faint:#79828f;
+      --rule:#28313d;
+      --rule-strong:#37424f;
+      --accent:#4fb4b6;
+      --accent-ink:#7fcccd;
+      --accent-wash:#173033;
+      --good:#5bb583;
+      --good-wash:#16281f;
+      --care:#d1a355;
+      --care-wash:#2b2314;
+      --strat:#b294d1;
+      --strat-wash:#241c30;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#10141b;
+    --surface:#171d26;
+    --surface-2:#1e2530;
+    --ink:#e9edf2;
+    --ink-soft:#aab3c0;
+    --ink-faint:#79828f;
+    --rule:#28313d;
+    --rule-strong:#37424f;
+    --accent:#4fb4b6;
+    --accent-ink:#7fcccd;
+    --accent-wash:#173033;
+    --good:#5bb583;
+    --good-wash:#16281f;
+    --care:#d1a355;
+    --care-wash:#2b2314;
+    --strat:#b294d1;
+    --strat-wash:#241c30;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(1.2rem,4vw,3rem) clamp(1.1rem,4vw,2.4rem) 4rem}
+
+  /* ---- Header ---- */
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent-ink);font-weight:600;margin:0 0 .9rem;
+  }
+  h1{
+    font-family:Georgia,"Iowan Old Style",Cambria,serif;
+    font-weight:600;font-size:clamp(1.9rem,5vw,3rem);line-height:1.08;
+    letter-spacing:-.01em;text-wrap:balance;margin:0 0 .6rem;
+  }
+  h1 em{font-style:italic;color:var(--accent-ink)}
+  .lede{
+    font-size:clamp(1.02rem,2.2vw,1.2rem);color:var(--ink-soft);
+    max-width:62ch;margin:0;
+  }
+  .meta{
+    margin-top:1.4rem;padding-top:1rem;border-top:1px solid var(--rule);
+    display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;
+    font-size:.82rem;color:var(--ink-faint);
+  }
+  .meta b{color:var(--ink-soft);font-weight:600}
+
+  /* ---- Myth-bust ---- */
+  .mythbust{
+    margin:2.2rem 0 2.6rem;background:var(--surface);border:1px solid var(--rule);
+    border-left:3px solid var(--accent);border-radius:10px;padding:1.3rem 1.5rem;
+    box-shadow:var(--shadow);
+  }
+  .mythbust h2{
+    font-family:Georgia,serif;font-size:1.18rem;font-weight:600;margin:0 0 .5rem;
+  }
+  .mythbust p{margin:.4rem 0;color:var(--ink-soft);font-size:.95rem;max-width:74ch}
+  .mythbust .strike{color:var(--ink-faint);text-decoration:line-through;text-decoration-thickness:1px}
+  .mythbust .true{color:var(--ink);font-weight:600}
+  .cite{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:.82em;background:var(--surface-2);border:1px solid var(--rule);
+    border-radius:5px;padding:.05em .38em;color:var(--accent-ink);
+  }
+
+  .sec-label{
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;margin:0 0 1rem;
+    display:flex;align-items:center;gap:.7rem;
+  }
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+  /* ---- Field grid ---- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem}
+  .card{
+    background:var(--surface);border:1px solid var(--rule);border-radius:12px;
+    padding:1.25rem 1.35rem 1.35rem;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:.7rem;
+  }
+  .card-top{display:flex;align-items:baseline;gap:.7rem}
+  .fid{
+    font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;
+    font-weight:600;color:var(--accent-ink);background:var(--accent-wash);
+    border-radius:6px;padding:.16em .5em;letter-spacing:.02em;white-space:nowrap;
+  }
+  .card h3{font-family:Georgia,serif;font-size:1.16rem;font-weight:600;margin:0;line-height:1.2}
+  .felt{
+    font-size:.88rem;color:var(--ink-soft);font-style:italic;
+    border-left:2px solid var(--rule-strong);padding-left:.7rem;margin:0;
+  }
+  .row{font-size:.9rem;margin:0}
+  .row .k{
+    font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:700;display:block;margin-bottom:.12rem;
+  }
+  .row .v{color:var(--ink)}
+  .row .v b{color:var(--accent-ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.2rem}
+  .chip{
+    font-size:.73rem;font-weight:600;border-radius:999px;padding:.2em .66em;
+    border:1px solid transparent;white-space:nowrap;
+  }
+  .chip.roi-high{background:var(--good-wash);color:var(--good);border-color:color-mix(in srgb,var(--good) 30%,transparent)}
+  .chip.roi-med{background:var(--care-wash);color:var(--care);border-color:color-mix(in srgb,var(--care) 30%,transparent)}
+  .chip.roi-strat{background:var(--strat-wash);color:var(--strat);border-color:color-mix(in srgb,var(--strat) 30%,transparent)}
+  .chip.kind{background:var(--surface-2);color:var(--ink-soft);border-color:var(--rule)}
+  .chip.risk{background:transparent;color:var(--ink-faint);border-color:var(--rule-strong)}
+
+  /* the two cards that carry most weight get a hair more presence */
+  .card.flag{border-color:color-mix(in srgb,var(--accent) 45%,var(--rule))}
+  .card.decision{border-color:color-mix(in srgb,var(--strat) 45%,var(--rule))}
+  .card.decision .fid{background:var(--strat-wash);color:var(--strat)}
+
+  /* ---- Sequence band ---- */
+  .seq{margin-top:2.8rem}
+  .seq-track{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem;
+  }
+  .step{
+    background:var(--surface);border:1px solid var(--rule);border-radius:10px;
+    padding:1rem 1.1rem;position:relative;box-shadow:var(--shadow);
+  }
+  .step .n{
+    font-family:ui-monospace,monospace;font-size:.75rem;font-weight:700;
+    color:var(--accent-ink);
+  }
+  .step h4{font-size:.98rem;margin:.35rem 0 .3rem;font-weight:650}
+  .step p{font-size:.82rem;color:var(--ink-soft);margin:0}
+  .step .tag{font-size:.7rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+
+  footer{
+    margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-size:.82rem;color:var(--ink-faint);max-width:74ch;
+  }
+  footer code{font-family:ui-monospace,monospace;font-size:.9em;color:var(--ink-soft)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .card,.mythbust,.step{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+    .mythbust{animation-delay:.04s}
+    .grid .card:nth-child(2){animation-delay:.06s}
+    .grid .card:nth-child(3){animation-delay:.1s}
+    .grid .card:nth-child(4){animation-delay:.14s}
+    .grid .card:nth-child(5){animation-delay:.18s}
+    .grid .card:nth-child(6){animation-delay:.22s}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Kustos · product research map</p>
+    <h1>The test showed a <em>presentation</em> gap, not a source gap</h1>
+    <p class="lede">A cardiac anaesthetist ran her own case question through OpenEvidence, Heidi, and the Kustos Praxis-Check. What she loved is mostly data Kustos already computes and hides. What she worried about turns out to be false. Six fields to work, ranked by what they actually cost us.</p>
+    <div class="meta">
+      <span><b>Trigger:</b> OpenEvidence / Heidi head-to-head, Aortenbogen case</span>
+      <span><b>Verdict:</b> steal the presentation, keep the epistemics</span>
+      <span><b>Owner:</b> Josh (product) + build agents</span>
+    </div>
+  </header>
+
+  <section class="mythbust">
+    <h2>Myth-bust first: the American-journals worry is backwards</h2>
+    <p><span class="strike">Kustos might be skipping US journals.</span> Kustos searches <span class="cite">SRC:MED</span>, which <span class="true">is</span> MEDLINE/PubMed, the index run by the US National Library of Medicine. It is the same corpus OpenEvidence pulls from.</p>
+    <p>Her own Kustos dossier cites <b>American Heart Journal</b>, <b>Anesthesiology</b>, <b>Anesthesia &amp; Analgesia</b>, <b>BMC Anesthesiology</b>. We are not missing American science. The real coverage gap is <b>source-type</b>, not nationality: society guidelines, review/overview pages, and very recent or ongoing work, which MEDLINE-by-citations buries. That is field F4, not a journal list.</p>
+  </section>
+
+  <p class="sec-label">Six fields of inquiry</p>
+  <div class="grid">
+
+    <article class="card flag">
+      <div class="card-top"><span class="fid">F2</span><h3>Tappable citations</h3></div>
+      <p class="felt">“The reference is right there, like a journal article. I can tap it and see the study.”</p>
+      <p class="row"><span class="k">What's actually true</span><span class="v">Kustos already cites inline as <span class="cite">(PMID …)</span>, but as dead text. Every field she wants (title, journal, year, links, abstract) is <b>already computed</b> and dumped at the bottom in <span class="cite">## Quellen</span>.</span></p>
+      <p class="row"><span class="k">The lever</span><span class="v">Expose <span class="cite">build_dossier</span>'s <span class="cite">selected[]</span> as a structured citations array in the API. Frontend turns each inline PMID into a tap target.</span></p>
+      <div class="chips">
+        <span class="chip roi-high">ROI: highest</span>
+        <span class="chip risk">Risk: low</span>
+        <span class="chip kind">Data exists · rendering</span>
+      </div>
+    </article>
+
+    <article class="card flag">
+      <div class="card-top"><span class="fid">F3</span><h3>Study-type at the claim</h3></div>
+      <p class="felt">“I want to see what kind of study it is, so I can rank it in my head.”</p>
+      <p class="row"><span class="k">What's actually true</span><span class="v">Evidence <b>Stufe 1/2/3</b> is already derived from publication type in <span class="cite">rank.py</span>. OE shows this as SR / RCT / Review badges. We hide it at the bottom.</span></p>
+      <p class="row"><span class="k">The lever</span><span class="v">Emit a human study-type label (RCT / Meta-analysis / Observational / Editorial) per citation; show it inline or on tap.</span></p>
+      <div class="chips">
+        <span class="chip roi-high">ROI: high</span>
+        <span class="chip risk">Risk: low</span>
+        <span class="chip kind">Data exists · label + rendering</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="fid">F1</span><h3>Latency, 90s vs 10s</h3></div>
+      <p class="felt">“OpenEvidence answered in ten seconds. Kustos needed ninety.”</p>
+      <p class="row"><span class="k">What's actually true</span><span class="v">OE queries a <b>pre-cached</b> corpus. Kustos retrieves <b>live</b> every time: boolean search, a 200-paper pool, per-paper enrich round-trips, one synthesis call. The slowness is the freshness.</span></p>
+      <p class="row"><span class="k">The lever</span><span class="v"><b>Stream the answer</b> (90s feels like 15), parallelize enrich, cache repeat questions. Do not trade away live/fresh to win a stopwatch.</span></p>
+      <div class="chips">
+        <span class="chip roi-high">ROI: high (perceived)</span>
+        <span class="chip risk">Risk: low</span>
+        <span class="chip kind">Backend + frontend</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="fid">F4</span><h3>Corpus completeness</h3></div>
+      <p class="felt">“Are you missing sources the others have?”</p>
+      <p class="row"><span class="k">What's actually true</span><span class="v">Not US journals. Missing <b>guidelines</b> (ACC/AHA, EACTS/ESICM), <b>reviews</b>, and <b>currency</b>. Sorting by citation count structurally buries this year's guideline under a 2010 landmark.</span></p>
+      <p class="row"><span class="k">The lever</span><span class="v">A guidelines pass and ongoing-trial surfacing (the Medal trial is exactly what she'd want flagged). Sequence <b>after</b> cited-only Quellen, or leaks get worse.</span></p>
+      <div class="chips">
+        <span class="chip roi-med">ROI: medium</span>
+        <span class="chip risk">Risk: medium (leaks)</span>
+        <span class="chip kind">New research · backend</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="fid">F5</span><h3>Format-fit by question shape</h3></div>
+      <p class="felt">“A bit too much text.”</p>
+      <p class="row"><span class="k">What's actually true</span><span class="v">Her two questions mixed a <b>lookup</b> (which drug, what dose, OE's table wins) with an <b>evidence map</b> (where the field disagrees, Kustos wins). One format can't serve both.</span></p>
+      <p class="row"><span class="k">The lever</span><span class="v">Detect question shape, match the format. Partly scoped already in <span class="cite">PLAN-evidence-quality.md</span> #3.</span></p>
+      <div class="chips">
+        <span class="chip roi-med">ROI: medium</span>
+        <span class="chip risk">Risk: low</span>
+        <span class="chip kind">Product · backend</span>
+      </div>
+    </article>
+
+    <article class="card decision">
+      <div class="card-top"><span class="fid">F6</span><h3>Identity &amp; the guardrail</h3></div>
+      <p class="felt">“I liked how directly OpenEvidence gave the dose.”</p>
+      <p class="row"><span class="k">What's actually true</span><span class="v">OE named a specific mg/kg dose. Kustos <b>refuses dose-as-advice by design</b> (its regulatory boundary). Kustos's wedge is the opposite of OE: <b>controversy-first, full provenance, her journals, weekly push</b>.</span></p>
+      <p class="row"><span class="k">The call</span><span class="v">Steal OE's <b>presentation</b> (F1–F3). Keep Kustos's <b>epistemics</b>. Do not chase a funded product on speed and consensus-answers you deliberately won't give.</span></p>
+      <div class="chips">
+        <span class="chip roi-strat">Strategic decision</span>
+        <span class="chip risk">Risk: existential if ignored</span>
+        <span class="chip kind">Founder call · governs all</span>
+      </div>
+    </article>
+
+  </div>
+
+  <section class="seq">
+    <p class="sec-label">Recommended sequence</p>
+    <div class="seq-track">
+      <div class="step">
+        <span class="n">01</span>
+        <h4>Ship what we already compute</h4>
+        <p>F2 + F3 + streaming. Answers everything she loved. Rendering, not research.</p>
+        <span class="tag">Cheap · this sprint</span>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <h4>Evidence-quality fixes</h4>
+        <p>The existing plan: strip phantom PMIDs, cited-only Quellen, Kernbefund weighting.</p>
+        <span class="tag">Already planned</span>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <h4>Corpus + format</h4>
+        <p>F4 guidelines/currency (carefully, fights leaks) alongside F5 format-fit.</p>
+        <span class="tag">Real research</span>
+      </div>
+      <div class="step">
+        <span class="n">·</span>
+        <h4>F6 governs all of it</h4>
+        <p>Every choice above keeps the controversy-first, provenance-first identity intact.</p>
+        <span class="tag">Standing constraint</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Companion build plan: <code>05_praxis-check/PLAN-fields-of-inquiry.md</code>. Backend and API-seam work lands in this repo (<code>scripts/</code>, <code>web/app.py</code>); the rendering of tappable citations and badges is Replit frontend work against the citations contract the plan defines. Source of the read: the three-tool head-to-head on the Aortenbogen case, 2026-08-30.
+  </footer>
+</div>

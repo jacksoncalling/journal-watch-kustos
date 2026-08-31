@@ -30,7 +30,11 @@ Judgment is used exactly once, in synthesis. Everything around it is determinist
 
 ## Regulatory boundary
 
-This is a personal tool for one clinician, not a product placed on the market. If it ever became an offering to a hospital, it would enter exactly the EU AI Act high-risk category, clinical decision support, that made OpenEvidence leave Europe. That step would need a deliberate decision and the institution's data protection officer. It is out of scope here.
+Two EU regimes apply to medical software, and the older one bites first. Under the Medical Device Regulation (MDR, Regulation (EU) 2017/745), software is a medical device when its intended purpose is medical, and what decides that is the purpose the maker declares, not the code underneath. The AI Act (Regulation (EU) 2024/1689) then stacks on top: a system only reaches the high-risk category once it is already a device that needs a notified body under the MDR. So the MDR is the real threshold, and the AI Act rides on it.
+
+Kustos is built to sit below that threshold, on the bibliographic side of a line the guidance draws clearly (MDCG 2019-11). Retrieving and citing the literature on a topic is a library function and not a device. Answering a question about the patient in front of the clinician is decision support and is a device. Kustos only ever does the first. It answers questions about the literature, never about a patient. It summarizes what the evidence says instead of recommending what to do. It takes no patient data. The intended purpose is deliberately narrow: bibliographic retrieval and evidence summary, not clinical decision support.
+
+It is also a personal tool for one clinician, not a product placed on the market. If it ever became an offering to a hospital, or if its framing shifted from "what does the literature say" toward "what should I do for this patient," it would cross into the device world and the high-risk AI category that made OpenEvidence leave Europe. That step would need a deliberate decision, a regulatory and notified-body path, and the institution's data protection officer. It is out of scope here. None of this is legal advice.
 
 ## Not medical advice
 
