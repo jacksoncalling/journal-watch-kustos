@@ -145,6 +145,26 @@ Mobile-first. One prominent question box, submit, then a clean cited answer.
   `## Wo die Literatur uneins ist`, `## Offene Fragen`, `## Quellen`). Render the
   sources as tappable links.
 
+### Pilot chat history and follow-ups
+
+The web UI keeps a private conversation history in the individual browser. This
+is deliberately client-side for the shared-password pilot: there are no user
+accounts, no central chat store, and no possibility for one tester to browse
+another tester's history.
+
+- Save the displayed question and the authoritative final `/praxis/stream`
+  payload for each turn, including its dossier, queries, count, and citations.
+- Never save the shared password, API keys, or other credentials in a chat
+  record. The password may remain in page memory for the current visit only.
+- Restored chats must preserve each turn's own `citations[]` lookup so equal
+  PMIDs in different dossiers cannot attach to the wrong preview.
+- Follow-ups remain new Praxis-Checks through the same protected streaming
+  endpoint. Supply a bounded excerpt of prior completed turns as question
+  context, but keep the request body exactly `{question, password}` and do not
+  alter the Python research pipeline.
+- On mobile, history is an accessible drawer; on desktop, it is a persistent
+  left sidebar. Interrupted and failed turns remain understandable on restore.
+
 ## Run it
 
 ```bash

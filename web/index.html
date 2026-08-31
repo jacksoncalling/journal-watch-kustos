@@ -34,8 +34,44 @@
     font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
   }
   button,input,textarea{font:inherit}
-  .shell{max-width:var(--maxw);margin:0 auto;padding:20px 16px 68px;}
+  .app-layout{min-height:100vh;display:grid;grid-template-columns:250px minmax(0,1fr);}
+  .history{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;
+    border-right:1px solid var(--line);background:var(--surface-soft);padding:22px 13px 18px;
+    overflow:hidden;}
+  .history-head{display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:0 7px 16px;border-bottom:1px solid var(--line);}
+  .history-actions{display:flex;align-items:center;gap:6px;}
+  .history-title{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;}
+  .history-new,.history-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--accent-deep);
+    min-height:34px;padding:5px 9px;font-size:.72rem;font-weight:700;cursor:pointer;}
+  .history-new:hover,.history-new:focus-visible,.history-toggle:hover,.history-toggle:focus-visible{
+    border-color:var(--accent);background:var(--surface-soft);}
+  .history-close{display:none;width:36px;height:36px;border:0;border-radius:8px;
+    background:transparent;color:var(--muted);font-size:1.3rem;line-height:1;cursor:pointer;}
+  .history-close:hover,.history-close:focus-visible{background:var(--surface);color:var(--ink);}
+  .history-list{display:flex;flex-direction:column;gap:4px;overflow:auto;padding-top:12px;}
+  .history-empty{padding:18px 8px;color:var(--muted);font-size:.78rem;line-height:1.5;}
+  .history-item{display:block;width:100%;border:1px solid transparent;border-radius:9px;
+    background:transparent;color:var(--ink);padding:10px 9px;text-align:left;cursor:pointer;}
+  .history-item:hover{background:var(--surface);border-color:var(--line);}
+  .history-item.active{background:var(--surface);border-color:color-mix(in srgb,var(--accent) 44%,var(--line));
+    box-shadow:0 5px 14px -12px rgba(22,33,31,.6);}
+  .history-item-title{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    font-size:.8rem;font-weight:650;line-height:1.35;}
+  .history-item-meta{display:flex;justify-content:space-between;gap:6px;margin-top:4px;
+    color:var(--muted);font-family:var(--mono);font-size:.62rem;line-height:1.3;}
+  .history-scrim{display:none;}
+  .history-privacy{margin-top:auto;padding:14px 8px 0;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.68rem;line-height:1.45;}
+  .storage-warning{margin:0 0 18px;padding:10px 12px;border:1px solid color-mix(in srgb,var(--tension) 36%,var(--line));
+    border-radius:10px;background:var(--warn-bg);color:var(--warn-ink);font-size:.78rem;}
+  .storage-warning[hidden]{display:none;}
+  .shell{max-width:var(--maxw);width:100%;margin:0 auto;padding:20px 16px 68px;}
   .topbar{display:flex;align-items:center;justify-content:space-between;padding:2px 0 34px;}
+  .topbar-left{display:flex;align-items:center;gap:12px;min-width:0;}
+  .history-toggle{display:none;}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
   .brand-mark{width:28px;height:28px;border:1.5px solid var(--accent);border-radius:50%;
     display:grid;place-items:center;color:var(--accent);font-family:var(--display);font-size:18px;line-height:1;}
@@ -98,6 +134,35 @@
   .error.on{display:block;}
   .result{display:none;margin-top:34px;}
   .result.on{display:block;}
+  .conversation-active .ask-section{display:none;}
+  .messages{display:grid;gap:22px;}
+  .message-pair{display:grid;gap:9px;}
+  .message-question{justify-self:end;max-width:min(86%,620px);padding:10px 13px;
+    border-radius:13px 13px 3px 13px;background:var(--surface-soft);color:var(--ink);
+    font-size:.9rem;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;}
+  .message-question-label{display:block;margin-bottom:3px;color:var(--muted);font-family:var(--mono);
+    font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;}
+  .message-answer{min-width:0;}
+  .message-answer.pending,.message-answer.failed,.message-answer.interrupted{
+    padding:14px 15px;border:1px solid var(--line);border-radius:13px;background:var(--surface);}
+  .message-state{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:.84rem;}
+  .message-state strong{color:var(--ink);}
+  .message-state .mini-ring{width:17px;height:17px;flex:0 0 auto;border:2px solid var(--line);
+    border-top-color:var(--accent);border-radius:50%;animation:spin .9s linear infinite;}
+  .message-answer.failed{border-color:color-mix(in srgb,var(--err) 35%,var(--line));color:var(--err);}
+  .message-answer.interrupted{color:var(--muted);}
+  .followup{margin-top:25px;padding:16px;border:1px solid var(--line);border-radius:14px;
+    background:var(--surface-soft);}
+  .followup-label{display:block;margin:0 0 8px;color:var(--ink);font-weight:700;font-size:.88rem;}
+  .followup-note{margin:0 0 10px;color:var(--muted);font-size:.77rem;line-height:1.45;}
+  .followup-auth{display:grid;gap:5px;margin:0 0 10px;}
+  .followup-auth[hidden]{display:none;}
+  .followup-auth label{color:var(--muted);font-size:.72rem;font-weight:700;}
+  .followup-auth input{background:var(--surface);}
+  .followup-controls{display:flex;align-items:flex-end;gap:9px;}
+  .followup textarea{min-height:68px;flex:1;background:var(--surface);}
+  .followup .primary{min-height:44px;}
+  .followup[hidden]{display:none;}
   .result-intro{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);
     padding-bottom:10px;margin-bottom:18px;}
   .result-intro h2{font-family:var(--display);font-size:1.65rem;font-weight:600;line-height:1.1;margin:0;}
@@ -192,6 +257,21 @@
     .primary{transition:none}
   }
   @media (max-width:619px){
+    .app-layout{display:block;}
+    .history{position:fixed;z-index:15;left:0;top:0;width:min(86vw,290px);height:100dvh;
+      transform:translateX(-102%);transition:transform .22s ease;box-shadow:16px 0 38px -26px rgba(0,0,0,.7);}
+    .history.open{transform:translateX(0);}
+    .history-scrim{position:fixed;z-index:14;inset:0;background:rgba(16,28,24,.42);}
+    .history-scrim.open{display:block;}
+    .history-toggle{display:inline-flex;flex:0 0 auto;}
+    .topbar{gap:10px;}
+    .topbar-left{gap:9px;}
+    .brand-tag{display:none;}
+    .history-new{min-height:36px;}
+    .history-close{display:inline-grid;place-items:center;}
+    .message-question{max-width:94%;}
+    .followup-controls{align-items:stretch;flex-direction:column;}
+    .followup .primary{width:100%;}
     .citation-preview{align-items:end;padding:0;}
     .citation-dialog{width:100%;max-height:89vh;border-radius:17px 17px 0 0;
       padding:21px 16px 18px;}
@@ -199,15 +279,37 @@
 </style>
 </head>
 <body>
+<div class="app-layout">
+<aside class="history" id="historyPanel" aria-label="Chat-Verlauf">
+  <div class="history-head">
+    <span class="history-title">Verlauf</span>
+    <div class="history-actions">
+      <button class="history-new" id="historyNew" type="button">+ Neue Frage</button>
+      <button class="history-close" id="historyClose" type="button"
+              aria-label="Verlauf schließen">×</button>
+    </div>
+  </div>
+  <div class="history-list" id="historyList" aria-live="polite">
+    <p class="history-empty" id="historyEmpty">Deine gespeicherten Fragen erscheinen hier.</p>
+  </div>
+  <p class="history-privacy">Nur in diesem Browser gespeichert. Keine Patientendaten, Passwörter oder Zugangsdaten eingeben.</p>
+</aside>
+<div class="history-scrim" id="historyScrim"></div>
+
 <main class="shell" id="appShell">
   <nav class="topbar" aria-label="Kustos">
-    <a class="brand" href="/" aria-label="Kustos Startseite">
-      <span class="brand-mark" aria-hidden="true">K</span>
-      <span class="brand-name">Kustos</span>
-      <span class="brand-tag">Praxis-Check</span>
-    </a>
+    <div class="topbar-left">
+      <button class="history-toggle" id="historyToggle" type="button"
+              aria-controls="historyPanel" aria-expanded="false">☰ Verlauf</button>
+      <a class="brand" href="/" aria-label="Kustos Startseite">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-name">Kustos</span>
+        <span class="brand-tag">Praxis-Check</span>
+      </a>
+    </div>
     <span class="pilot">privater Pilot</span>
   </nav>
+  <div class="storage-warning" id="storageWarning" role="alert" hidden></div>
 
   <section class="hero" aria-labelledby="hero-title">
     <div class="eyebrow">Aktuelle medizinische Evidenz</div>
@@ -254,10 +356,29 @@
 
   <section class="result" id="result" aria-labelledby="result-title">
     <div class="result-intro">
-      <h2 id="result-title">Dein Dossier</h2>
-      <span>vollständige Ausgabe</span>
+      <h2 id="result-title">Dein Chat</h2>
+      <span>vollständige Ausgaben</span>
     </div>
-    <article class="dossier" id="out"></article>
+    <div class="messages" id="messages"></div>
+    <div class="followup" id="followup" hidden>
+      <label class="followup-label" for="followupQuestion">Noch eine Frage zu diesem Chat?</label>
+      <p class="followup-note">Klärung, Einordnung oder ein tieferer Blick in die Evidenz.</p>
+      <form id="followupForm">
+        <label class="sr-only" for="followupUsername">Benutzername</label>
+        <input class="sr-only" id="followupUsername" type="text" value="pilot"
+               autocomplete="username" tabindex="-1" aria-hidden="true">
+        <div class="followup-auth" id="followupAuth" hidden>
+          <label for="followupPassword">Pilot-Passwort für diese Anfrage</label>
+          <input id="followupPassword" type="password" autocomplete="current-password"
+                 placeholder="Wird nicht im Chat-Verlauf gespeichert">
+        </div>
+        <div class="followup-controls">
+          <textarea id="followupQuestion" minlength="10" maxlength="1400"
+                    placeholder="z. B. Welche Ergebnisse gelten auch für ältere Patient:innen?"></textarea>
+          <button class="primary" id="followupGo" type="submit">Vertiefen <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+    </div>
     <div class="disclaimer">Kein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.</div>
     <button class="new-question" id="newQuestion" type="button">Neue Frage stellen</button>
   </section>
@@ -267,6 +388,7 @@
     <br>Kein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.
   </footer>
 </main>
+</div>
 
 <div class="citation-preview" id="citationPreview" hidden>
   <div class="citation-dialog" role="dialog" aria-modal="true"
@@ -284,19 +406,291 @@
   const $ = id => document.getElementById(id);
   const appShell=$("appShell"), form=$("askForm"), q=$("q"), pw=$("pw"), go=$("go"), status=$("status"),
          statusTitle=$("statusTitle"), statusNote=$("statusNote"), statusTime=$("statusTime"), err=$("err"),
-        result=$("result"), out=$("out"), newQuestion=$("newQuestion"),
+         result=$("result"), messages=$("messages"), followup=$("followup"),
+         followupForm=$("followupForm"), followupQuestion=$("followupQuestion"),
+         followupAuth=$("followupAuth"), followupPassword=$("followupPassword"),
+         followupGo=$("followupGo"), newQuestion=$("newQuestion"),
         togglePassword=$("togglePassword"), citationPreview=$("citationPreview"),
-        citationPreviewTitle=$("citationPreviewTitle"),
-        citationPreviewBody=$("citationPreviewBody"), citationClose=$("citationClose");
+         citationPreviewTitle=$("citationPreviewTitle"), citationPreviewBody=$("citationPreviewBody"),
+         citationClose=$("citationClose"), historyPanel=$("historyPanel"),
+         historyList=$("historyList"), historyEmpty=$("historyEmpty"),
+         historyNew=$("historyNew"), historyClose=$("historyClose"),
+         historyToggle=$("historyToggle"), historyScrim=$("historyScrim"),
+         storageWarning=$("storageWarning");
   let clockTimer=null, startedAt=0;
-  const citations = new Map();
+  const HISTORY_KEY = "kustos_conversations_v1";
+  const ACTIVE_KEY = "kustos_active_chat_v1";
+  const MAX_HISTORY = 30;
+  let conversations = [];
+  let activeConversationId = null;
+  let citationRegistry = new Map();
   let citationTrigger = null;
 
   const srStyle = document.createElement("style");
   srStyle.textContent = ".sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}";
   document.head.appendChild(srStyle);
 
-  try{ pw.value = localStorage.getItem("kustos_pw") || ""; }catch(e){}
+  try{ localStorage.removeItem("kustos_pw"); }catch(e){}
+
+  function makeId(prefix){
+    return prefix + "-" + Date.now().toString(36) + "-" +
+      Math.random().toString(36).slice(2, 9);
+  }
+  function titleFor(question){
+    const compact = String(question || "").replace(/\s+/g, " ").trim();
+    return compact.length > 72 ? compact.slice(0, 69) + "…" : compact || "Neue Frage";
+  }
+  function dateLabel(timestamp){
+    const date = new Date(Number(timestamp) || Date.now());
+    const today = new Date();
+    if(date.toDateString() === today.toDateString()) return "Heute";
+    return new Intl.DateTimeFormat("de-DE", {day:"2-digit", month:"short"}).format(date);
+  }
+  function messageCountLabel(conversation){
+    const count = Array.isArray(conversation.messages) ? conversation.messages.length : 0;
+    return count + " " + (count === 1 ? "Frage" : "Fragen");
+  }
+  function normalizeCitation(item){
+    if(!item || typeof item !== "object") return null;
+    return {
+      pmid: item.pmid === null || item.pmid === undefined ? "" : String(item.pmid),
+      title: typeof item.title === "string" ? item.title : "",
+      journal: typeof item.journal === "string" ? item.journal : "",
+      year: item.year === null || item.year === undefined ? null : item.year,
+      study_type: typeof item.study_type === "string" ? item.study_type : "",
+      stufe: item.stufe === null || item.stufe === undefined ? null : item.stufe,
+      doi: typeof item.doi === "string" ? item.doi : null,
+      pubmed_url: typeof item.pubmed_url === "string" ? item.pubmed_url : null,
+      oa_url: typeof item.oa_url === "string" ? item.oa_url : null,
+      full_text: typeof item.full_text === "boolean" ? item.full_text : null,
+      provenance: typeof item.provenance === "string" ? item.provenance : "",
+      snippet: typeof item.snippet === "string" ? item.snippet : ""
+    };
+  }
+  function normalizeData(data){
+    if(!data || typeof data !== "object") return null;
+    return {
+      dossier: typeof data.dossier === "string" ? data.dossier : "",
+      queries: Array.isArray(data.queries) ? data.queries.filter(item => typeof item === "string") : [],
+      count: Number.isFinite(Number(data.count)) ? Number(data.count) : 0,
+      citations: Array.isArray(data.citations) ? data.citations.map(normalizeCitation).filter(Boolean) : []
+    };
+  }
+  function normalizeConversation(raw){
+    if(!raw || typeof raw !== "object" || !raw.id || !Array.isArray(raw.messages)) return null;
+    const normalizedMessages = raw.messages.map(function(message){
+      if(!message || typeof message !== "object" || typeof message.question !== "string") return null;
+      const item = {
+        id: String(message.id || makeId("message")),
+        question: message.question.slice(0, 2000),
+        status: ["loading","complete","failed","interrupted"].includes(message.status)
+          ? message.status : "failed",
+        data: normalizeData(message.data),
+        error: typeof message.error === "string" ? message.error.slice(0, 500) : "",
+        progress: message.progress && typeof message.progress === "object" ? {
+          title: typeof message.progress.title === "string" ? message.progress.title : "",
+          note: typeof message.progress.note === "string" ? message.progress.note : "",
+          count: Number.isFinite(Number(message.progress.count)) ? Number(message.progress.count) : null
+        } : null
+      };
+      if(item.status === "loading") item.status = "interrupted";
+      if(item.status === "complete" && !item.data) item.status = "failed";
+      return item;
+    }).filter(Boolean);
+    if(!normalizedMessages.length) return null;
+    return {
+      id: String(raw.id),
+      title: titleFor(raw.title || normalizedMessages[0].question),
+      createdAt: Number(raw.createdAt) || Date.now(),
+      updatedAt: Number(raw.updatedAt) || Number(raw.createdAt) || Date.now(),
+      messages: normalizedMessages
+    };
+  }
+  function saveHistory(){
+    try{
+      const records = conversations.slice(0, MAX_HISTORY).map(function(conversation){
+        return {
+          id: conversation.id,
+          title: conversation.title,
+          createdAt: conversation.createdAt,
+          updatedAt: conversation.updatedAt,
+          messages: conversation.messages.map(function(message){
+            return {
+              id: message.id,
+              question: message.question,
+              status: message.status,
+              data: normalizeData(message.data),
+              error: message.error,
+              progress: message.progress
+            };
+          })
+        };
+      });
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(records));
+    }catch(error){
+      storageWarning.textContent = "Der Chat konnte lokal nicht gespeichert werden. Die Recherche bleibt sichtbar, kann aber nach dem Schließen verloren gehen.";
+      storageWarning.hidden = false;
+    }
+  }
+  function saveActiveConversation(){
+    try{
+      if(activeConversationId) localStorage.setItem(ACTIVE_KEY, activeConversationId);
+      else localStorage.removeItem(ACTIVE_KEY);
+    }catch(error){}
+  }
+  function loadHistory(){
+    try{
+      const raw = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
+      conversations = Array.isArray(raw) ? raw.map(normalizeConversation).filter(Boolean) : [];
+      conversations.sort((a,b) => b.updatedAt - a.updatedAt);
+      activeConversationId = localStorage.getItem(ACTIVE_KEY);
+      if(!conversations.some(item => item.id === activeConversationId)) activeConversationId = null;
+      saveHistory();
+    }catch(error){
+      conversations = [];
+      activeConversationId = null;
+      try{ localStorage.removeItem(HISTORY_KEY); localStorage.removeItem(ACTIVE_KEY); }catch(e){}
+      storageWarning.textContent = "Der gespeicherte Verlauf war beschädigt und wurde zurückgesetzt. Du kannst einen neuen Chat beginnen.";
+      storageWarning.hidden = false;
+    }
+  }
+  function activeConversation(){
+    return conversations.find(item => item.id === activeConversationId) || null;
+  }
+  function renderHistory(){
+    historyList.replaceChildren();
+    if(!conversations.length){
+      historyList.appendChild(historyEmpty);
+      return;
+    }
+    conversations.forEach(function(conversation){
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "history-item" + (conversation.id === activeConversationId ? " active" : "");
+      button.setAttribute("aria-current", conversation.id === activeConversationId ? "page" : "false");
+      const title = document.createElement("span");
+      title.className = "history-item-title";
+      title.textContent = conversation.title;
+      const meta = document.createElement("span");
+      meta.className = "history-item-meta";
+      const date = document.createElement("span");
+      date.textContent = dateLabel(conversation.updatedAt);
+      const count = document.createElement("span");
+      count.textContent = messageCountLabel(conversation);
+      meta.append(date, count);
+      button.append(title, meta);
+      button.addEventListener("click", function(){ setActiveConversation(conversation.id); });
+      historyList.appendChild(button);
+    });
+  }
+  function mobileHistory(){
+    return window.matchMedia("(max-width: 619px)").matches;
+  }
+  function syncHistoryAccessibility(){
+    if(mobileHistory() && !historyPanel.classList.contains("open")){
+      historyPanel.setAttribute("inert", "");
+      historyPanel.setAttribute("aria-hidden", "true");
+    }else{
+      historyPanel.removeAttribute("inert");
+      historyPanel.removeAttribute("aria-hidden");
+    }
+  }
+  function openHistory(){
+    historyPanel.removeAttribute("inert");
+    historyPanel.removeAttribute("aria-hidden");
+    historyPanel.classList.add("open");
+    historyScrim.classList.add("open");
+    historyToggle.setAttribute("aria-expanded", "true");
+    historyNew.focus();
+  }
+  function closeHistory(restoreFocus){
+    if(restoreFocus && mobileHistory()) historyToggle.focus();
+    historyPanel.classList.remove("open");
+    historyScrim.classList.remove("open");
+    historyToggle.setAttribute("aria-expanded", "false");
+    syncHistoryAccessibility();
+  }
+  function setActiveConversation(id){
+    if(!conversations.some(item => item.id === id)) return;
+    activeConversationId = id;
+    saveActiveConversation();
+    appShell.classList.add("conversation-active");
+    renderHistory();
+    renderConversation();
+    closeHistory(false);
+    result.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+  function createConversation(question){
+    const now = Date.now();
+    const conversation = {
+      id: makeId("chat"),
+      title: titleFor(question),
+      createdAt: now,
+      updatedAt: now,
+      messages: []
+    };
+    conversations.unshift(conversation);
+    conversations = conversations.slice(0, MAX_HISTORY);
+    activeConversationId = conversation.id;
+    saveActiveConversation();
+    renderHistory();
+    appShell.classList.add("conversation-active");
+    return conversation;
+  }
+  function addQuestion(conversation, question){
+    const message = {
+      id: makeId("message"),
+      question: question,
+      status: "loading",
+      data: null,
+      error: "",
+      progress: {title:"Recherche wird vorbereitet", note:"Die Recherche läuft. Du kannst dieses Fenster offen lassen.", count:null}
+    };
+    conversation.messages.push(message);
+    conversation.updatedAt = Date.now();
+    saveHistory();
+    renderHistory();
+    return message;
+  }
+  function contextualFollowup(conversation, question){
+    const header = "Kontext aus demselben klinischen Chat:\n";
+    const suffix = "\nNeue Vertiefungsfrage:\n" + question;
+    let remaining = Math.max(0, 2000 - header.length - suffix.length);
+    const chunks = [];
+    const prior = conversation.messages.filter(item => item.status === "complete" && item.data).slice(-3);
+    for(let index = prior.length - 1; index >= 0 && remaining > 0; index--){
+      const item = prior[index];
+      const prose = String(item.data.dossier || "")
+        .split(/\n##\s+Quellen/i)[0]
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+        .replace(/[#*_`>]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+      const chunk = "Frage: " + item.question.replace(/\s+/g, " ").trim().slice(0, 180) +
+        "\nAntwortauszug: " + prose.slice(0, 420) + "\n";
+      const bounded = chunk.slice(0, remaining);
+      chunks.unshift(bounded);
+      remaining -= bounded.length;
+    }
+    if(!chunks.length){
+      chunks.push("Ausgangsfrage: " + conversation.title.slice(0, remaining));
+    }
+    return header + chunks.join("") + suffix;
+  }
+  function startNewChat(){
+    activeConversationId = null;
+    saveActiveConversation();
+    appShell.classList.remove("conversation-active");
+    result.classList.remove("on");
+    messages.replaceChildren();
+    followup.hidden = true;
+    q.value = "";
+    err.classList.remove("on");
+    closeHistory(false);
+    q.focus();
+    window.scrollTo({top:0, behavior:"smooth"});
+    renderHistory();
+  }
 
   togglePassword.addEventListener("click", function(){
     const showing = pw.type === "text";
@@ -342,23 +736,28 @@
   function safeUrl(value){
     return /^https?:\/\//i.test(value) ? value : "";
   }
-  function setCitations(items){
-    citations.clear();
-    if(!Array.isArray(items)) return;
+  function citationMap(items, messageId){
+    const map = new Map();
+    if(!Array.isArray(items)) return map;
     items.forEach(function(item){
       if(!item || item.pmid === null || item.pmid === undefined) return;
       const pmid = String(item.pmid).trim();
-      if(/^\d+$/.test(pmid)) citations.set(pmid, item);
+      if(!/^\d+$/.test(pmid)) return;
+      const key = messageId + ":" + pmid;
+      map.set(pmid, item);
+      citationRegistry.set(key, item);
     });
+    return map;
   }
-  function citationButton(pmid){
-    const citation = citations.get(pmid);
+  function citationButton(pmid, citationsForMessage, messageId){
+    const citation = citationsForMessage.get(pmid);
     if(!citation) return "PMID " + esc(pmid);
-    return '<button class="pmid-citation" type="button" data-pmid="' + esc(pmid)
+    return '<button class="pmid-citation" type="button" data-citation-key="' +
+      esc(messageId + ":" + pmid) + '" data-pmid="' + esc(pmid)
       + '" aria-haspopup="dialog" aria-label="Quelle PMID ' + esc(pmid)
       + ' anzeigen">PMID ' + esc(pmid) + "</button>";
   }
-  function inline(value){
+  function inline(value, citationsForMessage, messageId){
     let text = esc(value);
     const tokens = [];
     const token = html => {
@@ -368,7 +767,7 @@
     };
     text = text.replace(/\bPMID\s+(\d+(?:\s*,\s*\d+)*)/gi, function(_, group){
       return group.split(/\s*,\s*/).map(pmid => {
-        const rendered = citationButton(pmid);
+        const rendered = citationButton(pmid, citationsForMessage, messageId);
         return rendered.indexOf("<button") === 0 ? token(rendered) : rendered;
       }).join(", ");
     });
@@ -391,7 +790,7 @@
     });
     return text.replace(/\u0000(\d+)\u0000/g, (_, index) => tokens[Number(index)]);
   }
-  function renderMarkdown(markdown){
+  function renderMarkdown(markdown, citationsForMessage, messageId){
     const lines = String(markdown || "").replace(/\r/g,"").split("\n");
     let html = "", list = null, lastListItem = false;
     const closeList = () => {
@@ -403,31 +802,48 @@
       if(!line.trim()){ closeList(); continue; }
       let match;
       if(/^[-*_]{3,}\s*$/.test(line)){ closeList(); html += "<hr>"; continue; }
-      if((match=line.match(/^###\s+(.*)/))){ closeList(); html += "<h3>" + inline(match[1]) + "</h3>"; continue; }
+      if((match=line.match(/^###\s+(.*)/))){
+        closeList();
+        html += "<h3>" + inline(match[1], citationsForMessage, messageId) + "</h3>";
+        continue;
+      }
       if((match=line.match(/^##\s+(.*)/))){
         closeList();
         const sourceClass = /quellen/i.test(match[1]) ? ' class="source-heading"' : "";
-        html += "<h2" + sourceClass + ">" + inline(match[1]) + "</h2>";
+        html += "<h2" + sourceClass + ">" +
+          inline(match[1], citationsForMessage, messageId) + "</h2>";
         continue;
       }
-      if((match=line.match(/^#\s+(.*)/))){ closeList(); html += "<h1>" + inline(match[1]) + "</h1>"; continue; }
+      if((match=line.match(/^#\s+(.*)/))){
+        closeList();
+        html += "<h1>" + inline(match[1], citationsForMessage, messageId) + "</h1>";
+        continue;
+      }
       if((match=line.match(/^\s*(\d+)[.)]\s+(.*)/))){
         if(list !== "ol"){ closeList(); html += "<ol>"; list = "ol"; }
-        html += "<li>" + inline(match[2]) + "</li>"; lastListItem = true; continue;
+        html += "<li>" + inline(match[2], citationsForMessage, messageId) + "</li>";
+        lastListItem = true;
+        continue;
       }
       if((match=line.match(/^\s*[-*+]\s+(.*)/))){
         if(list !== "ul"){ closeList(); html += "<ul>"; list = "ul"; }
-        html += "<li>" + inline(match[1]) + "</li>"; lastListItem = true; continue;
+        html += "<li>" + inline(match[1], citationsForMessage, messageId) + "</li>";
+        lastListItem = true;
+        continue;
       }
       if((match=line.match(/^\s*>\s?(.*)/))){
-        closeList(); html += "<blockquote>" + inline(match[1]) + "</blockquote>"; continue;
+        closeList();
+        html += "<blockquote>" + inline(match[1], citationsForMessage, messageId) + "</blockquote>";
+        continue;
       }
       if(list && lastListItem){
-        html = html.replace(/<\/li>$/, function(close){ return "<br>" + inline(line.trim()) + close; });
+        html = html.replace(/<\/li>$/, function(close){
+          return "<br>" + inline(line.trim(), citationsForMessage, messageId) + close;
+        });
         continue;
       }
       closeList();
-      html += "<p>" + inline(line.trim()) + "</p>";
+      html += "<p>" + inline(line.trim(), citationsForMessage, messageId) + "</p>";
     }
     closeList();
     return html;
@@ -505,8 +921,8 @@
     appendCitationLink(links, "Open Access ↗", citation.oa_url);
     if(links.children.length) citationPreviewBody.appendChild(links);
   }
-  function openCitation(pmid, trigger){
-    const citation = citations.get(pmid);
+  function openCitation(key, trigger){
+    const citation = citationRegistry.get(key);
     if(!citation) return;
     citationTrigger = trigger || null;
     renderCitationPreview(citation);
@@ -524,10 +940,10 @@
     if(citationTrigger && document.contains(citationTrigger)) citationTrigger.focus();
     citationTrigger = null;
   }
-  function enhanceSourceLists(){
-    out.querySelectorAll(".source-list li").forEach(function(item){
+  function enhanceSourceLists(container, citationsForMessage, messageId){
+    container.querySelectorAll(".source-list li").forEach(function(item){
       const matches = Array.from(item.textContent.matchAll(/\bPMID\s+(\d+)/gi));
-      const citation = matches.length ? citations.get(matches[0][1]) : null;
+      const citation = matches.length ? citationsForMessage.get(matches[0][1]) : null;
       if(!citation) return;
       const meta = document.createElement("div");
       meta.className = "source-meta";
@@ -537,7 +953,7 @@
       inspect.type = "button";
       inspect.textContent = "Quelle prüfen";
       inspect.setAttribute("aria-haspopup", "dialog");
-      inspect.addEventListener("click", function(){ openCitation(String(citation.pmid), inspect); });
+      inspect.dataset.citationKey = messageId + ":" + String(citation.pmid);
       meta.appendChild(inspect);
       item.appendChild(meta);
     });
@@ -605,10 +1021,13 @@
       }
     })();
   }
-  function renderDossier(data){
-    setCitations(data.citations);
-    out.innerHTML = renderMarkdown(data.dossier || "");
-    const sourceHeading = out.querySelector(".source-heading");
+  function renderDossierInto(data, container, messageId){
+    const normalized = normalizeData(data) || {dossier:"", queries:[], count:0, citations:[]};
+    const citationsForMessage = citationMap(normalized.citations, messageId);
+    const article = document.createElement("article");
+    article.className = "dossier";
+    article.innerHTML = renderMarkdown(normalized.dossier, citationsForMessage, messageId);
+    const sourceHeading = article.querySelector(".source-heading");
     if(sourceHeading && sourceHeading.nextElementSibling){
       let sibling = sourceHeading.nextElementSibling;
       let sourceNumber = 1;
@@ -623,32 +1042,106 @@
         sibling = sibling.nextElementSibling;
       }
     }
-    enhanceSourceLists();
+    enhanceSourceLists(article, citationsForMessage, messageId);
+    container.appendChild(article);
+  }
+
+  function messageState(answer, statusName, title, detail){
+    answer.className = "message-answer " + statusName;
+    const state = document.createElement("div");
+    state.className = "message-state";
+    if(statusName === "pending"){
+      const ring = document.createElement("span");
+      ring.className = "mini-ring";
+      ring.setAttribute("aria-hidden", "true");
+      state.appendChild(ring);
+    }
+    const copy = document.createElement("span");
+    const strong = document.createElement("strong");
+    strong.textContent = title;
+    copy.appendChild(strong);
+    if(detail) copy.appendChild(document.createTextNode(" " + detail));
+    state.appendChild(copy);
+    answer.appendChild(state);
+  }
+
+  function renderConversation(){
+    citationRegistry = new Map();
+    messages.replaceChildren();
+    const conversation = activeConversation();
+    if(!conversation){
+      result.classList.remove("on");
+      followup.hidden = true;
+      return;
+    }
+    conversation.messages.forEach(function(message){
+      const pair = document.createElement("section");
+      pair.className = "message-pair";
+      pair.dataset.messageId = message.id;
+
+      const question = document.createElement("div");
+      question.className = "message-question";
+      const questionLabel = document.createElement("span");
+      questionLabel.className = "message-question-label";
+      questionLabel.textContent = "Deine Frage";
+      question.append(questionLabel, document.createTextNode(message.question));
+
+      const answer = document.createElement("div");
+      answer.className = "message-answer";
+      if(message.status === "complete" && message.data){
+        renderDossierInto(message.data, answer, message.id);
+      }else if(message.status === "loading"){
+        const progress = message.progress || {};
+        messageState(answer, "pending", progress.title || "Recherche läuft.",
+          progress.note || "Die Evidenz wird geprüft.");
+      }else if(message.status === "interrupted"){
+        messageState(answer, "interrupted", "Recherche unterbrochen.",
+          "Diese Anfrage wurde beim Schließen der Seite beendet. Stelle sie bei Bedarf erneut.");
+      }else{
+        messageState(answer, "failed", "Recherche fehlgeschlagen.",
+          message.error || "Bitte versuche es erneut.");
+      }
+      pair.append(question, answer);
+      messages.appendChild(pair);
+    });
+
+    const hasComplete = conversation.messages.some(item => item.status === "complete");
+    const hasRunning = conversation.messages.some(item => item.status === "loading");
+    followup.hidden = !hasComplete || hasRunning;
+    followupAuth.hidden = Boolean(pw.value);
     result.classList.add("on");
     newQuestion.style.display = "block";
-    result.scrollIntoView({behavior:"smooth", block:"start"});
   }
-  async function ask(event){
-    event.preventDefault();
-    const question = q.value.trim();
-    if(question.length < 10){ showError("Bitte eine ausführlichere Frage stellen."); q.focus(); return; }
-    try{ localStorage.setItem("kustos_pw", pw.value); }catch(e){}
+
+  function touchConversation(conversation){
+    conversation.updatedAt = Date.now();
+    conversations = [conversation].concat(conversations.filter(item => item.id !== conversation.id));
+  }
+
+  function setBusy(busy){
+    [go, followupGo].forEach(function(button){
+      button.disabled = busy;
+      if(busy) button.setAttribute("aria-busy", "true");
+      else button.removeAttribute("aria-busy");
+    });
+  }
+
+  async function runResearch(question, conversation, message, password){
     err.classList.remove("on");
-    result.classList.remove("on");
-    newQuestion.style.display = "none";
-    go.disabled = true;
-    go.setAttribute("aria-busy", "true");
+    setBusy(true);
+    renderConversation();
     startStatus();
     try{
       const response = await fetch("/praxis/stream", {
         method:"POST",
         headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({question, password:pw.value})
+        body:JSON.stringify({question, password:password})
       });
       if(!response.ok){
         const data = await response.json().catch(() => ({}));
-        showError(responseError(response.status, data.detail));
-        return;
+        const responseFailure = new Error(responseError(response.status, data.detail));
+        responseFailure.status = response.status;
+        throw responseFailure;
       }
       let completed = false;
       await parseSse(response, function(eventName, data){
@@ -658,41 +1151,116 @@
             ? "Suchanfrage geklärt. " + queries.length + " Suchanfragen laufen in Europe PMC."
             : "Die Suchanfrage läuft in Europe PMC.";
           updateProgress(0, "Suche in Europe PMC", queryNote);
+          message.progress = {title:"Suche in Europe PMC", note:queryNote, count:null};
         }else if(eventName === "found"){
           const count = Number.isFinite(Number(data.count)) ? Number(data.count) : 0;
-          updateProgress(3, count + " " + (count === 1 ? "Quelle" : "Quellen") + " gefunden",
-            "Belege bewertet und Volltexte geprüft. Die Synthese wird geschrieben.");
+          const title = count + " " + (count === 1 ? "Quelle" : "Quellen") + " gefunden";
+          const note = "Belege bewertet und Volltexte geprüft. Die Synthese wird geschrieben.";
+          updateProgress(3, title, note);
+          message.progress = {title:title, note:note, count:count};
         }else if(eventName === "synthesis"){
-          updateProgress(3, "Dossier wird geschrieben",
-            "Die Evidenz ist ausgewertet. Das vollständige Dossier wird zusammengestellt.");
+          const note = "Die Evidenz ist ausgewertet. Das vollständige Dossier wird zusammengestellt.";
+          updateProgress(3, "Dossier wird geschrieben", note);
+          message.progress = {title:"Dossier wird geschrieben", note:note, count:null};
         }else if(eventName === "done"){
           completed = true;
-          renderDossier(data);
+          message.status = "complete";
+          message.data = normalizeData(data);
+          message.progress = null;
+          message.error = "";
+          touchConversation(conversation);
+          saveHistory();
+          renderHistory();
+          renderConversation();
         }else if(eventName === "error"){
           throw new Error(responseError(data.status, data.detail));
+        }
+        if(eventName !== "done"){
+          saveHistory();
+          renderConversation();
         }
       });
       if(!completed) throw new Error("Die Recherche wurde unerwartet unterbrochen. Bitte erneut versuchen.");
     }catch(error){
-      showError(error && error.message
+      const messageText = error && error.message
         ? error.message
-        : "Netzwerkfehler. Bitte erneut versuchen.");
+        : "Netzwerkfehler. Bitte erneut versuchen.";
+      message.status = "failed";
+      message.error = messageText;
+      message.progress = null;
+      if(error && error.status === 401){
+        pw.value = "";
+        followupPassword.value = "";
+      }
+      touchConversation(conversation);
+      saveHistory();
+      renderHistory();
+      renderConversation();
+      showError(messageText);
     }finally{
-      go.disabled = false;
-      go.removeAttribute("aria-busy");
+      setBusy(false);
       stopStatus();
+      renderConversation();
+      const lastMessage = messages.lastElementChild;
+      if(lastMessage) lastMessage.scrollIntoView({behavior:"smooth", block:"start"});
     }
   }
-  out.addEventListener("click", function(event){
-    const button = event.target.closest(".pmid-citation");
-    if(button) openCitation(button.getAttribute("data-pmid"), button);
+
+  async function ask(event){
+    event.preventDefault();
+    const question = q.value.trim();
+    if(question.length < 10){
+      showError("Bitte eine ausführlichere Frage stellen.");
+      q.focus();
+      return;
+    }
+    const conversation = createConversation(question);
+    const message = addQuestion(conversation, question);
+    q.value = "";
+    await runResearch(question, conversation, message, pw.value);
+  }
+
+  async function askFollowup(event){
+    event.preventDefault();
+    const question = followupQuestion.value.trim();
+    const conversation = activeConversation();
+    if(!conversation) return;
+    if(question.length < 10){
+      showError("Bitte formuliere die Vertiefungsfrage etwas ausführlicher.");
+      followupQuestion.focus();
+      return;
+    }
+    const password = pw.value || followupPassword.value;
+    if(!password){
+      showError("Bitte gib das Pilot-Passwort für diese Vertiefung ein.");
+      followupAuth.hidden = false;
+      followupPassword.focus();
+      return;
+    }
+    pw.value = password;
+    followupPassword.value = "";
+    const message = addQuestion(conversation, question);
+    followupQuestion.value = "";
+    await runResearch(contextualFollowup(conversation, question), conversation, message, password);
+  }
+
+  messages.addEventListener("click", function(event){
+    const button = event.target.closest(".pmid-citation,.source-inspect");
+    if(button) openCitation(button.dataset.citationKey, button);
   });
   citationClose.addEventListener("click", closeCitation);
   citationPreview.addEventListener("click", function(event){
     if(event.target === citationPreview) closeCitation();
   });
   document.addEventListener("keydown", function(event){
-    if(event.key === "Escape" && !citationPreview.hidden) closeCitation();
+    if(event.key === "Escape" && !citationPreview.hidden){
+      closeCitation();
+      return;
+    }
+    if(event.key === "Escape" && historyPanel.classList.contains("open")){
+      closeHistory(true);
+      return;
+    }
     if(event.key === "Tab" && !citationPreview.hidden){
       const focusable = Array.from(citationPreview.querySelectorAll(
         'button:not([disabled]),a[href],input:not([disabled]),[tabindex]:not([tabindex="-1"])'
@@ -713,12 +1281,24 @@
     }
   });
   form.addEventListener("submit", ask);
-  newQuestion.addEventListener("click", function(){
-    result.classList.remove("on");
-    newQuestion.style.display = "none";
-    q.focus();
-    window.scrollTo({top:0, behavior:"smooth"});
+  followupForm.addEventListener("submit", askFollowup);
+  newQuestion.addEventListener("click", startNewChat);
+  historyNew.addEventListener("click", startNewChat);
+  historyClose.addEventListener("click", function(){ closeHistory(true); });
+  historyToggle.addEventListener("click", function(){
+    if(historyPanel.classList.contains("open")) closeHistory(true);
+    else openHistory();
   });
+  historyScrim.addEventListener("click", function(){ closeHistory(true); });
+  window.addEventListener("resize", syncHistoryAccessibility);
+
+  loadHistory();
+  renderHistory();
+  syncHistoryAccessibility();
+  if(activeConversationId){
+    appShell.classList.add("conversation-active");
+    renderConversation();
+  }
 })();
 </script>
 </body>
