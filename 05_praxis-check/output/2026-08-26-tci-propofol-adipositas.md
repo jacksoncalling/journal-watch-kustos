@@ -125,7 +125,7 @@ https://doi.org/10.1186/s44158-025-00273-8 · https://pubmed.ncbi.nlm.nih.gov/41
    [Stufe 3] [VOLLTEXT]
 https://doi.org/10.4103/0970-9185.209753 · https://pubmed.ncbi.nlm.nih.gov/28781443 · OA-PDF: https://doi.org/10.4103/0970-9185.209753
 
-20. ESICM LIVES 2024. Barcelona, Spain. 5-9 October 2024.
+20. ESICM LIVES 2024. Barcelona, Spain. 5–9 October 2024.
    Intensive care medicine experimental, 2024-10-03 · PMID 39361093
    [Stufe 3] [VOLLTEXT]
 https://doi.org/10.1186/s40635-024-00658-z · https://pubmed.ncbi.nlm.nih.gov/39361093 · OA-PDF: https://doi.org/10.1186/s40635-024-00658-z
