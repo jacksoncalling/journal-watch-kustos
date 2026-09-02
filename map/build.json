@@ -1,0 +1,15 @@
+{
+  "template": "template-kustos.html",
+  "out": "kustos-cartographer.html",
+  "shelves": [
+    {"when": [["status", "eq", "ghost"]], "shelf": "Ghosts"},
+    {"when": [["type", "in", ["tension", "gradient"]]], "shelf": "The relief"},
+    {"when": [["type", "eq", "decision"]], "shelf": "Decisions"},
+    {"when": [["type", "eq", "jurisdiction"]], "shelf": "Boundary"},
+    {"when": [["type", "eq", "instrument"]], "shelf": "Contracts"},
+    {"when": [["type", "eq", "shared resource"]], "shelf": "Stores & sources"},
+    {"when": [["type", "eq", "actor"]], "shelf": "People & parties"},
+    {"when": [["type", "eq", "capability"]], "shelf": "Capabilities"},
+    {"when": [], "shelf": "Emergent"}
+  ]
+}
