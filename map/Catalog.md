@@ -21,7 +21,7 @@ single-maintainer Python literature pipeline. **What it is really about:** see
 - *"What actually runs each week?"* → [[Weekly Orchestrator]], then the five stages.
 - *"Where could it fabricate?"* → [[Synthesize]] (the one LLM judgment) and [[The Guardrails]].
 - *"Is retrieval reproducible?"* → [[Query Planner]] and [[Determinism vs the LLM Seam]].
-- *"Who does this serve?"* → [[The Clinician]] (the load-bearing ghost).
+- *"Who does this serve?"* → [[The Clinician]] (live, real physicians) on [[Real Instantiation]] (the missing personalization, the load-bearing ghost).
 - *"Why is it shaped this way?"* → [[No Embeddings]], [[Folder is the Database]].
 - *"Is it legal?"* → [[Regulatory Boundary]].
 - *"Can I trust the docs?"* → [[Documentation Drift]] (no; trust the code).
@@ -83,15 +83,15 @@ with judgment, deliver it.
 - [[The Maintainer]] · Actor · live — Josh; holds everything (bus-factor of one).
 - [[Replit]] · Actor · live — built and hosts the web layer (the second pair of hands).
 - [[Telegram]] · Actor · live — the weekly delivery channel.
-- [[The Clinician]] · Actor · **ghost** — only "Dr. Demo" is wired; the real user is unbuilt.
+- [[The Clinician]] · Actor · live — real physicians use the published app, on one shared demo profile.
 
 ## Ghosts (named, no wiring — tripwires, not deletions)
 
-- [[The Clinician]] — the served user; a fiction stands in. **Most load-bearing absence.**
+- [[Real Instantiation]] — the per-physician real config; everyone runs one demo profile. **The sharpest product risk.**
 - [[Feedback Stage]] — `04_feedback`, "noch nicht gebaut"; a human does its job.
 - [[Abbrev-MeSH Expansion]] — the controlled-vocabulary layer named as next.
 - [[RSS Fetch]] — a second source, deferred, no file.
-- [[Per-User Quota]] — per-user fairness; cap is global, no user identity yet.
+- [[Per-User Quota]] — no per-user identity: one login, one profile, global cap.
 
 ## The relief (tensions & gradients — the terrain the nouns sit in)
 

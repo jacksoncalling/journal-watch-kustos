@@ -4,19 +4,23 @@ role: correction-log
 ---
 # Correction Log
 
-Where a card disagreed with a doc, the **file (code) won** and the card records the
-truth. Every entry here is a place the docs had drifted from the code, which is
-itself the map's sharpest production finding (see [[Documentation Drift]]). Run
-date 2026-09-02, repo at commit `85c284e`.
+Where a card disagreed with reality, the source of truth won and the card was
+fixed. The first four entries are doc-vs-code drift found on the first pass (run
+2026-09-02, commit `85c284e`). Entries 5 and 6 are the rerun (2026-09-02, after
+syncing 14 Replit commits and a fact from the maintainer): the deployment and the
+running app won over the repo's docs and over the map's own first reading.
 
-| # | Doc claim | Code / disk reality | Card verdict |
+| # | Claim | Reality | Verdict |
 |---|---|---|---|
-| 1 | `CLAUDE.md` known-issue #1: "planner nondeterminism is the main ceiling." | `praxis_check.py:205` sets `temperature=0`; `providers.py:76` sets `seed=7`. Both halves of Josh's "Gemini needs temp+seed" learning are applied. | The [[Query Planner]] is **pinned**. The CLAUDE.md line is stale, superseded by HANDOFF's 2026-08-27 pin. |
-| 2 | `HANDOFF.md` gap #9: "Still missing: `04_feedback/CONTEXT.md`." | `04_feedback/CONTEXT.md` exists on disk and is committed. | The CONTEXT **exists**; the *stage* is still unbuilt (its own text says "noch nicht gebaut"). [[Feedback Stage]] is a ghost, but not for the reason the gap list gives. |
-| 3 | `HANDOFF.md` TL;DR / gap #3: "Not a git repo / not on GitHub / git init never run." | `origin` = `github.com/jacksoncalling/journal-watch-kustos`; 10+ commits on `main`. | It **is** a pushed git repo. The whole "before ANY push" checklist in the HANDOFF is already spent. |
-| 4 | (Territory's own earlier worry) "Missing American journals." | `SRC:MED` is MEDLINE, the US-run index. | Already self-corrected in HANDOFF 2026-08-30. Recorded so the map does not re-raise a dead worry. [[Europe PMC]]. |
+| 1 | `CLAUDE.md` known-issue #1: "planner nondeterminism is the main ceiling." | `praxis_check.py:205` temp 0 + `providers.py:76` seed 7. | [[Query Planner]] is **pinned**. The CLAUDE.md line is stale. |
+| 2 | `HANDOFF.md` gap #9: "`04_feedback/CONTEXT.md` still missing." | It exists and is committed. | The file exists; the *stage* is still unbuilt. [[Feedback Stage]]. |
+| 3 | `HANDOFF.md`: "Not a git repo / not on GitHub." | Pushed repo with full history. | It is a pushed git repo. |
+| 4 | (Earlier worry) "Missing American journals." | `SRC:MED` is MEDLINE (US index). | Dead worry; not re-raised. [[Europe PMC]]. |
+| 5 | **This map, first pass: "[[The Clinician]] is a ghost; no real user exists."** | The published Replit app is used by the maintainer's partner and two other physicians (maintainer, 2026-09-02). | **Wrong.** The served user is **live**. The map read this repo's docs (Dr. Demo, "step 8") as the product's state; the deployment overrides them. The absence moved to [[Real Instantiation]] (the personalization), a new ghost. |
+| 6 | This map, first pass: "[[Presentation over Retrieval]]: the cheap frontend wins are still to do." | Replit rebuilt `web/index.html` (+1046 lines): inspectable citations, SSE progress, a chat-history panel; app published. | Largely **done**. The gradient spent itself in the predicted direction; the card now records it as realized. |
 
-**Reading this log:** none of these are bugs in the running system. The pipeline
-does what the code says. The drift is entirely in the *documentation layer*, which
-is exactly why a cold reader (or model) needs this map: the docs will mislead you,
-the code will not, and this map marks where they part.
+**The lesson these entries carry:** the docs (and this map's first reading of
+them) described a product that was not yet serving anyone. The running deployment
+tells a different story, and it wins. This is [[Documentation Drift]] at the
+product level, and it is why a live territory needs its cards dated and re-walked,
+not trusted once.

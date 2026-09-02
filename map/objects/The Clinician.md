@@ -1,16 +1,16 @@
 ---
 type: Actor
-status: ghost
+status: live
 kind: served user
 hub: surface
 ---
 # The Clinician
 
-The whole reason the product exists, and the load-bearing absence. Only 'Dr. Demo', a fiction shipped in the public method repo, is wired. The real clinician (real subspecialty topics, her Telegram chat id) is 'step 8', a private instantiation that does not exist yet. Every stage points at her; nothing routes to a real her. A named beneficiary with no wiring is the definition of a ghost.
+The served user, and real. The deployed Replit app is used by the maintainer's partner (a cardiac anaesthesiologist) plus two other physicians, through a published link with one shared password; she ran the first live test after the app was complete. So the served user is live, not a fiction. What is absent is not the user but the personalization: all three run the same Dr. Demo cardiac-anaesthesia [[Profile]], because the per-physician [[Real Instantiation]] was never built. The earlier map called her a ghost by reading this repo's docs, which still describe her as unbuilt; the deployment says otherwise, and the deployment wins.
 
-served-by [[Send]] . served-by [[Web Seam]] . reached-via [[Telegram]] . would-hold [[Profile]] . blocked-by [[Demo vs Real Instantiation]]
+served-by [[Send]] . served-by [[Web Seam]] . reached-via [[Telegram]] . uses [[Profile]] . awaiting [[Real Instantiation]] . contested-by [[Demo vs Real Instantiation]]
 
-- **Hits:** the point of the entire pipeline. Until she is wired, the live product has a demo for a user, and every 'live' stage is live only against a fiction.
-- **Does not hit:** the code's readiness. The pipeline is built; the missing piece is not more code but a real profile and a real chat id. This ghost is an instantiation gap, not a bug.
+- **Hits:** real usage now flows through [[Web Seam]]; her weekly feed and dossiers. She is the reason the pipeline exists, and she is live.
+- **Does not hit:** retrieval quality, and whether the feed is her subspecialty. She is a live user; whether her literature is the right one is [[Real Instantiation]]'s gap, not the engine's.
 
-Source: README.md ('real instantiation lives in a separate private repo'); HANDOFF.md step 8.
+Source: conversation with the maintainer 2026-09-02 ("they are using the link I published from replit, one password for everyone; I am not aware of any other profile"); web/index.html (the deployed chat UI); profil/profile.md:1-5.
