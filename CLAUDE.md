@@ -12,6 +12,7 @@ database: config, memory, and every brief live as files in this repo. Story:
 
 | Need | Go to |
 |---|---|
+| The retrieval pipeline at a glance | `kustos-pipeline.png` (the semantic-layer sketch: input, the two model calls in amber, everything between them deterministic; Fetch, Rank, the MeSH Gate, Enrich, Synthesize) |
 | Live status, gaps, roadmap | `HANDOFF.md` (read right after this file) |
 | The spec, settled decisions | `../step-into-more/projects/journal-watch/build-plan.md` |
 | Why she needs it (interview) | `../step-into-more/projects/journal-watch/interview-notes/2026-08-16-interview-1.md` |
