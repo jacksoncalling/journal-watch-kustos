@@ -1,6 +1,7 @@
 {
   "template": "template-kustos.html",
   "out": "kustos-cartographer.html",
+  "repo_base": "https://github.com/jacksoncalling/journal-watch-kustos/blob/main",
   "shelves": [
     {"when": [["status", "eq", "ghost"]], "shelf": "Ghosts"},
     {"when": [["type", "in", ["tension", "gradient"]]], "shelf": "The relief"},
