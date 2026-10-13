@@ -87,9 +87,31 @@ Der `max_items`-Wert kann pro Frage überschrieben werden mit einer Zeile
 ## Ausgabe
 
 `05_praxis-check/output/<datum>-<slug>.md`: ein Dossier mit Kopf (die Frage),
-den Abschnitten Evidenzlage / Was ist Standard / Wo die Literatur uneins ist /
+einer belegten Kurzantwort, den Abschnitten Evidenzlage / Was ist Standard / Wo die Literatur uneins ist /
 Offene Fragen, der verwendeten Suchquery, einer `## Quellen`-Liste und der
 Fußzeile. Struktur und harte Regeln: `dossier-vertrag.md`.
+
+### Zwei Lesetiefen, eine autoritative Synthese
+
+Die Kurzantwort beantwortet eine Literaturfrage direkt, ohne allgemeine
+Einleitung. Ziel sind 120 bis 180 Wörter und höchstens drei belegte Stichpunkte.
+Sie nennt relevante Unsicherheit und Abstract-only-Grenzen schon im kurzen
+Text. Die ausführliche Evidenz bleibt zum Nachlesen erhalten.
+
+Beide Teile entstehen im vorhandenen Synthese-Aufruf aus denselben gelieferten
+Quellen. Keine zweite Zusammenfassung durch einen unabhängigen Web-LLM und
+keine Änderung von Retrieval, Ranking oder deterministischer Quellenmontage.
+Die ausführlichen Schreibregeln stehen nur in `dossier-vertrag.md`.
+
+Die gewünschte Web-Darstellung ist Kurzantwort zuerst, ausführliches Dossier
+aufklappbar, Quellen unabhängig erreichbar. Das ist eine Zielvorgabe, keine
+Behauptung, dass diese Darstellung bereits implementiert ist. CLI und Telegram
+behalten das vollständige Dossier.
+
+Die Zweckgrenze aus `README.md`, Abschnitt „Regulatory boundary", bleibt
+maßgeblich: bibliografische Recherche und Evidenzzusammenfassung, keine
+patientenspezifische Entscheidungsunterstützung. Dieser Vertrag ersetzt keine
+regulatorische Klassifizierung oder Konformitätsprüfung.
 
 ## Menschliche Kontrolle
 
@@ -107,5 +129,8 @@ gesucht wurde. Das Dossier ersetzt keine klinische Entscheidung.
   Fachgemeinschaft uneins ist, sagt das Dossier es plain.
 - Evidenzstufe und Provenienz setzt der Code, nie das Modell. Keine
   Patientendaten, kein Bezahlschranken-Umgehen, keine Gedankenstriche.
-- **Kein interaktiver Chat.** Ein Dossier pro Frage-Datei, ein Lauf. Der
-  interaktive Bot (Slice 2) ist bewusst nachrangig und evtl. nie nötig.
+- **CLI und Web unterscheiden.** Im dateibasierten Ablauf ein Dossier pro
+  Frage-Datei und Lauf. Die Web-Oberfläche bietet inzwischen browserlokalen
+  Verlauf und Vertiefungsfragen. Jede Vertiefung ist ein neuer geschützter
+  Praxis-Check, kein unabhängiger klinischer Chatbot. Keine Patientendaten
+  eingeben, auch nicht in Verlauf oder Vertiefungen.

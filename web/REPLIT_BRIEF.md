@@ -165,6 +165,27 @@ another tester's history.
 - On mobile, history is an accessible drawer; on desktop, it is a persistent
   left sidebar. Interrupted and failed turns remain understandable on restore.
 
+### Brief-first evidence presentation (agreed target, not yet implemented)
+
+The writing rules belong to `05_praxis-check/dossier-vertrag.md`, which the
+existing Python synthesis reads directly. The operating contract is
+`05_praxis-check/CONTEXT.md`; the intended-purpose boundary is in `README.md`,
+under "Regulatory boundary". Do not create a competing frontend prompt.
+
+- Show `## Kurzantwort` first, including its inline citation previews and
+  material uncertainty. Never derive it by truncating the detailed answer.
+- Make the detailed evidence expandable and the code-generated bibliography
+  independently accessible. Preserve source numbering and per-message citations.
+- Keep the canonical safety footer visible even with the details collapsed.
+- Preserve search-query transparency and the complete original dossier.
+- Older saved dossiers without a Kurzantwort remain readable in full. Do not
+  invent a summary or make a second LLM call to retrofit them.
+- The shorter presentation does not authorize patient-specific advice or
+  establish MDR or EU AI Act compliance.
+
+Updating the writing contract affects future synthesis through the existing
+pipeline. This documentation change alone does not implement the expandable UI.
+
 ## Run it
 
 ```bash
