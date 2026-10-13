@@ -103,10 +103,11 @@ Quellen. Keine zweite Zusammenfassung durch einen unabhängigen Web-LLM und
 keine Änderung von Retrieval, Ranking oder deterministischer Quellenmontage.
 Die ausführlichen Schreibregeln stehen nur in `dossier-vertrag.md`.
 
-Die gewünschte Web-Darstellung ist Kurzantwort zuerst, ausführliches Dossier
-aufklappbar, Quellen unabhängig erreichbar. Das ist eine Zielvorgabe, keine
-Behauptung, dass diese Darstellung bereits implementiert ist. CLI und Telegram
-behalten das vollständige Dossier.
+Die Web-Darstellung zeigt die Kurzantwort zuerst, das ausführliche Dossier
+aufklappbar und die Quellen unabhängig erreichbar. Suchanfragen bleiben
+einsehbar, die feste Fußzeile bleibt außerhalb der aufklappbaren Bereiche
+sichtbar. Ältere Dossiers ohne gültige Kurzantwort bleiben vollständig lesbar.
+CLI und Telegram behalten das vollständige Dossier.
 
 Die Zweckgrenze aus `README.md`, Abschnitt „Regulatory boundary", bleibt
 maßgeblich: bibliografische Recherche und Evidenzzusammenfassung, keine

@@ -7,7 +7,9 @@ Show a short evidence brief first and keep the full dossier expandable. Preserve
 
 **Why:** Pilot feedback was that the text is too long. The clinician already holds the clinical context and wants research to assess plausibility, then inspect deeper when needed. The user explicitly selected the short-brief-first direction.
 
-**How to apply:** Use this direction when agreeing the next presentation and writing-contract changes. Do not treat the discussion's proposed word budget or backend implementation as separately approved requirements.
+**How to apply:** The user approved implementation of the folder-based brief-first scope. Keep brief and detailed evidence in the same authoritative synthesis call, not an independent frontend summarizer.
+
+**Why:** A separate summarizer could lose source limitations or safety caveats; the agreed approach preserves the existing research pipeline and provenance.
 
 New app work must complement the existing folder-based operating and regulatory rules, rather than introduce a competing set of web-only instructions.
 

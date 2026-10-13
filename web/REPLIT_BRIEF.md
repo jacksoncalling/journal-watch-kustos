@@ -165,7 +165,7 @@ another tester's history.
 - On mobile, history is an accessible drawer; on desktop, it is a persistent
   left sidebar. Interrupted and failed turns remain understandable on restore.
 
-### Brief-first evidence presentation (agreed target, not yet implemented)
+### Brief-first evidence presentation
 
 The writing rules belong to `05_praxis-check/dossier-vertrag.md`, which the
 existing Python synthesis reads directly. The operating contract is
@@ -184,7 +184,14 @@ under "Regulatory boundary". Do not create a competing frontend prompt.
   establish MDR or EU AI Act compliance.
 
 Updating the writing contract affects future synthesis through the existing
-pipeline. This documentation change alone does not implement the expandable UI.
+pipeline. The UI renders the original sections without a separate summarizer.
+Malformed sections fall back to the complete dossier rather than losing content.
+
+For browser regression checks with synthetic data, run
+`python scripts/test_brief_ui.py` and open port 5001. This serves an in-memory
+test copy of the real UI, checks disclosures, citation scoping and legacy
+fallbacks, and never calls the protected research endpoints. It is not an app
+service or a replacement for the normal port-5000 workflow.
 
 ## Run it
 

@@ -19,7 +19,8 @@ Papern.
 
 ## Aufbau
 
-1. **## Kurzantwort (Kernbefund zuerst):** Beginne mit dem belegten Kernbefund
+1. **## Kurzantwort:** Schreibe diese Überschrift exakt, ohne Klammerzusatz,
+   Doppelpunkt oder zusätzliche Worte. Beginne darunter mit dem belegten Kernbefund
    in ein bis zwei Sätzen: was die gelieferten Studien zur gestellten
    Literaturfrage zeigen, als Zusammenfassung der Evidenz, nicht als
    Handlungsempfehlung. Formuliere „Die

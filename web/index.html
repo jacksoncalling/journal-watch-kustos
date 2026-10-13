@@ -135,6 +135,7 @@
   .result{display:none;margin-top:34px;}
   .result.on{display:block;}
   .conversation-active .ask-section{display:none;}
+  .conversation-active .hero{display:none;}
   .messages{display:grid;gap:22px;}
   .message-pair{display:grid;gap:9px;}
   .message-question{justify-self:end;max-width:min(86%,620px);padding:10px 13px;
@@ -196,6 +197,25 @@
   .dossier .source-list a{font-weight:600;}
   .dossier .source-list li{margin:.52em 0;}
   .dossier .source-list code{font-size:.76em;}
+  .dossier-brief{padding:1px 0 16px;}
+  .dossier-brief h2{border:0;padding:0;margin:0 0 .65em;color:var(--accent-deep);font-size:1.48rem;}
+  .dossier-details{margin-top:14px;border:1px solid var(--line);border-radius:11px;background:var(--surface);}
+  .dossier-details>summary{position:relative;display:flex;align-items:center;min-height:48px;padding:11px 44px 11px 14px;
+    color:var(--accent-deep);font-size:.87rem;font-weight:700;line-height:1.35;cursor:pointer;list-style:none;}
+  .dossier-details>summary::-webkit-details-marker{display:none;}
+  .dossier-details>summary::after{content:"+";position:absolute;right:15px;top:50%;transform:translateY(-50%);
+    font-family:var(--mono);font-size:1.1rem;font-weight:500;color:var(--muted);}
+  .dossier-details[open]>summary::after{content:"−";}
+  .dossier-details>summary:hover{background:var(--surface-soft);}
+  .dossier-details>summary:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 34%,transparent);outline-offset:2px;}
+  .dossier-detail-content{border-top:1px solid var(--line);padding:5px 14px 14px;}
+  .dossier-detail-content h2:first-child,.dossier-detail-content h3:first-child{margin-top:1em;}
+  .dossier-search summary{font-size:.8rem;}
+  .dossier-query{font: .78rem/1.6 var(--mono);overflow-wrap:anywhere;}
+  .dossier-query pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;}
+  .dossier-safety{margin:16px 0 0;padding:12px 13px;background:var(--warn-bg);border-radius:10px;
+    color:var(--warn-ink);font-size:.78rem;line-height:1.5;}
+  .dossier-safety p{margin:0;}
   .source-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:5px;
     font-family:var(--body);font-size:.72rem;line-height:1.35;}
   .citation-badge{display:inline-flex;align-items:center;min-height:23px;padding:2px 7px;
@@ -357,7 +377,7 @@
   <section class="result" id="result" aria-labelledby="result-title">
     <div class="result-intro">
       <h2 id="result-title">Dein Chat</h2>
-      <span>vollständige Ausgaben</span>
+      <span>Evidenz und Quellen</span>
     </div>
     <div class="messages" id="messages"></div>
     <div class="followup" id="followup" hidden>
@@ -848,6 +868,55 @@
     closeList();
     return html;
   }
+  const canonicalSafetyFooter = "Kein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.";
+  function dossierSections(markdown){
+    const lines = String(markdown || "").replace(/\r/g,"").split("\n");
+    const sections = [];
+    let current = {heading:null, lines:[]};
+    lines.forEach(function(line){
+      const match = line.match(/^##\s+(.+?)\s*$/);
+      if(match){
+        sections.push(current);
+        current = {heading:match[1].trim(), lines:[line]};
+      }else current.lines.push(line);
+    });
+    sections.push(current);
+    const named = {brief:[], sources:[], query:[]};
+    const sectionNames = new Set();
+    sections.forEach(function(section, index){
+      if(!section.heading) return;
+      const key = section.heading.replace(/[*_`]/g,"").replace(/[.:：]\s*$/,"").trim().toLocaleLowerCase("de");
+      if(sectionNames.has(key)) return;
+      sectionNames.add(key);
+      if(key === "kurzantwort" || key === "kurzantwort (kernbefund zuerst)") named.brief.push(index);
+      if(key === "quellen") named.sources.push(index);
+      if(key === "verwendete suchanfrage") named.query.push(index);
+    });
+    const headingCount = sections.filter(section => section.heading).length;
+    if(sectionNames.size !== headingCount) return null;
+    if(named.brief.length !== 1 || named.sources.length !== 1 || named.query.length > 1) return null;
+    const briefIndex = named.brief[0];
+    const briefBody = withoutCanonicalFooter(sections[briefIndex].lines.slice(1).join("\n"));
+    if(!briefBody) return null;
+    if(!withoutCanonicalFooter(sections[named.sources[0]].lines.slice(1).join("\n"))) return null;
+    if(lines.filter(line => line.trim() === canonicalSafetyFooter).length !== 1) return null;
+    if(named.query.length && !sections[named.query[0]].lines.slice(1).join("\n").trim()) return null;
+    return {sections:sections, briefIndex:briefIndex, sourceIndex:named.sources.length ? named.sources[0] : -1,
+      queryIndex:named.query.length ? named.query[0] : -1};
+  }
+  function sectionText(section){
+    return section.lines.join("\n").trim();
+  }
+  function withoutCanonicalFooter(markdown){
+    return String(markdown || "").split("\n").filter(line => line.trim() !== canonicalSafetyFooter)
+      .join("\n").replace(/\n{3,}/g,"\n\n").trim();
+  }
+  function appendMarkdown(parent, markdown, citationsForMessage, messageId){
+    if(!markdown || !markdown.trim()) return;
+    const fragment = document.createElement("div");
+    fragment.innerHTML = renderMarkdown(markdown, citationsForMessage, messageId);
+    parent.appendChild(fragment);
+  }
   function appendBadge(parent, text, className){
     if(text === null || text === undefined || text === "") return;
     const badge = document.createElement("span");
@@ -941,6 +1010,15 @@
     citationTrigger = null;
   }
   function enhanceSourceLists(container, citationsForMessage, messageId){
+    let sourceNumber = 1;
+    container.querySelectorAll("ol,ul").forEach(function(list){
+      list.classList.add("source-list");
+      if(list.tagName === "OL"){
+        list.setAttribute("start", String(sourceNumber));
+        const itemCount = Array.from(list.children).filter(child => child.tagName === "LI").length;
+        sourceNumber += itemCount || 1;
+      }
+    });
     container.querySelectorAll(".source-list li").forEach(function(item){
       const matches = Array.from(item.textContent.matchAll(/\bPMID\s+(\d+)/gi));
       const citation = matches.length ? citationsForMessage.get(matches[0][1]) : null;
@@ -957,6 +1035,21 @@
       meta.appendChild(inspect);
       item.appendChild(meta);
     });
+  }
+  function enhanceFallbackSourceLists(article, citationsForMessage, messageId){
+    const heading = article.querySelector(".source-heading");
+    if(!heading) return;
+    const wrapper = document.createElement("div");
+    let sibling = heading.nextElementSibling;
+    while(sibling && sibling.tagName !== "H2"){
+      const next = sibling.nextElementSibling;
+      wrapper.appendChild(sibling);
+      sibling = next;
+    }
+    if(wrapper.children.length){
+      heading.after(wrapper);
+      enhanceSourceLists(wrapper, citationsForMessage, messageId);
+    }
   }
   function showError(message){
     err.textContent = message;
@@ -1026,23 +1119,89 @@
     const citationsForMessage = citationMap(normalized.citations, messageId);
     const article = document.createElement("article");
     article.className = "dossier";
-    article.innerHTML = renderMarkdown(normalized.dossier, citationsForMessage, messageId);
-    const sourceHeading = article.querySelector(".source-heading");
-    if(sourceHeading && sourceHeading.nextElementSibling){
-      let sibling = sourceHeading.nextElementSibling;
-      let sourceNumber = 1;
-      while(sibling && (sibling.tagName === "OL" || sibling.tagName === "UL")){
-        sibling.classList.add("source-list");
-        if(sibling.tagName === "OL"){
-          sibling.setAttribute("start", String(sourceNumber));
-          const itemCount = Array.from(sibling.children)
-            .filter(child => child.tagName === "LI").length;
-          sourceNumber += itemCount || 1;
-        }
-        sibling = sibling.nextElementSibling;
+    const split = dossierSections(normalized.dossier);
+    if(!split){
+      article.innerHTML = renderMarkdown(normalized.dossier, citationsForMessage, messageId);
+      enhanceFallbackSourceLists(article, citationsForMessage, messageId);
+    }else{
+      const remaining = split.sections.filter((section, index) =>
+        section.heading && index !== split.briefIndex && index !== split.sourceIndex && index !== split.queryIndex
+      );
+      const preamble = split.sections[0] && !split.sections[0].heading ? split.sections[0] : null;
+      if(preamble) appendMarkdown(article, withoutCanonicalFooter(sectionText(preamble)),
+        citationsForMessage, messageId);
+
+      const brief = document.createElement("section");
+      brief.className = "dossier-brief";
+      appendMarkdown(brief, withoutCanonicalFooter(sectionText(split.sections[split.briefIndex])),
+        citationsForMessage, messageId);
+      article.appendChild(brief);
+
+      if(remaining.some(section => sectionText(section))){
+        const details = document.createElement("details");
+        details.className = "dossier-details";
+        const summary = document.createElement("summary");
+        summary.textContent = "Ausführliche Evidenz und Einordnung";
+        const content = document.createElement("div");
+        content.className = "dossier-detail-content";
+        remaining.forEach(section => appendMarkdown(content, withoutCanonicalFooter(sectionText(section)),
+          citationsForMessage, messageId));
+        details.append(summary, content);
+        article.appendChild(details);
       }
+
+      if(split.sourceIndex >= 0){
+        const sourceDetails = document.createElement("details");
+        sourceDetails.className = "dossier-details dossier-sources";
+        const sourceSummary = document.createElement("summary");
+        sourceSummary.textContent = "Quellen und Bibliografie";
+        const sourceContent = document.createElement("div");
+        sourceContent.className = "dossier-detail-content";
+        appendMarkdown(sourceContent, withoutCanonicalFooter(sectionText(split.sections[split.sourceIndex])),
+          citationsForMessage, messageId);
+        enhanceSourceLists(sourceContent, citationsForMessage, messageId);
+        sourceDetails.append(sourceSummary, sourceContent);
+        article.appendChild(sourceDetails);
+      }
+
+      if(split.queryIndex >= 0){
+        const queryDetails = document.createElement("details");
+        queryDetails.className = "dossier-details dossier-search";
+        const querySummary = document.createElement("summary");
+        querySummary.textContent = "Verwendete Suchanfrage anzeigen";
+        const queryContent = document.createElement("div");
+        queryContent.className = "dossier-detail-content dossier-query";
+        const queryHeading = document.createElement("h2");
+        queryHeading.textContent = split.sections[split.queryIndex].heading;
+        const queryText = document.createElement("pre");
+        queryText.textContent = withoutCanonicalFooter(split.sections[split.queryIndex].lines.slice(1).join("\n"));
+        queryContent.append(queryHeading, queryText);
+        queryDetails.append(querySummary, queryContent);
+        article.appendChild(queryDetails);
+      }
+      const safety = document.createElement("div");
+      safety.className = "dossier-safety";
+      safety.setAttribute("role","note");
+      safety.textContent = canonicalSafetyFooter;
+      article.appendChild(safety);
     }
-    enhanceSourceLists(article, citationsForMessage, messageId);
+    const querySectionMatch = String(normalized.dossier).match(
+      /(?:^|\n)##\s+Verwendete Suchanfrage\s*[:：]?\s*\n([\s\S]*?)(?=\n##\s+|$)/i
+    );
+    const dossierHasQuery = Boolean(querySectionMatch && querySectionMatch[1].trim());
+    if(!dossierHasQuery && normalized.queries.length){
+      const queryDetails = document.createElement("details");
+      queryDetails.className = "dossier-details dossier-search";
+      const querySummary = document.createElement("summary");
+      querySummary.textContent = "Verwendete Suchanfrage anzeigen";
+      const queryContent = document.createElement("div");
+      queryContent.className = "dossier-detail-content dossier-query";
+      const queryText = document.createElement("pre");
+      queryText.textContent = normalized.queries.join("\n\n");
+      queryContent.appendChild(queryText);
+      queryDetails.append(querySummary, queryContent);
+      article.appendChild(queryDetails);
+    }
     container.appendChild(article);
   }
 
