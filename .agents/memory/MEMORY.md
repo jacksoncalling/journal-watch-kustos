@@ -1,3 +1,4 @@
 - [GitHub connector push limits](github-connector-push.md) — source writes may be gateway-blocked despite read/push access; use the workspace Git UI or native Git authentication.
 - [Post-merge hooks on Nix Python](post-merge-hooks.md) — install Python dependencies into project-local .pythonlibs; system pip targets immutable /nix/store.
 - [Evidence brief direction](evidence-brief.md) — short cited answer first, full dossier expandable; clinicians need evidence checks rather than lengthy background.
+- [Clinical evidence evaluation](clinical-evidence-evaluation.md) — real references and structural checks do not establish claim accuracy, coverage or clinical applicability.

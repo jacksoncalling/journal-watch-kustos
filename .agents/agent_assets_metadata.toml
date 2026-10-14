@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "yFR5AL9FrEqiWMiMTIeB2"
+uri = "file://.local/outputs/kustos-hit-evaluation.html"
+type = "html"
+title = "Kustos cardiac-surgery evaluation"
+description = "Fictional urgent CABG/HIT simulation: clinical-usefulness assessment, audit of all eight cited papers, verification of 20 PubMed records, guideline omissions and original unedited answer."
+logical_id = "050b70f5-db2f-49f2-951f-458534269147"
+content_hash = "sha256:bb45cb2e569f0187def9e248085e07180bb54e5031f504d3eecc7dfd8a2f533c"
+size = 37972
+mtime_ms = 1791984473410
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:7ee058fe-27cb-4eec-838d-03c8cc0d9eb2/050b70f5-db2f-49f2-951f-458534269147/82368862-c242-49ab-93c9-44b2fb46fcf3"
+storage_version_token = "1791984508416748"
+content_type = "text/html"
