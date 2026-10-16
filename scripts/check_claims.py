@@ -165,33 +165,65 @@ THIN_CHARS = 400
 # praxis_check.py turns them into plain (PMID ...) before anything is shown and
 # keeps the raw form in evidence.json `synthesis_raw` for this checker.
 # --------------------------------------------------------------------------- #
-_ITEM = r'PMID\s*:?\s*\d{5,9}(?:\s*:\s*["“„”][^"“”„]*["”“])?'
-ANCHOR_GROUP = re.compile(r"\(\s*" + _ITEM + r"(?:\s*;\s*" + _ITEM + r")*\s*\)")
-ANCHOR_ITEM = re.compile(r'PMID\s*:?\s*(\d{5,9})(?:\s*:\s*["“„”]([^"“”„]*)["”“])?')
 ANCHOR_TAG = re.compile(r"⟦A(\d+)⟧")
+
+
+# An anchor group starts at `(PMID 123: "` and ends at the first quote mark
+# directly followed by `)`. Scanning for the end instead of matching a strict
+# grammar survives what the live model actually wrote (benchmark 2026-10-16):
+# quote marks INSIDE the quote ("the "phase of HIT" ...") and a second quote
+# for the same PMID without repeating the label (`PMID 1: "a"; "b"`). Both
+# leaked English source text into the shown dossier with the strict grammar.
+ANCHOR_START = re.compile(r'\(\s*PMID\s*:?\s*\d{5,9}\s*:\s*["“„”]')
+# End of the group: a closing quote then `)`, or a closing quote followed by
+# plain PMIDs then `)` (`PMID 1: "a"; PMID 2)`), whichever comes first.
+ANCHOR_END = re.compile(r'["”“]\s*(?:;\s*PMID\s*:?\s*\d{5,9}(?:\s*[,;]\s*(?:PMID\s*:?\s*)?'
+                        r'\d{5,9})*\s*)?\)')
+QUOTE_ITEM = re.compile(r'(?:PMID\s*:?\s*(\d{5,9})\s*:\s*)?["“„”](.*?)["”“](?=\s*(?:;|$))', re.S)
 
 
 def split_anchors(raw: str) -> tuple[str, str, list[dict]]:
     """Raw model prose -> (display text with plain `(PMID a, b)`, annotated
-    text with `(PMID a, b ⟦Ak⟧)` for claim parsing, anchors). A group counts
-    as an anchor only if at least one of its items carries a quote; plain
-    `(PMID ...)` groups pass through untouched."""
+    text with `(PMID a, b ⟦Ak⟧)` for claim parsing, anchors). Plain
+    `(PMID ...)` groups without quotes pass through untouched."""
     anchors: list[dict] = []
     display, annotated, pos = [], [], 0
-    for m in ANCHOR_GROUP.finditer(raw):
-        items = [(p, q.strip() if q else "") for p, q in ANCHOR_ITEM.findall(m.group(0))]
-        if not any(q for _, q in items):
+    for start in ANCHOR_START.finditer(raw):
+        if start.start() < pos:
+            continue                                    # inside a group already taken
+        end = ANCHOR_END.search(raw, start.end())
+        if end:
+            stop = end.end()
+        else:                                           # unterminated: cut at line end
+            nl = raw.find("\n", start.end())
+            stop = len(raw) if nl < 0 else nl
+        inner = raw[start.start() + 1:stop].rstrip(")").strip()
+        items, last = [], None
+        spans = []
+        for m in QUOTE_ITEM.finditer(inner):
+            last = m.group(1) or last
+            if last:
+                items.append((last, m.group(2).strip()))
+            spans.append(m.span(2))
+        outside = "".join(ch for i, ch in enumerate(inner)
+                          if not any(a <= i < b for a, b in spans))
+        pmids = list(dict.fromkeys(re.findall(r"PMID\s*:?\s*(\d{5,9})", outside)))
+        if not pmids:
             continue
-        pmids = list(dict.fromkeys(p for p, _ in items))
-        plain = f"(PMID {', '.join(pmids)})"
-        display += [raw[pos:m.start()], plain]
-        annotated += [raw[pos:m.start()],
+        display += [raw[pos:start.start()], f"(PMID {', '.join(pmids)})"]
+        annotated += [raw[pos:start.start()],
                       f"(PMID {', '.join(pmids)} ⟦A{len(anchors)}⟧)"]
         anchors.append({"pmids": pmids, "quotes": [(p, q) for p, q in items if q]})
-        pos = m.end()
+        pos = stop
     display.append(raw[pos:])
     annotated.append(raw[pos:])
     return "".join(display), "".join(annotated), anchors
+
+
+def quote_leaks(display: str) -> list[str]:
+    """Anything in the shown text that still looks like a quote anchor."""
+    return [m.group(0) for m in
+            re.finditer(r'PMID\s*:?\s*\d{5,9}\s*:\s*["“„”][^\n]{0,60}', display)]
 
 
 def _norm_quote(s: str) -> str:

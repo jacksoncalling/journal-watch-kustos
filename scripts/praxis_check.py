@@ -1011,6 +1011,14 @@ def dossier_stages(q: dict, *, profile_text: str | None = None,
     # sees the prose, before finalize strips dashes (source quotes contain en
     # dashes and must stay verbatim). The raw form goes to evidence.json only.
     body, _, anchors = check_claims.split_anchors(raw)
+    leaks = check_claims.quote_leaks(body)
+    if leaks:
+        # Safety net: never show source quotes to the reader, even in a format
+        # the parser does not know. Cut from the colon to the end of the group.
+        print(f"  WARN: {len(leaks)} unparsed quote anchor(s); stripped from the "
+              f"shown text", file=sys.stderr)
+        body = re.sub(r'(\(\s*PMID\s*:?\s*\d{5,9})\s*:\s*["“„”][^\n]*?\)(?=[\s.,;]|$)',
+                      r"\1)", body)
     if not anchors:
         print("  WARN: no quote anchors in the dossier; the contract requires "
               "(PMID ...: \"quote\") on load-bearing claims", file=sys.stderr)

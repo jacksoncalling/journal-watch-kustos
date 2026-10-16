@@ -4,7 +4,18 @@ Status snapshot for picking this up in a fresh session. The spec is
 `~/step-into-more/projects/journal-watch/build-plan.md` (HQ). This file is the
 "where we actually are" and "what's left" companion that lives with the code.
 
-## Update 2026-10-15 (read this first)
+## Update 2026-10-16, late (read this first)
+
+Pre-push check found 2 of 18 live dossiers leaking English quote text into the
+shown dossier (quote marks inside a quote; a second quote without repeating
+`PMID x:`). `split_anchors` now scans to the closing `")` instead of a strict
+grammar, plus a display safety net in `praxis_check` that strips any anchor
+the parser misses. Regression: all 18 saved raw texts now show no leak.
+`web/REPLIT_BRIEF.md` has a "Backend changes 2026-10-16" section for the
+Replit agent. Push dry-run: GitHub accepts a fast-forward of main to the
+branch; Replit has not committed since `d1f2e62`.
+
+## Update 2026-10-15
 
 Replit ran a fictional urgent CABG + acute HIT simulation (report in the Replit
 workspace at `.local/outputs/kustos-hit-evaluation.html`, not in git). All 20

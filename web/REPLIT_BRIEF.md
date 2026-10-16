@@ -130,6 +130,24 @@ A4), then swap in the `synthesis` prose, then replace everything with `done`'s
 Quellen/Suchanfrage/footer). Keep the existing `/praxis` call as a fallback if a
 host's proxy does not support SSE cleanly; both hit the identical pipeline.
 
+## Backend changes 2026-10-16 (no UI change required)
+
+- **Quote anchors.** The synthesis now writes `(PMID 123: "verbatim quote")`.
+  The Python pipeline removes the quotes right after synthesis, BEFORE the
+  `synthesis` SSE event and the final `dossier`, so the page still only ever
+  receives plain `(PMID 123)`. Do not add any client-side quote handling and
+  do not render raw model text from anywhere else. The quotes live in the
+  server-side evidence record for checking (`scripts/check_claims.py`).
+- **Fewer than 20 sources is normal now.** Off-topic papers are no longer
+  padded in. The `citations[]` array can be shorter; keep rendering what is
+  there.
+- **No matching papers = no dossier.** `/praxis` returns 422 and the stream an
+  `error` event with "Keine Belege gefunden (keine Paper zum Thema der Frage
+  ...)". Show `detail` as for any failed run.
+- **Thin evidence note.** With fewer than 5 matching papers the dossier starts
+  with a `> Hinweis: ...` line before `## Kurzantwort`. The existing preamble
+  rendering shows it; keep it visible.
+
 ## Interaction reference: OpenEvidence
 
 The visual target is `web/journey-sketch.html` (open it in a browser): the user

@@ -494,6 +494,37 @@ def quote_anchoring() -> None:
        "evidence_record lists anchors with in_source set by code")
 
 
+def anchor_leaks() -> None:
+    """Quote text must never reach the shown dossier (benchmark 2026-10-16:
+    2 of 18 dossiers leaked English source text with the strict parser)."""
+    print("anchor parsing, no quote leaks:")
+    raw = ('Phasen (PMID 34889428: "Next, the "phase of HIT" (acute HIT, subacute HIT A/B, '
+           'or remote HIT) should be established"). Weiter.')
+    shown, _, anc = cc.split_anchors(raw)
+    ok(shown == "Phasen (PMID 34889428). Weiter." and anc[0]["quotes"][0][1].startswith(
+       'Next, the "phase of HIT"'), "quote marks inside the quote: no leak, quote kept whole")
+    raw = ('Troponin (PMID 17156509: "There was a significant (P < 0.001) difference"; '
+           '"reduced need for inotropic support (24/75, 32.0% vs. 31/75, 41.3%)"). Ende.')
+    shown, _, anc = cc.split_anchors(raw)
+    ok(shown == "Troponin (PMID 17156509). Ende." and len(anc[0]["quotes"]) == 2
+       and all(p == "17156509" for p, _ in anc[0]["quotes"]),
+       "second quote without repeating 'PMID x:': both quotes kept, no leak")
+    shown, _, anc = cc.split_anchors('A (PMID 11111111: "q one"; PMID 22222222). B.')
+    ok(shown == "A (PMID 11111111, 22222222). B." and anc[0]["quotes"] == [("11111111", "q one")],
+       "mixed group: quoted and plain PMID together")
+    shown, _, _ = cc.split_anchors('A (PMID 11111111: "unterminated quote runs on\nNext line.')
+    ok(not cc.quote_leaks(shown) and "Next line." in shown,
+       "unterminated quote: cut at line end, next line kept")
+    runs = sorted(Path(__file__).resolve().parent.parent.joinpath(
+        "05_praxis-check", "benchmark-runs").glob("**/*.evidence.json"))
+    leaked = []
+    for p in runs:
+        raw = json.loads(p.read_text(encoding="utf-8")).get("synthesis_raw") or ""
+        leaked += [(p.name, x) for x in cc.quote_leaks(cc.split_anchors(raw)[0])]
+    ok(runs and not leaked, f"all {len(runs)} saved live raw texts: no quote reaches the "
+       f"shown text (leaks: {leaked[:2]})")
+
+
 KNOWN: list[tuple[bool, str]] = []
 
 
@@ -602,6 +633,7 @@ def main() -> int:
     review_round_2()
     review_round_3()
     quote_anchoring()
+    anchor_leaks()
     evidence_record()
     real_dossier()
     known_failures()
