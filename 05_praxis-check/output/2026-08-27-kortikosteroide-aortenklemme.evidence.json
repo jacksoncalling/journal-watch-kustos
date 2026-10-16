@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "created": null,
+  "reconstructed": true,
+  "reconstruction_note": "re-fetched from Europe PMC after the run; synthesis_raw unavailable",
+  "question": {
+    "title": "Kortikosteroide und Timing um das Loesen der Aortenklemme",
+    "frage": null,
+    "kontext": null
+  },
+  "queries": [
+    "(corticosteroids OR glucocorticoids OR dexamethasone OR methylprednisolone OR hydrocortisone) AND (\"cardiac surgery\" OR \"heart surgery\" OR CABG OR \"cardiopulmonary bypass\") AND (reperfusion OR \"aortic clamp release\" OR \"ischemia reperfusion injury\") AND (timing OR \"time of administration\" OR perioperative OR intraoperative OR \"pre-reperfusion\" OR \"post-reperfusion\") AND SRC:MED",
+    "(dexamethasone OR methylprednisolone OR hydrocortisone OR corticosteroids) AND (\"cardiac surgery\" OR \"valve replacement\" OR CABG) AND (reperfusion OR \"aortic clamp release\") AND (timing OR \"administration protocol\" OR \"perioperative administration\" OR \"pre-reperfusion\" OR \"post-reperfusion\") AND SRC:MED",
+    "(corticosteroids OR glucocorticoids) AND (\"cardiac surgery\" OR \"heart surgery\" OR \"cardiopulmonary bypass\") AND (reperfusion OR \"aortic clamp release\") AND (timing OR \"perioperative timing\") AND (\"meta-analysis\" OR \"systematic review\" OR guideline OR consensus) AND SRC:MED"
+  ],
+  "synthesis_raw": null,
+  "papers": [
+    {
+      "pmid": "19332460",
+      "title": "Benefits and risks of corticosteroid prophylaxis in adult cardiac surgery: a dose-response meta-analysis.",
+      "journal": "Circulation",
+      "date": "2009-03-30",
+      "authors": [
+        "Ho KM",
+        "Tan JA."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "<h4>Background</h4>Cardiopulmonary bypass and cardiac surgery are associated with a significant systemic inflammatory response that may increase postoperative complications. This meta-analysis assessed whether the benefits and risks of corticosteroid use were dose dependent in adult cardiac surgery.<h4>Methods and results</h4>Randomized controlled trials of the use of corticosteroid prophylaxis in adult cardiac surgery (>18 years of age) requiring cardiopulmonary bypass were selected from MEDLINE (1966 to August 1, 2008), EMBASE (1988 to August 1, 2008), and the Cochrane controlled trials register without any language restrictions. A total of 3323 patients from 50 randomized controlled trials were identified and subject to meta-analysis. Corticosteroid prophylaxis reduced the risk of atrial fibrillation (25.1% versus 35.1%; number needed to treat, 10; relative risk, 0.74; 95% confidence interval [CI], 0.63 to 0.86; P<0.01) and length of stay in the intensive care unit (weighted mean difference, -0.37 days; 95% CI, -0.21 to -0.52; P<0.01) and hospital (weighted mean difference, -0.66 days; 95% CI, -0.77 to -1.25; P=0.03) compared with placebo. The use of corticosteroid was not associated with an increased risk of all-cause infection (relative risk, 0.93; 95% CI, 0.61 to 1.41; P=0.73), but hyperglycemia requiring insulin infusion after corticosteroid prophylaxis was common (28.2%; relative risk, 1.49; 95% CI, 1.11 to 2.01; P<0.01). No additional benefits were found on all outcomes beyond a total dose of 1000 mg hydrocortisone, and very high doses of corticosteroid were associated with prolonged mechanical ventilation.<h4>Conclusions</h4>Evidence suggests that low-dose corticosteroid is as effective as high-dose corticosteroid in reducing the risk of atrial fibrillation and duration of mechanical ventilation but with fewer potential side effects in adult cardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "24598306",
+      "title": "Steroids In caRdiac Surgery (SIRS) trial: acute kidney injury substudy protocol of an international randomised controlled trial.",
+      "journal": "BMJ open",
+      "date": "2014-03-05",
+      "authors": [
+        "Garg AX",
+        "SIRS Investigators."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Abstract Introduction Steroids In caRdiac Surgery trial (SIRS) is a large international randomised controlled trial of methylprednisolone or placebo in patients undergoing cardiac surgery with the use of a cardiopulmonary bypass pump. At the time of surgery, compared with placebo, methylprednisolone divided into two intravenous doses of 250 mg each may reduce the risk of postoperative acute kidney injury (AKI). Methods and analysis With respect to the study schedule, over 7000 substudy eligible patients from 81 centres in 18 countries were randomised in December 2013. The authors will use a logistic regression to estimate the adjusted OR of methylprednisolone versus placebo on the primary outcome of AKI in the 14 days following surgery (a postoperative increase in serum creatinine of ≥50%, or ≥26.5 μmol/L, from the preoperative value). The stage of AKI will also be considered, as will the outcome of AKI in those with and without preoperative chronic kidney disease. After receipt of grant funding, the authors began to record additional perioperative serum creatinine measurements in consecutive patients enrolled at substudy participating centres, and patients were invited to enroll in a 6-month serum creatinine collection. In these trial subpopulations, the authors will consider the outcome of AKI defined in alternate ways, and the outcome of a 6-month change in kidney function from the preoperative value. Ethics and dissemination The authors were competitively awarded a grant from the Canadian Institutes of Health Research for this SIRS AKI substudy. Ethics approval was obtained for additional serum creatinine recordings in consecutive patients enrolled at participating centres. The additional kidney data collection first began for patients enrolled after 1 March 2012. In patients who provided consent, the last 6-month kidney outcome data will be collected in 2014. The results will be reported no later than 2015. Clinical Trial Registration Number NCT00427388 .",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "25952257",
+      "title": "Intraoperative High-Dose Dexamethasone and Severe AKI after Cardiac Surgery.",
+      "journal": "Journal of the American Society of Nephrology : JASN",
+      "date": "2015-05-07",
+      "authors": [
+        "Jacob KA",
+        "Dexamethasone for Cardiac Surgery (DECS) Study Group."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Administration of prophylactic glucocorticoids has been suggested as a strategy to reduce postoperative AKI and other adverse events after cardiac surgery requiring cardiopulmonary bypass. In this post hoc analysis of a large placebo-controlled randomized trial of dexamethasone in 4465 adult patients undergoing cardiac surgery, we examined severe AKI, defined as use of RRT, as a primary outcome. Secondary outcomes were doubling of serum creatinine level or AKI-RRT, as well as AKI-RRT or in-hospital mortality (RRT/death). The primary outcome occurred in ten patients (0.4%) in the dexamethasone group and in 23 patients (1.0%) in the placebo group (relative risk, 0.44; 95% confidence interval, 0.19 to 0.96). In stratified analyses, the strongest signal for potential benefit of dexamethasone was in patients with an eGFR<15 ml/min per 1.73 m(2). In conclusion, compared with placebo, intraoperative dexamethasone appeared to reduce the incidence of severe AKI after cardiac surgery in those with advanced CKD.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "16236942",
+      "title": "Dexamethasone: benefit and prejudice for patients undergoing on-pump coronary artery bypass grafting: a study on myocardial, pulmonary, renal, intestinal, and hepatic injury.",
+      "journal": "Chest",
+      "date": "2005-10-01",
+      "authors": [
+        "Morariu AM",
+        "Epema AH."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "<h4>Study objectives</h4>Cardiac surgery with cardiopulmonary bypass (CPB) results in perioperative organ damage caused by the systemic inflammatory response syndrome (SIRS) and ischemia/reperfusion injury. Administration of corticosteroids before CPB has been demonstrated to inhibit the activation of the systemic inflammatory response. However, the clinical benefits of corticosteroid therapy are controversial. This study was designed to document the effects of dexamethasone on cytokine release and perioperative myocardial, pulmonary, renal, intestinal, and hepatic damage, as assessed by specific and sensitive biomarkers.<h4>Design and patients</h4>A prospective, double-blind, placebo-controlled, randomized trial for dexamethasone was conducted in 20 patients receiving either dexamethasone (1 mg/kg before anesthesia induction and 0.5 mg/kg after 8 h; n = 10) or placebo (n = 10). Different markers were used to assess the SIRS: interleukin (IL)-6, IL-8, IL-10, C-reactive protein (CRP), and tryptase; and organ damage: heart (plasma heart-type fatty acid binding protein, cardiac troponin I [cTnI], creatine kinase-MB), kidneys (N-acetyl-glucosaminidase [NAG], microalbuminuria), intestine (intestinal-type fatty acid binding protein [I-FABP]/liver-type fatty acid binding protein [L-FABP]), and liver (alpha-glutathione S-transferase).<h4>Results</h4>Dexamethasone modulated the SIRS with lower proinflammatory (IL-6, IL-8) and higher antiinflammatory (IL-10) IL levels. CRP and tryptase were lower in the dexamethasone group. cTnI values were lower in the dexamethasone group at 6 h in the ICU (p = 0.009). Patients in the dexamethasone group had a longer time to tracheal extubation (18.86 +/- 1.13 h vs 15.01 +/- 0.99 h, p = 0.02 [mean +/- SEM]), with a lower oxygenation index at that time: Pa(O2)/fraction of inspired oxygen ratio, 37.17 +/- 1.8 kPa vs 29.95 +/- 2.1 kPa (p = 0.009). The postoperative glucose level (10.7 +/- 0.6 mmol/L vs 7.4 +/- 0.5 mmol/L, p = 0.005) was higher in the dexamethasone group. Serum glucose was independently associated with intestinal injury (urine I-FABP peak, R2 = 42.5%, beta = 114.4 +/- 31.4, significant at p = 0.002; urine L-FABP peak, R2 = 47.3%, beta = 7,714.1 +/- 1,920.9, significant at p = 0.001) and renal injury (urine NAG, R2 = 32.1%, beta = 0.21 +/- 0.07, significant at p = 0.009). Tryptase peaks correlated negatively with peaks of intestinal and renal injury biomarkers.<h4>Conclusion</h4>Even while inhibiting SIRS, dexamethasone treatment offered no protection against transient, subclinical, perioperative abdominal organ damage. Tryptase release could have a preconditioning effect, offering protection against perioperative intestinal and renal damage. Dexamethasone treatment resulted in more pronounced postoperative pulmonary dysfunction, prolonged time to tracheal extubation, and initiated postoperative hyperglycemia in patients undergoing elective on-pump coronary artery bypass graft surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "12842524",
+      "title": "Myocardial and lung injury after cardiopulmonary bypass: role of interleukin (IL)-10.",
+      "journal": "The Annals of thoracic surgery",
+      "date": "2003-07-01",
+      "authors": [
+        "Giomarelli P",
+        "Biagioli B."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "<h4>Background</h4>Proinflammatory cytokines, such as tumor necrosis factor-alpha (TNF-alpha), interleukin (IL)-6, and IL-8 play a key role in the inflammatory cascade after cardiopulmonary bypass (CPB) and may induce cardiac and lung dysfunction. Antiinflammatory cytokines such as IL-10 may also significantly limit these complications. Corticosteroid administration before CPB increases blood IL-10 levels and prevents proinflammatory cytokine release. This study examined the association of increased release of IL-10, stimulated by steroid pretreatment, with reduced myocardial and lung injury after CPB.<h4>Methods</h4>Twenty patients undergoing coronary artery bypass grafting (CABG) received either preoperative steroid (n = 10, protocol group) or no steroid (n = 10, control group). Perioperative care was standardized, and all caregivers were blinded to treatment group. Seven intervals of blood samples were obtained and assayed for TNF-alpha, IL-6, IL-8, and IL-10. Various hemodynamic and pulmonary measurements were obtained perioperatively. Levels of MB isoenzyme creatine kinase (CK-MB) were also measured.<h4>Results</h4>In the protocol group, proinflammatory cytokines were significantly reduced while IL-10 levels were much higher after CPB. The protocol group had a lower alveolar-arterial oxygen gradient and higher ratio of arterial oxygen pressure to fraction of inspired oxygen after CPB. Creatine kinase (CK) and CK-MB were reduced in the patients treated with steroid. Correlations were found between plasma cytokines levels and cardiac index, and CK-MB.<h4>Conclusions</h4>This study confirms that corticosteroids abolish proinflammatory cytokines release and increase blood IL-10 levels after CPB. Our findings demonstrate a greater release of IL-10 induced by steroid pretreatment, and better heart and lung protection after CPB.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "21835900",
+      "title": "Efficacy of methylprednisolone in preventing lung injury following pulmonary thromboendarterectomy.",
+      "journal": "Chest",
+      "date": "2011-08-11",
+      "authors": [
+        "Kerr KM",
+        "Fedullo PF."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "<h4>Background</h4>We sought to determine the efficacy and safety of perioperative treatment with methylprednisolone on the development of lung injury after pulmonary thromboendarterectomy.<h4>Methods</h4>This was a randomized, prospective, double-blind, placebo-controlled study of 98 adult patients with chronic thromboembolic pulmonary hypertension who were undergoing pulmonary thromboendarterectomy at a single institution. The patients received either placebo (n = 47) or methylprednisolone (n = 51) (30 mg/kg in the cardiopulmonary bypass prime, 500 mg IV bolus following the final circulatory arrest, and 250 mg IV bolus 36 h after surgery). The primary end point was the presence of lung injury as determined by two independent, blinded physicians using prospectively defined criteria. The secondary end points included ventilator-free, ICU-free, and hospital-free days and selected levels of cytokines in the blood and in BAL fluid.<h4>Results</h4>The incidence of lung injury was similar in both treatment groups (45% placebo, 41% steroid; P = .72). There were no statistical differences in the secondary clinical end points between treatment groups. Treatment with methylprednisolone, compared with placebo, was associated with a statistically significant reduction in plasma IL-6 and IL-8, a significant increase in plasma IL-10, and a significant reduction in postoperative IL-1ra and IL-6, but not IL-8 in BAL fluid obtained 1 day after surgery.<h4>Conclusions</h4>Perioperative methylprednisolone does not reduce the incidence of lung injury following pulmonary thromboendarterectomy surgery despite having an antiinflammatory effect on plasma and lavage cytokine levels.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "39872654",
+      "title": "Effectiveness of Anti-Inflammatory Agents to Prevent Atrial Fibrillation After Cardiac Surgery: A Systematic Review and Network Meta-Analysis.",
+      "journal": "CJC open",
+      "date": "2024-10-29",
+      "authors": [
+        "Malektojari A",
+        "Pitre T."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Abstract Background Preventing postoperative atrial fibrillation (POAF) as one of the most significant complications of cardiovascular surgeries remains a major clinical challenge. We conducted a systematic review with network meta-analysis of randomized controlled trials, to identify the most effective and safe anti-inflammatory drugs to prevent new-onset POAF. Methods MEDLINE, Embase, Web of Science, and Cochrane Library were searched without language or publication-date restriction on August 8, 2022 (updated on August 8, 2023). We assessed the risk of bias of included trials using the Cochrane risk-of-bias 2.0 tool. We conducted a frequentist random-effects network meta-analysis in R, and we assessed the certainty of evidence using the Grading of Recommendations, Assessment, Development, and Evaluations (GRADE) approach. Results A total of 85 trials reported the incidence of new-onset POAF, including 18,981 patients. Use of nonsteroidal anti-inflammatory drugs (relative risk [RR] 0.37 [95% confidence interval [CI] 0.23-0.59]) and statins (RR 0.56 [95% CI 0.45-0.7]) potentially reduced the risk of POAF compared with placebo (both with a moderate certainty level). Use of fish oil in combination with vitamins C and E (RR 0.30 [95% CI 0.13-0.68]) may reduce the risk of POAF, compared with placebo (low level of certainty). Use of colchicine (RR 0.62 [95% CI 0.45- 0.85]), corticosteroids (RR 0.70 [95% CI 0.59-0.82]), and N-acetylcysteine (RR 0.69 [95% CI 0.49- 0.98]) may reduce the risk of POAF (all with a low level of certainty). None of the interventions had a significant effect on mortality rate or risk of serious adverse effects. Conclusions Use of nonsteroidal anti-inflammatory drugs and statins probably are effective in preventing new-onset POAF, with a moderate level of certainty, compared to placebo.",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "20064238",
+      "title": "Strategies to prevent intraoperative lung injury during cardiopulmonary bypass.",
+      "journal": "Journal of cardiothoracic surgery",
+      "date": "2010-01-11",
+      "authors": [
+        "Apostolakis EE",
+        "Papadopoulos GS."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "During open heart surgery the influence of a series of factors such as cardiopulmonary bypass (CPB), hypothermia, operation and anaesthesia, as well as medication and transfusion can cause a diffuse trauma in the lungs. This injury leads mostly to a postoperative interstitial pulmonary oedema and abnormal gas exchange. Substantial improvements in all of the above mentioned factors may lead to a better lung function postoperatively. By avoiding CPB, reducing its time, or by minimizing the extracorporeal surface area with the use of miniaturized circuits of CPB, beneficial effects on lung function are reported. In addition, replacement of circuit surface with biocompatible surfaces like heparin-coated, and material-independent sources of blood activation, a better postoperative lung function is observed. Meticulous myocardial protection by using hypothermia and cardioplegia methods during ischemia and reperfusion remain one of the cornerstones of postoperative lung function. The partial restoration of pulmonary artery perfusion during CPB possibly contributes to prevent pulmonary ischemia and lung dysfunction. Using medication such as corticosteroids and aprotinin, which protect the lungs during CPB, and leukocyte depletion filters for operations expected to exceed 90 minutes in CPB-time appear to be protective against the toxic impact of CPB in the lungs. The newer methods of ultrafiltration used to scavenge pro-inflammatory factors seem to be protective for the lung function. In a similar way, reducing the use of cardiotomy suction device, as well as the contact-time between free blood and pericardium, it is expected that the postoperative lung function will be improved.",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "29732365",
+      "title": "Corticosteroids in Pediatric Heart Surgery: Myth or Reality.",
+      "journal": "Frontiers in pediatrics",
+      "date": "2018-04-20",
+      "authors": [
+        "Fudulu DP",
+        "Angelini GD."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Abstract Background: Corticosteroids have been administered prophylactically for more than 60 years in pediatric heart surgery, however, their use remains a matter of debate. There are three main indications for corticosteroid use in pediatric heart surgery with the use of cardiopulmonary bypass (CPB): (1) to blunt the systemic inflammatory response (SIRS) induced by the extracorporeal circuit; (2) to provide perioperative supplementation for presumed relative adrenal insufficiency; (3) for the presumed neuroprotective effect during deep hypothermic circulatory arrest operations. This review discusses the current evidence behind the use of corticosteroids in these three overlapping areas. Materials and Methods: We conducted a structured research of the literature using PubMed and MEDLINE databases to November 2017 and additional articles were identified by cross-referencing. Results: The evidence suggests that there is no correlation between the effect of corticosteroids on inflammation and their effect on clinical outcome. Due to the limitations of the available evidence, it remains unclear if corticosteroids have an impact on early post-operative outcomes or if there are any long-term effects. There is a limited understanding of the hypothalamic-pituitary-adrenal axis function during cardiac surgery in children. The neuroprotective effect of corticosteroids during deep hypothermic circulatory arrest surgery is controversial. Conclusions: The utility of steroid administration for pediatric heart surgery with the use of CPB remains a matter of debate. The effect on early and late outcomes requires clarification with a large multicenter randomized trial. More research into the understanding of the adrenal response to surgery in children and the effect of corticosteroids on brain injury is warranted. Keywords: corticosteroids, clinical outcomes, relative adrenal insufficiency, deep hypothermic circulatory arrest, pediatric heart surgery, cardiopulmonary by-pass",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "36308338",
+      "title": "Postoperative systemic inflammatory dysregulation and corticosteroids: a narrative review.",
+      "journal": "Anaesthesia",
+      "date": "2022-10-29",
+      "authors": [
+        "Bain CR",
+        "Dieleman JM."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Summary In some patients, the inflammatory‐immune response to surgical injury progresses to a harmful, dysregulated state. We posit that postoperative systemic inflammatory dysregulation forms part of a pathophysiological response to surgical injury that places patients at increased risk of complications and subsequently prolongs hospital stay. In this narrative review, we have outlined the evolution, measurement and prediction of postoperative systemic inflammatory dysregulation, distinguishing it from a healthy and self‐limiting host response. We reviewed the actions of glucocorticoids and the potential for heterogeneous responses to peri‐operative corticosteroid supplementation. We have then appraised the evidence highlighting the safety of corticosteroid supplementation, and the potential benefits of high/repeated doses to reduce the risks of major complications and death. Finally, we addressed how clinical trials in the future should target patients at higher risk of peri‐operative inflammatory complications, whereby corticosteroid regimes should be tailored to modify not only the a priori risk, but also further adjusted in response to markers of an evolving pathophysiological response.",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "30441816",
+      "title": "Hydrocortisone, Ascorbic Acid and Thiamine (HAT Therapy) for the Treatment of Sepsis. Focus on Ascorbic Acid.",
+      "journal": "Nutrients",
+      "date": "2018-11-14",
+      "authors": [
+        "Marik PE."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Sepsis is a devastating disease that carries an enormous toll in terms of human suffering and lives lost. Over 100 novel pharmacologic agents that targeted specific molecules or pathways have failed to improve the outcome of sepsis. Preliminary data suggests that the combination of Hydrocortisone, Ascorbic Acid and Thiamine (HAT therapy) may reduce organ failure and mortality in patients with sepsis and septic shock. HAT therapy is based on the concept that a combination of readily available, safe and cheap agents, which target multiple components of the host’s response to an infectious agent, will synergistically restore the dysregulated immune response and thereby prevent organ failure and death. This paper reviews the rationale for HAT therapy with a focus on vitamin C.",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "35782418",
+      "title": "An Update on Postoperative Cognitive Dysfunction Following Cardiac Surgery.",
+      "journal": "Frontiers in psychiatry",
+      "date": "2022-06-15",
+      "authors": [
+        "Vu T",
+        "Smith JA."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Postoperative cognitive dysfunction is extremely prevalent following cardiac surgery. The increasing patient age and comorbidity profile increases their susceptibility to cognitive impairment. The underlying pathophysiological mechanisms leading to cognitive impairment are not clearly elucidated. Using the contemporary literature (2015–present), this narrative review has three aims. Firstly, to provide an overview of postoperative cognitive impairment. Secondly, to analyse the predominant pathophysiological mechanisms leading to cognitive dysfunction following cardiac surgery such as inflammation, cerebral hypoperfusion, cerebral microemboli, glycaemic control and anaesthesia induced neurotoxicity. Lastly, to assess the current therapeutic strategies of interest to address these pathophysiological mechanisms, including the administration of dexamethasone, the prevention of prolonged cerebral desaturations and the monitoring of cerebral perfusion using near-infrared spectroscopy, surgical management strategies to reduce the neurological effects of microemboli, intraoperative glycaemic control strategies, the effect of volatile vs. intravenous anaesthesia, and the efficacy of dexmedetomidine. Conclusion This review provides a contemporary overview on postoperative cognitive impairment following cardiac surgery and examines the main pathophysiology mechanisms contributing to such including inflammation, cerebral hypoperfusion, cerebral microemboli, glycaemic control and anaesthesia induced neurotoxicity. Therapeutic areas of interest targetting these mechanisms were examined. The efficacy of dexamethasone in attenuating the inflammatory response is currently questionable. The use of NIRS to monitor for cerebral desaturations and cerebral perfusion appears to be beneficial by allowing clinicians to correct desaturations. However, further studies using similar thresholds for initiating interventions are required. Recent studies demonstrated that emboli size and a higher target MAP during cardiac surgery were not associated with cognitive impairment. Nevertheless, the modification of surgical techniques to reduce the occurrence of emboli and POCD have been promising.",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "36362635",
+      "title": "Vasoplegic Syndrome after Cardiopulmonary Bypass in Cardiovascular Surgery: Pathophysiology and Management in Critical Care.",
+      "journal": "Journal of clinical medicine",
+      "date": "2022-10-29",
+      "authors": [
+        "Ltaief Z",
+        "Liaudet L."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Vasoplegic syndrome (VS) is a common complication following cardiovascular surgery with cardiopulmonary bypass (CPB), and its incidence varies from 5 to 44%. It is defined as a distributive form of shock due to a significant drop in vascular resistance after CPB. Risk factors of VS include heart failure with low ejection fraction, renal failure, pre-operative use of angiotensin-converting enzyme inhibitors, prolonged aortic cross-clamp and left ventricular assist device surgery. The pathophysiology of VS after CPB is multi-factorial. Surgical trauma, exposure to the elements of the CPB circuit and ischemia-reperfusion promote a systemic inflammatory response with the release of cytokines (IL-1β, IL-6, IL-8, and TNF-α) with vasodilating properties, both direct and indirect through the expression of inducible nitric oxide (NO) synthase. The resulting increase in NO production fosters a decrease in vascular resistance and a reduced responsiveness to vasopressor agents. Further mechanisms of vasodilation include the lowering of plasma vasopressin, the desensitization of adrenergic receptors, and the activation of ATP-dependent potassium (K ATP ) channels. Patients developing VS experience more complications and have increased mortality. Management includes primarily fluid resuscitation and conventional vasopressors (catecholamines and vasopressin), while alternative vasopressors (angiotensin 2, methylene blue, hydroxocobalamin) and anti-inflammatory strategies (corticosteroids) may be used as a rescue therapy in deteriorating patients, albeit with insufficient evidence to provide any strong recommendation. In this review, we present an update of the pathophysiological mechanisms of vasoplegic syndrome complicating CPB and discuss available therapeutic options. 6. Conclusions and Perspectives Vasoplegic syndrome is a frequent complication of cardiopulmonary bypass, with significant impact on major clinical outcomes. It is of particular concern in patients with left ventricular dysfunction or/and chronic renal failure, and it occurs more frequently after complex surgery, left ventricular device implantation and heart transplantation. Systemic inflammation, triggered by multiple mechanisms set in motion during CPB and after its discontinuation, is the key pathophysiological event leading to vasoplegia, by promoting a series of biological processes impairing the normal maintenance of vascular tone. Beyond the obvious necessity to shorten, as much as possible, the duration of CPB to prevent or reduce such deleterious consequences, therapy of established VS is based primarily on adequate volume resuscitation and the use of vasoactive agents to maintain end-organ perfusion and viability. It is puzzling that, in spite of the importance of this conundrum, only very few and adequately powered controlled prospective studies have addressed the question of the best regimen of vasoactive drugs to apply in this setting. Therefore, the current recommended strategy relies only on low to moderate evidence indicating that conventional vasopressors, which include norepinephrine and vasopressin, either alone or in combination, should be used to restore vascular tone, whereas non-conventional vasopressors (methylene blue, hydroxocobalamin and angiotensin 2) are not recommended, except from extremely refractory situations. While future studies will undoubtedly help optimize treatment algorithms, it must be underscored that vasoplegic syndrome develops as a final common disorder precipitated by an array of pathophysiological mechanisms. Such mechanistic diversity might hamper the development of a unique therapeutic strategy similarly applicable to every single patient (“one size fits all”). We may therefore hope that future developments in the field of molecular diagnostics and precision medicine might allow decipher which mechanism prevails in a given situation, and thereby tailor the therapeutic management to each specific patient.",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "26357785",
+      "title": "Attenuating the Systemic Inflammatory Response to Adult Cardiopulmonary Bypass: A Critical Review of the Evidence Base.",
+      "journal": "The journal of extra-corporeal technology",
+      "date": "2014-09-01",
+      "authors": [
+        "Landis RC",
+        "Hammon JW."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "A wide range of pharmacological, surgical, and mechanical pump approaches have been studied to attenuate the systemic inflammatory response to cardiopulmonary bypass, yet no systematically based review exists to cover the scope of anti-inflammatory interventions deployed. We therefore conducted an evidence-based review to capture \"self-identified\" anti-inflammatory interventions among adult cardiopulmonary bypass procedures. To be included, trials had to measure at least one inflammatory mediator and one clinical outcome, specified in the \"Outcomes 2010\" consensus statement. Ninety-eight papers satisfied inclusion criteria and formed the basis of the review. The review identified 33 different interventions and approaches to attenuate the systemic inflammatory response. However, only a minority of papers (35 of 98 [35.7%]) demonstrated any clinical improvement to one or more of the predefined outcome measures (most frequently myocardial protection or length of intensive care unit stay). No single intervention was supported by strong level A evidence (multiple randomized controlled trials [RCTs] or meta-analysis) for clinical benefit. Interventions at level A evidence included off-pump surgery, minimized circuits, biocompatible circuit coatings, leukocyte filtration, complement C5 inhibition, preoperative aspirin, and corticosteroid prophylaxis. Interventions at level B evidence (single RCT) for minimizing inflammation included nitric oxide donors, C1 esterase inhibition, neutrophil elastase inhibition, propofol, propionyl-L-carnitine, and intensive insulin therapy. A secondary analysis revealed that suppression of at least one inflammatory marker was necessary but not sufficient to confer clinical benefit. The most effective interventions were those that targeted multiple inflammatory pathways. These observations are consistent with a \"multiple hit\" hypothesis, whereby clinically effective suppression of the systemic inflammatory response requires hitting multiple inflammatory targets simultaneously. Further research is warranted to evaluate if combinations of interventions that target multiple inflammatory pathways are capable of synergistically reducing inflammation and improving outcomes after cardiopulmonary bypass.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "38992031",
+      "title": "Biliary atresia.",
+      "journal": "Nature reviews. Disease primers",
+      "date": "2024-07-11",
+      "authors": [
+        "Tam PKH",
+        "Davenport M."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Biliary atresia (BA) is a progressive inflammatory fibrosclerosing disease of the biliary system and a major cause of neonatal cholestasis. It affects 1:5,000-20,000 live births, with the highest incidence in Asia. The pathogenesis is still unknown, but emerging research suggests a role for ciliary dysfunction, redox stress and hypoxia. The study of the underlying mechanisms can be conceptualized along the likely prenatal timing of an initial insult and the distinction between the injury and prenatal and postnatal responses to injury. Although still speculative, these emerging concepts, new diagnostic tools and early diagnosis might enable neoadjuvant therapy (possibly aimed at oxidative stress) before a Kasai portoenterostomy (KPE). This is particularly important, as timely KPE restores bile flow in only 50-75% of patients of whom many subsequently develop cholangitis, portal hypertension and progressive fibrosis; 60-75% of patients require liver transplantation by the age of 18 years. Early diagnosis, multidisciplinary management, centralization of surgery and optimized interventions for complications after KPE lead to better survival. Postoperative corticosteroid use has shown benefits, whereas the role of other adjuvant therapies remains to be evaluated. Continued research to better understand disease mechanisms is necessary to develop innovative treatments, including adjuvant therapies targeting the immune response, regenerative medicine approaches and new clinical tests to improve patient outcomes.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "29486781",
+      "title": "Vasoplegia treatments: the past, the present, and the future.",
+      "journal": "Critical care (London, England)",
+      "date": "2018-02-27",
+      "authors": [
+        "Levy B",
+        "Kimmoun A."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Abstract Vasoplegia is a ubiquitous phenomenon in all advanced shock states, including septic, cardiogenic, hemorrhagic, and anaphylactic shock. Its pathophysiology is complex, involving various mechanisms in vascular smooth muscle cells such as G protein-coupled receptor desensitization (adrenoceptors, vasopressin 1 receptors, angiotensin type 1 receptors), alteration of second messenger pathways, critical illness-related corticosteroid insufficiency, and increased production of nitric oxide. This review, based on a critical appraisal of the literature, discusses the main current treatments and future approaches. Our improved understanding of these mechanisms is progressively changing our therapeutic approach to vasoplegia from a standardized to a personalized multimodal treatment with the prescription of several vasopressors. While norepinephrine is confirmed as first line therapy for the treatment of vasoplegia, the latest Surviving Sepsis Campaign guidelines also consider that the best therapeutic management of vascular hyporesponsiveness to vasopressors could be a combination of multiple vasopressors, including norepinephrine and early prescription of vasopressin. This new approach is seemingly justified by the need to limit adrenoceptor desensitization as well as sympathetic overactivation given its subsequent deleterious impacts on hemodynamics and inflammation. Finally, based on new pathophysiological data, two potential drugs, selepressin and angiotensin II, are currently being evaluated. Keywords: Vasoplegic syndrome, Circulatory failure, Catecholamines, Septic shock, Vasoconstrictor agents",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "22944084",
+      "title": "Ex vivo rehabilitation of non-heart-beating donor lungs in preclinical porcine model: delayed perfusion results in superior lung function.",
+      "journal": "The Journal of thoracic and cardiovascular surgery",
+      "date": "2012-08-31",
+      "authors": [
+        "Mulloy DP",
+        "Kron IL."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "<h4>Objectives</h4>Ex vivo lung perfusion (EVLP) is a promising modality for the evaluation and treatment of marginal donor lungs. The optimal timing of EVLP initiation and the potential for rehabilitation of donor lungs with extended warm ischemic times is unknown. The present study compared the efficacy of different treatment strategies for uncontrolled non-heart-beating donor lungs.<h4>Methods</h4>Mature swine underwent hypoxic arrest, followed by 60 minutes of no-touch warm ischemia. The lungs were harvested and flushed with 4°C Perfadex. Three groups (n = 5/group) were stratified according to the preservation method: cold static preservation (CSP; 4 hours of 4°C storage), immediate EVLP (I-EVLP: 4 hours EVLP at 37°C), and delayed EVLP (D-EVLP; 4 hours of CSP followed by 4 hours of EVLP). The EVLP groups were perfused with Steen solution supplemented with heparin, methylprednisolone, cefazolin, and an adenosine 2A receptor agonist. The lungs then underwent allotransplantation and 4 hours of recipient reperfusion before allograft assessment for resultant ischemia-reperfusion injury.<h4>Results</h4>The donor blood oxygenation (partial pressure of oxygen/fraction of inspired oxygen ratio) before death was not different between the groups. The oxygenation after transplantation was significantly greater in the D-EVLP group than in the I-EVLP or CSP groups. The mean airway pressure, pulmonary artery pressure, and expression of interleukin-8, interleukin-1β, and tumor necrosis factor-α were all significantly reduced in the D-EVLP group. Post-transplant oxygenation exceeded the acceptable clinical levels only in the D-EVLP group.<h4>Conclusions</h4>Uncontrolled non-heart-beating donor lungs with extended warm ischemia can be reconditioned for successful transplantation. The combination of CSP and EVLP in the D-EVLP group was necessary to obtain optimal post-transplant function. This finding, if confirmed clinically, will allow expanded use of nonheart-beating donor lungs.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "29980217",
+      "title": "Definitions and pathophysiology of vasoplegic shock.",
+      "journal": "Critical care (London, England)",
+      "date": "2018-07-06",
+      "authors": [
+        "Lambden S",
+        "Forni LG."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Vasoplegia is the syndrome of pathological low systemic vascular resistance, the dominant clinical feature of which is reduced blood pressure in the presence of a normal or raised cardiac output. The vasoplegic syndrome is encountered in many clinical scenarios, including septic shock, post-cardiac bypass and after surgery, burns and trauma, but despite this, uniform clinical definitions are lacking, which renders translational research in this area challenging. We discuss the role of vasoplegia in these contexts and the criteria that are used to describe it are discussed. Intrinsic processes which may drive vasoplegia, such as nitric oxide, prostanoids, endothelin-1, hydrogen sulphide and reactive oxygen species production, are reviewed and potential for therapeutic intervention explored. Extrinsic drivers, including those mediated by glucocorticoid, catecholamine and vasopressin responsiveness of the blood vessels, are also discussed. The optimum balance between maintaining adequate systemic vascular resistance against the potentially deleterious effects of treatment with catecholamines is as yet unclear, but development of novel vasoactive agents may facilitate greater understanding of the role of the differing pathways in the development of vasoplegia. In turn, this may provide insights into the best way to care for patients with this common, multifactorial condition.",
+      "provenance": "[VOLLTEXT]",
+      "rebuilt_provenance": "[VOLLTEXT]"
+    },
+    {
+      "pmid": "15942340",
+      "title": "The hepatoadrenal syndrome: a common yet unrecognized clinical condition.",
+      "journal": "Critical care medicine",
+      "date": "2005-06-01",
+      "authors": [
+        "Marik PE",
+        "Hepatic Cortisol Research and Adrenal Pathophysiology Study Group."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "<h4>Objective</h4>Adrenal failure is common in critically ill patients, particularly those with sepsis. As liver failure and sepsis are both associated with increased circulating levels of endotoxin and proinflammatory mediators and reduced levels of apoprotein-1/high-density lipoprotein, we postulated that adrenal failure may be common in patients with liver disease.<h4>Design</h4>Clinical study.<h4>Setting</h4>Liver transplant intensive care unit.<h4>Patients</h4>The study cohort included 340 patients with liver disease.<h4>Interventions</h4>Based on preliminary observational data, all patients admitted to our 28-bed liver transplant intensive care unit (LTICU) undergo adrenal function testing. An honest broker system was used to extract clinical, hemodynamic, medication, and laboratory data on patients admitted to the LTICU from March 2002 to March 2004. A random (stress) cortisol level <20 microg/dL in a highly stressed patient (respiratory failure, hypotension) was used to diagnose adrenal insufficiency. In all other patients, a random cortisol level <15 microg/dL or a 30-min level <20 microg/dL post-low-dose (1 microg) cosyntropin was considered diagnostic of adrenal insufficiency. Patients were grouped as follows: a) chronic liver failure; b) fulminant hepatic failure; c) patients immediately status post-orthotopic liver transplantation receiving a steroid-free protocol of immunosuppression; and d) patients status post-remote liver transplant (>/=6 months). The decision to treat patients with stress doses of hydrocortisone was at the discretion of the treating intensivist and transplant surgeon.<h4>Measurements and main results</h4>Two-hundred and forty-five (72%) patients met our criteria for adrenal insufficiency (the hepatoadrenal syndrome). Eight (33%) patients with fulminant hepatic failure, 97 (66%) patients with chronic liver disease, 31(61%) patients with a remote history of liver transplantation, and 109 (92%) patients who had undergone liver transplantation under steroid-free immunosuppression were diagnosed with adrenal insufficiency. The high-density lipoprotein level at the time of adrenal testing was the only variable predictive of adrenal insufficiency (p < .0001). In vasopressor-dependent patients with adrenal insufficiency, treatment with hydrocortisone was associated with a significant reduction (p = .02) in the dose of norepinephrine at 24 hrs, whereas the dose of norepinephrine was significantly higher (p = .04) in those patients with adrenal failure not treated with hydrocortisone. In vasopressor-dependent patients without adrenal insufficiency, treatment with hydrocortisone did not affect vasopressor dose at 24 hrs. One hundred and forty-one patients (26.4%) died during their hospitalization. The baseline serum cortisol was 18.8 +/- 16.2 microg/dL in the nonsurvivors compared with 13.0 +/- 11.8 microg/dL in the survivors (p < .001). Of those patients with adrenal failure who were treated with glucocorticoids, the mortality rate was 26% compared with 46% (p = .002) in those who were not treated. In those patients receiving vasopressor agents at the time of adrenal testing, the baseline cortisol was 10.0 +/- 4.8 microg/dL in those with adrenal insufficiency compared with 35.6 +/- 21.2 microg/dL in those with normal adrenal function. Vasopressor-dependent patients who did not have adrenal failure had a mortality rate of 75%.<h4>Conclusions</h4>Patients with liver failure and patients post-liver transplantation have an exceedingly high incidence of adrenal failure, which may be pathophysiologically related to low levels of high-density lipoprotein. Treatment of patients with adrenal failure may improve outcome. High baseline serum cortisol levels may be a maker of disease severity and portend a poor prognosis.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    },
+    {
+      "pmid": "27699223",
+      "title": "Heterogeneous fibroblasts underlie age-dependent tertiary lymphoid tissues in the kidney.",
+      "journal": "JCI insight",
+      "date": "2016-07-21",
+      "authors": [
+        "Sato Y",
+        "Yanagita M."
+      ],
+      "evidenzstufe": null,
+      "evidence_basis": "Acute kidney injury (AKI) is a common clinical condition defined as a rapid decline in kidney function. AKI is a global health burden, estimated to cause 2 million deaths annually worldwide. Unlike AKI in the young, which is reversible, AKI in the elderly often leads to end-stage renal disease, and the mechanism that prevents kidney repair in the elderly is unclear. Here we demonstrate that aged but not young mice developed multiple tertiary lymphoid tissues (TLTs) in the kidney after AKI. TLT size was associated with impaired renal function and increased expression of proinflammatory cytokines and homeostatic chemokines, indicating a possible contribution of TLTs to sustained inflammation after injury. Notably, resident fibroblasts from a single lineage diversified into p75 neurotrophin receptor<sup>+</sup> (p75NTR<sup>+</sup>) fibroblasts and homeostatic chemokine-producing fibroblasts inside TLTs, and retinoic acid-producing fibroblasts around TLTs. Deletion of CD4<sup>+</sup> cells as well as late administration of dexamethasone abolished TLTs and improved renal outcomes. Importantly, aged but not young human kidneys also formed TLTs that had cellular and molecular components similar to those of mouse TLTs. Therefore, the inhibition of TLT formation may offer a novel therapeutic strategy for AKI in the elderly.",
+      "provenance": "[NUR ABSTRACT]",
+      "rebuilt_provenance": "[NUR ABSTRACT]"
+    }
+  ]
+}

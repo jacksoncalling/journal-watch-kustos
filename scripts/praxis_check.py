@@ -32,9 +32,10 @@ import re
 import sys
 import time
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
+import check_claims
 import enrich
 import fetch_europepmc as fetch
 import rank
@@ -659,11 +660,38 @@ def record_dossier() -> None:
 # app, so the guardrails (finalize, code-built Quellen, citation validation)
 # live in exactly one place and every interface goes through them.
 # --------------------------------------------------------------------------- #
+EVIDENCE_SCHEMA_VERSION = 1
+
+
+def evidence_record(q: dict, queries: list[str], selected: list[dict],
+                    body: str) -> dict:
+    """What the synthesis call actually saw, saved next to the dossier so it can
+    be audited or replayed later (scripts/check_claims.py). `papers` holds the
+    exact `paper_payload` objects sent to the model, so `evidence_basis` is the
+    text the claims must trace back to; `provenance` is the code-set label.
+    `synthesis_raw` is the model prose before finalize, so model output and
+    code-added parts stay separable."""
+    return {
+        "schema_version": EVIDENCE_SCHEMA_VERSION,
+        "created": datetime.now().isoformat(timespec="seconds"),
+        "reconstructed": False,
+        "question": {"title": q.get("title"), "frage": q.get("frage"),
+                     "kontext": q.get("kontext")},
+        "queries": queries,
+        "synthesis_raw": body,
+        "papers": [{**synth.paper_payload(c),
+                    "provenance": synth.provenance(c),
+                    "on_subject": c.get("on_subject"),
+                    "score": c.get("score")} for c in selected],
+    }
+
+
 @dataclass
 class DossierResult:
     dossier: str
     queries: list[str]
     selected: list[dict]
+    evidence: dict | None = None
 
 
 def dossier_stages(q: dict, *, profile_text: str | None = None,
@@ -679,7 +707,8 @@ def dossier_stages(q: dict, *, profile_text: str | None = None,
       ("queries",  {"queries": [...]})                      resolved search queries
       ("selected", {"selected": [...], "count": N})          post rank + enrich
       ("synthesis", {"text": "..."})                         raw model prose, pre-finalize
-      ("done", {"dossier": "...", "queries": [...], "selected": [...]})
+      ("done", {"dossier": "...", "queries": [...], "selected": [...],
+                "evidence": {...}})                       evidence_record, for audit
 
     Raises `PraxisError` (or `DailyLimitError`) on a hard failure, same as
     `build_dossier` always has; a caller draining the generator sees the
@@ -753,7 +782,8 @@ def dossier_stages(q: dict, *, profile_text: str | None = None,
     dossier = finalize(body, queries, selected, q)
     if enforce_limit:
         record_dossier()      # count only on success, after synthesis spend
-    yield ("done", {"dossier": dossier, "queries": queries, "selected": selected})
+    yield ("done", {"dossier": dossier, "queries": queries, "selected": selected,
+                    "evidence": evidence_record(q, queries, selected, body)})
 
 
 def build_dossier(q: dict, *, profile_text: str | None = None,
@@ -766,7 +796,7 @@ def build_dossier(q: dict, *, profile_text: str | None = None,
     Drains `dossier_stages` (see above) to a single result; this is the
     non-streaming shape the CLI, the benchmark harness, and `POST /praxis` all
     still use unchanged."""
-    dossier = queries = selected = None
+    dossier = queries = selected = evidence = None
     for stage, payload in dossier_stages(q, profile_text=profile_text,
                                          enforce_limit=enforce_limit):
         if stage == "queries":
@@ -774,7 +804,14 @@ def build_dossier(q: dict, *, profile_text: str | None = None,
         elif stage == "done":
             dossier = payload["dossier"]
             selected = payload["selected"]
-    return DossierResult(dossier=dossier, queries=queries, selected=selected)
+            evidence = payload["evidence"]
+    return DossierResult(dossier=dossier, queries=queries, selected=selected,
+                         evidence=evidence)
+
+
+def evidence_path(dossier_path: Path) -> Path:
+    """`<datum>-<slug>.md` -> `<datum>-<slug>.evidence.json`, same folder."""
+    return dossier_path.with_suffix(".evidence.json")
 
 
 def dossier_filename(q: dict) -> str:
@@ -816,6 +853,18 @@ def main(argv: list[str]) -> int:
     out = OUTPUT / dossier_filename(q)
     out.write_text(result.dossier, encoding="utf-8")
     print(f"\nwrote dossier -> {out}")
+    ev = evidence_path(out)
+    ev.write_text(json.dumps(result.evidence, ensure_ascii=False, indent=2),
+                  encoding="utf-8")
+    print(f"wrote evidence -> {ev}")
+    # Warn-only claim check (numbers vs the evidence the model saw); full report:
+    # python scripts/check_claims.py <dossier>
+    findings = check_claims.check(result.dossier, result.evidence)
+    n_fail = sum(f.level == "FAIL" for f in findings)
+    n_warn = sum(f.level == "WARN" for f in findings)
+    if n_fail or n_warn:
+        print(f"  WARN: claim check {n_fail} FAIL, {n_warn} WARN; run "
+              f"scripts/check_claims.py {out.name}", file=sys.stderr)
 
     if args.dry_run:
         print("\n=== send (skipped: --dry-run) ===")

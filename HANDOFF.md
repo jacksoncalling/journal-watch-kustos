@@ -4,7 +4,76 @@ Status snapshot for picking this up in a fresh session. The spec is
 `~/step-into-more/projects/journal-watch/build-plan.md` (HQ). This file is the
 "where we actually are" and "what's left" companion that lives with the code.
 
-## Update 2026-08-30 (read this first, supersedes older items below)
+## Update 2026-10-15 (read this first)
+
+Replit ran a fictional urgent CABG + acute HIT simulation (report in the Replit
+workspace at `.local/outputs/kustos-hit-evaluation.html`, not in git). All 20
+PMIDs were real and all structural checks passed, yet the brief glued the
+overall CHOOSE-ON result (46/49, 94 %) to the 43-patient acute-HIT subgroup,
+mixed general HIT drugs into surgical advice, and missed the 2024 European
+guideline. Lesson: real citations do not prove the sentence is right. We had
+never measured claim accuracy, only retrieval hygiene.
+
+Built this session (local, uncommitted):
+
+- **Evidence saved per run.** `praxis_check.evidence_record()`; the CLI writes
+  `<dossier>.evidence.json` (exact `evidence_basis` per paper, provenance,
+  raw model prose, queries). `DossierResult.evidence` and the `done` stage carry
+  it; the web app ignores it (no response change). **Gap: web runs save nothing.**
+- **`scripts/check_claims.py`.** Deterministic number tracing. FAIL: number not
+  in the cited source (dose units incl. compound mg/kg/h, mmHg and % must match;
+  time units not bound), percent that the source derives as a/b tied to another
+  count (the CHOOSE-ON pattern), phantom PMID in any bracket form. WARN: brief
+  number not repeated in detail, percent far from its claim's numbers, uncited
+  numbers, abstract-only brief not named, [VOLLTEXT] paper whose text is a stub.
+  Citation in the next sentence binds. Skips small counts (no unit), years, and
+  identifiers, and says how many. Checks numbers, not meaning.
+- **Cold review round 1** (read-only agent, reproductions required) found 2 high
+  + 6 medium holes in the first version (the CHOOSE-ON error passed clean when
+  made in brief AND detail; multi-PMID briefs false-FAILed; unit, locale,
+  sentence-split and citation-format gaps). All reproduced, fixed, and kept as
+  regressions in `test_check_claims.py`.
+- **Cold review round 2** found 2 high + 2 medium + 4 low in the rewrite (wrong
+  round-thousand sample sizes passing via a decimal reading; CHOOSE-ON passing
+  with "46 of the 49" phrasing; pctden false FAILs on "30-Tage", ages, trial N;
+  unit spellings). Fixed: thousands-only reading before count nouns, broader
+  a/b patterns, counts linked by wording (count noun + von/bei/unter) instead
+  of word distance, trial N above the denominator accepted, unit aliases plus
+  a WARN fallback for unknown spellings (not for small integers), numbers in
+  the citation bracket checked, citation of the previous OR next sentence.
+  All kept as regressions (86 cases).
+- **Cold review round 3: NOT CLEAN.** Three highs fixed (CHOOSE-ON in house
+  style "mit/in 43 Patienten", "n = 43"; wrong doses softened to WARN by a bare
+  count, now only unit-like words count as unknown spellings; Lancet "0·87"
+  decimals). Eight remaining findings kept IN as `known_failures` (expected to
+  fail, they report "NOW FIXED" if they start passing). Decision (Josh,
+  2026-10-16): ship the checker labelled a **screen, not proof**. Shared cause
+  of all three rounds: pool-based matching (any value anywhere in the cited
+  text counts). Next step for this tool is matching in context (number + unit
+  + nearby words, or a calibrated claim-support judge), not more regex.
+- **Pipeline bug found, not fixed:** `enrich.fulltext_excerpt` can return a
+  stub like "The content is available as a PDF (28.4 MB)." which is then
+  labelled [VOLLTEXT] and sent INSTEAD of the abstract (seen in the TCI
+  evidence). The checker now WARNs `thin`; the fix belongs in enrich/paper_payload.
+- **`scripts/rebuild_evidence.py`** for pre-change dossiers (re-fetched,
+  marked `reconstructed`). Done for the three August dossiers.
+- **`scripts/test_check_claims.py`**: seeded-error cases incl. the CHOOSE-ON
+  pattern and mutations of a real dossier; each also shows `verify_dossier.py`
+  passing the seeded error. The dose test first FAILED (a bare "2" in the DECS
+  text backed "2 mg/kg"), which led to unit-bound matching. Kept in.
+
+First real finding: `2026-08-27-kortikosteroide-aortenklemme.md` states
+"Methylprednisolon 30 mg/kg vs. 2 mg/kg" citing PMID 29732365, whose supplied
+text contains neither dose (likely model background knowledge). Caveat:
+reconstructed evidence.
+
+**Next (agreed order):** must-find lists per question (landmarks + guidelines,
+clinician confirms: she agreed to write an answer key for ~5 questions), then a
+claim-support judge calibrated on seeded errors, then the clinician session on
+applicability + omissions only. Also: save evidence from web runs; widen the
+full-text excerpt (it drops methods/limitations and cuts at 8000 chars).
+
+## Update 2026-08-30 (superseded by 2026-10-15 above)
 
 Ran a three-tool head-to-head (OpenEvidence, Heidi, Kustos) on a clinician's own
 Aortenbogen case and turned the read into a **Fields of Inquiry** map + plan

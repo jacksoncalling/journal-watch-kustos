@@ -91,6 +91,43 @@ einer belegten Kurzantwort, den Abschnitten Evidenzlage / Was ist Standard / Wo 
 Offene Fragen, der verwendeten Suchquery, einer `## Quellen`-Liste und der
 Fußzeile. Struktur und harte Regeln: `dossier-vertrag.md`.
 
+### Evidenz-Datei und Claim-Check
+
+Neben jedem Dossier schreibt der CLI-Lauf `<datum>-<slug>.evidence.json`: die
+Frage, die Suchqueries, die rohe Modell-Prosa vor `finalize` und pro Paper genau
+das `evidence_basis`, das die Synthese gesehen hat, mit Provenienz aus dem Code
+(`praxis_check.evidence_record`). Ohne diese Datei lässt sich kein Dossier
+nachprüfen oder wiederholen.
+
+`scripts/check_claims.py <dossier.md>` ist ein **Screen, kein Beweis**: ein
+FAIL lohnt das Nachlesen, ein sauberes Ergebnis heißt nicht, dass die Zahlen
+stimmen. Es prüft deterministisch, ob die Zahlen zurückführbar sind, und zwar
+gegen alle Zahlen im zitierten Text, nicht gebunden an die Worte um die Zahl
+herum. Die bekannten Lücken stehen als erwartete Fehler in
+`scripts/test_check_claims.py` (`known_failures`). Eine Zahl gehört zum Beleg ihres Satzes (auch innerhalb der
+Klammer); hat der Satz keinen, muss der Beleg des Satzes davor oder danach sie
+tragen. FAIL, wenn eine Zahl nicht im Text des zitierten Papers steht (Rundung
+und a/b als Prozent erlaubt; Dosis-Einheiten inklusive mg/kg/h, mmHg und %
+müssen mit derselben Einheit dort stehen, gängige Schreibweisen werden
+angeglichen, Zeiteinheiten nicht gebunden), wenn eine Prozentzahl, die die
+Quelle als a/b herleitet, sprachlich an eine kleinere andere Fallzahl gebunden
+ist („94 % von 43 Patienten" statt 46/49), oder wenn eine PMID gar nicht in der
+Evidenz war. WARN, wenn ein Dosiswert nur neben einer unbekannten
+Einheiten-Schreibweise steht, für Kurzantwort-Zahlen, die der
+ausführliche Teil nicht wiederholt, für Prozentzahlen fern der übrigen Zahlen
+ihrer Aussage, für Zahlen ohne Beleg, für eine Kurzantwort, die auf Abstracts
+ruht, ohne es zu sagen, und für [VOLLTEXT]-Paper, bei denen nur ein Stummel
+ankam. Der CLI-Lauf zeigt nur eine Warnzeile, blockiert nichts.
+
+Grenzen: geprüft werden Zahlen, nicht Bedeutung. Ob Population, Setting oder
+Schlussfolgerung zum Paper passen, sieht das Skript nicht. Absichtlich
+übersprungen und in der Abdeckungszeile gezählt: ganze Zahlen bis 10 ohne
+Dosis-Einheit oder %, vierstellige Jahreszahlen ohne Zählwort, an Buchstaben
+geklebte Kennungen (IL-6). Zahlwörter („drei", „one year") sieht es nicht. Ältere Dossiers
+bekommen ihre Evidenz-Datei mit `scripts/rebuild_evidence.py` (neu von Europe
+PMC geholt, als `reconstructed` markiert). Tests mit gesetzten Fehlern:
+`scripts/test_check_claims.py`. Die Web-App speichert die Datei noch nicht.
+
 ### Zwei Lesetiefen, eine autoritative Synthese
 
 Die Kurzantwort beantwortet eine Literaturfrage direkt, ohne allgemeine
