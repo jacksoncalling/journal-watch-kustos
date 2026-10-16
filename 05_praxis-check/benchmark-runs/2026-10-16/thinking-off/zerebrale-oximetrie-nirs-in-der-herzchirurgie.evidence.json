@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-16T13:04:05",
+  "reconstructed": false,
+  "question": {
+    "title": "Zerebrale Oximetrie (NIRS) in der Herzchirurgie",
+    "frage": "Verbessert intraoperatives Monitoring mit zerebraler Oximetrie (NIRS) das neurologische Outcome bei herzchirurgischen Patienten?",
+    "kontext": ""
+  },
+  "queries": [
+    "(cerebral oximetry OR NIRS OR near-infrared spectroscopy) AND (cardiac surgery OR heart surgery OR coronary artery bypass OR valve replacement) AND (neurologic outcome OR neurological outcome OR stroke OR delirium OR cognitive dysfunction) AND (intraoperative monitoring OR perioperative monitoring) AND SRC:MED",
+    "(NIRS OR cerebral oximetry) AND (cardiac surgery OR heart surgery) AND (neurological complications OR stroke OR cognitive impairment) AND SRC:MED",
+    "\"cerebral oximetry\" AND \"cardiac surgery\" AND \"neurological outcome\" AND SRC:MED"
+  ],
+  "synthesis_raw": "## Kurzantwort\n\nDie Studienlage zum intraoperativen Monitoring mit zerebraler Oximetrie (NIRS) bei herzchirurgischen Patienten zeigt keine konsistente Verbesserung des neurologischen Outcomes. Während einige Beobachtungsstudien Assoziationen zwischen NIRS-Desaturationen und postoperativer kognitiver Dysfunktion (POCD) oder Delirium finden (PMID 23267000: \"Six of 9 observational studies reported an association between acute rSco(2) desaturation and POCD based on the Mini-Mental State Examination (n = 3 studies) or more detailed cognitive testing (n = 6 studies)\"), können systematische Reviews von randomisierten Studien diese Hypothesen nicht bestätigen (PMID 28882917: \"The results of this systematic review did not support the hypotheses that cerebral NIRS-based algorithms have clinical benefits in cardiac surgery\"). Die Evidenzqualität ist insgesamt niedrig bis sehr niedrig, und es besteht Unsicherheit bezüglich des Effekts auf wichtige Endpunkte wie Schlaganfall, Delirium oder Mortalität (PMID 29341066: \"The effects of perioperative active cerebral NIRS monitoring of brain oxygenation in adults for reducing the occurrence of short-term, mild POCD are uncertain due to the low quality of the evidence\").\n\n- **Entscheidender Befund:** Keine konsistente Evidenz für eine Verbesserung des neurologischen Outcomes.\n- **Untersuchte Population:** Erwachsene und pädiatrische herzchirurgische Patienten.\n- **Wesentliche Unsicherheit:** Niedrige Evidenzqualität und widersprüchliche Studienergebnisse erfordern weitere Forschung.\n\n## Evidenzlage\n\nDie Anwendung der zerebralen Nah-Infrarotspektroskopie (NIRS) zur Überwachung der zerebralen Oxygenierung während Herzoperationen ist weit verbreitet, doch die Evidenz für eine Verbesserung des neurologischen Outcomes ist uneinheitlich.\n\nMehrere systematische Reviews haben die Literatur bewertet. Ein Review von 2012 identifizierte 13 Fallberichte, 27 Beobachtungsstudien und 2 randomisierte Interventionsstudien. Es wurde eine Assoziation zwischen akuter regionaler zerebraler O2-Sättigungs-(rSco2)-Desaturation und postoperativer kognitiver Dysfunktion (POCD) in sechs von neun Beobachtungsstudien berichtet (PMID 23267000: \"Six of 9 observational studies reported an association between acute rSco(2) desaturation and POCD based on the Mini-Mental State Examination (n = 3 studies) or more detailed cognitive testing (n = 6 studies)\"). Zwei retrospektive Studien deuteten auf einen Zusammenhang zwischen rSco2-Desaturation und Schlaganfall oder neurologischen Verletzungen hin. Allerdings wurden diese Beobachtungsstudien als methodisch limitiert (kleine Stichprobengrößen, nur unmittelbare postoperative Beurteilung, fehlende Risikoadjustierung) eingestuft, und die Daten reichten nicht aus, um zu schlussfolgern, dass Interventionen zur Verbesserung der rSco2-Desaturation Schlaganfall oder POCD verhindern (PMID 23267000: \"The observational studies had many limitations, including small sample size, assessments only during the immediate postoperative period, and failure to perform risk adjustments. ... data are insufficient to conclude that interventions to improve rSco(2) desaturation prevent stroke or POCD\").\n\nEin systematischer Review und eine Metaanalyse von 2017, die zehn randomisierte Studien mit 1466 Patienten in der Erwachsenenherzchirurgie einschloss, kam zu dem Schluss, dass NIRS-basierte Algorithmen zur Optimierung der zerebralen Oxygenierung keine Reduktionen bei Mortalität, schwerer Morbidität einschließlich Schlaganfall (RR 1.08, 95% CI 0.40 bis 2.91), Transfusionsraten oder Ressourcennutzung zeigten (PMID 28882917: \"Random-effects meta-analysis demonstrated similar mortality (risk ratio (RR) 0.76, 95% CI 0.30 to 1.96), major morbidity including stroke (RR 1. 08, 95% CI 0.40 to 2.91), red cell transfusion and resource use in NIRS-treated patients and controls, with little or no heterogeneity\"). Die Qualität der Evidenz wurde für alle untersuchten Outcomes als niedrig oder sehr niedrig bewertet (PMID 28882917: \"Grades of Recommendation, Assessment, Development and Evaluation of the quality of the evidence was low or very low for all of the outcomes assessed\").\n\nEine weitere Cochrane-Review von 2018, die 15 Studien mit 1822 erwachsenen Teilnehmern umfasste (davon 10 in der Aorten- oder Herzchirurgie), stellte fest, dass die Effekte des perioperativen aktiven NIRS-Monitorings auf die Reduzierung des Auftretens von kurzfristiger, milder POCD aufgrund der niedrigen Evidenzqualität unsicher sind (PMID 29341066: \"The effects of perioperative active cerebral NIRS monitoring of brain oxygenation in adults for reducing the occurrence of short-term, mild POCD are uncertain due to the low quality of the evidence\"). Es gab auch Unsicherheit bezüglich signifikanter Effekte auf postoperative Schlaganfälle, Delirium oder Tod aufgrund der geringen Ereigniszahl und breiter Konfidenzintervalle (PMID 29341066: \"There is uncertainty as to whether active cerebral NIRS monitoring has an important effect on postoperative stroke, delirium or death because of the low number of events and wide confidence intervals\"). Eine Studie berichtete, dass aktives NIRS-Monitoring die Inzidenz von milder POCD nach einer Woche möglicherweise reduzieren kann (RR 0.53, 95% CI 0.30 bis 0.95), jedoch wurde in sechs Studien keine signifikante Abnahme der POCD insgesamt festgestellt (RR 0.62, 95% CI 0.37 bis 1.04) (PMID 29341066: \"Two studies with 126 participants showed that active cerebral NIRS monitoring may reduce the incidence of mild postoperative cognitive dysfunction (POCD) as defined by the original studies at one week after surgery (RR 0.53, 95% CI 0.30 to 0.95, I<sup>2</sup> = 49%, low-quality evidence). Based on six studies with 962 participants, there was moderate-quality evidence that active cerebral oxygenation monitoring probably does not decrease the occurrence of POCD (decline in cognitive function) at one week after surgery (RR 0.62, 95% CI 0.37 to 1.04, I<sup>2</sup> = 80%)\").\n\nEine Beobachtungsstudie bei pädiatrischen Patienten, die sich einer angeborenen Herzoperation unterzogen, fand eine signifikante Assoziation zwischen niedrigen ScO2-Baseline-Werten nach Trachealintubation und mehreren ungünstigen postoperativen Outcomes, einschließlich längerer Aufenthaltsdauer auf der Intensivstation und im Krankenhaus, längerer Beatmungsdauer und 30-Tage-Mortalität. Hingegen war die Schwere der intraoperativen zerebralen Desaturation nicht mit diesen Outcomes assoziiert (PMID 32557197: \"In pediatric patients undergoing cardiac surgery, low baseline ScO 2 values measured after tracheal intubation were associated with several adverse postoperative outcomes. In contrast, the severity of actual intraoperative cerebral desaturation was not associated with postoperative outcomes\"). Eine neuere retrospektive Studie in pädiatrischen Patienten mit angeborenen Herzfehlern zeigte, dass prä- und post-Aortenklemmen-Oximetrie-Werte bei Nicht-Überlebenden signifikant niedriger waren als bei Überlebenden (PMID 42036663: \"Oximetry values before (70.0 [46.0–92.0] 61.0 [53.0–88.0] p = 0.003) and after (58.0 [43.0–95.0] 51.0 [46.0–76.0] p = 0.009) aortic cross-clamping were significantly lower in the non-surviving children than in the surviving children\").\n\nEine retrospektive Beobachtungsstudie assoziierte intraoperative hyperoxische zerebrale Reperfusion mit einem erhöhten Risiko für postoperatives Delirium. Jede 10 %·Stunde hyperoxischer zerebraler Reperfusion war mit einem 65 %igen Anstieg der Deliriumswahrscheinlichkeit verbunden (OR, 1.65 [95% CI, 1.12-2.44]) (PMID 28039082: \"Every 10%·hour of intraoperative hyperoxic cerebral reperfusion was independently associated with a 65% increase in the odds of delirium (OR, 1.65 [95% CI, 1.12-2.44]; P=0.01)\").\n\nEine Fallserie zur zerebralen Oxygenierungsüberwachung bei Patienten mit signifikanter bilateraler Karotisstenose, die sich einer dringenden Herzoperation unterzogen, zeigte gute klinische Ergebnisse mit NIRS und führte zur frühzeitigen Erkennung verminderter zerebraler Oxygenierung und entsprechenden Korrekturmaßnahmen (PMID 26750675: \"NIRS monitoring led to the early recognition of decreased cerebral oxygenation, and corrective steps (increased cardiopulmonary bypass flow, increased pCO 2 , etc.,) were taken\"). Eine kleine randomisierte prospektive Studie bei CABG-Patienten mit asymptomatischer Karotisarterienkrankheit stellte fest, dass die intraoperative NIRS-Anwendung postoperative positive Effekte auf die kognitiven Funktionen haben könnte, mit einem signifikant höheren postoperativen MoCA-Score in der NIRS-Gruppe (26.8 ± 1.9 vs. 23.6 ± 2.5) (PMID 26133933: \"Intraoperative NIRS usage in the patients undergoing CABG with carotid artery disease might be useful due to its postoperative positive effects on the cognitive functions\").\n\nStudien zur zerebralen Autoregulation (CA) bei nicht hirnverletzten Patienten, einschließlich Patienten während der Chirurgie, legen eine Beziehung zwischen einer Beeinträchtigung der CA und kognitiver Dysfunktion, neurologischen Schäden und schlechteren Outcomes nahe (PMID 34899560: \"In non-brain injured patients, impaired CA may result in cognitive dysfunction, neurological damage, worst outcome, and increased mortality\"). Eine prospektive Beobachtungsstudie zeigte, dass ein mittlerer arterieller Druck (MAP) oberhalb der oberen Autoregulationsgrenze (ULA) während der kardiopulmonalen Bypass-Phase (CPB) mit postoperativem Delirium assoziiert ist (PMID 25256545: \"Excursions of MAP above the upper limit of cerebral autoregulation during CPB are associated with risk for delirium\").\n\n## Was ist Standard\n\nDie gelieferte Evidenz legt nahe, dass zerebrale Oximetrie (NIRS) als etabliertes Werkzeug zur intraoperativen Überwachung der zerebralen Sauerstoffsättigung (ScO2) in der pädiatrischen Herzchirurgie gilt (PMID 32557197: \"Non-invasive cerebral oxygen saturation (ScO 2 ) monitoring is an established tool in the intraoperative phase of pediatric congenital cardiac surgery (CCS)\"). Auch in der Erwachsenenherzchirurgie wird NIRS eingesetzt, um die Angemessenheit der zerebralen Perfusion zu überwachen (PMID 23267000: \"Near-infrared spectroscopy is used during cardiac surgery to monitor the adequacy of cerebral perfusion\"). Die 2024 EACTS/EACTAIC/EBCP Leitlinien zum kardiopulmonalen Bypass in der Erwachsenenherzchirurgie sind eine umfassende Ressource für das Management des CPB (PMID 39955230). Eine spezifische Empfehlung zur routinemäßigen Anwendung von NIRS für die Verbesserung des neurologischen Outcomes wird dort jedoch nicht direkt als Standard abgeleitet.\n\n## Wo die Literatur uneins ist\n\nDie Literatur ist sich uneins über den tatsächlichen klinischen Nutzen und die Auswirkungen von NIRS-basierten Überwachungs- und Interventionsalgorithmen auf neurologische Outcomes in der Herzchirurgie.\n\n**Pro NIRS-Intervention:**\nEinige Beobachtungsstudien und eine kleine randomisierte Studie deuten auf potenzielle Vorteile hin. Zum Beispiel zeigte eine Studie, dass die NIRS-Anwendung bei CABG-Patienten mit Karotisarterienkrankheit positive postoperative Effekte auf die kognitiven Funktionen haben könnte (PMID 26133933: \"Intraoperative NIRS usage in the patients undergoing CABG with carotid artery disease might be useful due to its postoperative positive effects on the cognitive functions\"). Auch wurden NIRS-Desaturationen in einigen Beobachtungsstudien mit POCD oder Schlaganfall in Verbindung gebracht (PMID 23267000: \"Six of 9 observational studies reported an association between acute rSco(2) desaturation and POCD ... Two retrospective studies reported a relationship between rSco(2) desaturation and stroke\"). Eine andere Studie assoziierte NIRS-Desaturationsereignisse mit einer erhöhten Mortalität in extrem Frühgeborenen (PMID 28328980: \"Significantly more infants with a cerebral burden of hypoxia within the 4 th quartile versus infants within quartile 1–3 were diagnosed with severe intracranial haemorrhage (11/39 versus 11/117, p = 0.003), had low burst rate on EEG (12/28 versus 21/103, p = 0.015), or died (14/41 versus 18/123, p = 0.006)\").\n\n**Kontra NIRS-Intervention oder unklare Evidenz:**\nSystematische Reviews von randomisierten Studien konnten die Hypothesen, dass NIRS-basierte Algorithmen klinische Vorteile haben, nicht unterstützen (PMID 28882917: \"The results of this systematic review did not support the hypotheses that cerebral NIRS-based algorithms have clinical benefits in cardiac surgery\"). Die Evidenzqualität für Endpunkte wie Mortalität, schwerwiegende Morbidität (einschließlich Schlaganfall), Transfusionsraten und Ressourcennutzung wurde als niedrig oder sehr niedrig eingestuft (PMID 28882917: \"Grades of Recommendation, Assessment, Development and Evaluation of the quality of the evidence was low or very low for all of the outcomes assessed\"). Das Cochrane-Review von 2018 fand Unsicherheit bezüglich signifikanter Effekte auf postoperative Schlaganfälle, Delirium oder Tod (PMID 29341066: \"There is uncertainty as to whether active cerebral NIRS monitoring has an important effect on postoperative stroke, delirium or death because of the low number of events and wide confidence intervals\"). Es gab auch keine eindeutige Evidenz, dass aktives NIRS-Monitoring das Auftreten von POCD nach einer Woche signifikant verringert (PMID 29341066: \"active cerebral oxygenation monitoring probably does not decrease the occurrence of POCD (decline in cognitive function) at one week after surgery (RR 0.62, 95% CI 0.37 to 1.04)\").\n\n**Widersprüche bezüglich der physiologischen Mechanismen:**\nWährend eine Studie einen Zusammenhang zwischen Hyperoxie und Delirium fand (PMID 28039082: \"Intraoperative hyperoxic cerebral reperfusion was associated with increased postoperative delirium\"), wurde intraoperative Hypotonie in einer anderen Studie nicht mit postoperativem Delirium assoziiert (PMID 26209856: \"Independent of the applied definition, IOH was not associated with the occurrence of delirium after cardiac surgery\"). Hingegen wurde ein MAP oberhalb der oberen Autoregulationsgrenze während CPB mit postoperativem Delirium in Verbindung gebracht (PMID 25256545: \"Excursions of MAP above the upper limit of cerebral autoregulation during CPB are associated with risk for delirium\"). Diese Ergebnisse deuten darauf hin, dass nicht nur Hypoxie, sondern auch Hyperoxie und gestörte zerebrale Autoregulation potenziell schädliche Effekte auf das neurologische Outcome haben könnten.\n\n## Offene Fragen\n\nDie Studienlage lässt mehrere offene Fragen unbeantwortet:\n1.  **Mangel an hochwertiger Evidenz:** Trotz zahlreicher Studien fehlt es an großen, gut konzipierten, randomisierten Studien mit geringem Verzerrungsrisiko, die pragmatische, klinisch wichtige Outcomes wie Tod und Behinderung, oder schwere Morbidität (Schlaganfall, Nierenversagen, niedriges Herzzeitvolumen) bewerten (PMID 28882917: \"Assessment of the quality of the evidence indicates that there is a need for further randomised trials at low risk of bias to assess the clinical utility of NIRS in both adult and paediatric cardiac surgery\").\n2.  **Spezifische Patientenpopulationen:** Es besteht ein Bedarf an weiteren randomisierten Studien in der pädiatrischen Population und bei Hochrisikopatienten, die sich nicht-kardialen Operationen unterziehen (PMID 29341066: \"More RCTs performed in the paediatric population and high-risk patients undergoing non-cardiac surgery (e.g. neurosurgery, carotid endarterectomy and other surgery) are needed\"). Eine systematische Überprüfung zu Kindern mit angeborenen Herzfehlern unterstreicht den Bedarf an größeren homogenen Kohorten, um festzustellen, welche perioperativen Modalitäten als Prädiktoren für neuroentwicklungsbezogene Outcomes oder Neuroimaging-Anomalien dienen könnten (PMID 39744107: \"There is a need for larger homogeneous cohorts of children with CHD to determine which perioperative modalities might serve as predictors of neurodevelopmental outcome or neuroimaging abnormalities\").\n3.  **Rolle von Hyperoxie und Autoregulation:** Die potenzielle schädliche Rolle von zerebraler Hyperoxygenierung während der Operation und die Implikationen einer beeinträchtigten zerebralen Autoregulation erfordern weitere Forschung (PMID 28039082: \"Further research is needed to assess the potential deleterious role of cerebral hyper-oxygenation during surgery\"; PMID 34899560: \"The most investigated setting in the pediatric population is cardiac surgery, but the role and measurement of CA need to be further elucidated\").\n4.  **Optimaler MAP-Zielbereich:** Die Studie, die einen Zusammenhang zwischen MAP oberhalb der oberen Autoregulationsgrenze und postoperativem Delirium fand, schlägt vor, den MAP während CPB zu optimieren, um innerhalb des zerebralen Autoregulationsbereichs zu bleiben (PMID 25256545: \"Optimizing MAP during CPB to remain within the cerebral autoregulation range might reduce risk of delirium\"). Es sind jedoch weitere Studien erforderlich, um spezifische MAP-Ziele und deren Einfluss auf das neurologische Outcome zu definieren.\n\nKein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.",
+  "anchors": [
+    {
+      "pmid": "23267000",
+      "quote": "Six of 9 observational studies reported an association between acute rSco(2) desaturation and POCD based on the Mini-Mental State Examination (n = 3 studies) or more detailed cognitive testing (n = 6 studies)",
+      "in_source": true
+    },
+    {
+      "pmid": "28882917",
+      "quote": "The results of this systematic review did not support the hypotheses that cerebral NIRS-based algorithms have clinical benefits in cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "29341066",
+      "quote": "The effects of perioperative active cerebral NIRS monitoring of brain oxygenation in adults for reducing the occurrence of short-term, mild POCD are uncertain due to the low quality of the evidence",
+      "in_source": true
+    },
+    {
+      "pmid": "23267000",
+      "quote": "Six of 9 observational studies reported an association between acute rSco(2) desaturation and POCD based on the Mini-Mental State Examination (n = 3 studies) or more detailed cognitive testing (n = 6 studies)",
+      "in_source": true
+    },
+    {
+      "pmid": "23267000",
+      "quote": "The observational studies had many limitations, including small sample size, assessments only during the immediate postoperative period, and failure to perform risk adjustments. ... data are insufficient to conclude that interventions to improve rSco(2) desaturation prevent stroke or POCD",
+      "in_source": true
+    },
+    {
+      "pmid": "28882917",
+      "quote": "Random-effects meta-analysis demonstrated similar mortality (risk ratio (RR) 0.76, 95% CI 0.30 to 1.96), major morbidity including stroke (RR 1. 08, 95% CI 0.40 to 2.91), red cell transfusion and resource use in NIRS-treated patients and controls, with little or no heterogeneity",
+      "in_source": true
+    },
+    {
+      "pmid": "28882917",
+      "quote": "Grades of Recommendation, Assessment, Development and Evaluation of the quality of the evidence was low or very low for all of the outcomes assessed",
+      "in_source": true
+    },
+    {
+      "pmid": "29341066",
+      "quote": "The effects of perioperative active cerebral NIRS monitoring of brain oxygenation in adults for reducing the occurrence of short-term, mild POCD are uncertain due to the low quality of the evidence",
+      "in_source": true
+    },
+    {
+      "pmid": "29341066",
+      "quote": "There is uncertainty as to whether active cerebral NIRS monitoring has an important effect on postoperative stroke, delirium or death because of the low number of events and wide confidence intervals",
+      "in_source": true
+    },
+    {
+      "pmid": "29341066",
+      "quote": "Two studies with 126 participants showed that active cerebral NIRS monitoring may reduce the incidence of mild postoperative cognitive dysfunction (POCD) as defined by the original studies at one week after surgery (RR 0.53, 95% CI 0.30 to 0.95, I<sup>2</sup> = 49%, low-quality evidence). Based on six studies with 962 participants, there was moderate-quality evidence that active cerebral oxygenation monitoring probably does not decrease the occurrence of POCD (decline in cognitive function) at one week after surgery (RR 0.62, 95% CI 0.37 to 1.04, I<sup>2</sup> = 80%)",
+      "in_source": false
+    },
+    {
+      "pmid": "32557197",
+      "quote": "In pediatric patients undergoing cardiac surgery, low baseline ScO 2 values measured after tracheal intubation were associated with several adverse postoperative outcomes. In contrast, the severity of actual intraoperative cerebral desaturation was not associated with postoperative outcomes",
+      "in_source": true
+    },
+    {
+      "pmid": "42036663",
+      "quote": "Oximetry values before (70.0 [46.0–92.0] 61.0 [53.0–88.0] p = 0.003) and after (58.0 [43.0–95.0] 51.0 [46.0–76.0] p = 0.009) aortic cross-clamping were significantly lower in the non-surviving children than in the surviving children",
+      "in_source": true
+    },
+    {
+      "pmid": "28039082",
+      "quote": "Every 10%·hour of intraoperative hyperoxic cerebral reperfusion was independently associated with a 65% increase in the odds of delirium (OR, 1.65 [95% CI, 1.12-2.44]; P=0.01)",
+      "in_source": true
+    },
+    {
+      "pmid": "26750675",
+      "quote": "NIRS monitoring led to the early recognition of decreased cerebral oxygenation, and corrective steps (increased cardiopulmonary bypass flow, increased pCO 2 , etc.,) were taken",
+      "in_source": true
+    },
+    {
+      "pmid": "26133933",
+      "quote": "Intraoperative NIRS usage in the patients undergoing CABG with carotid artery disease might be useful due to its postoperative positive effects on the cognitive functions",
+      "in_source": true
+    },
+    {
+      "pmid": "34899560",
+      "quote": "In non-brain injured patients, impaired CA may result in cognitive dysfunction, neurological damage, worst outcome, and increased mortality",
+      "in_source": true
+    },
+    {
+      "pmid": "25256545",
+      "quote": "Excursions of MAP above the upper limit of cerebral autoregulation during CPB are associated with risk for delirium",
+      "in_source": true
+    },
+    {
+      "pmid": "32557197",
+      "quote": "Non-invasive cerebral oxygen saturation (ScO 2 ) monitoring is an established tool in the intraoperative phase of pediatric congenital cardiac surgery (CCS)",
+      "in_source": true
+    },
+    {
+      "pmid": "23267000",
+      "quote": "Near-infrared spectroscopy is used during cardiac surgery to monitor the adequacy of cerebral perfusion",
+      "in_source": true
+    },
+    {
+      "pmid": "26133933",
+      "quote": "Intraoperative NIRS usage in the patients undergoing CABG with carotid artery disease might be useful due to its postoperative positive effects on the cognitive functions",
+      "in_source": true
+    },
+    {
+      "pmid": "23267000",
+      "quote": "Six of 9 observational studies reported an association between acute rSco(2) desaturation and POCD ... Two retrospective studies reported a relationship between rSco(2) desaturation and stroke",
+      "in_source": true
+    },
+    {
+      "pmid": "28328980",
+      "quote": "Significantly more infants with a cerebral burden of hypoxia within the 4 th quartile versus infants within quartile 1–3 were diagnosed with severe intracranial haemorrhage (11/39 versus 11/117, p = 0.003), had low burst rate on EEG (12/28 versus 21/103, p = 0.015), or died (14/41 versus 18/123, p = 0.006)",
+      "in_source": true
+    },
+    {
+      "pmid": "28882917",
+      "quote": "The results of this systematic review did not support the hypotheses that cerebral NIRS-based algorithms have clinical benefits in cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "28882917",
+      "quote": "Grades of Recommendation, Assessment, Development and Evaluation of the quality of the evidence was low or very low for all of the outcomes assessed",
+      "in_source": true
+    },
+    {
+      "pmid": "29341066",
+      "quote": "There is uncertainty as to whether active cerebral NIRS monitoring has an important effect on postoperative stroke, delirium or death because of the low number of events and wide confidence intervals",
+      "in_source": true
+    },
+    {
+      "pmid": "29341066",
+      "quote": "active cerebral oxygenation monitoring probably does not decrease the occurrence of POCD (decline in cognitive function) at one week after surgery (RR 0.62, 95% CI 0.37 to 1.04)",
+      "in_source": false
+    },
+    {
+      "pmid": "28039082",
+      "quote": "Intraoperative hyperoxic cerebral reperfusion was associated with increased postoperative delirium",
+      "in_source": true
+    },
+    {
+      "pmid": "26209856",
+      "quote": "Independent of the applied definition, IOH was not associated with the occurrence of delirium after cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "25256545",
+      "quote": "Excursions of MAP above the upper limit of cerebral autoregulation during CPB are associated with risk for delirium",
+      "in_source": true
+    },
+    {
+      "pmid": "28882917",
+      "quote": "Assessment of the quality of the evidence indicates that there is a need for further randomised trials at low risk of bias to assess the clinical utility of NIRS in both adult and paediatric cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "29341066",
+      "quote": "More RCTs performed in the paediatric population and high-risk patients undergoing non-cardiac surgery (e.g. neurosurgery, carotid endarterectomy and other surgery) are needed",
+      "in_source": true
+    },
+    {
+      "pmid": "39744107",
+      "quote": "There is a need for larger homogeneous cohorts of children with CHD to determine which perioperative modalities might serve as predictors of neurodevelopmental outcome or neuroimaging abnormalities",
+      "in_source": true
+    },
+    {
+      "pmid": "28039082",
+      "quote": "Further research is needed to assess the potential deleterious role of cerebral hyper-oxygenation during surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "34899560",
+      "quote": "The most investigated setting in the pediatric population is cardiac surgery, but the role and measurement of CA need to be further elucidated",
+      "in_source": true
+    },
+    {
+      "pmid": "25256545",
+      "quote": "Optimizing MAP during CPB to remain within the cerebral autoregulation range might reduce risk of delirium",
+      "in_source": true
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "23267000",
+      "title": "Cerebral near-infrared spectroscopy monitoring and neurologic outcomes in adult cardiac surgery patients: a systematic review.",
+      "journal": "Anesthesia and analgesia",
+      "date": "2012-12-24",
+      "authors": [
+        "Zheng F",
+        "Hogue CW."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Near-infrared spectroscopy is used during cardiac surgery to monitor the adequacy of cerebral perfusion. In this systematic review, we evaluated available data for adult patients to determine (1) whether decrements in cerebral oximetry during cardiac surgery are associated with stroke, postoperative cognitive dysfunction (POCD), or delirium; and (2) whether interventions aimed at correcting cerebral oximetry decrements improve neurologic outcomes.<h4>Methods</h4>We searched PubMed, Cochrane, and Embase databases from inception until January 31, 2012, without restriction on languages. Each article was examined for additional references. A publication was excluded if it did not include original data (e.g., review, commentary) or if it was not published as a full-length article in a peer-reviewed journal (e.g., abstract only). The identified abstracts were screened first, and full texts of eligible articles were reviewed independently by 2 investigators. For eligible publications, we recorded the number of subjects, type of surgery, and criteria for diagnosis of neurologic end points.<h4>Results</h4>We identified 13 case reports, 27 observational studies, and 2 prospectively randomized intervention trials that met our inclusion criteria. Case reports and 2 observational studies contained anecdotal evidence suggesting that regional cerebral O(2) saturation (rSco(2)) monitoring could be used to identify cardiopulmonary bypass cannula malposition. Six of 9 observational studies reported an association between acute rSco(2) desaturation and POCD based on the Mini-Mental State Examination (n = 3 studies) or more detailed cognitive testing (n = 6 studies). Two retrospective studies reported a relationship between rSco(2) desaturation and stroke or type I and II neurologic injury after surgery. The observational studies had many limitations, including small sample size, assessments only during the immediate postoperative period, and failure to perform risk adjustments. Two randomized studies evaluated the efficacy of interventions for treating rSco(2) desaturation during surgery, but adherence to the protocol was poor in one. In the other study, interventions for rSco(2) desaturation were associated with less major organ injury and shorter intensive care unit hospitalization compared with nonintervention.<h4>Conclusions</h4>Reductions in rSco(2) during cardiac surgery may identify cardiopulmonary bypass cannula malposition, particularly during aortic surgery. Only low-level evidence links low rSco(2) during cardiac surgery to postoperative neurologic complications, and data are insufficient to conclude that interventions to improve rSco(2) desaturation prevent stroke or POCD.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 475.0
+    },
+    {
+      "pmid": "28882917",
+      "title": "Effects of cerebral near-infrared spectroscopy on the outcome of patients undergoing cardiac surgery: a systematic review of randomised trials.",
+      "journal": "BMJ open",
+      "date": "2017-09-07",
+      "authors": [
+        "Serraino GF",
+        "Murphy GJ."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Objectives Goal-directed optimisation of cerebral oxygenation using near-infrared spectroscopy (NIRS) during cardiopulmonary bypass is widely used. We tested the hypotheses that the use of NIRS cerebral oximetry results in reductions in cerebral injury (neurocognitive function, serum biomarkers), injury to other organs including the heart and brain, transfusion rates, mortality and resource use. Design Systematic review and meta-analysis. Setting Tertiary cardiac surgery centres in North America, Europe and Asia. Participants A search of Cochrane Central Register of Controlled Trials, ClinicalTrials.gov, Medline, Embase, and the Cumulative Index to Nursing and Allied Health Literature Plus from inception to November 2016 identified 10 randomised trials, enrolling a total of 1466 patients, all in adult cardiac surgery. Interventions NIRS-based algorithms designed to optimise cerebral oxygenation versus standard care (non-NIRS-based) protocols in cardiac surgery patients during cardiopulmonary bypass. Outcome measures Mortality, organ injury affecting the brain, heart and kidneys, red cell transfusion and resource use. Results Two of the 10 trials identified in the literature search were considered at low risk of bias. Random-effects meta-analysis demonstrated similar mortality (risk ratio (RR) 0.76, 95% CI 0.30 to 1.96), major morbidity including stroke (RR 1. 08, 95% CI 0.40 to 2.91), red cell transfusion and resource use in NIRS-treated patients and controls, with little or no heterogeneity. Grades of Recommendation, Assessment, Development and Evaluation of the quality of the evidence was low or very low for all of the outcomes assessed. Conclusions The results of this systematic review did not support the hypotheses that cerebral NIRS-based algorithms have clinical benefits in cardiac surgery. Trial registration number PROSPERO CRD42015027696. Results Description of studies Search results We identified a total of 17 792 references through electronic searches of the Cochrane Central Register of Controlled Trials (n=1347), Medline (n=9924), Embase (n=6159) and the CINAHL Plus (n=362). From ClinicalTrials.gov, we identified 18 trials that potentially met the inclusion criteria. We have shown the flow of search results in figure 1 . We excluded 7909 duplicates, then 9820 clearly irrelevant references, by reading titles and abstracts. No additional references were identified by reference searching. Of 79 study reports retrieved in full text, we excluded 69 references for the reasons listed in online supplementary figure S1 . In total, 11 publications describing nine RCTs fulfilled the inclusion and exclusion criteria provided quantitative data for this review 10 28–35 (online supplementary table S1 ). We also included data from a recent trial undertaken by our own unit, the results of which are in press. 36 Figure 1 Risk of bias summaries for (A) individual studies and (B) all studies. Conclusions Existing evidence suggests that the use of NIRS-based, patient-specific algorithms that aim to optimise cerebral oximetry does not result in reductions in mortality, major morbidity or resource use in adult cardiac surgery. Assessment of the quality of the evidence indicates that there is a need for further randomised trials at low risk of bias to assess the clinical utility of NIRS in both adult and paediatric cardiac surgery. To determine the clinical utility of these devices, future studies should be designed to evaluate pragmatic, clinically important outcomes such as freedom from death and disability, or major morbidity (stroke, renal failure requiring dialysis, low cardiac output).",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 465.0
+    },
+    {
+      "pmid": "29341066",
+      "title": "Cerebral near-infrared spectroscopy (NIRS) for perioperative monitoring of brain oxygenation in children and adults.",
+      "journal": "The Cochrane database of systematic reviews",
+      "date": "2018-01-17",
+      "authors": [
+        "Yu Y",
+        "Han R."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Various techniques have been employed for the early detection of perioperative cerebral ischaemia and hypoxia. Cerebral near-infrared spectroscopy (NIRS) is increasingly used in this clinical scenario to monitor brain oxygenation. However, it is unknown whether perioperative cerebral NIRS monitoring and the subsequent treatment strategies are of benefit to patients.<h4>Objectives</h4>To assess the effects of perioperative cerebral NIRS monitoring and corresponding treatment strategies in adults and children, compared with blinded or no cerebral oxygenation monitoring, or cerebral oxygenation monitoring based on non-NIRS technologies, on the detection of cerebral oxygen desaturation events (CDEs), neurological outcomes, non-neurological outcomes and socioeconomic impact (including cost of hospitalization and length of hospital stay).<h4>Search methods</h4>We searched the Cochrane Central Register of Controlled Trials (CENTRAL 2016, Issue 12), Embase (1974 to 20 December 2016) and MEDLINE (PubMed) (1975 to 20 December 2016). We also searched the World Health Organization (WHO) International Clinical Trials Registry Platform for ongoing studies on 20 December 2016. We updated this search in November 2017, but these results have not yet been incorporated in the review. We imposed no language restriction.<h4>Selection criteria</h4>We included all relevant randomized controlled trials (RCTs) dealing with the use of cerebral NIRS in the perioperative setting (during the operation and within 72 hours after the operation), including the operating room, the postanaesthesia care unit and the intensive care unit.<h4>Data collection and analysis</h4>Two authors independently selected studies, assessed risk of bias and extracted data. For binary outcomes, we calculated the risk ratio (RR) and its 95% confidence interval (CI). For continuous data, we estimated the mean difference (MD) between groups and its 95% CI. As we expected clinical and methodological heterogeneity between studies, we employed a random-effects model for analyses and we examined the data for heterogeneity (I<sup>2</sup> statistic). We created a 'Summary of findings' table using GRADEpro.<h4>Main results</h4>We included 15 studies in the review, comprising a total of 1822 adult participants. There are 12 studies awaiting classification, and eight ongoing studies.None of the 15 included studies considered the paediatric population. Four studies were conducted in the abdominal and orthopaedic surgery setting (lumbar spine, or knee and hip replacement), one study in the carotid endarterectomy setting, and the remaining 10 studies in the aortic or cardiac surgery setting. The main sources of bias in the included studies related to potential conflict of interest from industry sponsorship, unclear blinding status or missing participant data.Two studies with 312 participants considered postoperative neurological injury, however no pooled effect estimate could be calculated due to discordant direction of effect between studies (low-quality evidence). One study (N = 126) in participants undergoing major abdominal surgery reported that 4/66 participants experienced neurological injury with blinded monitoring versus 0/56 in the active monitoring group. A second study (N = 195) in participants having coronary artery bypass surgery reported that 1/96 participants experienced neurological injury in the blinded monitoring group compared with 4/94 participants in the active monitoring group.We are uncertain whether active cerebral NIRS monitoring has an important effect on the risk of postoperative stroke because of the low number of events and wide confidence interval (RR 0.25, 95% CI 0.03 to 2.20; 2 studies, 240 participants; low-quality evidence).We are uncertain whether active cerebral NIRS monitoring has an important effect on postoperative delirium because of the wide confidence interval (RR 0.63, 95% CI 0.27 to 1.45; 1 study, 190 participants; low-quality evidence).Two studies with 126 participants showed that active cerebral NIRS monitoring may reduce the incidence of mild postoperative cognitive dysfunction (POCD) as defined by the original studies at one week after surgery (RR 0.53, 95% CI 0.30 to 0.95, I<sup>2</sup> = 49%, low-quality evidence).Based on six studies with 962 participants, there was moderate-quality evidence that active cerebral oxygenation monitoring probably does not decrease the occurrence of POCD (decline in cognitive function) at one week after surgery (RR 0.62, 95% CI 0.37 to 1.04, I<sup>2</sup> = 80%). The different type of monitoring equipment in one study could potentially be the cause of the heterogeneity.We are uncertain whether active cerebral NIRS monitoring has an important effect on intraoperative mortality or postoperative mortality because of the low number of events and wide confidence interval (RR 0.63, 95% CI 0.08 to 5.03, I<sup>2</sup>= 0%; 3 studies, 390 participants; low-quality evidence). There was no evidence to determine whether routine use of NIRS-based cerebral oxygenation monitoring causes adverse effects.<h4>Authors' conclusions</h4>The effects of perioperative active cerebral NIRS monitoring of brain oxygenation in adults for reducing the occurrence of short-term, mild POCD are uncertain due to the low quality of the evidence. There is uncertainty as to whether active cerebral NIRS monitoring has an important effect on postoperative stroke, delirium or death because of the low number of events and wide confidence intervals. The conclusions of this review may change when the eight ongoing studies are published and the 12 studies awaiting assessment are classified. More RCTs performed in the paediatric population and high-risk patients undergoing non-cardiac surgery (e.g. neurosurgery, carotid endarterectomy and other surgery) are needed.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 435.0
+    },
+    {
+      "pmid": "38084590",
+      "title": "Cognitive Effects of Body Temperature During Hypothermic Circulatory Arrest Trial (GOT ICE): A Randomized Clinical Trial Comparing Outcomes After Aortic Arch Surgery.",
+      "journal": "Circulation",
+      "date": "2023-12-12",
+      "authors": [
+        "Hughes GC",
+        "Mathew JP."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Deep hypothermia has been the standard for hypothermic circulatory arrest (HCA) during aortic arch surgery. However, centers worldwide have shifted toward lesser hypothermia with antegrade cerebral perfusion. This has been supported by retrospective data, but there has yet to be a multicenter, prospective randomized study comparing deep versus moderate hypothermia during HCA.<h4>Methods</h4>This was a randomized single-blind trial (GOT ICE [Cognitive Effects of Body Temperature During Hypothermic Circulatory Arrest]) of patients undergoing arch surgery with HCA plus antegrade cerebral perfusion at 4 US referral aortic centers (August 2016-December 2021). Patients were randomized to 1 of 3 hypothermia groups: DP, deep (≤20.0 °C); LM, low-moderate (20.1-24.0 °C); and HM, high-moderate (24.1-28.0 °C). The primary outcome was composite global cognitive change score between baseline and 4 weeks postoperatively. Analysis followed the intention-to-treat principle to evaluate if: (1) LM noninferior to DP on global cognitive change score; (2) DP superior to HM. The secondary outcomes were domain-specific cognitive change scores, neuroimaging findings, quality of life, and adverse events.<h4>Results</h4>A total of 308 patients consented; 282 met inclusion and were randomized. A total of 273 completed surgery, and 251 completed the 4-week follow-up (DP, 85 [34%]; LM, 80 [34%]; HM, 86 [34%]). Mean global cognitive change score from baseline to 4 weeks in the LM group was noninferior to the DP group; likewise, no significant difference was observed between DP and HM. Noninferiority of LM versus DP, and lack of difference between DP and HM, remained for domain-specific cognitive change scores, except structured verbal memory, with noninferiority of LM versus DP not established and structured verbal memory better preserved in DP versus HM (<i>P</i> = 0.036). There were no significant differences in structural or functional magnetic resonance imaging brain imaging between groups postoperatively. Regardless of temperature, patients who underwent HCA demonstrated significant reductions in cerebral gray matter volume, cortical thickness, and regional brain functional connectivity. Thirty-day in-hospital mortality, major morbidity, and quality of life were not different between groups.<h4>Conclusions</h4>This randomized multicenter study evaluating arch surgery HCA temperature strategies found low-moderate hypothermia noninferior to traditional deep hypothermia on global cognitive change 4 weeks after surgery, although in secondary analysis, structured verbal memory was better preserved in the deep group. The verbal memory differences in the low- and high-moderate groups and structural and functional connectivity reductions from baseline merit further investigation and suggest opportunities to further optimize brain perfusion during HCA.<h4>Registration</h4>URL: https://www.clinicaltrials.gov; Unique identifier: NCT02834065.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "39744107",
+      "title": "Neuromonitoring modalities predicting neurological impairment in pediatric congenital heart disease: a systematic review.",
+      "journal": "Frontiers in neurology",
+      "date": "2024-12-18",
+      "authors": [
+        "Van Loo L",
+        "Jansen K."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "The increased risk of neurodevelopmental impairment in children with congenital heart disease (CHD) has been established, but the search for targeted neurological predictors of adverse outcome is ongoing. This systematic review reports on the utility of three functional neuromonitoring modalities, Near-infrared Spectroscopy (NIRS), electroencephalography (EEG) and biochemical biomarkers, in predicting either clinical neurodevelopmental outcome or structural brain abnormalities after pediatric CHD surgery. Medline, Embase, CENTRAL, Web of Science, clinicaltrials.gov and ICTRP were systematically searched for eligible articles. Original research articles, written in English, published before November 2023 and reporting on perioperative NIRS, EEG or biomarkers and their association with clinical neurodevelopmental outcome or neuroimaging in children &lt;17 years undergoing surgery for CHD were included. The search yielded 11,367 citations, of which 40 papers were included in the final review: sixteen articles ( n = 908 cases) reported on NIRS, twelve ( n = 1,163) on EEG and fifteen ( n = 903) on biochemical biomarkers. Three papers reported on a combination of modalities. Median age at time of surgery was 9 (IQR 7–57) days. Postoperative MRI was performed before discharge at varying timepoints. Median age at clinical outcome assessment was 15 (IQR 12–24) months. Limited evidence supports an association of cerebral oxygen extraction, cerebral desaturation and cerebral autoregulation with outcome, but there was significant heterogeneity in results. Perioperative electroencephalographic ictal discharges and abnormal background were associated with impaired neurological outcome and abnormal neuroimaging. Numerous biochemical biomarkers have been reported but showed no consistent relationship with outcome, except for lactate, which could serve as a predictor of poor outcome. There is a need for larger homogeneous cohorts of children with CHD to determine which perioperative modalities might serve as predictors of neurodevelopmental outcome or neuroimaging abnormalities. Systematic review registration http://www.crd.york.ac.uk/PROSPERO , CRD42023479344 3 Results 3.1 Study selection The study selection process is presented in the PRISMA flow diagram ( Figure 1 ). Of the 7,389 records screened, 129 were assessed for eligibility based on full text. We excluded 91 further records: 59 reported on outcomes other than specified in the inclusion criteria (e.g., nonstandardized neurodevelopmental outcome, neuroimaging other than brain MRI), eight articles included different populations (e.g., cardiopathy other than congenital, adults), eight compared interventions than NIRS, EEG or biochemical biomarkers, and 19 articles used non-suitable publication formats (e.g., case reports, case series, review articles). Ultimately, 40 studies met all inclusion criteria and were included in this systematic review ( 24 – 63 ). Figure 1 PRISMA flow diagram. Williams et al. ( 64 ) performed neonatal high-density, 128-lead, EEG (hdEEG) measurements in children undergoing neonatal cardiac surgery for CHD and measured power (measure of local neural synchrony) and coherence (measure of functional connectivity) as measures of cortical function. While seemingly meeting the inclusion criteria, we excluded this article as the hdEEG is predominantly used in research settings and not deemed feasible in daily clinical practice.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "25256545",
+      "title": "Arterial pressure above the upper cerebral autoregulation limit during cardiopulmonary bypass is associated with postoperative delirium.",
+      "journal": "British journal of anaesthesia",
+      "date": "2014-09-25",
+      "authors": [
+        "Hori D",
+        "Hogue CW."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Mean arterial pressure (MAP) below the lower limit of cerebral autoregulation during cardiopulmonary bypass (CPB) is associated with complications after cardiac surgery. However, simply raising empiric MAP targets during CPB might result in MAP above the upper limit of autoregulation (ULA), causing cerebral hyperperfusion in some patients and predisposing them to cerebral dysfunction after surgery. We hypothesized that MAP above an ULA during CPB is associated with postoperative delirium.<h4>Methods</h4>Autoregulation during CPB was monitored continuously in 491 patients with the cerebral oximetry index (COx) in this prospective observational study. COx represents Pearson's correlation coefficient between low-frequency changes in regional cerebral oxygen saturation (measured with near-infrared spectroscopy) and MAP. Delirium was defined throughout the postoperative hospitalization based on clinical detection with prospectively defined methods.<h4>Results</h4>Delirium was observed in 45 (9.2%) patients. Mechanical ventilation for >48 h [odds ratio (OR), 3.94; 95% confidence interval (CI), 1.72-9.03], preoperative antidepressant use (OR, 3.0; 95% CI, 1.29-6.96), prior stroke (OR, 2.79; 95% CI, 1.12-6.96), congestive heart failure (OR, 2.68; 95% CI, 1.28-5.62), the product of the magnitude and duration of MAP above an ULA (mm Hg h; OR, 1.09; 95% CI, 1.03-1.15), and age (per year of age; OR, 1.01; 95% CI, 1.01-1.07) were independently associated with postoperative delirium.<h4>Conclusions</h4>Excursions of MAP above the upper limit of cerebral autoregulation during CPB are associated with risk for delirium. Optimizing MAP during CPB to remain within the cerebral autoregulation range might reduce risk of delirium.<h4>Clinical trial registration</h4>clinicaltrials.gov NCT00769691 and NCT00981474.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 375.0
+    },
+    {
+      "pmid": "26209856",
+      "title": "Intraoperative hypotension and delirium after on-pump cardiac surgery.",
+      "journal": "British journal of anaesthesia",
+      "date": "2015-07-25",
+      "authors": [
+        "Wesselink EM",
+        "Slooter AJ."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Delirium is a common complication after cardiac surgery and may be as a result of inadequate cerebral perfusion. We studied delirium after cardiac surgery in relation to intraoperative hypotension (IOH).<h4>Methods</h4>This observational single-centre, cohort study was nested in a randomized trial, on a single intraoperative dose of dexamethasone vs placebo during cardiac surgery. During the first four postoperative days, patients were screened for delirium based on the Confusion Assessment Method (CAM) for Intensive Care Unit on the intensive care unit, CAM on the ward, and by inspection of medical records. To combine depth and duration of IOH, we computed the area under the curve for four blood pressure thresholds. Logistic regression analyses were performed to investigate the association between IOH and the occurrence of postoperative delirium, adjusting for confounding and using a 99% confidence interval to correct for multiple testing.<h4>Results</h4>Of the 734 included patients, 99 patients (13%) developed postoperative delirium. The adjusted Odds Ratio for the Mean Arterial Pressure <60 mm Hg threshold was 1.04 (99% confidence interval: 0.99-1.10) for each 1000 mm Hg(2) min(2) AUC(2) increase. IOH, as defined according to the other three definitions, was not associated with postoperative delirium either. Deep and prolonged IOH seemed to increase the risk of delirium, but this was not statistically significant.<h4>Conclusions</h4>Independent of the applied definition, IOH was not associated with the occurrence of delirium after cardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 375.0
+    },
+    {
+      "pmid": "28039082",
+      "title": "Intraoperative cerebral oxygenation, oxidative injury, and delirium following cardiac surgery.",
+      "journal": "Free radical biology & medicine",
+      "date": "2016-12-27",
+      "authors": [
+        "Lopez MG",
+        "Billings FT."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Delirium affects 20-30% of patients after cardiac surgery and is associated with increased mortality and persistent cognitive decline. Hyperoxic reperfusion of ischemic tissues increases oxidative injury, but oxygen administration remains high during cardiac surgery. We tested the hypothesis that intraoperative hyperoxic cerebral reperfusion is associated with increased postoperative delirium and that oxidative injury mediates this association.<h4>Methods</h4>We prospectively measured cerebral oxygenation with bilateral oximetry monitors in 310 cardiac surgery patients, quantified intraoperative hyperoxic cerebral reperfusion by measuring the magnitude of cerebral oxygenation above baseline after any ischemic event, and assessed patients for delirium twice daily in the ICU following surgery using the confusion assessment method for ICU (CAM-ICU). We examined the association between hyperoxic cerebral reperfusion and postoperative delirium, adjusted for the extent of cerebral hypoxia, the extent of cerebral hyperoxia prior to any ischemia, and additional potential confounders and risk factors for delirium. To assess oxidative injury mediation, we examined the association between hyperoxic cerebral reperfusion and delirium after further adjusting for plasma levels of F<sub>2</sub>-isoprostanes and isofurans at baseline and ICU admission, the association between hyperoxic cerebral reperfusion and these markers of oxidative injury, and the association between these markers and delirium.<h4>Results</h4>Ninety of the 310 patients developed delirium following surgery. Every 10%·hour of intraoperative hyperoxic cerebral reperfusion was independently associated with a 65% increase in the odds of delirium (OR, 1.65 [95% CI, 1.12-2.44]; P=0.01). Hyperoxia prior to ischemia was also independently associated with delirium (1.10 [1.01-1.19]; P=0.02), but hypoxia was not (1.12 [0.97-1.29]; P=0.11). Increased hyperoxic cerebral reperfusion was associated with increased concentrations of F<sub>2</sub>-isoprostanes and isofurans at ICU admission, increased concentrations of these markers were associated with increased delirium, and the association between hyperoxic cerebral reperfusion and delirium was weaker after adjusting for these markers of oxidative injury.<h4>Conclusions</h4>Intraoperative hyperoxic cerebral reperfusion was associated with increased postoperative delirium, and increased oxidative injury following hyperoxic cerebral reperfusion may partially mediate this association. Further research is needed to assess the potential deleterious role of cerebral hyper-oxygenation during surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "26133933",
+      "title": "The Effects of Near-Infrared Spectroscopy on the Neurocognitive Functions in the Patients Undergoing Coronary Artery Bypass Grafting with Asymptomatic Carotid Artery Disease: A Randomized Prospective Study.",
+      "journal": "Annals of thoracic and cardiovascular surgery : official journal of the Association of Thoracic and Cardiovascular Surgeons of Asia",
+      "date": "2015-06-30",
+      "authors": [
+        "Kara I",
+        "Kırali K."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Purpose</h4>The purpose of this study was to research the use of near-infrared spectroscopy (NIRS) on the neurocognitive functions in the patients undergoing coronary artery bypass grafting (CABG) with asymptomatic carotid artery disease.<h4>Methods</h4>The study design was carried out with the participation of 79 patients in a prospective, randomized and double blind control method. The patients were separated into two groups as NIRS (n = 43) and no NIRS (n = 36). A neurocognitive test was applied preoperatively and postoperatively to all patients before discharge. Cognitive functions were evaluated by applying the Montreal Cognitive Assessment test (MoCA).<h4>Results</h4>The decrease in the postoperative score of mean MoCA in no NIRS group was statistically significant when compared to preoperatively (p <0.001). Postoperative mean MoCA score was found to be significantly higher in NIRS group (NIRS: 26.8 ± 1.9 vs. no NIRS: 23.6 ± 2.5, p <0.001). It has been determined that there was a moderately positive significant correlation between the increase in the NIRS used patients (%) and increase in the MoCA score of the patients (r = 0.59, p <0.001).<h4>Conclusion</h4>Intraoperative NIRS usage in the patients undergoing CABG with carotid artery disease might be useful due to its postoperative positive effects on the cognitive functions.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "27189028",
+      "title": "Perfusion Pressure Cerebral Infarct (PPCI) trial - the importance of mean arterial pressure during cardiopulmonary bypass to prevent cerebral complications after cardiac surgery: study protocol for a randomised controlled trial.",
+      "journal": "Trials",
+      "date": "2016-05-17",
+      "authors": [
+        "Vedel AG",
+        "Nilsson JC."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Background Debilitating brain injury occurs in 1.6–5 % of patients undergoing cardiac surgery with cardiopulmonary bypass. Diffusion-weighted magnetic resonance imaging studies have reported stroke-like lesions in up to 51 % of patients after cardiac surgery. The majority of the lesions seem to be caused by emboli, but inadequate blood flow caused by other mechanisms may increase ischaemia in the penumbra or cause watershed infarcts. During cardiopulmonary bypass, blood pressure can be below the lower limit of cerebral autoregulation. Although much debated, the constant blood flow provided by the cardiopulmonary bypass system is still considered by many as appropriate to avoid cerebral ischaemia despite the low blood pressure. Methods/design The Perfusion Pressure Cerebral Infarct trial is a single-centre superiority trial with a blinded outcome assessment. The trial is randomising 210 patients with coronary vessel and/or valve disease and who are undergoing cardiac surgery with the use of cardiopulmonary bypass. Patients are stratified by age and surgical procedure and are randomised 1:1 to either an increased mean arterial pressure (70–80 mmHg) or ‘usual practice’ (40–50 mmHg) during cardiopulmonary bypass. The cardiopulmonary bypass pump flow is fixed and set at 2.4 L/minute/m 2 body surface area plus 10–20 % in both groups. The primary outcome measure is the volume of the new ischaemic cerebral lesions (in mL), expressed as the difference between a baseline, diffusion-weighted, magnetic resonance imaging scan and an equal scan conducted 3–6 days postoperatively. Secondary endpoints are the total number of new ischaemic cerebral lesions, postoperative cognitive dysfunction at discharge and 3 months postoperatively, diffuse cerebral injury evaluated by magnetic resonance spectroscopy and selected biochemical markers of cerebral injury. The sample size will enable us to detect a 50 % reduction in the primary outcome measure in the intervention compared to the control group at a significance level of 0.05 and with a power of 0.80. Discussion This is the first clinical randomised study to evaluate whether the mean arterial pressure level during cardiopulmonary bypass influences the development of brain injuries that are detected by diffusion-weighted magnetic resonance imaging. Trial registration ClinicalTrials.gov, NCT02185885 . Registered on 7 July 2014. Electronic supplementary material The online version of this article (doi:10.1186/s13063-016-1373-6) contains supplementary material, which is available to authorized users.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "32557197",
+      "title": "Cerebral oxygenation during pediatric congenital cardiac surgery and its association with outcome: a retrospective observational study.",
+      "journal": "Canadian journal of anaesthesia = Journal canadien d'anesthesie",
+      "date": "2020-06-15",
+      "authors": [
+        "Modestini M",
+        "Scheeren TWL."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract Purpose Non-invasive cerebral oxygen saturation (ScO 2 ) monitoring is an established tool in the intraoperative phase of pediatric congenital cardiac surgery (CCS). This study investigated the association between ScO 2 and postoperative outcome by investigating both baseline ScO 2 values and intraoperative desaturations from baseline. Methods All CCS procedures performed in the period 2010-2017 in our institution in which ScO 2 was monitored were included in this historical cohort study. Baseline ScO 2 was determined after tracheal intubation, before surgical incision. Subgroups were based on cardiac pathology and degree of intracardiac shunting. Poor outcome was defined based on length of stay (LOS) in the intensive care unit (ICU)/hospital, duration of mechanical ventilation (MV), and 30-day mortality. Intraoperatively, ScO 2 total time below baseline (TBBL) and ScO 2 time-weighted average (TWA) were calculated. Results Data from 565 patients were analyzed. Baseline ScO 2 was significantly associated with LOS in ICU (odds ratio [OR] per percentage decrease in baseline ScO 2 , 0.95; 95% confidence interval [CI], 0.93 to 0.97; P &lt; 0.001), with LOS in hospital (OR, 0.93; 95% CI, 0.91 to 0.96; P &lt; 0.001), with MV duration (OR, 0.92; 95% CI, 0.90 to 0.95; P &lt; 0.001) and with 30-day mortality (OR, 0.94; 95% CI, 0.91 to 0.98; P = 0.007). Cerebral oxygen saturation TWA had no associations, while ScO 2 TBBL had only a small association with LOS in ICU (OR, 1.02; 95% CI, 1.01 to 1.03; P &lt; 0.001), MV duration (OR,1.02; 95% CI, 1.01 to 1.03; P = 0.002), and LOS in hospital (OR, 1.02; 95% CI, 1.01 to 1.04; P &lt; 0.001). Conclusion In pediatric patients undergoing cardiac surgery, low baseline ScO 2 values measured after tracheal intubation were associated with several adverse postoperative outcomes. In contrast, the severity of actual intraoperative cerebral desaturation was not associated with postoperative outcomes. Baseline ScO 2 measured after tracheal intubation may help identify patients at increased perioperative risk. Keywords: (Cerebral) tissue oxygenation, congenital cardiac surgery, pediatric surgery, postoperative outcome, hemodynamic monitoring",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "26750675",
+      "title": "Cerebral oxygenation monitoring in patients with bilateral carotid stenosis undergoing urgent cardiac surgery: Observational case series.",
+      "journal": "Annals of cardiac anaesthesia",
+      "date": "2016-01-01",
+      "authors": [
+        "Aktuerk D",
+        "Khazi FM."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Background: Patients with significant bilateral carotid artery stenosis requiring urgent cardiac surgery have an increased risk of stroke and death. The optimal management strategy remains inconclusive, and the available evidence does not support the superiority of one strategy over another. Materials and Methods: A number of noninvasive strategies have been developed for minimizing perioperative stroke including continuous real-time monitoring of cerebral oxygenation with near-infrared spectroscopy (NIRS). The number of patients presenting with this combination (bilateral significant carotid stenosis requiring urgent cardiac surgery) in any single institution will be small and hence there is a lack of large randomized studies. Results: This case series describes our early experience with NIRS in a select group of patients with significant bilateral carotid stenosis undergoing urgent cardiac surgery ( n = 8). In contrast to other studies, this series is a single surgeon, single center study, where the entire surgery (both distal ends and proximal ends) was performed during single aortic clamp technique, which effectively removes several confounding variables. NIRS monitoring led to the early recognition of decreased cerebral oxygenation, and corrective steps (increased cardiopulmonary bypass flow, increased pCO 2 , etc.,) were taken. Conclusion: The study shows good clinical outcome with the use of NIRS. This is our “work in progress,” and we aim to conduct a larger study. CONCLUSION Urgent cardiac surgery in patients with significant bilateral CAS requires careful intraoperative monitoring and adjustment of perioperative technique. NIRS is helpful adjunct in such patients to ensure adequate cerebral perfusion. Large randomized studies are required to further clarifying the role of NIRS in this setting. This is our “work in progress,” and we aim to conduct a larger study. Financial support and sponsorship Nil.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "34030698",
+      "title": "Cerebral microemboli in mini-sternotomy compared to mini- thoracotomy for aortic valve replacement: a cross sectional cohort study.",
+      "journal": "Journal of cardiothoracic surgery",
+      "date": "2021-05-24",
+      "authors": [
+        "Bozhinovska M",
+        "Šoštarič M."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract Background Recently adopted mini-thoracotomy approach for surgical aortic valve replacement has shown benefits such as reduced pain and shorter recovery, compared to more conventional mini-sternotomy access. However, whether limited exposure of the heart and ascending aorta resulting from an incision in the second intercostal space may lead to increased intraoperative cerebral embolization and more prominent postoperative neurologic decline, remains inconclusive. The aim of our study was to assess potential neurological complications after two different minimal invasive surgical techniques for aortic valve replacement by measuring cerebral microembolic signal during surgery and by follow-up cognitive evaluation. Methods Trans-cranial Doppler was used for microembolic signal detection during aortic valve replacement performed via mini-sternotomy and mini-thoracotomy. Patients were evaluated using Addenbrooke’s Cognitive Examination Revised Test before and 30 days after surgical procedure. Results A total of 60 patients were recruited in the study. In 52 patients, transcranial Doppler was feasible. Of those, 25 underwent mini-sternotomy and 27 had mini-thoracotomy. There were no differences between groups with respect to sex, NYHA class distribution, Euroscore II or aortic valve area. Patients in mini-sternotomy group were younger (60.8 ± 14.4 vs.72 ± 5.84, p = 0.003), heavier (85.2 ± 12.4 vs.72.5 ± 12.9, p = 0.002) and had higher body surface area (1.98 ± 0.167 vs. 1.83 ± 0.178, p = 0.006). Surgery duration was longer in mini-sternotomy group compared to mini-thoracotomy (158 ± 24 vs. 134 ± 30 min, p &lt; 0.001, respectively). There were no differences between groups in microembolic load, length of ICU or total hospital stay. Total microembolic signals count was correlated with cardiopulmonary bypass duration (5.64, 95%CI 0.677–10.60, p = 0.027). Addenbrooke’s Cognitive Examination Revised Test score decreased equivalently in both groups ( p = 0.630) (MS: 85.2 ± 9.6 vs. 82.9 ± 11.4, p = 0.012; MT: 85.2 ± 9.6 vs. 81.3 ± 8.8, p = 0.001). Conclusion There is no difference in microembolic load between the groups. Total intraoperative microembolic signals count was associated with cardiopulmonary bypass duration. Age, but not micorembolic signals load, was associated with postoperative neurologic decline. Trial registry number clinicaltrials.gov , NCT02697786 14. Supplementary Information The online version contains supplementary material available at 10.1186/s13019-021-01509-8. Keywords: Aortic valve replacement, Minimal invasive surgery, Mini-sternotomy, Mini-thoracotomy, Transcranial Doppler, Microembolic signals, Cognitive test",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "20606124",
+      "title": "Relationship of intraoperative cerebral oxygen saturation to neurodevelopmental outcome and brain magnetic resonance imaging at 1 year of age in infants undergoing biventricular repair.",
+      "journal": "Circulation",
+      "date": "2010-07-06",
+      "authors": [
+        "Kussman BD",
+        "Newburger JW."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Near-infrared spectroscopy monitoring of cerebral oxygen saturation (rSo(2)) has become routine in many centers, but no studies have reported the relationship of intraoperative near-infrared spectroscopy to long-term neurodevelopmental outcomes after cardiac surgery.<h4>Methods and results</h4>Of 104 infants undergoing biventricular repair without aortic arch reconstruction, 89 (86%) returned for neurodevelopmental testing at 1 year of age. The primary near-infrared spectroscopy variable was the integrated rSo(2) (area under the curve) for rSo(2) <or=45%; secondary variables were the average and minimum rSo(2) by perfusion phase and at specific time points. Psychomotor and mental development indexes of the Bayley scales, head circumference, neurological examination, and abnormalities on brain magnetic resonance imaging did not differ between subjects according to a threshold level for rSo(2) of 45%. Lower Psychomotor Development Index scores were modestly associated with lower average (r=0.23, P=0.03) and minimum (r=0.22, P=0.04) rSo(2) during the 60-minute period after cardiopulmonary bypass but not with other perfusion phases. Hemosiderin foci on brain magnetic resonance imaging were associated with lower average rSo(2) from postinduction to 60 minutes post cardiopulmonary bypass (71+/-10% versus 78+/-6%, P=0.01) and with lower average rSO(2) during the rewarming phase (72+/-12% versus 83+/-9%, P=.003) and during the 60-minute period following cardiopulmonary bypass (65+/-11% versus 75+/-10%, P=0.009). In regression analyses that adjusted for age <or=30 days, Psychomotor Development Index score (P=0.02) and brain hemosiderin (P=0.04) remained significantly associated with rSo(2) during the 60-minute period following cardiopulmonary bypass.<h4>Conclusions</h4>Perioperative periods of diminished cerebral oxygen delivery, as indicated by rSo(2), are associated with 1-year Psychomotor Development Index and brain magnetic resonance imaging abnormalities among infants undergoing reparative heart surgery. Clinical Trial Registration- URL: http://clinicaltrials.gov. Unique identifier: NCT00006183.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "29287674",
+      "title": "[Effects of cerebral oxygen changes during coronary bypass surgery on postoperative cognitive dysfunction in elderly patients: a pilot study].",
+      "journal": "Brazilian journal of anesthesiology (Elsevier)",
+      "date": "2017-12-26",
+      "authors": [
+        "Şahan C",
+        "Şentürk M."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract Background and objectives Postoperative cognitive dysfunction is common after cardiac surgery. Adequate cerebral perfusion is essential and near infrared spectroscopy (NIRS) can measure cerebral oxygenation. Aim of this study is to compare incidence of early and late postoperative cognitive dysfunction in elderly patients treated with conventional or near infrared spectroscopy monitoring. Methods Patients undergoing coronary surgery above 60 years, were included and randomized to 2 groups; control and NIRS groups. Peroperative management was NIRS guided in GN; and with conventional approach in control group. Test battery was performed before surgery, at first week and 3rd month postoperatively. The battery comprised clock drawing, memory, word list generation, digit spam and visuospatial skills subtests. Postoperative cognitive dysfunction was defined as drop of 1 SD (standard deviation) from baseline on two or more tests. Mann-Whitney U test was used for comparison of quantitative measurements; Chi-square exact test to compare quantitative data. Results Twenty-one patients in control group and 19 in NIRS group completed study. Demographic and operative data were similar. At first week postoperative cognitive dysfunction were present in 9 (45%) and 7 (41%) of patients in control group and NIRS group respectively. At third month 10 patients (50%) were assessed as postoperative cognitive dysfunction; incidence was 4 (24%) in NIRS group ( p :0.055). Early and late postoperative cognitive dysfunction group had significantly longer ICU stay (1.74 + 0.56 vs. 2.94 + 0.95; p &lt; 0.001; 1.91 + 0.7 vs. 2.79 + 1.05; p &lt; 0.01) and longer hospital stay (9.19 + 2.8 vs. 11.88 + 1.7; p &lt; 0.01; 9.48 + 2.6 vs. 11.36 + 2.4; p &lt; 0.05). Conclusion In this pilot study conventional monitoring and near infrared spectroscopy resulted in similar rates of early postoperative cognitive dysfunction. Late cognitive dysfunction tended to ameliorate with near infrared spectroscopy. Early and late cognitive declines were associated with prolonged ICU and hospital stays. Keywords: Postoperative cognitive dysfunction, Cerebral oximetry, Cardiac surgery, Elderly patient",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "42036663",
+      "title": "Predictive value of cerebral oxygenation with near infrared spectroscopy for in-hospital mortality in pediatric congenital heart disease surgery: a retrospective observational study.",
+      "journal": "Journal of cardiothoracic surgery",
+      "date": "2026-04-26",
+      "authors": [
+        "Yilmaz H",
+        "Tuncay A."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract Aim Congenital heart disease still has significant morbidity and mortality despite advances in surgery. Inadequate tissue perfusion is thought to be the primary cause. Monitoring children with cerebral oxygenation with near infrared spectroscopy before and after surgery may predict pre- and post-operative mortality. This study evaluated the benefits of this method in terms of mortality. Method This study is a retrospective, observational, single-center study. A total of 166 patients who underwent congenital heart surgery were included in the study. In-hospital mortality was analyzed in two groups: those who developed complications and those who did not. Cerebral oxygenation with near infrared spectroscopy results were recorded before surgery, during surgery (before and after aortic clamping), and after surgery. Results The study continued with 166 patients. Twenty-five patients died. Significant differences were observed in cerebral oximetry values measured at different time points according to cross-clamp time. Oximetry values before (70.0 [46.0–92.0] 61.0 [53.0–88.0] p = 0.003) and after (58.0 [43.0–95.0] 51.0 [46.0–76.0] p = 0.009) aortic cross-clamping were significantly lower in the non-surviving children than in the surviving children. In the multivariate analysis performed for independent risk factor assessment, surgery duration, pre-cross-clamp SctO2 (%), and lowest SctO2 (%) were found to be significant. Conclusion Assessing tissue perfusion before and after surgery may be beneficial in congenital heart disease surgery by enabling the early detection of clinical deterioration. Keywords: Near-infrared spectroscopy, Congenital heart surgery, Cerebral, Mortality",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "40944783",
+      "title": "Post-operative cerebral oximetry for detection of low-cardiac output syndrome after coronary artery bypass surgery.",
+      "journal": "Journal of clinical monitoring and computing",
+      "date": "2025-09-13",
+      "authors": [
+        "Silaschi M",
+        "Bakhtiary F."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract While cerebral near infrared spectroscopy (NIRS) is a valuable diagnostic tool to monitor brain oxygenation during cardiac surgery, its value in low cardiac output syndrome (LCOS) in adults has not been evaluated. This study was prospective and observational. Patients undergoing coronary artery bypass grafting (CABG) with reduced ejection fraction (LVEF &lt; 35%) were included and received NIRS monitoring for up to 48 h after surgery with simultaneous continuous cardiac index (CI) monitoring. The primary endpoint was LCOS by a standard definition. From 2020 to 2023, 82 Patients with severely reduced LVEF undergoing CABG were included. Of these, 44 patients had sufficient NIRS and CI data for further analyses. Median age was 68 years (Interquartile range (IQR) 60–73), 91% (40/44) were male and median EuroSCORE II was 3.2% (1.7–5.4). Median LVEF was 30% (26.5–30.1) and baseline CI was 2.15 L/min/m² (2.05–2.60). CABG was combined with other procedures in 23% (10/44). LCOS rate was 11% (5/44) and in-hospital mortality was 2.2% (1/44). The performance of Lasso-regularized models increased if NIRS was included in LCOS prediction models (AUROC 0.99 [95%CI, 0.98-1.00]) showing that both relative NIRS drop rate and absolute NIRS value were significant predictors of LCOS. Risk of LCOS was high if NIRS drops by &gt; 20% or absolute NIRS drops below &lt; 50. In patients with LCOS, NIRS drop occurred before CI values decreased. NIRS drop was not associated with other adverse events. NIRS is an early and valid indicator of LCOS in patients after cardiac surgery. In selected patients, NIRS may be a substitute for invasive continuous CI measurements. However, we could not show an association of NIRS drop with adverse events. Future studies should compare blinded and non-blinded NIRS monitoring to investigate possible impact on clinical outcomes further. Keywords: Low cardiac output syndrome, Hemodynamic monitoring, Cerebral oximetry, Cerebral near infrared spectroscopy",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 365.0
+    },
+    {
+      "pmid": "28328980",
+      "title": "Early biomarkers of brain injury and cerebral hypo- and hyperoxia in the SafeBoosC II trial.",
+      "journal": "PloS one",
+      "date": "2017-03-22",
+      "authors": [
+        "Plomgaard AM",
+        "Greisen G."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Background The randomized clinical trial, SafeBoosC II, examined the effect of monitoring of cerebral oxygenation by near-infrared spectroscopy combined with a guideline on treatment when cerebral oxygenation was out of the target range. Data on cerebral oxygenation was collected in both the intervention and the control group. The primary outcome was the reduction in the burden of cerebral hypo- and hyperoxia between the two groups. In this study we describe the associations between the burden of cerebral hypo- and hyperoxia, regardless of allocation to intervention or control group, and the biomarkers of brain injury from birth till term equivalent age that was collected as secondary and explorative outcomes in the SafeBoosC II trial. Methods Cerebral oxygenation was continuously monitored during the first 72h of life in 166 extremely preterm infants. Cranial ultrasound was performed at day 1,4,7,14, and 35 and at term. Electroencephalogram (EEG) was recorded at 64h. Blood-samples taken at 6 and 64 hours were analysed for the brain injury biomarkers; S100beta, brain-fatty-acid-binding-protein, and neuroketal. All analyses were conducted post hoc. Results Significantly more infants with a cerebral burden of hypoxia within the 4 th quartile versus infants within quartile 1–3 were diagnosed with severe intracranial haemorrhage (11/39 versus 11/117, p = 0.003), had low burst rate on EEG (12/28 versus 21/103, p = 0.015), or died (14/41 versus 18/123, p = 0.006), whereas none of these events were significantly associated with cerebral hyperoxia. The blood biomarkers were not significantly associated with the burden of cerebral hypo- or hyperoxia. Conclusions The explorative analysis showed that early burden of cerebral hypoxia, but not hyperoxia was significantly associated with low brain electrical activity and severe intracranial haemorrhage while none of the three blood biomarkers were associated with the burden of either cerebral hypo- or hyperoxia. Results One-hundred-and-sixty-six infants were included in the SafeBoosC II trial, Fig 1 . Cerebral oximetry data was missing for two infants due to technical issues (n = 1) and withdrawal of consent (n = 1). 10.1371/journal.pone.0173440.g001 Fig 1 Flowchart. Flow of participants through the SafeBoosC II study. The median (min—max) burden of cerebral hypoxia was 30.6%hours (0.7–803.9). The limits for hypoxia quartile 4 were 99.3–803.9%hours and for quartile 1–3; 0.7–99.2%hours. The median (min—max) burden of cerebral hyperoxia was 1.2%hours (0.0–223.0). The limits for quartile 4 were 14.2–223.0%hours and for quartile 1–3; 0.0–14.1%hours. As expected according to the primary result of the SafeBoosC II trial [ 14 ], there were significantly fewer infants form the intervention group with a burden of hypoxia in the 4 th quartile, than in quartile 1–3, whereas the burden of cerebral hyperoxia within the 4 th quartile versus quartile 1–3, was unaffected by allocation in the SafeBoosC trial, Table 1 . Male sex was associated with less cerebral hypoxia and more cerebral hyperoxia. Furthermore, gestational age was positively associated with cerebral hyperoxia whereas the other baseline characteristics were not associated with either cerebral hypo- or hyperoxia. 10.1371/journal.pone.0173440.t001 Table 1 Baseline characteristics and treatment during the first 72 hours of life according to burden of cerebral hypo- or hyperoxia split in the three lowest quartiles and the highest quartile. Burden of hypoxia Burden of hyperoxia Quartile 1 to 3 Quartile 4 Quartile 1 to 3 Quartile 4 n = 123 n = 41 P-value n = 123 n = 41 P-value Baseline characteristics Gestational age (week), mean (SD) 26.4 (1.2) 26.5 (1.5) 0.78 26.3 (1.3) 27.7 (1–0) 0.35 Gestational age below 26 weeks 38 (31) 14 (34) 0.7 42 (34) 10 (24) 0.025 Birth weight (gram), mean (SD) 847 (211) 875 (207) 0.47 849 (208) 872 (216) 0.54 Male sex 65 (53) 13 (32) 0.02 53 (43) 25 (61) 0.047 Twins 21 (17) 12 (29) 0.09 23 (19) 10 (24) 0.43 Antenatal steroids full course 82 (67) 31 (78) 0.2 88 (72) 25 (61) 0.18 Prolonged rupture of membranes 40 (33) 17 (36) 0.21 42 (34) 15 (38) 0.72 Maternal chorioamnionitis 6 (5) 5 (13) 0.1 9 (8) 2 (5) 0.59 APGAR-score &lt;5 points at 5 minutes 21 (17) 8 (20) 0.69 20 (16) 9 (23) 0.38 Umbilical arterial pH, mean (SD) 7.32 (0.1) 7.31 (0.1) 0.62 7.32 (0.1) 7.29 (0.1) 0.13 SafeBoosC II intervention group 74 (60) 12 (29) 0.001 67 (54) 19 (46) 0.37 Treatment during the first 72h of life Surfactant treatment 90 (73) 35 (85) 0.11 90 (73) 35 (85) 0.11 Mechanical ventilation 79 (64) 30 (73) 0.29 80 (65) 29 (70) 0.5 Patent ductus arteriosus treatment 17 (14) 4 (10) 0.52 15 (12) 6 (15) 0.71 Use of vasopressors/inotropes 22 (18) 16 (40) 0.004 29 (24) 9 (22) 0.79 Any red blood cell transfusion 31 (26) 18 (45) 0.025 41 (35) 8 (20) 0.07 Corticosteroids 4 (3) 4 (10) 0.1 6 (5) 2 (5) 0.99 Values are numbers (percentages) unless stated otherwise. P-values have not been corrected for multiple comparisons. Serial ultrasound scans of 155 infants were available for evaluation by central reading. Twenty-seven (27/155) had severe brain injury, of which 22 had IVH grade III or PVHI. The remaining five infants had stroke (n = 2), cerebral atrophy (n = 2), or cerebellar haemorrhage (n = 1). Cerebral hypoxia was significantly associated with severe brain injury and death, Table 2 . There was no significant association between cerebral hyperoxia and severe brain injury and death, Table 3 . Cerebral hypoxia was significantly associated with early occurrence (day 1 to 4) of severe intracranial haemorrhages whereas there was no association between cerebral hypoxia and later occurrence (day 5 to day 14) of severe intracranial haemorrhages, Table 2 . Cerebral hypoxia was also significantly associated with low EEG burst rates at 64 hours of age whereas there was no association between cerebral hypoxia and SEF95 at 64 hours of age. Of the 14 infants with early severe IVH ten (10) infants had EEG measurement and of these five (5) infants had burst rates within the 1 st quartile, for the infants without severe haemorrhages the number of recorded EEGs was 115 and hereof 26 had burst rates within the 1 st quartile (chi-square analysis between groups p = 0.12). The three plasma-biomarker-levels were not associated with cerebral hypoxia, Table 2 . Cerebral hyperoxia was not associated with EEG burst rate, SEF95 or plasma biomarkers, Table 3 . The odds ratios (ORs) and 95% confidence interval for adverse outcomes are illustrated in Figs 2 and 3 . 10.1371/journal.pone.0173440.g002 Fig 2 Risk for adverse outcomes for infants with a burden of cerebral hypoxia within or below the 4 th quartile. Odds ratio (OR) and 95% confidence interval. 10.1371/journal.pone.0173440.g003 Fig 3 Risk for adverse outcomes for infants with a burden of cerebral hyperoxia within or below the 4 th quartile. Odds ratio (OR) and 95% confidence interval. 10.1371/journal.pone.0173440.t002 Table 2 Distributions of early and late adverse outcomes of cranial ultrasound, EEG variables, blood biomarkers, term diagnoses, and death according to the burden of cerebral hypoxia within or below the 4 th quartile. Burden of hypoxia Quartile 1–3 Quartile 4 n = 123 n = 41 P-value * P-value OR (95% CI) Cranial ultrasound IVH 3–4 day 1–4 6/117 8/38 0.003 0.045 4.93 (1.59–15.30) IVH 3–4 day 5–14 5/111 3/31 0.63 &gt;0.95 2.27 (0.51–10.09) IVH 3–4 at any time 11/117 11/39 0.003 0.045 3.77 (1.49–9.63) Severe brain injury—any time 14/116 13/39 0.002 0.03 3.64 (1.53–8.69) EEG variables time 64h Burst-rate in the 1 st quartile 21/103 12/28 0.015 0.23 2.93 (1.20–7.12) Spectral edge frequency in the 1 st quartile 15/99 5/27 0.67 &gt;0.95 1.27 (0.42–3.88) Plasma biomarkers difference between 6 and 64h S100beta increase in 4 th quartile 25/92 6/30 0.43 &gt;0.95 0.67 (0.25–1.83) BFABP increase in 4 th quartile 24/89 8/31 0.90 &gt;0.95 0.94 (0.37–2.39) Neuroketal increase in 4 th quartile 22/92 9/30 0.51 &gt;0.95 1.36 (0.55–3.41) Other major ",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 345.0
+    },
+    {
+      "pmid": "34899560",
+      "title": "Cerebral Autoregulation in Non-Brain Injured Patients: A Systematic Review.",
+      "journal": "Frontiers in neurology",
+      "date": "2021-11-16",
+      "authors": [
+        "Longhitano Y",
+        "Robba C."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Introduction: Cerebral autoregulation (CA) plays a fundamental role in the maintenance of adequate cerebral blood flow (CBF). CA monitoring, through direct and indirect techniques, may guide an appropriate therapeutic approach aimed at improving CBF and reducing neurological complications; so far, the role of CA has been investigated mainly in brain-injured patients. The aim of this study is to investigate the role of CA in non-brain injured patients. Methods: A systematic consultation of literature was carried out. Search terms included: “CA and sepsis,” “CA and surgery,” and “CA and non-brain injury.” Results: Our research individualized 294 studies and after screening, 22 studies were analyzed in this study. Studies were divided in three groups: CA in sepsis and septic shock, CA during surgery, and CA in the pediatric population. Studies in sepsis and intraoperative setting highlighted a relationship between the incidence of sepsis-associated delirium and impaired CA. The most investigated setting in the pediatric population is cardiac surgery, but the role and measurement of CA need to be further elucidated. Conclusion: In non-brain injured patients, impaired CA may result in cognitive dysfunction, neurological damage, worst outcome, and increased mortality. Monitoring CA might be a useful tool for the bedside optimization and individualization of the clinical management in this group of patients. Results After general screening, initial results from this search lead to a number of 40 studies ( Figure 1 , Flowchart). Among them, 22 studies were further selected, which were divided in three sections (CA in sepsis and septic shock, CA in surgery, and CA in the pediatric population) ( Tables 1 , 2 ). Specific reasons for exclusion of the studies are presented in Table 3 . The risk of bias assessment reported: “low risk” for 13 papers (59%), “unclear risk” for 9 articles (41%), and none of them reported high risk of bias. The bias was mostly related to the randomization process selection of the reported results ( Table 4 ). Figure 1 Flowchart. Table 1 Summary of the included studies about CA in sepsis and pediatric population: primary findings, type of method to assess autoregulation, number of patients evaluated. First author Year Journal N of patients Type autoregulation Design of study Findings CEREBRAL AUTOREGULATION IN SEPSIS AND SEPTIC SHOCK Schramm et al. ( 15 ) 2012 Critical Care 30 TCD Prospective study AR is impaired in the great majority of patients with severe sepsis during the first two days. Impaired AR is associated with SAD, suggesting that dysfunction of CA is one of the trigger mechanisms contributing to the development of SAD. Berg et al. ( 8 ) 2016 Scand J Clin Lab 9 TCD Prospective study Dynamic CA is enhanced during the very early stages of sepsis, they remain inconclusive with regard to more advanced stages of disease, because thigh-cuff deflation failed to induce sufficient MAP reductions in patients. Bindra et al. ( 16 ) 2016 Critic Care Resusc 28 NIRS Prospective, observational CA is impaired early in septic shock and is independently associated with mortality at 3-month follow-up. Information based on bedside monitoring of CA in the ICU could form a valuable adjunct to guide haemodynamic optimization in patients with septic shock. Crippa et al. ( 17 ) 2018 Crit Care 100 TCD Prospective, observational CA was altered in half of the patients with sepsis and was associated with the development of SABD. These findings support the concept that cerebral hypoxia could contribute to the development of SABD. Rosenblatt et al. ( 18 ) 2020 J Intensive Care Medicine 6 NIRS / COx Case series In this high-fidelity group of patients with SAE, continuous, NIRS-based monitoring can identify blood pressure ranges that improve autoregulation. This is important given the association between cerebral autoregulatory function and severity of encephalopathy. Individualizing blood pressure goals using bedside autoregulation monitoring may better preserve cerebral perfusion in SAE than current practice Berg et al. ( 8 ) 2016 Scand J Clin Lab 7 TCD Prospective study Cerebral CO 2 vasoreactivity was found to be preserved in septic patients; nevertheless, and in contrast to our working hypothesis, short-term mechanical hyperventilation did not enhance dCA. CEREBRAL AUTOREGULATION IN PEDIATRIC CRITICALLY ILL PATIENTS Easley et al. ( 10 ) 2018 Cardiol Young 57 NIRS multicenter observational pilot study Individual, dynamic non-invasive cerebrovascular reactivity monitoring demonstrated transient periods of impairment related to possible silent brain injury. The association between an impaired autoregulation burden and elevation in the serum brain biomarker may identify brain perfusion risk that could result in injury. Brady et al. ( 19 ) 2010 Crit Care Medicine 54 NIRS prospective, observational pilot study This pilot study of COx monitoring in pediatric patients demonstrates an association between hypotension during CPB and impairment of autoregulation. The COx may be useful to identify arterial blood pressure-dependent limits of during CPB. Larger trials with neurological outcomes are indicated. Thewissen et al. ( 20 ) 2018 Pediatr Res 22 NIRS Prospective, observational study Drug-related hypotension and decreased cerebral activity after intubation with low propofol doses in preterm neonates were observed, without evidence of cerebral ischemic hypoxia. CA remained intact during drug-related hypotension in 95.5% of patients. Cerebral monitoring including CA clarifies the cerebral impact of MAP fluctuations. Joram et al. ( 21 ) 2020 Neurocritical Care 29 NIRS Prospective observational study CA assessment is feasible in pediatric ECMO. The first 24 h following ECMO represents the most critical period regarding CA. Impaired autoregulation is significantly more severe among patients who experience acute neurological event. TDC, Transcranial Doppler; AR, Autoregulation; SAD, Sepsis-associated Delirium; MAP, Mean Arterial Pressure; NIRS, Near InfraRed Spectroscopy; CVAR: Cerebrovascular Autoregulation; ICU: Intensive Care Unit; SABD, Sepsis-associated brain dysfunction; COx, cerebral oxygen index; SAE, Sepsis-associated Encephalopathy; CA, cerebral autoregulation; CPB, cardio-pulmonary by-pass . Table 2 Summary of the included studies about CA in surgery: primary findings, type of method to assess autoregulation, number of patients evaluated. First author Year Journal N of patients Type autoregulation Design of study Finding CEREBRAL AUTOREGULATION DURING SURGERY Caldas et al. ( 22 ) 2019 Clin Neurophysiol 67 TCD Sistematic review Dynamic CA was impaired after CABG surgery with CPB and was a significant independent risk factor of PD. Ono et al. ( 23 ) 2013 Crit Care Med 410 NIRS Prospective observational study. Excursions of MAP below the limit of autoregulation and not absolute MAP are independently associated with for AKI. Monitoring Cox may provide a novel method for precisely guiding MAP targets during CPB. Hori et al. ( 24 ) 2014 J Cardiothorac Vasc Anesth 110 NIRS Prospective randomized clinical trial The presence of delirium was not associated with perioperative blood pressure excursions, but the secondary analysis showed the association between excursion above the optimal mean arterial pressure and the severity of delirium in early PO period. Hori et al. ( 25 ) 2014 Br J Anaesth J 491 NIRS Prospective observational study Excursions of MAP above the upper limit of CA during CPB are associated with risk for delirium. Optimizing MAP during CPB to remain within the CA range might reduce risk of delirium. Hori et al. ( 24 ) 2016 Interact CardioVasc Thorac Surg 110 UT-NIRS Prospective observational study Excursion below optimal blood pressure during perioperative period is associated with CSA-AKI. Sperna Weiland et al. ( 26 ) 2017 Br J Anaesth 14 TCD Prospective study During surgery, CA indices were similar to values determined before surgery. This indicate",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 345.0
+    },
+    {
+      "pmid": "39955230",
+      "title": "2024 EACTS/EACTAIC/EBCP Guidelines on cardiopulmonary bypass in adult cardiac surgery.",
+      "journal": "British journal of anaesthesia",
+      "date": "2025-02-14",
+      "authors": [
+        "Wahba A",
+        "EACTS/EACTAIC/EBCP Scientific Document Group."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Preamble Clinical practice guidelines consolidate and evaluate all pertinent evidence on a specific topic available at the time of their formulation. The goal is to assist physicians in determining the most effective management strategies for patients with a particular condition. These guidelines assess the impact on patient outcomes and weigh the risk–benefit ratio of various diagnostic or therapeutic approaches. While not a replacement for textbooks, they provide supplementary information on topics relevant to current clinical practice and become an essential tool to support the decisions made by specialists in daily practice. Nonetheless, it is crucial to understand that these recommendations are intended to guide, not dictate, clinical practice, and should be adapted to each patient's unique needs. Clinical situations vary, presenting a diverse array of variables and circumstances. Thus, the guidelines are meant to inform, not replace, the clinical judgement of healthcare professionals, grounded in their professional knowledge, experience and comprehension of each patient's specific context. Moreover, these guidelines are not considered legally binding; the legal duties of healthcare professionals are defined by prevailing laws and regulations, and adherence to these guidelines does not modify such responsibilities. The European Association for Cardio-Thoracic Surgery (EACTS), the European Association of Cardiothoracic Anaesthesiology and Intensive Care (EACTAIC) and the European Board of Cardiovascular Perfusion (EBCP) constituted a task force of professionals specializing in cardiopulmonary bypass (CPB) management. To ensure transparency and integrity, all task force members involved in the development and review of these guidelines submitted conflict of interest declarations, which were compiled into a single document available on the EACTS website ( https://www.eacts.org/resources/clinical-guidelines ). Any alterations to these declarations during the development process were promptly reported to the EACTS, EACTAIC and EBCP. Funding for this task force was provided exclusively by the EACTS, EACTAIC and EBCP, without involvement from the healthcare industry or other entities. Following this collaborative endeavour, the governing bodies of EACTS, EACTAIC and EBCP oversaw the formulation, refinement, and endorsement of these extensively revised guidelines. An external panel of experts thoroughly reviewed the initial draft, and their input guided subsequent amendments. After this detailed revision process, the final document was ratified by all task force experts and the leadership of the EACTS, EACTAIC and EBCP, enabling its publication in the European Journal of Cardio-Thoracic Surgery, the British Journal of Anaesthesia and Interdisciplinary CardioVascular and Thoracic Surgery. Endorsed by the EACTS, EACTAIC and EBCP, these guidelines represent the official standpoint on this subject. They demonstrate a dedication to continual enhancement, with routine updates planned to ensure that the guidelines remain current and valuable in the ever-progressing arena of clinical practice. Central Illustration: Multidisciplinary Approach to Cardiopulmonary Bypass Management. Image 1",
+      "bezug": "Kontext-Leitlinie: behandelt das Thema der Frage nicht direkt. Nur als allgemeinen Rahmen nutzen, nie als Beleg für die konkrete Frage.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": false,
+      "context_guideline": true,
+      "score": 380.0
+    }
+  ],
+  "timings": {
+    "plan": 2.81,
+    "search": 9.22,
+    "rank": 0.13,
+    "enrich": 3.02,
+    "synthesis": 23.06,
+    "total": 38.26
+  }
+}

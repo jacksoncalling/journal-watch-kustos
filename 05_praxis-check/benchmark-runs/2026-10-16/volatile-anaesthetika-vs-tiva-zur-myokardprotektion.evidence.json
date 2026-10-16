@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-16T11:21:02",
+  "reconstructed": false,
+  "question": {
+    "title": "Volatile Anaesthetika vs. TIVA zur Myokardprotektion",
+    "frage": "Volatile Anaesthetika versus totale intravenoese Anaesthesie mit Propofol zur Myokardprotektion bei kardiochirurgischen Eingriffen mit Herz-Lungen-Maschine: was zeigt die Evidenz zum Outcome?",
+    "kontext": ""
+  },
+  "queries": [
+    "(Volatile Anesthetics OR Inhalational Anesthetics OR Sevoflurane OR Desflurane OR Isoflurane) AND (Propofol OR \"Total Intravenous Anesthesia\" OR TIVA) AND (Myocardial Protection OR Cardioprotection OR \"Cardiac Protection\") AND (\"Cardiac Surgery\" OR \"Heart Surgery\" OR \"Cardiopulmonary Bypass\" OR CPB) AND SRC:MED",
+    "(Volatile Anesthetics OR Inhalational Anesthetics OR Sevoflurane OR Desflurane OR Isoflurane) AND (Propofol OR \"Total Intravenous Anesthesia\" OR TIVA) AND (\"Cardiac Surgery\" OR \"Coronary Artery Bypass Grafting\" OR CABG OR \"Valve Surgery\") AND (\"Cardiopulmonary Bypass\" OR CPB OR \"Heart-Lung Machine\") AND (Outcome OR Mortality OR Morbidity OR Complications OR \"Adverse Events\") AND SRC:MED"
+  ],
+  "synthesis_raw": "## Kurzantwort\n\nDie Evidenz zur Myokardprotektion bei kardiochirurgischen Eingriffen mit Herz-Lungen-Maschine durch volatile Anästhetika im Vergleich zu einer Propofol-basierten totalen intravenösen Anästhesie (TIVA) ist komplex und teilweise widersprüchlich. Mehrere Meta-Analysen deuten auf einen Vorteil volatiler Anästhetika hinsichtlich einer reduzierten Langzeitmortalität, geringeren Inzidenz postoperativer Myokardinfarkte und verminderter kardialer Troponin-Freisetzung hin (PMID 32205551: \"the class of volatile anesthetics compared with propofol was associated with lower 1-yr mortality (5.5 vs. 6.8%; odds ratio, 0.76 [95% CI, 0.60 to 0.96]; P = 0.023), myocardial infarction (odds ratio, 0.60 [95% CI, 0.39 to 0.92]; P = 0.023), cardiac troponin release (standardized mean difference, -0.39 [95% CI, -0.59 to -0.18], P = 0.0002)\"). Eine große multizentrische, randomisierte Studie konnte jedoch keinen signifikanten Unterschied in der Einjahresmortalität bei elektiven Koronararterien-Bypass-Operationen (CABG) feststellen (PMID 30888743: \"No significant difference between the groups with respect to deaths from any cause was seen at 1 year (2.8% in the volatile anesthetics group and 3.0% in the total intravenous anesthesia group; relative risk, 0.94; 95% confidence interval [CI], 0.69 to 1.29; P = 0.71)\").\n\n*   **Entscheidender Befund:** Inkonsistente Ergebnisse bezüglich der Mortalität, mit Meta-Analysen, die Vorteile für volatile Anästhetika zeigen, während eine große RCT keinen Unterschied feststellte.\n*   **Untersuchte Population/Situation:** Erwachsene Patienten, die sich einer Herzoperation mit Herz-Lungen-Maschine unterziehen, häufig CABG.\n*   **Wesentliche Unsicherheit:** Die definitive Wirkung auf die Mortalität bleibt unklar, und für postoperative kognitive Dysfunktion ist die Evidenz ebenfalls uneinheitlich.\n\n## Evidenzlage\n\n*   **Mortalität und Myokardinfarkt:**\n    Mehrere Meta-Analysen deuten auf eine Überlegenheit volatiler Anästhetika (Desfluran, Sevofluran) gegenüber Propofol-basierter TIVA hin. Eine Meta-Analyse von 37 Studien mit 8.197 Teilnehmern zeigte, dass volatile Anästhetika mit einer niedrigeren Einjahresmortalität (5,5 % vs. 6,8 %; Odds Ratio, 0,76) und einer reduzierten Myokardinfarkt-Rate (Odds Ratio, 0,60) assoziiert waren (PMID 32205551: \"the class of volatile anesthetics compared with propofol was associated with lower 1-yr mortality (5.5 vs. 6.8%; odds ratio, 0.76 [95% CI, 0.60 to 0.96]; P = 0.023), myocardial infarction (odds ratio, 0.60 [95% CI, 0.39 to 0.92]; P = 0.023), cardiac troponin release (standardized mean difference, -0.39 [95% CI, -0.59 to -0.18], P = 0.0002)\"). Ähnliche Ergebnisse fanden sich in einer früheren Meta-Analyse mit 22 Studien (1.922 Patienten), die signifikante Reduktionen von Myokardinfarkten (2,4 % vs. 5,1 %; Odds Ratio = 0,51) und Krankenhaussterblichkeit (0,4 % vs. 1,6 %; Odds Ratio = 0,31) unter volatilen Anästhetika berichtete (PMID 17678775: \"Volatile anesthetics were associated with significant reductions of myocardial infarctions (24/979 [2.4%] in the volatile anesthetics group v 45/874 [5.1%] in the control arm, odds ratio [OR] = 0.51 [0.32-0.84]... and mortality (4/977 [0.4%] v 14/872 [1.6%], OR = 0.31 [0.12-0.80])\"). Eine weitere Bayesianische Netzwerkanalyse (55 randomisierte Studien, 6.921 Patienten) bestätigte eine Reduktion der Mortalität durch volatile Anästhetika (Odds Ratio = 0,50) und zeigte einen zusätzlichen Vorteil bei Kombination mit Remote Ischemic Preconditioning (Odds Ratio = 0,15) im Vergleich zu TIVA (PMID 26231003: \"The use of volatile agents (posterior mean of odds ratio = 0.50, 95% CrI 0.28–0.91) and the combination of volatile agents with remote preconditioning (posterior mean of odds ratio = 0.15, 95% CrI 0.04–0.55) were associated with a reduction in mortality when compared to total intravenous anesthesia\").\n\n*   **Kardiale Biomarker und Inotropiebedarf:**\n    Die meisten Studien zeigen eine Reduktion kardialer Biomarker unter volatilen Anästhetika. Eine multizentrische randomisierte Studie (57 Patienten Desfluran, 55 Patienten Propofol) bei OPCAB-Chirurgie fand eine signifikante Reduktion des postoperativen Troponin-I-Peaks in der volatilen Gruppe (1,2 ng/dL vs. 2,7 ng/dL) (PMID 16884976: \"There was a significant (p < 0.001) reduction in postoperative median (25th-75th percentiles) peak of troponin I in patients receiving volatile anesthetics, 1.2 (0.9-1.9) ng/dL, compared with patients receiving total intravenous anesthesia, 2.7 (2.1-4.0) ng/dL\"). Dies resultierte auch in einem geringeren Bedarf an postoperativen Inotropika (35 % vs. 56 %) (PMID 16884976: \"This myocardial protection resulted in a reduced (p = 0.04) number (percentage) of patients requiring postoperative inotropes, 20 (35%) versus 31 (56%)\"). Ähnliche Befunde bezüglich Troponin I und Inotropiebedarf gab es in einer Studie mit Desfluran bei CABG mit CPB (PMID 17156509: \"There was a significant (P < 0.001) difference in the postoperative median (25th-75th percentiles) peak of troponin I in patients receiving propofol 5,5 (2,3-9,5) ng dL(-1) when compared to patients receiving desflurane 2,5 (1,1-5,3) ng dL(-1)\"; \"Patients receiving volatile anaesthetics had reduced need for postoperative inotropic support (24/75, 32.0% vs. 31/75, 41.3%, P = 0.04)\"). Eine Meta-Analyse spezifisch zu Sevofluran zeigte verbesserte kardiale Indizes und Outputs, sowie reduzierte Troponin-I-Konzentrationen und Inotropika-/Vasokonstriktoren-Gebrauch (PMID 26404434: \"sevoflurane anesthesia significantly improved postoperative...cardiac index...cardiac output...and reduced postoperative 24 hour cardiac troponin I concentration...postoperative inotropic drug usage...vasoconstrictor drug usage\").\n\n*   **Aufenthaltsdauer im Krankenhaus/Intensivstation:**\n    Einige Studien deuten auf kürzere Aufenthaltszeiten unter volatilen Anästhetika hin. Eine Studie zu Sevofluran bei CABG mit CPB (n=868 Patienten) fand eine reduzierte Krankenhausverweildauer (10 [9-11] Tage vs. 14 [10-16] Tage) (PMID 27431595: \"In the sevoflurane group, a reduced length of hospital stay was observed compared with the propofol-based TIVA group (10 [9-11] days v 14 [10-16], p<0.001)\"). Eine umfassende Meta-Analyse von 89 RCTs mit 14.387 Patienten zeigte ebenfalls kürzere Aufenthalte auf der Intensivstation und im Krankenhaus mit volatilen Anästhetika (PMID 31661512: \"The lengths of stay in the ICU and hospital were shorter in the volatile anesthetics group than in the TIVA group\"). Im Gegensatz dazu fand eine andere multizentrische Studie bei Hochrisiko-Herzpatienten (n=200) keinen Unterschied in der Aufenthaltsdauer auf der Intensivstation oder im Krankenhaus (PMID 25186820: \"No difference was identified in...1 yr all-cause mortality...re-hospitalizations...and adverse cardiac events\").\n\n*   **Zerebrale Protektion und postoperatives Delir:**\n    Eine systematische Überprüfung und Meta-Analyse von 13 Studien deutet darauf hin, dass volatile Anästhetika einen besseren zerebralen Schutz bieten als TIVA bei Herzoperationen mit CPB, gemessen am S100B-Spiegel und Mini-Mental State Examination (MMSE) (PMID 29025825: \"Anaesthesia with volatile agents appears to provide better cerebral protection than TIVA for patients undergoing cardiac surgery with CPB\"). Hinsichtlich des postoperativen Delirs ist die Evidenz uneinheitlich. Eine Cochrane-Review (nicht-kardiale Chirurgie, >60 Jahre) fand sehr unsichere Evidenz für einen Unterschied in der Inzidenz von postoperativem Delir (OR 0,59, 95 % CI 0,15 bis 2,26) (PMID 30129968: \"We found no evidence of a difference in incidences of postoperative delirium according to type of anaesthetic maintenance agents (odds ratio (OR) 0.59, 95% confidence interval (CI) 0.15 to 2.26; 321 participants; five studies; very low-certainty evidence)\"). Eine aktuelle randomisierte Studie (ENGAGES-Canada, 1140 ältere Erwachsene) zeigte, dass EEG-gesteuerte Anästhesie zur Minimierung der EEG-Suppression die Inzidenz von postoperativem Delir nach Herzoperationen nicht verringerte (18,15 % vs. 18,10 %) (PMID 38857019: \"Delirium during postoperative days 1 to 5 occurred in 102 of 562 patients (18.15%) in the EEG-guided group and 103 of 569 patients (18.10%) in the usual care group\").\n\n*   **Kombination mit Remote Ischemic Preconditioning (RIPC):**\n    Die Kombination von volatilen Anästhetika mit RIPC könnte additive protektive Effekte haben. Eine Meta-Analyse (33 RCTs) zeigte, dass RIPC unter volatiler Anästhesie die Inzidenz von akutem Nierenversagen (AKI) (OR 0,57) und kardialen Biomarkern reduzierte, während es unter Propofol weniger signifikante Effekte hatte (PMID 28992285: \"In the volatile anaesthetic group, RIPC significantly reduced AKI incidence [OR 0.57 (95% CI 0.41-0.79)]...Conversely, except for MIBs, RIPC had fewer non-significant effects under propofol\"). Eine andere Meta-Analyse bestätigte, dass RIPC das AKI-Risiko reduzierte, insbesondere bei volatiler Anästhesie (PMID 34748518: \"RIPC was associated with a reduced incidence of AKI in volatile only anesthesia\").\n\n## Was ist Standard\n\nDie vorliegende Literatur deutet nicht auf einen einheitlichen Standard im Sinne einer dominanten Empfehlung für volatile Anästhetika oder Propofol bei Herzoperationen mit Herz-Lungen-Maschine hin. Während viele Studien und Meta-Analysen auf eine überlegene Myokardprotektion durch volatile Anästhetika hinweisen, konnte eine der größten randomisierten Studien keinen Mortalitätsvorteil nachweisen. Daher gibt es keinen klaren Konsens in den hier analysierten Papern, welcher Ansatz als Standardvorgehen zu bevorzugen wäre.\n\n## Wo die Literatur uneins ist\n\nDer Kern der Uneinigkeit liegt in der Frage, ob die kardioprotektiven Effekte volatiler Anästhetika, die sich in reduzierten kardialen Biomarkern (Troponin, NT-proBNP) und geringerem Inotropiebedarf manifestieren (PMID 32205551: \"the class of volatile anesthetics compared with propofol was associated with lower...cardiac troponin release...need for inotropic medications\"), tatsächlich zu einem klinisch relevanten Überlebensvorteil führen. Während mehrere Meta-Analysen eine signifikante Reduktion der Langzeitmortalität (PMID 32205551; PMID 17678775; PMID 26231003; PMID 23852263) und Myokardinfarkte unter volatilen Anästhetika berichten, konnte die groß angelegte MYRIAD-Studie (5.400 Patienten) keinen Unterschied in der Einjahresmortalität (2,8 % in der volatilen Gruppe vs. 3,0 % in der TIVA-Gruppe) oder der Myokardinfarkt-Inzidenz bei elektiver CABG feststellen (PMID 30888743: \"No significant difference between the groups with respect to deaths from any cause was seen at 1 year (2.8% in the volatile anesthetics group and 3.0% in the total intravenous anesthesia group...or in the incidence of prespecified adverse events, including myocardial infarction)\"). Diese Diskrepanz zwischen großen Meta-Analysen und einer großen RCT ist ein zentraler Widerspruch. Eine aktualisierte Meta-Analyse, die auch eine Trial Sequential Analysis (TSA) durchführte, kam zu dem Schluss, dass die konventionelle Meta-Analyse keine statistisch signifikanten Unterschiede in der Mortalität oder anderen postoperativen Sicherheitsergebnissen zeigte, während die TSA die aktuelle Evidenz als unzureichend und nicht schlüssig bewertete (PMID 31661512: \"Conventional meta-analysis suggests that the use of volatile anesthetics during CABG is not associated with reduced risk of mortality or other postoperative safety outcomes when compared with TIVA. TSA shows that the current evidence is insufficient and inconclusive\"). Auch für die Dauer des Krankenhausaufenthalts und der Intensivstation gibt es unterschiedliche Berichte, wobei einige Studien Vorteile für volatile Anästhetika sehen, andere nicht (PMID 27431595 vs. PMID 25186820; PMID 31661512).\n\n## Offene Fragen\n\nEs bleiben mehrere offene Fragen. Die Hauptfrage ist, ob die in Biomarkern und Inotropiebedarf beobachteten kardioprotektiven Effekte volatiler Anästhetika in klinisch bedeutsame Endpunkte wie die Mortalität übertragen werden. Hierfür sind weitere große, multizentrische, randomisierte, doppelblinde Studien erforderlich, um die widersprüchlichen Ergebnisse der Meta-Analysen und großer Einzelstudien zu klären (PMID 26231003: \"It is necessary to confirm these results with large, multicenter, randomized, double-blinded trials comparing these different strategies in cardiac and non-cardiac surgery\"). Spezifische Fragen betreffen auch, welcher volatile Wirkstoff potenziell überlegener ist und wie die Kombination mit Techniken wie Remote Ischemic Preconditioning optimal genutzt werden kann (PMID 26231003: \"to establish which volatile agent is more protective than the others and how to best apply remote ischemic preconditioning\"). Zudem ist die Evidenz bezüglich der Langzeit-kognitiven Outcomes wie postoperativem Delir und kognitiver Dysfunktion weiterhin unklar und erfordert weitere Forschung (PMID 30129968; PMID 38857019).\n\nKein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.",
+  "anchors": [
+    {
+      "pmid": "32205551",
+      "quote": "the class of volatile anesthetics compared with propofol was associated with lower 1-yr mortality (5.5 vs. 6.8%; odds ratio, 0.76 [95% CI, 0.60 to 0.96]; P = 0.023), myocardial infarction (odds ratio, 0.60 [95% CI, 0.39 to 0.92]; P = 0.023), cardiac troponin release (standardized mean difference, -0.39 [95% CI, -0.59 to -0.18], P = 0.0002)",
+      "in_source": true
+    },
+    {
+      "pmid": "30888743",
+      "quote": "No significant difference between the groups with respect to deaths from any cause was seen at 1 year (2.8% in the volatile anesthetics group and 3.0% in the total intravenous anesthesia group; relative risk, 0.94; 95% confidence interval [CI], 0.69 to 1.29; P = 0.71)",
+      "in_source": true
+    },
+    {
+      "pmid": "32205551",
+      "quote": "the class of volatile anesthetics compared with propofol was associated with lower 1-yr mortality (5.5 vs. 6.8%; odds ratio, 0.76 [95% CI, 0.60 to 0.96]; P = 0.023), myocardial infarction (odds ratio, 0.60 [95% CI, 0.39 to 0.92]; P = 0.023), cardiac troponin release (standardized mean difference, -0.39 [95% CI, -0.59 to -0.18], P = 0.0002)",
+      "in_source": true
+    },
+    {
+      "pmid": "17678775",
+      "quote": "Volatile anesthetics were associated with significant reductions of myocardial infarctions (24/979 [2.4%] in the volatile anesthetics group v 45/874 [5.1%] in the control arm, odds ratio [OR] = 0.51 [0.32-0.84]... and mortality (4/977 [0.4%] v 14/872 [1.6%], OR = 0.31 [0.12-0.80])",
+      "in_source": false
+    },
+    {
+      "pmid": "26231003",
+      "quote": "The use of volatile agents (posterior mean of odds ratio = 0.50, 95% CrI 0.28–0.91) and the combination of volatile agents with remote preconditioning (posterior mean of odds ratio = 0.15, 95% CrI 0.04–0.55) were associated with a reduction in mortality when compared to total intravenous anesthesia",
+      "in_source": true
+    },
+    {
+      "pmid": "16884976",
+      "quote": "There was a significant (p < 0.001) reduction in postoperative median (25th-75th percentiles) peak of troponin I in patients receiving volatile anesthetics, 1.2 (0.9-1.9) ng/dL, compared with patients receiving total intravenous anesthesia, 2.7 (2.1-4.0) ng/dL",
+      "in_source": true
+    },
+    {
+      "pmid": "16884976",
+      "quote": "This myocardial protection resulted in a reduced (p = 0.04) number (percentage) of patients requiring postoperative inotropes, 20 (35%) versus 31 (56%)",
+      "in_source": true
+    },
+    {
+      "pmid": "26404434",
+      "quote": "sevoflurane anesthesia significantly improved postoperative...cardiac index...cardiac output...and reduced postoperative 24 hour cardiac troponin I concentration...postoperative inotropic drug usage...vasoconstrictor drug usage",
+      "in_source": true
+    },
+    {
+      "pmid": "27431595",
+      "quote": "In the sevoflurane group, a reduced length of hospital stay was observed compared with the propofol-based TIVA group (10 [9-11] days v 14 [10-16], p<0.001)",
+      "in_source": true
+    },
+    {
+      "pmid": "31661512",
+      "quote": "The lengths of stay in the ICU and hospital were shorter in the volatile anesthetics group than in the TIVA group",
+      "in_source": true
+    },
+    {
+      "pmid": "25186820",
+      "quote": "No difference was identified in...1 yr all-cause mortality...re-hospitalizations...and adverse cardiac events",
+      "in_source": true
+    },
+    {
+      "pmid": "29025825",
+      "quote": "Anaesthesia with volatile agents appears to provide better cerebral protection than TIVA for patients undergoing cardiac surgery with CPB",
+      "in_source": true
+    },
+    {
+      "pmid": "30129968",
+      "quote": "We found no evidence of a difference in incidences of postoperative delirium according to type of anaesthetic maintenance agents (odds ratio (OR) 0.59, 95% confidence interval (CI) 0.15 to 2.26; 321 participants; five studies; very low-certainty evidence)",
+      "in_source": true
+    },
+    {
+      "pmid": "38857019",
+      "quote": "Delirium during postoperative days 1 to 5 occurred in 102 of 562 patients (18.15%) in the EEG-guided group and 103 of 569 patients (18.10%) in the usual care group",
+      "in_source": true
+    },
+    {
+      "pmid": "28992285",
+      "quote": "In the volatile anaesthetic group, RIPC significantly reduced AKI incidence [OR 0.57 (95% CI 0.41-0.79)]...Conversely, except for MIBs, RIPC had fewer non-significant effects under propofol",
+      "in_source": true
+    },
+    {
+      "pmid": "34748518",
+      "quote": "RIPC was associated with a reduced incidence of AKI in volatile only anesthesia",
+      "in_source": true
+    },
+    {
+      "pmid": "32205551",
+      "quote": "the class of volatile anesthetics compared with propofol was associated with lower...cardiac troponin release...need for inotropic medications",
+      "in_source": true
+    },
+    {
+      "pmid": "30888743",
+      "quote": "No significant difference between the groups with respect to deaths from any cause was seen at 1 year (2.8% in the volatile anesthetics group and 3.0% in the total intravenous anesthesia group...or in the incidence of prespecified adverse events, including myocardial infarction)",
+      "in_source": false
+    },
+    {
+      "pmid": "31661512",
+      "quote": "Conventional meta-analysis suggests that the use of volatile anesthetics during CABG is not associated with reduced risk of mortality or other postoperative safety outcomes when compared with TIVA. TSA shows that the current evidence is insufficient and inconclusive",
+      "in_source": true
+    },
+    {
+      "pmid": "26231003",
+      "quote": "It is necessary to confirm these results with large, multicenter, randomized, double-blinded trials comparing these different strategies in cardiac and non-cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "26231003",
+      "quote": "to establish which volatile agent is more protective than the others and how to best apply remote ischemic preconditioning",
+      "in_source": true
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "32205551",
+      "title": "Volatile Anesthetics versus Propofol for Cardiac Surgery with Cardiopulmonary Bypass: Meta-analysis of Randomized Trials.",
+      "journal": "Anesthesiology",
+      "date": "2020-06-01",
+      "authors": [
+        "Bonanni A",
+        "Deferrari G."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>The aim of this systematic review and meta-analysis was to assess the effect of anesthesia maintenance with volatile agents compared with propofol on both short- and long-term mortality (primary outcomes) and major clinical events in adults undergoing cardiac surgery with cardiopulmonary bypass.<h4>Methods</h4>Randomized clinical trials on the effects of current volatile anesthetics versus propofol in adults undergoing cardiac surgery with cardiopulmonary bypass were searched (1965 to September 30, 2019) in PubMed, the Cochrane Library, and article reference lists. A random effect model on standardized mean difference for continuous outcomes and odds ratio for dichotomous outcomes were used to meta-analyze data.<h4>Results</h4>In total, 37 full-text articles (42 studies, 8,197 participants) were included. The class of volatile anesthetics compared with propofol was associated with lower 1-yr mortality (5.5 vs. 6.8%; odds ratio, 0.76 [95% CI, 0.60 to 0.96]; P = 0.023), myocardial infarction (odds ratio, 0.60 [95% CI, 0.39 to 0.92]; P = 0.023), cardiac troponin release (standardized mean difference, -0.39 [95% CI, -0.59 to -0.18], P = 0.0002), need for inotropic medications (odds ratio, 0.40 [95% CI, 0.24 to 0.67]; P = 0.0004), extubation time (standardized mean difference, -0.35 [95% CI, -0.68 to -0.02]; P = 0.038), and with higher cardiac index/output (standardized mean difference, 0.70 [95% CI, 0.37 to 1.04]; P < 0.0001). The class of volatile anesthetics was not associated with changes in short-term mortality (1.63 vs. 1.65%; odds ratio, 1.04 [95% CI, 0.73 to 1.49]; P = 0.820) and acute kidney injury (odds ratio, 1.25 [95% CI, 0.77 to 2.03]; P = 0.358).<h4>Conclusions</h4>In adults undergoing cardiac surgery with cardiopulmonary bypass, the class of volatile anesthetics was superior to propofol with regard to long-term mortality, as well as to many secondary outcomes indicating myocardial protection.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 480.0
+    },
+    {
+      "pmid": "17678775",
+      "title": "Desflurane and sevoflurane in cardiac surgery: a meta-analysis of randomized clinical trials.",
+      "journal": "Journal of cardiothoracic and vascular anesthesia",
+      "date": "2007-05-07",
+      "authors": [
+        "Landoni G",
+        "Torri G."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Objectives</h4>The authors performed a meta-analysis to investigate whether the cardioprotective effects of volatile anesthetics translate into decreased morbidity and mortality in patients undergoing cardiac surgery.<h4>Background</h4>It is commonly believed that the choice of the primary anesthetic agent does not result in different outcomes after cardiac surgery. Recent evidence, however, has indicated that volatile anesthetics improve postischemic recovery at a cellular level, in isolated hearts, in animals, and in humans.<h4>Methods</h4>Four investigators independently searched BioMedCentral and PubMed. Inclusion criteria were random allocation to treatment and comparison of a total intravenous anesthesia regimen versus an anesthesia plan including desflurane or sevoflurane performed on cardiosurgical patients. Exclusion criteria were duplicate publications, nonhuman experimental studies, and no outcome data. The endpoints were the rate of perioperative myocardial infarction and hospital mortality.<h4>Results</h4>The search yielded 22 studies, involving 1,922 patients. Volatile anesthetics were associated with significant reductions of myocardial infarctions (24/979 [2.4%] in the volatile anesthetics group v 45/874 [5.1%] in the control arm, odds ratio [OR] = 0.51 [0.32-0.84], p for effect = 0.008, and p for heterogeneity = 0.77) and mortality (4/977 [0.4%] v 14/872 [1.6%], OR = 0.31 [0.12-0.80], p for effect = 0.02, and p for heterogeneity = 0.88).<h4>Conclusions</h4>Desflurane and sevoflurane have cardioprotective effects that result in decreased morbidity and mortality. The present data show for the first time that the choice of an anesthetic regimen based on administration of halogenated anesthetics is associated with a better outcome after cardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 475.0
+    },
+    {
+      "pmid": "16884976",
+      "title": "Myocardial damage prevented by volatile anesthetics: a multicenter randomized controlled study.",
+      "journal": "Journal of cardiothoracic and vascular anesthesia",
+      "date": "2006-08-01",
+      "authors": [
+        "Guarracino F",
+        "Zangrillo A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Objective</h4>The purpose of this study was to evaluate the effects of volatile anesthesia versus total intravenous anesthesia on cardiac troponin release in off-pump coronary artery bypass grafting (OPCAB).<h4>Design</h4>The authors performed a multicenter randomized controlled study to compare cardiac troponin release in patients receiving either volatile anesthetics or total intravenous anesthesia for cardiac surgery on the beating heart, which is an excellent model of human myocardial ischemia.<h4>Setting</h4>Three university hospitals.<h4>Participants</h4>The authors randomly assigned 57 patients to desflurane (volatile anesthetic) and 55 patients to propofol (intravenous anesthetic) in addition to an opiate-based anesthesia for OPCAB.<h4>Interventions</h4>The 2 groups of patients received either desflurane (volatile anesthetic) or propofol in addition to an opiate-based anesthesia for OPCAB. Peak postoperative troponin I release was measured as a marker of myocardial necrosis. Prolonged hospitalization was considered as a secondary outcome.<h4>Measurements and main results</h4>Patient mean age was 69 years, and 82% were men. There was a significant (p < 0.001) reduction in postoperative median (25th-75th percentiles) peak of troponin I in patients receiving volatile anesthetics, 1.2 (0.9-1.9) ng/dL, compared with patients receiving total intravenous anesthesia, 2.7 (2.1-4.0) ng/dL. This myocardial protection resulted in a reduced (p = 0.04) number (percentage) of patients requiring postoperative inotropes, 20 (35%) versus 31 (56%), and a reduced number (percentage) of patients submitted to prolonged hospitalization (> or =7 days), 7 (12%) versus 20 (36%) in the 2 groups (p = 0.005). One patient receiving total intravenous anesthesia died within 30 days of surgery.<h4>Conclusions</h4>Myocardial damage measured by cardiac troponin release could be reduced by volatile anesthetics during OPCAB. Because patients underwent cardiac surgery on the beating heart, these results could have implications for cardiac patients undergoing noncardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 475.0
+    },
+    {
+      "pmid": "19686479",
+      "title": "A comparison of volatile and non volatile agents for cardioprotection during on-pump coronary surgery.",
+      "journal": "Anaesthesia",
+      "date": "2009-09-01",
+      "authors": [
+        "De Hert S",
+        "Wouters P."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "A randomised study of 414 patients undergoing coronary artery surgery with cardiopulmonary bypass was conducted to compare the effects of a volatile anaesthetic regimen with either deesflurane or sevoflurane, and a total intravenous anaesthesia (TIVA) regimen on postoperative troponin T release. The primary outcome variable was postoperative troponin T release, secondary outcome variables were hospital length of stay and 1-year mortality. Maximal postoperative troponin T values did not differ between groups (TIVA: 0.30 [0.00-4.79] ng x ml(-1) (median [range]), sevoflurane: 0.33 [0.02-3.68] ng x ml(-1), and desflurane: 0.39 [0.08-3.74] ng x ml(-1)). The independent predictors of hospital length of stay were the EuroSCORE (p < 0.001), female gender (p = 0.042) and the group assignment (p < 0.001). The one-year mortality was 12.3% in the TIVA group, 3.3% in the sevoflurane group, and 6.7% in the desflurane group. The EuroSCORE (p = 0.003) was the only significant independent predictor of 1-year mortality.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 475.0
+    },
+    {
+      "pmid": "27431595",
+      "title": "Sevoflurane Versus Total Intravenous Anesthesia for Isolated Coronary Artery Bypass Surgery With Cardiopulmonary Bypass: A Randomized Trial.",
+      "journal": "Journal of cardiothoracic and vascular anesthesia",
+      "date": "2016-03-03",
+      "authors": [
+        "Likhvantsev VV",
+        "Cherpakov RA."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Objective</h4>Several studies have suggested that the cardioprotective effects of halogenated anesthetics in cardiac surgery result in reduced cardiac biomarker release compared with total intravenous anesthesia (TIVA). These findings came from relatively small randomized clinical trials and meta-analyses. The authors of this study hypothesized that the beneficial effects of volatile anesthetics translate into a reduced length of hospital stay after coronary artery bypass grafting surgery (CABG) with cardiopulmonary bypass.<h4>Design</h4>A randomized controlled trial.<h4>Setting</h4>Two university hospitals.<h4>Participants</h4>Adult patients undergoing elective CABG surgery with cardiopulmonary bypass.<h4>Interventions</h4>Patients were assigned randomly to 2 following groups: propofol-based TIVA group (n = 431) and sevoflurane group (n = 437).<h4>Measurements and main results</h4>The primary endpoint was hospital length of stay, and the secondary endpoint included postoperative troponin T and N-terminal pro-brain natriuretic peptide release and mortality. In the sevoflurane group, a reduced length of hospital stay was observed compared with the propofol-based TIVA group (10 [9-11] days v 14 [10-16], p<0.001) as were reductions in cardiac troponin T release (0.18 ng/mL v 0.57 ng/mL at 24 hours, p<0.001), in N-terminal pro-brain natriuretic peptide release (633 pg/mL v 878 pg/mL at 24 hours, p<0.001; 482 pg/mL v 1,036 pg/mL at 48 hours, p<0.001), and in mortality at 1-year follow up (17.8% v 24.8%, p = 0.03).<h4>Conclusions</h4>Anesthesia with sevoflurane reduced cardiac biomarker release and length of hospital stay after CABG with cardiopulmonary bypass surgery compared with propofol-based TIVA with a possible reduction in 1-year mortality.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 475.0
+    },
+    {
+      "pmid": "30888743",
+      "title": "Volatile Anesthetics versus Total Intravenous Anesthesia for Cardiac Surgery.",
+      "journal": "The New England journal of medicine",
+      "date": "2019-03-19",
+      "authors": [
+        "Landoni G",
+        "MYRIAD Study Group."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Volatile (inhaled) anesthetic agents have cardioprotective effects, which might improve clinical outcomes in patients undergoing coronary-artery bypass grafting (CABG).<h4>Methods</h4>We conducted a pragmatic, multicenter, single-blind, controlled trial at 36 centers in 13 countries. Patients scheduled to undergo elective CABG were randomly assigned to an intraoperative anesthetic regimen that included a volatile anesthetic (desflurane, isoflurane, or sevoflurane) or to total intravenous anesthesia. The primary outcome was death from any cause at 1 year.<h4>Results</h4>A total of 5400 patients were randomly assigned: 2709 to the volatile anesthetics group and 2691 to the total intravenous anesthesia group. On-pump CABG was performed in 64% of patients, with a mean duration of cardiopulmonary bypass of 79 minutes. The two groups were similar with respect to demographic and clinical characteristics at baseline, the duration of cardiopulmonary bypass, and the number of grafts. At the time of the second interim analysis, the data and safety monitoring board advised that the trial should be stopped for futility. No significant difference between the groups with respect to deaths from any cause was seen at 1 year (2.8% in the volatile anesthetics group and 3.0% in the total intravenous anesthesia group; relative risk, 0.94; 95% confidence interval [CI], 0.69 to 1.29; P = 0.71), with data available for 5353 patients (99.1%), or at 30 days (1.4% and 1.3%, respectively; relative risk, 1.11; 95% CI, 0.70 to 1.76), with data available for 5398 patients (99.9%). There were no significant differences between the groups in any of the secondary outcomes or in the incidence of prespecified adverse events, including myocardial infarction.<h4>Conclusions</h4>Among patients undergoing elective CABG, anesthesia with a volatile agent did not result in significantly fewer deaths at 1 year than total intravenous anesthesia. (Funded by the Italian Ministry of Health; MYRIAD ClinicalTrials.gov number, NCT02105610.).",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 470.0
+    },
+    {
+      "pmid": "26404434",
+      "title": "Meta-analysis of the cardioprotective effect of sevoflurane versus propofol during cardiac surgery.",
+      "journal": "BMC anesthesiology",
+      "date": "2015-09-24",
+      "authors": [
+        "Li F",
+        "Yuan Y."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background To evaluate the cardioprotective effects of sevoflurane versus propofol anesthesia in patients undergoing cardiac surgery. Methods Studies were retrieved through searching several databases. Study quality was evaluated by Jadad scale. Meta-analysis was performed with RevMan5.0 software. Publication bias was tested by funnel plot. Results As a result, 15 studies were included. Compared with propofol, sevoflurane anesthesia significantly improved postoperative (WMD (weighted mean difference) = 0.62, 95% CI: 0.33 to 0.92; P &lt; 0.0001) and postoperative 12 hour cardiac index (WMD = 0.18, 95% CI: 0.03 to 0.33; P = 0.02), postoperative cardiac output (WMD = 1.14, 95% CI: 0.74 to 1.54; P &lt; 0.00001), and reduced postoperative 24 hour cardiac troponin I concentration (WMD = -0.86, 95% CI:-1.49 to -0.22; P = 0.008), postoperative inotropic drug usage (OR (odds ratio) = 0.31, 95% CI: 0.22 to 0.44; P &lt; 0.00001), vasoconstrictor drug usage (OR = 0.30, 95% CI:0.21 to 0.43; P &lt; 0.00001), ICU stay (WMD = -15.53, 95% CI: -24.29 to -6.58; P = 0.0007) and a trial fibrillation incidence (OR = 0.25, 95% CI: 0.07 to 0.85; P = 0.03). However, no significant differences were found in other indexes. Subgroup analysis indicated the similar results. Discussion The sevoflurane-induced cTnI reduction is associated with lower incidence of late adverse cardiac events, accounting for its roles in cardiac protection. Several limitations existed such as the small sample size and the lack use of blind design. Conclusions Sevoflurane may exhibit a more favorable cardioprotective effect during cardiac surgery than propofol. Keywords: Sevoflurane, Propofol, Cardiac surgery, Cardioprotective effect, Meta-analysis",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 470.0
+    },
+    {
+      "pmid": "28992285",
+      "title": "Remote ischaemic preconditioning for renal and cardiac protection in adult patients undergoing cardiac surgery with cardiopulmonary bypass: systematic review and meta-analysis of randomized controlled trials.",
+      "journal": "Nephrology, dialysis, transplantation : official publication of the European Dialysis and Transplant Association - European Renal Association",
+      "date": "2018-05-01",
+      "authors": [
+        "Deferrari G",
+        "Signori A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>The main aim of this systematic review was to assess whether remote ischaemic preconditioning (RIPC) protects kidneys and the heart in cardiac surgery with cardiopulmonary bypass (CPB) and to investigate a possible role of anaesthetic agents.<h4>Methods</h4>Randomized clinical trials (RCTs) on the effects of RIPC through limb ischaemia in adult patients undergoing cardiac surgery with CPB were searched (1965-October 2016) in PubMed, Cochrane Library and article reference lists. A random effects model on standardized mean difference (SMD) for continuous outcomes and the Peto odds ratio (OR) for dichotomous outcomes were used to meta-analyse data. Subgroup analyses to evaluate the effects of different anaesthetic regimens were pre-planned.<h4>Results</h4>Thirty-three RCTs (5999 participants) were included. In the whole group, RIPC did not significantly reduce the incidence of acute kidney injury (AKI), acute myocardial infarction, atrial fibrillation, mortality or length of intensive care unit (ICU) and hospital stays. On the contrary, RIPC significantly reduced the area under the curve for myocardial injury biomarkers (MIBs) {SMD -0.37 [95% confidence interval (CI) -0.53 to - 0.21]} and the composite endpoint incidence [OR 0.85 (95% CI 0.74-0.97)]. In the volatile anaesthetic group, RIPC significantly reduced AKI incidence [OR 0.57 (95% CI 0.41-0.79)] and marginally reduced ICU stay. Conversely, except for MIBs, RIPC had fewer non-significant effects under propofol with or without volatile anaesthetics.<h4>Conclusions</h4>RIPC did not consistently reduce morbidity and mortality in adults undergoing cardiac surgery with CPB. In the subgroup on volatile anaesthetics only, RIPC markedly and significantly reduced the incidence of AKI and composite endpoint as well as myocardial injury.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 470.0
+    },
+    {
+      "pmid": "17156509",
+      "title": "Cardiac protection by volatile anaesthetics: a multicentre randomized controlled study in patients undergoing coronary artery bypass grafting with cardiopulmonary bypass.",
+      "journal": "European journal of anaesthesiology",
+      "date": "2006-12-08",
+      "authors": [
+        "Tritapepe L",
+        "Zangrillo A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background and objectives</h4>To evaluate the effects of total intravenous anaesthesia vs. volatile anaesthesia on cardiac troponin release in coronary artery bypass grafting with cardiopulmonary bypass, we performed a multicentre randomized controlled study to compare postoperative cardiac troponin release in patients receiving two different anaesthesia plans.<h4>Methods</h4>We randomly assigned 75 patients to propofol (intravenous anaesthetic) and 75 patients to desflurane (volatile anaesthetic) in addition to an opiate-based anaesthesia for coronary artery bypass grafting. Peak postoperative troponin I release was measured as a marker of myocardial necrosis.<h4>Results</h4>There was a significant (P < 0.001) difference in the postoperative median (25th-75th percentiles) peak of troponin I in patients receiving propofol 5,5 (2,3-9,5) ng dL(-1) when compared to patients receiving desflurane 2,5 (1,1-5,3) ng dL(-1). The median (interquartile) troponin I area under the curve analysis confirmed the results: 68 (30.5-104.8) vs. 36.3 (17.9-86.6) h ng dL(-1) (P = 0.002). Patients receiving volatile anaesthetics had reduced need for postoperative inotropic support (24/75, 32.0% vs. 31/75, 41.3%, P = 0.04), and tends toward a reduction in number of Q-wave myocardial infarction, time on mechanical ventilation, intensive care unit and overall hospital stay.<h4>Conclusions</h4>Myocardial damage measured by cardiac troponin release could be reduced by volatile anaesthetics in coronary artery bypass surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 465.0
+    },
+    {
+      "pmid": "31661512",
+      "title": "Volatile anesthetics versus total intravenous anesthesia in patients undergoing coronary artery bypass grafting: An updated meta-analysis and trial sequential analysis of randomized controlled trials.",
+      "journal": "PloS one",
+      "date": "2019-10-29",
+      "authors": [
+        "Jiao XF",
+        "Zhang LL."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Background The benefits of volatile anesthetics in coronary artery bypass grafting (CABG) patients remain controversial. We aimed to conduct an updated meta-analysis to assess whether the use of volatile anesthetics during CABG could reduce mortality and other outcomes. Methods We searched eight databases from inception to June 2019 and included randomized controlled trials (RCTs) comparing the effects of volatile anesthetics versus total intravenous anesthesia (TIVA) in CABG patients. The primary outcomes were operative mortality and one-year mortality. The secondary outcomes included the length of stay in the intensive care unit (ICU) and hospital and postoperative safety outcomes (myocardial infarction, heart failure, arrhythmia, stroke, delirium, postoperative cognitive impairment, acute kidney injury, and the use of intra-aortic balloon pump (IABP) or other mechanical circulatory support). Trial sequential analysis (TSA) was performed to control for random errors. Results A total of 89 RCTs comprising 14,387 patients were included. There were no significant differences between the volatile anesthetics and TIVA groups in operative mortality (relative risk (RR) = 0.92, 95% confidence interval (CI): 0.68–1.24, p = 0.59, I 2 = 0%), one-year mortality (RR = 0.64, 95% CI: 0.32–1.26, p = 0.19, I 2 = 51%), or any of the postoperative safety outcomes. The lengths of stay in the ICU and hospital were shorter in the volatile anesthetics group than in the TIVA group. TSA revealed that the results for operative mortality, one-year mortality, length of stay in the ICU, heart failure, stroke, and the use of IABP were inconclusive. Conclusions Conventional meta-analysis suggests that the use of volatile anesthetics during CABG is not associated with reduced risk of mortality or other postoperative safety outcomes when compared with TIVA. TSA shows that the current evidence is insufficient and inconclusive. Thus, future large RCTs are required to clarify this issue. Results Search results A total of 4289 records were identified by the initial search. After selection, 89 RCTs that met our inclusion criteria were included in this meta-analysis ( Fig 1 ). 10.1371/journal.pone.0224562.g001 Fig 1 Flow diagram of study selection (PRISMA format). Discussion Main findings To our knowledge, this is the most comprehensive meta-analysis comparing the effects of volatile anesthetics versus TIVA in patients undergoing CABG surgery and is the first study to investigate these effects using the TSA method. Our conventional meta-analysis suggested that there were no statistically significant differences in operative mortality, one-year mortality, myocardial infarction, heart failure, arrhythmia, stroke, delirium, postoperative cognitive impairment, acute kidney injury, the use of IABP, and the use of other mechanical circulatory support between the volatile anesthetics and TIVA groups after CABG surgery. However, volatile anesthetics were associated with reductions in length of stay in ICU and hospital when compared with TIVA. TSA showed that the results for length of stay in hospital, myocardial infarction, arrhythmia, delirium, postoperative cognitive impairment, acute kidney injury, and the use of other mechanical circulatory support were conclusive, while the results for operative mortality, one-year mortality, length of stay in ICU, heart failure, stroke, and the use of IABP were inconclusive.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 465.0
+    },
+    {
+      "pmid": "25186820",
+      "title": "Volatile compared with total intravenous anaesthesia in patients undergoing high-risk cardiac surgery: a randomized multicentre study.",
+      "journal": "British journal of anaesthesia",
+      "date": "2014-09-03",
+      "authors": [
+        "Landoni G",
+        "Zangrillo A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>The effect of anaesthesia on postoperative outcome is unclear. Cardioprotective properties of volatile anaesthetics have been demonstrated experimentally and in haemodynamically stable patients undergoing coronary artery bypass grafting. Their effects in patients undergoing high-risk cardiac surgery have not been reported.<h4>Methods</h4>We performed a multicentre, randomized, parallel group, controlled study among patients undergoing high-risk cardiac surgery (combined valvular and coronary surgery) in 2008-2011. One hundred subjects assigned to the treatment group received sevoflurane for anaesthesia maintenance, while 100 subjects assigned to the control group received propofol-based total i.v. anaesthesia. The primary outcome was a composite of death, prolonged intensive care unit (ICU) stay, or both. Thirty day and 1 yr follow-up, focused on mortality, was performed.<h4>Results</h4>All 200 subjects completed the follow-up and were included in efficacy analyses, conducted according to the intention-to-treat principle. Death, prolonged ICU stay, or both occurred in 36 out of 100 subjects (36%) in the propofol group and in 41 out of 100 subjects (41%) in the sevoflurane group; relative risk 1.14, 95% confidence interval 0.8-1.62; P=0.5. No difference was identified in postoperative cardiac troponin release [1.1 (0.7-2) compared with 1.2 (0.6-2.4) ng ml(-1), P=0.6], 1 yr all-cause mortality [11/100 (11%) compared with 11/100 (11%), P=0.9], re-hospitalizations [20/89 (22.5%) compared with 11/89 (12.4%), P=0.075], and adverse cardiac events [10/89 (11.2%) compared with 9/89 (10.1%), P=0.8].<h4>Conclusions</h4>There was no observed beneficial effect of sevoflurane on the composite endpoint of prolonged ICU stay, mortality, or both in patients undergoing high-risk cardiac surgery.<h4>Clinical trial registration</h4>ClinicalTrials.gov: identifier NCT00821262. Eudra CT (2008-001752-43).",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 435.0
+    },
+    {
+      "pmid": "30129968",
+      "title": "Intravenous versus inhalational maintenance of anaesthesia for postoperative cognitive outcomes in elderly people undergoing non-cardiac surgery.",
+      "journal": "The Cochrane database of systematic reviews",
+      "date": "2018-08-21",
+      "authors": [
+        "Miller D",
+        "Smith AF."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>The use of anaesthetics in the elderly surgical population (more than 60 years of age) is increasing. Postoperative delirium, an acute condition characterized by reduced awareness of the environment and a disturbance in attention, typically occurs between 24 and 72 hours after surgery and can affect up to 60% of elderly surgical patients. Postoperative cognitive dysfunction (POCD) is a new-onset of cognitive impairment which may persist for weeks or months after surgery.Traditionally, surgical anaesthesia has been maintained with inhalational agents. End-tidal concentrations require adjustment to balance the risks of accidental awareness and excessive dosing in elderly people. As an alternative, propofol-based total intravenous anaesthesia (TIVA) offers a more rapid recovery and reduces postoperative nausea and vomiting. Using TIVA with a target controlled infusion (TCI) allows plasma and effect-site concentrations to be calculated using an algorithm based on age, gender, weight and height of the patient.TIVA is a viable alternative to inhalational maintenance agents for surgical anaesthesia in elderly people. However, in terms of postoperative cognitive outcomes, the optimal technique is unknown.<h4>Objectives</h4>To compare maintenance of general anaesthesia for elderly people undergoing non-cardiac surgery using propofol-based TIVA or inhalational anaesthesia on postoperative cognitive function, mortality, risk of hypotension, length of stay in the postanaesthesia care unit (PACU), and hospital stay.<h4>Search methods</h4>We searched the Cochrane Central Register of Controlled Trials (CENTRAL; 2017, Issue 11), MEDLINE (1946 to November 2017), Embase (1974 to November 2017), PsycINFO (1887 to November 2017). We searched clinical trials registers for ongoing studies, and conducted backward and forward citation searching of relevant articles.<h4>Selection criteria</h4>We included randomized controlled trials (RCTs) with participants over 60 years of age scheduled for non-cardiac surgery under general anaesthesia. We planned to also include quasi-randomized trials. We compared maintenance of anaesthesia with propofol-based TIVA versus inhalational maintenance of anaesthesia.<h4>Data collection and analysis</h4>Two review authors independently assessed studies for inclusion, extracted data, assessed risk of bias, and synthesized findings.<h4>Main results</h4>We included 28 RCTs with 4507 randomized participants undergoing different types of surgery (predominantly cardiovascular, laparoscopic, abdominal, orthopaedic and ophthalmic procedures). We found no quasi-randomized trials. Four studies are awaiting classification because we had insufficient information to assess eligibility.All studies compared maintenance with propofol-based TIVA versus inhalational maintenance of anaesthesia. Six studies were multi-arm and included additional TIVA groups, additional inhalational maintenance or both. Inhalational maintenance agents included sevoflurane (19 studies), isoflurane (eight studies), and desflurane (three studies), and was not specified in one study (reported as an abstract). Some studies also reported use of epidural analgesia/anaesthesia, fentanyl and remifentanil.We found insufficient reporting of randomization methods in many studies and all studies were at high risk of performance bias because it was not feasible to blind anaesthetists to study groups. Thirteen studies described blinding of outcome assessors. Three studies had a high of risk of attrition bias, and we noted differences in the use of analgesics between groups in six studies, and differences in baseline characteristics in five studies. Few studies reported clinical trials registration, which prevented assessment of risk of selective reporting bias.We found no evidence of a difference in incidences of postoperative delirium according to type of anaesthetic maintenance agents (odds ratio (OR) 0.59, 95% confidence interval (CI) 0.15 to 2.26; 321 participants; five studies; very low-certainty evidence); we noted during sensitivity analysis that using different time points in one study may influence direction of this result. Thirteen studies (3215 participants) reported POCD, and of these, six studies reported data that could not be pooled; we noted no difference in scores of POCD in four of these and in one study, data were at a time point incomparable to other studies. We excluded one large study from meta-analysis because study investigators had used non-standard anaesthetic management and this study was not methodologically comparable to other studies. We combined data for seven studies and found low-certainty evidence that TIVA may reduce POCD (OR 0.52, 95% CI 0.31 to 0.87; 869 participants).We found no evidence of a difference in mortality at 30 days (OR 1.21, 95% CI 0.33 to 4.45; 271 participants; three studies; very low-certainty evidence). Twelve studies reported intraoperative hypotension. We did not perform meta-analysis for 11 studies for this outcome. We noted visual inconsistencies in these data, which may be explained by possible variation in clinical management and medication used to manage hypotension in each study (downgraded to low-certainty evidence); one study reported data in a format that could not be combined and we noted little or no difference between groups in intraoperative hypotension for this study. Eight studies reported length of stay in the PACU, and we did not perform meta-analysis for seven studies. We noted visual inconsistencies in these data, which may be explained by possible differences in definition of time points for this outcome (downgraded to very low-certainty evidence); data were unclearly reported in one study. We found no evidence of a difference in length of hospital stay according to type of anaesthetic maintenance agent (mean difference (MD) 0 days, 95% CI -1.32 to 1.32; 175 participants; four studies; very low-certainty evidence).We used the GRADE approach to downgrade the certainty of the evidence for each outcome. Reasons for downgrading included: study limitations, because some included studies insufficiently reported randomization methods, had high attrition bias, or high risk of selective reporting bias; imprecision, because we found few studies; inconsistency, because we noted heterogeneity across studies.<h4>Authors' conclusions</h4>We are uncertain whether maintenance with propofol-based TIVA or with inhalational agents affect incidences of postoperative delirium, mortality, or length of hospital stay because certainty of the evidence was very low. We found low-certainty evidence that maintenance with propofol-based TIVA may reduce POCD. We were unable to perform meta-analysis for intraoperative hypotension or length of stay in the PACU because of heterogeneity between studies. We identified 11 ongoing studies from clinical trials register searches; inclusion of these studies in future review updates may provide more certainty for the review outcomes.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 425.0
+    },
+    {
+      "pmid": "26231003",
+      "title": "Additive Effect on Survival of Anaesthetic Cardiac Protection and Remote Ischemic Preconditioning in Cardiac Surgery: A Bayesian Network Meta-Analysis of Randomized Trials.",
+      "journal": "PloS one",
+      "date": "2015-07-31",
+      "authors": [
+        "Zangrillo A",
+        "Landoni G."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Introduction Cardioprotective properties of volatile agents and of remote ischemic preconditioning have survival effects in patients undergoing cardiac surgery. We performed a Bayesian network meta-analysis to confirm the beneficial effects of these strategies on survival in cardiac surgery, to evaluate which is the best strategy and if these strategies have additive or competitive effects. Methods Pertinent studies were independently searched in BioMedCentral, MEDLINE/PubMed, Embase, and the Cochrane Central Register (updated November 2013). A Bayesian network meta-analysis was performed. Four groups of patients were compared: total intravenous anesthesia (with or without remote ischemic preconditioning) and an anesthesia plan including volatile agents (with or without remote ischemic preconditioning). Mortality was the main investigated outcome. Results We identified 55 randomized trials published between 1991 and 2013 and including 6,921 patients undergoing cardiac surgery. The use of volatile agents (posterior mean of odds ratio = 0.50, 95% CrI 0.28–0.91) and the combination of volatile agents with remote preconditioning (posterior mean of odds ratio = 0.15, 95% CrI 0.04–0.55) were associated with a reduction in mortality when compared to total intravenous anesthesia. Posterior distribution of the probability of each treatment to be the best one, showed that the association of volatile anesthetic and remote ischemic preconditioning is the best treatment to improve short- and long-term survival after cardiac surgery, suggesting an additive effect of these two strategies. Conclusions In patients undergoing cardiac surgery, the use of volatile anesthetics and the combination of volatile agents with remote preconditioning reduce mortality when compared to TIVA and have additive effects. It is necessary to confirm these results with large, multicenter, randomized, double-blinded trials comparing these different strategies in cardiac and non-cardiac surgery, to establish which volatile agent is more protective than the others and how to best apply remote ischemic preconditioning. Results Description of included trials The process of selection of randomized controlled trials is shown in Fig 1 . Our search strategy identified 2,878 unique publications, the titles and abstracts of which were screened for inclusion. The full text of 112 articles was retrieved. Among these, we excluded 58 studies since there were no outcome data and it was not possible to obtain further details by the authors, 18 studies due to overlapping populations, 16 articles performed in a setting that was not cardiac surgery, 9 non-randomized studies, 7 studies in which all patients received a halogenated administration and 4 pediatric trials (references of excluded trials available contacting the Authors). 10.1371/journal.pone.0134264.g001 Fig 1 Flow diagram for selection of articles. We finally spotted 55 eligible randomized clinical trials, [ 5 , 15 , 16 , 17 , 19 – 69 ] which met the inclusion criteria and were comprised in the final analysis. S1 Table reports the clinical data on outcome, length of follow-up and type of comparator. Discussion This Bayesian network meta-analysis demonstrates that in patients undergoing cardiac surgery the use of volatile agents (posterior mean of OR = 0.50, 95% CrI 0.28–0.91) and the combination of volatile agents with remote preconditioning (posterior mean of OR = 0.15, 95% CrI 0.04–0.55) are associated with a reduction in mortality at the longest follow-up available when compared to TIVA. This result is confirmed by repeating the analysis with low-risk-of-bias trials, removing the largest study, [ 17 ] and including only trials with more than 80 patients. On top of that, the concomitant use of volatile agents and remote preconditioning is associated with a reduction in mortality when compared with the concomitant use of TIVA and remote preconditioning. Posterior distribution of the probability of each treatment to be the best one shows that the association volatile-remote is the best treatment to improve short- and long-term survival after cardiac surgery ( Table 2 , S1 Fig ) suggesting an additive effect. The effects of halogenated anesthetics in improving survival in cardiac surgery are not a new finding. It was first suggested in 2007 [ 70 ] and then confirmed several times thereafter,[ 71 ] the most recent confirmation being a meta-analysis of 38 randomized clinical trials showing that volatile agents were associated with a reduction in mortality when compared to TIVA (25/1994 (1.3%) in the volatile group vs. 43/1648 (2.6%) in the TIVA arm, OR = 0.51, 95% CI 0.33–0.81, p for effect = 0.004, number needed to treat 74, I-square = 0%).[ 7 ] Remote preconditioning is a simple and non-invasive strategy that can protect myocardial tissue: a brief previous ischemic period can reduce tissue infarct size when a sustained and more intense ischemic insult is applied. In most trials included in our meta-analysis preconditioning was achieved through various cycles of mechanical limb ischemia with a pressure cuff or a tourniquet for some minutes. A recent meta-analysis [ 3 ] suggested that remote ischemic preconditioning significantly reduces levels of postoperative myocardial injury biomarkers (standardized mean difference = -0.31, p for effect = 0.041; heterogeneity test: I-square = 83.5%) in adult cardiac surgery, but this cardioprotective effect seemed to be attenuated when combined with β-blockers or volatile anesthetics. Another recent meta-analysis [ 4 ] of 19 randomized clinical trials involving 1,235 patients showed a statistically significant reduction in cardiac troponin I (cTnI) release at 6 hours post-operatively and in total cTnI release after cardiac surgery in patients who received remote ischemic preconditioning through limb ischemia versus control group (weighted mean difference -2.03ug/L, 95% CI -3.25 to -0.82ug/L, p for effect = 0.001; weighted mean difference -65.74ug/L*h, 95% CI -107.88 to -23.61ug/L*h, p for effect = 0.002, respectively), but with no differences in mortality. Our findings suggest that volatile agents in the cardiac surgery setting are associated with a reduction in mortality and that the combination of volatile agents with remote ischemic preconditioning gives further protection. Bayesian network meta-analysis is a research method that directly and indirectly compares different groups, with an established role in clinical research. We have included in our meta-analysis all randomized trials ever done in adult cardiac setting that compare volatile agents, TIVA and remote ischemic preconditioning. On the basis of these findings, we strongly encourage the use of volatile agents alone or associated with remote ischemic preconditioning in patients undergoing cardiac surgery. Ischemic preconditioning was described for the first time by Murry et al [ 72 ] in 1986: they demonstrated that several short episodes of coronary occlusion and reperfusion were able to reduce myocardial infarct size when a sustained coronary occlusion occurred. The study of ischemia and reperfusion has been extended to human subjects and to other organs. The mechanism of preconditioning is still unclear but memory seems to be at the basis of this tissue protection: the heart remembers a previous insult and reacts to subsequent ischemia [ 73 ] by modifying gene expression and suppress pro-inflammatory response to ischemia-reperfusion damage. [ 74 ] Activation of various molecular pathways protects myocytes through an early preconditioning (for 1–6 hours), related to the mitochondrial KATP channel, δ -opioid and bradykinin receptors activation, and through a delayed phase (from 24–72 hours), related to the induction of nitric oxide synthase, superoxide dismutase and heat-shock proteins. Volatile agents mimic the early phase of ischemic preconditioning, activating mitochondrial KATP channels through a multi-pathway signaling. [ 8 ] On the basis of o",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 425.0
+    },
+    {
+      "pmid": "29025825",
+      "title": "Comparison of the cerebroprotective effect of inhalation anaesthesia and total intravenous anaesthesia in patients undergoing cardiac surgery with cardiopulmonary bypass: a systematic review and meta-analysis.",
+      "journal": "BMJ open",
+      "date": "2017-10-11",
+      "authors": [
+        "Chen F",
+        "Li H."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Objective Neurological dysfunction remains a devastating postoperative complication in patients undergoing cardiac surgery with cardiopulmonary bypass (CPB), and previous studies have shown that inhalation anaesthesia and total intravenous anaesthesia (TIVA) may produce different degrees of cerebral protection in these patients. Therefore, we conducted a systematic literature review and meta-analysis to compare the neuroprotective effects of inhalation anaesthesia and TIVA. Design Searching in PubMed, EMBASE, Science Direct/Elsevier, China National Knowledge Infrastructure and Cochrane Library up to August 2016, we selected related randomised controlled trials for this meta-analysis. Results A total of 1485 studies were identified. After eliminating duplicate articles and screening titles and abstracts, 445 studies were potentially eligible. After applying exclusion criteria (full texts reported as abstracts, review article, no control case, lack of outcome data and so on), 13 studies were selected for review. Our results demonstrated that the primary outcome related to S100B level in the inhalation anaesthesia group was significantly lower than in the TIVA group after CPB and 24 hours postoperatively (weighted mean difference (WMD); 95% CI (CI): −0.41(–0.81 to –0.01), −0.32 (−0.59 to −0.05), respectively). Among secondary outcome variables, mini-mental state examination scores of the inhalation anaesthesia group were significantly higher than those of the TIVA group 24 hours after operation (WMD (95% CI): 1.87 (0.82 to 2.92)), but no significant difference was found in arteriovenous oxygen content difference, cerebral oxygen extraction ratio and jugular bulb venous oxygen saturation, which were assessed at cooling and rewarming during CPB. Conclusion This study demonstrates that anaesthesia with volatile agents appears to provide better cerebral protection than TIVA for patients undergoing cardiac surgery with CPB, suggesting that inhalation anaesthesia may be more suitable for patients undergoing cardiac surgery. Keywords: anaesthesia, cerebral protection, cardiac surgery, cardiopulmonary bypass.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 425.0
+    },
+    {
+      "pmid": "34748518",
+      "title": "Remote Ischemic Preconditioning Reduces Acute Kidney Injury After Cardiac Surgery: A Systematic Review and Meta-analysis of Randomized Controlled Trials.",
+      "journal": "Anesthesia and analgesia",
+      "date": "2022-03-01",
+      "authors": [
+        "Long YQ",
+        "Peng K."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Results from previous studies evaluating the effects of remote ischemic preconditioning (RIPC) on morbidity and mortality after cardiac surgery are inconsistent. This meta-analysis of randomized controlled trials (RCTs) aims to determine whether RIPC improves cardiac and renal outcomes in adults undergoing cardiac surgery.<h4>Methods</h4>PubMed, EMBASE, and Cochrane Library were comprehensively searched to identify RCTs comparing RIPC with control in cardiac surgery. The coprimary outcomes were the incidence of postoperative myocardial infarction (MI) and the incidence of postoperative acute kidney injury (AKI). Meta-analyses were performed using a random-effect model. Subgroup analyses were conducted according to volatile only anesthesia versus propofol anesthesia with or without volatiles, high-risk patients versus non-high-risk patients, and Acute Kidney Injury Network (AKIN) or Kidney Disease Improving Global Outcomes (KDIGO) criteria versus other criteria for AKI diagnosis.<h4>Results</h4>A total of 79 RCTs with 10,814 patients were included. While the incidence of postoperative MI did not differ between the RIPC and control groups (8.2% vs 9.7%; risk ratio [RR] = 0.87, 95% confidence interval [CI], 0.76-1.01, P = .07, I2 = 0%), RIPC significantly reduced the incidence of postoperative AKI (22% vs 24.4%; RR = 0.86, 95% CI, 0.77-0.97, P = .01, I2 = 34%). The subgroup analyses showed that RIPC was associated with a reduced incidence of MI in non-high-risk patients, and that RIPC was associated with a reduced incidence of AKI in volatile only anesthesia, in non-high-risk patients, and in the studies using AKIN or KDIGO criteria for AKI diagnosis.<h4>Conclusions</h4>This meta-analysis demonstrates that RIPC reduces the incidence of AKI after cardiac surgery. This renoprotective effect of RIPC is mainly evident during volatile only anesthesia, in non-high-risk patients, and when AKIN or KDIGO criteria used for AKI diagnosis.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 395.0
+    },
+    {
+      "pmid": "23852263",
+      "title": "Anaesthetic drugs and survival: a Bayesian network meta-analysis of randomized trials in cardiac surgery.",
+      "journal": "British journal of anaesthesia",
+      "date": "2013-07-12",
+      "authors": [
+        "Landoni G",
+        "Zangrillo A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Many studies have compared desflurane, isoflurane, sevoflurane, total i.v. anaesthesia (TIVA), or all in cardiac surgery to assess their effects on patient survival.<h4>Methods</h4>We performed standard pairwise and Bayesian network meta-analyses; the latter allows indirect assessments if any of the anaesthetic agents were not compared in head-to-head trials. Pertinent studies were identified using BioMedCentral, MEDLINE/PubMed, Embase, and the Cochrane Library (last updated in June 2012).<h4>Results</h4>We identified 38 randomized trials with survival data published between 1991 and 2012, with most studies (63%) done in coronary artery bypass grafting (CABG) patients with standard cardiopulmonary bypass. Standard meta-analysis showed that the use of a volatile agent was associated with a reduction in mortality when compared with TIVA at the longest follow-up available [25/1994 (1.3%) in the volatile group vs 43/1648 (2.6%) in the TIVA arm, odds ratio (OR)=0.51, 95% confidence interval (CI) 0.33-0.81, P-value for effect=0.004, number needed to treat 74, I(2)=0%] with results confirmed in trials with low risk of bias, in large trials, and when including only CABG studies. Bayesian network meta-analysis showed that sevoflurane (OR=0.31, 95% credible interval 0.14-0.64) and desflurane (OR=0.43, 95% credible interval 0.21-0.82) were individually associated with a reduction in mortality when compared with TIVA.<h4>Conclusions</h4>Anaesthesia with volatile agents appears to reduce mortality after cardiac surgery when compared with TIVA, especially when sevoflurane or desflurane is used. A large, multicentre trial is warranted to confirm that long-term survival is significantly affected by the choice of anaesthetic.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 395.0
+    },
+    {
+      "pmid": "31668634",
+      "title": "Trials Focusing on Prevention and Treatment of Delirium After Cardiac Surgery: A systematic Review of Randomized Evidence.",
+      "journal": "Journal of cardiothoracic and vascular anesthesia",
+      "date": "2019-09-24",
+      "authors": [
+        "Pieri M",
+        "Monaco F."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Delirium after cardiac surgery is associated with adverse outcomes, including prolonged hospital stay, prolonged intensive care unit stay, and increased mortality. Effective preventive interventions and treatments still are largely unknown.<h4>Aim</h4>This systematic review aimed to gather and summarize the existing evidence from randomized trials concerning interventions studied in the prevention or treatment of delirium in adult patients undergoing cardiac surgery.<h4>Methods</h4>A systematic review of the literature using a key word strategy and Boolean operators was performed. PubMed and the Cochrane and Scopus databases were searched for pertinent studies until July 2018 (no inception limit).<h4>Results</h4>Of 2,556 articles identified, 56 studies met the inclusion criteria and were included in the review-39 addressed pharmacologic strategies and 17 nonpharmacologic interventions. Interestingly, 51 (91%) trials focused on delirium prevention and only 5 (9%) on delirium treatment. Most of the analyzed studies were recent double-blind, single-center trials conducted in Europe or North America, with a low risk of bias. Overall, 38 different interventions were identified: 15 (26%) interventions were performed before surgery, 20 (36%) in the operating room, and 21 (38%) after surgery. The most frequently analyzed strategies were the administration of dexmedetomidine, ketamine, antipsychotics, glucocorticoids, propofol, opioids, volatile anesthetics, local anesthetics, and remote ischemic preconditioning. The analyzed strategies were extremely heterogenous, and dexmedetomidine was the most promising measure able to prevent the development of postoperative delirium.<h4>Conclusions</h4>In the present systematic review of 56 randomized controlled trials that examined 38 interventions, the authors found that dexmedetomidine was the most frequently studied agent and that it might reduce the occurrence of delirium after cardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 395.0
+    },
+    {
+      "pmid": "38857019",
+      "title": "Electroencephalography-Guided Anesthesia and Delirium in Older Adults After Cardiac Surgery: The ENGAGES-Canada Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "date": "2024-07-01",
+      "authors": [
+        "Deschamps A",
+        "Canadian Perioperative Anesthesia Clinical Trials Group."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Importance</h4>Intraoperative electroencephalogram (EEG) waveform suppression, suggesting excessive general anesthesia, has been associated with postoperative delirium.<h4>Objective</h4>To assess whether EEG-guided anesthesia decreases the incidence of delirium after cardiac surgery.<h4>Design, setting, and participants</h4>Randomized, parallel-group clinical trial of 1140 adults 60 years or older undergoing cardiac surgery at 4 Canadian hospitals. Recruitment was from December 2016 to February 2022, with follow-up until February 2023.<h4>Interventions</h4>Patients were randomized in a 1:1 ratio (stratified by hospital) to receive EEG-guided anesthesia (n = 567) or usual care (n = 573). Patients and those assessing outcomes were blinded to group assignment.<h4>Main outcomes and measures</h4>The primary outcome was delirium during postoperative days 1 through 5. Intraoperative measures included anesthetic concentration and EEG suppression time. Secondary outcomes included intensive care and hospital length of stay. Serious adverse events included intraoperative awareness, medical complications, and 30-day mortality.<h4>Results</h4>Of 1140 randomized patients (median [IQR] age, 70 [65-75] years; 282 [24.7%] women), 1131 (99.2%) were assessed for the primary outcome. Delirium during postoperative days 1 to 5 occurred in 102 of 562 patients (18.15%) in the EEG-guided group and 103 of 569 patients (18.10%) in the usual care group (difference, 0.05% [95% CI, -4.57% to 4.67%]). In the EEG-guided group compared with the usual care group, the median volatile anesthetic minimum alveolar concentration was 0.14 (95% CI, 0.15 to 0.13) lower (0.66 vs 0.80) and there was a 7.7-minute (95% CI, 10.6 to 4.7) decrease in the median total time spent with EEG suppression (4.0 vs 11.7 min). There were no significant differences between groups in median length of intensive care unit (difference, 0 days [95% CI, -0.31 to 0.31]) or hospital stay (difference, 0 days [95% CI, -0.94 to 0.94]). No patients reported intraoperative awareness. Medical complications occurred in 64 of 567 patients (11.3%) in the EEG-guided group and 73 of 573 (12.7%) in the usual care group. Thirty-day mortality occurred in 8 of 567 patients (1.4%) in the EEG-guided group and 13 of 573 (2.3%) in the usual care group.<h4>Conclusions and relevance</h4>Among older adults undergoing cardiac surgery, EEG-guided anesthetic administration to minimize EEG suppression, compared with usual care, did not decrease the incidence of postoperative delirium. This finding does not support EEG-guided anesthesia for this indication.<h4>Trial registration</h4>ClinicalTrials.gov Identifier: NCT02692300.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 390.0
+    },
+    {
+      "pmid": "30409186",
+      "title": "Propofol vs. inhalational agents to maintain general anaesthesia in ambulatory and in-patient surgery: a systematic review and meta-analysis.",
+      "journal": "BMC anesthesiology",
+      "date": "2018-11-08",
+      "authors": [
+        "Schraag S",
+        "Rehberg S."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Background It is unclear if anaesthesia maintenance with propofol is advantageous or beneficial over inhalational agents. This study is intended to compare the effects of propofol vs. inhalational agents in maintaining general anaesthesia on patient-relevant outcomes and patient satisfaction. Methods Studies were identified by electronic database searches in PubMed™, EMBASE™ and the Cochrane™ library between 01/01/1985 and 01/08/2016. Randomized controlled trials (RCTs) of peer-reviewed journals were studied. Of 6688 studies identified, 229 RCTs were included with a total of 20,991 patients. Quality control, assessment of risk of bias, meta-bias, meta-regression and certainty in evidence were performed according to Cochrane. Common estimates were derived from fixed or random-effects models depending on the presence of heterogeneity. Post-operative nausea and vomiting (PONV) was the primary outcome. Post-operative pain, emergence agitation, time to recovery, hospital length of stay, post-anaesthetic shivering and haemodynamic instability were considered key secondary outcomes. Results The risk for PONV was lower with propofol than with inhalational agents (relative risk (RR) 0.61 [0.53, 0.69], p &lt; 0.00001). Additionally, pain score after extubation and time in the post-operative anaesthesia care unit (PACU) were reduced with propofol (mean difference (MD) − 0.51 [− 0.81, − 0.20], p = 0.001; MD − 2.91 min [− 5.47, − 0.35], p = 0.03). In turn, time to respiratory recovery and tracheal extubation were longer with propofol than with inhalational agents (MD 0.82 min [0.20, 1.45], p = 0.01; MD 0.70 min [0.03, 1.38], p = 0.04, respectively). Notably, patient satisfaction, as reported by the number of satisfied patients and scores, was higher with propofol (RR 1.06 [1.01, 1.10], p = 0.02; MD 0.13 [0.00, 0.26], p = 0.05). Secondary analyses supported the primary results. Conclusions Based on the present meta-analysis there are several advantages of anaesthesia maintenance with propofol over inhalational agents. While these benefits result in an increased patient satisfaction, the clinical and economic relevance of these findings still need to be addressed in adequately powered prospective clinical trials. Electronic supplementary material The online version of this article (10.1186/s12871-018-0632-3) contains supplementary material, which is available to authorized users.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 385.0
+    },
+    {
+      "pmid": "15728039",
+      "title": "Sevoflurane but not propofol preserves myocardial function during minimally invasive direct coronary artery bypass surgery.",
+      "journal": "Anesthesia and analgesia",
+      "date": "2005-03-01",
+      "authors": [
+        "Bein B",
+        "Tonner PH."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Volatile anesthetics exert cardioprotective properties in experimental and clinical studies. We designed this study to investigate the effects of sevoflurane on left ventricular (LV) performance during minimally invasive direct coronary artery bypass grafting (MIDCAB) without cardiopulmonary bypass. Fifty-two patients scheduled for MIDCAB surgery were randomly assigned to a propofol or a sevoflurane group. Apart from the anesthetics used, there was no difference in surgical and anesthetic management. After determination of cardiac troponin T, creatine kinase, and creatine kinase MB, electrocardiographic (ECG) data and echocardiography variables (myocardial performance index and early to atrial filling velocity ratio) the left anterior descending coronary artery (LAD) was clamped until anastomosis with the left internal mammary artery was completed. During LAD occlusion and during reperfusion, echocardiography measurements were repeated. Blood samples were obtained repeatedly for up to 72 h. After LAD occlusion, myocardial performance index and early to atrial filling velocity ratio in the propofol group deteriorated significantly from 0.40 +/- 0.12 and 1.29 +/- 0.35 to 0.49 +/- 0.10 and 1.13 +/- 0.22, respectively, whereas there was no change in the sevoflurane group. In the propofol group myocardial performance index remained increased (0.47 +/- 0.11) compared with baseline during reperfusion. There were no significant differences in ECG and laboratory values between groups. In conclusion, during a brief period of ischemia in patients undergoing MIDCAB surgery, sevoflurane preserved myocardial function better than propofol.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 375.0
+    }
+  ]
+}

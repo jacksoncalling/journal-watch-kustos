@@ -30,11 +30,15 @@ class SynthResult:
     refused: bool
     provider: str
     model: str
+    thought_tokens: int = 0      # hidden reasoning tokens (Gemini thinking)
 
 
 # --------------------------------------------------------------------------- #
 def synth_anthropic(system: str, user: str, model: str, key: str,
-                    temperature: float | None = None) -> SynthResult:
+                    temperature: float | None = None,
+                    thinking_budget: int | None = None) -> SynthResult:
+    # thinking_budget is a Gemini setting; accepted here only so both providers
+    # share one call signature. Claude's thinking stays as configured below.
     import anthropic
     client = anthropic.Anthropic(api_key=key)
     # temperature=None: synthesis default (adaptive thinking). temperature set:
@@ -65,7 +69,8 @@ def synth_anthropic(system: str, user: str, model: str, key: str,
 
 # --------------------------------------------------------------------------- #
 def synth_gemini(system: str, user: str, model: str, key: str,
-                 temperature: float | None = None) -> SynthResult:
+                 temperature: float | None = None,
+                 thinking_budget: int | None = None) -> SynthResult:
     from google import genai
     from google.genai import types
 
@@ -75,6 +80,9 @@ def synth_gemini(system: str, user: str, model: str, key: str,
         gen_cfg["temperature"] = temperature   # 0 pins the planner (greedy decode)
         gen_cfg["seed"] = 7                     # fixed seed: Gemini needs temp+seed
                                                 #   for reproducibility (temp 0 alone drifts)
+    if thinking_budget is not None:
+        # None = Gemini's default (2.5 Flash thinks dynamically); 0 = off.
+        gen_cfg["thinking_config"] = types.ThinkingConfig(thinking_budget=thinking_budget)
     resp = client.models.generate_content(
         model=model,
         contents=user,
@@ -111,6 +119,7 @@ def synth_gemini(system: str, user: str, model: str, key: str,
         refused=refused,
         provider="gemini",
         model=model,
+        thought_tokens=getattr(um, "thoughts_token_count", 0) or 0,
     )
 
 

@@ -57,6 +57,18 @@ Der `max_items`-Wert kann pro Frage überschrieben werden mit einer Zeile
    bis drei Europe-PMC-Booleans. Dieser Schritt erzeugt nur Suchstrings, nie
    klinische Aussagen; die Provenienz-Garantien bleiben unberührt. Die
    verwendeten Queries werden geloggt und ins Dossier übernommen (Transparenz).
+   Danach, für geplante UND explizite Queries: **mehrdeutige Abkürzungen**
+   (`profile.md`, „Mehrdeutige Abkürzungen", z. B. HIT, ACT, MAP) werden ohne
+   Anführungszeichen nie gesucht, der Code ersetzt sie durch die ausgeschriebene
+   Phrase. Europe PMC sucht ohne Groß-/Kleinschreibung; ein nacktes `HIT` fand
+   jedes „hit" (Benchmark 2026-10-16). **Nur geplante Queries** (nie die
+   explizite einer Frage-Datei) bekommen zusätzlich eine deterministische
+   Bereinigung (`clean_planned_query`): Mehrwort-Begriffe in ODER-Gruppen werden
+   in Anführungszeichen gesetzt (Europe PMC verknüpft lose Wörter sonst mit UND),
+   und Facetten nur aus Debattenwörtern („controversy OR debate OR
+   uncertainty") fallen weg, weil sie nach Papern filtern, die diese Wörter
+   benutzen, nicht nach Papern zur Frage. Der Planer läuft ohne Gemini-Denken
+   (`planer_thinking_gemini: 0`), schneller, aber schlampiger; der Code fängt das.
 3. **Fetch (all-time).** Reuse `fetch_europepmc.search_topic`, aber mit
    Startdatum `1900-01-01`, also **ohne** Wochenfenster, und mit
    `sort="CITED desc"` plus einem tiefen Pool (`page_size=200`). Grund: der
@@ -70,8 +82,15 @@ Der `max_items`-Wert kann pro Frage überschrieben werden mit einer Zeile
    hochzitierte, aber fachfremde Paper nach oben (die breiten OR-Terme matchen
    berühmte Reviews aus anderen Feldern). Der Bonus zählt, wie viele Query-
    Begriffe im **Titel** stehen, und hebt so on-topic-Studien über fachfremde.
-   Aktualität bleibt nur ein Bonus, kein Filter. Nimm die obersten `max_items`
-   (Default 20).
+   Aktualität bleibt nur ein Bonus, kein Filter. Auswahl
+   (`select_papers`, seit 2026-10-16, `PLAN-retrieval-relevance.md`): **nur
+   Paper, die das Subjekt der Suche nennen** (Bindestriche und Leerzeichen
+   angeglichen), höchstens `max_items` (Default 20). **Kein Auffüllen** mit
+   fachfremden Papern. Ausnahme: bis zu 3 **Kontext-Leitlinien** (Leitlinie,
+   Herz-MeSH, Titel nennt einen Query-Begriff), dem Modell als Kontext markiert,
+   nie als Beleg. Kein einziges passendes Paper: **kein Dossier** (Fehler statt
+   einer selbstsicheren Antwort aus fremden Papern). Unter 5 passenden: der Code
+   setzt unter den Titel einen Hinweis auf dünne Evidenz.
 5. **Enrich der Top-N.** Erst nach dem Ranking (der Korpus ist groß): OA-Link +
    Volltext-Auszug via `enrich`-Funktionen nur für die ausgewählten Paper.
 6. **Synthese (der eine LLM-Aufruf pro Dossier).** System-Prompt =
@@ -118,6 +137,18 @@ ausführliche Teil nicht wiederholt, für Prozentzahlen fern der übrigen Zahlen
 ihrer Aussage, für Zahlen ohne Beleg, für eine Kurzantwort, die auf Abstracts
 ruht, ohne es zu sagen, und für [VOLLTEXT]-Paper, bei denen nur ein Stummel
 ankam. Der CLI-Lauf zeigt nur eine Warnzeile, blockiert nichts.
+
+**Zitat-Anker (seit 2026-10-16, `PLAN-quote-anchoring.md`).** Das Modell belegt
+jede tragende Aussage mit `(PMID ...: "wörtliches Zitat")` (Vertrag, „Belege mit
+wörtlichem Zitat"). Der Code trennt die Zitate direkt nach der Synthese ab, noch
+vor Prüfung, Web-Stream und Gedankenstrich-Strip; gezeigt wird nur
+`(PMID ...)`, die Rohfassung mit Zitaten steht in `synthesis_raw` und `anchors`
+der Evidenz-Datei. Für zitierte Aussagen prüft `check_claims.py`, ob das Zitat
+im Paper steht und ob jede Zahl der Aussage in IHREM Zitat steht, nicht irgendwo
+im Paper. Das schließt die Pool-Lücken für diese Aussagen. Aussagen ohne Zitat
+laufen weiter durch den Pool-Screen (WARN `unanchored`). Ob die Zitate verlässlich
+genug kommen, entscheidet der Benchmark (Schwelle: 95 % der Aussagen zitiert,
+90 % der Zitate wörtlich); darunter folgt Claude Citations (Option B).
 
 Grenzen: geprüft werden Zahlen, nicht Bedeutung. Ob Population, Setting oder
 Schlussfolgerung zum Paper passen, sieht das Skript nicht. Absichtlich

@@ -1,0 +1,534 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-16T13:05:15",
+  "reconstructed": false,
+  "question": {
+    "title": "Del-Nido- vs. Blutkardioplegie bei Erwachsenen",
+    "frage": "Del-Nido-Kardioplegie versus konventionelle Blutkardioplegie bei erwachsenen Patienten in der Herzchirurgie: was zeigt die Evidenz zum Outcome?",
+    "kontext": ""
+  },
+  "queries": [
+    "(\"Del Nido\" OR \"del-Nido\" OR \"DNIC\") AND (cardioplegia OR cardioplegic) AND (blood OR conventional OR \"cold blood\" OR \"warm blood\") AND (outcome OR mortality OR morbidity OR complications OR \"adverse events\") AND (adult OR \"adults\") AND (\"cardiac surgery\" OR \"heart surgery\" OR \"cardiovascular surgery\") AND SRC:MED",
+    "(\"Del Nido\" OR \"del-Nido\") AND cardioplegia AND (\"blood cardioplegia\" OR \"conventional cardioplegia\") AND (outcome OR mortality OR morbidity) AND (adult OR \"adult patients\") AND SRC:MED",
+    "(\"Del Nido\" OR \"del-Nido\") AND cardioplegia AND (\"blood cardioplegia\" OR \"conventional cardioplegia\") AND (\"cardiac surgery\" OR \"heart surgery\") AND (adult OR \"adults\") AND SRC:MED"
+  ],
+  "synthesis_raw": "## Kurzantwort:\nDie Evidenz deutet darauf hin, dass Del-Nido-Kardioplegie bei erwachsenen Patienten in der Herzchirurgie vergleichbare oder möglicherweise bessere kurzfristige klinische Ergebnisse im Vergleich zu konventioneller Blutkardioplegie liefert, ohne signifikante Unterschiede bei der Sterblichkeit. Del-Nido-Kardioplegie ist mit kürzeren Aortenklemm- und Kardiopulmonalbypass-Zeiten assoziiert, erfordert geringere Kardioplegievolumina und reduziert das Risiko einer Defibrillation nach Freigabe der Aortenklemme (PMID 37080841: \"Del Nido cardioplegia was also associated with significantly shorter aortic cross-clamp time (mean difference, -8.99 minutes; 95% CI, -17.24 to -0.73 [p < 0.001]), significantly reduced need for defibrillation (89/582 [15%] v 252/655 [38%]; OR, 0.33; 95% CI, 0.15-0.72 [p < 0.001])\"; PMID 33281072: \"del Nido cardioplegia was associated with significantly shorter CPB (mean difference [MD], -7.42 minutes; 95% CI, -12.53 to -2.31 [p=0.004]) and AoX times (MD, -6.39 minutes; 95% CI, -10.30 to -2.48 [p=0.001]), and lower cardioplegia volumes\"). Einige Studien zeigen auch eine Reduktion des postoperativen Schlaganfallrisikos und der akuten Niereninsuffizienz, sowie niedrigere Werte kardialer Enzyme (PMID 37080841: \"There were significant reductions in postoperative stroke and/or transient ischemic attack rate in the del Nido group: 9/467 (1.9%) v 25/540 (4.6%); odds ratio (OR), 0.43; 95% CI, 0.20-0.92 (p = 0.007)\"; PMID 37080841: \"significantly lower risk of postoperative acute kidney injury (21/235 [8.9%] v 34/301 [11%]; OR, 0.50; 95% CI, 0.26-0.97 [p = 0.04]\"; PMID 39252294: \"troponin T (MD: −1.71, 95% CI [−2.11, −1.32]), creatine phosphokinase-MB (MD: −2.96, 95% CI [−5.84, −0.07]) were significant\"). Langzeitdaten und weitere hochwertige, multizentrische randomisierte Studien sind für eine umfassende Bewertung notwendig (PMID 34263684: \"More high-quality trials and RCTs reflecting long-term follow-up morbidity and mortality are required in the future to confirm these findings\").\n\n## Evidenzlage\nMehrere Meta-Analysen und randomisierte kontrollierte Studien (RCTs) vergleichen die Del-Nido-Kardioplegie (DNC) mit konventioneller Blutkardioplegie (CBC) bei erwachsenen Herzpatienten. Die Studien zeigen, dass DNC in der Regel mit kürzeren Operationszeiten verbunden ist. Eine Meta-Analyse von zehn Studien mit 1.812 Patienten ergab signifikant kürzere Aortenklemmzeiten (mittlere Differenz -8.99 Minuten) in der Del-Nido-Gruppe (PMID 37080841: \"significantly shorter aortic cross-clamp time (mean difference, -8.99 minutes; 95% CI, -17.24 to -0.73 [p < 0.001])\"). Eine weitere Meta-Analyse von 29 Studien bestätigte dies mit einer mittleren Differenz von -6.39 Minuten für die Aortenklemmzeit und -7.42 Minuten für die Kardiopulmonalbypass-Zeit (CPB) (PMID 33281072: \"significantly shorter CPB (mean difference [MD], -7.42 minutes; 95% CI, -12.53 to -2.31 [p=0.004]) and AoX times (MD, -6.39 minutes; 95% CI, -10.30 to -2.48 [p=0.001])\"). Eine andere Meta-Analyse von 37 Beobachtungsstudien und vier RCTs mit 21.779 Patienten fand ebenfalls signifikant kürzere CPB-Zeiten (mittlere Differenz -9.31 Minuten) und Aortenklemmzeiten (mittlere Differenz -7.20 Minuten) in der DNC-Gruppe (PMID 34263684: \"cardiopulmonary bypass (CPB) time (MD: -9.31, 95% CI: -13.10 to -5.51, p < 0.00001), aortic cross-clamp (ACC) time (MD: -7.20, 95% CI: -10.31 to -4.09, p < 0.00001)\").\n\nHinsichtlich der Myokardprotektion zeigen mehrere Analysen vergleichbare oder verbesserte Ergebnisse mit DNC. Eine Reduktion der Defibrillationsnotwendigkeit nach Freigabe der Aortenklemme wurde in mehreren Studien festgestellt (PMID 37080841: \"significantly reduced need for defibrillation (89/582 [15%] v 252/655 [38%]; OR, 0.33; 95% CI, 0.15-0.72 [p < 0.001])\"; PMID 33281072: \"Significantly fewer patients required defibrillation after AoX release in the del Nido group\"; PMID 32420811: \"Defibrillation rates were significantly lower in patients who had been given del Nido cardioplegia, in both adult (relative risk: 0.28, confidence interval: 0.12 to 0.64, p = 0.003) and paediatric patients (relative risk: 0.25, confidence interval: 0.08 to 0.79, p = 0.02)\"). Zudem war DNC mit einem geringeren Volumen an verabreichter Kardioplegie verbunden (PMID 33281072: \"lower cardioplegia volumes\"; PMID 31347414: \"DC reduced cardioplegia volume requirements (mean difference [MD]:-1.1 L, 95% CI, -1.6, -0.6; P < 0.0001)\").\n\nBezüglich kardialer Biomarker zeigte eine Meta-Analyse niedrigere Werte für postoperatives kardiales Troponin T (cTnT) und Kreatinkinase-MB (CK-MB) in der DNC-Gruppe (PMID 39252294: \"troponin T (MD: −1.71, 95% CI [−2.11, −1.32]), creatine phosphokinase-MB (MD: −2.96, 95% CI [−5.84, −0.07]) were significant\"). Eine andere Meta-Analyse berichtete ebenfalls über geringere Troponin-T-Freisetzung (PMID 33281072: \"Postoperative cardiac troponin T release and the number of patients needing transfusions were less in the del Nido group\").\n\nDie postoperativen Outcomes wie Schlaganfall und akute Niereninsuffizienz (AKI) zeigten in einigen Studien eine Verbesserung. Eine Meta-Analyse von 2023 stellte signifikante Reduktionen bei postoperativem Schlaganfall oder transitorisch-ischämischer Attacke (TIA) sowie beim Risiko für postoperative AKI fest (PMID 37080841: \"significant reductions in postoperative stroke and/or transient ischemic attack rate in the del Nido group: 9/467 (1.9%) v 25/540 (4.6%)\"; PMID 37080841: \"significantly lower risk of postoperative acute kidney injury (21/235 [8.9%] v 34/301 [11%])\"). Eine andere Meta-Analyse identifizierte DNC mit einer potenziellen Reduktion postoperativer ventrikulärer Arrhythmien (PMID 33441080: \"In DNC group, the incidence of postoperative ventricular arrhythmias was lower (12.4% vs. 17.4%, P = 0.040)\").\n\nBei Patienten mit reduzierter linksventrikulärer Ejektionsfraktion (LVEF ≤ 50 %) zeigte DNC vergleichbare Mortalitäts- und Morbiditätsraten, mit dem Potenzial, die Myokardfunktion zu schützen, was sich in einer signifikant höheren postoperativen LVEF widerspiegelte (PMID 39797758: \"Postoperative LVEF was significantly higher in the del Nido group compared to the control group, with a standardized mean difference of 0.52 [95% confidence interval: 0.07; 0.96] (p = .034)\").\n\n## Was ist Standard\nDie Del-Nido-Kardioplegie, ursprünglich für die Pädiatrie entwickelt, wird zunehmend auch bei erwachsenen Patienten in der Herzchirurgie eingesetzt (PMID 37409597: \"Initially developed for myocardial protection in immature cardiomyocytes, del Nido cardioplegia has been increasingly used over the past decade in adult patients\"). Konventionelle Blutkardioplegie ist ein etabliertes Verfahren zur Myokardprotektion (PMID 33281072: \"Myocardial protection in adult cardiac surgery is commonly achieved with either multidose blood cardioplegia or single-dose del Nido crystalloid cardioplegia\"). Leitlinien wie die 2024er EACTS/EACTAIC/EBCP-Leitlinien zum kardiopulmonalen Bypass in der Erwachsenen-Herzchirurgie bieten einen Rahmen für klinische Entscheidungen, adressieren jedoch nicht explizit die spezifische Frage der Del-Nido-Kardioplegie im Vergleich zu anderen Lösungen (PMID 39955230: \"These guidelines assess the impact on patient outcomes and weigh the risk–benefit ratio of various diagnostic or therapeutic approaches\"). Die Wahl der Kardioplegie bleibt oft eine Entscheidung des Chirurgen und der Präferenz (PMID 35225070: \"The cardioplegia of choice in minimally invasive cardiac surgery remains the surgeons' decision and preference\").\n\n## Wo die Literatur uneins ist\nTrotz der Konsistenz bei Endpunkten wie Aortenklemm- und CPB-Zeit sowie Defibrillationsraten bleiben einige Fragen und widersprüchliche Ergebnisse bestehen.\nDie Gesamtmortalität unterscheidet sich in den meisten Meta-Analysen nicht signifikant zwischen DNC und CBC (PMID 37080841: \"no effect on mortality (14/607 [2.3%] v 12/681 [1.8%]; p = 0.5)\"; PMID 28863040: \"There were no differences in myocardial enzyme, postoperative inotropic support, atrial fibrillation, hospital, and mortality between the two groups\"; PMID 33281072: \"There was no difference in the primary outcome of mortality between the two groups (odds ratio [OR], 1.18; 95% confidence interval [CI], 0.82-1.72 [p=0.37])\"). Eine Netzwerk-Meta-Analyse von 2022 deutet jedoch darauf hin, dass DNC bei erwachsenen Patienten mit einer signifikant geringeren perioperativen Mortalität im Vergleich zu Histidin-Tryptophan-Ketoglutarat (HTK) und Blutkardioplegie (BC) assoziiert sein könnte (PMID 36176979: \"risk of mortality was significantly higher for HTK (1.89, 95% CI 1.10, 3.52) and BC (RR 1.73, 95% CI 1.22, 2.79) than for DN\").\n\nHinsichtlich postoperativer Arrhythmien zeigt eine Studie eine geringere Inzidenz ventrikulärer Arrhythmien mit DNC (PMID 33441080: \"In DNC group, the incidence of postoperative ventricular arrhythmias was lower (12.4% vs. 17.4%, P = 0.040)\"). Eine andere Netzwerk-Meta-Analyse wiederum fand ein höheres Risiko für Vorhofflimmern mit DNC und BC im Vergleich zu HTK (PMID 36176979: \"Risk of atrial fibrillation was significantly higher for BC (RR 1.41, 95% CI 1.09, 1.86) and DN (RR 1.51, 95% CI 1.15, 2.03) than for HTK\").\n\nBei komplexen Aortenwurzeloperationen, die lange ischämische Zeiten erfordern, zeigte eine Studie eine Tendenz zu höheren Troponin-T-Spiegeln und eine signifikant höhere mediane Kreatinkinase-MB-Isoform mit DNC, insbesondere bei Myokardischämie länger als 180 Minuten. Dies führte zwar nicht zu klinischen Nebenereignissen, könnte aber auf eine erhöhte Myokardschädigung hindeuten und erfordert Vorsicht bei der Anwendung (PMID 32111432: \"there was a trend toward higher troponin T levels with del Nido cardioplegia solution (748 [221-5834] ng/L vs 710 [212-3332] ng/L for blood cardioplegia solution [P = .07])\"; PMID 32111432: \"In patients with myocardial ischemia longer than 180 minutes, median creatine kinase MB isotype was higher in del Nido cardioplegia solution (75.1 [59.3-300] μg/L than in blood cardioplegia solution 60.5 [16.5-116] μg/L [P = .01])\").\n\n## Offene Fragen\nDie Literatur weist auf eine Reihe von offenen Fragen hin, die durch zukünftige Forschung adressiert werden sollten:\n- **Langzeit-Outcomes:** Die meisten Studien konzentrieren sich auf kurzfristige postoperative Ergebnisse. Langfristige Morbiditäts- und Mortalitätsdaten sind erforderlich, um die umfassende Sicherheit und Wirksamkeit von DNC bei Erwachsenen zu bestätigen (PMID 34263684: \"More high-quality trials and RCTs reflecting long-term follow-up morbidity and mortality are required in the future to confirm these findings\").\n- **Optimale Zusammensetzung und Applikationsschemata:** Weitere Forschung ist nötig, um die Zusammensetzung der Kardioplegie zu verbessern und optimale Dosierungs- und Applikationsschemata für spezifische Patientengruppen oder chirurgische Eingriffe zu identifizieren (PMID 38909234: \"The superior postoperative results in CTnT and CK-MB may provide a direction for further research on improvement of the composition of cardioplegia\").\n- **Spezielle Patientenkohorten:** Die Sicherheit und Wirksamkeit von DNC in speziellen Patientenkohorten, wie Patienten mit verlängerten Ischämiezeiten oder bestimmten Vorerkrankungen, erfordert weitere prospektive Studien (PMID 32111432: \"Caution is warranted in adopting this cardioplegic solution in aortic interventions requiring long ischemic times, and further study is required to establish its exact role in complex cardiac surgery\").\n- **Vergleich mit anderen Kardioplegie-Typen:** Während DNC häufig mit Blutkardioplegie verglichen wird, sind direkte Vergleiche mit anderen Kardioplegie-Lösungen wie Custodiol (HTK) in breiter angelegten RCTs von Interesse, um die beste Option für die Myokardprotektion festzulegen (PMID 35225070: \"No differences were found between blood and crystalloid cardioplegia in adult minimally invasive cardiac surgery in several clinical outcomes. The cardioplegia of choice in minimally invasive cardiac surgery remains the surgeons' decision and preference\").\n- **Multizentrische RCTs von hoher Qualität:** Viele der aktuellen Erkenntnisse stammen aus Meta-Analysen, die auch Beobachtungsstudien einschließen. Hochwertige, multizentrische, randomisierte kontrollierte Studien mit großen Fallzahlen sind notwendig, um die Studienergebnisse zu verifizieren und eine breitere Akzeptanz von DNC zu fördern (PMID 38909234: \"Limited by the number and quality of included studies, the conclusions of this study need to be verified by multi-center randomized controlled studies with higher quality and large samples\").\n\nKein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.",
+  "anchors": [
+    {
+      "pmid": "37080841",
+      "quote": "Del Nido cardioplegia was also associated with significantly shorter aortic cross-clamp time (mean difference, -8.99 minutes; 95% CI, -17.24 to -0.73 [p < 0.001]), significantly reduced need for defibrillation (89/582 [15%] v 252/655 [38%]; OR, 0.33; 95% CI, 0.15-0.72 [p < 0.001])",
+      "in_source": true
+    },
+    {
+      "pmid": "33281072",
+      "quote": "del Nido cardioplegia was associated with significantly shorter CPB (mean difference [MD], -7.42 minutes; 95% CI, -12.53 to -2.31 [p=0.004]) and AoX times (MD, -6.39 minutes; 95% CI, -10.30 to -2.48 [p=0.001]), and lower cardioplegia volumes",
+      "in_source": true
+    },
+    {
+      "pmid": "37080841",
+      "quote": "There were significant reductions in postoperative stroke and/or transient ischemic attack rate in the del Nido group: 9/467 (1.9%) v 25/540 (4.6%); odds ratio (OR), 0.43; 95% CI, 0.20-0.92 (p = 0.007)",
+      "in_source": true
+    },
+    {
+      "pmid": "37080841",
+      "quote": "significantly lower risk of postoperative acute kidney injury (21/235 [8.9%] v 34/301 [11%]; OR, 0.50; 95% CI, 0.26-0.97 [p = 0.04]",
+      "in_source": true
+    },
+    {
+      "pmid": "39252294",
+      "quote": "troponin T (MD: −1.71, 95% CI [−2.11, −1.32]), creatine phosphokinase-MB (MD: −2.96, 95% CI [−5.84, −0.07]) were significant",
+      "in_source": true
+    },
+    {
+      "pmid": "34263684",
+      "quote": "More high-quality trials and RCTs reflecting long-term follow-up morbidity and mortality are required in the future to confirm these findings",
+      "in_source": true
+    },
+    {
+      "pmid": "37080841",
+      "quote": "significantly shorter aortic cross-clamp time (mean difference, -8.99 minutes; 95% CI, -17.24 to -0.73 [p < 0.001])",
+      "in_source": true
+    },
+    {
+      "pmid": "33281072",
+      "quote": "significantly shorter CPB (mean difference [MD], -7.42 minutes; 95% CI, -12.53 to -2.31 [p=0.004]) and AoX times (MD, -6.39 minutes; 95% CI, -10.30 to -2.48 [p=0.001])",
+      "in_source": true
+    },
+    {
+      "pmid": "34263684",
+      "quote": "cardiopulmonary bypass (CPB) time (MD: -9.31, 95% CI: -13.10 to -5.51, p < 0.00001), aortic cross-clamp (ACC) time (MD: -7.20, 95% CI: -10.31 to -4.09, p < 0.00001)",
+      "in_source": true
+    },
+    {
+      "pmid": "37080841",
+      "quote": "significantly reduced need for defibrillation (89/582 [15%] v 252/655 [38%]; OR, 0.33; 95% CI, 0.15-0.72 [p < 0.001])",
+      "in_source": true
+    },
+    {
+      "pmid": "33281072",
+      "quote": "Significantly fewer patients required defibrillation after AoX release in the del Nido group",
+      "in_source": true
+    },
+    {
+      "pmid": "32420811",
+      "quote": "Defibrillation rates were significantly lower in patients who had been given del Nido cardioplegia, in both adult (relative risk: 0.28, confidence interval: 0.12 to 0.64, p = 0.003) and paediatric patients (relative risk: 0.25, confidence interval: 0.08 to 0.79, p = 0.02)",
+      "in_source": true
+    },
+    {
+      "pmid": "33281072",
+      "quote": "lower cardioplegia volumes",
+      "in_source": true
+    },
+    {
+      "pmid": "31347414",
+      "quote": "DC reduced cardioplegia volume requirements (mean difference [MD]:-1.1 L, 95% CI, -1.6, -0.6; P < 0.0001)",
+      "in_source": true
+    },
+    {
+      "pmid": "39252294",
+      "quote": "troponin T (MD: −1.71, 95% CI [−2.11, −1.32]), creatine phosphokinase-MB (MD: −2.96, 95% CI [−5.84, −0.07]) were significant",
+      "in_source": true
+    },
+    {
+      "pmid": "33281072",
+      "quote": "Postoperative cardiac troponin T release and the number of patients needing transfusions were less in the del Nido group",
+      "in_source": true
+    },
+    {
+      "pmid": "37080841",
+      "quote": "significant reductions in postoperative stroke and/or transient ischemic attack rate in the del Nido group: 9/467 (1.9%) v 25/540 (4.6%)",
+      "in_source": true
+    },
+    {
+      "pmid": "37080841",
+      "quote": "significantly lower risk of postoperative acute kidney injury (21/235 [8.9%] v 34/301 [11%])",
+      "in_source": false
+    },
+    {
+      "pmid": "33441080",
+      "quote": "In DNC group, the incidence of postoperative ventricular arrhythmias was lower (12.4% vs. 17.4%, P = 0.040)",
+      "in_source": true
+    },
+    {
+      "pmid": "39797758",
+      "quote": "Postoperative LVEF was significantly higher in the del Nido group compared to the control group, with a standardized mean difference of 0.52 [95% confidence interval: 0.07; 0.96] (p = .034)",
+      "in_source": false
+    },
+    {
+      "pmid": "37409597",
+      "quote": "Initially developed for myocardial protection in immature cardiomyocytes, del Nido cardioplegia has been increasingly used over the past decade in adult patients",
+      "in_source": true
+    },
+    {
+      "pmid": "33281072",
+      "quote": "Myocardial protection in adult cardiac surgery is commonly achieved with either multidose blood cardioplegia or single-dose del Nido crystalloid cardioplegia",
+      "in_source": true
+    },
+    {
+      "pmid": "39955230",
+      "quote": "These guidelines assess the impact on patient outcomes and weigh the risk–benefit ratio of various diagnostic or therapeutic approaches",
+      "in_source": true
+    },
+    {
+      "pmid": "35225070",
+      "quote": "The cardioplegia of choice in minimally invasive cardiac surgery remains the surgeons' decision and preference",
+      "in_source": true
+    },
+    {
+      "pmid": "37080841",
+      "quote": "no effect on mortality (14/607 [2.3%] v 12/681 [1.8%]; p = 0.5)",
+      "in_source": true
+    },
+    {
+      "pmid": "28863040",
+      "quote": "There were no differences in myocardial enzyme, postoperative inotropic support, atrial fibrillation, hospital, and mortality between the two groups",
+      "in_source": true
+    },
+    {
+      "pmid": "33281072",
+      "quote": "There was no difference in the primary outcome of mortality between the two groups (odds ratio [OR], 1.18; 95% confidence interval [CI], 0.82-1.72 [p=0.37])",
+      "in_source": true
+    },
+    {
+      "pmid": "36176979",
+      "quote": "risk of mortality was significantly higher for HTK (1.89, 95% CI 1.10, 3.52) and BC (RR 1.73, 95% CI 1.22, 2.79) than for DN",
+      "in_source": true
+    },
+    {
+      "pmid": "33441080",
+      "quote": "In DNC group, the incidence of postoperative ventricular arrhythmias was lower (12.4% vs. 17.4%, P = 0.040)",
+      "in_source": true
+    },
+    {
+      "pmid": "36176979",
+      "quote": "Risk of atrial fibrillation was significantly higher for BC (RR 1.41, 95% CI 1.09, 1.86) and DN (RR 1.51, 95% CI 1.15, 2.03) than for HTK",
+      "in_source": true
+    },
+    {
+      "pmid": "32111432",
+      "quote": "there was a trend toward higher troponin T levels with del Nido cardioplegia solution (748 [221-5834] ng/L vs 710 [212-3332] ng/L for blood cardioplegia solution [P = .07])",
+      "in_source": true
+    },
+    {
+      "pmid": "32111432",
+      "quote": "In patients with myocardial ischemia longer than 180 minutes, median creatine kinase MB isotype was higher in del Nido cardioplegia solution (75.1 [59.3-300] μg/L than in blood cardioplegia solution 60.5 [16.5-116] μg/L [P = .01])",
+      "in_source": true
+    },
+    {
+      "pmid": "34263684",
+      "quote": "More high-quality trials and RCTs reflecting long-term follow-up morbidity and mortality are required in the future to confirm these findings",
+      "in_source": true
+    },
+    {
+      "pmid": "38909234",
+      "quote": "The superior postoperative results in CTnT and CK-MB may provide a direction for further research on improvement of the composition of cardioplegia",
+      "in_source": true
+    },
+    {
+      "pmid": "32111432",
+      "quote": "Caution is warranted in adopting this cardioplegic solution in aortic interventions requiring long ischemic times, and further study is required to establish its exact role in complex cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "35225070",
+      "quote": "No differences were found between blood and crystalloid cardioplegia in adult minimally invasive cardiac surgery in several clinical outcomes. The cardioplegia of choice in minimally invasive cardiac surgery remains the surgeons' decision and preference",
+      "in_source": true
+    },
+    {
+      "pmid": "38909234",
+      "quote": "Limited by the number and quality of included studies, the conclusions of this study need to be verified by multi-center randomized controlled studies with higher quality and large samples",
+      "in_source": true
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "37080841",
+      "title": "Del Nido Cardioplegia in Adult Cardiac Surgery: Meta-Analysis of Randomized Clinical Trials.",
+      "journal": "Journal of cardiothoracic and vascular anesthesia",
+      "date": "2023-03-04",
+      "authors": [
+        "Fresilli S",
+        "Del Nido Study Group."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Objective</h4>To compare the outcomes of patients receiving del Nido solution versus any other type of cardioplegia.<h4>Design</h4>A systematic review and meta-analysis of randomized trials.<h4>Setting</h4>Cardiac operating rooms.<h4>Participants</h4>Adult patients (≥18 years old) undergoing cardiac surgery.<h4>Interventions</h4>The EMBASE, MEDLINE, and CENTRAL databases were searched systematically from their inception until August 2022 for randomized controlled trials comparing del Nido versus other cardioplegias.<h4>Measurements and main results</h4>Ten studies were included, including 1,812 patients (871 in the del Nido group and 941 in the control group), and published after 2017. There were significant reductions in postoperative stroke and/or transient ischemic attack rate in the del Nido group: 9/467 (1.9%) v 25/540 (4.6%); odds ratio (OR), 0.43; 95% CI, 0.20-0.92 (p = 0.007). Del Nido cardioplegia was also associated with significantly shorter aortic cross-clamp time (mean difference, -8.99 minutes; 95% CI, -17.24 to -0.73 [p < 0.001]), significantly reduced need for defibrillation (89/582 [15%] v 252/655 [38%]; OR, 0.33; 95% CI, 0.15-0.72 [p < 0.001]), significantly lower risk of postoperative acute kidney injury (21/235 [8.9%] v 34/301 [11%]; OR, 0.50; 95% CI, 0.26-0.97 [p = 0.04]), with no effect on mortality (14/607 [2.3%] v 12/681 [1.8%]; p = 0.5).<h4>Conclusion</h4>According to the authors' meta-analysis of recent randomized clinical trials, del Nido is a safe cardioplegic solution, which might provide better organ protection in adult cardiac surgery without differences in mortality when compared to other cardioplegic solutions.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 488.0
+    },
+    {
+      "pmid": "28863040",
+      "title": "Del Nido Cardioplegia for Myocardial Protection in Adult Cardiac Surgery: A Systematic Review and Meta-Analysis.",
+      "journal": "ASAIO journal (American Society for Artificial Internal Organs : 1992)",
+      "date": "2018-05-01",
+      "authors": [
+        "Li Y",
+        "Gao B."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Cardioplegia is an important strategy for myocardial protection during cardiac surgery. This meta-analysis was to compare the effects of del Nido and conventional cardioplegia in adult patients. Systematic searches were performed to identify studies using PubMed, Embase, the Cochrane Library, and the International Clinical Trials Registry Platform. A total of nine studies were included. Cardiopulmonary bypass and cross-clamp time were significantly shorter in the del Nido than conventional cardioplegia (mean difference [MD]: -7.52, 95% confidence interval [95% CI]: -14.76 to -0.29, p = 0.04; MD: -5.74, 95% CI: -10.14 to -1.34, p = 0.01). During the operation, cardioplegia volume and blood glucose level were lower in the del Nido group (MD: -522.53, 95% CI: -926.68 to -118.37, p = 0.01; standardized mean difference [SMD]: -1.11, 95% CI: -1.74 to -0.48, p = 0.0006). Ventilation time and length of intensive care unit were decreased significantly with del Nido cardioplegia (MD: -1.05, 95% CI: -1.79 to -0.31, p = 0.006; MD: -0.65, 95% CI: -0.92 to -0.38, p < 0.00001). There were no differences in myocardial enzyme, postoperative inotropic support, atrial fibrillation, hospital, and mortality between the two groups. In adult cardiac surgery, myocardial protection used with the del Nido or conventional cardioplegia solution yield similar short-term clinical outcomes.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "33281072",
+      "title": "Myocardial Protection in Adult Cardiac Surgery With del Nido Versus Blood Cardioplegia: A Systematic Review and Meta-Analysis.",
+      "journal": "Heart, lung & circulation",
+      "date": "2020-12-17",
+      "authors": [
+        "Misra S",
+        "Bellapukonda S."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Myocardial protection in adult cardiac surgery is commonly achieved with either multidose blood cardioplegia or single-dose del Nido crystalloid cardioplegia.<h4>Aim</h4>The aim of this systematic review and meta-analysis was to compare the outcomes of del Nido cardioplegia versus blood cardioplegia in adult cardiac surgery.<h4>Method</h4>All English-language articles were searched in MEDLINE (PubMed), the Cochrane Central Register of Controlled Trials (CENTRAL), and Google Scholar up to March 2020, to identify randomised control trials, prospective observational studies, and retrospective analyses (with or without propensity matching) reporting any or all of the primary and secondary endpoints. The primary endpoint was all-cause mortality. Secondary endpoints included cardiopulmonary bypass (CPB) and aortic cross-clamp (AoX) time; cardioplegia volume; need for defibrillation after AoX release; intraoperative glucose; postoperative myocardial enzyme release; postoperative left ventricular ejection fraction (LVEF); incidence of postoperative acute kidney injury (AKI), atrial fibrillation (AF), stroke, and low cardiac output syndrome (LCOS); postoperative blood transfusion; duration of mechanical ventilation; and length of intensive care unit (ICU) and hospital stay.<h4>Results</h4>Twenty-nine (29) studies were included. There was no difference in the primary outcome of mortality between the two groups (odds ratio [OR], 1.18; 95% confidence interval [CI], 0.82-1.72 [p=0.37]). del Nido cardioplegia was associated with significantly shorter CPB (mean difference [MD], -7.42 minutes; 95% CI, -12.53 to -2.31 [p=0.004]) and AoX times (MD, -6.39 minutes; 95% CI, -10.30 to -2.48 [p=0.001]), and lower cardioplegia volumes. Significantly fewer patients required defibrillation after AoX release in the del Nido group. Intraoperative glucose homeostasis was better preserved in the del Nido group. Postoperative cardiac troponin T release and the number of patients needing transfusions were less in the del Nido group. No differences were seen in postoperative LVEF, or in the incidence of AKI, stroke, AF, and LCOS. Duration of mechanical ventilation, and length of ICU and hospital stay were similar.<h4>Conclusions</h4>Although this meta-analysis failed to find any mortality benefits with del Nido cardioplegia, significant benefits were seen in a number of intraoperative and postoperative variables. del Nido cardioplegia is a safe and favourable alternative to blood cardioplegia in adult cardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "31347414",
+      "title": "A Systematic Review and Meta-Analysis of del Nido Versus Conventional Cardioplegia in Adult Cardiac Surgery.",
+      "journal": "Innovations (Philadelphia, Pa.)",
+      "date": "2019-07-26",
+      "authors": [
+        "An KR",
+        "Yanagawa B."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Objective</h4>Del Nido cardioplegia (DC) has been used extensively in pediatric cardiac surgery but the efficacy and safety in adults remains uncertain. Our objective was to perform a systematic review and meta-analysis comparing DC and blood cardioplegia (BC) in our primary endpoint of 30-day or in-hospital mortality as well as other efficacy and safety endpoints.<h4>Methods</h4>Both MEDLINE and EMBASE were searched from 1996 to 2017 for studies comparing DC and BC. Data were extracted by 2 independent investigators and aggregated in a random effects model.<h4>Results</h4>One randomized controlled trial (<i>n</i> = 89), 7 adjusted (<i>n</i> = 1,104), and 5 unadjusted observational studies (<i>n</i> = 717) were included. There was no difference in in-hospital mortality between DC and BC (relative risk:0.67, 95% confidence interval [CI]: 0.22, 2.07; <i>P</i> = 0.49). DC reduced cardioplegia volume requirements (mean difference [MD]:-1.1 L, 95% CI, -1.6, -0.6; <i>P</i> < 0.0001), aortic cross-clamp time (MD: -8 minutes, 95% CI, -12, -3; <i>P</i> = 0.0004), and cardiopulmonary bypass (CPB) times (MD: -8 minutes, 95% CI, -14, -3; <i>P</i> = 0.03). DC reduced troponin release (standardized MD: -0.3, 95% CI, -0.5, -0.1; <i>P</i> = 0.001). In-hospital outcomes of stroke, atrial fibrillation, acute kidney injury/dialysis, low cardiac output state, blood transfusion, reoperation rate, postoperative left ventricular EF, intensive care unit length of stay (LOS), and in-hospital LOS were comparable between groups.<h4>Conclusions</h4>DC is a safe alternative to BC in routine adult cardiac surgery. Its use is associated with reduction in CPB and aortic cross-clamp times and may potentially offer improved myocardial protection.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "32420811",
+      "title": "Comparison of outcomes of the use of Del Nido and St. Thomas cardioplegia in adult and paediatric cardiac surgery: a systematic review and meta-analysis.",
+      "journal": "Perfusion",
+      "date": "2020-05-18",
+      "authors": [
+        "Ler A",
+        "Kofidis T."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>In recent years, the use of del Nido cardioplegia, initially intended for paediatric cardiac surgery, has been extended to adult cardiac surgery in many institutions. Our aim was thus to compare the outcomes of the use of del Nido cardioplegia with that of conventional cardioplegia and discuss its role in both adult and paediatric cardiac surgery.<h4>Method</h4>A systematic literature search was conducted in August 2019 on Medline (via PubMed), Embase and Cochrane electronic databases according to the Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines. Any retrospective studies and randomised controlled trials that reported findings comparing the outcomes of the use of del Nido cardioplegia with that of St. Thomas cardioplegia were included.<h4>Results</h4>We observed shorter aortic cross-clamp time (mean difference: -15.18, confidence interval: -27.21 to -3.15, p = 0.01) and cardiopulmonary bypass time (mean difference: -13.52, confidence interval: -20.64 to -6.39, p = 0.0002) associated with the use of del Nido cardioplegia in adult cardiac surgery as compared to St. Thomas cardioplegia. Defibrillation rates were significantly lower in patients who had been given del Nido cardioplegia, in both adult (relative risk: 0.28, confidence interval: 0.12 to 0.64, p = 0.003) and paediatric patients (relative risk: 0.25, confidence interval: 0.08 to 0.79, p = 0.02).<h4>Conclusion</h4>Del Nido cardioplegia may be a viable alternative to the use of St. Thomas cardioplegia in both adult and paediatric patients, providing similar postoperative outcomes while also affording the additional advantage of shorter aortic cross-clamp time and cardiopulmonary bypass time (in adult cardiac surgery) and decreased rates of defibrillation (in both adult and paediatric cardiac surgery).",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "34263684",
+      "title": "Del Nido cardioplegia for myocardial protection in adult cardiac surgery: a systematic review and update meta-analysis.",
+      "journal": "Perfusion",
+      "date": "2021-07-15",
+      "authors": [
+        "Zhai K",
+        "Li Y."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Objective</h4>Although the application of del Nido cardioplegia solution (DNC) in adult cardiac surgery is accumulating, the feasibility and safety of this myocardial protection strategy in adults remains controversial. We aimed to update our previous meta-analysis to determine the myocardial protective effect of DNC versus conventional cardioplegia (CC) in adult cardiac surgery.<h4>Methods</h4>A comprehensive literature search was performed using PubMed, EMBASE, the Cochrane Library, and International Clinical Trials Registry Platform databases through November 2020.<h4>Results</h4>Thirty-seven observational studies and four randomized controlled trials (RCTs) including 21,779 patients were identified. The DNC group was associated with decreased postoperative cardiac enzymes [troponin T (cTnT) and creatine kinase-MB (CK-MB)] [standardized mean differences (SMD): -0.59, 95% confidence interval (CI): -0.99 to -0.19, p = 0.004], cardiopulmonary bypass (CPB) time (MD: -9.31, 95% CI: -13.10 to -5.51, p < 0.00001), aortic cross-clamp (ACC) time (MD: -7.20, 95% CI: -10.31 to -4.09, p < 0.00001), and cardioplegia volume (SMD: -1.95, 95% CI: -2.46 to -1.44, p < 0.00001). Intraoperative defibrillation requirement was less in the DNC group [relative risk (RR): 0.50, 95% CI: 0.33 to 0.75, p = 0.0007]. The pooled analysis revealed no significant difference in operative mortality among the patients assigned to DNC and those undergoing CC.<h4>Conclusion</h4>In adult cardiac surgery, compared to CC, myocardial protection used with DNC yield similar or better short-term clinical outcomes. More high-quality trials and RCTs reflecting long-term follow-up morbidity and mortality are required in the future to confirm these findings.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "38909234",
+      "title": "Del Nido cardioplegia versus cold blood cardioplegia in adult cardiac surgery: a meta-analysis of randomized clinical trials.",
+      "journal": "Journal of cardiothoracic surgery",
+      "date": "2024-06-22",
+      "authors": [
+        "Li C",
+        "Tang Y."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Objective Systematic evaluation of the safety of del Nido cardioplegia compared to cold blood cardioplegia in adult cardiac surgery. Methods We systematically searched PubMed, EMbase, The Cochrane Library and ClinicalTrials.gov for randomized clinical trials (published by 14 January 2024) comparing del Nido cardioplegia to cold blood cardioplegia in adult. Our main endpoints were myocardial injury markers and clinical outcomes. We assessed pooled data by use of a random-effects model or a fixed-effects model. Results A total of 10 studies were identified, incorporating 889 patients who received del Nido cardioplegia and 907 patients who received cold blood cardioplegia. The meta-analysis results showed that compared with the cold blood cardioplegia, the del Nido cardioplegia had less volume of cardioplegia, higher rate of spontaneous rhythm recovery after cross clamp release, lower levels of postoperative cardiac troponin T and creatinine kinase-myocardial band, all of which were statistically significant. However, there was no statistically significant difference in postoperative troponin I and postoperative left ventricular ejection fraction. The clinical outcomes including mechanical ventilation time, intensive care unit stay time, hospital stay time, postoperative stroke, postoperative new-onset atrial fibrillation, postoperative heart failure requiring intra-aortic balloon pump mechanical circulation support, and in-hospital mortality of both are comparable. Conclusion Existing evidence suggests that del Nido cardioplegia reduced volume of cardioplegia administration and attempts of defibrillation. The superior postoperative results in CTnT and CK-MB may provide a direction for further research on improvement of the composition of cardioplegia. Visual Abstract Supplementary Information The online version contains supplementary material available at 10.1186/s13019-024-02846-0. Results Study selection and baseline characteristics A total of 4896 relevant literature were obtained in the initial examination, and after layer by layer screening, 10 RCT studies [ 4 , 9 – 17 ] were finally included, with a total of 1796 adult patients, including 889 patients in the DNC group and 907 patients in the CBC group. The literature screening process and results are shown in Fig. 1 . The basic characteristics of the included studies are shown in Table 1 . Table 1 Characteristics of included studies Author &amp; year Country Study period Simple ( N ) Gender (Male, N ) Mean age (year) Operation procedure Hypertension ( N ) DNC/CBC Diabetes ( N ) DNC/CBC Clinical outcome DNC CBC DNC CBC Garcia-Suarez 2022 [ 16 ] Spain 2018.06-2019.09 474 143 148 65.60 ± 11.94 65.30 ± 11.93 Mix 147/151 17/21 ⑵⑶⑷⑹⑻⑼⑽⑾⑿⒀⒁⒂ Zhang 2022 [ 17 ] China 2021.01-2021.09 133 37 36 54.50 ± 7.21 56.20 ± 6.71 Mix 19/18 NA ⑴⑵⑶⑷⑸⑺⑻⑼⑽⑿ Demir 2022 [ 15 ] Turkey 2019.07-2021.02 213 79 88 60.56 ± 10.24 61.07 ± 9.36 CABG 61/66 47/38 ⑿⒀⒁⒂ Moktan Lama 2021 [ 13 ] Nepal 2018.05-2019.09 90 36 38 59.98 ± 8.96 57.51 ± 9.71 CABG 16/19 15/20 ⑴⑵⑶⑸⑺⑻⑼⑽⑾⒂ Urcun 2021 [ 14 ] Turkey 2017.01-2020.01 300 114 126 57.64 ± 12.66 61.78 ± 11.33 CABG 72/60 45/27 ⑵⑶⑹⑺⑻⑼⑽⑾⑿⒁⒂ Gunaydin 2020 [ 12 ] USA 2017.01-2019.06 220 61 72 71.00 ± 8.00 73.00 ± 10.00 CABG 83/92 72/80 ⑴⑶⑻⑼⑽⑾⑿⒁⒂ Kirisci 2020 [ 11 ] Turkey 2019.07-2020.01 60 20 22 59.03 ± 11.58 62.00 ± 11.53 CABG 14/13 12/14 ⑴⑵⑶⑷⑽⑾⑿⒂ Sanetra 2019 [ 4 ] Poland 2016.06-2018.06 150 48 38 62.53 ± 12.69 63.83 ± 10.99 AVR 50/51 13/16 ⑴⑵⑶⑷⑹⑺⑻⑾⑿⒀⒂ Kantathut 2019 [ 10 ] Thailand 2017.02-2017.11 89 24 32 64.85 ± 9.96 65.94 ± 9.96 Mix 36/36 17/15 ⑴⑵⑶⑷⑹⑺⑻⑽⑿⒀⒁⒂ Ad 2018 [ 9 ] USA 2015.02-2016.04 89 40 31 65.30 ± 7.90 65.10 ± 9.10 CABG/VS 35/32 22/15 ⑴⑵⑶⑷⑸⒀ DNC: del Nido cardioplegia, CBC: cold blood cardioplegia, Mix: mix operation, CABG: coronary artery bypass grafting, AVR: atrial valve replacement, VS: valve surgery, ⑴Volume of cardioplegia; ⑵Cardiopulmonary bypass time; ⑶Aortic cross-clamp time; ⑷ Ventricular fibrillation after aortic cross-clamp removal; ⑸ 24 h postoperative Troponin I levels; ⑹ Troponin T levels at 24 h after surgery; ⑺24 h postoperative Creatinine Kinase-Myocardial Band levels; ⑻Postoperative left ventricular ejection fraction; ⑼Mechanical ventilation time; ⑽ Intensive care unit stay time; ⑾Hospital stay time; ⑿Postoperative new-onset atrial fibrillation; ⒀Postoperative stroke; ⒁ postoperative heart failure requiring intra-aortic balloon pump mechanical circulation support; ⒂In-hospital mortality Fig. 1 PRISMA flowchart of studies included in the meta-analysis The 10 RCT studies were all published between 2018 and 2023 (Table 1 ). Mean trial duration was 18 months (range 9 months to 36 months). More than half of patients underwent Coronary artery bypass grafting (CABG) surgery and three included studies focusing on mixed adult cardiac surgery procedures, one trail focused on aortic valve replacement (AVR) surgery, and one trail included adult patients who underwent CABG or valve surgery (VS) surgery. All 10 randomized trials were single-center, one study was stopped early [ 9 ], one study was s finished with a delay due to the coronavirus pandemic situation [ 15 ]. 3 were registered in Clinicaltrials.gov [ 4 , 9 , 16 ], and 1 was registered in Thai clinical trial registry [ 10 ], 5 trials reported detailed descriptions of methods for generating random sequence [ 9 , 12 , 14 – 16 ], 3 trials specified blind method for participants [ 4 , 12 , 16 ]. The results of bias risk assessment of included studies are shown in Supplementary Figures S1 . Conclusion Existing evidence suggests that del Nido cardioplegia reduced volume of cardioplegia administration and attempts of defibrillation. The superior postoperative results in CTnT and CK-MB may provide a direction for further research on improvement of the composition of cardioplegia. Limited by the number and quality of included studies, the conclusions of this study need to be verified by multi-center randomized controlled studies with higher quality and large samples.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "35225070",
+      "title": "Network meta-analysis comparing blood cardioplegia, Del Nido cardioplegia and custodiol cardioplegia in minimally invasive cardiac surgery.",
+      "journal": "Perfusion",
+      "date": "2022-02-27",
+      "authors": [
+        "Chan J",
+        "Vohra HA."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Introduction</h4>Minimally invasive cardiac surgery has been evolving, with the intention of reducing surgical trauma, improve cosmesis and patient satisfaction. Single dose, crystalloid cardioplegia such as Del Nido cardioplegia and Custoidol solution have been increasingly used to reduce the interruption from repeating cardioplegia dosing to minimise the cardiopulmonary bypass and cross clamp time. However, the best cardioplegia for myocardial protection in adult minimally invasive cardiac surgery remains controversial. We aimed to conduct a meta-analysis to analyse the current evidence in the literature.<h4>Method</h4>A systematic review and meta-analysis was performed following the updated 2020 PRISMA guideline. Articles published in the five major electronic databases up 1st of April 2021 were identified and reviewed. The primary outcome was in-hospital or 30-day mortality. Traditional pairwise and Bayesian network meta-analyses were conducted.<h4>Results</h4>Nine articles were included in this study. The use of Del Nido cardioplegia was associated with a lower volume of cardioplegia used (Del Nido vs Blood, 1105.62 mL+/-123.47 vs 2569.46 mL+/-1515.52, <i>p</i><0.001), cardiopulmonary bypass (Del Nido vs Custoidol vs Blood: 91.67+/-14.78 vs 138.05 +/- 21.30 vs 119.38+/-26.91 minutes, <i>p</i><0.001) and cross-clamp time (Del Nido vs Custoidol vs Blood: 74.99+/-18.55 vs 82.01 +/- 17.28 vs 93.66+/-8.88 minutes, <i>p</i> < 0.001). No differences were observed in the incidence of in-hospital/30-day mortality rate, new onset of atrial fibrillation and stroke. Ranking analysis showed the Custoidol solution has the highest probability to be the first ranked cardioplegia.<h4>Conclusion</h4>No differences were found between blood and crystalloid cardioplegia in adult minimally invasive cardiac surgery in several clinical outcomes. The cardioplegia of choice in minimally invasive cardiac surgery remains the surgeons' decision and preference.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "34600812",
+      "title": "Myocardial Protection With Different Cardioplegia in Adult Cardiac Surgery: A Network Meta-Analysis.",
+      "journal": "Heart, lung & circulation",
+      "date": "2021-09-30",
+      "authors": [
+        "Zhou K",
+        "Song G."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Aim</h4>Cardioplegia is one of the most studied fields of myocardial protection during cardiac surgery. However, the most effective cardioplegia for protection in adult cardiac surgery remains unknown.<h4>Method</h4>PubMed and other databases were searched and a network meta-analysis with a Bayesian framework was performed. The primary outcomes were the serum concentrations of creatine kinase-myocardial band (CK-MB), cardiac troponin I, and cardiac troponin T (cTnT) at four time points. Several clinical outcomes were evaluated, including low output syndrome, myocardial infarction, and risk of early mortality. All studies that involved crystalloid cardioplegia without reference to St Thomas cardioplegia or histidine-tryptophan-ketoglutarate solution, and if the cardioplegia was used at a temperature between 4°C and 16°C were classified as cold crystalloid (cCCP) or cold blood cBCP cardioplegia. Warm blood cardioplegia (wBCP) was defined as the blood cardioplegia used at a temperature between 32°C and 37°C.<h4>Results</h4>Forty-seven (47) studies with a total of 4,175 patients were included. Seven (7) cardioplegia solutions were used, including cold CCP or BCP, del Nido solution, histidine-tryptophan-ketoglutarate solution, St Thomas cardioplegia, wBCP and warm terminal blood cardioplegia (wtBCP). The serum concentrations of CK-MB at 2 hours (mean difference [MD], 213.56; 95% confidence interval [CI], -25.79 to -1.59) and cTnT at 24 hours of wBCP (MD, -1.50; 95% CI, -2.69 to -0.31) were significantly lower than that of cCCP. There were no significant differences in other outcomes of these six cardioplegia solutions, when compared to cCCP.<h4>Conclusions</h4>The seven cardioplegia solutions analysed had similar myocardial protective effects after adult cardiac surgery, although wBCP had a lower CK-MB at 2 hours and lower cTnT at 24 hours.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "37409597",
+      "title": "del Nido versus blood cardioplegia in adult cardiac surgery: a meta-analysis.",
+      "journal": "Journal of cardiovascular medicine (Hagerstown, Md.)",
+      "date": "2023-06-26",
+      "authors": [
+        "Malvindi PG",
+        "Di Eusanio M."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Aims</h4>Initially developed for myocardial protection in immature cardiomyocytes, del Nido cardioplegia has been increasingly used over the past decade in adult patients. Our aim is to analyse the results from randomized controlled trials and observational studies comparing early mortality and postoperative troponin release in patients who underwent cardiac surgery using del Nido solution and blood cardioplegia.<h4>Methods</h4>A literature search was performed through three online databases between January 2010 and August 2022. Clinical studies providing early mortality and/or postoperative troponin evaluation were included. A random-effects meta-analysis with a generalized linear mixed model, incorporating random study effects, was implemented to compare the two groups.<h4>Results</h4>Forty-two articles were included in the final analysis for a total of 11 832 patients, 5926 of whom received del Nido solution and 5906 received blood cardioplegia. del Nido and blood cardioplegia populations had comparable age, gender distribution, history of hypertension and diabetes mellitus. There was no difference in early mortality between the two groups. There was a trend towards lower 24 h [mean difference -0.20; 95% confidence interval (CI) -0.40 to 0.00; I2 = 89%; P = 0.056] and lower peak postoperative troponin levels (mean difference -0.10; 95% CI -0.21 to 0.01; I2 = 0.87; P = 0.087) in the del Nido group.<h4>Conclusion</h4>del Nido cardioplegia can be safely used in adult cardiac surgery. The use of del Nido solution was associated with similar results in terms of early mortality and postoperative troponin release when compared with blood cardioplegia myocardial protection.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 478.0
+    },
+    {
+      "pmid": "39252294",
+      "title": "Recent advances in Del Nido cardioplegia: A comprehensive analysis of randomized clinical trials in adult cardiac surgery.",
+      "journal": "Medicine",
+      "date": "2024-09-01",
+      "authors": [
+        "Ahmed M",
+        "Asghar MS."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Background: Del Nido cardioplegia (DNC) has extensively been used for pediatric population undergoing cardiac surgery. However, its use in adult cardiac surgeries have been limited thus, its benefits are not yet fully known. This analysis was performed to evaluate the impact of DNC versus any other type of cardioplegia in adult patients who are undergoing cardiac surgery. Methods: We systematically searched PubMed, Cochrane Library, and Scopus from database inception till March 2023, and moderate to high-quality randomized controlled trials were included which compared DNC to other cardioplegia. The primary outcome was postoperative stroke and/or transient ischemic attack (TIA). Secondary outcomes included spontaneous rhythm return, postoperative myocardial infarction, all-cause mortality, postoperative atrial fibrillation, defibrillation after coronary reperfusion, postoperative intra-aortic balloon pump, postoperative kidney injury, postoperative low cardiac output syndrome, inotropic support, cardiopulmonary bypass time, cross-clamp time, blood transfusion, cardioplegia volume, hospital stay, intensive care unit stay, mechanical ventilation stay, postoperative left ventricular ejection fraction, and cardiac markers. Results: In this meta-analysis, 13 studies were included with a patient population of 2207. Stroke and/or TIA studies (risk ratio [RR]: 0.54, 95% CI [0.29, 1.00]) and all-cause mortality studies (RR: 1.30, 95% CI [0.66, 2.56]) were insignificant. From the secondary outcomes, spontaneous rhythm return (RR: 1.58, 95% CI [1.02, 2.45]), defibrillation after coronary reperfusion (RR: 0.49, 95% CI [0.30, 0.79]), inotropic support (RR: 0.70, 95% CI [0.57, 0.85]), composite risk of stroke and/or TIA and/or acute kidney injury and mortality (RR: 0.72, 95% CI [0.53, 0.99]), cross-clamp time (mean difference [MD]: −6.01, 95% CI [−11.14, −0.89]), blood transfusion (RR: 0.73, 95% CI [0.60, 0.90]), cardioplegia volume (MD: −537.17, 95% CI [−758.89, −315.45]), troponin T (MD: −1.71, 95% CI [−2.11, −1.32]), creatine phosphokinase-MB (MD: −2.96, 95% CI [−5.84, −0.07]) were significant. Whereas all other secondary outcomes were found to be insignificant. Conclusion: No significant difference was observed between patients undergoing Del Nido administration in comparison to other cardioplegia solutions for the primary outcome, stroke or/and TIA. 3. Results 3.1. Study selection and characteristics The literature search yielded 5241 results. After carefully screening and excluding the duplicate articles, we were left with 13 studies which were included in the final meta-analysis. The results of the literature search are summarized in the form of a Preferred Reporting Items for Systematic Review and Meta-analysis flowchart (Fig. 1 ). The number of patients from these 13 studies totaled 2207 (1068 Del Nido and 1139 control). The mean age of the patients in Del Nido group was 61.23 years, and 61 years in the control group. The baseline characteristics of the patients included in each study are presented in Table 1 . Studies that included both valve and/or coronary artery bypass grafting (CABG) surgeries were by Ad, Demir, Jiang, and Rizvi. Studies focused exclusively on valve surgeries were by Gunyadin and Santera. Studies that included only CABG surgeries were by Ucak, Urcun, Kirişci, and Lama. Finally, studies that involved mixed procedures, including valve, CABG, and other surgeries, were by Garcia-Suarez, Mehrabanian, and Zhang. Table 1 General characteristics of included studies and patients. Study Publication year Journal Patients Del Nido/Control Control Procedure type Timing of Cardioplegia Route of Cardioplegia Temperature Del Nido °C Temperature Control °C Ad et al [ 12 ] 2017 J Thorac Cardiovasc Surg 48/41 Whole blood Valve/CABG Intermittent Unknown 6–10 8–10 Garcia-Suarez et al 2022 J Thorac Cardiovasc Surg 232/239 Whole blood Valve/CABG/Aortic/Myectomy Intermittent Antegrade/retrograde 4 4 Gunyadin et al 2020 Innovations (Phila) 95/96 Custodiol Valve Intermittent Unknown 4–8 4–8 Demir et al [ 22 ] 2022 Niger J Clin Pract 106/107 Crystalloid with blood Valve/CABG Unknown Unknown 4–10 4–10 Mehrabanian et al 2018 Iran Red Crescent Med J 21/19 Custodiol CABG/AVR/MVR Unknown Antegrade Unknown Unknown Santera et al 2020 J Thorac Cardiovasc Surg 75/75 Cold blood Valve Unknown Unknown Unknown Unknown Ucak et al 2018 Ann Thorac Cardiovasc Surg 112/185 Warm blood CABG Intermittent Antegrade/retrograde 4 33–34 Urcun et al 2021 Heart Surg Forum 150/150 Whole blood CABG Intermittent Antegrade/retrograde 4 Unknown Jiang et al 2019 Zhonghua Yi Xue Za Zhi 44/40 St. Thomas’ hospital Valve/CABG Unknown Unknown Unknown Unknown Rizvi et al 2022 Pak J Med Sci 40/40 St. Thomas’ hospital Valve/CABG Intermittent Unknown 4 4 Kirişci et al 2020 Turk J Med Sci 30/30 Cold blood CABG Intermittent Antegrade 4 4 Moktan Lama et al 2021 Perfusion 45/45 St. Thomas’ hospital CABG Unknown Antegrade/retrograde 4–6 4–6 Zhang et al 2022 Ann Thorac Cardiovasc Surg 65/68 St. Thomas’ hospital CABG/AVR/MVR/MVP Unknown Antegrade 4–6 10–12 AVR = aortic valve replacement, CABG = coronary artery bypass graft, MVR = mitral valve replacement, MVP = mitral valvuloplasty. Figure 1. Preferred Reporting Items for Systematic Review and Meta-analysis (PRISMA) flowchart.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 473.0
+    },
+    {
+      "pmid": "30095360",
+      "title": "Cardioplegia practice in paediatric cardiac surgery: a UK &amp; Ireland survey.",
+      "journal": "Perfusion",
+      "date": "2018-08-10",
+      "authors": [
+        "Drury NE",
+        "Jones TJ."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Introduction: Many techniques are available for cardioplegic arrest in children, but there is a lack of late phase clinical trials to guide practice. We surveyed paediatric cardiac surgeons and perfusionists to establish current practice and willingness to change within a clinical trial. Methods: An online survey was sent to all consultant paediatric cardiac surgeons and chief perfusionists in paediatric centres in the UK and Ireland. Information was sought on cardioplegia type, composition, temperature, topical cooling, dosing for induction and maintenance, interval between doses, whether practice changed with patient age or complexity and whether respondents would be willing and able to use different cardioplegia solutions within a randomised trial. Results: Responses were obtained from 32 (78.0%) surgeons and 12 (100%) perfusionists. Twenty-seven (84.4%) surgeons use blood cardioplegia in infants, with St. Thomas’ Harefield preparation the most popular (19, 59.4%), used routinely in eight (66.7%) centres. Twenty-two (68.8%) administer at 4-6°C, 18 (56.3%) use topical cooling, 18 (56.3%) give 30 ml/kg induction and 15 ml/kg maintenance, with 23 (71.9%) re-dosing every 20-25 minutes. Thirty (93.8%) surgeons were open to randomising patients in a trial, with del Nido (29, 90.6%) the most popular. Conclusions: This survey demonstrates heterogeneity in cardioplegia practice. Whilst most surgeons use blood cardioplegia, there is variation in type, temperature, topical cooling, dosing and intervals. Combined with a lack of evidence from late phase trials, our findings support the presence of clinical equipoise. Surgeons are willing to change practice, suggesting that a pragmatic, multi-centre, randomised, controlled trial of cardioplegia in children is feasible. Results The survey was completed by 44 of 52 (84.6%) healthcare professionals contacted, 32 of 41 (78.0%) consultant surgeons and all 12 (100%) chief perfusionists. Of the 32 surgeons who responded, 27 (84.4%) use blood cardioplegia in infants, with St. Thomas’ Harefield preparation in a 4:1 blood-to-crystalloid ratio being the most popular (19, 59.4%) and used routinely in eight (66.7%) centres ( Figure 1 ). Five (15.6%) surgeons from two centres use bespoke institutional depolarising blood cardioplegia solutions; no centres currently use del Nido solution as it has not been available commercially in the UK or Ireland. Two (6.3%) surgeons who use blood cardioplegia in older children switch to crystalloid cardioplegia in neonates; conversely, three (9.4%) surgeons who use crystalloid in infants change to blood in older children. No surgeons make significant changes to their cardioplegia strategy depending on the expected complexity of the repair alone. Figure 1. Types of cardioplegia solution used in infants. Variations in the techniques of surgeons responding to the survey are shown in Table 1 . The preferred temperature of administration is 4-6°C for 22 (68.8%) surgeons, whether using a blood or crystalloid solution; additional topical cooling of the heart is employed routinely by 14 (43.8%) and selectively by four (12.5%), with only one (3.1%) considering giving a warm terminal ‘hot shot’ dose in long cross-clamp times. All surgeons administer antegrade cardioplegia, with two (6.3%) using a combined antegrade and retrograde approach in selected cases. The majority (18, 56.3%) give an induction dose of 30 ml/kg and maintenance of 15 ml/kg, with six (18.8%) opting for an induction of 20-25 ml/kg and maintenance of 10 ml/kg. The usual/preferred interval between doses is every 20-25 minutes for 23 (71.9%) and 30-35 minutes for eight (25.0%). The main indication for re-dosing is time elapsed (28, 87.5%), even in the absence of overt electromechanical activity; one surgeon (3.1%) uses a single dose unless cardiac activity becomes disruptive to the repair. Table 1. Variations in the techniques used by responding surgeons (n=32). Characteristic n (%) Temperature of cardioplegia &lt;4°C 2 (6.3%) 4-6°C 22 (68.8%) 7-9°C 5 (15.6%) 10-12°C 1 (3.1%) &gt;12°C 2 (6.3%) Topical cooling of heart Routine 14 (43.8%) Selective 4 (12.5%) No 14 (43.8%) Terminal warm dose ‘hot shot’ No 31 (96.9%) Selected cases 1 (3.1%) Route of delivery Antegrade only 30 (93.8%) Combined in selected cases 2 (6.3%) Change practice by patient age No change 27 (84.4%) Switch to crystalloid in neonate 2 (6.3%) Switch to blood in older child 3 (9.4%) Induction dose 10 ml/kg 1 (3.1%) 20 ml/kg 7 (21.9%) 25 ml/kg 2 (6.3%) 30 ml/kg 18 (56.3%) Determined by BSA 4 (12.5%) Maintenance dose ⩽10 ml/kg 2 (6.3%) 15 ml/kg 6 (18.8%) 20 ml/kg 18 (56.3%) 25 ml/kg 2 (6.3%) Determined by BSA 4 (12.5%) Indication for maintenance dose Time since last dose 28 (87.5%) Electromechanical activity 1 (3.1%) Depends on case / other 3 (9.4%) Interval between doses 20-25 minutes 23 (71.9%) 30-35 minutes 8 (25.0%) Usually single dose 1 (3.1%) BSA: body surface area. In all centres, cardioplegia is administered by the perfusionist, using a roller pump although, in one centre, crystalloid cardioplegia is given by the anaesthetist, using a handheld syringe/pressure bag, when required. A single-pass system is used by eight (66.7%) centres, recirculating by one (8.3%) and either, depending on the cardioplegia type, by one (8.3%). Perfusionists reported that no additional equipment other than disposables would be required to deliver alternative cardioplegia types at every centre. Within the context of a clinical trial, 29 (90.6%) surgeons were willing to randomise to del Nido cardioplegia; of these, concerns were raised by five (17.2%) regarding patients with an expected short aortic cross-clamp time, such as atrial or ventricular septal defect repair, by four (13.8%) for use in neonates and by two (6.9%) for those in whom the need to re-clamp the aorta was anticipated. The acceptable interval between doses with del Nido cardioplegia, assuming no electromechanical activity, was up to 60 minutes for 17 (58.6%) surgeons, up to 90 minutes for 10 (34.5%) and up to 120 minutes for one (3.4%), with one not responding. Unsurprisingly, St. Thomas’ Harefield preparation was acceptable to 24 (75.0%) surgeons, most of whom currently use it routinely; two (6.3%) others expressed concern over its use in neonates due to its higher viscosity. St. Thomas’ Hospital crystalloid solution No. 2 (20, 62.5%) and Custodiol HTK (19, 59.3%) were less popular, with concerns raised over the volume of crystalloid required, perceived inferior myocardial protection and that both would constitute a ‘backwards step’ from blood cardioplegia. The greatest combined acceptability was for St. Thomas’ Harefield preparation and del Nido solution, with 24 (75.0%) surgeons from 11 of the 12 centres willing to randomise patients to either option ( Table 2 ). Only two (6.3%) respondents were not open to changing their practice within a trial setting. Table 2. Willingness of responding surgeons to use different types of cardioplegia within a clinical trial (n=32). Cardioplegia types n (%) Individual solutions del Nido 29 (90.6%) St. Thomas’ blood (Harefield preparation) 24 (75.0%) St. Thomas’ Hospital crystalloid No. 2 20 (62.5%) Custodiol HTK 19 (59.3%) Combinations del Nido + St. Thomas’ (Harefield) 24 (75.0%) del Nido + St. Thomas’ crystalloid No. 2 18 (56.3%) del Nido + Custodiol HTK 18 (56.3%) St. Thomas’ (Harefield) + St. Thomas crystalloid No. 2 17 (53.1%) St. Thomas’ (Harefield) + Custodiol HTK 14 (43.8%) St. Thomas crystalloid No. 2 + Custodiol HTK 13 (40.6%) Not willing to change practice 2 (6.3%) HTK: histidine-tryptophan-ketoglutarate.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 438.0
+    },
+    {
+      "pmid": "39797758",
+      "title": "Effect of del Nido cardioplegia in patients with reduced left ventricular ejection fraction: A meta-analysis.",
+      "journal": "Perfusion",
+      "date": "2025-01-11",
+      "authors": [
+        "Yamashita Y",
+        "Ramlawi B."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "PurposeResearch on the safety and efficacy of del Nido cardioplegia in adult patients with reduced left ventricular ejection fraction (LVEF) is limited. We evaluated the effect of del Nido cardioplegia on early outcomes of cardiac surgery in this cohort.MethodsPubMed, Scopus, and the Cochrane Central Register of Controlled Trials were searched through August 2024 to conduct a meta-analysis comparing del Nido to other cardioplegia in adult patients with reduced LVEF (≤50%). Primary endpoint was early mortality, and secondary endpoints included morbidities, aortic cross-clamp time and postoperative LVEF before discharge. A random-effect model was used to estimate the pooled effect size.ResultsSeven studies met our eligibility criteria, including three propensity score-matched studies with a total of 1160 patients. Conventional blood cardioplegia was used exclusively as a control solution in the included studies. The incidence of early mortality was similar between the del Nido and control groups, with a pooled odds ratio of 0.94 [95% confidence interval: 0.52; 1.71] (<i>p</i> = .822). Postoperative stroke (<i>p</i> = .680), renal failure (<i>p</i> = .832), atrial fibrillation (<i>p</i> = .412), and aortic cross-clamp time (<i>p</i> = .153) were also comparable between the two groups. Postoperative LVEF was significantly higher in the del Nido group compared to the control group, with a standardized mean difference of 0.52 [95% confidence interval: 0.07; 0.96] (<i>p</i> = .034).ConclusionsIn adult patients with reduced LVEF undergoing cardiac surgery, del Nido cardioplegia provides comparable mortality and morbidity rates compared to conventional blood cardioplegic solutions, with the potential to offer protective effects on myocardial function.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 433.0
+    },
+    {
+      "pmid": "36176979",
+      "title": "Comparative effects of different types of cardioplegia in cardiac surgery: A network meta-analysis.",
+      "journal": "Frontiers in cardiovascular medicine",
+      "date": "2022-09-13",
+      "authors": [
+        "Tan J",
+        "Du L."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Objective To compare the outcomes of four types of cardioplegia during cardiac surgery: del Nido (DN), blood cardioplegia (BC), histidine-tryptophan-ketoglutarate (HTK) and St. Thomas. Methods Randomized controlled trials (RCTs) and observational cohort studies from 2005 to 2021 were identified in PubMed, Embase, and Cochrane databases. Data were extracted for the primary endpoint of perioperative mortality as well as the following secondary endpoints: atrial fibrillation, renal failure, stroke, use of an intra-aortic balloon pump, re-exploration, intensive care unit stay and hospital stay. A network meta-analysis comparing all four types of cardioplegia was performed, as well as direct meta-analysis comparing pairs of cardioplegia types. Results Data were extracted from 18 RCTs and 49 observational cohort studies involving 18,191 adult patients (55 studies) and 1,634 children (12 studies). Among adult patients, risk of mortality was significantly higher for HTK (1.89, 95% CI 1.10, 3.52) and BC (RR 1.73, 95% CI 1.22, 2.79) than for DN. Risk of atrial fibrillation was significantly higher for BC (RR 1.41, 95% CI 1.09, 1.86) and DN (RR 1.51, 95% CI 1.15, 2.03) than for HTK. Among pediatric patients, no significant differences in endpoints were observed among the four types of cardioplegia. Conclusions This network meta-analysis suggests that among adult patients undergoing cardiac surgery, DN may be associated with lower perioperative mortality than HTK or BC, while risk of atrial fibrillation may be lower with HTK than with BC or DN. Keywords: cardiac surgery, cardiac protection, blood cardioplegia, del Nido, HTK, St. Thomas, network meta-analysis",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 398.0
+    },
+    {
+      "pmid": "40065513",
+      "title": "Buckberg versus Del Nido in isolated aortic valve replacement: a prospective, two-centre, randomized trial.",
+      "journal": "Interdisciplinary cardiovascular and thoracic surgery",
+      "date": "2025-03-01",
+      "authors": [
+        "Tauron-Ferrer M",
+        "Ginel AJ."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract OBJECTIVES Interest in Del Nido solution is increasing in adult cardiac surgery. This study compared Del Nido with Buckberg cardioplegia in patients undergoing isolated aortic valve replacement. METHODS A prospective, two-centre, randomized trial was conducted from July 2019 to August 2023, with adult patients undergoing first-time isolated aortic valve replacement, and were randomized to receive Buckberg (n = 159) or Del Nido (n = 152) solution. Primary end-point was Creatine Kinase and ultrasensitive Troponin T postoperative peak level. RESULTS A total of 311 patients were recruited. Total cardioplegia volume was higher in Del Nido group (1000 ml vs 374.5 ml, P &lt; 0.001). No differences were observed in peak Creatine Kinase or Troponin T levels (422 vs 407 U/L and 282 vs 258 ng/L for Buckberg and Del Nido, respectively) or during postoperative days 1–5. After cross-clamp removal, patients in Del Nido group showed higher rates of spontaneous rhythm (66.7% vs 43.1%, P &lt; 0.001) and less ventricular fibrillation requiring defibrillation (23.6% vs 49.7%, P &lt; 0.001). Peak intraoperative glucose levels (128 mg/dl vs 198 mg/dl, P &lt; 0.001) and insulin administration (18.1% vs 51.0%, P &lt; 0.001) were lower in the Del Nido group. No other differences were found. CONCLUSIONS No differences between Del Nido and Buckberg solutions were detected. Del Nido presents better intraoperative glycaemic control, higher spontaneous rhythm, less ventricular fibrillation requiring defibrillation after cross-clamp removal, and more comfortable surgical workflow due to less re-dose interruptions. CLINICAL REGISTRATION NUMBER EU-CTR number: 2018-002701-59. Keywords: cardioplegia, myocardial protection, Buckberg solution, Del Nido solution, aortic valve replacement",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 388.0
+    },
+    {
+      "pmid": "29246552",
+      "title": "The use of del Nido cardioplegia in adult cardiac surgery: A prospective randomized trial.",
+      "journal": "The Journal of thoracic and cardiovascular surgery",
+      "date": "2017-11-13",
+      "authors": [
+        "Ad N",
+        "Fitzgerald D."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Objectives</h4>The del Nido cardioplegia solution has been used extensively in congenital heart surgery for more than 20 years and more recently for adults. This randomized controlled trial examined whether expanding this technique to adult cardiac surgery confers benefits in surgical workflow and clinical outcome compared with blood-based cardioplegia.<h4>Methods</h4>Adult first-time coronary artery bypass grafting (CABG), valve, or CABG/valve surgery patients requiring cardiopulmonary bypass (CPB) were randomized to del Nido cardioplegia (n = 48) or whole blood cardioplegia (n = 41). Primary outcomes assessed myocardial preservation. Troponin I was measured at baseline, 2 hours after CPB termination, 12 and 24 hours after cardiovascular intensive care unit admission. Alpha was set at P < .001.<h4>Results</h4>Preoperative characteristics were similar between groups, including age, Society of Thoracic Surgeons risk score, CABG, and valve procedures. There was no significant difference on CPB time (97 vs 103 minutes; P = .288) or crossclamp time (70 vs 83 minutes; P = .018). The del Nido group showed higher return to spontaneous rhythm (97.7% vs 81.6%; P = .023) and fewer patients required inotropic support (65.1% vs 84.2%; P = .050), but did not reach statistical significance. Incidence of Society of Thoracic Surgeons-defined morbidity was low, with no strokes, myocardial infarctions, renal failure, or operative deaths. For del Nido group patients, troponin levels did not increase as much as for control patients (P = .040), but statistical significance was not reached.<h4>Conclusions</h4>Evidence from this study suggests del Nido cardioplegia use in routine adult cases may be safe, result in comparable clinical outcomes, and streamline surgical workflow. The trend for troponin should be investigated further because it may suggest superior myocardial protection with the del Nido solution.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 378.0
+    },
+    {
+      "pmid": "32111432",
+      "title": "Del Nido cardioplegia versus blood cardioplegia in adult aortic root surgery.",
+      "journal": "The Journal of thoracic and cardiovascular surgery",
+      "date": "2020-01-30",
+      "authors": [
+        "Lenoir M",
+        "Demers P."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Objective</h4>Del Nido cardioplegia solution offers prolonged cardiac protection with single-dose administration; this is particularly interesting for aortic root surgery. However, there is a scarcity of data supporting its safety in adults undergoing complex cardiac surgery, such as aortic root repair. We hypothesized that del Nido cardioplegia solution and blood cardioplegia solution provide equivalent safety during aortic root surgery.<h4>Methods</h4>Between January 2015 and June 2018, 283 consecutive patients undergoing the Ross procedure (204) and valve-sparing operation (79) with del Nido cardioplegia solution or blood cardioplegia solution were 1:1 propensity matched (110 aortic root surgery), and outcomes were compared. Clinical patient characteristics and data were extracted from our local database for valve-sparing operations and for Ross procedures.<h4>Results</h4>Preoperative characteristics were similar between del Nido cardioplegia solution and blood cardioplegia solution after propensity matching (mean age, 48.6 ± 1.5 years). Median postoperative creatine kinase MB isotype did not differ between del Nido cardioplegia solution and blood cardioplegia solution (48.9 [14.9-300] μg/L vs 51.2 [12.4-116] μg/L for blood cardioplegia solution [P = .1]), but there was a trend toward higher troponin T levels with del Nido cardioplegia solution (748 [221-5834] ng/L vs 710 [212-3332] ng/L for blood cardioplegia solution [P = .07]). In patients with myocardial ischemia longer than 180 minutes, median creatine kinase MB isotype was higher in del Nido cardioplegia solution (75.1 [59.3-300] μg/L than in blood cardioplegia solution 60.5 [16.5-116] μg/L [P = .01]). Aortic crossclamp and cardiopulmonary bypass times were shorter with del Nido cardioplegia solution (163 ± 5 vs 181 ± 5 minutes, P = .01 and 145 ± 4 vs 161 ± 4 minutes, respectively, P = .006). Return to spontaneous rhythm was more frequent in the del Nido cardioplegia solution group (52% [29/55] vs 27% [15/55], P = .006). There was no difference in inotropic or vasoactive agent use (P = .8). Postoperative left ventricle ejection fraction was similar (0.54 ± 0.09 vs 0.55 ± 0.08 for del Nido cardioplegia solution and blood cardioplegia solution, respectively; P = .4). There was no difference between groups for perioperative mortality and postoperative complications.<h4>Conclusions</h4>Del Nido cardioplegia solution can be used as an alternative to blood cardioplegia solution in adults undergoing complex aortic root surgery, providing comparable clinical outcomes and improved surgical workflow. However, del Nido cardioplegia solution seems to be associated with increased myocardial injury, especially with extended myocardial ischemic times, but this finding did not translate into adverse clinical events. Caution is warranted in adopting this cardioplegic solution in aortic interventions requiring long ischemic times, and further study is required to establish its exact role in complex cardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 378.0
+    },
+    {
+      "pmid": "30089762",
+      "title": "Comparison of Del Nido and Intermittent Warm Blood Cardioplegia in Coronary Artery Bypass Grafting Surgery.",
+      "journal": "Annals of thoracic and cardiovascular surgery : official journal of the Association of Thoracic and Cardiovascular Surgeons of Asia",
+      "date": "2018-08-09",
+      "authors": [
+        "Ucak HA",
+        "Uncu H."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Purpose: In this study, we aim to investigate the efficacy and clinical results of using Del Nido solution (DNS) in coronary artery bypass grafting (CABG) surgery by comparing with intermittent warm blood cardioplegia (IWBC). Methods: Between March 2017 and February 2018, 297 adult patients who underwent primary isolated CABG surgery with cardiopulmonary bypass (CPB) were included in the study. We used DNS in 112 patients and IWBC was used in 185 patients. We compared both the clinical and the laboratory results. Results: Aortic cross-clamp time, CPB time, and peak glucose level are lower with DNS. But we did not observe any meaningful difference of clinical results between two methods including postoperative myocardial enzyme release. Conclusion: Del Nido cardioplegia was developed for immature heart and pediatric surgery. But in our opinion, it is a good and useful alternative to CABG surgery with similar results to IWBC. Conclusion In conclusion, our clinical and laboratory outcomes in patients undergoing CABG surgery using DNS are quite satisfactory. The results of our study showed that DNS is as effective and usable as IWBC, which we have routinely used in our clinics for many years. In many respects, both methods are close to each other and yield no obvious superiority. This is a single-center study which focused on the clinical outcomes of the practice and its use in adult coronary surgery, with the limited number of surgical cases. It is not possible to form a general conclusion based solely on these results. Further studies on myocardial cells, especially at the molecular level, will provide more informative data on the future use of cardioplegic methods and the importance of heart surgeon. Our results are encouraging for further studies.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 378.0
+    },
+    {
+      "pmid": "33441080",
+      "title": "Effect of Del Nido cardioplegia on ventricular arrhythmias after cardiovascular surgery.",
+      "journal": "BMC cardiovascular disorders",
+      "date": "2021-01-13",
+      "authors": [
+        "Shu C",
+        "Zhang C."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract Background Del Nido cardioplegia (DNC) has been proven safe and effective in pediatric patients. However, the use of DNC in adult undergoing cardiovascular surgery lacks support with substantial evidence. This study aimed to evaluate the efficacy of DNC as a cardioplegia of prophylaxis to ventricular arrhythmias associated to cardiovascular surgery in adult patients. Methods This study recruited nine hundred fifty-four patients who underwent cardiopulmonary bypass surgeries in Nanjing Hospital affiliated to Nanjing Medical University between January 2019 and December 2019. Among 954 patients, 324 patients were treated with DNC (DNC group), and 630 patients were treated with St. Thomas cardioplegia (STH group). The incidence of postoperative arrhythmia as well as other cardiovascular events relavant to the surgery were investigated in both groups. Results In DNC group, the incidence of postoperative ventricular arrhythmias was lower (12.4% vs. 17.4%, P = 0.040), and the length of ICU stay was shorter (1.97 ± 1.49 vs. 2.26 ± 1.46, P = 0.004). Multivariate logistic regression demonstrated that the use of DNC helped to reduce the incidence of postoperative ventricular arrhythmias (adjusted odds ratio 0.475, 95% CI 0.266–0.825, P = 0.010). The propensity score-based analysis and subgroup analysis indicated that DNC has the same protecting effects towards myocardial in all kinds of cardiopulmonary bypass surgeries. Conclusions Del Nido cardioplegia may potentially reduce the incidence of postoperative ventricular arrhythmias, shorten the length of ICU stay and improve the overall outcome of the patients undergoing cardiovascular surgery. Keywords: Del nido, Cardioplegia, Cardiopulmonary bypass, Arrhythmia, Myocardial damage",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 378.0
+    },
+    {
+      "pmid": "39955230",
+      "title": "2024 EACTS/EACTAIC/EBCP Guidelines on cardiopulmonary bypass in adult cardiac surgery.",
+      "journal": "British journal of anaesthesia",
+      "date": "2025-02-14",
+      "authors": [
+        "Wahba A",
+        "EACTS/EACTAIC/EBCP Scientific Document Group."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Preamble Clinical practice guidelines consolidate and evaluate all pertinent evidence on a specific topic available at the time of their formulation. The goal is to assist physicians in determining the most effective management strategies for patients with a particular condition. These guidelines assess the impact on patient outcomes and weigh the risk–benefit ratio of various diagnostic or therapeutic approaches. While not a replacement for textbooks, they provide supplementary information on topics relevant to current clinical practice and become an essential tool to support the decisions made by specialists in daily practice. Nonetheless, it is crucial to understand that these recommendations are intended to guide, not dictate, clinical practice, and should be adapted to each patient's unique needs. Clinical situations vary, presenting a diverse array of variables and circumstances. Thus, the guidelines are meant to inform, not replace, the clinical judgement of healthcare professionals, grounded in their professional knowledge, experience and comprehension of each patient's specific context. Moreover, these guidelines are not considered legally binding; the legal duties of healthcare professionals are defined by prevailing laws and regulations, and adherence to these guidelines does not modify such responsibilities. The European Association for Cardio-Thoracic Surgery (EACTS), the European Association of Cardiothoracic Anaesthesiology and Intensive Care (EACTAIC) and the European Board of Cardiovascular Perfusion (EBCP) constituted a task force of professionals specializing in cardiopulmonary bypass (CPB) management. To ensure transparency and integrity, all task force members involved in the development and review of these guidelines submitted conflict of interest declarations, which were compiled into a single document available on the EACTS website ( https://www.eacts.org/resources/clinical-guidelines ). Any alterations to these declarations during the development process were promptly reported to the EACTS, EACTAIC and EBCP. Funding for this task force was provided exclusively by the EACTS, EACTAIC and EBCP, without involvement from the healthcare industry or other entities. Following this collaborative endeavour, the governing bodies of EACTS, EACTAIC and EBCP oversaw the formulation, refinement, and endorsement of these extensively revised guidelines. An external panel of experts thoroughly reviewed the initial draft, and their input guided subsequent amendments. After this detailed revision process, the final document was ratified by all task force experts and the leadership of the EACTS, EACTAIC and EBCP, enabling its publication in the European Journal of Cardio-Thoracic Surgery, the British Journal of Anaesthesia and Interdisciplinary CardioVascular and Thoracic Surgery. Endorsed by the EACTS, EACTAIC and EBCP, these guidelines represent the official standpoint on this subject. They demonstrate a dedication to continual enhancement, with routine updates planned to ensure that the guidelines remain current and valuable in the ever-progressing arena of clinical practice. Central Illustration: Multidisciplinary Approach to Cardiopulmonary Bypass Management. Image 1",
+      "bezug": "Kontext-Leitlinie: behandelt das Thema der Frage nicht direkt. Nur als allgemeinen Rahmen nutzen, nie als Beleg für die konkrete Frage.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": false,
+      "context_guideline": true,
+      "score": 345.0
+    }
+  ],
+  "timings": {
+    "plan": 3.12,
+    "search": 9.62,
+    "rank": 0.08,
+    "enrich": 1.77,
+    "synthesis": 20.58,
+    "total": 35.17
+  }
+}

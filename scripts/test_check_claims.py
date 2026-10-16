@@ -338,6 +338,162 @@ def review_round_3() -> None:
        "wrong 6 % vs 9 % against '4·6% vs 4·9%': FAIL x2")
 
 
+def anchored(brief_raw: str, detail_raw: str, *papers):
+    """(display dossier, evidence) for raw model prose with quote anchors, the
+    way praxis_check builds them: display has plain (PMID ...), the evidence
+    keeps the raw prose."""
+    raw = f"## Kurzantwort\n\n{brief_raw}\n\n## Evidenzlage\n\n{detail_raw}\n"
+    shown = dossier(cc.split_anchors(brief_raw)[0], cc.split_anchors(detail_raw)[0])
+    evd = ev(*papers)
+    evd["synthesis_raw"] = raw
+    return shown, evd
+
+
+def quote_anchoring() -> None:
+    """Quote-anchored mode (PLAN-quote-anchoring.md, option A, 2026-10-16)."""
+    print("quote anchoring:")
+    raw = ('Erfolg bei 46 von 49 (PMID 11111111: "achieved in 46 of 49 patients '
+           '(94%)"). Kein Vorteil (PMID 11111111: "no benefit at 30 days"; '
+           'PMID 22222222: "mortality 4.6% vs 4.9%"). Alt (PMID 33333333).')
+    shown, _, anc = cc.split_anchors(raw)
+    ok("(PMID 11111111)" in shown and "(PMID 11111111, 22222222)" in shown
+       and "(PMID 33333333)" in shown and '"' not in shown,
+       "display: anchors become plain (PMID ...), plain groups untouched, no quotes left")
+    ok(len(anc) == 2 and anc[0]["quotes"][0][1] == "achieved in 46 of 49 patients (94%)",
+       "quote with brackets inside is read whole")
+    raw_dash = 'KI 0,59 bis 0,82 (PMID 11111111: "RR 0.70, 95% CI 0.59–0.82")'
+    ok("–" in cc.split_anchors(raw_dash)[2][0]["quotes"][0][1],
+       "en dash inside a quote is kept verbatim (split happens before dash strip)")
+    ok(cc.split_anchors('x (PMID 11111111: „deutsche Anführung“).')[2] != [],
+       "German quote marks „…“ are accepted")
+
+    choose = ("11111111", "Procedural success was achieved in 46 of 49 patients "
+              "(94%). Of these, 43 patients had acute HIT.", "[VOLLTEXT]")
+    good = ('Erfolg bei 46 von 49 Patienten (94 %) (PMID 11111111: "Procedural '
+            'success was achieved in 46 of 49 patients (94%)").')
+    d, e = anchored(good + " Nur Abstract.", good, choose)
+    f, met = cc.check_with_metrics(d, e)
+    got = kinds(f, "FAIL") + [k for k in kinds(f, "WARN") if k != "thin"]
+    ok(not got and met["quoted_claims"] == met["cited_claims"] == 2
+       and met["verbatim"] == met["quotes"] == 1 and met["numbers_in_quote"] > 0,
+       f"correct anchored claim: clean, metrics 2/2 quoted, 1/1 verbatim (got {got})")
+    ok(structurally_clean(d), "  ... and the shown dossier passes verify_dossier")
+
+    for quote, note in [
+        ("Success was reached in 46 of the 49 patients", "paraphrased quote"),
+        ("Erfolg wurde bei 46 von 49 Patienten erreicht", "translated quote"),
+        ("Mortality was 4.6% in the steroid group", "quote from another paper"),
+    ]:
+        d, e = anchored("x", f'Erfolg 46 von 49 (PMID 11111111: "{quote}").', choose,
+                        ("22222222", "Mortality was 4.6% in the steroid group.",
+                         "[VOLLTEXT]"))
+        ok("quote" in kinds(cc.check(d, e), "FAIL"), f"{note}: FAIL quote")
+
+    d, e = anchored("x", 'Erfolg 94 % von 43 Patienten (PMID 11111111: "achieved in '
+                    '46 of 49 patients (94%)").', choose)
+    ok("number" in kinds(cc.check(d, e), "FAIL"),
+       "CHOOSE-ON anchored: 43 is not in its quote: FAIL number")
+    d, e = anchored("x", 'Erfolg 94 % von 43 Patienten (PMID 11111111: "achieved in '
+                    '46 of 49 patients (94%)... 43 patients had acute HIT").', choose)
+    ok("pctden" in kinds(cc.check(d, e), "FAIL"),
+       "CHOOSE-ON with both numbers quoted: FAIL pctden on the quote")
+
+    # the pool-mode known failures that anchoring closes
+    d, e = anchored("x", 'Die Übelkeit sank um 40 % (PMID 77777777: "Ondansetron '
+                    'reduced nausea compared with placebo").',
+                    ("77777777", "Ondansetron reduced nausea compared with placebo. "
+                     "Ondansetron ranked 2/5 among the drugs.", "[VOLLTEXT]"))
+    ok("number" in kinds(cc.check(d, e), "FAIL"), "M4 anchored: 40 % not in quote: FAIL")
+    d, e = anchored("x", '30 % von 241 Patienten (PMID 44444445: "Events occurred in '
+                    '36/120 (30%) patients").',
+                    ("44444445", "Events occurred in 36/120 (30%) patients; 241 were "
+                     "randomised.", "[VOLLTEXT]"))
+    ok("number" in kinds(cc.check(d, e), "FAIL"),
+       "total-N limit anchored: 241 not in quote: FAIL")
+    d, e = anchored("x", 'Die Mortalität lag bei 12 % (PMID 66666666: "Mortality did '
+                    'not differ between groups").',
+                    ("66666666", "Mortality did not differ between groups. Delirium "
+                     "occurred in 12% of patients.", "[VOLLTEXT]"))
+    ok("number" in kinds(cc.check(d, e), "FAIL"),
+       "L7 class anchored: 12 % elsewhere in the paper, not in quote: FAIL")
+
+    src = ("22222222", "<h4>Findings</h4>Mortality 4·6% vs 4·9% (RR 0·94, 95% CI "
+           "0·80–1·10).", "[NUR ABSTRACT]")
+    d, e = anchored("x", 'Mortalität 4,6 % vs. 4,9 % (PMID 22222222: "Mortality 4.6% '
+                    'vs 4.9% (RR 0.94, 95% CI 0.80-1.10)").', src)
+    ok(not kinds(cc.check(d, e), "FAIL"),
+       "quote matches despite <h4>, middle dots and dash variants")
+    d, e = anchored("x", 'Mortalität 4,6 % (PMID 22222222: "Mortality 4·6% ... '
+                    'RR 0·94").', src)
+    ok(not kinds(cc.check(d, e), "FAIL"), "ellipsis parts in order: no FAIL")
+    d, e = anchored("x", 'Mortalität 4,6 % (PMID 22222222: "RR 0·94 ... '
+                    'Mortality 4·6%").', src)
+    ok("quote" in kinds(cc.check(d, e), "FAIL"), "ellipsis parts out of order: FAIL quote")
+
+    two = (("55555555", "We randomly assigned 7507 patients to steroids or placebo.",
+            "[VOLLTEXT]"),
+           ("66666666", "Mortality was 4.6% vs 4.9% at 30 days in the trial.",
+            "[VOLLTEXT]"))
+    d, e = anchored("x", '7507 Patienten, Mortalität 4,6 % (PMID 55555555: "We '
+                    'randomly assigned 7507 patients"; PMID 66666666: "Mortality was '
+                    '4.6% vs 4.9% at 30 days").', *two)
+    ok(not kinds(cc.check(d, e), "FAIL"), "multi-PMID anchor: each quote in its paper")
+    d, e = anchored("x", '7507 Patienten, Mortalität 4,6 % (PMID 55555555: "Mortality '
+                    'was 4.6% vs 4.9% at 30 days"; PMID 66666666: "We randomly '
+                    'assigned 7507 patients").', *two)
+    ok(kinds(cc.check(d, e), "FAIL").count("quote") == 2,
+       "multi-PMID anchor with quotes swapped between papers: FAIL quote x2")
+
+    d, e = anchored("x", good + ' Die Rate lag bei 12 % (PMID 11111111).', choose)
+    f = cc.check(d, e)
+    ok("unanchored" in kinds(f, "WARN") and "number" in kinds(f, "FAIL"),
+       "numeric claim without a quote: WARN unanchored, still screened (FAIL)")
+    d, e = anchored("x", 'Erfolg 46 von 49 (PMID 11111111: "46 of 49").', choose)
+    ok("quotelen" in kinds(cc.check(d, e), "WARN"), "3-word quote: WARN quotelen")
+    d, e = anchored('Erfolg bei 47 von 49 (PMID 11111111: "achieved in 46 of 49 '
+                    'patients (94%)"). Abstract.', good, choose)
+    ok("number" in kinds(cc.check(d, e), "FAIL"),
+       "wrong number in the Kurzantwort, anchored: FAIL number")
+
+    # live benchmark 2026-10-16: two normalizer bugs that failed real verbatim quotes
+    # the quoted sentence sits BETWEEN "<" and ">", as in the live abstract;
+    # the old tag stripper removed exactly that span
+    ho = ("19332460", "Atrial fibrillation fell (relative risk, 0.74; P<0.01). "
+          "Hyperglycemia was common (28.2%). Adults (>18 years of age) were "
+          "included.", "[NUR ABSTRACT]")
+    d, e = anchored("x", 'Hyperglykämie 28,2 % (PMID 19332460: "hyperglycemia was '
+                    'common (28.2%)").', ho)
+    ok(not kinds(cc.check(d, e), "FAIL"),
+       "'P<0.01 ... >18' in the source is not an HTML tag: quote found")
+    four = ("32912280", "60% of patients received heparin anticoagulation. Bleeding was "
+            "common. Thus the anticoagulation strategy remain controversial.", "[VOLLTEXT]")
+    d, e = anchored("x", '60 % Heparin (PMID 32912280: "60% of patients received heparin '
+                    'anticoagulation....the anticoagulation strategy remain '
+                    'controversial").', four)
+    ok(not kinds(cc.check(d, e), "FAIL"), "four-dot ellipsis after a sentence end: found")
+    d, e = anchored("x", 'Vorhofflimmern sank (PMID 19332460: "Atrial fibrillation fell '
+                    '(P<0.01)").', ho)
+    ok("quote" in kinds(cc.check(d, e), "FAIL"),
+       "quote with a silently dropped middle part: still FAIL quote")
+
+    trop = ("16884976", "Peak troponin I with volatile anesthetics, 1.2 (0.9-1.9) ng/dL, "
+            "compared with TIVA, 2.7 (2.1-4.0) ng/dL. Stay was 10 [9-11] days.",
+            "[NUR ABSTRACT]")
+    d, e = anchored("x", 'Troponin 1,2 vs. 2,7 ng/dl (PMID 16884976: "volatile anesthetics, '
+                    '1.2 (0.9-1.9) ng/dL, compared with TIVA, 2.7 (2.1-4.0) ng/dL").', trop)
+    ok(not kinds(cc.check(d, e), "FAIL"), "value (CI) unit: '1.2 (0.9-1.9) ng/dL' read as ng/dl")
+    d, e = anchored("x", 'Troponin 1,2 mg/dl (PMID 16884976: "volatile anesthetics, '
+                    '1.2 (0.9-1.9) ng/dL").', trop)
+    ok("number" in kinds(cc.check(d, e), "FAIL"), "  ... but 1,2 mg/dl (wrong unit): FAIL")
+
+    sel = [{"pmid": "11111111", "abstract": choose[1], "fullTextExcerpt": None}]
+    rec = pc.evidence_record({"title": "t", "frage": "f", "kontext": ""}, ["q"], sel,
+                             'A (PMID 11111111: "achieved in 46 of 49 patients (94%)"). '
+                             'B (PMID 11111111: "made up words here now").')
+    ok([a["in_source"] for a in rec["anchors"]] == [True, False],
+       "evidence_record lists anchors with in_source set by code")
+
+
 KNOWN: list[tuple[bool, str]] = []
 
 
@@ -445,6 +601,7 @@ def main() -> int:
     review_round_1()
     review_round_2()
     review_round_3()
+    quote_anchoring()
     evidence_record()
     real_dossier()
     known_failures()

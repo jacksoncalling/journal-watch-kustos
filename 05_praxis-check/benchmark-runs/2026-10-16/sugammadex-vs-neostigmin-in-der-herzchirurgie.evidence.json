@@ -1,0 +1,534 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-16T11:25:10",
+  "reconstructed": false,
+  "question": {
+    "title": "Sugammadex vs. Neostigmin in der Herzchirurgie",
+    "frage": "Sugammadex versus Neostigmin zur Antagonisierung der neuromuskulaeren Blockade bei herzchirurgischen Patienten: Evidenz und Standard.",
+    "kontext": ""
+  },
+  "queries": [
+    "(Sugammadex OR Bridion OR Neostigmine OR Prostigmin) AND (\"neuromuscular blockade reversal\" OR \"neuromuscular block reversal\" OR \"neuromuscular blockade antagonism\" OR \"neuromuscular block antagonism\") AND (\"cardiac surgery\" OR \"heart surgery\" OR \"cardiac surgical procedures\" OR \"cardiac surgery patients\" OR \"heart surgery patients\" OR \"cardiac surgical patients\" OR \"cardiac bypass\" OR \"coronary artery bypass\" OR CABG) AND SRC:MED",
+    "(Sugammadex OR Bridion) AND (Neostigmine OR Prostigmin) AND (\"neuromuscular blockade reversal\" OR \"neuromuscular block reversal\" OR \"neuromuscular blockade antagonism\" OR \"neuromuscular block antagonism\") AND (\"cardiac surgery\" OR \"heart surgery\" OR \"cardiac surgical procedures\" OR \"cardiac surgery patients\" OR \"heart surgery patients\" OR \"cardiac surgical patients\" OR \"cardiac bypass\" OR \"coronary artery bypass\" OR CABG) AND SRC:MED"
+  ],
+  "synthesis_raw": "## Kurzantwort\nDie Evidenz deutet darauf hin, dass Sugammadex die neuromuskuläre Blockade (NMB) bei erwachsenen und pädiatrischen Patienten, einschließlich herzchirurgischen Populationen, schneller und zuverlässiger antagonisiert als Neostigmin (PMID 28806470: \"Sugammadex can more rapidly reverse rocuronium-induced neuromuscular block regardless of the depth of the block\"; PMID 35590273: \"use of sugammadex was associated with shorter duration from administration of reversal agents to TOFr > 0.9\"). Dies geht mit einem besseren Sicherheitsprofil einher, das eine reduzierte Inzidenz von postoperativen pulmonalen Komplikationen, Bradykardie und postoperativer Übelkeit und Erbrechen (PONV) umfasst (PMID 32282427: \"sugammadex administration was associated with a 30% reduced risk of pulmonary complications\"; PMID 28806470: \"significantly less risk of bradycardia (RR 0.16, 95% CI 0.07 to 0.34\"; PMID 28806470: \"PONV (RR 0.52, 95% CI 0.28 to 0.97\"). Die Studienlage speziell für Herzchirurgiepatienten ist jedoch heterogen, und die klinische Signifikanz einiger Vorteile bleibt unklar (PMID 32768253: \"The magnitude of the effect appears modest, therefore the clinical significance remains unclear\"). Bei Herztransplantationspatienten zeigten sich keine signifikanten Unterschiede in Bradykardie oder Hypotonie zwischen Sugammadex und Neostigmin (PMID 37306271: \"No significant differences in the incidence of bradycardia and hypotension were found in the NEO versus SGX groups\").\n\n*   **Entscheidender Befund:** Sugammadex antagonisiert die NMB schneller und mit weniger spezifischen Nebenwirkungen, insbesondere pulmonalen Komplikationen.\n*   **Untersuchte Population/Situation:** Erwachsene und pädiatrische chirurgische Patienten, mit spezifischen Hinweisen auf Patienten der Herzchirurgie und solche mit Niereninsuffizienz.\n*   **Wesentliche Unsicherheit:** Heterogenität der Studienergebnisse und unklare klinische Signifikanz einiger Vorteile speziell in kardialen Populationen.\n\n## Evidenzlage\nSugammadex antagonisiert rocuroniuminduzierte neuromuskuläre Blockaden (NMB) signifikant schneller und mit einem günstigeren Sicherheitsprofil als Neostigmin (PMID 28806470: \"Sugammadex can more rapidly reverse rocuronium-induced neuromuscular block regardless of the depth of the block\"). Eine große Meta-Analyse zeigte, dass Sugammadex 2 mg/kg eine moderate NMB (von T2 bis TOFR > 0.9) 10.22 Minuten schneller umkehrte als Neostigmin 0.05 mg/kg (1.96 vs. 12.87 Minuten) (PMID 28806470: \"Sugammadex 2 mg/kg was 10.22 minutes (6.6 times) faster then neostigmine 0.05 mg/kg (1.96 vs 12.87 minutes) in reversing NMB from the second twitch (T2) to TOFR > 0.9\"). Bei tiefer NMB (PTC 1 bis 5 bis TOFR > 0.9) war Sugammadex 4 mg/kg sogar 45.78 Minuten schneller als Neostigmin 0.07 mg/kg (2.9 vs. 48.8 Minuten) (PMID 28806470: \"Sugammadex 4 mg/kg was 45.78 minutes (16.8 times) faster then neostigmine 0.07 mg/kg (2.9 vs 48.8 minutes) in reversing NMB from post-tetanic count (PTC) 1 to 5 to TOFR > 0.9\").\n\nIm Vergleich zu Neostigmin war die Sugammadex-Gruppe mit einer signifikant geringeren Rate an unerwünschten Ereignissen assoziiert (Risikoverhältnis [RR] 0.60, 95% CI 0.49 bis 0.74), darunter Bradykardie (RR 0.16), postoperative Übelkeit und Erbrechen (PONV) (RR 0.52) und postoperative Residualparalyse (RR 0.40) (PMID 28806470: \"We found significantly fewer composite adverse events in the sugammadex group compared with the neostigmine group (RR 0.60, 95% CI 0.49 to 0.74)\"; PMID 28806470: \"significantly less risk of bradycardia (RR 0.16, 95% CI 0.07 to 0.34\"; PMID 28806470: \"PONV (RR 0.52, 95% CI 0.28 to 0.97\"; PMID 28806470: \"overall signs of postoperative residual paralysis (RR 0.40, 95% CI 0.28 to 0.57\"). Die Inzidenz schwerwiegender unerwünschter Ereignisse zeigte keine signifikanten Unterschiede zwischen beiden Substanzen (PMID 28806470: \"no significant differences between sugammadex and neostigmine regarding risk of serious adverse events (RR 0.54, 95% CI 0.13 to 2.25)\").\n\nEine multizentrische, matched-cohort Studie an erwachsenen Patienten, die sich einer nichtkardialen stationären Operation unterzogen, zeigte, dass die Anwendung von Sugammadex mit einem um 30% reduzierten Risiko für größere postoperative pulmonale Komplikationen verbunden war, darunter eine 47%ige Reduktion des Pneumonie-Risikos und eine 55%ige Reduktion des Risikos für respiratorisches Versagen im Vergleich zu Neostigmin (PMID 32282427: \"sugammadex administration was associated with a 30% reduced risk of pulmonary complications (adjusted odds ratio, 0.70; 95% CI, 0.63 to 0.77), 47% reduced risk of pneumonia (adjusted odds ratio, 0.53; 95% CI, 0.44 to 0.62), and 55% reduced risk of respiratory failure (adjusted odds ratio, 0.45; 95% CI, 0.37 to 0.56), compared to neostigmine\"). Auch in einer retrospektiven Kohortenstudie bei abdominalchirurgischen Patienten war Sugammadex mit einer signifikant niedrigeren Pneumonie-Inzidenz (18.6% vs. 39.2%) und kürzeren Aufenthaltszeiten im Aufwachraum (PACU) verbunden (PMID 36698080: \"The incidence of pneumonia in the sugammadex group was significantly lower than that in the spontaneously recovered group (18.6% [44/237] vs. 39.2% [93/237] P < 0.05)\"; PMID 36698080: \"shorter PACU stay (β = − 20.30 95% CI: [− 24.48, − 17.11], P < 0.0001)\").\n\nSpezielle Populationen:\n*   **Pädiatrie:** Eine Meta-Analyse von 18 Studien mit 1065 pädiatrischen Patienten ergab, dass Sugammadex mit einer kürzeren Dauer bis zu einem TOFr > 0.9 (MD = -14.42) und einer kürzeren Extubationszeit (MD = -13.98) verbunden war. Es gab auch weniger PONV, Bradykardie und Mundtrockenheit (PMID 35590273: \"use of sugammadex was associated with shorter duration from administration of reversal agents to TOFr > 0.9 (MD = -14.42, with 95% CI [-17.08, -11.75]) and shorter interval from reversal from NMB to extubation (MD = -13.98, with 95% CI [-16.70, -11.26])\"; PMID 35590273: \"administration of sugammadex was associated with less incidence of postoperative nausea and vomiting (PONV), bradycardia, and dry mouth compared to control groups\"). Bei pädiatrischen Patienten war Sugammadex bei kardiochirurgischen Eingriffen signifikant häufiger im Einsatz (Odds Ratio 1.76) (PMID 39688966: \"cardiac surgery (OR, 1.76 [1.40-2.22], P < .001)\").\n*   **Herzchirurgie:** In einer retrospektiven Studie an Patienten mit angeborenen Herzfehlern, die sich einer Operation mit Herz-Lungen-Maschine unterzogen, war Sugammadex mit niedrigeren postoperativen arteriellen Kohlendioxid-Partialdrücken (PaCO2) verbunden. Bei Patienten mit 2-Ventrikel-Herzfehlern war es zudem mit einem geringeren Bedarf an nichtinvasiver Überdruckbeatmung assoziiert (PMID 32768253: \"patients with 2-ventricle congenital heart disease who received sugammadex had lower postoperative arterial carbon dioxide partial pressure (PaCO2) values (coefficient -3.1, 95% confidence interval [CI] -5.9 to -0.4; p = 0.026) and required less- noninvasive positive- pressure ventilation (odds ratio 0.3, 95% CI 0.1-0.8; p = 0.021)\"). Eine retrospektive Studie an Patienten mit Herztransplantation, die sich einer nichtkardialen Operation unterzogen, zeigte keine signifikanten Unterschiede in der Inzidenz von Bradykardie und Hypotonie zwischen Sugammadex- und Neostigmin-Gruppen (PMID 37306271: \"No significant differences in the incidence of bradycardia and hypotension were found in the NEO versus SGX groups\").\n*   **Niereninsuffizienz:** Bei erwachsenen Patienten mit terminaler Niereninsuffizienz (ESRD), die präoperativ eine Nierenersatztherapie benötigten, zeigte sich Sugammadex als sicher und effektiv, ohne beobachtetes Wiederauftreten der NMB. 24 (18%) Patienten, bei denen Neostigmin keine vollständige NMB-Umkehrung erreichte, konnten erfolgreich mit Sugammadex extubiert werden (PMID 31721151: \"sugammadex appears to be safe and effective in adult patients with end-stage renal disease receiving pre-operative renal replacement therapy\"; PMID 31721151: \"24 (18%) patients were found to have incomplete neuromuscular blockade reversal with neostigmine but administration of sugammadex led to successful tracheal extubation\").\n\nSugammadex wird im klinischen Alltag häufiger bei Patienten mit tieferer NMB vor der Antagonisierung und bei Patienten mit höherer Komorbiditätslast eingesetzt, einschließlich Herzinsuffizienz (PMID 33079874: \"Sugammadex is used preferentially in cases with higher degrees of NMB before reversal and in patients with greater burden of comorbidities and known risk factors for residual blockade or pulmonary complications\").\n\n## Was ist Standard\nDer Standard zur Antagonisierung der neuromuskulären Blockade umfasst sowohl Cholinesterasehemmer wie Neostigmin (oft in Kombination mit einem Anticholinergikum wie Glycopyrrolat oder Atropin) als auch das selektive Relaxans-Bindungsmittel Sugammadex. Die Wahl des Antagonisten wird maßgeblich von der Art des verwendeten nicht-depolarisierenden Muskelrelaxans (Rocuronium oder Vecuronium für Sugammadex; alle für Neostigmin) und dem Grad der neuromuskulären Blockade bestimmt (PMID 36228244: \"Sugammadex – A selective antagonist of steroidal NMBA (e.g., rocuronium, vecuronium, and pancuronium)\"; PMID 36228244: \"Neostigmine – Cholinesterase inhibitor used in the treatment of myasthenia gravis and to reverse the myorelaxant effects of muscle blockers\").\n\nNeuromuskuläres Monitoring mittels quantitativer oder qualitativer Messungen (z. B. Train-of-Four, TOF) ist essenziell, um die Tiefe der Blockade zu bestimmen und den Erfolg der Antagonisierung zu überprüfen, wobei ein TOF-Verhältnis von >0.9 als Indikator für eine erfolgreiche Extubation gilt (PMID 36228244: \"NMB should be monitored through quantitative (accelerometry, electromyography, cinematography) or qualitative measurements. The latter is performed using a peripheral nerve stimulator that determines the depth of block (TOF) considering the TOF measurement >0.9 as an indicative parameter for extubation\"). In der Herzchirurgie wurde die Implementierung von Extubationsprotokollen, die eine NMB-Antagonisierung basierend auf neuromuskulärem Monitoring einschließen, mit einer Verkürzung der mechanischen Beatmungsdauer und einer kürzeren Verweildauer auf der Intensivstation assoziiert (PMID 37080843: \"The implementation of an extubation protocol was associated with an 18% decrease in the duration of mechanical ventilation (incident rate ratio [IRR] 0.82, 95% CI 0.72-0.94; p < 0.01), statistically insignificant 26% increase in patients extubated ≤6 hours (odds ratio [OR] 1.26, 95% CI 0.97-1.65; p = 0.09), and 13% shorter intensive care unit length of stay (LOS) (IRR 0.87, 95% CI 0.79-0.97; p < 0.01)\").\n\n## Wo die Literatur uneins ist\nObwohl Sugammadex eine schnellere und zuverlässigere Umkehrung der NMB und ein besseres Sicherheitsprofil in Bezug auf spezifische postoperative Komplikationen bietet, gibt es Uneinigkeiten und Unsicherheiten bezüglich seiner Vorteile in bestimmten klinischen Szenarien, insbesondere in Bezug auf postoperative kognitive Dysfunktion (POD) und die spezifische Bedeutung in der Herzchirurgie.\n\nEine Meta-Analyse randomisierter kontrollierter Studien (RCTs) deutete darauf hin, dass Sugammadex die Inzidenz von postoperativem Delirium (POD) im Vergleich zu Neostigmin signifikant reduzierte, insbesondere innerhalb der ersten 24 Stunden postoperativ (RR 0.67) (PMID 41790674: \"In RCTs, sugammadex significantly reduced POD-I compared with neostigmine (risk ratio (RR), 0.67; 95% confidence interval (CI), 0.49–0.91; I 2 = 0%; P = .008)\"; PMID 41790674: \"Subgroup analysis of RCTs on POD-I within the 1st 24 hours postoperatively showed a significantly lower incidence in the sugammadex group (RR, 0.64; 95% CI, −0.45 to 0.90; P = .010)\"). Demgegenüber steht eine andere systematische Übersicht, die bei 49.910 Patienten in vier von fünf Studien keine Unterschiede in der postoperativen kognitiven Funktion zwischen Sugammadex und Neostigmin feststellte (PMID 41181982: \"Of these, four showed no difference in cognitive function between sugammadex and neostigmine\"). Eine Kohortenstudie zeigte zwar günstige Ergebnisse für Sugammadex, die Autoren schlussfolgerten jedoch, dass Sugammadex nur eine sehr begrenzte neurologisch schützende Rolle ohne klinische Signifikanz haben könnte (PMID 41181982: \"One cohort study of 21 patients showed favourable outcomes postoperatively in the sugammadex group\"; PMID 41181982: \"This systematic review suggests the possibility of a very limited neurological protective role of sugammadex compared to neostigmine, but no clinical significance was reported\").\n\nSpeziell in der Herzchirurgie ist die Evidenz uneinheitlich bezüglich des Ausmaßes des Vorteils von Sugammadex. Während eine Studie einen Zusammenhang zwischen Sugammadex und niedrigeren postoperativen PaCO2-Werten sowie einem geringeren Bedarf an nichtinvasiver Überdruckbeatmung bei Patienten mit angeborenen Herzfehlern feststellte, wurde die klinische Signifikanz dieses Effekts als bescheiden und unklar bewertet (PMID 32768253: \"Sugammadex reversal was associated with lower postoperative PaCO2 values. In addition, sugammadex reversal was associated with less need for noninvasive positive- pressure ventilation in 2-ventricle patients. The magnitude of the effect appears modest, therefore the clinical significance remains unclear\"). Bei Herztransplantationspatienten, die sich nichtkardialen Operationen unterzogen, wurden keine signifikanten Unterschiede in der Inzidenz von Bradykardie und Hypotonie zwischen Sugammadex und Neostigmin gefunden, was auf ein ähnliches Sicherheitsprofil in dieser Risikopopulation hindeutet (PMID 37306271: \"No significant differences in the incidence of bradycardia and hypotension were found in the NEO versus SGX groups. NEO and SGX may have similar safety profiles in patients with prior heart transplant undergoing non-cardiac surgery\").\n\nDie tatsächliche Nutzung von Sugammadex in den USA zeigt, dass es häufiger bei Patienten mit höherer Komorbiditätslast und tieferer NMB gewählt wird, was die wahrgenommene höhere Sicherheit oder Effektivität widerspiegeln könnte (PMID 33079874: \"Sugammadex is used preferentially in cases with higher degrees of NMB before reversal and in patients with greater burden of comorbidities and known risk factors for residual blockade or pulmonary complications\").\n\n## Offene Fragen\nDie aktuelle Literatur weist mehrere offene Fragen auf, insbesondere hinsichtlich der spezifischen Anwendung von Sugammadex in der Herzchirurgie und seiner Auswirkungen auf postoperative kognitive Funktionen. Es bedarf weiterer Studien, die speziell auf Herzpatienten zugeschnitten sind, um die klinische Signifikanz der beobachteten Effekte, wie niedrigere PaCO2-Werte, genauer zu bewerten und patientenrelevante Endpunkte zu untersuchen (PMID 32768253: \"Additional studies focused on investigating particular patient populations, such as infants, single-ventricle congenital heart disease, or patients with pulmonary hypertension, are needed to identify whether these patients appreciate a greater benefit from sugammadex reversal\").\n\nHinsichtlich des postoperativen Delirs (POD) und der kognitiven Funktion sind weitere gut konzipierte RCTs mit standardisierten Delirium-Assessments erforderlich, um die widersprüchlichen Ergebnisse zu Sugammadex im Vergleich zu Neostigmin zu klären (PMID 41790674: \"Further well-designed RCTs using standardized delirium assessments are required\"; PMID 41181982: \"Only a limited number of studies were available, suggesting the need for further research\"). Ein laufendes Studienprotokoll plant beispielsweise, die kognitiven Schutzwirkungen von Neostigmin/Glycopyrrolat gegenüber Sugammadex in älteren nichtkardialen Patienten zu untersuchen, was die Komplexität dieser Frage unterstreicht und die Ausschlüsse in der kardialen Population für weitere Forschung hervorhebt (PMID 41920897: \"The exclusion of cardiac surgery patients and patients requiring postoperative ICU admission limits the external validity of our findings to these high-risk populations, where the pathophysiology of delirium may differ\"). Die Rolle von Sugammadex bei Patienten mit Nierenfunktionsstörungen, obwohl es sich als sicher und wirksam erwiesen hat, bleibt aufgrund seiner renalen Ausscheidung ein Thema für weitere Untersuchungen (PMID 37728455: \"the safety profile of SGX in end-stage renal disease (ESRD) patients is not fully established and remains an off-label use in this population\").\n\nKein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.",
+  "anchors": [
+    {
+      "pmid": "28806470",
+      "quote": "Sugammadex can more rapidly reverse rocuronium-induced neuromuscular block regardless of the depth of the block",
+      "in_source": true
+    },
+    {
+      "pmid": "35590273",
+      "quote": "use of sugammadex was associated with shorter duration from administration of reversal agents to TOFr > 0.9",
+      "in_source": false
+    },
+    {
+      "pmid": "32282427",
+      "quote": "sugammadex administration was associated with a 30% reduced risk of pulmonary complications",
+      "in_source": true
+    },
+    {
+      "pmid": "28806470",
+      "quote": "significantly less risk of bradycardia (RR 0.16, 95% CI 0.07 to 0.34",
+      "in_source": true
+    },
+    {
+      "pmid": "28806470",
+      "quote": "PONV (RR 0.52, 95% CI 0.28 to 0.97",
+      "in_source": false
+    },
+    {
+      "pmid": "32768253",
+      "quote": "The magnitude of the effect appears modest, therefore the clinical significance remains unclear",
+      "in_source": true
+    },
+    {
+      "pmid": "37306271",
+      "quote": "No significant differences in the incidence of bradycardia and hypotension were found in the NEO versus SGX groups",
+      "in_source": true
+    },
+    {
+      "pmid": "28806470",
+      "quote": "Sugammadex can more rapidly reverse rocuronium-induced neuromuscular block regardless of the depth of the block",
+      "in_source": true
+    },
+    {
+      "pmid": "28806470",
+      "quote": "Sugammadex 2 mg/kg was 10.22 minutes (6.6 times) faster then neostigmine 0.05 mg/kg (1.96 vs 12.87 minutes) in reversing NMB from the second twitch (T2) to TOFR > 0.9",
+      "in_source": true
+    },
+    {
+      "pmid": "28806470",
+      "quote": "Sugammadex 4 mg/kg was 45.78 minutes (16.8 times) faster then neostigmine 0.07 mg/kg (2.9 vs 48.8 minutes) in reversing NMB from post-tetanic count (PTC) 1 to 5 to TOFR > 0.9",
+      "in_source": true
+    },
+    {
+      "pmid": "28806470",
+      "quote": "We found significantly fewer composite adverse events in the sugammadex group compared with the neostigmine group (RR 0.60, 95% CI 0.49 to 0.74)",
+      "in_source": false
+    },
+    {
+      "pmid": "28806470",
+      "quote": "significantly less risk of bradycardia (RR 0.16, 95% CI 0.07 to 0.34",
+      "in_source": true
+    },
+    {
+      "pmid": "28806470",
+      "quote": "PONV (RR 0.52, 95% CI 0.28 to 0.97",
+      "in_source": false
+    },
+    {
+      "pmid": "28806470",
+      "quote": "overall signs of postoperative residual paralysis (RR 0.40, 95% CI 0.28 to 0.57",
+      "in_source": true
+    },
+    {
+      "pmid": "28806470",
+      "quote": "no significant differences between sugammadex and neostigmine regarding risk of serious adverse events (RR 0.54, 95% CI 0.13 to 2.25)",
+      "in_source": false
+    },
+    {
+      "pmid": "32282427",
+      "quote": "sugammadex administration was associated with a 30% reduced risk of pulmonary complications (adjusted odds ratio, 0.70; 95% CI, 0.63 to 0.77), 47% reduced risk of pneumonia (adjusted odds ratio, 0.53; 95% CI, 0.44 to 0.62), and 55% reduced risk of respiratory failure (adjusted odds ratio, 0.45; 95% CI, 0.37 to 0.56), compared to neostigmine",
+      "in_source": true
+    },
+    {
+      "pmid": "36698080",
+      "quote": "The incidence of pneumonia in the sugammadex group was significantly lower than that in the spontaneously recovered group (18.6% [44/237] vs. 39.2% [93/237] P < 0.05)",
+      "in_source": false
+    },
+    {
+      "pmid": "36698080",
+      "quote": "shorter PACU stay (β = − 20.30 95% CI: [− 24.48, − 17.11], P < 0.0001)",
+      "in_source": false
+    },
+    {
+      "pmid": "35590273",
+      "quote": "use of sugammadex was associated with shorter duration from administration of reversal agents to TOFr > 0.9 (MD = -14.42, with 95% CI [-17.08, -11.75]) and shorter interval from reversal from NMB to extubation (MD = -13.98, with 95% CI [-16.70, -11.26])",
+      "in_source": false
+    },
+    {
+      "pmid": "35590273",
+      "quote": "administration of sugammadex was associated with less incidence of postoperative nausea and vomiting (PONV), bradycardia, and dry mouth compared to control groups",
+      "in_source": true
+    },
+    {
+      "pmid": "39688966",
+      "quote": "cardiac surgery (OR, 1.76 [1.40-2.22], P < .001)",
+      "in_source": true
+    },
+    {
+      "pmid": "32768253",
+      "quote": "patients with 2-ventricle congenital heart disease who received sugammadex had lower postoperative arterial carbon dioxide partial pressure (PaCO2) values (coefficient -3.1, 95% confidence interval [CI] -5.9 to -0.4; p = 0.026) and required less- noninvasive positive- pressure ventilation (odds ratio 0.3, 95% CI 0.1-0.8; p = 0.021)",
+      "in_source": false
+    },
+    {
+      "pmid": "37306271",
+      "quote": "No significant differences in the incidence of bradycardia and hypotension were found in the NEO versus SGX groups",
+      "in_source": true
+    },
+    {
+      "pmid": "31721151",
+      "quote": "sugammadex appears to be safe and effective in adult patients with end-stage renal disease receiving pre-operative renal replacement therapy",
+      "in_source": true
+    },
+    {
+      "pmid": "31721151",
+      "quote": "24 (18%) patients were found to have incomplete neuromuscular blockade reversal with neostigmine but administration of sugammadex led to successful tracheal extubation",
+      "in_source": true
+    },
+    {
+      "pmid": "33079874",
+      "quote": "Sugammadex is used preferentially in cases with higher degrees of NMB before reversal and in patients with greater burden of comorbidities and known risk factors for residual blockade or pulmonary complications",
+      "in_source": true
+    },
+    {
+      "pmid": "36228244",
+      "quote": "Sugammadex – A selective antagonist of steroidal NMBA (e.g., rocuronium, vecuronium, and pancuronium)",
+      "in_source": true
+    },
+    {
+      "pmid": "36228244",
+      "quote": "Neostigmine – Cholinesterase inhibitor used in the treatment of myasthenia gravis and to reverse the myorelaxant effects of muscle blockers",
+      "in_source": true
+    },
+    {
+      "pmid": "36228244",
+      "quote": "NMB should be monitored through quantitative (accelerometry, electromyography, cinematography) or qualitative measurements. The latter is performed using a peripheral nerve stimulator that determines the depth of block (TOF) considering the TOF measurement >0.9 as an indicative parameter for extubation",
+      "in_source": false
+    },
+    {
+      "pmid": "37080843",
+      "quote": "The implementation of an extubation protocol was associated with an 18% decrease in the duration of mechanical ventilation (incident rate ratio [IRR] 0.82, 95% CI 0.72-0.94; p < 0.01), statistically insignificant 26% increase in patients extubated ≤6 hours (odds ratio [OR] 1.26, 95% CI 0.97-1.65; p = 0.09), and 13% shorter intensive care unit length of stay (LOS) (IRR 0.87, 95% CI 0.79-0.97; p < 0.01)",
+      "in_source": true
+    },
+    {
+      "pmid": "41790674",
+      "quote": "In RCTs, sugammadex significantly reduced POD-I compared with neostigmine (risk ratio (RR), 0.67; 95% confidence interval (CI), 0.49–0.91; I 2 = 0%; P = .008)",
+      "in_source": true
+    },
+    {
+      "pmid": "41790674",
+      "quote": "Subgroup analysis of RCTs on POD-I within the 1st 24 hours postoperatively showed a significantly lower incidence in the sugammadex group (RR, 0.64; 95% CI, −0.45 to 0.90; P = .010)",
+      "in_source": true
+    },
+    {
+      "pmid": "41181982",
+      "quote": "Of these, four showed no difference in cognitive function between sugammadex and neostigmine",
+      "in_source": true
+    },
+    {
+      "pmid": "41181982",
+      "quote": "One cohort study of 21 patients showed favourable outcomes postoperatively in the sugammadex group",
+      "in_source": true
+    },
+    {
+      "pmid": "41181982",
+      "quote": "This systematic review suggests the possibility of a very limited neurological protective role of sugammadex compared to neostigmine, but no clinical significance was reported",
+      "in_source": true
+    },
+    {
+      "pmid": "32768253",
+      "quote": "Sugammadex reversal was associated with lower postoperative PaCO2 values. In addition, sugammadex reversal was associated with less need for noninvasive positive- pressure ventilation in 2-ventricle patients. The magnitude of the effect appears modest, therefore the clinical significance remains unclear",
+      "in_source": false
+    },
+    {
+      "pmid": "37306271",
+      "quote": "No significant differences in the incidence of bradycardia and hypotension were found in the NEO versus SGX groups. NEO and SGX may have similar safety profiles in patients with prior heart transplant undergoing non-cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "33079874",
+      "quote": "Sugammadex is used preferentially in cases with higher degrees of NMB before reversal and in patients with greater burden of comorbidities and known risk factors for residual blockade or pulmonary complications",
+      "in_source": true
+    },
+    {
+      "pmid": "32768253",
+      "quote": "Additional studies focused on investigating particular patient populations, such as infants, single-ventricle congenital heart disease, or patients with pulmonary hypertension, are needed to identify whether these patients appreciate a greater benefit from sugammadex reversal",
+      "in_source": true
+    },
+    {
+      "pmid": "41790674",
+      "quote": "Further well-designed RCTs using standardized delirium assessments are required",
+      "in_source": true
+    },
+    {
+      "pmid": "41181982",
+      "quote": "Only a limited number of studies were available, suggesting the need for further research",
+      "in_source": true
+    },
+    {
+      "pmid": "41920897",
+      "quote": "The exclusion of cardiac surgery patients and patients requiring postoperative ICU admission limits the external validity of our findings to these high-risk populations, where the pathophysiology of delirium may differ",
+      "in_source": true
+    },
+    {
+      "pmid": "37728455",
+      "quote": "the safety profile of SGX in end-stage renal disease (ESRD) patients is not fully established and remains an off-label use in this population",
+      "in_source": true
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "28806470",
+      "title": "Efficacy and safety of sugammadex versus neostigmine in reversing neuromuscular blockade in adults.",
+      "journal": "The Cochrane database of systematic reviews",
+      "date": "2017-08-14",
+      "authors": [
+        "Hristovska AM",
+        "Afshari A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Acetylcholinesterase inhibitors, such as neostigmine, have traditionally been used for reversal of non-depolarizing neuromuscular blocking agents. However, these drugs have significant limitations, such as indirect mechanisms of reversal, limited and unpredictable efficacy, and undesirable autonomic responses. Sugammadex is a selective relaxant-binding agent specifically developed for rapid reversal of non-depolarizing neuromuscular blockade induced by rocuronium. Its potential clinical benefits include fast and predictable reversal of any degree of block, increased patient safety, reduced incidence of residual block on recovery, and more efficient use of healthcare resources.<h4>Objectives</h4>The main objective of this review was to compare the efficacy and safety of sugammadex versus neostigmine in reversing neuromuscular blockade caused by non-depolarizing neuromuscular agents in adults.<h4>Search methods</h4>We searched the following databases on 2 May 2016: Cochrane Central Register of Controlled Trials (CENTRAL); MEDLINE (WebSPIRS Ovid SP), Embase (WebSPIRS Ovid SP), and the clinical trials registries www.controlled-trials.com, clinicaltrials.gov, and www.centerwatch.com. We re-ran the search on 10 May 2017.<h4>Selection criteria</h4>We included randomized controlled trials (RCTs) irrespective of publication status, date of publication, blinding status, outcomes published, or language. We included adults, classified as American Society of Anesthesiologists (ASA) I to IV, who received non-depolarizing neuromuscular blocking agents for an elective in-patient or day-case surgical procedure. We included all trials comparing sugammadex versus neostigmine that reported recovery times or adverse events. We included any dose of sugammadex and neostigmine and any time point of study drug administration.<h4>Data collection and analysis</h4>Two review authors independently screened titles and abstracts to identify trials for eligibility, examined articles for eligibility, abstracted data, assessed the articles, and excluded obviously irrelevant reports. We resolved disagreements by discussion between review authors and further disagreements through consultation with the last review author. We assessed risk of bias in 10 methodological domains using the Cochrane risk of bias tool and examined risk of random error through trial sequential analysis. We used the principles of the GRADE approach to prepare an overall assessment of the quality of evidence. For our primary outcomes (recovery times to train-of-four ratio (TOFR) > 0.9), we presented data as mean differences (MDs) with 95 % confidence intervals (CIs), and for our secondary outcomes (risk of adverse events and risk of serious adverse events), we calculated risk ratios (RRs) with CIs.<h4>Main results</h4>We included 41 studies (4206 participants) in this updated review, 38 of which were new studies. Twelve trials were eligible for meta-analysis of primary outcomes (n = 949), 28 trials were eligible for meta-analysis of secondary outcomes (n = 2298), and 10 trials (n = 1647) were ineligible for meta-analysis.We compared sugammadex 2 mg/kg and neostigmine 0.05 mg/kg for reversal of rocuronium-induced moderate neuromuscular blockade (NMB). Sugammadex 2 mg/kg was 10.22 minutes (6.6 times) faster then neostigmine 0.05 mg/kg (1.96 vs 12.87 minutes) in reversing NMB from the second twitch (T2) to TOFR > 0.9 (MD 10.22 minutes, 95% CI 8.48 to 11.96; I<sup>2</sup> = 84%; 10 studies, n = 835; GRADE: moderate quality).We compared sugammadex 4 mg/kg and neostigmine 0.07 mg/kg for reversal of rocuronium-induced deep NMB. Sugammadex 4 mg/kg was 45.78 minutes (16.8 times) faster then neostigmine 0.07 mg/kg (2.9 vs 48.8 minutes) in reversing NMB from post-tetanic count (PTC) 1 to 5 to TOFR > 0.9 (MD 45.78 minutes, 95% CI 39.41 to 52.15; I<sup>2</sup> = 0%; two studies, n = 114; GRADE: low quality).For our secondary outcomes, we compared sugammadex, any dose, and neostigmine, any dose, looking at risk of adverse and serious adverse events. We found significantly fewer composite adverse events in the sugammadex group compared with the neostigmine group (RR 0.60, 95% CI 0.49 to 0.74; I<sup>2</sup> = 40%; 28 studies, n = 2298; GRADE: moderate quality). Risk of adverse events was 28% in the neostigmine group and 16% in the sugammadex group, resulting in a number needed to treat for an additional beneficial outcome (NNTB) of 8. When looking at specific adverse events, we noted significantly less risk of bradycardia (RR 0.16, 95% CI 0.07 to 0.34; I<sup>2</sup>= 0%; 11 studies, n = 1218; NNTB 14; GRADE: moderate quality), postoperative nausea and vomiting (PONV) (RR 0.52, 95% CI 0.28 to 0.97; I<sup>2</sup> = 0%; six studies, n = 389; NNTB 16; GRADE: low quality) and overall signs of postoperative residual paralysis (RR 0.40, 95% CI 0.28 to 0.57; I<sup>2</sup> = 0%; 15 studies, n = 1474; NNTB 13; GRADE: moderate quality) in the sugammadex group when compared with the neostigmine group. Finally, we found no significant differences between sugammadex and neostigmine regarding risk of serious adverse events (RR 0.54, 95% CI 0.13 to 2.25; I<sup>2</sup>= 0%; 10 studies, n = 959; GRADE: low quality).Application of trial sequential analysis (TSA) indicates superiority of sugammadex for outcomes such as recovery time from T2 to TOFR > 0.9, adverse events, and overall signs of postoperative residual paralysis.<h4>Authors' conclusions</h4>Review results suggest that in comparison with neostigmine, sugammadex can more rapidly reverse rocuronium-induced neuromuscular block regardless of the depth of the block. Sugammadex 2 mg/kg is 10.22 minutes (˜ 6.6 times) faster in reversing moderate neuromuscular blockade (T2) than neostigmine 0.05 mg/kg (GRADE: moderate quality), and sugammadex 4 mg/kg is 45.78 minutes (˜ 16.8 times) faster in reversing deep neuromuscular blockade (PTC 1 to 5) than neostigmine 0.07 mg/kg (GRADE: low quality). With an NNTB of 8 to avoid an adverse event, sugammadex appears to have a better safety profile than neostigmine. Patients receiving sugammadex had 40% fewer adverse events compared with those given neostigmine. Specifically, risks of bradycardia (RR 0.16, NNTB 14; GRADE: moderate quality), PONV (RR 0.52, NNTB 16; GRADE: low quality), and overall signs of postoperative residual paralysis (RR 0.40, NNTB 13; GRADE: moderate quality) were reduced. Both sugammadex and neostigmine were associated with serious adverse events in less than 1% of patients, and data showed no differences in risk of serious adverse events between groups (RR 0.54; GRADE: low quality).",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 390.0
+    },
+    {
+      "pmid": "35590273",
+      "title": "Efficacy and safety of sugammadex for neuromuscular blockade reversal in pediatric patients: an updated meta-analysis of randomized controlled trials with trial sequential analysis.",
+      "journal": "BMC pediatrics",
+      "date": "2022-05-19",
+      "authors": [
+        "Lang B",
+        "Zhang L."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background A recent survey revealed that extensive off-label use of sugammadex in pediatric anesthesia deserved particular attention. The present study with trial sequential analysis (TSA) aimed to evaluate the effects of sugammadex for antagonizing neuromuscular blockade (NMB) in pediatric patients, and to investigate whether the findings achieved the required information size to draw conclusions. Methods PubMed, Embase, Cochrane Library and China National Knowledge Infrastructure (CNKI) were searched from inception to April 2021. All randomized controlled trials used sugammadex as reversal agent in pediatric patients were enrolled. Time from NMB reversal to recovery of the train-of-four ratio (TOFr) to 0.9 and extubation time were considered as co-primary outcomes, and incidences of adverse events were considered as secondary outcomes. Grading of Recommendations Assessment, Development, and Evaluation (GRADE) system was used to rate the quality of evidences. Results Data from 18 studies involving 1,065 pediatric patients were acquired. The results revealed that use of sugammadex was associated with shorter duration from administration of reversal agents to TOFr &gt; 0.9 (MD = -14.42, with 95% CI [-17.08, -11.75]) and shorter interval from reversal from NMB to extubation (MD = -13.98, with 95% CI [-16.70, -11.26]) compared to control groups. TSA also indicated that the current sample sizes were sufficient with unnecessary further trials. Analysis of secondary outcomes indicated that administration of sugammadex was associated with less incidence of postoperative nausea and vomiting (PONV), bradycardia, and dry mouth compared to control groups. Conclusion Considering of satisfactory and rapid neuromuscular blockade reversal with low incidences of adverse events, sugammadex might be considered as the preferred option for children in clinical anesthesia practice compared to acetylcholinesterase inhibitors. However, overall low-quality evidences in present study rated by GRADE system indicated that superiority of sugammadex employed in pediatric patients needs to be confirmed by more studies with high quality and large sample size in future. Supplementary Information The online version contains supplementary material available at 10.1186/s12887-022-03288-0. Keywords: Sugammadex, Children, Neuromuscular blockade, Acetylcholinesterase inhibitors, Meta-analysis",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 390.0
+    },
+    {
+      "pmid": "41790674",
+      "title": "Comparison of the effect of neostigmine and sugammadex on postoperative delirium in surgical patients: A systematic review and meta-analysis.",
+      "journal": "Medicine",
+      "date": "2026-03-01",
+      "authors": [
+        "Shin HW",
+        "Jang YK."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background: Postoperative delirium (POD) frequently occurs in elderly surgical patients and is associated with adverse outcomes. This review aimed to evaluate whether sugammadex, a selective neuromuscular blockade reversal agent, reduces postoperative delirium-incidence (POD-I) compared with neostigmine. Methods: PubMed, EMBASE, and Cochrane CENTRAL were searched up to May 2025 for randomized controlled trials (RCTs) and non-randomized controlled trials (NRCTs) comparing sugammadex and neostigmine regarding to POD-I. Primary outcome was POD-I, with subgroup analyses according to postoperative period (within 24 hours vs after postoperative 1 day) and the type of anticholinergic coadministered with neostigmine (atropine vs glycopyrrolate). Secondary outcome was perioperative changes in Mini-Mental State Examination scores (preoperative vs postoperative). Analyses were performed separately for RCTs and NRCTs using RevMan 5.4. Results: Twelve studies (7 RCTs, n = 759; 5 NRCTs, n = 50,115) were included. In RCTs, sugammadex significantly reduced POD-I compared with neostigmine (risk ratio (RR), 0.67; 95% confidence interval (CI), 0.49–0.91; I 2 = 0%; P = .008). Subgroup analysis of RCTs on POD-I within the 1st 24 hours postoperatively showed a significantly lower incidence in the sugammadex group (RR, 0.64; 95% CI, −0.45 to 0.90; P = .010). Subgroup analysis of RCTs by coadministered anticholinergics did not significantly influence POD-I (atropine: RR, 0.67; P = .06; glycopyrrolate: RR, 0.66; P = .06). In contrast, subgroup analysis of NRCTs on POD-I showed no significant difference between the groups (RR, 1.15; 95% CI, 0.88–1.50; I 2 = 82%; P = .33). Preoperative and postoperative Mini-Mental State Examination scores in RCTs were similar between groups (preoperative: mean difference 0.03, P = .78; postoperative: mean difference 0.75, P = .12). Conclusion: Sugammadex is associated with a reduced incidence of POD compared to neostigmine, particularly within the 1st 24 hours after surgery, based on consistent findings from RCTs. This benefit was not observed in NRCTs. Further well-designed RCTs using standardized delirium assessments are required. Keywords: MMSE, neostigmine, neuromuscular blockade reversal, postoperative delirium, sugammadex, surgery",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 390.0
+    },
+    {
+      "pmid": "41181982",
+      "title": "Comparing sugammadex to neostigmine and their effects on delirium and postoperative cognitive function: A systematic review.",
+      "journal": "Journal of perioperative practice",
+      "date": "2025-11-03",
+      "authors": [
+        "Slowgrove A",
+        "Tebbett A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background: Sugammadex is a relatively new therapeutic agent that reverses neuromuscular blockade. Compared to neostigmine, it is hypothesised that sugammadex could have a beneficial effect on postoperative cognitive function, benefitting postoperative recovery. Objective: To compare the effects of both sugammadex and neostigmine on delirium and postoperative cognitive dysfunction. Methods: A systematic search of all relevant randomised controlled trials and observational cohort studies was performed in October 2024, utilising the following inclusion criteria: incidence of delirium and postoperative cognitive dysfunction following administration of neostigmine or sugammadex, adult patients, patients given rocuronium or vecuronium, English language studies, papers since the introduction of sugammadex (2008). CASP and Cochrane risk-of-bias tools were utilised for study appraisal, with a narrative synthesis of the results. Results: Five studies, reporting interventions in 49,910 patients, met the review criteria and were included. Of these, four showed no difference in cognitive function between sugammadex and neostigmine. One cohort study of 21 patients showed favourable outcomes postoperatively in the sugammadex group. Conclusion: This systematic review suggests the possibility of a very limited neurological protective role of sugammadex compared to neostigmine, but no clinical significance was reported. Only a limited number of studies were available, suggesting the need for further research. Keywords: Anaesthetics, Management and care, Anaesthetics, Pharmacology, Post-anaesthetic care, Sugammadex, Neostigmine, Delirium, Postoperative cognitive function, Vecuronium, Rocuronium",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 390.0
+    },
+    {
+      "pmid": "36228244",
+      "title": "Sugammadex in awakening from general anesthesia: systematic review and meta-analysis.",
+      "journal": "Revista da Associacao Medica Brasileira (1992)",
+      "date": "2022-09-01",
+      "authors": [
+        "Anzai A",
+        "Bernado WM."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "INTRODUCTION General anesthesia (GA) is used in surgical procedures, and it consists of the induced, reversible, and controlled loss of consciousness, which maintains the patient in a state of sedation, analgesia, amnesia, and muscle paralysis induced by neuromuscular blockers (NMBs). Although the mechanism of action of GA is not entirely clear, it is known that signals along the nerves responsible for passing stimuli are interrupted and not processed by the central nervous system after anesthetic administration. The entire anesthetic process requires protection of the airways and/or mechanical ventilation, because by causing muscle paralysis, the agents cause the inhibition of spontaneous breathing, together with uncontrolled hemodynamic processes. Some of the neuroblockers (NBs) available for use in GA are as follows: Rocuronium – Androstanol non-depolarizing neuromuscular blocking agent (NMBA), with a mono-quaternary structure, being a weaker nicotinic antagonist than pancuronium (pancuronium bromide is a non-depolarizing long-acting neuromuscular blocking amino ester). Vecuronium bromide – Mono-quaternary homolog of pancuronium and a non-depolarizing NMBA, with a shorter action than pancuronium, which may provide an advantage or be used as an alternative, as it does not have significant cardiovascular effects, does not depend on good renal function, and has a short duration of action and easy reversibility compared to other NB agents. Succinylcholine – Quaternary skeletal muscle relaxant usually used in the form of bromide, chloride, or iodide. It is a depolarizing relaxant, with action in approximately 30 s and an average duration of 3–5 min, used in medical procedures when a brief period of muscle relaxation is required. Cisatracurium – NMB, indicated as an adjunct to GA to facilitate tracheal intubation and skeletal muscle relaxation during surgical procedures or mechanical ventilation in intensive care unit (ICU) environments. NMB should be monitored through quantitative (accelerometry, electromyography, cinematography) or qualitative measurements. The latter is performed using a peripheral nerve stimulator that determines the depth of block (TOF) considering the TOF measurement &gt;0.9 as an indicative parameter for extubation 1 ( Appendix IV ). At the end of the anesthetic process, NMB reversers are used in order to shorten the muscle activity recovery time. The drugs most frequently used for this purpose are as follows: Sugammadex – A selective antagonist of steroidal NMBA (e.g., rocuronium, vecuronium, and pancuronium). It is a water-soluble substance that, by displacing the NMBA from the neuromuscular junction receptors, forms a stable compound with it, producing cessation of the NMB action in anesthesia. Neostigmine – Cholinesterase inhibitor used in the treatment of myasthenia gravis and to reverse the myorelaxant effects of muscle blockers. Pyridostigmine bromide–- Cholinesterase inhibitor with a slightly longer duration of action than neostigmine. Edrophonium – A rapid-onset, short-acting cholinesterase inhibitor used in cardiac arrhythmias and in the diagnosis of myasthenia gravis. It has also been used as an antidote to curare poisons and as a muscarinic antagonist. Atropine sulfate is indicated for the temporary blocking of serious or potentially lethal muscarinic effects, for example, as an antisialogogue, an anti-vagal agent, an antidote for organophosphorus, carbamate, or muscarinic mushroom poisoning, and to treat symptomatic bradycardia. Glycopyrrolate – A muscarinic antagonist used as an antispasmodic in some disorders of the gastrointestinal tract and to reduce salivation. This study aimed to compare the efficacy and safety of sugammadex with other substances commonly used in the reversal of NMB in GA, such as neostigmine and pyridostigmine associated with atropine sulfate or glycopyrrolate. METHODS In this section, the clinical question, the structured question (PICO), eligibility criteria of the studies, sources of information consulted, search strategies used, critical evaluation method (risk of bias), quality of evidence, data extracted, measures used to express the results, and method of analysis are discussed. Clinical question Is there evidence of efficacy and safety in the use of sugammadex compared to neostigmine or prostigmine in reversing NMB in inhaled general anesthesia (IGA)? Structured question P (population): Patients undergoing GA using NMBs. I (intervention): Reversal of the blockade using sugammadex. C (comparison): Reversal of conventional block with neostigmine or neostigmine+atropine. O (outcome) 1 : Time to extubation, recovery time to reach TOF 90% (0.9), nausea, vomiting, hypoxemia, hypotension, bradycardia, hypertension. Eligibility criteria Components of PICO; Randomized clinical trials (RCTs); No date restriction; Languages: English, Spanish, and Portuguese; Full text or abstract with necessary data; Outcomes expressed in absolute number of events or mean/median with variation. Exclusion criteria Observational and non-comparative studies; In vitro and/or animal studies; Case series or case reports; Narrative or systematic reviews. Sources of information consulted and search strategies Medline via PubMed, EMBASE Search strategy: Sugammadex AND Random* Risk of bias and quality of evidence For the RCTs, the following risks of bias were evaluated: focal question, randomization, blindfolded allocation, double blinding, evaluator blinding, losses, analysis by intention to treat (ITT), definition of outcomes, and sample size calculation. Data extracted Author, year of publication, study design, characteristics and number of patients, intervention, comparison, outcomes: time to extubation, recovery time to reach TOF 90% (0.9) 1 , nausea, vomiting, hypoxemia, hypotension, bradycardia, hypertension. Outcome measures For categorical variables, we used absolute numbers, percentage, absolute risk, risk reduction or increase, number needed to treat (NNT) or number needed to harm (NNH), and 95% confidence interval (95%CI). For continuous variables, means or difference in means (MD) with standard deviation. Expression of the results When there was the possibility of aggregating the results of the included studies with respect to one or more common outcomes, a meta-analysis was performed using the RevMan version 5.3 software (Cochrane) 2 . To calculate the mean and standard deviation, when not presented in the study, the software VassarStats: Website for Statistical Computation was used 3 . Analysis of the quality of evidence The quality of the evidence was assessed using GRADEpro software 4 . RESULTS The results are presented using flowchart ( Figure 1 ) of study selection, summaries of RCTs ( Appendix 1 ), risk of bias ( Appendix 2 ), results by outcome, quality of GRADE evidence ( Appendix 3 ), and summary of the evidence. Figure 1 Flowchart of selected studies. In total, 265 studies were retrieved (Medline via PubMed), as well as 65 from the EMBASE database. After applying the eligibility criteria and evaluating titles and abstracts, 55 studies were selected, of which 36 were included 5 – 40 for evaluation of the full text and inclusion in the meta-analysis, with 19 studies excluded 41 – 59 ( Figure 1 ). Three studies retrieved from EMBASE (Quang 5 , Lemmens 6 and Woo 7 ) were also found in the Medline search via PubMed. The studies by Pişkin 8 and Yağan 9 were included only once because they were cited twice with different PMIDs. Characteristics of the included studies The included studies met the eligibility criteria, being all RCTs, including pediatric and adult patients, with different doses of intervention (sugammadex), compared with neostigmine with or without association, during small, medium, and large surgeries. The summary of the characteristics of the included studies can be found in Appendix 1 . Risk of bias and quality of evidence Regarding biases, randomization was adequate in most studies; co",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 350.0
+    },
+    {
+      "pmid": "32282427",
+      "title": "Sugammadex versus Neostigmine for Reversal of Neuromuscular Blockade and Postoperative Pulmonary Complications (STRONGER): A Multicenter Matched Cohort Analysis.",
+      "journal": "Anesthesiology",
+      "date": "2020-06-01",
+      "authors": [
+        "Kheterpal S",
+        "Saager L."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Five percent of adult patients undergoing noncardiac inpatient surgery experience a major pulmonary complication. The authors hypothesized that the choice of neuromuscular blockade reversal (neostigmine vs. sugammadex) may be associated with a lower incidence of major pulmonary complications.<h4>Methods</h4>Twelve U.S. Multicenter Perioperative Outcomes Group hospitals were included in a multicenter observational matched-cohort study of surgical cases between January 2014 and August 2018. Adult patients undergoing elective inpatient noncardiac surgical procedures with general anesthesia and endotracheal intubation receiving a nondepolarizing neuromuscular blockade agent and reversal were included. Exact matching criteria included institution, sex, age, comorbidities, obesity, surgical procedure type, and neuromuscular blockade agent (rocuronium vs. vecuronium). Other preoperative and intraoperative factors were compared and adjusted in the case of residual imbalance. The composite primary outcome was major postoperative pulmonary complications, defined as pneumonia, respiratory failure, or other pulmonary complications (including pneumonitis; pulmonary congestion; iatrogenic pulmonary embolism, infarction, or pneumothorax). Secondary outcomes focused on the components of pneumonia and respiratory failure.<h4>Results</h4>Of 30,026 patients receiving sugammadex, 22,856 were matched to 22,856 patients receiving neostigmine. Out of 45,712 patients studied, 1,892 (4.1%) were diagnosed with the composite primary outcome (3.5% sugammadex vs. 4.8% neostigmine). A total of 796 (1.7%) patients had pneumonia (1.3% vs. 2.2%), and 582 (1.3%) respiratory failure (0.8% vs. 1.7%). In multivariable analysis, sugammadex administration was associated with a 30% reduced risk of pulmonary complications (adjusted odds ratio, 0.70; 95% CI, 0.63 to 0.77), 47% reduced risk of pneumonia (adjusted odds ratio, 0.53; 95% CI, 0.44 to 0.62), and 55% reduced risk of respiratory failure (adjusted odds ratio, 0.45; 95% CI, 0.37 to 0.56), compared to neostigmine.<h4>Conclusions</h4>Among a generalizable cohort of adult patients undergoing inpatient surgery at U.S. hospitals, the use of sugammadex was associated with a clinically and statistically significant lower incidence of major pulmonary complications.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 300.0
+    },
+    {
+      "pmid": "41920897",
+      "title": "Effect of neostigmine/glycopyrrolate versus sugammadex on postoperative delirium in older adults: A triple-masked, randomized, controlled trial protocol.",
+      "journal": "PloS one",
+      "date": "2026-04-01",
+      "authors": [
+        "Dou W",
+        "Peng K."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Background Postoperative delirium (POD) is an acute disturbance of attention and awareness in older adults undergoing surgery. It is associated with prolonged hospital stay and increased morbidity and mortality. Recent studies suggested that neostigmine, an acetylcholinesterase inhibitor used to reverse neuromuscular blockade, may reduce POD risk. We aim to evaluate whether neuromuscular blockade reversal with neostigmine/glycopyrrolate reduces POD compared with sugammadex. Methods This single-center, triple-masked, randomized, controlled superiority trial will enroll 320 older adults scheduled for major non-cardiac and non-neurosurgical surgery. Patients will be randomized (1:1) to receive either neostigmine 40 μg/kg plus glycopyrrolate 8 μg/kg or sugammadex 2 mg/kg for neuromuscular blockade reversal at the end of surgery. The primary outcome is the incidence of POD within postoperative 7 days or until discharge, assessed twice daily with the validated Chinese version of 3-min Diagnostic Interview for Confusion Assessment Method. Secondary outcomes include days with POD and proportion of hospital days affected; POD severity assessed using the highest score and the sum scores of Confusion Assessment Method Severity; and 30-day cognitive function assessed using the 10-item Telephone Interview of Cognitive Status. Discussion Results of this study will determine whether neostigmine/glycopyrrolate offers a simple, low-cost strategy to prevent POD and will inform evidence-based selection of neuromuscular reversal agents in older surgical patients. Trial registration Chinese Clinical Trial Registry (ChiCTR2400093158). Discussion This single-center, triple-masked, clinical trial will randomize 320 older adults undergoing major non-cardiac surgery to receive either neostigmine/glycopyrrolate or sugammadex for neuromuscular blockade reversal. Our primary hypothesis is that the neostigmine regimen would reduce the incidence of POD within seven days compared with sugammadex. The implementation and reporting of this trial will adhere strictly to the CONSORT 2025 statement [ 28 ]. The potential mechanisms underlying the cognitive protection of neostigmine are as follows. First, by stimulating the peripheral cholinergic anti-inflammatory pathway, it suppressed systemic and hippocampal IL-1β release and neuronal loss, thereby mitigating surgery-induced cognitive decline in rats [ 7 ]. Second, in older adults undergoing non-cardiac surgery, neostigmine reduced early postoperative cognitive dysfunction, attenuated oxidative stress, and elevated serum brain-derived neurotrophic factor [ 6 ]. Third, independent of blood-brain-barrier penetration, it increased cerebral perfusion via peripheral cholinergic activation, a vascular mechanism that alone is sufficient to confer cognitive protection in rodent models [ 8 ]. Sugammadex, in contrast, offers no such cholinergic or anti-inflammatory effects; its benefit is limited to rapid and complete neuromuscular reversal, which has not been shown to translate into cognitive advantage. Clinical findings regarding neostigmine and postoperative cognition remain inconsistent, possibly because of heterogeneity in anticholinergic co-medications (atropine or glycopyrrolate) and the absence of quantitative neuromuscular monitoring [ 6 , 10 – 12 , 29 ]. Notably, atropine impairs cognition whereas glycopyrrolate does not [ 30 , 31 ]. Consequently, firm evidence to support cholinesterase inhibitors for the prevention or treatment of POD is still lacking [ 32 – 34 ]. Our protocol standardizes glycopyrrolate co-administration and mandates quantitative TOF monitoring, thereby highlighting the action of neostigmine. Other strengths of our design include random allocation, triple masking, validated delirium assessments (3D-CAM twice daily), and pre-specified subgroup analyses. If our hypothesis is confirmed, neostigmine/glycopyrrolate would represent a simple, low-cost intervention to reduce POD in a high-risk population. However, if the true effect size is smaller than the assumed 12.5% absolute risk reduction, or if biological heterogeneity increases variance, the findings may be null or negative. Such a finding would suggest that the observed cholinergic effects of neostigmine do not translate into clinically meaningful cognitive protection in the broad surgical population. Given the biological complexity of POD, it is possible that the treatment effect may be heterogeneous across subgroups, and the overall trial results may mask beneficial effects in specific phenotypes that would warrant investigation in future studies. Main limitations are the single-center setting, exclusion of cardiac patients and those admitted to the intensive care unit (ICU), and lack of cholinesterase biomarker assays. The exclusion of cardiac surgery patients and patients requiring postoperative ICU admission limits the external validity of our findings to these high-risk populations, where the pathophysiology of delirium may differ (e.g., involving systemic inflammation induced by cardiopulmonary bypass or encephalopathy in critical illness). It is our design choice to isolate the specific effects of reversal agents from these confounding factors. The inclusion of a heterogeneous surgical population (thoracic, abdominal, orthopedic, spinal, and urologic surgeries) may dilute the effect size and introduce clinical heterogeneity that could affect POD incidence; however, we intend to enhance the generalizability of findings across the broad spectrum of major non-cardiac surgery to reflect real-world clinical practice where reversal agents are used uniformly regardless of surgical type. Pre-specified subgroup analyses can mitigate this concern. Our pilot study was also conducted in the same surgical population [ 20 ]. Although we anticipate minimal missing data based on our pilot experience, the primary analysis assumes data are missing completely at random. If missingness were related to unobserved factors (e.g., clinical deterioration or early discharge), effect estimates could be biased; this will be addressed through the pre-specified sensitivity analyses (worst-case and best-case scenarios). In summary, this trial will determine whether neuromuscular blockade reversal with neostigmine combined with glycopyrrolate, compared to sugammadex, can reduce the incidence of POD in older adults undergoing major non-cardiac surgery. The findings will inform evidence-based selection of reversal agents and may offer an inexpensive, readily implementable strategy to protect postoperative cognitive recovery.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 290.0
+    },
+    {
+      "pmid": "41545820",
+      "title": "Low dose of sugammadex versus neostigmine for reversal of rocuronium induced moderate neuromuscular block: a randomized controlled trial.",
+      "journal": "BMC anesthesiology",
+      "date": "2026-01-17",
+      "authors": [
+        "Hadj-Mimoune S",
+        "Richebé P."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract Background Residual neuromuscular blockade (rNMB) after surgery can lead to complications such as respiratory distress, increased length of hospital stay, and higher healthcare costs. Sugammadex, a selective relaxant-binding agent, has shown efficacy in reversing rocuronium-induced neuromuscular blockade more rapidly than neostigmine. This study aimed to evaluate the effectiveness of a low dose of sugammadex (0.5 mg.kg −1 ) compared to standard neostigmine with glycopyrrolate for the reversal of moderate rocuronium-induced neuromuscular blockade. Methods This randomized, double-blind, controlled trial included adult patients undergoing surgery with rocuronium-induced moderate neuromuscular blockade. Participants were randomized to receive either low-dose sugammadex or standard-dose neostigmine with glycopyrrolate at the end of surgery. The primary outcome was the time to achieve a Train-of-Four (TOF) ratio of ≥ 0.9 after administration of the reversal agent. Secondary outcomes included extubation time, incidence of sugammadex rescue therapy for incomplete reversal, and postoperative complications. Statistical analysis used t-tests and Mann–Whitney-Wilcoxon tests for continuous variables and chi-square tests for categorical variables, with significance set at p &lt; 0.05. Results The median time to reach TOF ratio of ≥ 0.9 was significantly shorter in the sugammadex group (4.3 min, IQR: 3.2–6) compared to the neostigmine group (20.6 min, IQR: 10.1–21.3, p &lt; 0.001). Extubation times were also reduced with sugammadex, with a median of 11.6 (IQR: 8.6–15.1) minutes versus 25.9 (IQR: 17.7–29.7) minutes in the neostigmine group ( p &lt; 0.001). Only 4.8% of patients in the sugammadex group required rescue therapy to reverse the neuromuscular block with TOF ratio of ≥ 0.9, compared to 60.6% in the neostigmine group ( p &lt; 0.001). No significant differences were observed in postoperative respiratory complications or PACU length of stay. Conclusions Low-dose sugammadex provides a faster and more reliable reversal of moderate neuromuscular blockade than standard-dose neostigmine, with implications for improved operating room efficiency and patient safety. Continuous neuromuscular monitoring remains essential, as a small proportion of patients may still require additional intervention. Trial registration Registered retrospectively at ClinicalTrials.gov with registration number NCT05718934 on 2023–02-08. Keywords: Sugammadex, Neostigmine, Neuromuscular blockade, Residual paralysis, Reversal",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 290.0
+    },
+    {
+      "pmid": "32768253",
+      "title": "Sugammadex Neuromuscular Blockade Reversal Associated With Lower Postoperative Arterial Carbon Dioxide Levels After Congenital Cardiac Surgery.",
+      "journal": "Journal of cardiothoracic and vascular anesthesia",
+      "date": "2020-07-15",
+      "authors": [
+        "Bray JP",
+        "Adams PS."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "<h4>Objective</h4>To compare postoperative arterial blood gas samples and requirement for respiratory support between patients who received sugammadex versus neostigmine reversal before extubation after congenital cardiac surgery.<h4>Design</h4>Retrospective, cross-sectional study.<h4>Setting</h4>Single-center, university-based, tertiary care hospital.<h4>Participants</h4>Patients with congenital heart disease undergoing surgery with cardiopulmonary bypass.<h4>Interventions</h4>Chart review.<h4>Measurements and main results</h4>The first postoperative arterial blood gas measurements were abstracted from electronic medical records, and reintubation or use of positive- pressure respiratory support within the first 24 postoperative hours was documented. Of the 237 charts reviewed, 111 (47%) patients received sugammadex reversal and 126 (53%) received neostigmine. Multivariate models showed that patients with 2-ventricle congenital heart disease who received sugammadex had lower postoperative arterial carbon dioxide partial pressure (PaCO<sub>2</sub>) values (coefficient -3.1, 95% confidence interval [CI] -5.9 to -0.4; p = 0.026) and required less- noninvasive positive- pressure ventilation (odds ratio 0.3, 95% CI 0.1-0.8; p = 0.021). Single-ventricle congenital heart disease patients who received sugammadex had higher postoperative pH values (coefficient 0.04, 95% CI 0.01-0.06; p = 0.01) and lower PaCO<sub>2</sub> values (coefficient -5.2, 95% CI -9.6 to -0.8; p = 0.021).<h4>Conclusion</h4>Sugammadex reversal was associated with lower postoperative PaCO<sub>2</sub> values. In addition, sugammadex reversal was associated with less need for noninvasive positive- pressure ventilation in 2-ventricle patients. The magnitude of the effect appears modest, therefore the clinical significance remains unclear. Additional studies focused on investigating particular patient populations, such as infants, single-ventricle congenital heart disease, or patients with pulmonary hypertension, are needed to identify whether these patients appreciate a greater benefit from sugammadex reversal.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 280.0
+    },
+    {
+      "pmid": "31721151",
+      "title": "Short-term safety and effectiveness of sugammadex for surgical patients with end-stage renal disease: a two-centre retrospective study.",
+      "journal": "Anaesthesia",
+      "date": "2019-11-12",
+      "authors": [
+        "Adams DR",
+        "Sakai T."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Sugammadex is a novel reversal agent for aminosteroid neuromuscular blocking drugs, especially rocuronium. Given its renal excretion, sugammadex is not recommended for patients with end-stage renal disease; however, reports exist of its use in this group of patients. This two-institutional retrospective observational study aimed to review the safety profile and effectiveness of sugammadex in surgical patients with end-stage renal disease who required pre-operative renal replacement therapy. Adult surgical patients with end-stage renal disease requiring pre-operative renal replacement therapy, who received sugammadex between April 2016 and January 2019, were studied. The primary outcome was the incidence of postoperative tracheal re-intubation within 48 h. The secondary outcome was the incidence of deferred tracheal extubation in the operating theatre. One hundred and fifty-eight patients were identified from 125,653 surgical patients: 48 patients (30%) underwent renal transplantation and 110 (70%) underwent non-renal transplantation procedures. There were 22 instances (14%) of deferred tracheal extubation due to surgical and/or pre-existing medical conditions. Out of the 136 patients who had the tracheal tube removed at the end of the procedure, three patients had their trachea re-intubated within 48 h: two patients developed pulmonary oedema resulting from volume overload; and one patient had worsening sepsis. No incidence of recurrence of neuromuscular blockade was observed. Of note, 24 (18%) patients were found to have incomplete neuromuscular blockade reversal with neostigmine but administration of sugammadex led to successful tracheal extubation. In conclusion, sugammadex appears to be safe and effective in adult patients with end-stage renal disease receiving pre-operative renal replacement therapy.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 260.0
+    },
+    {
+      "pmid": "33079874",
+      "title": "Utilization Patterns of Perioperative Neuromuscular Blockade Reversal in the United States: A Retrospective Observational Study From the Multicenter Perioperative Outcomes Group.",
+      "journal": "Anesthesia and analgesia",
+      "date": "2020-11-01",
+      "authors": [
+        "Dubovoy TZ",
+        "Vaughn MT."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Following the introduction of sugammadex to the US clinical practice, scarce data are available to understand its utilization patterns. This study aimed to characterize patient, procedure, and provider factors associated with sugammadex administration in US patients.<h4>Methods</h4>This retrospective observational study was conducted across 24 Multicenter Perioperative Outcomes Group institutions in the United States with sugammadex on formulary at the time of the study. All American Society of Anesthesiologists (ASA) physical status I-IV adults undergoing noncardiac surgery from 2014 to 2018 receiving neuromuscular blockade (NMB) were eligible. The study established 3 periods based on the date of first documented sugammadex use at each institution: the presugammadex period, 0- to 6-month transitional period, and 6+ months postsugammadex period. The primary outcome was reversal using sugammadex during the postsugammadex period-defined as 6 months after sugammadex was first utilized at each institution. A multivariable mixed-effects logistic regression model controlling for institution was developed to assess patient, procedure, and provider factors associated with sugammadex administration.<h4>Results</h4>A total of 934,798 cases met inclusion criteria. Following the 6-month transitional period, sugammadex was used on average in 40.0% (95% confidence interval [CI], 39.8-40.2) of cases receiving NMB. Multivariable analysis demonstrated sugammadex use to be associated with train-of-four count of 0-1 (adjusted odds ratio = 4.06; 95% CI, 33.83-4.31) or 2 (2.45; 2.29-2.62) vs 3-4 twitches before reversal; the amount of NMB administered (3.01; 2.88-3.16) for the highest effective dose 95 quartile compared to the lowest quartile; advanced age (1.83; 1.71-1.95) compared to age <41; male sex (1.36; 1.32-1.39) compared to female sex; major thoracic surgery (1.26; 1.13-1.39); congestive heart failure (1.17, 1.07-1.28); and ASA III or IV (1.13; 1.10-1.16) versus ASA I or II.<h4>Conclusions</h4>Our data demonstrate broad early clinical adoption of sugammadex following Food and Drug Administration approval. Sugammadex is used preferentially in cases with higher degrees of NMB before reversal and in patients with greater burden of comorbidities and known risk factors for residual blockade or pulmonary complications.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 260.0
+    },
+    {
+      "pmid": "39688966",
+      "title": "Factors Associated With Decision to Use and Dosing of Sugammadex in Children: A Retrospective Cross-Sectional Observational Study.",
+      "journal": "Anesthesia and analgesia",
+      "date": "2024-01-19",
+      "authors": [
+        "Brown SES",
+        "Multicenter Outcomes Group (MPOG) Perioperative Clinical Research Committee."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Sugammadex was initially approved for reversal of neuromuscular blockade in adults in the United States in 2015. Limited data suggest sugammadex is widely used in pediatric anesthesia practice however the factors influencing use are not known. We explore patient, surgical, and institutional factors associated with the decision to use sugammadex versus neostigmine or no reversal, and the decision to use 2 mg/kg vs 4 mg/kg dosing.<h4>Methods</h4>Using data from the Multicenter Perioperative Outcomes Group (MPOG) database, an EHR-derived registry, we conducted a retrospective cross-sectional study. Eligible cases were performed between January 1, 2016 and December 31, 2020, for children 0 to 17 years at US hospitals. Cases involved general anesthesia with endotracheal intubation and administration of rocuronium or vecuronium. Using generalized linear mixed models with institution and anesthesiologist-specific random intercepts, we measured the importance of a variety of patient, clinician, institution, anesthetic, and surgical risk factors in the decision to use sugammadex versus neostigmine, and the decision to use a 2 mg/kg vs 4 mg/kg dose. We then used intraclass correlation statistics to evaluate the proportion of variance contributed by institution and anesthesiologist specifically.<h4>Results</h4>There were 97,654 eligible anesthetics across 30 institutions. Of these 47.1% received sugammadex, 43.1% received neostigmine, and 9.8% received no reversal agent. Variability in the choice to use sugammadex was attributable primarily to institution (40.4%) and attending anesthesiologist (27.1%). Factors associated with sugammadex use (compared to neostigmine) include time from first institutional use of sugammadex (odds ratio [OR], 1.08, 95% confidence interval [CI], 1.08-1.09, per month, P < .001), younger patient age groups (0-27 days OR, 2.59 [2.00-3.34], P < .001; 28 days-1 year OR, 2.72 [2.16-3.43], P < .001 vs 12-17 years), increased American Society of Anesthesiologists [ASA] physical status (ASA III: OR, 1.32 [1.23-1.42], P < .001 ASA IV OR, 1.71 [1.46-2.00], P < .001 vs ASA I), neuromuscular disease (OR, 1.14 (1.04-1.26], P = .006), cardiac surgery (OR, 1.76 [1.40-2.22], P < .001), dose of neuromuscular blockade within the hour before reversal (>2 ED95s/kg OR, 4.58 (4.14-5.07], P < .001 vs none), and shorter case duration (case duration <60 minutes OR, 2.06 [1.75-2.43], P < .001 vs >300 minutes).<h4>Conclusions</h4>Variation in sugammadex use was primarily explained by institution and attending anesthesiologist. Patient factors associated with the decision to use sugammadex included younger age, higher doses of neuromuscular blocking agents, and increased medical complexity.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 260.0
+    },
+    {
+      "pmid": "36698080",
+      "title": "Analysis of the association of sugammadex with the length of hospital stay in patients undergoing abdominal surgery: a retrospective study.",
+      "journal": "BMC anesthesiology",
+      "date": "2023-01-25",
+      "authors": [
+        "Tan J",
+        "Bian Q."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract Background Sugammadex is a newer medication used for rapid and reliable reversal of neuromuscular blockade. This study evaluated whether sugammadex could reduce the length of postoperative hospital stay in patients undergoing abdominal surgery. Methods This single center retrospective cohort study included patients who underwent major abdominal surgery between January 2015 and October 2019. Patients were randomized according to reversal with sugammadex or spontaneous recovery. The primary outcome was length of postoperative hospital stay. The secondary outcomes were length of post-anesthetic care unit (PACU) stay, postoperative ambulation time, time-to-first-defecation, and incidence of pulmonary complications. After 1:1 propensity score matching, univariate and multiple linear regression analyses estimated the differences in outcomes. Results Of the 1614 patients, 517 received sugammadex and 645 spontaneously recovered. After adjusting for potential confounders, non-linear relationship was detected between administration of sugammadex and the length of postoperative hospital stay (β = 0.29 95% confidence interval {CI}: [− 1.13, − 0.54], P = 0.4912). However, it was associated with shorter PACU stay (β = − 20.30 95% CI: [− 24.48, − 17.11], P &lt; 0.0001), shorter time to postoperative ambulation movement (β = − 0.43 95% CI: [− 0.62, − 0.23], P &lt; 0.0001), and reduced time-to-first-defecation (β = − 2.25 95% CI: [− 0.45, − 0.05], P = 0.0129), when compared to the spontaneously recovered group. The incidence of pneumonia in the sugammadex group was significantly lower than that in the spontaneously recovered group (18.6% [44/237] vs. 39.2% [93/237] P &lt; 0.05). Conclusions Neuromuscular blockade reversal with sugammadex after abdominal surgery demonstrated an excellent recovery profile and was associated with decreased risk of pneumonia, although it did not affect the length of postoperative hospital stay. Supplementary Information The online version contains supplementary material available at 10.1186/s12871-023-01979-4. Keywords: Sugammadex, Postoperative hospital stay, Reversal agents, Neuromuscular blockade",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 250.0
+    },
+    {
+      "pmid": "27770778",
+      "title": "Observational study on patterns of neuromuscular blockade reversal.",
+      "journal": "BMC anesthesiology",
+      "date": "2016-10-22",
+      "authors": [
+        "Dubovoy T",
+        "Kheterpal S."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Abstract Background Using electronic health record data, we hypothesized that larger reversal doses are used for patients with deeper levels of neuromuscular blockade (NMB) as evidenced by the last recorded TOF measurement. We also examined if dosing regimens reflect current practice guidelines of using ideal body weight (IBW) for NMB agents and total body weight (TBW) for neostigmine. Methods This is a retrospective observational study of adult, ASA 1–4 patients who underwent general anaesthesia and received non-depolarizing NMB agents between 01/01/2004 and 12/31/2013. For the primary outcome, percentages of cases receiving neostigmine and median doses administered for each subjective train-of-four (TOF) category were calculated. Secondary analyses evaluated associations between NMB dosing and neostigmine administration based on Body Mass Index (BMI) categories. Results A total of 135,633 cases met inclusion criteria for the study. There was no clinically significant difference in median neostigmine dosing based on last TOF count prior to reversal administration: 37.5 mcg/kg for TOF of 4/4 vs. 37.9 mcg/kg for TOF of 0/4 for the total neostigmine dose. Significantly higher number of patients with lower TOF counts received additional neostigmine administration: 5.7 % for 0/4 vs. 1.5 % for 4/4 TOF counts. The median times to extubation following neostigmine administration were clinically similar across TOF count categories. The median doses for neostigmine based on TBW decreased with higher BMI categories and were significantly different between the lowest and highest categories: 42.8 mcg/kg vs 30.8 mcg/kg for total doses ( p &lt; .0001) respectively. The percentages of cases requiring reversal in addition to the initial dose increased with increasing BMI categories and were 2.1 % for BMI &lt; 18 vs. 3.3 % for BMI ≥ 40. The total median dose of NMB agents in ED95 equivalents per IBW increased from 2.9 in the Underweight category to 4.2 in the Class III Obese category. The majority of patients in the pancuronium subgroup received very low ED95 equivalent dose of 0.1 and did not require reversal. Patients receiving cisatracurium were given significantly higher median ED95 equivalent dose of 5.6 vs 2.8–3.9 compared to other intermediate acting NMB agents, while receiving clinically similar doses of neostigmine. Conclusions Neither neostigmine dosing nor times to extubation were affected by the depth of the neuromuscular blockade prior to reversal. The need for additional reversal, or rescue, correlated strongly with the depth of NMB. There was significant variability in neostigmine dosing across the BMI categories. Underweight patients received relatively lower NMB doses while simultaneously receiving relatively higher reversal doses, and the opposite was true for patients with BMI &gt;40. Keywords: Neuromuscular blockers, Neostigmine, Neuromuscular blockade reversal",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 250.0
+    },
+    {
+      "pmid": "41136896",
+      "title": "Effect of sugammadex titration versus manufacturer's recommendation for reversal of rocuronium-induced neuromuscular block: a prospective, randomized, controlled trial.",
+      "journal": "BMC anesthesiology",
+      "date": "2025-10-24",
+      "authors": [
+        "Gao L",
+        "Wang Y."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Background Both under-dosing and over-dosing of sugammadex for reversing neuromuscular block pose risks to patients, yet the optimal dosage for different degrees of neuromuscular block remains undefined. This study compared titration with single bolus of sugammadex recommended by manufacturer to determine the optimal dose for achieving a train-of-four ratio (TOFR) of 0.9 or greater while minimizing residual paralysis. Methods Patients were randomly assigned to titrated group or manufacturer-recommended group. In titrated group, sugammadex was given in 50-mg increments every 5 min until a TOFR of 0.9 or greater was reached. In recommended group, a single dose (2 mg/kg or 4 mg/kg) was given based on train-of-four count (TOFC). Neuromuscular block was monitored continuously, and residual paralysis was assessed in the post-anesthesia care unit (PACU). Results Of 210 enrolled patients, 205 were evaluated. The median dose of sugammadex for reversing different depths of neuromuscular block induced by rocuronium was ascertained via the titration method in this study. Titrated group required significantly less sugammadex to achieve a TOFR of at least 0.9 compared to recommended group ( P &lt; 0.001). Residual paralysis incidence was similar between groups (5.4% in titrated group vs. 4.9% in recommended group; P = 0.564). Although recovery time was longer in titrated group, extubation time and length of stay in the PACU were comparable. Conclusions Titrated sugammadex administration significantly reduces required dosage without increasing residual paralysis risk. Continuous neuromuscular monitoring postoperatively is strongly recommended due to individual variability in dosage needs. Trial registration The study was registered in the Chinese Clinical Trial Registry on March 4, 2024(ChiCTR2400081540). Supplementary Information The online version contains supplementary material available at 10.1186/s12871-025-03398-z.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 250.0
+    },
+    {
+      "pmid": "37080843",
+      "title": "Evaluation of the Effects of an Extubation Protocol With Neostigmine on Duration of Mechanical Ventilation After Cardiac Surgery.",
+      "journal": "Journal of cardiothoracic and vascular anesthesia",
+      "date": "2023-03-22",
+      "authors": [
+        "Recco D",
+        "Khabbaz KR."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "<h4>Objectives</h4>Residual neuromuscular blockade is associated with increased postoperative pulmonary complications. This study aimed to evaluate the effect of an extubation protocol incorporating neuromuscular blockade reversal (NMBR) by train-of-four monitoring on \"fast-track\" cardiac surgery outcomes.<h4>Design</h4>A retrospective cohort study.<h4>Setting</h4>At a university hospital.<h4>Participants</h4>Out of 1,843 cardiac surgery patients, from February 2, 2015, to March 31, 2017, 957 (52%) underwent cardiac surgery on or after February 29, 2016.<h4>Interventions</h4>An extubation protocol, comprised of weaning from mechanical ventilation and NMBR guidelines, was implemented on February 29, 2016.<h4>Measurements and main results</h4>The associations of baseline characteristics with the postoperative duration of mechanical ventilation (primary outcome) and respiratory and/or adverse complications (secondary outcomes) were evaluated using regression and interrupted- time series models. The implementation of an extubation protocol was associated with an 18% decrease in the duration of mechanical ventilation (incident rate ratio [IRR] 0.82, 95% CI 0.72-0.94; p < 0.01), statistically insignificant 26% increase in patients extubated ≤6 hours (odds ratio [OR] 1.26, 95% CI 0.97-1.65; p = 0.09), and 13% shorter intensive care unit length of stay (LOS) (IRR 0.87, 95% CI 0.79-0.97; p < 0.01). Patients undergoing isolated coronary artery bypass graft or isolated valve procedures, on or after February 29, 2016, had decreased extubation times (IRR 0.82, p < 0.01 and IRR 0.80, p = 0.02). The protocol did not have a statistically significant association with hospital LOS (IRR 0.98, p = 0.57) or readmission (OR 1.22, p = 0.33), and differences in the occurrence of pulmonary complications and adverse outcomes between the pre- and postprotocol groups were clinically insignificant.<h4>Conclusions</h4>The application of an extubation protocol incorporating NMBR based on neuromuscular monitoring was associated with a decrease in postoperative duration of mechanical ventilation and facilitated more patients meeting the early extubation benchmark without an increased risk of respiratory complications or adverse outcomes.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 235.0
+    },
+    {
+      "pmid": "37728455",
+      "title": "Reply to the Commentary on \"An appraisal of neostigmine versus sugammadex for neuromuscular blockade reversal in patients with a prior heart transplant\".",
+      "journal": "Anaesthesiology intensive therapy",
+      "date": "2023-01-01",
+      "authors": [
+        "Paredes S",
+        "Renew JR."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Dear Editor, Chowdhury and Baidya [ 1 ] raise concerns re-garding our retrospective study of the use of sugammadex (SGX) and neostigmine (NEO) in patients with previous heart transplantation. These authors were especially interested about the baseline renal and pulmonary function of the participants and how such characteristics could contribute to the longer length of stay for the SGX cohort. We agree that baseline differences in both renal and pulmonary function are important determinants in the incidence of post-operative complications. Unfortunately, these baseline data were not collected in our population, so we do not have information about their influence on our results. Although we recognized this as a limitation, we also speculated that the length of stay was longer after thoracic surgery, possibly due to clinical features incompletely captured in our retrospective study causing the SGX population to be higher risk patients compared with the NEO group. Further investigation is certainly warranted on the matter, and that should include considering baseline pulmonary and renal function. Additionally, it was mentioned by Chowdhury [ 1 ] that pulmonary and renal dysfunction is frequent in the immediate post-operative period following cardiac transplantation. However, our population included patients who had undergone transplantation, been discharged from the hospital, and presented at a later date for non-cardiac surgery. Some of these patients had years between SGX/NEO exposure and their cardiac surgery. Such a clinical timeline would undoubtedly minimize the risk of post-transplantation renal and pulmonary dysfunction impacting the response to neuromuscular blockade antagonism. It is true that the safety profile of SGX in end-stage renal disease (ESRD) patients is not fully established and remains an off-label use in this population [ 2 ]. However, the available evidence suggests the use of SGX as a reasonable alternative for neuromuscular blockade reversal in ESRD patients [ 3 – 6 ]. A previous study done by our team included 219 ESRD patients receiving SGX as a reversal agent and showed that 8.2% (18 patients) presented pulmonary complications. However, after a careful review, most of these complications appeared to be unrelated to the neuromuscular blockade [ 4 ]. Therefore, we support the use of SGX in ESRD as a potential alternative for neuromuscular blockade antagonism in patients at risk for complications related to residual neuromuscular blockade. Finally, postoperative pulmonary complications are multifactorial in heart transplant patients [ 7 ]. Although we cannot specifically comment on the difference in incidence of these between the SGX and NEO groups, we would be cautious about any study that suggests that a single drug substitution would significantly impact this complex outcome in these complex patients. ACKNOWLEDGMENTS Assistance with the article none. Financial support and sponsorship none. Conflicts of interest none. Presentation none. References 1. Chowdhury SR, Baidya DK. Commentary on “An appraisal of neostigmine versus sugammadex for neuromuscular blockade reversal in patients with a prior heart transplant”. Anesthesiol Intensive Ther 2023; 55: 240. doi: 10.5114/ait.2023.130638. 2. Food and Drug Administration . BRIDION® (sugam-madex) Injection, for intravenous use. [Internet]. 2015. [cited 2020 Feb 14]. Available from: https://www.accessdata.fda.gov/drugsatfda_docs/label/2015/022225lbl.pdf . 3. Adams DR, Tollinche LE, Yeoh CB, et al. Short-term safety and effectiveness of sugammadex for surgical patients with end-stage renal disease: a two-centre retrospective study. Anaesthesia 2020; 75: 348-352. doi: 10.1111/anae.14914. 4. Paredes S, Porter SB, Porter IE, Renew JR. Sugammadex use in patients with end-stage renal disease: a historical cohort study. Can J Anesth 2020; 67: 1789-1797. doi: 10.1007/s12630-020-01812-3. 5. Kim YS, Lim BG, Won YJ, Oh SK, Oh JS, Cho SA. Efficacy and safety of sugammadex for the reversal of rocuronium-induced neuromuscular blockade in patients with end-stage renal disease: a systematic review and meta-analysis. Medicina (Kaunas) 2021; 57: 1259. doi: 10.3390/medicina57111259. 6. Oh SK, Lim BG. Sugammadex administration in patients with end-stage renal disease: a narrative review with recommendations. Anesth Pain Med (Seoul) 2023; 18: 11-20. doi: 10.17085/apm.22259. 7. Lenner R, Padilla ML, Teirstein AS, Gass A, Schi-lero GJ. Pulmonary complications in cardiac transplant recipients. Chest 2001; 120: 508-513. doi: 10.1378/chest.120.2.508.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 230.0
+    },
+    {
+      "pmid": "37306271",
+      "title": "An appraisal of neostigmine versus sugammadex for neuromuscular blockade reversal in patients with a prior heart transplant.",
+      "journal": "Anaesthesiology intensive therapy",
+      "date": "2023-01-01",
+      "authors": [
+        "Paredes S",
+        "Renew JR."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Abstract Background Heart transplant recipients present unique perioperative challenges for surgery. Specifically, autonomic system denervation has significant implications for commonly used perioperative drugs. This study investigates neuromuscular blocking antagonists in this population when undergoing subsequent non-cardiac surgery. Methods A retrospective review was performed for the period 2015–2019 across our health care enterprise. Patients with previous orthotopic heart transplant and subsequent non-cardiac surgery were identified. A total of 185 patients were found, 67 receiving neostigmine (NEO) and 118 receiving sugammadex (SGX). Information of patient characteristics, prior heart transplant, and subsequent non-cardiac surgery was collected. Our primary outcome was the incidence of bradycardia (heart rate &lt; 60 bpm) and/or hypotension (mean blood pressure (MAP) &lt; 65 mmHg) following neuromuscular blockade reversal. Secondary outcomes included need of intra-operative inotropic agents, arrhythmia, cardiac arrest, hospital length of stay (hLOS), ICU admission, and death within 30 postoperative days. Results In unadjusted analysis, no significant differences were found between the two groups in change in heart rate [0 (–26, 14) vs. 1 (–19, 10), P = 0.59], change in MAP [0 (–22, 28) vs. 0 (–40, 47), P = 0.96], hLOS [2 days (1, 72) vs. 2 (0, 161), P = 0.92], or intraoperative hypotension [4 (6.0%) vs. 5 (4.2%), OR = 0.70, P = 0.60] for NEO and SGX respectively. After multivariable analysis, the results were similar for change in heart rate ( P = 0.59) and MAP ( P = 0.90). Conclusions No significant differences in the incidence of bradycardia and hypotension were found in the NEO versus SGX groups. NEO and SGX may have similar safety profiles in patients with prior heart transplant undergoing non-cardiac surgery. Keywords: neuromuscular blockade, neostigmine, sugammadex, heart transplant",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 230.0
+    },
+    {
+      "pmid": "34319550",
+      "title": "Neuromuscular Blockade and Reversal Agent Practice Variability in the US Inpatient Surgical Settings.",
+      "journal": "Advances in therapy",
+      "date": "2021-07-28",
+      "authors": [
+        "Bash LD",
+        "Urman RD."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Introduction The management of neuromuscular blockade (NMB) has evolved over time and remains a critical component of general anesthesia. However, NMB use varies by patient and procedural characteristics, clinical practices, protocols, and drug access. National utilization patterns are unknown. We describe changes in NMB and NMB reversal agent administration in surgical inpatients since the US introduction of sugammadex in December 2015. Methods In a retrospective observational study of inpatients involving NMB with rocuronium or vecuronium in the Premier Healthcare Database, we estimate associations between factors related to choice of (1) active NMB reversal versus spontaneous recovery and (2) sugammadex versus neostigmine as the reversal agent. Results Among 4.3 million adult inpatient encounters involving rocuronium or vecuronium, the most widely administered NMB agent was rocuronium alone (86%). Over time, gradual declines in both neostigmine use and spontaneous reversal were observed (64% and 36% in 2014 to 38% and 28%, respectively in the first half of 2019). Several factors were independently associated with use of active versus spontaneous NMB recovery including years since 2016, patient (age, race, comorbidities), and procedure (admission and surgery type) characteristics. Among those actively reversed, these and other factors were independently associated with choice of reversal agent administered, including size and teaching affiliation of hospital. While both impacted choices in treatment, the direction and magnitude of effect of patient comorbidities and procedure type varied in their impact on choice of mode (pharmacologic vs. spontaneous) and agent (neostigmine vs. sugammadex) of NMB reversal independent of other factors and each other. Sites which adopted sugammadex earlier were more likely to choose sugammadex over neostigmine compared with later adopters independent of other factors. Conclusions Among US adult inpatients administered NMBs, we observed complex relationships between patient, site, procedural characteristics, and NMB management choices as NMBA choice and active reversal options among inpatient cases changed over time. Supplementary Information The online version contains supplementary material available at 10.1007/s12325-021-01835-2. Results Study Population A total of 930 clinical sites and 4,825,660 total inpatient encounters included the use of any NMB, and 92.3% of those encounters included administration of rocuronium and/or vecuronium. Among those, 4,263,658 inpatient encounters across 927 sites met all inclusion criteria and were the focus of these analyses. Most sites were smaller (79% with fewer than 400 beds), urban (71%), and nonacademic (70%) (Supplementary Table 2). More than half (60%) of the sites adopted clinical use of sugammadex within its first 2 years of availability, while 22% in the PHD database remained non-adopters as of the data cut in June 2019. Patient characteristics for encounters involving rocuronium or vecuronium are summarized in Table 1 . On average, patients were 58.2 years old (median IQR, 60 [47, 70]), more often women (55.3%), White (78.4%), non-Hispanic (93.0%), and most (78.6%) had at least one comorbidity. Obesity/overweight status (21.9%), diabetes (15.1%), electrolyte disorders (19.9%), chronic pulmonary disease (19.0%), and cardiac arrhythmias (16.9%) were among those most commonly reported. Most inpatient cases were from urban areas (90%) and treated in large (400+ beds) hospitals (53.4%), and about half (49.8%) were from academic sites (Supplementary Fig. 1, Table 1 ). The most frequently reported procedures performed were musculoskeletal (35.9%), digestive (28.5%), or cardiovascular (12.2%) in nature (Table 1 , Supplementary Table 1). Table 1 Patient characteristics by neuromuscular blockade agent reversal method Overall Neostigmine Sugammadex Spontaneous reversal N = 4,263,658 % N = 2,333,762 % N = 528,736 % N = 1,401,160 % Patient characteristics Age Mean (SD) 58.2 (16.56) 57.6 (16.62) 59.0 (16.49) 58.8 (16.45) Age range 18–30 313,904 7.4 177,437 7.6 35,484 6.71 100,983 7.21 31–40 395,318 9.3 230,396 9.87 47,538 8.99 117,384 8.38 41–50 575,850 13.5 333,542 14.29 68,052 12.87 174,256 12.44 51–60 887,726 20.8 483,335 20.71 107,014 20.24 297,377 21.22 61–70 1,044,013 24.5 557,963 23.91 132,193 25 353,857 25.25 71–80 722,225 16.9 381,183 16.33 94,477 17.87 246,565 17.6 80+ 324,622 7.6 169,906 7.28 43,978 8.32 110,738 7.9 Sex Female 2,357,026 55.3 1,355,626 58.09 296,475 56.07 704,925 50.31 Male 1,904,508 44.7 976,841 41.86 232,246 43.92 695,421 49.63 Unknown 2124 0.0 1295 0.06 15 0 814 0.06 Race Black 429,017 10.1 249,730 10.7 49,128 9.29 130,159 9.29 Other/missing 490,011 11.5 271,645 11.64 49,350 9.34 168,996 12.06 White 3,344,650 78.4 1,812,387 77.66 430,258 81.37 1,102,005 78.65 Hispanic No/missing 3,965,095 93.0 2,175,836 93.23 482,687 91.29 1,306,572 93.25 Yes 298,563 7.0 157,926 6.77 46,049 8.71 94,588 6.75 Comorbidities Comorbidities ≥ 1 3,351,656 78.6 1,778,152 76.19 424,106 80.21 1,149,398 82.03 Blood loss anemia 47,309 1.1 26,302 1.13 5484 1.04 15,523 1.11 Cardiac arrhythmias 721,439 16.9 321,049 13.76 79,570 15.05 320,820 22.9 Chronic pulmonary disease 811,014 19.0 411,185 17.62 102,611 19.41 297,218 21.21 Coagulopathy 121,667 2.9 44,892 1.92 7826 1.48 68,949 4.92 Congestive heart failure 260,761 6.1 95,724 4.1 31,380 5.93 133,657 9.54 Diabetes (complicated) 247,869 5.8 104,993 4.5 39,644 7.5 103,232 7.37 Diabetes (uncomplicated) 642,395 15.1 347,480 14.89 71,145 13.46 223,770 15.97 Drug abuse 170,018 4.0 68,709 2.94 17,878 3.38 83,431 5.95 Fluid/electrolyte disorders 847,306 19.9 366,604 15.71 90,698 17.15 390,004 27.83 Hypertension (complicated) 151,208 3.5 50,959 2.18 29,217 5.53 71,032 5.07 Obesity, overweight 935,581 21.9 526,920 22.58 130,645 24.71 278,016 19.84 Other neurological disorders 323,607 7.6 115,946 4.97 33,177 6.27 174,484 12.45 Paralysis 86,863 2.0 35,261 1.51 10,629 2.01 40,973 2.92 Peripheral vascular disorders 310,192 7.3 149,854 6.42 39,733 7.51 120,605 8.61 Pulmonary circulation disorders 99,480 2.3 36,869 1.58 9863 1.87 52,748 3.76 Solid tumor without metastasis 424,701 10.0 247,446 10.6 70,514 13.34 106,741 7.62 Sleep apnea 353,738 8.3 188,859 8.09 49,207 9.31 115,672 8.26 Valvular disease 255,501 6.0 98,767 4.23 24,490 4.63 132,244 9.44 Weight loss 214,827 5.0 95,734 4.1 27,496 5.2 91,597 6.54 Procedure characteristics ICD-10 PCS classification Cardiovascular 520,482 12.2 187,575 8.04 49,689 9.4 283,218 20.21 Digestive 1,213,034 28.5 815,072 34.93 173,702 32.85 224,260 16.01 Endocrine 21,251 0.5 10,896 0.47 2460 0.47 7895 0.56 ENT 27,517 0.6 11,273 0.48 3750 0.71 12,494 0.89 Eye 2838 0.1 1381 0.06 483 0.09 974 0.07 Female genital 230,611 5.4 161,418 6.92 25,996 4.92 43,197 3.08 Integumentary, hemic, and lymphatic 146,206 3.4 71,769 3.08 19,750 3.74 54,687 3.9 Respiratory 158,834 3.7 82,171 3.52 25,691 4.86 50,972 3.64 Musculoskeletal and nervous 1,530,397 35.9 837,597 35.89 189,484 35.84 503,316 35.92 Urinary and male genital 172,583 4.0 107,229 4.59 24,563 4.65 40,791 2.91 Others/unknown/missing 239,905 5.6 47,381 2.03 13,168 2.49 179,356 12.8 Site characteristics Teaching No 2,138,450 50.2 1,173,622 50.29 253,138 47.88 711,690 50.79 Yes 2,125,208 49.8 1,160,140 49.71 275,598 52.12 689,470 49.21 Urban, rural Rural 425,823 10.0 218,987 9.38 54,250 10.26 152,586 10.89 Urban 3,837,835 90.0 2,114,775 90.62 474,486 89.74 1,248,574 89.11 Bed size 0–99 167,959 3.9 94,217 4.04 17,581 3.33 56,161 4.01 100–199 482,414 11.3 279,131 11.96 55,991 10.59 147,292 10.51 200–299 650,669 15.3 380,053 16.28 53,510 10.12 217,106 15.49 300–399 687,451 16.1 369,556 15.84 93,105 17.61 224,790 16.04 400–499 620,399 14.6 351,214 15.05 67,742 12.81 201,443 14.38 500+ 1,654,766 38.8 859,591 36.83 240,807 45.54 554,368 39.56 Census region Midwest 950,357 22.3 510,908 21.89 154,854 29.29 284,595 20.31 Northeast 526,340 12.3 318,398 13.64 51,340 9.71 156,602 11.18",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "score": 210.0
+    },
+    {
+      "pmid": "27366535",
+      "title": "Comparison of Sugammadex versus Neostigmine Costs and Respiratory Complications in Patients with Obstructive Sleep Apnoea.",
+      "journal": "Turkish journal of anaesthesiology and reanimation",
+      "date": "2015-12-01",
+      "authors": [
+        "Ünal DY",
+        "Özlü O."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "<h4>Objective</h4>To compare sugammadex and neostigmine regarding the efficacy in reversing rocuronium-induced neuromuscular block, the incidence of post-operative respiratory complications and costs in patients undergoing surgery for the treatment of obstructive sleep apnoea (OSA).<h4>Methods</h4>After obtaining ethical approval and patient consent, 74 patients in ASA physical status I or II were randomised into two groups to receive 2-mg kg(-1) sugammadex (Group S) or 0.04-mg kg(-1) neostigmine+0.5-mg atropine (Group N). Groups were compared regarding time to TOF (train-of-four) 0.9, operating room time, post-anaesthesia care unit (PACU) stay, post-operative respiratory complications, costs related to neuromuscular block reversal, anaesthesia care and complication treatment.<h4>Results</h4>Patient demographics, anaesthesia, surgical data and total rocuronium doses were similar between groups. Time to TOF 0.9 was shorter for group S [Group N: 8 (5-18) min; Group S: 2 (1.5-6) min (p<0.001)]. Operating room time [Group S: 72.4±14.3 min; Group N: 96.6±22.8 min (p<0.001)] and PACU stay [Group S: 22.9±10.1 dk; Group N: 36.3±12.6 dk (p<0.001)] were also shorter in Group S. After extubation, desaturation was observed in 12 (32.4%) patients in group N and in 4 (8%) patients in group S (p=0.048). In group N, three patients were reintubated; there were eight (21.6%) unplanned intensive care unit (ICU) admissions. There was one unplanned ICU admission in group S. Negative pressure pulmonary oedema was observed in one patient in group N. The results regarding costs were as follows. The reversal cost was higher in the sugammadex group (vial cost 98.14 TL) than that in the neostigmine group (ampoule cost 0.27 TL; total 6147.88 TL vs. 3569.5 TL); however, complication treatment cost and total cost were lower in group S than those in group N (199.5 TL vs. 3944.6 TL) (staff anaesthesia doctor cost was 0.392 TL per min and the cost of nurse anaesthetist was 0.244 TL per min).<h4>Conclusion</h4>This study confirmed the efficacy of sugammadex over neostigmine for the reversal of rocuronium-induced neuromuscular block. Sugammadex decreases the incidence of post-operative respiratory complications and related costs in patients with OSA.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "score": 190.0
+    }
+  ]
+}

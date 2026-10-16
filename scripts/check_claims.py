@@ -15,6 +15,25 @@ paper says: a real PMID can carry a wrong number. This script checks that,
 deterministically, against the evidence the synthesis call actually saw
 (`<dossier>.evidence.json`, written by praxis_check.py since 2026-10-15).
 
+ANCHORED MODE (since 2026-10-16, PLAN-quote-anchoring.md). When the evidence
+file's `synthesis_raw` carries quote anchors, `(PMID 1: "verbatim words")`,
+claims are read from that raw prose and each quoted claim is checked against
+its OWN quote, not the whole paper. That closes the pool holes for anchored
+claims (a number elsewhere in the paper no longer backs it):
+
+  FAIL  quote      the quote is not in that paper's evidence text (allowing
+                   whitespace, case, dash, middle-dot, quote-mark and HTML-tag
+                   differences; `...` parts must appear in order)
+  FAIL  number     a claim number is not in its own quote (same value and unit
+                   rules as below); pctden runs on the quote too
+  WARN  quotelen   quote under 5 or over 60 words
+  WARN  unanchored a cited claim with numbers but no quote; screened against
+                   the whole paper as before
+  INFO  anchoring  quoted share and verbatim share (the A/B gate inputs)
+
+Whether a quote SUPPORTS its claim (population, setting, strength) is still
+not checked here: that needs a judge on the (claim, quote) pairs.
+
 A claim is a sentence segment ending in a citation group (`(PMID ...)`,
 `[PMID ...]`, `(vgl. PMID ...)`); numbers inside the bracket belong to it. A
 sentence with numbers and no citation leans on the citation of the sentence
@@ -102,8 +121,11 @@ UNIT = re.compile(
 # "15 bis 30 mg/kg", "250 and 250 mg", "4.6 ± 1.2 %". Never "/" or "(", so the
 # 46 in "46/49 (94%)" does not become a percent; never ",", so the 0,70 in
 # "RR 0,70, 95 % CI" does not either.
+# A bracketed range of plain numbers may also sit there: "1.2 (0.9-1.9) ng/dL",
+# "10 [9-11] days" (live benchmark 2026-10-16). Not "(94%)": no % inside.
 GAP = re.compile(
-    r"^(?:\s?(?:[-–−]|±|bis|und|oder|bzw\.?|vs\.?|to|and|or|versus)\s?\d[\d.,]*)*",
+    r"^(?:\s?(?:[-–−]|±|bis|und|oder|bzw\.?|vs\.?|to|and|or|versus)\s?\d[\d.,]*"
+    r"|\s?[(\[]\s*\d[\d.,]*\s*(?:[-–−]|to|bis)\s*\d[\d.,]*\s*[)\]])*",
     re.I)
 COUNT_NOUN = re.compile(
     r"^\s?(?:Patient|Teilnehm|Proband|Kinder|Erwachsene|Fälle|Frauen|Männer|"
@@ -138,9 +160,75 @@ THIN_CHARS = 400
 
 
 # --------------------------------------------------------------------------- #
+# quote anchors: (PMID 12345678: "verbatim words"; PMID 23456789: "...")
+# The model writes these (dossier-vertrag.md, "Belege mit wörtlichem Zitat");
+# praxis_check.py turns them into plain (PMID ...) before anything is shown and
+# keeps the raw form in evidence.json `synthesis_raw` for this checker.
+# --------------------------------------------------------------------------- #
+_ITEM = r'PMID\s*:?\s*\d{5,9}(?:\s*:\s*["“„”][^"“”„]*["”“])?'
+ANCHOR_GROUP = re.compile(r"\(\s*" + _ITEM + r"(?:\s*;\s*" + _ITEM + r")*\s*\)")
+ANCHOR_ITEM = re.compile(r'PMID\s*:?\s*(\d{5,9})(?:\s*:\s*["“„”]([^"“”„]*)["”“])?')
+ANCHOR_TAG = re.compile(r"⟦A(\d+)⟧")
+
+
+def split_anchors(raw: str) -> tuple[str, str, list[dict]]:
+    """Raw model prose -> (display text with plain `(PMID a, b)`, annotated
+    text with `(PMID a, b ⟦Ak⟧)` for claim parsing, anchors). A group counts
+    as an anchor only if at least one of its items carries a quote; plain
+    `(PMID ...)` groups pass through untouched."""
+    anchors: list[dict] = []
+    display, annotated, pos = [], [], 0
+    for m in ANCHOR_GROUP.finditer(raw):
+        items = [(p, q.strip() if q else "") for p, q in ANCHOR_ITEM.findall(m.group(0))]
+        if not any(q for _, q in items):
+            continue
+        pmids = list(dict.fromkeys(p for p, _ in items))
+        plain = f"(PMID {', '.join(pmids)})"
+        display += [raw[pos:m.start()], plain]
+        annotated += [raw[pos:m.start()],
+                      f"(PMID {', '.join(pmids)} ⟦A{len(anchors)}⟧)"]
+        anchors.append({"pmids": pmids, "quotes": [(p, q) for p, q in items if q]})
+        pos = m.end()
+    display.append(raw[pos:])
+    annotated.append(raw[pos:])
+    return "".join(display), "".join(annotated), anchors
+
+
+def _norm_quote(s: str) -> str:
+    # Real tags only (<h4>, </i>, <sup>): a letter right after "<". A bare
+    # "<[^>]+>" ate "p<0.01 ... >18 years" out of a live abstract (benchmark
+    # 2026-10-16) and failed five verbatim quotes that were in the source.
+    s = re.sub(r"</?[A-Za-z][A-Za-z0-9]*(?:\s[^<>]*)?>", " ", s)
+    s = re.sub(r"[–—−‐‑]", "-", s)
+    s = re.sub(r"(?<=\d)·(?=\d)", ".", s)
+    s = re.sub(r"[“”„\"]", '"', s).replace("’", "'").replace("‘", "'")
+    return re.sub(r"\s+", " ", s).strip().lower()
+
+
+def find_quote(quote: str, basis: str) -> bool:
+    """Is the quote in the evidence text, allowing whitespace, case, dash,
+    middle-dot and quote-mark differences? `...` joins parts that must appear
+    in order."""
+    hay = _norm_quote(basis)
+    pos = 0
+    # "sentence end.... next part" (four dots): the stray period belongs to the
+    # sentence, not to the next part, so trim punctuation at part edges.
+    parts = [p.strip(" .;,") for p in re.split(r"\s*(?:\.{3,}|…)\s*", quote)]
+    parts = [p for p in parts if p]
+    if not parts:
+        return False
+    for part in parts:
+        i = hay.find(_norm_quote(part), pos)
+        if i < 0:
+            return False
+        pos = i + len(_norm_quote(part))
+    return True
+
+
+# --------------------------------------------------------------------------- #
 # numbers
 # --------------------------------------------------------------------------- #
-THOUSANDS = re.compile(r"[1-9]\d{0,2}([.,]\d{3})+")
+THOUSANDS =re.compile(r"[1-9]\d{0,2}([.,]\d{3})+")
 
 
 def claim_values(tok: str, count_follows: bool = False) -> list[tuple[float, int]]:
@@ -318,6 +406,8 @@ class Claim:
     pmids: list[str]
     numbers: list[Num]
     forward: bool = False        # numbers bound to a neighbouring sentence's citation
+    quotes: list = field(default_factory=list)   # [(pmid, quote)] from its anchor
+    origin: str = "group"        # group (one citation) / tail / neighbour
 
 
 def _section_name(head: str) -> str:
@@ -362,35 +452,43 @@ def group_pmids(group: str) -> list[str]:
     return [p for lst in PMID_FREE.findall(group) for p in PMID_NUM.findall(lst)]
 
 
-def _segments(section: str, sentence: str) -> list[Claim]:
+def _segments(section: str, sentence: str, anchors: list[dict]) -> list[Claim]:
     """Split one cited sentence at its groups. Text before a group belongs to
-    that group; text after the last group belongs to every group."""
+    that group; text after the last group belongs to every group. A group
+    tagged `⟦Ak⟧` carries the quotes of anchor k."""
     groups = list(PMID_GROUP.finditer(sentence))
-    claims, pos, all_pmids = [], 0, []
+    claims, pos, all_pmids, all_quotes = [], 0, [], []
     for g in groups:
         pmids = group_pmids(g.group(0))
         all_pmids += pmids
+        tag = ANCHOR_TAG.search(g.group(0))
+        quotes = anchors[int(tag.group(1))]["quotes"] if tag else []
+        all_quotes += quotes
         # "(99 %, PMID 1)": numbers inside the bracket belong to the claim
-        inner = PMID_FREE.sub(" ", g.group(0)[1:-1])
+        inner = ANCHOR_TAG.sub(" ", PMID_FREE.sub(" ", g.group(0)[1:-1]))
         seg = sentence[pos:g.start()] + " " + inner
-        claims.append(Claim(section, seg, pmids, claim_numbers(seg)[0]))
+        claims.append(Claim(section, seg, pmids, claim_numbers(seg)[0], quotes=quotes))
         pos = g.end()
     tail = sentence[pos:]
     nums = claim_numbers(tail)[0]
     if nums:
-        claims.append(Claim(section, tail, sorted(set(all_pmids)), nums))
+        claims.append(Claim(section, tail, sorted(set(all_pmids)), nums,
+                            quotes=all_quotes, origin="tail"))
     return claims
 
 
-def parse_claims(dossier: str) -> tuple[list[Claim], list[tuple[str, list[Num]]], int]:
-    """(claims, uncited (sentence, numbers), numbers skipped as structure)."""
+def parse_claims(dossier: str, anchors: list[dict] | None = None
+                 ) -> tuple[list[Claim], list[tuple[str, list[Num]]], int]:
+    """(claims, uncited (sentence, numbers), numbers skipped as structure).
+    With `anchors`, `dossier` is the annotated text from split_anchors."""
+    anchors = anchors or []
     claims, uncited, skipped = [], [], 0
     for head, body in prose_sections(dossier):
         sents = sentences(body)
         for i, s in enumerate(sents):
-            skipped += claim_numbers(PMID_GROUP.sub(" ", s))[1]
+            skipped += claim_numbers(ANCHOR_TAG.sub(" ", PMID_GROUP.sub(" ", s)))[1]
             if PMID_GROUP.search(s):
-                claims += _segments(head, s)
+                claims += _segments(head, s, anchors)
                 continue
             nums = claim_numbers(s)[0]
             if not nums:
@@ -403,7 +501,8 @@ def parse_claims(dossier: str) -> tuple[list[Claim], list[tuple[str, list[Num]]]
             pmids = sorted({p for t in near for g in PMID_GROUP.findall(t)
                             for p in group_pmids(g)})
             if pmids:
-                claims.append(Claim(head, s, pmids, nums, forward=True))
+                claims.append(Claim(head, s, pmids, nums, forward=True,
+                                    origin="neighbour"))
             else:
                 uncited.append((s, nums))
     return claims, uncited, skipped
@@ -445,12 +544,26 @@ def linked_counts(c: Claim) -> list[Num]:
 
 
 def check(dossier: str, evidence: dict) -> list[Finding]:
+    return check_with_metrics(dossier, evidence)[0]
+
+
+def check_with_metrics(dossier: str, evidence: dict) -> tuple[list[Finding], dict]:
+    """Findings plus the anchoring numbers the A/B gate is decided on
+    (PLAN-quote-anchoring.md): share of cited claims carrying a quote, share
+    of quotes found verbatim in their paper."""
     papers = {str(p.get("pmid")): p for p in evidence.get("papers", [])}
     sources = {k: Source.of(p.get("evidence_basis") or "") for k, p in papers.items()}
     findings: list[Finding] = []
     sections = prose_sections(dossier)
     prose = "\n".join(b for _, b in sections)
-    claims, uncited, skipped = parse_claims(dossier)
+    # Anchored mode: claims come from the raw model prose, where each citation
+    # still carries its quote. Old or unanchored dossiers: the shown dossier.
+    _, annotated, anchors = split_anchors(evidence.get("synthesis_raw") or "")
+    anchored = bool(anchors)
+    claims, uncited, skipped = parse_claims(annotated if anchored else dossier, anchors)
+    met = {"anchored_mode": anchored, "cited_claims": 0, "quoted_claims": 0,
+         "quotes": 0, "verbatim": 0, "numbers_in_quote": 0, "numbers_in_paper": 0}
+    seen_quotes: set[tuple[str, str]] = set()
 
     # phantom PMIDs: every PMID-looking number in the prose, however it is set
     cited = {p for c in claims for p in c.pmids}
@@ -469,15 +582,45 @@ def check(dossier: str, evidence: dict) -> list[Finding]:
 
     n_checked = 0
     for c in claims:
-        srcs = [sources[p] for p in c.pmids if p in sources]
+        quoted = anchored and bool(c.quotes)
+        if c.origin == "group":
+            met["cited_claims"] += 1
+            met["quoted_claims"] += quoted
+        if quoted:
+            for pmid, qt in c.quotes:
+                if (pmid, qt) in seen_quotes or pmid not in papers:
+                    continue                          # phantom PMIDs reported below
+                seen_quotes.add((pmid, qt))
+                met["quotes"] += 1
+                if find_quote(qt, papers[pmid].get("evidence_basis") or ""):
+                    met["verbatim"] += 1
+                else:
+                    findings.append(Finding(
+                        "FAIL", "quote", f"quote for PMID {pmid} is not in that "
+                        f"paper's text [{c.section or 'Kopf'}]", _short(qt, 120)))
+                words = len(qt.split())
+                if words < 5 or words > 60 or len(qt) > 400:
+                    findings.append(Finding(
+                        "WARN", "quotelen", f"quote for PMID {pmid} has {words} words "
+                        f"(rule: 5 to 40)", _short(qt, 120)))
+            # numbers must stand in the claim's OWN quote, not anywhere in the paper
+            srcs = [Source.of(qt) for _, qt in c.quotes]
+            where = f"the quote for PMID {', '.join(c.pmids)} [{c.section or 'Kopf'}]"
+        else:
+            srcs = [sources[p] for p in c.pmids if p in sources]
+            where = f"PMID {', '.join(c.pmids)} [{c.section or 'Kopf'}]"
+            if c.forward:
+                where += " (citation in a neighbouring sentence)"
+            if anchored and c.numbers and srcs:
+                findings.append(Finding(
+                    "WARN", "unanchored", f"claim with numbers but no quote; screened "
+                    f"against the whole paper ({where})", _short(c.text)))
         if not srcs or not c.numbers:
             continue
-        where = f"PMID {', '.join(c.pmids)} [{c.section or 'Kopf'}]"
-        if c.forward:
-            where += " (citation in a neighbouring sentence)"
         found = []
         for n in c.numbers:
             n_checked += 1
+            met["numbers_in_quote" if quoted else "numbers_in_paper"] += 1
             if any(matches(n, s.pool(n)) for s in srcs):
                 found.append(n)
                 continue
@@ -518,7 +661,7 @@ def check(dossier: str, evidence: dict) -> list[Finding]:
                     f"{', '.join(n.tok for n in counts)} ({where})", _short(c.text)))
 
         # pairing: a percentage near none of its claim's other numbers
-        if len(c.pmids) == 1 and len(found) >= 2:
+        if not quoted and len(c.pmids) == 1 and len(found) >= 2:
             src = srcs[0].text
             for n in (x for x in found if x.kind == "pct"):
                 others = [m for m in found if m is not n]
@@ -579,7 +722,14 @@ def check(dossier: str, evidence: dict) -> list[Finding]:
         "INFO", "coverage",
         f"{len(claims)} cited claims, {n_checked} numbers checked, {n_unc} uncited "
         f"(not checked), {skipped} skipped as structure (small counts, years)"))
-    return findings
+    if anchored:
+        findings.append(Finding(
+            "INFO", "anchoring",
+            f"{met['quoted_claims']} of {met['cited_claims']} cited claims carry a quote; "
+            f"{met['verbatim']} of {met['quotes']} quotes found in their paper; "
+            f"{met['numbers_in_quote']} numbers checked against their own quote, "
+            f"{met['numbers_in_paper']} against the whole paper"))
+    return findings, met
 
 
 # --------------------------------------------------------------------------- #

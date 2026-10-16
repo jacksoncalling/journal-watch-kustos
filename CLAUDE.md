@@ -23,6 +23,8 @@ database: config, memory, and every brief live as files in this repo. Story:
 | 03 brief | `03_brief/CONTEXT.md`, `scripts/synthesize.py`, `scripts/providers.py` |
 | 04 feedback | `04_feedback/` (slice 1.5) |
 | 05 praxis-check | `05_praxis-check/CONTEXT.md`, `05_praxis-check/dossier-vertrag.md`, `scripts/praxis_check.py` |
+| Quote anchoring (plan, status, A/B gate) | `05_praxis-check/PLAN-quote-anchoring.md` |
+| Retrieval relevance (floor, ambiguous abbreviations) | `05_praxis-check/PLAN-retrieval-relevance.md`, `scripts/test_retrieval.py`; replay with `benchmark_praxis.py --replay-retrieval` |
 | Claim check (numbers vs evidence the model saw; a screen, not proof) | `scripts/check_claims.py` (+ `test_check_claims.py`, `rebuild_evidence.py`); every CLI run writes `<dossier>.evidence.json` |
 | Orchestrator + weekly cron | `scripts/run_weekly.py`, `.github/workflows/weekly.yml` |
 | GitHub | https://github.com/jacksoncalling/journal-watch-kustos |

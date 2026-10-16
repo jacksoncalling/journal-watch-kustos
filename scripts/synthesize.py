@@ -68,11 +68,23 @@ def parse_synthese_config(text: str) -> dict:
             "anthropic": field("synthese_model_anthropic",
                                providers.DEFAULT_MODEL["anthropic"]),
         },
+        # Gemini thinking budget per call type: empty = Gemini default
+        # (2.5 Flash thinks dynamically), 0 = off. Praxis-Check only.
+        "thinking": {
+            "planner": _int_or_none(field("planer_thinking_gemini", "")),
+            "dossier": _int_or_none(field("synthese_thinking_gemini", "")),
+        },
     }
 
 
+def _int_or_none(value: str) -> int | None:
+    value = (value or "").strip()
+    return int(value) if re.fullmatch(r"-?\d+", value) else None
+
+
 def run_provider(name: str, system: str, user: str, cfg: dict,
-                 temperature: float | None = None):
+                 temperature: float | None = None,
+                 thinking_budget: int | None = None):
     """Returns SynthResult, or None if the provider's key is missing.
 
     `temperature` defaults to None (each provider's own default, unchanged for
@@ -86,7 +98,7 @@ def run_provider(name: str, system: str, user: str, cfg: dict,
     model = cfg["model"].get(name, providers.DEFAULT_MODEL.get(name))
     fn = providers.PROVIDERS[name]
     try:
-        return fn(system, user, model, key, temperature)
+        return fn(system, user, model, key, temperature, thinking_budget)
     except Exception as e:  # network / API error -> let caller try fallback
         print(f"  [{name}] error: {type(e).__name__}: {e}", file=sys.stderr)
         return None

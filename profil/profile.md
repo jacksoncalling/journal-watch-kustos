@@ -22,6 +22,8 @@ liegt im Code, nicht im Modell.
 - `synthese_fallback`: anthropic         # bei Fehler/Refusal; leer = kein Fallback
 - `synthese_model_gemini`: gemini-2.5-flash
 - `synthese_model_anthropic`: claude-sonnet-4-6
+- `planer_thinking_gemini`: 0            # leer = Gemini-Default (denkt mit), 0 = aus. Aus seit 2026-10-16: Planung 13.7 -> 4.8 s (ein Testlauf, HIT-Frage)
+- `synthese_thinking_gemini`:            # leer = Gemini-Default (denkt mit), 0 = aus
 
 ## Sprache & Zustellung
 
@@ -113,6 +115,20 @@ humanes Mehrorgan-Paper mit Nieren-/Leber-MeSH nicht mitgerissen wird).
 - rats
 - neoplasm
 - carcinoma
+
+## Mehrdeutige Abkürzungen (nur Praxis-Check)
+
+Abkürzungen, die zugleich gewöhnliche englische Wörter sind. Europe PMC sucht
+ohne Groß-/Kleinschreibung, also findet ein nacktes `HIT` jedes „hit". Steht
+eine dieser Abkürzungen ohne Anführungszeichen in einer Suchanfrage, ersetzt
+der Code sie durch die ausgeschriebene Phrase rechts vom `:` (mehrere mit `|`).
+Aktiv, nicht inert. Ergänzen, wenn eine neue auffällt (2026-10-16 eingeführt
+nach dem HIT-Benchmark: 0 von 20 Papern passten).
+- HIT : heparin-induced thrombocytopenia
+- ACT : activated clotting time
+- MAP : mean arterial pressure
+- BIS : bispectral index
+- PE : pulmonary embolism
 
 ## Controlled Vocabulary (nur Praxis-Check)
 

@@ -174,8 +174,11 @@ def call_llm(system: str, user: str, cfg: dict, purpose: str,
     pins the query planner to reproducible decoding; the dossier call leaves it
     None (provider default)."""
     order = [cfg["primary"]] + ([cfg["fallback"]] if cfg["fallback"] else [])
+    kind = "planner" if purpose == "query-planung" else "dossier"
     for name in order:
-        r = synth.run_provider(name, system, user, cfg, temperature)
+        budget = (cfg.get("thinking") or {}).get(kind) if name == "gemini" else None
+        t = time.perf_counter()
+        r = synth.run_provider(name, system, user, cfg, temperature, budget)
         if r is None:
             continue
         if r.refused:
@@ -184,7 +187,10 @@ def call_llm(system: str, user: str, cfg: dict, purpose: str,
             continue
         if r.text.strip():
             print(f"  [{purpose}] {r.provider}/{r.model}  "
-                  f"in={r.input_tokens} out={r.output_tokens}")
+                  f"in={r.input_tokens} out={r.output_tokens} "
+                  f"thoughts={r.thought_tokens} "
+                  f"thinking={'default' if budget is None else budget} "
+                  f"{time.perf_counter() - t:.1f}s")
             return r.text
     return ""
 
@@ -220,16 +226,151 @@ def plan_queries(q: dict, cfg: dict) -> list[str]:
     return queries
 
 
-def resolve_queries(q: dict, cfg: dict) -> list[str]:
+def parse_ambiguous(profile_text: str) -> dict[str, list[str]]:
+    """`## Mehrdeutige Abkürzungen` in profile.md: abbreviation -> spelled-out
+    phrases, for abbreviations that are also ordinary English words (HIT)."""
+    m = re.search(r"^## Mehrdeutige Abk\S*.*?$(.*?)(?=^## |\Z)", profile_text, re.M | re.S)
+    out: dict[str, list[str]] = {}
+    for line in (m.group(1) if m else "").splitlines():
+        lm = re.match(r"^-\s+([A-Za-z0-9]+)\s*:\s*(.+?)\s*$", line.strip())
+        if lm:
+            out[lm.group(1).upper()] = [p.strip() for p in lm.group(2).split("|") if p.strip()]
+    return out
+
+
+def rewrite_ambiguous(query: str, amb: dict[str, list[str]]) -> tuple[str, list[str]]:
+    """Replace every UNQUOTED ambiguous abbreviation with its quoted expansion.
+    Europe PMC ignores case, so bare `HIT` matches the word "hit" and floods a
+    citation-sorted pool (benchmark 2026-10-16: 0 of 20 papers on-subject).
+    Quoted phrases ("HIT antibodies") and field names are left alone."""
+    changed: list[str] = []
+
+    def expand(abbr: str) -> str:
+        phrases = [f'"{p}"' for p in amb[abbr.upper()]]
+        changed.append(abbr)
+        return phrases[0] if len(phrases) == 1 else "(" + " OR ".join(phrases) + ")"
+
+    parts = re.split(r'("[^"]*")', query)            # odd indices are quoted spans
+    for i in range(0, len(parts), 2):
+        for abbr in amb:
+            parts[i] = re.sub(rf"(?<![\w\"-]){re.escape(abbr)}(?![\w\":-])",
+                              lambda mm: expand(mm.group(0)), parts[i], flags=re.I)
+    return "".join(parts), changed
+
+
+# Words about the state of a debate, not about the topic. A facet made only of
+# these ("controversy OR debate OR uncertainty") filters for papers that USE
+# those words, not for papers on the question: dropped from planned queries.
+META_TERMS = {"controversy", "controversies", "controversial", "debate", "debated",
+              "disagreement", "uncertainty", "uncertain", "conflicting evidence",
+              "conflicting", "unresolved", "open questions", "open question"}
+META_COMPANIONS = {"guidelines", "guideline", "recommendations", "consensus"}
+
+
+def _split_top(text: str, op: str) -> list[str]:
+    """Split on a boolean operator at bracket depth 0, outside quotes."""
+    parts, depth, quote, buf, i = [], 0, False, "", 0
+    pat = re.compile(rf"\s+{op}\s+", re.I)
+    while i < len(text):
+        ch = text[i]
+        if ch == '"':
+            quote = not quote
+        elif not quote and ch == "(":
+            depth += 1
+        elif not quote and ch == ")":
+            depth -= 1
+        if not quote and depth == 0:
+            m = pat.match(text, i)
+            if m:
+                parts.append(buf)
+                buf, i = "", m.end()
+                continue
+        buf += ch
+        i += 1
+    parts.append(buf)
+    return [p.strip() for p in parts if p.strip()]
+
+
+def _strip_parens(text: str) -> tuple[str, bool]:
+    """'(a OR b)' -> ('a OR b', True) when the outer brackets enclose it all."""
+    t = text.strip()
+    if not (t.startswith("(") and t.endswith(")")):
+        return t, False
+    depth, quote = 0, False
+    for i, ch in enumerate(t):
+        if ch == '"':
+            quote = not quote
+        elif not quote and ch == "(":
+            depth += 1
+        elif not quote and ch == ")":
+            depth -= 1
+            if depth == 0 and i < len(t) - 1:
+                return t, False                 # "(a) OR (b)": not one group
+    return t[1:-1].strip(), True
+
+
+def clean_planned_query(query: str) -> tuple[str, list[str]]:
+    """Deterministic hygiene for a PLANNED query (the planner without thinking
+    wrote sloppy Booleans, benchmark 2026-10-16): put quotes around bare
+    multi-word terms inside OR groups (Europe PMC would AND their words), and
+    drop facets made only of debate words. Well-formed queries come back
+    unchanged. Explicit queries from a question file are never touched."""
+    notes: list[str] = []
+    facets_out = []
+    for facet in _split_top(query, "AND"):
+        inner, had_parens = _strip_parens(facet)
+        alts = _split_top(inner, "OR")
+        fixed = []
+        for alt in alts:
+            bare = (" " in alt and '"' not in alt and "(" not in alt and ":" not in alt
+                    and "*" not in alt and not re.search(r"\b(?:AND|OR|NOT)\b", alt))
+            if bare:
+                notes.append(f"quoted {alt!r}")
+                alt = f'"{alt}"'
+            fixed.append(alt)
+        words = {a.strip('"').lower() for a in fixed}
+        if (words & META_TERMS) and words <= META_TERMS | META_COMPANIONS:
+            notes.append(f"dropped debate facet {facet!r}")
+            continue
+        if len(fixed) > 1:
+            facets_out.append("(" + " OR ".join(fixed) + ")")
+        else:
+            facets_out.append(f"({fixed[0]})" if had_parens else fixed[0])
+    if len([f for f in facets_out if "SRC:MED" not in f.upper()]) == 0:
+        return query, []                      # never strip a query down to nothing
+    return " AND ".join(facets_out), notes
+
+
+def resolve_queries(q: dict, cfg: dict, profile_text: str | None = None) -> list[str]:
     if q["explicit_query"]:
         print("query: explicit (from question file, deterministic)")
-        return [q["explicit_query"]]
-    print("query: none in file, planning via LLM (Hybrid fallback)")
-    planned = plan_queries(q, cfg)
-    if not planned:
-        raise PraxisError("query planning produced no usable search query; "
-                          "try rephrasing the question or add an explicit query")
-    return planned
+        queries = [q["explicit_query"]]
+    else:
+        print("query: none in file, planning via LLM (Hybrid fallback)")
+        queries = plan_queries(q, cfg)
+        if not queries:
+            raise PraxisError("query planning produced no usable search query; "
+                              "try rephrasing the question or add an explicit query")
+        cleaned = []
+        for query in queries:
+            new, notes = clean_planned_query(query)
+            for n in notes:
+                print(f"  query clean-up: {n}")
+            if new not in cleaned:            # a dropped facet can make two equal
+                cleaned.append(new)
+        queries = cleaned
+    # Code enforces what a prompt could only suggest: no bare ambiguous
+    # abbreviation reaches the search, planned or explicit.
+    amb = parse_ambiguous(profile_text if profile_text is not None
+                          else PROFILE.read_text(encoding="utf-8"))
+    out = []
+    for query in queries:
+        new, changed = rewrite_ambiguous(query, amb)
+        if changed:
+            print(f"  expanded ambiguous abbreviation(s) {sorted(set(changed))} "
+                  f"in the query")
+        out.append(new)
+    return out
 
 
 # --------------------------------------------------------------------------- #
@@ -249,10 +390,12 @@ def run_search(queries: list[str], ua: str) -> list[dict]:
     end = date.today().isoformat()
     by_key: dict[str, dict] = {}
     for i, query in enumerate(queries):
+        t = time.perf_counter()
         results = fetch.search_topic(query, ALL_TIME_START, end, ua,
                                      sort=PRAXIS_SORT, page_size=PRAXIS_PAGE_SIZE,
                                      timeout=PRAXIS_SEARCH_TIMEOUT)
-        print(f"  q{i+1}: {len(results)} hits  |  {query[:70]}")
+        print(f"  q{i+1}: {len(results)} hits in {time.perf_counter() - t:.1f}s  "
+              f"|  {query[:70]}")
         for rec in results:
             key = fetch.dedupe_key(rec)
             if not key:
@@ -358,6 +501,55 @@ def is_retracted(pub_types: list[str]) -> bool:
     return "retracted publication" in joined or "retraction of publication" in joined
 
 
+THIN_FLOOR = 5               # fewer on-subject papers: code-set "thin evidence" note
+CONTEXT_GUIDELINES_MAX = 3   # off-subject cardiac guidelines allowed as context
+CONTEXT_NOTE = ("Kontext-Leitlinie: behandelt das Thema der Frage nicht direkt. "
+                "Nur als allgemeinen Rahmen nutzen, nie als Beleg für die konkrete Frage.")
+
+
+def is_context_guideline(c: dict, domain: dict) -> bool:
+    """Off-subject, but a guideline in her field: broad guidelines often never
+    name the specific condition (2024 EACTS CPB guideline for an HIT question)."""
+    # Its title must also name a query concept (rank_all's title_relevance):
+    # cardiac MeSH alone let in a coronary-dissection statement and preclinical
+    # rigor guidelines (retrieval replay 2026-10-16).
+    return (not c["on_subject"]
+            and rank.study_type_label(c.get("pubTypes", [])) == "Leitlinie"
+            and _mesh_hit(c.get("mesh") or [], domain["cardiac"])
+            and (c.get("score_breakdown") or {}).get("title_relevance", 0) > 0)
+
+
+def select_papers(ranked: list[dict], max_items: int, domain: dict) -> list[dict]:
+    """On-subject papers only, no padding with off-subject ones (benchmark
+    2026-10-16: padding filled all 20 slots of the HIT dossier with unrelated
+    reviews). Exception: up to CONTEXT_GUIDELINES_MAX cardiac guidelines as
+    marked context; they take the last slots. Zero on-subject papers: no
+    dossier, a visible failure beats a confident answer from unrelated papers."""
+    on = [r for r in ranked if r["on_subject"]]
+    if not on:
+        raise PraxisError(f"keine Paper zum Thema der Frage gefunden (0 von "
+                          f"{len(ranked)} Kandidaten nennen das Subjekt der Suche)")
+    ctx = [r for r in ranked if is_context_guideline(r, domain)][:CONTEXT_GUIDELINES_MAX]
+    for r in ctx:
+        r["context_guideline"] = True
+    return on[: max(1, max_items - len(ctx))] + ctx
+
+
+def praxis_payload(c: dict) -> dict:
+    """What the synthesis sees per paper: the shared payload, plus a marker for
+    context guidelines. Used by build_user AND evidence_record, so the evidence
+    file holds exactly what the model got."""
+    p = synth.paper_payload(c)
+    if c.get("context_guideline"):
+        p["bezug"] = CONTEXT_NOTE
+    return p
+
+
+def _flat(text: str) -> str:
+    """Lowercase, hyphens/dashes as spaces, single spaces: for term matching."""
+    return re.sub(r"\s+", " ", re.sub(r"[-‐‑–—/]", " ", (text or "").lower())).strip()
+
+
 def title_bonus(cand: dict, concepts: set[str]) -> int:
     title = (cand.get("title") or "").lower()
     hits = sum(1 for t in concepts if t in title)
@@ -392,9 +584,13 @@ def rank_all(cands: list[dict], profile_text: str,
         # only the broad context? Absent a subject set, treat all as on-subject.
         # Match a trailing-plural query term against a singular in the paper too
         # ("corticosteroids" in the query vs "corticosteroid" in the abstract).
-        hay = f"{c.get('title','')} {c.get('abstract','')}".lower()
+        # Hyphens and spacing are normalised on both sides: the query says
+        # "heparin induced thrombocytopenia", abstracts say "heparin-induced"
+        # (HIT benchmark 2026-10-16: a plain substring test failed every paper).
+        hay = _flat(f"{c.get('title','')} {c.get('abstract','')}")
         item["on_subject"] = (not subj) or any(
-            t in hay or (t.endswith("s") and t[:-1] in hay) for t in subj)
+            t in hay or (t.endswith("s") and t[:-1] in hay)
+            for t in (_flat(s) for s in subj))
         ranked.append(item)
     ranked.sort(key=lambda x: x["score"], reverse=True)
     return ranked
@@ -437,6 +633,8 @@ def enrich_top(selected: list[dict], ua: str, email: str) -> None:
     ft_jobs = [c for c in selected if c.get("pmcid") and not c.get("fullTextExcerpt")]
 
     oa = ft = 0
+    t0 = time.perf_counter()
+    oa_done = ft_done = 0.0
     with concurrent.futures.ThreadPoolExecutor(max_workers=ENRICH_MAX_WORKERS) as ex:
         oa_futures = {ex.submit(_oa_lookup, c, email, ua): c for c in oa_jobs}
         ft_futures = {ex.submit(_fulltext_lookup, c, ua): c for c in ft_jobs}
@@ -445,26 +643,37 @@ def enrich_top(selected: list[dict], ua: str, email: str) -> None:
             if u:
                 oa_futures[fut]["oaUrl"] = u
                 oa += 1
+        oa_done = time.perf_counter() - t0
         for fut in concurrent.futures.as_completed(ft_futures):
             x = fut.result()
             if x:
                 ft_futures[fut]["fullTextExcerpt"] = x
                 ft += 1
-    print(f"  enriched top {len(selected)}: +{oa} OA links, +{ft} full-text")
+        ft_done = time.perf_counter() - t0
+    print(f"  enriched top {len(selected)}: +{oa} OA links ({len(oa_jobs)} tried, "
+          f"done at {oa_done:.1f}s), +{ft} full-text ({len(ft_jobs)} tried, done at "
+          f"{ft_done:.1f}s)")
 
 
 # --------------------------------------------------------------------------- #
 # synthesis + deterministic assembly
 # --------------------------------------------------------------------------- #
 def build_user(q: dict, selected: list[dict]) -> str:
-    papers = [synth.paper_payload(c) for c in selected]
+    papers = [praxis_payload(c) for c in selected]
+    n_on = sum(1 for c in selected if c.get("on_subject", True))
+    thin = (f"HINWEIS: Nur {n_on} der gelieferten Paper behandeln das Thema der Frage "
+            "direkt. Sag in der Kurzantwort, dass die Evidenzbasis dünn ist, und "
+            "fülle keine Lücken.\n\n") if n_on < THIN_FLOOR else ""
     return (
         f"FRAGE (rahmt das Dossier):\n{q['frage']}\n\n"
         + (f"KONTEXT:\n{q['kontext']}\n\n" if q["kontext"] else "")
+        + thin
         + "Hier sind die gerankten Paper als JSON (evidence_basis = Volltext-"
         "Auszug oder Abstract). Schreibe das Dossier exakt nach dem Vertrag im "
-        "System-Prompt. Belege tragende Aussagen inline nur mit `(PMID <pmid>)` "
-        "aus den mitgelieferten PMIDs. Schreibe KEINE Stufe-, Provenienz- oder "
+        "System-Prompt. Belege tragende Aussagen inline mit "
+        "`(PMID <pmid>: \"woertlich kopiertes Zitat aus evidence_basis\")` aus den "
+        "mitgelieferten PMIDs; jede Zahl der Aussage muss im Zitat stehen. "
+        "Schreibe KEINE Stufe-, Provenienz- oder "
         "Link-Zeilen und KEINE Quellen-Liste; der Code haengt sie an. Nutze nur "
         "evidence_basis; was dort nicht steht, lass weg.\n\n"
         + json.dumps(papers, ensure_ascii=False, indent=2)
@@ -571,7 +780,13 @@ def finalize(body: str, queries: list[str], selected: list[dict],
                   body).rstrip()
 
     heading = f"# Praxis-Check: {q['title']}\n"
-    such = ("## Verwendete Suchanfrage\n\n"
+    n_on = sum(1 for c in selected if c.get("on_subject", True))
+    if n_on < THIN_FLOOR:
+        # Code-set, like Stufe and provenance: the model cannot drop it.
+        heading += (f"\n> Hinweis: Nur {n_on} der gefundenen Paper behandeln das Thema "
+                    f"der Frage direkt. Die Evidenzbasis ist dünn; wichtige Arbeiten "
+                    f"können fehlen.\n")
+    such =("## Verwendete Suchanfrage\n\n"
             + "\n".join(f"- `{query}`" for query in queries) + "\n")
     quellen = assemble_quellen(selected)
 
@@ -669,8 +884,14 @@ def evidence_record(q: dict, queries: list[str], selected: list[dict],
     be audited or replayed later (scripts/check_claims.py). `papers` holds the
     exact `paper_payload` objects sent to the model, so `evidence_basis` is the
     text the claims must trace back to; `provenance` is the code-set label.
-    `synthesis_raw` is the model prose before finalize, so model output and
-    code-added parts stay separable."""
+    `synthesis_raw` is the model prose before finalize, WITH its quote anchors,
+    so model output and code-added parts stay separable. `anchors` lists each
+    (pmid, quote) and whether code found the quote in that paper's text."""
+    basis = {str(c.get("pmid")): synth.paper_payload(c)["evidence_basis"]
+             for c in selected}
+    anchors = [{"pmid": p, "quote": qt,
+                "in_source": check_claims.find_quote(qt, basis.get(p, ""))}
+               for a in check_claims.split_anchors(body)[2] for p, qt in a["quotes"]]
     return {
         "schema_version": EVIDENCE_SCHEMA_VERSION,
         "created": datetime.now().isoformat(timespec="seconds"),
@@ -679,9 +900,11 @@ def evidence_record(q: dict, queries: list[str], selected: list[dict],
                      "kontext": q.get("kontext")},
         "queries": queries,
         "synthesis_raw": body,
-        "papers": [{**synth.paper_payload(c),
+        "anchors": anchors,
+        "papers": [{**praxis_payload(c),
                     "provenance": synth.provenance(c),
                     "on_subject": c.get("on_subject"),
+                    "context_guideline": bool(c.get("context_guideline")),
                     "score": c.get("score")} for c in selected],
     }
 
@@ -727,13 +950,20 @@ def dossier_stages(q: dict, *, profile_text: str | None = None,
     ua = f"journal-watch/0.1 (+{contact})"
 
     domain = parse_domain(profile_text)
-    queries = resolve_queries(q, cfg)
+    # Per-stage wall time (seconds), printed at the end and kept in the evidence
+    # file, so "where do the 90 s go" is measured, not guessed.
+    timings: dict[str, float] = {}
+    t0 = t = time.perf_counter()
+    queries = resolve_queries(q, cfg, profile_text)
+    timings["plan"] = time.perf_counter() - t
     for query in queries:
         print(f"  -> {query}")
     yield ("queries", {"queries": queries})
 
     print("\n=== fetch (all-time) ===")
+    t = time.perf_counter()
     cands = run_search(queries, ua)
+    timings["search"] = time.perf_counter() - t
     n_raw = len(cands)
     cands = [c for c in cands if not is_retracted(c.get("pubTypes", []))]
     n_ret = n_raw - len(cands)
@@ -749,32 +979,41 @@ def dossier_stages(q: dict, *, profile_text: str | None = None,
         raise PraxisError("no candidates found for this question")
 
     print("\n=== rank (all-time, recency as bonus, subject-gated, MeSH-aware) ===")
+    t = time.perf_counter()
     ranked = rank_all(cands, profile_text, queries, domain)
-    # Subject-actor gate: prefer papers that mention the intervention, not just
-    # the broad context. Both partitions stay score-sorted, so on-subject papers
-    # always outrank off-subject ones regardless of citations, and off-subject
-    # only backfills when a small literature cannot fill max_items on its own.
-    on = [r for r in ranked if r["on_subject"]]
-    off = [r for r in ranked if not r["on_subject"]]
-    selected = (on + off)[: q["max_items"]]
-    backfill = max(0, len(selected) - len(on))
-    print(f"  ranked {len(ranked)} ({len(on)} on-subject), selected top "
-          f"{len(selected)}"
-          + (f", {backfill} off-subject backfill" if backfill else ""))
+    selected = select_papers(ranked, q["max_items"], domain)
+    timings["rank"] = time.perf_counter() - t
+    n_on = sum(1 for s in selected if s["on_subject"])
+    n_ctx = len(selected) - n_on
+    print(f"  ranked {len(ranked)} ({sum(r['on_subject'] for r in ranked)} on-subject), "
+          f"selected {len(selected)}"
+          + (f", incl. {n_ctx} context guideline(s)" if n_ctx else "")
+          + (f"  THIN: only {n_on} on-subject" if n_on < THIN_FLOOR else ""))
     for s in selected[:10]:
-        flag = " " if s["on_subject"] else "~"     # ~ marks an off-subject backfill
+        flag = " " if s["on_subject"] else "~"     # ~ marks a context guideline
         print(f"   {flag}Stufe {s['stufe']}  score {s['score']:>6}  "
               f"{(s.get('journalAbbrev') or '?')[:24]:<24}  {(s.get('title') or '')[:44]}")
 
     print("\n=== enrich (top N) ===")
+    t = time.perf_counter()
     enrich_top(selected, ua, contact)
+    timings["enrich"] = time.perf_counter() - t
     yield ("selected", {"selected": selected, "count": len(selected)})
 
     print("\n=== synthesize (one LLM call) ===")
-    body = synthesize_dossier(q, selected, cfg, profile_text)
-    if body is None:
+    t = time.perf_counter()
+    raw = synthesize_dossier(q, selected, cfg, profile_text)
+    timings["synthesis"] = time.perf_counter() - t
+    if raw is None:
         raise PraxisError("no provider produced a dossier (missing keys, errors, "
                           "or refusals)")
+    # Quote anchors come off FIRST: before validation, before the web stream
+    # sees the prose, before finalize strips dashes (source quotes contain en
+    # dashes and must stay verbatim). The raw form goes to evidence.json only.
+    body, _, anchors = check_claims.split_anchors(raw)
+    if not anchors:
+        print("  WARN: no quote anchors in the dossier; the contract requires "
+              "(PMID ...: \"quote\") on load-bearing claims", file=sys.stderr)
     validate_citations(body, selected)
     scan_dose_directives(body)
     yield ("synthesis", {"text": body})
@@ -782,8 +1021,12 @@ def dossier_stages(q: dict, *, profile_text: str | None = None,
     dossier = finalize(body, queries, selected, q)
     if enforce_limit:
         record_dossier()      # count only on success, after synthesis spend
+    timings["total"] = time.perf_counter() - t0
+    print("  timing: " + " | ".join(f"{k} {v:.1f}s" for k, v in timings.items()))
+    evidence = evidence_record(q, queries, selected, raw)
+    evidence["timings"] = {k: round(v, 2) for k, v in timings.items()}
     yield ("done", {"dossier": dossier, "queries": queries, "selected": selected,
-                    "evidence": evidence_record(q, queries, selected, body)})
+                    "evidence": evidence})
 
 
 def build_dossier(q: dict, *, profile_text: str | None = None,

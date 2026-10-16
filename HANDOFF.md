@@ -51,6 +51,65 @@ Built this session (local, uncommitted):
   of all three rounds: pool-based matching (any value anywhere in the cited
   text counts). Next step for this tool is matching in context (number + unit
   + nearby words, or a calibrated claim-support judge), not more regex.
+- **Quote anchoring, option A built (2026-10-16, uncommitted).** Research
+  (arXiv 2609.15964, Claude Citations, MiniCheck) says: tie each claim to its
+  own verbatim quote. Plan + status: `05_praxis-check/PLAN-quote-anchoring.md`.
+  The model now writes `(PMID x: "quote")`; code splits quotes off before
+  anything is shown, checks quote-in-paper and number-in-own-quote. Anchored
+  versions of known failures M4, L7 and total-N now FAIL as they should (pool
+  mode keeps them as known failures for unquoted claims). 118 offline tests.
+- **Live benchmark 2026-10-16 (8 questions, runs frozen in
+  `05_praxis-check/benchmark-runs/2026-10-16/`).** Europe PMC 503 outage killed
+  6 of 8 on the first pass; rerun with `--only`. Gate: quoted 97 % (pass),
+  verbatim 85 % (miss, bar 90 %) -> **option B (Claude Citations) per the
+  gate.** Gemini edits about 11 % of its quotes (drops CIs, inserts words). No
+  wrong numbers found by hand in 8 dossiers. **HIT retrieval failure:** 0 of 20
+  papers on-subject, padded with off-topic reviews (bare `HIT` term, no
+  surgery facet, backfill to 20). Details: `PLAN-quote-anchoring.md` status.
+- **Retrieval relevance fixed (2026-10-16, uncommitted,
+  `05_praxis-check/PLAN-retrieval-relevance.md`).** Ambiguous abbreviations
+  (new `profile.md` block) are expanded before search; subject gate ignores
+  hyphens; no off-subject padding, only up to 3 marked context guidelines;
+  zero on-subject = no dossier; under 5 = code-set thin note. Replay on the
+  frozen queries: HIT 0/20 -> 18/20 on-subject. `scripts/test_retrieval.py`.
+  **Next:** full benchmark with synthesis (Josh's OK), then Claude Citations.
+- **Where the time goes (one HIT run, 2026-10-16, now logged per stage and in
+  `evidence.json` `timings`):** plan 13.7 s, search 5.0 s, rank 0.1 s, enrich
+  3.7 s, synthesis 44.0 s, total 66.5 s. About 87 % is the two Gemini calls,
+  not retrieval. Suspect: Gemini 2.5 Flash thinks by default (no thinking
+  config in `providers.py`; thought tokens are not logged). Not yet tested.
+  Note: that rerun OVERWROTE the earlier frozen HIT run in
+  `benchmark-runs/2026-10-16/` (save_run now adds a time suffix instead; its
+  numbers survive in `PLAN-quote-anchoring.md` and `PLAN-retrieval-relevance.md`).
+- **Gemini thinking test (HIT question, single runs, 2026-10-16).** Thought
+  tokens now logged; budgets settable in `profile.md` (`planer_thinking_gemini`,
+  `synthese_thinking_gemini`, empty = default) or per run with
+  `benchmark_praxis.py --thinking-planner 0 --thinking-synthesis 0`.
+  A (planner off): plan 13.7 -> 4.8 s, and the planner wrote better queries
+  (cardiac-surgery facet added). Synthesis with default thinking: 3032 thought
+  tokens, 31 s, one real unsupported number ("100 Tage", not in the papers).
+  B (both off, same queries and papers as A): synthesis 14.9 s, total 64 -> 43 s,
+  no wrong numbers (3 FAILs: a correct CHOOSE-ON claim whose quote misses 49/43,
+  one condensed quote); shorter dossier (737 vs 958 words, Kurzantwort 90 words).
+  Remaining time is search (3 sequential queries, 13 to 17 s) and enrich (full
+  text 10 to 12 s, many EBI 500 errors).
+- **8-question run with thinking off (planner + synthesis), 2026-10-16,
+  `benchmark-runs/2026-10-16/thinking-off/`.** vs today's default-thinking set:
+  mean ~39 s vs ~65 s per dossier; verbatim 91 % (gate passes) vs 86 %; quote
+  FAILs 16 vs 32; unsupported numbers hand-checked: 0 wrong in both (new run's 4
+  are checker gaps: number words, "RR 1. 08", "0 v 20%"); 7379 vs 8481 words;
+  Kurzantwort avg 103 vs 132 words (under the 120 target). **Catch:** planner
+  without thinking dropped phrase quotes and added "controversy OR debate"
+  facets on the corticosteroid pilot; retrieval pulled steroid-adjacent
+  off-topic papers (adrenal hyperplasia, ARDS) past the subject gate, cited fell
+  11 -> 5. Not a controlled comparison (baseline 7 of 8 used the old retrieval).
+  `profile.md` now: planner thinking 0, synthesis thinking default.
+- **Planned-query clean-up built (no LLM spend).** `clean_planned_query`
+  quotes bare multi-word OR terms and drops debate-word facets (planned
+  queries only). Replay on the thinking-off queries: pilot 15/16 -> 20/20
+  on-subject, back on topic. Remaining relevance gap is SETTING (drug named,
+  wrong clinical context: pericarditis, PONV, postpartum, ECMO); see
+  `PLAN-retrieval-relevance.md` addendum.
 - **Pipeline bug found, not fixed:** `enrich.fulltext_excerpt` can return a
   stub like "The content is available as a PDF (28.4 MB)." which is then
   labelled [VOLLTEXT] and sent INSTEAD of the abstract (seen in the TCI

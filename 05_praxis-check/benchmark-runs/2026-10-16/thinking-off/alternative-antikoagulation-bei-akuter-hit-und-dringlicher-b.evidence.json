@@ -1,0 +1,500 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-16T13:05:47",
+  "reconstructed": false,
+  "question": {
+    "title": "Alternative Antikoagulation bei akuter HIT und dringlicher Bypass-OP",
+    "frage": "Welche Evidenz gibt es zur Antikoagulation mit Alternativen zu Heparin bei akuter heparininduzierter Thrombozytopenie (HIT), wenn eine dringliche Bypass-Operation mit Herz-Lungen-Maschine noetig ist? Wie unterscheidet sich das Vorgehen bei akuter HIT von einer frueheren, abgeklungenen HIT?",
+    "kontext": ""
+  },
+  "queries": [
+    "(\"heparin induced thrombocytopenia\" OR \"heparin-induced thrombocytopenia\") AND (acute OR new OR current) AND (\"cardiopulmonary bypass\" OR CPB OR ECC OR \"extracorporeal circulation\" OR CABG OR \"coronary artery bypass grafting\" OR \"cardiac surgery\" OR \"heart surgery\") AND (anticoagulation OR anticoagulant OR \"blood thinners\") AND (argatroban OR bivalirudin OR fondaparinux OR danaparoid OR lepirudin OR dabigatran OR rivaroxaban OR apixaban OR edoxaban OR DOAC OR NOAC OR \"direct thrombin inhibitor\" OR \"factor Xa inhibitor\") AND SRC:MED",
+    "(\"heparin induced thrombocytopenia\" OR \"heparin-induced thrombocytopenia\") AND (resolved OR past OR previous OR history) AND (\"cardiopulmonary bypass\" OR CPB OR ECC OR \"extracorporeal circulation\" OR CABG OR \"coronary artery bypass grafting\" OR \"cardiac surgery\" OR \"heart surgery\") AND (anticoagulation OR anticoagulant OR \"blood thinners\") AND SRC:MED",
+    "(\"heparin induced thrombocytopenia\" OR \"heparin-induced thrombocytopenia\") AND (management OR guideline OR recommendation OR strategy OR approach OR \"treatment algorithm\") AND (\"cardiopulmonary bypass\" OR CPB OR ECC OR \"extracorporeal circulation\" OR CABG OR \"coronary artery bypass grafting\" OR \"cardiac surgery\" OR \"heart surgery\") AND (acute OR resolved OR past OR previous) AND SRC:MED"
+  ],
+  "synthesis_raw": "## Kurzantwort:\nBei akuter heparininduzierter Thrombozytopenie (HIT), die eine dringliche Bypass-Operation mit Herz-Lungen-Maschine erfordert, deuten die Studien darauf hin, dass direkte Thrombininhibitoren wie Bivalirudin die bevorzugten Antikoagulantien sind (PMID 22315270: \"In patients with acute HIT or subacute HIT who require urgent cardiac surgery, we suggest the use of bivalirudin over other nonheparin anticoagulants or heparin plus antiplatelet agents (Grade 2C)\"). Auch Argatroban oder Danaparoid werden als Alternativen genannt, wobei Argatroban bei Niereninsuffizienz bevorzugt wird (PMID 22315270: \"In patients with HITT and renal insufficiency, we suggest the use of argatroban over other nonheparin anticoagulants (Grade 2C)\"). Für Patienten mit einer früheren, abgeklungenen HIT, deren Antikörper negativ sind, kann intraoperativ unfraktioniertes Heparin (UFH) verwendet werden, während prä- und postoperative Antikoagulation mit Nicht-Heparin-Alternativen erfolgen sollte (PMID 15383477: \"For patients with a history of HIT who are HIT antibody negative and require cardiac surgery, we recommend use of UFH (Grade 1C)\"). Die Entscheidung für eine alternative Antikoagulation erfordert eine sorgfältige Abwägung von Dosis, Wirksamkeit und Blutungsrisiko.\n\n*   **Entscheidender Befund:** Direkte Thrombininhibitoren sind bei akuter HIT in der Herzchirurgie Mittel der Wahl.\n*   **Untersuchte Population:** Patienten mit akuter oder subakuter HIT, die eine dringliche Herzoperation mit Herz-Lungen-Maschine benötigen.\n*   **Wesentliche Unsicherheit:** Daten aus randomisierten kontrollierten Studien sind zur Bewertung einiger Alternativen, insbesondere Fondaparinux, noch begrenzt.\n\n## Evidenzlage.\nPatienten mit akuter heparininduzierter Thrombozytopenie (HIT) und der Notwendigkeit einer dringenden Herzoperation mit Herz-Lungen-Maschine (HLM) stellen eine besondere Herausforderung dar, da hochdosiertes Heparin für die HLM kontraindiziert ist (PMID 19933539: \"Heparin-induced thrombocytopenia (HIT) complicates the management of patients presenting for cardiac surgery, because high-dose heparin anticoagulation for cardiopulmonary bypass is contraindicated in these patients\"). In diesen Fällen werden alternative Antikoagulantien benötigt.\n\nDie American Society of Hematology (ASH) empfiehlt, bei Patienten mit akuter HIT oder subakuter HIT, die eine dringende Herzoperation benötigen, Bivalirudin anstelle anderer Nicht-Heparin-Antikoagulantien oder Heparin plus Thrombozytenaggregationshemmer zu verwenden (PMID 22315270: \"In patients with acute HIT or subacute HIT who require urgent cardiac surgery, we suggest the use of bivalirudin over other nonheparin anticoagulants or heparin plus antiplatelet agents (Grade 2C)\"). Eine multizentrische, offene Studie mit 50 Patienten zeigte, dass Bivalirudin eine sichere und wirksame Antikoagulation während der HLM bei Patienten mit bestätigter oder vermuteter HIT und/oder Anti-PF4/H-Antikörpern ermöglichte, wobei bei 94 % der Patienten ein akuter prozeduraler Erfolg im Krankenhaus oder nach 7 Tagen erreicht wurde (PMID 17257990: \"The current investigation expands the experience of safe and effective anticoagulation with bivalirudin during CPB to patients with confirmed or suspected HIT and anti-PF4/H antibodies, including in the setting of impaired renal function.\").\n\nWeitere empfohlene alternative Antikoagulantien für die Behandlung der akuten HIT umfassen Argatroban und Danaparoid (PMID 15383477: \"For patients with strongly suspected (or confirmed) HIT, whether or not complicated by thrombosis, we recommend use of an alternative anticoagulant, such as lepirudin (Grade 1C+), argatroban (Grade 1C), bivalirudin (Grade 2C), or danaparoid (Grade 1B)\"). Für Patienten mit Niereninsuffizienz und HIT mit Thrombose (HITT) wird die Verwendung von Argatroban gegenüber anderen Nicht-Heparin-Antikoagulantien empfohlen (PMID 22315270: \"In patients with HITT and renal insufficiency, we suggest the use of argatroban over other nonheparin anticoagulants (Grade 2C)\").\n\nEine retrospektive Analyse von 10 Patienten mit HIT Typ II und Niereninsuffizienz, die eine Herzoperation benötigten, untersuchte ein Protokoll mit unfraktioniertem Heparin nach Thrombozytenhemmung mit Tirofiban. Dies führte zu geringem postoperativem Blutverlust (110 bis 520 ml) und ohne Hinweise auf Thrombose oder Embolie im postoperativen Zeitraum (PMID 11176088: \"The protocol is easy to perform and no increased postoperative bleeding and no thromboembolic complications occurred\"). Eine weitere Studie mit 6 Patienten verwendete Heparin nach Vorbehandlung mit Epoprostenol-Natrium, was zu keinem signifikanten Thrombozytenabfall und keinen intraoperativen thrombotischen Komplikationen führte, mit einem postoperativen Thoraxdrainagevolumen von 250 bis 1.100 ml (PMID 11235727: \"During CPB, inhibition of platelet aggregation by prostacyclin may be a safe anticoagulation approach in patients with type II HIT\").\n\nIm Gegensatz dazu ist das Vorgehen bei Patienten mit einer früheren, abgeklungenen HIT, deren Antikörper negativ sind, anders. In diesen Fällen wird die intraoperative Verwendung von unfraktioniertem Heparin (UFH) empfohlen (PMID 15383477: \"For patients with a history of HIT who are HIT antibody negative and require cardiac surgery, we recommend use of UFH (Grade 1C)\"). Die prä- und postoperative Antikoagulation sollte jedoch mit einem anderen Antikoagulans als UFH oder niedermolekularem Heparin (LMWH) erfolgen (PMID 16643427: \"Patients with previous HIT who are antibody negative (usually so after >100 d) who require cardiac surgery should receive intraoperative UFH in preference to other anticoagulants that are less validated for this purpose. Pre- and postoperative anticoagulation should be with an anticoagulant other than UFH or LMWH\").\n\nEine Alternative für Patienten mit einer Vorgeschichte von HIT und einem aktuell positiven Anti-HPF4-Antikörpertiter, die sich einer Herzoperation unterziehen müssen, ist die Plasmapherese vor der Heparin-Antikoagulation. Eine Fallserie beschrieb, wie eine einzige Plasmapherese-Behandlung die Titer um 50 % bis 84 % reduzierte, und keiner der 3 Patienten mit reduzierten Titern entwickelte eine klinische HIT (PMID 19933539: \"A single plasmapheresis treatment reduced titers by 50%-84%, and 6 patients had negative titers after treatment; none of the 3 patients with reduced titers developed clinical HIT\").\n\nFondaparinux wird als Alternative zu Heparin bei HIT diskutiert, ist jedoch primär ein Faktor-Xa-Inhibitor, der nicht direkt Thrombin hemmt (PMID 22315264: \"Fondaparinux, a synthetic pentasaccharide, catalyzes the inhibition of factor Xa, but not thrombin, in an antithrombin-dependent fashion\"). Eine nationale multizentrische Registerstudie untersuchte die Sicherheit und Wirksamkeit verschiedener Antikoagulantien bei HIT. Bei 84 (43,1 %) von 195 Patienten, die zuerst mit Fondaparinux behandelt wurden, traten keine HIT-spezifischen Komplikationen auf, im Vergleich zu 11,7 % der Patienten, die eine zugelassene alternative Antikoagulation erhielten (PMID 29169470: \"The composite endpoint of HIT-specific complications (thromboembolic events, amputation, skin necrosis) occurred in 11.7% of patients treated with approved alternative anticoagulation and in 0.0% of fondaparinux-treated patients\"). Die Autoren weisen jedoch darauf hin, dass weitere Daten aus randomisierten kontrollierten Studien dringend benötigt werden (PMID 29169470: \"Further data from randomized controlled trials are urgently needed\").\n\n## Was ist Standard.\nFür Patienten mit akutem HIT, die eine Herzoperation mit Herz-Lungen-Maschine benötigen, ist der Standard, Heparin zu vermeiden und auf Nicht-Heparin-Antikoagulantien umzustellen. Die American Society of Hematology (ASH) empfiehlt die Verwendung von direkten Thrombininhibitoren (DTI) wie Bivalirudin in dieser speziellen Situation (PMID 22315270: \"In patients with acute HIT or subacute HIT who require urgent cardiac surgery, we suggest the use of bivalirudin over other nonheparin anticoagulants or heparin plus antiplatelet agents (Grade 2C)\"). Alternative DTIs sind Argatroban und Danaparoid (PMID 15383477: \"For patients with strongly suspected (or confirmed) HIT, whether or not complicated by thrombosis, we recommend use of an alternative anticoagulant, such as lepirudin (Grade 1C+), argatroban (Grade 1C), bivalirudin (Grade 2C), or danaparoid (Grade 1B)\"). Warfarin sollte nicht verwendet werden, bis die Thrombozytenzahl sich erholt hat (PMID 16643427: \"Warfarin should not be used until the platelet count has recovered\").\n\nBei Patienten mit einer früheren HIT, deren Antikörper negativ sind (typischerweise nach mehr als 100 Tagen), kann intraoperativ unfraktioniertes Heparin (UFH) verwendet werden. Die prä- und postoperative Antikoagulation sollte dann mit einem Antikoagulans erfolgen, das kein UFH oder niedermolekulares Heparin (LMWH) ist (PMID 16643427: \"Patients with previous HIT who are antibody negative (usually so after >100 d) who require cardiac surgery should receive intraoperative UFH in preference to other anticoagulants that are less validated for this purpose. Pre- and postoperative anticoagulation should be with an anticoagulant other than UFH or LMWH\").\n\n## Wo die Literatur uneins ist.\nDie Literatur zeigt weitgehenden Konsens bei der Vermeidung von Heparin bei akuter HIT. Jedoch gibt es Nuancen und Unsicherheiten bezüglich der optimalen Wahl unter den alternativen Antikoagulantien und der spezifischen Anwendung in kritischen Situationen.\n\nEinige Studien schlagen vor, dass eine Kombination aus unfraktioniertem Heparin (UFH) und Plättchenaggregationshemmern wie Tirofiban oder Epoprostenol bei akzidenteller Heparinexposition oder in bestimmten Situationen mit Niereninsuffizienz in Betracht gezogen werden könnte (PMID 11176088: \"The authors investigated a new concept using unfractionated heparins after platelet inhibition with the short-acting platelet glycoprotein IIb-IIIa antagonist tirofiban\"; PMID 11235727: \"During CPB, inhibition of platelet aggregation by prostacyclin may be a safe anticoagulation approach in patients with type II HIT\"). Diese Strategien sind jedoch im Vergleich zu direkten Thrombininhibitoren wie Bivalirudin weniger etabliert, insbesondere wenn die HIT-Antikörper aktiv sind.\n\nFondaparinux wird als effektives und sicheres Mittel bei vermuteter akuter HIT beschrieben, wobei in einer Studie keine HIT-spezifischen Komplikationen bei Fondaparinux-behandelten Patienten auftraten (PMID 29169470: \"Fondaparinux is effective and safe in suspected acute HIT; no HIT-specific complications occurred in the fondaparinux-treated patients, even among those with a high clinical HIT probability\"). Allerdings ist Fondaparinux als Off-Label-Medikament für diese Indikation in vielen Ländern nicht zugelassen, und es gibt Bedenken hinsichtlich seiner Eignung für die hochdosierte Antikoagulation während der HLM (PMID 29169470: \"Further data from randomized controlled trials are urgently needed because lepirudin was recalled from the market; danaparoid access has been limited and is not approved in the United States; and argatroban is contraindicated in patients with impaired liver function, and activated partial thromboplastin time confounding may interfere with monitoring\"). Die Notwendigkeit weiterer randomisierter kontrollierter Studien zur Bewertung von Fondaparinux wird betont (PMID 29169470: \"Further data from randomized controlled trials are urgently needed\").\n\nDie Rolle der Plasmapherese zur Reduktion der Antikörperlast vor einer Operation bei Patienten mit aktiver HIT ist ein weiterer Ansatz, der in Fallserien beschrieben wurde. Hierbei konnte eine signifikante Reduktion der Antikörpertiter beobachtet werden, was möglicherweise das thrombogene Risiko reduziert (PMID 19933539: \"A single plasmapheresis treatment reduced titers by 50%-84%, and 6 patients had negative titers after treatment\"). Dieser Ansatz ist jedoch komplex und sollte in erfahrenen Zentren diskutiert werden (PMID 16643427: \"We recommend discussion of these complex cases requiring surgery with an experienced centre\").\n\n## Offene Fragen.\nEs besteht ein fortwährender Bedarf an randomisierten kontrollierten Studien (RCTs), um die Wirksamkeit und Sicherheit der verschiedenen alternativen Antikoagulantien bei Patienten mit akuter HIT, die eine dringliche Herzoperation benötigen, umfassend zu vergleichen (PMID 29169470: \"Further data from randomized controlled trials are urgently needed\"). Insbesondere fehlen robuste Daten zur optimalen Anwendung von Fondaparinux und den neuen oralen Antikoagulantien in dieser Hochrisikopopulation (PMID 22315270: \"Further studies evaluating the role of fondaparinux and the new oral anticoagulants in the treatment of HIT are needed\").\n\nWeitere Forschung ist auch notwendig, um die Rolle und den genauen Stellenwert von Kombinationstherapien (z. B. Heparin mit Plättchenaggregationshemmern) bei Patienten mit HIT und besonderen Komorbiditäten, wie Niereninsuffizienz, zu klären. Es gibt Hinweise, dass solche Protokolle sicher sein können, aber die Evidenzbasis ist klein und stammt hauptsächlich aus Fallserien (PMID 11176088: \"The authors investigated a new concept using unfractionated heparins after platelet inhibition with the short-acting platelet glycoprotein IIb-IIIa antagonist tirofiban\").\n\nDie Entwicklung von standardisierten Protokollen für das perioperative Management, einschließlich präoperativer Antikörpertests und der Entscheidungsfindung für die Antikoagulationsstrategie, könnte ebenfalls zur Verbesserung der Patientenergebnisse beitragen.\n\nKein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.",
+  "anchors": [
+    {
+      "pmid": "22315270",
+      "quote": "In patients with acute HIT or subacute HIT who require urgent cardiac surgery, we suggest the use of bivalirudin over other nonheparin anticoagulants or heparin plus antiplatelet agents (Grade 2C)",
+      "in_source": true
+    },
+    {
+      "pmid": "22315270",
+      "quote": "In patients with HITT and renal insufficiency, we suggest the use of argatroban over other nonheparin anticoagulants (Grade 2C)",
+      "in_source": true
+    },
+    {
+      "pmid": "15383477",
+      "quote": "For patients with a history of HIT who are HIT antibody negative and require cardiac surgery, we recommend use of UFH (Grade 1C)",
+      "in_source": true
+    },
+    {
+      "pmid": "19933539",
+      "quote": "Heparin-induced thrombocytopenia (HIT) complicates the management of patients presenting for cardiac surgery, because high-dose heparin anticoagulation for cardiopulmonary bypass is contraindicated in these patients",
+      "in_source": true
+    },
+    {
+      "pmid": "22315270",
+      "quote": "In patients with acute HIT or subacute HIT who require urgent cardiac surgery, we suggest the use of bivalirudin over other nonheparin anticoagulants or heparin plus antiplatelet agents (Grade 2C)",
+      "in_source": true
+    },
+    {
+      "pmid": "17257990",
+      "quote": "The current investigation expands the experience of safe and effective anticoagulation with bivalirudin during CPB to patients with confirmed or suspected HIT and anti-PF4/H antibodies, including in the setting of impaired renal function.",
+      "in_source": true
+    },
+    {
+      "pmid": "15383477",
+      "quote": "For patients with strongly suspected (or confirmed) HIT, whether or not complicated by thrombosis, we recommend use of an alternative anticoagulant, such as lepirudin (Grade 1C+), argatroban (Grade 1C), bivalirudin (Grade 2C), or danaparoid (Grade 1B)",
+      "in_source": true
+    },
+    {
+      "pmid": "22315270",
+      "quote": "In patients with HITT and renal insufficiency, we suggest the use of argatroban over other nonheparin anticoagulants (Grade 2C)",
+      "in_source": true
+    },
+    {
+      "pmid": "11176088",
+      "quote": "The protocol is easy to perform and no increased postoperative bleeding and no thromboembolic complications occurred",
+      "in_source": true
+    },
+    {
+      "pmid": "11235727",
+      "quote": "During CPB, inhibition of platelet aggregation by prostacyclin may be a safe anticoagulation approach in patients with type II HIT",
+      "in_source": true
+    },
+    {
+      "pmid": "15383477",
+      "quote": "For patients with a history of HIT who are HIT antibody negative and require cardiac surgery, we recommend use of UFH (Grade 1C)",
+      "in_source": true
+    },
+    {
+      "pmid": "16643427",
+      "quote": "Patients with previous HIT who are antibody negative (usually so after >100 d) who require cardiac surgery should receive intraoperative UFH in preference to other anticoagulants that are less validated for this purpose. Pre- and postoperative anticoagulation should be with an anticoagulant other than UFH or LMWH",
+      "in_source": true
+    },
+    {
+      "pmid": "19933539",
+      "quote": "A single plasmapheresis treatment reduced titers by 50%-84%, and 6 patients had negative titers after treatment; none of the 3 patients with reduced titers developed clinical HIT",
+      "in_source": true
+    },
+    {
+      "pmid": "22315264",
+      "quote": "Fondaparinux, a synthetic pentasaccharide, catalyzes the inhibition of factor Xa, but not thrombin, in an antithrombin-dependent fashion",
+      "in_source": true
+    },
+    {
+      "pmid": "29169470",
+      "quote": "The composite endpoint of HIT-specific complications (thromboembolic events, amputation, skin necrosis) occurred in 11.7% of patients treated with approved alternative anticoagulation and in 0.0% of fondaparinux-treated patients",
+      "in_source": true
+    },
+    {
+      "pmid": "29169470",
+      "quote": "Further data from randomized controlled trials are urgently needed",
+      "in_source": true
+    },
+    {
+      "pmid": "22315270",
+      "quote": "In patients with acute HIT or subacute HIT who require urgent cardiac surgery, we suggest the use of bivalirudin over other nonheparin anticoagulants or heparin plus antiplatelet agents (Grade 2C)",
+      "in_source": true
+    },
+    {
+      "pmid": "15383477",
+      "quote": "For patients with strongly suspected (or confirmed) HIT, whether or not complicated by thrombosis, we recommend use of an alternative anticoagulant, such as lepirudin (Grade 1C+), argatroban (Grade 1C), bivalirudin (Grade 2C), or danaparoid (Grade 1B)",
+      "in_source": true
+    },
+    {
+      "pmid": "16643427",
+      "quote": "Warfarin should not be used until the platelet count has recovered",
+      "in_source": true
+    },
+    {
+      "pmid": "16643427",
+      "quote": "Patients with previous HIT who are antibody negative (usually so after >100 d) who require cardiac surgery should receive intraoperative UFH in preference to other anticoagulants that are less validated for this purpose. Pre- and postoperative anticoagulation should be with an anticoagulant other than UFH or LMWH",
+      "in_source": true
+    },
+    {
+      "pmid": "11176088",
+      "quote": "The authors investigated a new concept using unfractionated heparins after platelet inhibition with the short-acting platelet glycoprotein IIb-IIIa antagonist tirofiban",
+      "in_source": true
+    },
+    {
+      "pmid": "11235727",
+      "quote": "During CPB, inhibition of platelet aggregation by prostacyclin may be a safe anticoagulation approach in patients with type II HIT",
+      "in_source": true
+    },
+    {
+      "pmid": "29169470",
+      "quote": "Fondaparinux is effective and safe in suspected acute HIT; no HIT-specific complications occurred in the fondaparinux-treated patients, even among those with a high clinical HIT probability",
+      "in_source": true
+    },
+    {
+      "pmid": "29169470",
+      "quote": "Further data from randomized controlled trials are urgently needed because lepirudin was recalled from the market; danaparoid access has been limited and is not approved in the United States; and argatroban is contraindicated in patients with impaired liver function, and activated partial thromboplastin time confounding may interfere with monitoring",
+      "in_source": true
+    },
+    {
+      "pmid": "29169470",
+      "quote": "Further data from randomized controlled trials are urgently needed",
+      "in_source": true
+    },
+    {
+      "pmid": "19933539",
+      "quote": "A single plasmapheresis treatment reduced titers by 50%-84%, and 6 patients had negative titers after treatment",
+      "in_source": true
+    },
+    {
+      "pmid": "16643427",
+      "quote": "We recommend discussion of these complex cases requiring surgery with an experienced centre",
+      "in_source": true
+    },
+    {
+      "pmid": "29169470",
+      "quote": "Further data from randomized controlled trials are urgently needed",
+      "in_source": true
+    },
+    {
+      "pmid": "22315270",
+      "quote": "Further studies evaluating the role of fondaparinux and the new oral anticoagulants in the treatment of HIT are needed",
+      "in_source": true
+    },
+    {
+      "pmid": "11176088",
+      "quote": "The authors investigated a new concept using unfractionated heparins after platelet inhibition with the short-acting platelet glycoprotein IIb-IIIa antagonist tirofiban",
+      "in_source": true
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "30482768",
+      "title": "American Society of Hematology 2018 guidelines for management of venous thromboembolism: heparin-induced thrombocytopenia.",
+      "journal": "Blood advances",
+      "date": "2018-11-01",
+      "authors": [
+        "Cuker A",
+        "Santesso N."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Heparin-induced thrombocytopenia (HIT) is an adverse drug reaction mediated by platelet-activating antibodies that target complexes of platelet factor 4 and heparin. Patients are at markedly increased risk of thromboembolism.<h4>Objective</h4>These evidence-based guidelines of the American Society of Hematology (ASH) are intended to support patients, clinicians, and other health care professionals in their decisions about diagnosis and management of HIT.<h4>Methods</h4>ASH formed a multidisciplinary guideline panel balanced to minimize potential bias from conflicts of interest. The McMaster University GRADE Centre supported the guideline development process, including updating or performing systematic evidence reviews. The panel prioritized clinical questions and outcomes according to their importance for clinicians and patients. The Grading of Recommendations Assessment, Development and Evaluation (GRADE) approach was used to assess evidence and make recommendations, which were subject to public comment.<h4>Results</h4>The panel agreed on 33 recommendations. The recommendations address screening of asymptomatic patients for HIT, diagnosis and initial management of patients with suspected HIT, treatment of acute HIT, and special situations in patients with acute HIT or a history of HIT, including cardiovascular surgery, percutaneous cardiovascular intervention, renal replacement therapy, and venous thromboembolism prophylaxis.<h4>Conclusions</h4>Strong recommendations include use of the 4Ts score rather than a gestalt approach for estimating the pretest probability of HIT and avoidance of HIT laboratory testing and empiric treatment of HIT in patients with a low-probability 4Ts score. Conditional recommendations include the choice among non-heparin anticoagulants (argatroban, bivalirudin, danaparoid, fondaparinux, direct oral anticoagulants) for treatment of acute HIT.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 375.0
+    },
+    {
+      "pmid": "28431186",
+      "title": "Unfractionated heparin versus low molecular weight heparins for avoiding heparin-induced thrombocytopenia in postoperative patients.",
+      "journal": "The Cochrane database of systematic reviews",
+      "date": "2017-04-21",
+      "authors": [
+        "Junqueira DR",
+        "Perini E."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Heparin-induced thrombocytopenia (HIT) is an adverse drug reaction presenting as a prothrombotic disorder related to antibody-mediated platelet activation. It is a paradoxical immune reaction resulting in thrombin generation in vivo, which leads to a hypercoagulable state and the potential to initiate venous or arterial thrombosis. A number of factors are thought to influence the incidence of HIT including the type and preparation of heparin (unfractionated heparin (UFH) or low molecular weight heparin (LMWH)) and the heparin-exposed patient population, with the postoperative patient population at higher risk.Although LMWH has largely replaced UFH as a front-line therapy, there is evidence supporting a lack of superiority of LMWH compared with UFH regarding prevention of deep vein thrombosis and pulmonary embolism following surgery, and similar frequencies of bleeding have been described with LMWH and UFH. The decision as to which of these two preparations of heparin to use may thus be influenced by harmful effects such as HIT. We therefore sought to determine the relative impact of UFH and LMWH on HIT in postoperative patients receiving thromboembolism prophylaxis. This is an update of a review first published in 2012.<h4>Objectives</h4>The objective of this review was to compare the incidence of heparin-induced thrombocytopenia (HIT) and HIT complicated by venous thromboembolism in postoperative patients exposed to unfractionated heparin (UFH) versus low molecular weight heparin (LMWH).<h4>Search methods</h4>For this update, the Cochrane Vascular Information Specialist searched the Specialised Register (May 2016), CENTRAL (2016, Issue 4) and trials registries. The authors searched Lilacs (June 2016) and additional trials were sought from reference lists of relevant publications.<h4>Selection criteria</h4>We included randomised controlled trials (RCTs) in which participants were postoperative patients allocated to receive prophylaxis with UFH or LMWH, in a blinded or unblinded fashion. Studies were excluded if they did not use the accepted definition of HIT. This was defined as a relative reduction in the platelet count of 50% or greater from the postoperative peak (even if the platelet count at its lowest remained greater than 150 x 10<sup>9</sup>/L) occurring within five to 14 days after the surgery, with or without a thrombotic event occurring in this timeframe. Additionally, we required circulating antibodies associated with the syndrome to have been investigated through laboratory assays.<h4>Data collection and analysis</h4>Two review authors independently extracted data and assessed the risk of bias. Disagreements were resolved by consensus with participation of a third author.<h4>Main results</h4>In this update, we included three trials involving 1398 postoperative participants. Participants were submitted to general surgical procedures, minor and major, and the minimum mean age was 49 years. Pooled analysis showed a significant reduction in the risk of HIT with LMWH compared with UFH (risk ratio (RR) 0.23, 95% confidence interval (CI) 0.07 to 0.73); low-quality evidence. The number needed to treat for an additional beneficial outcome (NNTB) was 59. The risk of HIT was consistently reduced comparing participants undergoing major surgical procedures exposed to LMWH or UFH (RR 0.22, 95% CI 0.06 to 0.75); low-quality evidence. The occurrence of HIT complicated by venous thromboembolism was significantly lower in participants receiving LMWH compared with UFH (RR 0.22, 95% CI 0.06 to 0.84); low-quality evidence. The NNTB was 75. Arterial thrombosis occurred in only one participant who received UFH. There were no amputations or deaths documented. Although limited evidence is available, it appears that HIT induced by both types of heparins is common in people undergoing major surgical procedures (incidence greater than 1% and less than 10%).<h4>Authors' conclusions</h4>This updated review demonstrated low-quality evidence of a lower incidence of HIT, and HIT complicated by venous thromboembolism, in postoperative patients undergoing thromboprophylaxis with LMWH compared with UFH. Similarily, the risk of HIT in people undergoing major surgical procedures was lower when treated with LMWH compared to UFH (low-quality evidence). The quality of the evidence was downgraded due to concerns about the risk of bias in the included studies and imprecision of the study results. These findings may support current clinical use of LMWH over UFH as front-line heparin therapy. However, our conclusions are limited and there was an unexpected paucity of RCTs including HIT as an outcome. To address the scarcity of clinically-relevant information on HIT, HIT must be included as a core harmful outcome in future RCTs of heparin.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 355.0
+    },
+    {
+      "pmid": "16643427",
+      "title": "The management of heparin-induced thrombocytopenia.",
+      "journal": "British journal of haematology",
+      "date": "2006-05-01",
+      "authors": [
+        "Keeling D",
+        "Haemostasis and Thrombosis Task Force of the British Committee for Standards in Haematology."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "The Haemostasis and Thrombosis Task Force of the British Committee for Standards in Haematology has produced a concise practical guideline to highlight the key issues in the management of heparin-induced thrombocytopenia (HIT) for the practicing physician in the UK. The guideline is evidence-based and levels of evidence are included in the body of the article. All patients who are to receive heparin of any sort should have a platelet count on the day of starting treatment. For patients who have been exposed to heparin in the last 100 d, a baseline platelet count and a platelet count 24 h after starting heparin should be obtained. For all patients receiving unfractionated heparin (UFH), alternate day platelet counts should be performed from days 4 to 14. For surgical and medical patients receiving low-molecular-weight heparin (LMWH) platelet counts should be performed every 2-4 d from days 4 to 14. Obstetric patients receiving treatment doses of LMWH should have platelet counts performed every 2-4 d from days 4 to 14. Obstetric patients receiving prophylactic LMWH are at low risk and do not need routine platelet monitoring. If the platelet count falls by 50% or more, or falls below the laboratory normal range and/or the patient develops new thrombosis or skin allergy between days 4 and 14 of heparin administration HIT should be considered and a clinical assessment made. If the pretest probability of HIT is high, heparin should be stopped and an alternative anticoagulant started at full dosage unless there are significant contraindications while laboratory tests are performed. Platelet activation assays using washed platelets have a higher sensitivity than platelet aggregation assays but are technically demanding and their use should be restricted to laboratories experienced in the technique. Non-expert laboratories should use an antigen-based assay of high sensitivity. Only IgG class antibodies need to be measured. Useful information is gained by reporting the actual optical density, inhibition by high concentrations of heparin, and the cut-off value for a positive test rather than simply reporting the test as positive or negative. In making a diagnosis of HIT the clinician's estimate of the pretest probability of HIT together with the type of assay used and its quantitative result (enzyme-linked immunosorbent assay, ELISA, only) should be used to determine the overall probability of HIT. Clinical decisions should be made following consideration of the risks and benefits of treatment with an alternative anticoagulant. For patients with strongly suspected or confirmed HIT, heparin should be stopped and full-dose anticoagulation with an alternative, such as lepirudin or danaparoid, commenced (in the absence of a significant contraindication). Warfarin should not be used until the platelet count has recovered. When introduced in combination with warfarin, an alternative anticoagulant must be continued until the International Normalised Ratio (INR) is therapeutic for two consecutive days. Platelets should not be given for prophylaxis. Lepirudin, at doses adjusted to achieve an activated partial thromboplastin time (APTT) ratio of 1.5-2.5, reduces the risk of reaching the composite endpoint of limb amputation, death or new thrombosis in patients with HIT and HIT with thrombosis (HITT). The risk of major haemorrhage is directly related to the APTT ratio, lepirudin levels and serum creatinine levels. The patient's renal function needs to be taken into careful consideration before treatment with lepirudin is commenced. Severe anaphylaxis occurs rarely in recipients of lepirudin and is more common in previously exposed patients. Danaparoid in a high-dose regimen is equivalent to lepirudin in the treatment of HIT and HITT. Danaparoid at prophylactic doses is not recommended for the treatment of HIT or HITT. Patients with previous HIT who are antibody negative (usually so after >100 d) who require cardiac surgery should receive intraoperative UFH in preference to other anticoagulants that are less validated for this purpose. Pre- and postoperative anticoagulation should be with an anticoagulant other than UFH or LMWH. Patients with recent or active HIT should have the need for surgery reviewed and delayed until the patient is antibody negative if possible. They should then proceed as above. If deemed appropriate early surgery should be carried out with an alternative anticoagulant. We recommend discussion of these complex cases requiring surgery with an experienced centre. The diagnosis must be clearly recorded in the patient's medical record.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 335.0
+    },
+    {
+      "pmid": "29169470",
+      "title": "Use of Fondaparinux Off-Label or Approved Anticoagulants for Management of Heparin-Induced Thrombocytopenia.",
+      "journal": "Journal of the American College of Cardiology",
+      "date": "2017-11-01",
+      "authors": [
+        "Schindewolf M",
+        "Lindhoff-Last E."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Life-threatening heparin-induced thrombocytopenia (HIT) is treated with the alternative nonheparin anticoagulants argatroban, lepirudin, or danaparoid. Frequently, the pentasaccharide fondaparinux is used off-label.<h4>Objectives</h4>The authors sought to investigate the safety and efficacy of the different anticoagulants for treating HIT.<h4>Methods</h4>In a national, multicenter registry study, hospitalized patients who were diagnosed with HIT, an at least intermediate clinical HIT-risk (4Ts score ≥4 points), and received treatment with ≥1 dose of the aforementioned anticoagulants were included. Main outcome measures were the incidences of HIT-specific complications (thromboembolic venous/arterial events, amputations, recurrent/persistent thrombocytopenia, skin lesions) and bleedings.<h4>Results</h4>Of 195 patients, 46 (23.6%), 4 (2.1%), 61 (31.3%), and 84 (43.1%) had been treated first-line with argatroban, lepirudin, danaparoid, and fondaparinux, respectively. The composite endpoint of HIT-specific complications (thromboembolic events, amputation, skin necrosis) occurred in 11.7% of patients treated with approved alternative anticoagulation and in 0.0% of fondaparinux-treated patients. The all-cause in-hospital mortality rates were 14.4% during approved alternative anticoagulation and 0.0% during fondaparinux treatment. Bleeding complications occurred in alternatively anticoagulated patients and in fondaparinux-treated patients in 6.3% and 4.8%, respectively. Post hoc analysis of clinical and laboratory features confirmed \"true\" HIT in at least 74 of 195 (38.0%) patients; 35 of 74 (47.3%) were treated with fondaparinux.<h4>Conclusions</h4>Fondaparinux is effective and safe in suspected acute HIT; no HIT-specific complications occurred in the fondaparinux-treated patients, even among those with a high clinical HIT probability. Further data from randomized controlled trials are urgently needed because lepirudin was recalled from the market; danaparoid access has been limited and is not approved in the United States; and argatroban is contraindicated in patients with impaired liver function, and activated partial thromboplastin time confounding may interfere with monitoring. (Retrospective Registry of Patients With Acute Heparin-induced Thrombocytopenia Type II; NCT01304238).",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 325.0
+    },
+    {
+      "pmid": "32328725",
+      "title": "Platelets and extra-corporeal membrane oxygenation in adult patients: a systematic review and meta-analysis.",
+      "journal": "Intensive care medicine",
+      "date": "2020-04-23",
+      "authors": [
+        "Jiritano F",
+        "Lorusso R."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Despite increasing improvement in extracorporeal membrane oxygenation (ECMO) technology and knowledge, thrombocytopenia and impaired platelet function are usual findings in ECMO patients and the underlying mechanisms are only partially elucidated. The purpose of this meta-analysis and systematic review was to thoroughly summarize and discuss the existing knowledge of platelet profile in adult ECMO population. All studies meeting the inclusion criteria (detailed data about platelet count and function) were selected, after screening literature from July 1975 to August 2019. Twenty-one studies from 1.742 abstracts were selected. The pooled prevalence of thrombocytopenia in ECMO patients was 21% (95% CI 12.9–29.0; 14 studies). Thrombocytopenia prevalence was 25.4% (95% CI 10.6–61.4; 4 studies) in veno-venous ECMO, whereas it was 23.2% (95% CI 11.8–34.5; 6 studies) in veno-arterial ECMO. Heparin-induced thrombocytopenia prevalence was 3.7% (95% CI 1.8–5.5; 12 studies). Meta-regression revealed no significant association between ECMO duration and thrombocytopenia. Platelet function impairment was described in 7 studies. Impaired aggregation was shown in 5 studies, whereas loss of platelet receptors was found in one trial, and platelet activation was described in 2 studies. Platelet transfusions were needed in up to 50% of the patients. Red blood cell transfusions were administered from 46 to 100% of the ECMO patients. Bleeding events varied from 16.6 to 50.7%, although the cause and type of haemorrhage was not consistently reported. Thrombocytopenia and platelet dysfunction are common in ECMO patients, regardless the type of ECMO mode. The underlying mechanisms are multifactorial, and understanding and management are still limited. Further research to design appropriate strategies and protocols for its monitoring, management, or prevention should be matter of thorough investigations. Electronic supplementary material The online version of this article (10.1007/s00134-020-06031-4) contains supplementary material, which is available to authorized users.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 315.0
+    },
+    {
+      "pmid": "28063456",
+      "title": "Normal saline versus heparin for patency of central venous catheters in adult patients - a systematic review and meta-analysis.",
+      "journal": "Critical care (London, England)",
+      "date": "2017-01-08",
+      "authors": [
+        "Zhong L",
+        "Hu ZS."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background Heparin saline (HS) is theoretically superior to normal saline (NS) for maintaining the patency of central venous catheters (CVCs), but the comparative efficacy of them remains controversial. The aim of this systematic review and meta-analysis was to assess the efficacy of NS versus HS in the maintenance of the patency of CVCs in adult patients. Methods We searched PubMed, Embase and the Cochrane library databases. Randomized controlled trials (RCTs) evaluating the use of NS vs. HS to maintain the permeability of CVCs among adult patients were included in our meta-analysis. References of relevant papers were reviewed manually. No language restriction was applied. Non-human studies were excluded. Pooled relative risk (RR) was calculated using a Mantel-Haenszel random-effects model. We also performed subgroup analysis examining the effect of the duration of catheter placement on the outcome. All statistical tests were two-sided using a significance level of 0.05. Results Ten RCTs involving 7875 subjects (with analysis at patient, catheter, lumen and line access level) were included in this meta-analysis. Whether in terms of pooled or local analysis (RR with 95% confidence interval spans 1), NS can be equally, if not more effective, in keeping the CVCs open. Of studies reporting secondary outcomes (maneuver needed, heparin-induced thrombocytopenia, haemorrhage, central venous thrombosis and catheter-related bloodstream infection), heparinised saline was shown not to be superior to non-heparinised solution. Subgroup analysis in patients with short vs long term CVC placement was consistent with the main outcome partly and in particular for maintenance of catheter patency in patients with a long-term placement i.e. &gt;30 days, the RR was 0.97 ( n = 6589; 95% CI = 0.76 to 1.23; P = 0.796). However, for patients in whom the catheter was in place for &lt;30 days, the RR was 1.52 ( n = 1286; 95% CI = 1.02 to 2.27; P = 0.041). Conclusions Based on the results of this meta-analysis, HS is not superior to NS in reducing CVCs occlusion. But in the short term, the use of HS is slightly superior to NS for flushing catheters from a statistical point of view. Electronic supplementary material The online version of this article (doi:10.1186/s13054-016-1585-x) contains supplementary material, which is available to authorized users. Keywords: Normal saline, Heparin, Central venous catheters, Occlusion",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 315.0
+    },
+    {
+      "pmid": "28592259",
+      "title": "Safety of low-molecular-weight heparin compared to unfractionated heparin in hemodialysis: a systematic review and meta-analysis.",
+      "journal": "BMC nephrology",
+      "date": "2017-06-07",
+      "authors": [
+        "Lazrak HH",
+        "Lafrance JP."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background Low molecular weight heparins (LMWH) have been extensively studied and became the treatment of choice for several indications including pulmonary embolism. While their efficacy in hemodialysis is considered similar to unfractionated heparin (UFH), their safety remains controversial mainly due to a risk of bioaccumulation in patients with renal impairment. The aim of this systematic review was to evaluate the safety of LMWH when compared to UFH for extracorporeal circuit (ECC) anticoagulation. Methods We used Pubmed, Embase, Cochrane central register of controlled trials, Trip database and NICE to retrieve relevant studies with no language restriction. We looked for controlled experimental trials comparing LMWH to UFH for ECC anticoagulation among end-stage renal disease patients undergoing chronic hemodialysis. Studies were kept if they reported at least one of the following outcomes: bleeding, lipid profile, cardiovascular events, osteoporosis or heparin-induced thrombocytopenia. Two independent reviewers conducted studies selection, quality assessment and data extraction with discrepancies solved by a third reviewer. Relative risk and 95% CI was calculated for dichotomous outcomes and mean weighted difference (MWD) with 95% CI was used to pool continuous variables. Results Seventeen studies were selected as part of the systematic. The relative risk for total bleeding was 0.76 (95% CI 0.26–2.22). The WMD calculated for total cholesterol was −28.70 mg/dl (95% CI -51.43 to −5.98), a WMD for triglycerides of −55.57 mg/dl (95% CI -94.49 to −16.66) was estimated, and finally LDL-cholesterol had a WMD of −14.88 mg/dl (95% CI -36.27 to 6.51). Conclusions LMWH showed to be at least as safe as UFH for ECC anticoagulation in chronic hemodialysis. The limited number of studies reporting on osteoporosis and HIT does not allow any conclusion for these outcomes. Larger studies are needed to evaluate properly the safety of LMWH in chronic hemodialysis. Electronic supplementary material The online version of this article (doi:10.1186/s12882-017-0596-4) contains supplementary material, which is available to authorized users. Keywords: Bleeding, Chronic renal dialysis, Low molecular weight heparin, Meta-analysis, Systematic review, Unfractionated heparin",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 310.0
+    },
+    {
+      "pmid": "19851535",
+      "title": "Catheter-related right atrial thrombus and pulmonary embolism: a case report and systematic review of the literature.",
+      "journal": "Canadian respiratory journal",
+      "date": "2009-09-01",
+      "authors": [
+        "Burns KE",
+        "McLaren A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Central venous catheters (CVCs) are commonly used in clinical practice. One of the foremost complications associated with their use is the potential for symptomatic or asymptomatic thrombosis. CVC thrombosis, in turn, may not only result in vascular and catheter occlusion but also infection, pulmonary embolism, and formation of right heart thromboemboli. Thrombi within cardiac chambers are associated with an increased risk of mortality due to their potential for embolization to the pulmonary vasculature. We describe the case of a 77-year-old man, who was successfully thrombolyzed following detection of a right atrial thrombus and hemodynamically significant pulmonary embolism resulting from thrombus formation on the tip of a peripherally inserted central catheter (PICC). The present article is the first report of a PICC-related right atrial thrombus in an adult treated with thrombolysis. A systematic review of the literature suggests that the true incidence of this complication may be underestimated because the diagnosis may not be considered in asymptomatic and symptomatic patients, or may be missed by transthoracic echocardiography. The present case highlights the importance of maintaining a high index of suspicion for thromboembolic complications and heparin-induced thrombocytopenia in patients with CVCs or a PICC. It also underscores the important role of transesophageal echocardiography and thrombolysis in the diagnosis and management, respectively, of right heart thromboemboli with associated pulmonary embolism.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 305.0
+    },
+    {
+      "pmid": "22315264",
+      "title": "Parenteral anticoagulants: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.",
+      "journal": "Chest",
+      "date": "2012-02-01",
+      "authors": [
+        "Garcia DA",
+        "Samama MM."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "This article describes the pharmacology of approved parenteral anticoagulants. These include the indirect anticoagulants, unfractionated heparin (UFH), low-molecular-weight heparins (LMWHs), fondaparinux, and danaparoid, as well as the direct thrombin inhibitors hirudin, bivalirudin, and argatroban. UFH is a heterogeneous mixture of glycosaminoglycans that bind to antithrombin via a unique pentasaccharide sequence and catalyze the inactivation of thrombin, factor Xa, and other clotting enzymes. Heparin also binds to cells and plasma proteins other than antithrombin causing unpredictable pharmacokinetic and pharmacodynamic properties and triggering nonhemorrhagic side effects, such as heparin-induced thrombocytopenia (HIT) and osteoporosis. LMWHs have greater inhibitory activity against factor Xa than thrombin and exhibit less binding to cells and plasma proteins than heparin. Consequently, LMWH preparations have more predictable pharmacokinetic and pharmacodynamic properties, have a longer half-life than heparin, and are associated with a lower risk of nonhemorrhagic side effects. LMWHs can be administered once daily or bid by subcutaneous injection, without coagulation monitoring. Based on their greater convenience, LMWHs have replaced UFH for many clinical indications. Fondaparinux, a synthetic pentasaccharide, catalyzes the inhibition of factor Xa, but not thrombin, in an antithrombin-dependent fashion. Fondaparinux binds only to antithrombin. Therefore, fondaparinux-associated HIT or osteoporosis is unlikely to occur. Fondaparinux exhibits complete bioavailability when administered subcutaneously, has a longer half-life than LMWHs, and is given once daily by subcutaneous injection in fixed doses, without coagulation monitoring. Three additional parenteral direct thrombin inhibitors and danaparoid are approved as alternatives to heparin in patients with HIT.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 295.0
+    },
+    {
+      "pmid": "22315270",
+      "title": "Treatment and prevention of heparin-induced thrombocytopenia: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.",
+      "journal": "Chest",
+      "date": "2012-02-01",
+      "authors": [
+        "Linkins LA",
+        "Crowther M."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Background</h4>Heparin-induced thrombocytopenia (HIT) is an antibody-mediated adverse drug reaction that can lead to devastating thromboembolic complications, including pulmonary embolism, ischemic limb necrosis necessitating limb amputation, acute myocardial infarction, and stroke.<h4>Methods</h4>The methods of this guideline follow the Methodology for the Development of Antithrombotic Therapy and Prevention of Thrombosis Guidelines: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines in this supplement.<h4>Results</h4>Among the key recommendations for this article are the following: For patients receiving heparin in whom clinicians consider the risk of HIT to be > 1%, we suggest that platelet count monitoring be performed every 2 or 3 days from day 4 to day 14 (or until heparin is stopped, whichever occurs first) (Grade 2C). For patients receiving heparin in whom clinicians consider the risk of HIT to be < 1%, we suggest that platelet counts not be monitored (Grade 2C). In patients with HIT with thrombosis (HITT) or isolated HIT who have normal renal function, we suggest the use of argatroban or lepirudin or danaparoid over other nonheparin anticoagulants (Grade 2C). In patients with HITT and renal insufficiency, we suggest the use of argatroban over other nonheparin anticoagulants (Grade 2C). In patients with acute HIT or subacute HIT who require urgent cardiac surgery, we suggest the use of bivalirudin over other nonheparin anticoagulants or heparin plus antiplatelet agents (Grade 2C).<h4>Conclusions</h4>Further studies evaluating the role of fondaparinux and the new oral anticoagulants in the treatment of HIT are needed.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 295.0
+    },
+    {
+      "pmid": "19933539",
+      "title": "Plasmapheresis and heparin reexposure as a management strategy for cardiac surgical patients with heparin-induced thrombocytopenia.",
+      "journal": "Anesthesia and analgesia",
+      "date": "2009-11-21",
+      "authors": [
+        "Welsby IJ",
+        "Arepally G."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "<h4>Background</h4>Heparin-induced thrombocytopenia (HIT) complicates the management of patients presenting for cardiac surgery, because high-dose heparin anticoagulation for cardiopulmonary bypass is contraindicated in these patients. Alternative anticoagulants are available, but there are concerns about dosing, efficacy, monitoring, thrombosis, and hemorrhage.<h4>Methods</h4>A retrospective chart review between November 2004 and March 2008 retrieved perioperative clinical and laboratory data for 11 adult cardiac surgical patients with a preoperative history of HIT and a current positive antiheparin/platelet factor 4 (anti-HPF4) antibody titer, who were managed with plasmapheresis and heparin anticoagulation.<h4>Results</h4>The median (interquartile range) preoperative anti-HPF4 antibody titer was 0.8 (0.7-2.2). Three of the 11 patients (27%) died of causes unrelated to HIT and 1 of these patients (9%) developed an ischemic foot, in the setting of cardiogenic shock, not thought to be HIT-related. A single plasmapheresis treatment reduced titers by 50%-84%, and 6 patients had negative titers after treatment; none of the 3 patients with reduced titers developed clinical HIT.<h4>Conclusions</h4>This case series describes an alternative management strategy using intraoperative plasmapheresis for patients presenting for cardiac surgery with acute or subacute HIT. Reducing antibody load can potentially decrease the thrombotic risk associated with high anti-HPF4 titers and decrease the urgency to initiate postoperative anticoagulation in this patient group at high risk of postoperative bleeding.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 280.0
+    },
+    {
+      "pmid": "11176088",
+      "title": "Anticoagulation during cardiopulmonary bypass in patients with heparin-induced thrombocytopenia type II and renal impairment using heparin and the platelet glycoprotein IIb-IIIa antagonist tirofiban.",
+      "journal": "Anesthesiology",
+      "date": "2001-02-01",
+      "authors": [
+        "Koster A",
+        "Kuppe H."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "<h4>Background</h4>Patients with heparin-induced thrombocytopenia type II require an alternative to standard heparin anticoagulation. However, in patients with renal impairment, anticoagulation during cardiopulmonary bypass with agents such as danaparoid sodium or r-hirudin are associated with hemorrhage. Anticoagulation with unfractionated heparins combined with prostacyclin, a potent platelet aggregation inhibitor, is associated with severe hypotension. The authors investigated a new concept using unfractionated heparins after platelet inhibition with the short-acting platelet glycoprotein IIb-IIIa antagonist tirofiban.<h4>Methods</h4>Ten patients with heparin-induced thrombocytopenia type II and renal impairment were enrolled in the investigation. All had heparin-induced thrombocytopenia type II antibodies present as proved by the heparin-induced platelet aggregation assay, the heparin-platelet factor 4 enzyme-linked immunosorbent assay, or both. In all patients, preoperative anticoagulation to an activated partial thromboplastin time of 40-60 s was performed with r-hirudin. Anticoagulation during cardiopulmonary bypass was achieved with a bolus of 400 IU/kg unfractionated heparins after a bolus of tirofiban 10 microg/kg followed by an infusion of tirofiban at a rate of 0.15 microg x kg(-1) x min(-1) until 1 h before conclusion of cardiopulmonary bypass. Additional unfractionated heparins were only administered if activated clotting time decreased below 480 s. Coagulation was monitored by a abciximab-modified TEG and the adenosine diphosphate-stimulated (20 microm) platelet aggregometry. D-dimer concentrations, as a marker of venous thromboembolism, were measured before and 12, 24, and 48 h after surgery. Postoperative antithrombotic therapy was started immediately with r-hirudin to anticoagulation to an activated partial thromboplastin time of 40-60 s.<h4>Results</h4>The postoperative blood loss ranged from 110 to 520 ml. No patient needed reexploration. In no patient was there clinical evidence of thrombosis or embolism in the postoperative period or of a critical increase of the D-dimer concentrations, suggesting venous thromboembolism. Transfusion of platelets was necessary in only two patients.<h4>Conclusions</h4>The protocol is easy to perform and no increased postoperative bleeding and no thromboembolic complications occurred. The combination of unfractionated heparins and tirofiban may be an alternative to other anticoagulation strategies in patients with heparin-induced thrombocytopenia.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 275.0
+    },
+    {
+      "pmid": "17257990",
+      "title": "Bivalirudin during cardiopulmonary bypass in patients with previous or acute heparin-induced thrombocytopenia and heparin antibodies: results of the CHOOSE-ON trial.",
+      "journal": "The Annals of thoracic surgery",
+      "date": "2007-02-01",
+      "authors": [
+        "Koster A",
+        "Lincoff AM."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "<h4>Background</h4>The coronary artery bypass grafting (CABG) heparin-induced thrombocytopenia thrombosis syndrome (HITTS) on- and off-pump safety and efficacy (CHOOSE-ON) trial was designed as a safety and efficacy trial of bivalirudin for use in anticoagulation during cardiopulmonary bypass (CPB) in patients with confirmed or suspected HIT and (or) antiplatelet factor 4/heparin (anti-PF4/H) antibodies.<h4>Methods</h4>In an open-label, multicenter trial, 50 patients were enrolled prospectively. The primary study endpoint was in-hospital acute procedural success, defined as the absence of death, Q-wave myocardial infarction (MI), repeat operation for coronary revascularization, and stroke at day seven after surgery or hospital discharge, whichever occurred first. The secondary study endpoints were procedural success, defined as the absence of death, Q-wave MI, repeat operation for coronary revascularization, and stroke, at 30 days and 12 weeks after surgery. Perioperative blood loss, transfusions, and the incidence of major bleeding events were also captured.<h4>Results</h4>There were 49 patients treated with bivalirudin of which 43 had acute HIT and thrombosis syndrome (HITTS) with antibodies at time of surgery. Procedural success in-hospital or at 7 days was achieved in 46 (94%) patients. At day 30 procedural success was achieved in 42 (86%) patients, and after 12 weeks in 40 (82%) patients. Mean intraoperative blood loss was 575 +/- 524 mL, and mean 24-hour postoperative blood loss was 998 +/- 595 mL. Forty-one (84%) patients received transfusions before day 7 or discharge with a mean of 5.6 +/- 3.8 units of red blood cells, 8.6 +/- 7.2 units of platelets, and 6.0 +/- 4.7 units of fresh frozen plasma. No differences in outcome among bivalirudin-treated patients were observed between those in the overall group and those with moderately impaired renal function (n = 10).<h4>Conclusions</h4>The current investigation expands the experience of safe and effective anticoagulation with bivalirudin during CPB to patients with confirmed or suspected HIT and anti-PF4/H antibodies, including in the setting of impaired renal function.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 270.0
+    },
+    {
+      "pmid": "11235727",
+      "title": "Cardiac surgery with cardiopulmonary bypass in patients with type II heparin-induced thrombocytopenia.",
+      "journal": "The Annals of thoracic surgery",
+      "date": "2001-02-01",
+      "authors": [
+        "Aouifi A",
+        "Lehot JJ."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "<h4>Background</h4>The use of cardiopulmonary bypass (CPB) in patients with a history of type II heparin-induced thrombocytopenia (HIT) may be associated with complications related to their anticoagulation management.<h4>Methods</h4>Between January 1997 and December 1999, among 4,850 adults patients who underwent cardiac surgery in our institution, 10 patients presented with preoperative type II HIT. In 4 patients, anticoagulation during CPB was achieved with danaparoid sodium. In 6 other patients, heparin sodium was used after pretreatment with epoprostenol sodium.<h4>Results</h4>No significant change in platelet count occurred in any patient. No intraoperative thrombotic complication was encountered. Total postoperative chest drainage ranged from 250 to 1,100 ml in patients pretreated with epoprostenol and 1,700 to 2,470 ml in patients who received danaparoid sodium during CPB (p < 0.05, Mann-Whitney U test).<h4>Conclusions</h4>During CPB, inhibition of platelet aggregation by prostacyclin may be a safe anticoagulation approach in patients with type II HIT.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 265.0
+    },
+    {
+      "pmid": "15383477",
+      "title": "Heparin-induced thrombocytopenia: recognition, treatment, and prevention: the Seventh ACCP Conference on Antithrombotic and Thrombolytic Therapy.",
+      "journal": "Chest",
+      "date": "2004-09-01",
+      "authors": [
+        "Warkentin TE",
+        "Greinacher A."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "This chapter about the recognition, treatment, and prevention of heparin-induced thrombocytopenia (HIT) is part of the Seventh ACCP Conference on Antithrombotic and Thrombolytic Therapy: Evidence Based Guidelines. Grade 1 recommendations are strong and indicate that the benefits do, or do not, outweigh risks, burden, and costs. Grade 2 suggests that individual patients' values may lead to different choices (for a full understanding of the grading, see Guyatt et al, CHEST 2004; 126:179S-187S). Among the key recommendations in this chapter are the following: For patients in whom the risk of HIT is considered to be > 0.1%, we recommend platelet count monitoring (Grade 1C). For patients who are receiving therapeutic-dose unfractionated heparin (UFH), we suggest at least every-other-day platelet count monitoring until day 14, or until UFH is stopped, whichever occurs first (Grade 2C). For patients who are receiving postoperative antithrombotic prophylaxis with UFH (HIT risk > 1%), we suggest at least every-other-day platelet count monitoring between postoperative days 4 to 14 (or until UFH is stopped, whichever occurs first) [Grade 2C]. For medical/obstetric patients who are receiving prophylactic-dose UFH, postoperative patients receiving prophylactic-dose low molecular weight heparin (LMWH), postoperative patients receiving intravascular catheter UFH \"flushes,\" or medical/obstetrical patients receiving LMWH after first receiving UFH (risk, 0.1 to 1%), we suggest platelet count monitoring every 2 days or 3 days from day 4 to day 14, or until heparin is stopped, whichever occurs first (Grade 2C). For medical/obstetrical patients who are only receiving LMWH, or medical patients who are receiving only intravascular catheter UFH flushes (risk < 0.1%), we suggest clinicians do not use routine platelet count monitoring (Grade 2C). For patients with strongly suspected (or confirmed) HIT, whether or not complicated by thrombosis, we recommend use of an alternative anticoagulant, such as lepirudin (Grade 1C+), argatroban (Grade 1C), bivalirudin (Grade 2C), or danaparoid (Grade 1B). For patients with strongly suspected (or confirmed) HIT, we recommend routine ultrasonography of the lower-limb veins for investigation of deep venous thrombosis (Grade 1C); against the use of vitamin K antagonist (VKA) [coumarin] therapy until after the platelet count has substantially recovered; that the VKA antagonist be administered only during overlapping alternative anticoagulation (minimum 5-day overlap); and begun with low, maintenance doses (all Grade 2C). For patients receiving VKAs at the time of diagnosis of HIT, we recommend use of vitamin K (Grade 2C) [corrected] For patients with a history of HIT who are HIT antibody negative and require cardiac surgery, we recommend use of UFH (Grade 1C).",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 245.0
+    },
+    {
+      "pmid": "17823223",
+      "title": "Heparin induced thrombocytopenia: diagnosis and management update.",
+      "journal": "Postgraduate medical journal",
+      "date": "2007-09-01",
+      "authors": [
+        "Ahmed I",
+        "Powell R."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Heparin-induced thrombocytopenia (HIT) is a potentially devastating immune mediated adverse drug reaction caused by the emergence of antibodies that activate platelets in the presence of heparin. Despite thrombocytopenia, bleeding is rare; rather, HIT is strongly associated with thromboembolic complications involving both the arterial and venous systems. A number of laboratory tests are available to confirm the diagnosis; however, when HIT is clinically suspected, treatment should not be withheld pending the result. Fortunately, therapeutic strategies have been refined, and new and effective therapeutic agents are available. Treatment options are focused on inhibiting thrombin formation or direct thrombin inhibition. Warfarin should not be used until the platelet count has recovered.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 235.0
+    },
+    {
+      "pmid": "28597462",
+      "title": "Heparin-Induced Thrombocytopenia in Cardiac Surgery Patients.",
+      "journal": "Seminars in thrombosis and hemostasis",
+      "date": "2017-06-08",
+      "authors": [
+        "Pishko AM",
+        "Cuker A."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 235.0
+    },
+    {
+      "pmid": "14667668",
+      "title": "Heparin-induced thrombocytopenia and cardiac surgery.",
+      "journal": "The Annals of thoracic surgery",
+      "date": "2003-12-01",
+      "authors": [
+        "Warkentin TE",
+        "Greinacher A."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Unfractionated heparin given during cardiopulmonary bypass is remarkably immunogenic, as 25% to 50% of postcardiac surgery patients develop heparin-dependent antibodies during the next 5 to 10 days. Sometimes, these antibodies strongly activate platelets and coagulation, thereby causing the prothrombotic disorder, heparin-induced thrombocytopenia. The risk of heparin-induced thrombocytopenia is 1% to 3% if unfractionated heparin is continued beyond the first postoperative week. When cardiac surgery is urgently needed for a patient with acute or subacute heparin-induced thrombocytopenia, options include an alternative anticoagulant (bivalirudin, lepirudin, or danaparoid) or combining unfractionated heparin with a platelet antagonist (epoprostenol or tirofiban). As heparin-induced thrombocytopenia antibodies are transient, unfractionated heparin alone is appropriate in a patient with previous heparin-induced thrombocytopenia whose antibodies have disappeared.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 230.0
+    },
+    {
+      "pmid": "29559750",
+      "title": "STS/SCA/AmSECT Clinical Practice Guidelines: Anticoagulation during Cardiopulmonary Bypass.",
+      "journal": "The journal of extra-corporeal technology",
+      "date": "2018-03-01",
+      "authors": [
+        "Shore-Lesserson L",
+        "Hammon J."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Despite more than a half century of \"safe\" cardiopulmonary bypass (CPB), the evidence base surrounding the conduct of anticoagulation for CPB has not been organized into a succinct guideline. For this and other reasons, there is enormous practice variability relating to the use and dosing of heparin, monitoring heparin anticoagulation, reversal of anticoagulation, and the use of alternative anticoagulants. To address this and other gaps, the Society of Thoracic Surgeons (STS), the Society of Cardiovascular Anesthesiologists (SCA), and the American Society of Extracorporeal Technology (AmSECT) developed an Evidence Based Workgroup. This was a group of interdisciplinary professionals gathered together to summarize the evidence and create practice recommendations for various aspects of CPB. To date, anticoagulation practices in CPB have not been standardized in accordance with the evidence base. This clinical practice guideline was written with the intent to fill the evidence gap and to establish best practices in anticoagulation for CPB using the available evidence. To identify relevant evidence a systematic review was outlined and literature searches were conducted in PubMed® using standardized MeSH terms from the National Library of Medicine list of search terms. Search dates were inclusive of January 2000 to December 2015. The search yielded 833 abstracts which were reviewed by two independent reviewers. Once accepted into the full manuscript review stage, two members of the writing group evaluated each of 286 full papers for inclusion eligibility into the guideline document. Ninety-six manuscripts were included in the final review. In addition, 17 manuscripts published prior to 2000 were included to provide method, context, or additional supporting evidence for the recommendations as these papers were considered sentinel publications. Members of the writing group wrote and developed recommendations based on review of the articles obtained and achieved more than two thirds agreement on each recommendation. The quality of information for a given recommendation allowed assessment of the level of evidence as recommended by the AHA/ACCF Task Force on Practice Guidelines. Recommendations were written in the three following areas 1) Heparin dosing and monitoring for initiation and maintenance of CPB, 2) Heparin contraindications and heparin alternatives, 3) Reversal of anticoagulation during cardiac operations. It is hoped that this guideline will serve as a resource and will stimulate investigators to conduct more research and expand upon the evidence base on the topic of anticoagulation for CPB.",
+      "bezug": "Kontext-Leitlinie: behandelt das Thema der Frage nicht direkt. Nur als allgemeinen Rahmen nutzen, nie als Beleg für die konkrete Frage.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": false,
+      "context_guideline": true,
+      "score": 375.0
+    },
+    {
+      "pmid": "39955230",
+      "title": "2024 EACTS/EACTAIC/EBCP Guidelines on cardiopulmonary bypass in adult cardiac surgery.",
+      "journal": "British journal of anaesthesia",
+      "date": "2025-02-14",
+      "authors": [
+        "Wahba A",
+        "EACTS/EACTAIC/EBCP Scientific Document Group."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Preamble Clinical practice guidelines consolidate and evaluate all pertinent evidence on a specific topic available at the time of their formulation. The goal is to assist physicians in determining the most effective management strategies for patients with a particular condition. These guidelines assess the impact on patient outcomes and weigh the risk–benefit ratio of various diagnostic or therapeutic approaches. While not a replacement for textbooks, they provide supplementary information on topics relevant to current clinical practice and become an essential tool to support the decisions made by specialists in daily practice. Nonetheless, it is crucial to understand that these recommendations are intended to guide, not dictate, clinical practice, and should be adapted to each patient's unique needs. Clinical situations vary, presenting a diverse array of variables and circumstances. Thus, the guidelines are meant to inform, not replace, the clinical judgement of healthcare professionals, grounded in their professional knowledge, experience and comprehension of each patient's specific context. Moreover, these guidelines are not considered legally binding; the legal duties of healthcare professionals are defined by prevailing laws and regulations, and adherence to these guidelines does not modify such responsibilities. The European Association for Cardio-Thoracic Surgery (EACTS), the European Association of Cardiothoracic Anaesthesiology and Intensive Care (EACTAIC) and the European Board of Cardiovascular Perfusion (EBCP) constituted a task force of professionals specializing in cardiopulmonary bypass (CPB) management. To ensure transparency and integrity, all task force members involved in the development and review of these guidelines submitted conflict of interest declarations, which were compiled into a single document available on the EACTS website ( https://www.eacts.org/resources/clinical-guidelines ). Any alterations to these declarations during the development process were promptly reported to the EACTS, EACTAIC and EBCP. Funding for this task force was provided exclusively by the EACTS, EACTAIC and EBCP, without involvement from the healthcare industry or other entities. Following this collaborative endeavour, the governing bodies of EACTS, EACTAIC and EBCP oversaw the formulation, refinement, and endorsement of these extensively revised guidelines. An external panel of experts thoroughly reviewed the initial draft, and their input guided subsequent amendments. After this detailed revision process, the final document was ratified by all task force experts and the leadership of the EACTS, EACTAIC and EBCP, enabling its publication in the European Journal of Cardio-Thoracic Surgery, the British Journal of Anaesthesia and Interdisciplinary CardioVascular and Thoracic Surgery. Endorsed by the EACTS, EACTAIC and EBCP, these guidelines represent the official standpoint on this subject. They demonstrate a dedication to continual enhancement, with routine updates planned to ensure that the guidelines remain current and valuable in the ever-progressing arena of clinical practice. Central Illustration: Multidisciplinary Approach to Cardiopulmonary Bypass Management. Image 1",
+      "bezug": "Kontext-Leitlinie: behandelt das Thema der Frage nicht direkt. Nur als allgemeinen Rahmen nutzen, nie als Beleg für die konkrete Frage.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": false,
+      "context_guideline": true,
+      "score": 375.0
+    }
+  ],
+  "timings": {
+    "plan": 3.57,
+    "search": 7.11,
+    "rank": 0.11,
+    "enrich": 3.23,
+    "synthesis": 18.0,
+    "total": 32.03
+  }
+}

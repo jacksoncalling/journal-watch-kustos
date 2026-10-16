@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-16T13:01:27",
+  "reconstructed": false,
+  "question": {
+    "title": "Kortikosteroide und Timing um das Loesen der Aortenklemme",
+    "frage": "Welche Evidenz gibt es zur Gabe von Kortikosteroiden und zum Timing der Medikamentengabe rund um das Loesen der Aortenklemme (Reperfusion) in der Herzchirurgie? Wo ist sich die Fachgemeinschaft uneins?",
+    "kontext": ""
+  },
+  "queries": [
+    "(corticosteroids OR glucocorticoids OR methylprednisolone OR dexamethasone) AND (reperfusion OR aortic clamp OR ischemia-reperfusion OR post-cardiac surgery) AND (timing OR administration OR perioperative) AND (cardiac surgery OR coronary artery bypass OR valve surgery) AND (controversy OR debate OR disagreement OR uncertainty) AND SRC:MED",
+    "(corticosteroids OR glucocorticoids) AND (reperfusion injury OR myocardial injury OR inflammation) AND (cardiac surgery OR CABG OR valve replacement) AND (timing OR duration OR dose) AND SRC:MED",
+    "(corticosteroids OR steroids) AND (aortic cross-clamp OR reperfusion) AND (cardiac surgery OR heart surgery) AND (controversy OR conflicting evidence OR unresolved) AND SRC:MED"
+  ],
+  "synthesis_raw": "## Kurzantwort:\nDie Studienlage deutet darauf hin, dass Kortikosteroide in der Herzchirurgie protektive Effekte auf die Lungenfunktion haben können, insbesondere bei extrakorporaler Zirkulation (CPB), sind aber kein etablierter Standard für die Reperfusionsphase. Die Evidenz für ihre Anwendung ist uneinheitlich und basiert oft auf Beobachtungsstudien oder kleinen randomisierten Studien schlechter Qualität, was zu Forschungsempfehlungen und nicht zu starken klinischen Richtlinien führt (PMID 30741327: \"14 observational trials; most suggest some form of benefit ... 11 RCTs, poor quality, many confounders; all but one are neutral\"; PMID 20064238: \"Using medication such as corticosteroids and aprotinin, which protect the lungs during CPB, and leukocyte depletion filters for operations expected to exceed 90 minutes in CPB-time appear to be protective against the toxic impact of CPB in the lungs\"). Das Timing der Medikamentengabe spezifisch um die Lösung der Aortenklemme herum wird in den vorliegenden Papern nicht explizit thematisiert.\n\n*   **Entscheidender Befund:** Kortikosteroide könnten die Lungenfunktion bei CPB schützen, aber die Studienlage ist schwach und widersprüchlich.\n*   **Untersuchte Population/Situation:** Herzchirurgie mit extrakorporaler Zirkulation.\n*   **Wesentliche Unsicherheit:** Fehlende hochqualitative RCTs und spezifische Untersuchungen zum Timing der Reperfusion.\n\n## Evidenzlage.\nKortikosteroide werden in der Herzchirurgie diskutiert, um die Lungenfunktion während und nach der extrakorporalen Zirkulation (CPB) zu schützen, da CPB eine diffuse Lungenschädigung verursachen kann, die zu postoperativem interstitiellem Lungenödem und gestörtem Gasaustausch führt (PMID 20064238: \"During open heart surgery the influence of a series of factors such as cardiopulmonary bypass (CPB), hypothermia, operation and anaesthesia, as well as medication and transfusion can cause a diffuse trauma in the lungs. This injury leads mostly to a postoperative interstitial pulmonary oedema and abnormal gas exchange\"). Die Anwendung von Medikamenten wie Kortikosteroiden und Aprotinin sowie Leukozytendepletionsfiltern bei Operationen mit erwarteter CPB-Dauer von über 90 Minuten scheinen schützend gegen die toxischen Auswirkungen der CPB auf die Lunge zu wirken (PMID 20064238: \"Using medication such as corticosteroids and aprotinin, which protect the lungs during CPB, and leukocyte depletion filters for operations expected to exceed 90 minutes in CPB-time appear to be protective against the toxic impact of CPB in the lungs\").\n\nEin Review zur postoperativen systemischen Entzündungsdysregulation und Kortikosteroiden fasst zusammen, dass die Sicherheit einer perioperativen Kortikosteroid-Supplementierung belegt ist, und diskutiert potenzielle Vorteile hoher oder wiederholter Dosen zur Reduzierung des Risikos schwerer Komplikationen und Todesfälle (PMID 36308338: \"We have then appraised the evidence highlighting the safety of corticosteroid supplementation, and the potential benefits of high/repeated doses to reduce the risks of major complications and death\"). Es wird jedoch auch darauf hingewiesen, dass zukünftige klinische Studien Patienten mit höherem Risiko für perioperative entzündliche Komplikationen gezielt ansprechen sollten und Kortikosteroid-Regime sowohl an das A-priori-Risiko als auch an die Entwicklung der pathophysiologischen Reaktion angepasst werden sollten (PMID 36308338: \"Finally, we addressed how clinical trials in the future should target patients at higher risk of peri-operative inflammatory complications, whereby corticosteroid regimes should be tailored to modify not only the a priori risk, but also further adjusted in response to markers of an evolving pathophysiological response\").\n\nDie Frage nach dem spezifischen Timing der Medikamentengabe, insbesondere um das Lösen der Aortenklemme (Reperfusion) herum, wird in den vorliegenden Quellen nicht direkt behandelt. Die Diskussion konzentriert sich eher auf die allgemeine perioperative Anwendung von Kortikosteroiden im Kontext der Herzchirurgie und CPB.\n\n## Was ist Standard.\nFür die allgemeine kritische Versorgung und spezifisch im Kontext des septischen Schocks geben Leitlinien Empfehlungen zur Kortikosteroidgabe. Die Surviving Sepsis Campaign-Leitlinien von 2008 empfehlen eine „stress-dose“ Steroidtherapie nur bei septischem Schock, nachdem der Blutdruck als schlecht auf Flüssigkeits- und Vasopressortherapie ansprechend identifiziert wurde (PMID 18058085: \"stress-dose steroid therapy given only in septic shock after blood pressure is identified to be poorly responsive to fluid and vasopressor therapy\"). Die Leitlinien zur Behandlung des akuten Atemnotsyndroms (ARDS) von 2019 machen eine Forschungsempfehlung für die Verwendung von Kortikosteroiden, was auf fehlende adäquate Evidenz für eine starke Empfehlung hindeutet (PMID 31258917: \"Corticosteroids Research recommendation\"). Obwohl dies nicht direkt die Herzchirurgie betrifft, unterstreicht es die Zurückhaltung bei starken Empfehlungen ohne solide Evidenz.\n\n## Wo die Literatur uneins ist.\nDie Literatur zeigt eine Uneinigkeit bezüglich der Rolle von Kortikosteroiden in der Herzchirurgie. Während einige Beobachtungsstudien auf einen Nutzen hinweisen, sind randomisierte kontrollierte Studien (RCTs) oft von schlechter Qualität, mit vielen Störfaktoren behaftet und die meisten sind neutral in ihren Ergebnissen (PMID 30741327: \"14 observational trials; most suggest some form of benefit ... 11 RCTs, poor quality, many confounders; all but one are neutral\"). Dies führt dazu, dass die Evidenzlage als unzureichend für klare Empfehlungen angesehen wird, wie es die Forschungsempfehlung für Kortikosteroide bei ARDS zeigt (PMID 31258917: \"In the absence of adequate evidence, research recommendations were made for the use of corticosteroids\"). Es gibt keine eindeutigen Belege für einen Konsens über die routinemäßige Anwendung oder ein spezifisches Timing der Kortikosteroidgabe in der Reperfusionsphase der Herzchirurgie.\n\n## Offene Fragen.\nEs besteht ein Bedarf an hochqualitativen randomisierten kontrollierten Studien, die die Rolle von Kortikosteroiden in der Herzchirurgie, insbesondere in Bezug auf das Timing der Gabe bei der Reperfusion, untersuchen. Zukünftige Studien sollten Patienten mit höherem Risiko für perioperative entzündliche Komplikationen gezielt ansprechen und Kortikosteroid-Regime so anpassen, dass sie nicht nur das A-priori-Risiko modifizieren, sondern auch auf die Entwicklung der pathophysiologischen Reaktion reagieren (PMID 36308338: \"Finally, we addressed how clinical trials in the future should target patients at higher risk of peri-operative inflammatory complications, whereby corticosteroid regimes should be tailored to modify not only the a priori risk, but also further adjusted in response to markers of an evolving pathophysiological response\"). Insbesondere fehlen spezifische Studien, die sich mit dem genauen Zeitpunkt der Kortikosteroid-Applikation im Verhältnis zur Lösung der Aortenklemme und deren Auswirkungen auf relevante Endpunkte befassen.\n\nKein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.",
+  "anchors": [
+    {
+      "pmid": "30741327",
+      "quote": "14 observational trials; most suggest some form of benefit ... 11 RCTs, poor quality, many confounders; all but one are neutral",
+      "in_source": true
+    },
+    {
+      "pmid": "20064238",
+      "quote": "Using medication such as corticosteroids and aprotinin, which protect the lungs during CPB, and leukocyte depletion filters for operations expected to exceed 90 minutes in CPB-time appear to be protective against the toxic impact of CPB in the lungs",
+      "in_source": true
+    },
+    {
+      "pmid": "20064238",
+      "quote": "During open heart surgery the influence of a series of factors such as cardiopulmonary bypass (CPB), hypothermia, operation and anaesthesia, as well as medication and transfusion can cause a diffuse trauma in the lungs. This injury leads mostly to a postoperative interstitial pulmonary oedema and abnormal gas exchange",
+      "in_source": true
+    },
+    {
+      "pmid": "20064238",
+      "quote": "Using medication such as corticosteroids and aprotinin, which protect the lungs during CPB, and leukocyte depletion filters for operations expected to exceed 90 minutes in CPB-time appear to be protective against the toxic impact of CPB in the lungs",
+      "in_source": true
+    },
+    {
+      "pmid": "36308338",
+      "quote": "We have then appraised the evidence highlighting the safety of corticosteroid supplementation, and the potential benefits of high/repeated doses to reduce the risks of major complications and death",
+      "in_source": true
+    },
+    {
+      "pmid": "36308338",
+      "quote": "Finally, we addressed how clinical trials in the future should target patients at higher risk of peri-operative inflammatory complications, whereby corticosteroid regimes should be tailored to modify not only the a priori risk, but also further adjusted in response to markers of an evolving pathophysiological response",
+      "in_source": true
+    },
+    {
+      "pmid": "18058085",
+      "quote": "stress-dose steroid therapy given only in septic shock after blood pressure is identified to be poorly responsive to fluid and vasopressor therapy",
+      "in_source": true
+    },
+    {
+      "pmid": "31258917",
+      "quote": "Corticosteroids Research recommendation",
+      "in_source": true
+    },
+    {
+      "pmid": "30741327",
+      "quote": "14 observational trials; most suggest some form of benefit ... 11 RCTs, poor quality, many confounders; all but one are neutral",
+      "in_source": true
+    },
+    {
+      "pmid": "31258917",
+      "quote": "In the absence of adequate evidence, research recommendations were made for the use of corticosteroids",
+      "in_source": true
+    },
+    {
+      "pmid": "36308338",
+      "quote": "Finally, we addressed how clinical trials in the future should target patients at higher risk of peri-operative inflammatory complications, whereby corticosteroid regimes should be tailored to modify not only the a priori risk, but also further adjusted in response to markers of an evolving pathophysiological response",
+      "in_source": true
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "20064238",
+      "title": "Strategies to prevent intraoperative lung injury during cardiopulmonary bypass.",
+      "journal": "Journal of cardiothoracic surgery",
+      "date": "2010-01-11",
+      "authors": [
+        "Apostolakis EE",
+        "Papadopoulos GS."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "During open heart surgery the influence of a series of factors such as cardiopulmonary bypass (CPB), hypothermia, operation and anaesthesia, as well as medication and transfusion can cause a diffuse trauma in the lungs. This injury leads mostly to a postoperative interstitial pulmonary oedema and abnormal gas exchange. Substantial improvements in all of the above mentioned factors may lead to a better lung function postoperatively. By avoiding CPB, reducing its time, or by minimizing the extracorporeal surface area with the use of miniaturized circuits of CPB, beneficial effects on lung function are reported. In addition, replacement of circuit surface with biocompatible surfaces like heparin-coated, and material-independent sources of blood activation, a better postoperative lung function is observed. Meticulous myocardial protection by using hypothermia and cardioplegia methods during ischemia and reperfusion remain one of the cornerstones of postoperative lung function. The partial restoration of pulmonary artery perfusion during CPB possibly contributes to prevent pulmonary ischemia and lung dysfunction. Using medication such as corticosteroids and aprotinin, which protect the lungs during CPB, and leukocyte depletion filters for operations expected to exceed 90 minutes in CPB-time appear to be protective against the toxic impact of CPB in the lungs. The newer methods of ultrafiltration used to scavenge pro-inflammatory factors seem to be protective for the lung function. In a similar way, reducing the use of cardiotomy suction device, as well as the contact-time between free blood and pericardium, it is expected that the postoperative lung function will be improved.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 225.0
+    },
+    {
+      "pmid": "30272171",
+      "title": "Congenital Adrenal Hyperplasia Due to Steroid 21-Hydroxylase Deficiency: An Endocrine Society Clinical Practice Guideline.",
+      "journal": "The Journal of clinical endocrinology and metabolism",
+      "date": "2018-11-01",
+      "authors": [
+        "Speiser PW",
+        "White PC."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "<h4>Objective</h4>To update the congenital adrenal hyperplasia due to steroid 21-hydroxylase deficiency clinical practice guideline published by the Endocrine Society in 2010.<h4>Conclusions</h4>The writing committee presents updated best practice guidelines for the clinical management of congenital adrenal hyperplasia based on published evidence and expert opinion with added considerations for patient safety, quality of life, cost, and utilization.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 205.0
+    },
+    {
+      "pmid": "31258917",
+      "title": "Guidelines on the management of acute respiratory distress syndrome.",
+      "journal": "BMJ open respiratory research",
+      "date": "2019-05-24",
+      "authors": [
+        "Griffiths MJD",
+        "Baudouin SV."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "The Faculty of Intensive Care Medicine and Intensive Care Society Guideline Development Group have used GRADE methodology to make the following recommendations for the management of adult patients with acute respiratory distress syndrome (ARDS). The British Thoracic Society supports the recommendations in this guideline. Where mechanical ventilation is required, the use of low tidal volumes (&lt;6 ml/kg ideal body weight) and airway pressures (plateau pressure &lt;30 cmH 2 O) was recommended. For patients with moderate/severe ARDS (PF ratio&lt;20 kPa), prone positioning was recommended for at least 12 hours per day. By contrast, high frequency oscillation was not recommended and it was suggested that inhaled nitric oxide is not used. The use of a conservative fluid management strategy was suggested for all patients, whereas mechanical ventilation with high positive end-expiratory pressure and the use of the neuromuscular blocking agent cisatracurium for 48 hours was suggested for patients with ARDS with ratio of arterial oxygen partial pressure to fractional inspired oxygen (PF) ratios less than or equal to 27 and 20 kPa, respectively. Extracorporeal membrane oxygenation was suggested as an adjunct to protective mechanical ventilation for patients with very severe ARDS. In the absence of adequate evidence, research recommendations were made for the use of corticosteroids and extracorporeal carbon dioxide removal. Conclusion Summary Table 12 outlines the GDG’s synthesis of data for the Management of ARDS from relevant clinical trials. Table 12 Summary of the FICM/ICS Guidelines for the management of ARDS in adult patients Topic GRADE recommendation Conditions Tidal volume Strongly in favour Tidal volume &lt; 6 mL/kg ideal body weight; Plateau pressure &lt; 30 cmH 2 O Prone positioning Strongly in favour Proning for &gt; 12 hours per day Patients with moderate/severe ARDS (P:F ratio &lt; 20 kPa) HFOV Strongly against Conservative fluid management Weakly in favour Higher PEEP Weakly in favour Patients with moderate or severe ARDS (PF ratio &lt; 27 kPa) NMBA Weakly in favour Evidence only for cisatracurium besylate Continuous 48 hours infusion Patients with moderate/severe ARDS ( &lt; 20 kPa) ECMO Weakly in favour With lung-protective mechanical ventilation Patients with severe ARDS, lung injury score &gt; 3 or pH &lt;7.20 due to uncompensated hypercapnoea Inhaled vasodilators Weakly against Evidence only for inhaled nitric oxide Corticosteroids Research recommendation ECCO 2 R Research recommendation ARDS, acute respiratory distress syndrome; ECCO2R, extracorporeal carbon dioxide removal; ECMO, extracorporeal membrane oxygenation; FICM, Faculty of Intensive Care Medicine; HFOV, high frequency oscillation; ICS, Intensive Care Society; NMBA, neuromuscular blocking agents; PEEP, peek end-expiratory pressure.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 205.0
+    },
+    {
+      "pmid": "36308338",
+      "title": "Postoperative systemic inflammatory dysregulation and corticosteroids: a narrative review.",
+      "journal": "Anaesthesia",
+      "date": "2022-10-29",
+      "authors": [
+        "Bain CR",
+        "Dieleman JM."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Summary In some patients, the inflammatory‐immune response to surgical injury progresses to a harmful, dysregulated state. We posit that postoperative systemic inflammatory dysregulation forms part of a pathophysiological response to surgical injury that places patients at increased risk of complications and subsequently prolongs hospital stay. In this narrative review, we have outlined the evolution, measurement and prediction of postoperative systemic inflammatory dysregulation, distinguishing it from a healthy and self‐limiting host response. We reviewed the actions of glucocorticoids and the potential for heterogeneous responses to peri‐operative corticosteroid supplementation. We have then appraised the evidence highlighting the safety of corticosteroid supplementation, and the potential benefits of high/repeated doses to reduce the risks of major complications and death. Finally, we addressed how clinical trials in the future should target patients at higher risk of peri‐operative inflammatory complications, whereby corticosteroid regimes should be tailored to modify not only the a priori risk, but also further adjusted in response to markers of an evolving pathophysiological response.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 195.0
+    },
+    {
+      "pmid": "22240244",
+      "title": "Sex differences and sex steroids in lung health and disease.",
+      "journal": "Endocrine reviews",
+      "date": "2012-01-12",
+      "authors": [
+        "Townsend EA",
+        "Prakash YS."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Sex differences in the biology of different organ systems and the influence of sex hormones in modulating health and disease are increasingly relevant in clinical and research areas. Although work has focused on sex differences and sex hormones in cardiovascular, musculoskeletal, and neuronal systems, there is now increasing clinical evidence for sex differences in incidence, morbidity, and mortality of lung diseases including allergic diseases (such as asthma), chronic obstructive pulmonary disease, pulmonary fibrosis, lung cancer, as well as pulmonary hypertension. Whether such differences are inherent and/or whether sex steroids play a role in modulating these differences is currently under investigation. The purpose of this review is to define sex differences in lung structure/function under normal and specific disease states, with exploration of whether and how sex hormone signaling mechanisms may explain these clinical observations. Focusing on adult age groups, the review addresses the following: 1) inherent sex differences in lung anatomy and physiology; 2) the importance of certain time points in life such as puberty, pregnancy, menopause, and aging; 3) expression and signaling of sex steroid receptors under normal vs. disease states; 4) potential interplay between different sex steroids; 5) the question of whether sex steroids are beneficial or detrimental to the lung; and 6) the potential use of sex steroid signaling as biomarkers and therapeutic avenues in lung diseases. The importance of focusing on sex differences and sex steroids in the lung lies in the increasing incidence of lung diseases in women and the need to address lung diseases across the life span.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 155.0
+    },
+    {
+      "pmid": "17456832",
+      "title": "An evidence-based update on nonsteroidal anti-inflammatory drugs.",
+      "journal": "Clinical medicine & research",
+      "date": "2007-03-01",
+      "authors": [
+        "Ong CK",
+        "Seymour RA."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Nonsteroidal anti-inflammatory drugs (NSAIDs), including both traditional nonselective NSAIDs and the selective cyclooxygenase (COX)-2 inhibitors, are widely used for their anti-inflammatory and analgesic effects. NSAIDs are a necessary choice in pain management because of the integrated role of the COX pathway in the generation of inflammation and in the biochemical recognition of pain. This group of drugs has recently come under scrutiny because of recent focus in the literature on the various adverse effects that can occur when applying NSAIDs. This review will provide an educational update on the current evidence of the efficacy and adverse effects of NSAIDs. It aims to answer the following questions: (1) are there clinically important differences in the efficacy and safety between the different NSAIDs, (2) if there are differences, which are the ones that are more effective and associated with fewer adverse effects, and (3) which are the effective therapeutic approaches that could reduce the adverse effects of NSAIDs. Finally, an algorithm is proposed which delineates a general decision-making tree to select the most appropriate analgesic for an individual patient based on the evidence reviewed.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 145.0
+    },
+    {
+      "pmid": "15312206",
+      "title": "Science review: mechanisms of impaired adrenal function in sepsis and molecular actions of glucocorticoids.",
+      "journal": "Critical care (London, England)",
+      "date": "2004-05-25",
+      "authors": [
+        "Prigent H",
+        "Annane D."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "This review describes current knowledge on the mechanisms that underlie glucocorticoid insufficiency in sepsis and the molecular action of glucocorticoids. In patients with severe sepsis, numerous factors predispose to glucocorticoid insufficiency, including drugs, coagulation disorders and inflammatory mediators. These factors may compromise the hypothalamic–pituitary axis (i.e. secondary adrenal insufficiency) or the adrenal glands (i.e. primary adrenal failure), or may impair glucocorticoid access to target cells (i.e. peripheral tissue resistance). Irreversible anatomical damages to the hypothalamus, pituitary, or adrenal glands rarely occur. Conversely, transient functional impairment in hormone synthesis may be a common complication of severe sepsis. Glucocorticoids interact with a specific cytosolic glucocorticoid receptor, which undergoes conformational changes, sheds heat shock proteins and translocates to the nucleus. Glucocorticoids may also interact with membrane binding sites at the surface of the cells. The molecular action of glucocorticoids results in genomic and nongenomic effects. Direct and indirect transcriptional and post-transcriptional effects related to the cytosolic glucocorticoid receptor account for the genomic effects. Nongenomic effects are probably subsequent to cytosolic interaction between the glucocorticoid receptor and proteins, or to interaction between glucocorticoids and specific membrane binding sites.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 145.0
+    },
+    {
+      "pmid": "28611666",
+      "title": "Mineralocorticoid Receptor Signaling as a Therapeutic Target for Renal and Cardiac Fibrosis.",
+      "journal": "Frontiers in pharmacology",
+      "date": "2017-05-29",
+      "authors": [
+        "Tesch GH",
+        "Young MJ."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Activation of the mineralocorticoid receptor (MR) plays important roles in both physiological and pathological events. Blockade of MR signaling with MR antagonists (MRAs) has been used clinically to treat kidney and cardiac disease associated with hypertension and other chronic diseases, resulting in suppression of fibrosis in these organs. However, the current use of steroidal MRAs has been limited by off target effects on other hormone receptors or adverse effects on kidney tubular function. In this review, we summarize recent insights into the profibrotic roles of MR signaling in kidney and cardiovascular disease. We review experimental in vitro data identifying the pathological mechanisms associated with MR signaling in cell types found in the kidney (mesangial cells, podocytes, tubular cells, macrophages, interstitial fibroblasts) and heart (cardiomyocytes, endothelial cells, vascular smooth muscle cells, macrophages). In addition, we demonstrate the in vivo importance of MR signaling in specific kidney and cardiac cell types by reporting the outcomes of cell type selective MR gene deletion in animal models of kidney and cardiac disease and comparing these findings to those obtained with MRAs treatment. This review also includes a discussion of the potential benefits of novel non-steroidal MRAs for targeting kidney and cardiac fibrosis compared to existing steroidal MRAs, as well as the possibility of novel combination therapies and cell selective delivery of MRAs.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 145.0
+    },
+    {
+      "pmid": "18058085",
+      "title": "Surviving Sepsis Campaign: international guidelines for management of severe sepsis and septic shock: 2008.",
+      "journal": "Intensive care medicine",
+      "date": "2007-12-04",
+      "authors": [
+        "Dellinger RP",
+        "Vincent JL."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Objective To provide an update to the original Surviving Sepsis Campaign clinical management guidelines, “Surviving Sepsis Campaign guidelines for management of severe sepsis and septic shock,” published in 2004. Design Modified Delphi method with a consensus conference of 55 international experts, several subsequent meetings of subgroups and key individuals, teleconferences, and electronic-based discussion among subgroups and among the entire committee. This process was conducted independently of any industry funding. Methods We used the GRADE system to guide assessment of quality of evidence from high (A) to very low (D) and to determine the strength of recommendations. A strong recommendation [ 1 ] indicates that an intervention's desirable effects clearly outweigh its undesirable effects (risk, burden, cost), or clearly do not. Weak recommendations [ 2 ] indicate that the tradeoff between desirable and undesirable effects is less clear. The grade of strong or weak is considered of greater clinical importance than a difference in letter level of quality of evidence. In areas without complete agreement, a formal process of resolution was developed and applied. Recommendations are grouped into those directly targeting severe sepsis, recommendations targeting general care of the critically ill patient that are considered high priority in severe sepsis, and pediatric considerations. Results Key recommendations, listed by category, include: early goal-directed resuscitation of the septic patient during the first 6 hrs after recognition (1C); blood cultures prior to antibiotic therapy (1C); imaging studies performed promptly to confirm potential source of infection (1C); administration of broad-spectrum antibiotic therapy within 1 hr of diagnosis of septic shock (1B) and severe sepsis without septic shock (1D); reassessment of antibiotic therapy with microbiology and clinical data to narrow coverage, when appropriate (1C); a usual 7–10 days of antibiotic therapy guided by clinical response (1D); source control with attention to the balance of risks and benefits of the chosen method (1C); administration of either crystalloid or colloid fluid resuscitation (1B); fluid challenge to restore mean circulating filling pressure (1C); reduction in rate of fluid administration with rising filing pressures and no improvement in tissue perfusion (1D); vasopressor preference for norepinephrine or dopamine to maintain an initial target of mean arterial pressure ≥ 65 mm Hg (1C); dobutamine inotropic therapy when cardiac output remains low despite fluid resuscitation and combined inotropic/vasopressor therapy (1C); stress-dose steroid therapy given only in septic shock after blood pressure is identified to be poorly responsive to fluid and vasopressor therapy (2C); recombinant activated protein C in patients with severe sepsis and clinical assessment of high risk for death (2B except 2C for post-operative patients). In the absence of tissue hypoperfusion, coronary artery disease, or acute hemorrhage, target a hemoglobin of 7–9 g/dL (1B); a low tidal volume (1B) and limitation of inspiratory plateau pressure strategy (1C) for acute lung injury (ALI)/acute respiratory distress syndrome (ARDS); application of at least a minimal amount of positive end-expiratory pressure in acute lung injury (1C); head of bed elevation in mechanically ventilated patients unless contraindicated (1B); avoiding routine use of pulmonary artery catheters in ALI/ARDS (1A); to decrease days of mechanical ventilation and ICU length of stay, a conservative fluid strategy for patients with established ALI/ARDS who are not in shock (1C); protocols for weaning and sedation/analgesia (1B); using either intermittent bolus sedation or continuous infusion sedation with daily interruptions or lightening (1B); avoidance of neuromuscular blockers, if at all possible (1B); institution of glycemic control (1B) targeting a blood glucose &lt; 150 mg/dL after initial stabilization ( 2C ); equivalency of continuous veno-veno hemofiltration or intermittent hemodialysis (2B); prophylaxis for deep vein thrombosis (1A); use of stress ulcer prophylaxis to prevent upper GI bleeding using H2 blockers (1A) or proton pump inhibitors (1B); and consideration of limitation of support where appropriate (1D). Recommendations specific to pediatric severe sepsis include: greater use of physical examination therapeutic end points (2C); dopamine as the first drug of choice for hypotension (2C); steroids only in children with suspected or proven adrenal insufficiency (2C); a recommendation against the use of recombinant activated protein C in children (1B). Conclusion There was strong agreement among a large cohort of international experts regarding many level 1 recommendations for the best current care of patients with severe sepsis. Evidenced-based recommendations regarding the acute management of sepsis and septic shock are the first step toward improved outcomes for this important group of critically ill patients.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 105.0
+    },
+    {
+      "pmid": "30283735",
+      "title": "2018 European Thyroid Association Guideline for the Management of Graves' Hyperthyroidism.",
+      "journal": "European thyroid journal",
+      "date": "2018-07-25",
+      "authors": [
+        "Kahaly GJ",
+        "Pearce SH."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Graves' disease (GD) is a systemic autoimmune disorder characterized by the infiltration of thyroid antigen-specific T cells into thyroid-stimulating hormone receptor (TSH-R)-expressing tissues. Stimulatory autoantibodies (Ab) in GD activate the TSH-R leading to thyroid hyperplasia and unregulated thyroid hormone production and secretion. Diagnosis of GD is straightforward in a patient with biochemically confirmed thyrotoxicosis, positive TSH-R-Ab, a hypervascular and hypoechoic thyroid gland (ultrasound), and associated orbitopathy. In GD, measurement of TSH-R-Ab is recommended for an accurate diagnosis/differential diagnosis, prior to stopping antithyroid drug (ATD) treatment and during pregnancy. Graves' hyperthyroidism is treated by decreasing thyroid hormone synthesis with the use of ATD, or by reducing the amount of thyroid tissue with radioactive iodine (RAI) treatment or total thyroidectomy. Patients with newly diagnosed Graves' hyperthyroidism are usually medically treated for 12-18 months with methimazole (MMI) as the preferred drug. In children with GD, a 24- to 36-month course of MMI is recommended. Patients with persistently high TSH-R-Ab at 12-18 months can continue MMI treatment, repeating the TSH-R-Ab measurement after an additional 12 months, or opt for therapy with RAI or thyroidectomy. Women treated with MMI should be switched to propylthiouracil when planning pregnancy and during the first trimester of pregnancy. If a patient relapses after completing a course of ATD, definitive treatment is recommended; however, continued long-term low-dose MMI can be considered. Thyroidectomy should be performed by an experienced high-volume thyroid surgeon. RAI is contraindicated in Graves' patients with active/severe orbitopathy, and steroid prophylaxis is warranted in Graves' patients with mild/active orbitopathy receiving RAI.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 105.0
+    },
+    {
+      "pmid": "15942340",
+      "title": "The hepatoadrenal syndrome: a common yet unrecognized clinical condition.",
+      "journal": "Critical care medicine",
+      "date": "2005-06-01",
+      "authors": [
+        "Marik PE",
+        "Hepatic Cortisol Research and Adrenal Pathophysiology Study Group."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "<h4>Objective</h4>Adrenal failure is common in critically ill patients, particularly those with sepsis. As liver failure and sepsis are both associated with increased circulating levels of endotoxin and proinflammatory mediators and reduced levels of apoprotein-1/high-density lipoprotein, we postulated that adrenal failure may be common in patients with liver disease.<h4>Design</h4>Clinical study.<h4>Setting</h4>Liver transplant intensive care unit.<h4>Patients</h4>The study cohort included 340 patients with liver disease.<h4>Interventions</h4>Based on preliminary observational data, all patients admitted to our 28-bed liver transplant intensive care unit (LTICU) undergo adrenal function testing. An honest broker system was used to extract clinical, hemodynamic, medication, and laboratory data on patients admitted to the LTICU from March 2002 to March 2004. A random (stress) cortisol level <20 microg/dL in a highly stressed patient (respiratory failure, hypotension) was used to diagnose adrenal insufficiency. In all other patients, a random cortisol level <15 microg/dL or a 30-min level <20 microg/dL post-low-dose (1 microg) cosyntropin was considered diagnostic of adrenal insufficiency. Patients were grouped as follows: a) chronic liver failure; b) fulminant hepatic failure; c) patients immediately status post-orthotopic liver transplantation receiving a steroid-free protocol of immunosuppression; and d) patients status post-remote liver transplant (>/=6 months). The decision to treat patients with stress doses of hydrocortisone was at the discretion of the treating intensivist and transplant surgeon.<h4>Measurements and main results</h4>Two-hundred and forty-five (72%) patients met our criteria for adrenal insufficiency (the hepatoadrenal syndrome). Eight (33%) patients with fulminant hepatic failure, 97 (66%) patients with chronic liver disease, 31(61%) patients with a remote history of liver transplantation, and 109 (92%) patients who had undergone liver transplantation under steroid-free immunosuppression were diagnosed with adrenal insufficiency. The high-density lipoprotein level at the time of adrenal testing was the only variable predictive of adrenal insufficiency (p < .0001). In vasopressor-dependent patients with adrenal insufficiency, treatment with hydrocortisone was associated with a significant reduction (p = .02) in the dose of norepinephrine at 24 hrs, whereas the dose of norepinephrine was significantly higher (p = .04) in those patients with adrenal failure not treated with hydrocortisone. In vasopressor-dependent patients without adrenal insufficiency, treatment with hydrocortisone did not affect vasopressor dose at 24 hrs. One hundred and forty-one patients (26.4%) died during their hospitalization. The baseline serum cortisol was 18.8 +/- 16.2 microg/dL in the nonsurvivors compared with 13.0 +/- 11.8 microg/dL in the survivors (p < .001). Of those patients with adrenal failure who were treated with glucocorticoids, the mortality rate was 26% compared with 46% (p = .002) in those who were not treated. In those patients receiving vasopressor agents at the time of adrenal testing, the baseline cortisol was 10.0 +/- 4.8 microg/dL in those with adrenal insufficiency compared with 35.6 +/- 21.2 microg/dL in those with normal adrenal function. Vasopressor-dependent patients who did not have adrenal failure had a mortality rate of 75%.<h4>Conclusions</h4>Patients with liver failure and patients post-liver transplantation have an exceedingly high incidence of adrenal failure, which may be pathophysiologically related to low levels of high-density lipoprotein. Treatment of patients with adrenal failure may improve outcome. High baseline serum cortisol levels may be a maker of disease severity and portend a poor prognosis.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 105.0
+    },
+    {
+      "pmid": "21892977",
+      "title": "Bench-to-bedside review: Vasopressin in the management of septic shock.",
+      "journal": "Critical care (London, England)",
+      "date": "2011-08-11",
+      "authors": [
+        "Russell JA."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "This review of vasopressin in septic shock differs from previous reviews by providing more information on the physiology and pathophysiology of vasopressin and vasopressin receptors, particularly because of recent interest in more specific AVPR1a agonists and new information from the Vasopressin and Septic Shock Trial (VASST), a randomized trial of vasopressin versus norepinephrine in septic shock. Relevant literature regarding vasopressin and other AVPR1a agonists was reviewed and synthesized. Vasopressin, a key stress hormone in response to hypotension, stimulates a family of receptors: AVPR1a, AVPR1b, AVPR2, oxytocin receptors and purinergic receptors. Rationales for use of vasopressin in septic shock are as follows: first, a deficiency of vasopressin in septic shock; second, low-dose vasopressin infusion improves blood pressure, decreases requirements for norepinephrine and improves renal function; and third, a recent randomized, controlled, concealed trial of vasopressin versus norepinephrine (VASST) suggests low-dose vasopressin may decrease mortality of less severe septic shock. Previous clinical studies of vasopressin in septic shock were small or not controlled. There was no difference in 28-day mortality between vasopressin-treated versus norepinephrine-treated patients (35% versus 39%, respectively) in VASST. There was potential benefit in the prospectively defined stratum of patients with less severe septic shock (5 to 14 μg/minute norepinephrine at randomization): vasopressin may have lowered mortality compared with norepinephrine (26% versus 36%, respectively, P = 0.04 within stratum). The result was robust: vasopressin also decreased mortality (compared with norepinephrine) if less severe septic shock was defined by the lowest quartile of arterial lactate or by use of one (versus more than one) vasopressor at baseline. Other investigators found greater hemodynamic effects of higher dose of vasopressin (0.06 units/minute) but also unique adverse effects (elevated liver enzymes and serum bilirubin). Use of higher dose vasopressin requires further evaluation of efficacy and safety. There are very few studies of interactions of therapies in critical care - or septic shock - and effects on mortality. Therefore, the interaction of vasopressin infusion, corticosteroid treatment and mortality of septic shock was evaluated in VASST. Low-dose vasopressin infusion plus corticosteroids significantly decreased 28-day mortality compared with corticosteroids plus norepinephrine (44% versus 35%, respectively, P = 0.03; P = 0.008 interaction statistic). Prospective randomized controlled trials would be necessary to confirm this interesting interaction. In conclusion, low-dose vasopressin may be effective in patients who have less severe septic shock already receiving norepinephrine (such as patients with modest norepinephrine infusion (5 to 15 μg/minute) or low serum lactate levels). The interaction of vasopressin infusion and corticosteroid treatment in septic shock requires further study. Conclusions Vasopressin stimulates a family of receptors (AVPR1a, AVPR1b, and AVPR2). AVPR1a is responsible for the vasoconstriction associated with vasopressin. Sepsis may downregulate all three vasopressin receptors. Vasopressin levels increase early in septic shock because hypotension is the most potent stimulus for release of stored vasopressin. Vasopressin levels then decline rapidly - due to depletion of stored vasopressin. Responses to vasopressin and norepinephrine are modified in sepsis and, furthermore, the effects of vasopressin differ in different vascular beds in sepsis. Vasopressin infusion increases blood pressure, decreases norepinephrine dose requirements, and improves renal function. Previous clinical studies of vasopressin in septic shock, however, were small or not controlled. Adverse effects of vasopressin include mesenteric ischemia, myocardial ischemia, digital ischemia, skin necrosis, and hyponatremia. VASST, a randomized controlled trial of vasopressin versus norepinephrine in septic shock, was performed to address uncertainties regarding efficacy and safety of vasopressin in septic shock. There was no significant difference between vasopressin-treated and norepinephrine-treated groups in 28-day mortality (35.4% versus 39.3%, P = 0.26; ARR = -2.9 to 10.7%) or in organ dysfunction rates. Vasopressin may have decreased mortality in patients who had less severe septic shock in VASST. Serious adverse event rates were similar in the vasopressin and norepinephrine groups. Vasopressin therefore appears equally as safe as norepinephrine in septic shock, and may improve mortality in less severe septic shock. There have been remarkably few large studies of interactions of the commonly used therapies in critical care and the effects on mortality. Low-dose vasopressin infusion plus corticosteroids significantly decreased 28-day mortality compared with corticosteroids plus norepinephrine (44.7 to 35.9%, P = 0.03; P = 0.008 interaction statistic). This interaction is potentially important and requires further study.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 105.0
+    },
+    {
+      "pmid": "30741327",
+      "title": "Management of the brain-dead donor in the ICU: general and specific therapy to improve transplantable organ quality.",
+      "journal": "Intensive care medicine",
+      "date": "2019-02-11",
+      "authors": [
+        "Meyfroidt G",
+        "Citerio G."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Purpose To provide a practical overview of the management of the potential organ donor in the intensive care unit. Methods Seven areas of donor management were considered for this review: hemodynamic management; fluids and electrolytes; respiratory management; endocrine management; temperature management; anaemia and coagulation; infection management. For each subchapter, a narrative review was conducted. Results and conclusions Most elements in the current recommendations and guidelines are based on pathophysiological reasoning, epidemiological observations, or extrapolations from general ICU management strategies, and not on evidence from randomized controlled trials. The cardiorespiratory management of brain-dead donors is very similar to the management of critically ill patients, and the same applies to the management of anaemia and coagulation. Central diabetes insipidus is of particular concern, and should be diagnosed based on clinical criteria. Depending on the degree of vasopressor dependency, it can be treated with intermittent desmopressin or continuous vasopressin, intravenously. Temperature management of the donor is an area of uncertainty, but it appears reasonable to strive for a core temperature of &gt; 35 °C. The indications and controversies regarding endocrine therapies, in particular thyroid hormone replacement therapy, and corticosteroid therapy, are discussed. The potential donor should be assessed clinically for infections, and screening tests for specific infections are an essential part of donor management. Although the rate of infection transmission from donor to receptor is low, certain infections are still a formal contraindication to organ donation. However, new antiviral drugs and strategies now allow organ donation from certain infected donors to be done safely. Conclusions Brain death induces a marked physiological response in many organ systems, especially the cardiorespiratory and endocrine systems. This poses a particular challenge in the management of these patients, and may lead to loss of potential organs for donation if left untreated. In essence, the hemodynamic and respiratory management of brain-dead donors does not differ that much from the management of the critically ill patient, with a focus on substrate supply and consumption matching, and avoiding therapy-induced harm such as ventilator-induced injury or excessive vasoconstriction. Specific endocrine therapies, such as the use of vasopressin or analogues, steroid therapy, and thyroid hormone replacement, are often indicated. Infections in the donor are a special challenge, in particular because of the risk of transmission. The most important management strategies are summarized in Table 4 . Table 4 The most important (potential) organ-protective therapies in the brain-dead donor, at a glance Organ-protective therapy Evidence of an effect on the numbers of organs retrieved, or improved organ function in the donor? Hemodynamic management Low-dose dopamine (4 µg/kg/min) in kidney donors One small RCT, reduced need for dialysis in kidney recipients [ 13 ] Other inotropes or vasopressors Observational data Fluid and electrolyte management Goal-directed fluid management One RCT, prematurely stopped; not superior to conventional therapy [ 11 ] Crystalloid solutions: NaCl 0.9% or Ringer’s lactate Observational data Avoid the use of starches One prospective cohort study, propensity score-corrected; independent predictor of DGF [ 19 ] Diabetes insipidus treatment: desmopressin or vasopressin Extrapolation from evidence in non-brain-dead critically ill patients Respiratory management Lung-protective ventilation and recruitment manoeuvres One RCT, prematurely stopped; increased number of eligible and harvested lungs [ 30 ] Endocrine management Thyroid hormone in hemodynamically unstable donors Observational data; higher number of procured organs [ 37 ] Four double blind placebo-controlled RCTs; no evidence of benefit [ 38 ] Corticosteroid treatment 14 observational trials; most suggest some form of benefit [ 40 ] 11 RCTs, poor quality, many confounders; all but one are neutral [ 40 ] Temperature management Maintain body T° 34°–35° One RCT; lower incidence of DGF in kidney recipients, compared to 36, 5°–37, 5° [ 48 ] Maintain body T° &gt; 35° Legal requirement in many countries Blood transfusion and coagulation management RBC transfusion trigger unknown Observational data Keep INR &lt; 1.5 and platelet count &gt; 50,000/mm 3 Observational data, single-centre practice [ 10 ] LMWH prophylaxis Extrapolation from evidence in non-brain-dead critically ill patients Infection management Screen the donor for infections International guidelines, based on epidemiological data [ 62 , 64 ] HIV-positive donor may donate to HIV positive receptor One prospective non-randomized cohort study; similar outcomes compared to non-HIV [ 66 ] Donation from HCV positive donor One prospective observational study (HTx); DAAs reduce viral load [ 67 ] One prospective observational study (KTx); prophylactic DAAs reduce viral load [ 68 ] RCT randomized controlled trial, DGF delayed graft function, RBC red blood cell, INR international normalized ratio, HIV human immunodeficiency virus, HCV hepatitis C virus, HTx heart transplant, KTx kidney transplant, DAA direct anti-viral agent Unfortunately, for many of the management strategies in brain-dead donors, we lack evidence from RCTs that demonstrate an effect on receptor outcomes. Hence, some of the elements in brain-dead donor management protocols are based on pathophysiological reasoning, epidemiological observations, or extrapolations from general ICU management strategies.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 105.0
+    },
+    {
+      "pmid": "8894349",
+      "title": "Epidemiology of nosocomial fungal infections.",
+      "journal": "Clinical microbiology reviews",
+      "date": "1996-10-01",
+      "authors": [
+        "Fridkin SK",
+        "Jarvis WR."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "This paper briefly reviews the current knowledge of the epidemiology and modes of transmission of nosocomial fungal infections and some of the therapeutic options for treating these diseases. In the mid-1980s, many institutions reported that fungi were common pathogens in nosocomial infections. Most, if not all, hospitals care for patients at risk for nosocomial fungal infections. The proportion in all nosocomial infections reportedly caused by Candida spp. increased from 2% in 1980 to 5% in 1986 to 1989. Numerous studies have identified common risk factors for acquiring these infections, most of which are very common among hospitalized patients; some factors act primarily by inducing immunosuppression (e.g., corticosteroids, chemotherapy, malnutrition, malignancy, and neutropenia), while others primarily provide a route of infection (e.g., extensive burns, indwelling catheter), and some act in combination. Non-albicans Candida spp., including fluconazole-resistant C. krusei and Torulopsis (C.) glabrata, have become more common pathogens. Newer molecular typing techniques can assist in the determination of a common source of infection caused by several fungal pathogens. Continued epidemiologic and laboratory research is needed to better characterize these pathogens and allow for improved diagnostic and therapeutic strategies.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 105.0
+    },
+    {
+      "pmid": "11159183",
+      "title": "Hippocampal apoptosis in major depression is a minor event and absent from subareas at risk for glucocorticoid overexposure.",
+      "journal": "The American journal of pathology",
+      "date": "2001-02-01",
+      "authors": [
+        "Lucassen PJ",
+        "Swaab DF."
+      ],
+      "evidenzstufe": 3,
+      "evidence_basis": "Glucocorticoid (GC) overexposure in animals has been implicated in hippocampal dysfunctioning and neuronal loss. In major depression, hypercortisolemia, hypothalamic-pituitary-adrenocortical-axis alterations, and reduced hippocampal volumes are commonly observed; hence, hippocampal neurodegeneration is also expected. To study possible GC-related pathology, we investigated hippocampal tissue of 15 major-depressed patients, 16 matched controls, and 9 steroid-treated patients, using in situ-end-labeling for DNA fragmentation and apoptosis, and heat-shock protein 70 and nuclear transcription factor kappaB immunocytochemistry for damage-related responses. No obvious massive cell loss was observed in any group. In 11 of 15 depressed patients, rare, but convincing apoptosis was found in entorhinal cortex, subiculum, dentate gyrus, CA1, and CA4. Also in three steroid-treated patients, apoptosis was found. Except for several steroid-treated patients, heat-shock protein 70 staining was generally absent, nor was nuclear transcription factor-kappaB activation found. The detection in 11 of 15 depressed patients, in three steroid-treated, and in one control patient, demonstrates for the first time that apoptosis is involved in steroid-related changes in the human hippocampus. However, in absence of major pyramidal loss, its rare occurrence, that notably was absent from areas at risk for GC damage such as CA3, indicates that apoptosis probably only contributes to a minor extent to the volume changes in depression.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 105.0
+    },
+    {
+      "pmid": "16450016",
+      "title": "Canadian Cardiovascular Society consensus conference recommendations on heart failure 2006: diagnosis and management.",
+      "journal": "The Canadian journal of cardiology",
+      "date": "2006-01-01",
+      "authors": [
+        "Arnold JM",
+        "Canadian Cardiovascular Society."
+      ],
+      "evidenzstufe": 2,
+      "evidence_basis": "Heart failure remains a common diagnosis, especially in older individuals. It continues to be associated with significant morbidity and mortality, but major advances in both diagnosis and management have occurred and will continue to improve symptoms and other outcomes in patients. The Canadian Cardiovascular Society published its first consensus conference recommendations on the diagnosis and management of heart failure in 1994, followed by two brief updates, and reconvened this consensus conference to provide a comprehensive review of current knowledge and management strategies. New clinical trial evidence and meta-analyses were critically reviewed by a multidisciplinary primary panel who developed both recommendations and practical tips, which were reviewed by a secondary panel. The resulting document is intended to provide practical advice for specialists, family physicians, nurses, pharmacists and others who are involved in the care of heart failure patients. Management of heart failure begins with an accurate diagnosis, and requires rational combination drug therapy, individualization of care for each patient (based on their symptoms, clinical presentation and disease severity), appropriate mechanical interventions including revascularization and devices, collaborative efforts among health care professionals, and education and cooperation of the patient and their immediate caregivers. The goal is to translate best evidence-based therapies into clinical practice with a measureable impact on the health of heart failure patients in Canada.",
+      "bezug": "Kontext-Leitlinie: behandelt das Thema der Frage nicht direkt. Nur als allgemeinen Rahmen nutzen, nie als Beleg für die konkrete Frage.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": false,
+      "context_guideline": true,
+      "score": 290.0
+    }
+  ],
+  "timings": {
+    "plan": 4.4,
+    "search": 35.11,
+    "rank": 0.11,
+    "enrich": 3.17,
+    "synthesis": 10.78,
+    "total": 53.59
+  }
+}

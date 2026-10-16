@@ -1,0 +1,477 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-16T13:02:57",
+  "reconstructed": false,
+  "question": {
+    "title": "Tranexamsaeure-Dosierung in der Herzchirurgie",
+    "frage": "Hochdosis- versus Niedrigdosis-Tranexamsaeure in der Herzchirurgie: Wirksamkeit gegen Blutungen versus Krampfanfallrisiko. Was ist Standard und wo ist die Literatur uneins?",
+    "kontext": ""
+  },
+  "queries": [
+    "(tranexamic acid OR TXA) AND (high dose OR high-dose OR low dose OR low-dose) AND (cardiac surgery OR heart surgery OR coronary artery bypass OR CABG OR valve replacement) AND (bleeding OR hemorrhage OR blood loss) AND (seizure OR convulsions OR epilepsy OR neurotoxicity) AND SRC:MED",
+    "(tranexamic acid OR TXA) AND (efficacy OR effectiveness) AND (bleeding OR hemorrhage) AND (cardiac surgery OR heart surgery) AND SRC:MED",
+    "(tranexamic acid OR TXA) AND (risk OR adverse event) AND (seizure OR convulsions) AND (cardiac surgery OR heart surgery) AND SRC:MED"
+  ],
+  "synthesis_raw": "## Kurzantwort:\n\nDie Evidenz deutet darauf hin, dass Tranexamsäure (TXA) die Notwendigkeit von Transfusionen und den perioperativen Blutverlust in der Herzchirurgie reduziert (PMID 35881121: \"Tranexamic acid is recommended for reducing blood loss and transfusion in cardiac surgery\"; PMID 31307381: \"TXA significantly reduced transfusion rate (RR 0.71, 95% CI 0.65 to 0.78, P<0.00001)\"). Eine höhere Dosis führt zu einer bescheidenen, aber statistisch signifikanten Reduktion der Transfusionsrate (PMID 35881121: \"high-dose compared with low-dose tranexamic acid infusion resulted in a modest statistically significant reduction in the proportion of patients who received allogeneic red blood cell transfusion\"), kann aber das Risiko für Krampfanfälle erhöhen (PMID 31307381: \"TXA usage did not increase risk of mortality... but was associated with a significantly increase in seizure attack (RR 3.21, 95% CI 1.04 to 9.90, P = 0.04)\").\n\n*   **Entscheidender Befund:** TXA reduziert Transfusionen und Blutverlust.\n*   **Population:** Patienten, die sich einer Herzoperation mit Kardiopulmonalem Bypass unterziehen.\n*   **Unsicherheit:** Höhere TXA-Dosen sind mit einem erhöhten Risiko für Krampfanfälle assoziiert, ohne dass die blutsparende Wirkung proportional zunimmt.\n\n## Evidenzlage.\n\nTranexamsäure (TXA) ist ein Antifibrinolytikum, das in der Herzchirurgie eingesetzt wird, um den perioperativen Blutverlust und den Bedarf an allogenen Bluttransfusionen zu reduzieren (PMID 35881121: \"Tranexamic acid is recommended for reducing blood loss and transfusion in cardiac surgery\"). Mehrere Metaanalysen und randomisierte kontrollierte Studien bestätigen diese Wirksamkeit (PMID 31307381: \"The efficacy of tranexamic acid (TXA) to reduce perioperative blood loss and allogeneic blood transfusion in cardiac surgeries has been proved in previous studies\"; PMID 9390590: \"Tranexamic acid significantly decreased the proportion of patients transfused (OR 0.50, 95% CI 0.34-0.76; P = 0.0009)\"). Eine Meta-Analyse von 49 Studien mit 10.591 Patienten zeigte, dass TXA die Transfusionsrate signifikant reduzierte (RR 0.71, 95% CI 0.65 bis 0.78) und den perioperativen Blutverlust um durchschnittlich 246.98 ml minderte (MD − 246.98 ml, 95% CI − 287.89 bis − 206.06 ml) (PMID 31307381: \"We included 49 studies with 10,591 patients into analysis. TXA significantly reduced transfusion rate (RR 0.71, 95% CI 0.65 to 0.78, P<0.00001)\"; PMID 31307381: \"Peri-operative blood loss (MD − 246.98 ml, 95% CI − 287.89 to − 206.06 ml, P<0.00001) and re-operation rate (RR 0.62, 95% CI 0.49 to 0.79, P<0.0001) were also reduced significantly\"). Eine weitere Meta-Analyse von 64 Studien mit 18.141 Teilnehmern zeigte, dass sowohl hochdosierte als auch niedrigdosierte kontinuierliche und Einmal-Applikationen von TXA die Transfusionsrate signifikant senkten (PMID 41087930: \"High-dose continuous (OR: 0.38, 95%CI: [0.31, 0.47]), low-dose continuous (OR: 0.44, 95%CI: [0.34, 0.56]), high-dose single (OR: 0.50, 95%CI: [0.43, 0.57]), and low-dose single (OR: 0.52, 95%CI: [0.40, 0.67]) TXA significantly reduce the rate of red blood cell transfusion\").\n\nIn Bezug auf die Sicherheit wurde festgestellt, dass TXA das Risiko für Mortalität, Myokardinfarkt, Schlaganfall, Lungenembolie und Nierenfunktionsstörungen nicht erhöht (PMID 31307381: \"TXA usage did not increase risk of mortality, myocardial infarction, stroke, pulmonary embolism and renal dysfunction\"). Die intravenöse Verabreichung von TXA zeigte in der Herzchirurgie keinen Anstieg thrombotischer Komplikationen (PMID 41087930: \"Neither intravenous nor topical TXA increases the incidence of postoperative thrombotic complications\"; PMID 31195987: \"TXA is effective to reduce reoperation for bleeding, blood loss and the need for allogeneic blood products in patients undergoing CABG without increasing prothrombotic complication\"). Eine Metaanalyse von 234 Studien mit 102.681 Patienten zeigte, dass TXA das Risiko für thrombotische Ereignisse insgesamt nicht erhöhte (RR = 1.00 [95% CI 0.93–1.08]) (PMID 34724964: \"there was no evidence that TXA increased the risk of thrombotic events (RR = 1.00 [95% CI 0.93–1.08])\").\n\n## Was ist Standard.\n\nTranexamsäure wird zur Reduzierung von Blutverlust und Transfusionen in der Herzchirurgie empfohlen (PMID 35881121: \"Tranexamic acid is recommended for reducing blood loss and transfusion in cardiac surgery\"). Intravenöse TXA-Gaben, unabhängig von Dosis oder Regime, reduzieren postoperativen Blutverlust und Erythrozyten-Transfusionen bei erwachsenen Herzchirurgie-Patienten (PMID 41087930: \"intravenous TXA administration, regardless of dose or administration regimen, significantly reduces postoperative blood loss and red blood cell transfusions in adult cardiac surgery\"). Die topische Anwendung von TXA ist in der Herzchirurgie nicht etabliert; Studien zeigen hier keinen signifikanten Nutzen bei der Reduktion von Erythrozyten-Transfusionen im Vergleich zur intravenösen Gabe (PMID 41087930: \"Topical TXA does not significantly reduce the rate of red blood cell transfusion (OR: 0.80, 95%CI: [0.60, 1.07]); conversely, it is associated with a higher rate of red blood cell transfusion compared to intravenous administration\").\n\n## Wo die Literatur uneins ist.\n\nDer Kern der Uneinigkeit liegt in der optimalen Dosierung von Tranexamsäure, insbesondere im Hinblick auf das Gleichgewicht zwischen Wirksamkeit und dem Risiko für Krampfanfälle. Die OPTIMAL-Studie, eine multizentrische, doppelblinde, randomisierte klinische Studie mit 3079 Patienten, zeigte, dass eine hochdosierte TXA-Infusion (30 mg/kg Bolus, 16 mg/kg/h Erhaltungsdosis) eine bescheidene, statistisch signifikante Reduktion der Transfusionsrate im Vergleich zu einer niedrigdosierten Infusion (10 mg/kg Bolus, 2 mg/kg/h Erhaltungsdosis) bewirkte (21.8% vs. 26.0%; RD, -4.1%) (PMID 35881121: \"high-dose compared with low-dose tranexamic acid infusion resulted in a modest statistically significant reduction in the proportion of patients who received allogeneic red blood cell transfusion\"). Allerdings war die Inzidenz von Krampfanfällen in der Hochdosisgruppe tendenziell höher (1.0% vs. 0.4%; RD, 0.6%) (PMID 35881121: \"seizure, which occurred in 15 patients (1.0%) in the high-dose group and 6 patients (0.4%) in the low-dose group (RD, 0.6%; 95% CI, -0.0% to 1.2%; P = .05)\").\n\nEine Metaanalyse von Guo und Shi aus dem Jahr 2019 stellte fest, dass eine intravenöse Hochdosis-TXA die Transfusionsrate im Vergleich zu einer Niedrigdosis nicht weiter senkte, aber das Anfallsrisiko um das 4,83-Fache erhöhte (PMID 31307381: \"Intravenous high-dose TXA didn’t further decrease transfusion rate compared with low-dose regimen, and increased the risk of seizure by 4.83 times\"). In der Niedrigdosisgruppe traten keine Krampfanfälle auf (PMID 31307381: \"No patients in the low-dose group had seizure attack\"). Dies steht im Einklang mit einer anderen Metaanalyse, die zeigte, dass TXA das postoperative Anfallsrisiko erhöhen kann (RR, 6.67; 95% CI, 1.77–25.20), insbesondere bei Dosen über 2 g/Tag (PMID 31195987: \"However, it may increase the incidence of postoperative seizures (RR, 6.67; 95%CI, 1.77–25.20)\"; PMID 34724964: \"In a dose-by-dose sensitivity analysis, seizures were increased in patients receiving more than 2 g/day of TXA (3.05 [1.01–9.20])\"). Eine neuere Netzwerk-Metaanalyse (Pan und Liang, 2025) zeigte, dass eine hochdosierte Einzelgabe mit einem signifikant erhöhten Risiko für postoperative Krampfanfälle verbunden ist (OR: 6.66, 95%CI: [1.85, 24.02]), während andere Verabreichungsformen (hochdosiert kontinuierlich, niedrigdosiert kontinuierlich und niedrigdosiert einzeln) dieses Risiko nicht signifikant erhöhten (PMID 41087930: \"High-dose single administration is associated with a significantly increased risk of postoperative seizures (OR: 6.66, 95%CI: [1.85, 24.02])\").\n\nDie Evidenz zeigt also einen Trade-off: Während höhere TXA-Dosen eine marginale zusätzliche blutsparende Wirkung erzielen können, ist dies potenziell mit einem erhöhten Krampfanfallrisiko verbunden, das bei niedrigeren Dosen seltener auftritt.\n\n## Offene Fragen.\n\nTrotz der vorhandenen Evidenz gibt es weiterhin offene Fragen bezüglich der optimalen Dosierungsstrategie für Tranexamsäure in der Herzchirurgie, die das Gleichgewicht zwischen Risiken und Nutzen berücksichtigt (PMID 41087930: \"Future studies should incorporate patient-specific factors, comorbidities, and bleeding risks to determine the optimal TXA dosing strategy that balances risks and benefits\"). Es fehlen weitere qualitativ hochwertige, randomisierte kontrollierte Studien, die patientenspezifische Faktoren, Komorbiditäten und Blutungsrisiken integrieren, um eine präzisere Empfehlung für die TXA-Dosis zu ermöglichen (PMID 41087930: \"Future studies should incorporate patient-specific factors, comorbidities, and bleeding risks to determine the optimal TXA dosing strategy that balances risks and benefits\"). Insbesondere die Langzeitsicherheit und das Risiko seltener Nebenwirkungen bei verschiedenen Dosierungen bedürfen weiterer Untersuchung.\n\nKein Ersatz für klinische Entscheidungen oder Dosierungsangaben. Immer Originalquelle und Klinikstandard prüfen.",
+  "anchors": [
+    {
+      "pmid": "35881121",
+      "quote": "Tranexamic acid is recommended for reducing blood loss and transfusion in cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "31307381",
+      "quote": "TXA significantly reduced transfusion rate (RR 0.71, 95% CI 0.65 to 0.78, P<0.00001)",
+      "in_source": false
+    },
+    {
+      "pmid": "35881121",
+      "quote": "high-dose compared with low-dose tranexamic acid infusion resulted in a modest statistically significant reduction in the proportion of patients who received allogeneic red blood cell transfusion",
+      "in_source": true
+    },
+    {
+      "pmid": "31307381",
+      "quote": "TXA usage did not increase risk of mortality... but was associated with a significantly increase in seizure attack (RR 3.21, 95% CI 1.04 to 9.90, P = 0.04)",
+      "in_source": true
+    },
+    {
+      "pmid": "35881121",
+      "quote": "Tranexamic acid is recommended for reducing blood loss and transfusion in cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "31307381",
+      "quote": "The efficacy of tranexamic acid (TXA) to reduce perioperative blood loss and allogeneic blood transfusion in cardiac surgeries has been proved in previous studies",
+      "in_source": true
+    },
+    {
+      "pmid": "9390590",
+      "quote": "Tranexamic acid significantly decreased the proportion of patients transfused (OR 0.50, 95% CI 0.34-0.76; P = 0.0009)",
+      "in_source": true
+    },
+    {
+      "pmid": "31307381",
+      "quote": "We included 49 studies with 10,591 patients into analysis. TXA significantly reduced transfusion rate (RR 0.71, 95% CI 0.65 to 0.78, P<0.00001)",
+      "in_source": false
+    },
+    {
+      "pmid": "31307381",
+      "quote": "Peri-operative blood loss (MD − 246.98 ml, 95% CI − 287.89 to − 206.06 ml, P<0.00001) and re-operation rate (RR 0.62, 95% CI 0.49 to 0.79, P<0.0001) were also reduced significantly",
+      "in_source": false
+    },
+    {
+      "pmid": "41087930",
+      "quote": "High-dose continuous (OR: 0.38, 95%CI: [0.31, 0.47]), low-dose continuous (OR: 0.44, 95%CI: [0.34, 0.56]), high-dose single (OR: 0.50, 95%CI: [0.43, 0.57]), and low-dose single (OR: 0.52, 95%CI: [0.40, 0.67]) TXA significantly reduce the rate of red blood cell transfusion",
+      "in_source": true
+    },
+    {
+      "pmid": "31307381",
+      "quote": "TXA usage did not increase risk of mortality, myocardial infarction, stroke, pulmonary embolism and renal dysfunction",
+      "in_source": true
+    },
+    {
+      "pmid": "41087930",
+      "quote": "Neither intravenous nor topical TXA increases the incidence of postoperative thrombotic complications",
+      "in_source": true
+    },
+    {
+      "pmid": "31195987",
+      "quote": "TXA is effective to reduce reoperation for bleeding, blood loss and the need for allogeneic blood products in patients undergoing CABG without increasing prothrombotic complication",
+      "in_source": true
+    },
+    {
+      "pmid": "34724964",
+      "quote": "there was no evidence that TXA increased the risk of thrombotic events (RR = 1.00 [95% CI 0.93–1.08])",
+      "in_source": true
+    },
+    {
+      "pmid": "35881121",
+      "quote": "Tranexamic acid is recommended for reducing blood loss and transfusion in cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "41087930",
+      "quote": "intravenous TXA administration, regardless of dose or administration regimen, significantly reduces postoperative blood loss and red blood cell transfusions in adult cardiac surgery",
+      "in_source": true
+    },
+    {
+      "pmid": "41087930",
+      "quote": "Topical TXA does not significantly reduce the rate of red blood cell transfusion (OR: 0.80, 95%CI: [0.60, 1.07]); conversely, it is associated with a higher rate of red blood cell transfusion compared to intravenous administration",
+      "in_source": true
+    },
+    {
+      "pmid": "35881121",
+      "quote": "high-dose compared with low-dose tranexamic acid infusion resulted in a modest statistically significant reduction in the proportion of patients who received allogeneic red blood cell transfusion",
+      "in_source": true
+    },
+    {
+      "pmid": "35881121",
+      "quote": "seizure, which occurred in 15 patients (1.0%) in the high-dose group and 6 patients (0.4%) in the low-dose group (RD, 0.6%; 95% CI, -0.0% to 1.2%; P = .05)",
+      "in_source": true
+    },
+    {
+      "pmid": "31307381",
+      "quote": "Intravenous high-dose TXA didn’t further decrease transfusion rate compared with low-dose regimen, and increased the risk of seizure by 4.83 times",
+      "in_source": true
+    },
+    {
+      "pmid": "31307381",
+      "quote": "No patients in the low-dose group had seizure attack",
+      "in_source": true
+    },
+    {
+      "pmid": "31195987",
+      "quote": "However, it may increase the incidence of postoperative seizures (RR, 6.67; 95%CI, 1.77–25.20)",
+      "in_source": true
+    },
+    {
+      "pmid": "34724964",
+      "quote": "In a dose-by-dose sensitivity analysis, seizures were increased in patients receiving more than 2 g/day of TXA (3.05 [1.01–9.20])",
+      "in_source": true
+    },
+    {
+      "pmid": "41087930",
+      "quote": "High-dose single administration is associated with a significantly increased risk of postoperative seizures (OR: 6.66, 95%CI: [1.85, 24.02])",
+      "in_source": true
+    },
+    {
+      "pmid": "41087930",
+      "quote": "Future studies should incorporate patient-specific factors, comorbidities, and bleeding risks to determine the optimal TXA dosing strategy that balances risks and benefits",
+      "in_source": true
+    },
+    {
+      "pmid": "41087930",
+      "quote": "Future studies should incorporate patient-specific factors, comorbidities, and bleeding risks to determine the optimal TXA dosing strategy that balances risks and benefits",
+      "in_source": true
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "35881121",
+      "title": "Effect of High- vs Low-Dose Tranexamic Acid Infusion on Need for Red Blood Cell Transfusion and Adverse Events in Patients Undergoing Cardiac Surgery: The OPTIMAL Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "date": "2022-07-01",
+      "authors": [
+        "Shi J",
+        "OPTIMAL Study Group."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Importance</h4>Tranexamic acid is recommended for reducing blood loss and transfusion in cardiac surgery. However, it remains unknown whether a high dose of tranexamic acid provides better blood-sparing effect than a low dose without increasing the risk of thrombotic complications or seizures in cardiac surgery.<h4>Objective</h4>To compare the efficacy and adverse events of high-dose vs low-dose tranexamic acid in patients undergoing cardiac surgery with cardiopulmonary bypass.<h4>Design, setting, and participants</h4>Multicenter, double-blind, randomized clinical trial among adult patients undergoing cardiac surgery with cardiopulmonary bypass. The study enrolled 3079 patients at 4 hospitals in China from December 26, 2018, to April 21, 2021; final follow-up was on May 21, 2021.<h4>Interventions</h4>Participants received either a high-dose tranexamic acid regimen comprising a 30-mg/kg bolus, a 16-mg/kg/h maintenance dose, and a 2-mg/kg prime (n = 1525) or a low-dose regimen comprising a 10-mg/kg bolus, a 2-mg/kg/h maintenance dose, and a 1-mg/kg prime (n = 1506).<h4>Main outcomes and measures</h4>The primary efficacy end point was the rate of allogeneic red blood cell transfusion after start of operation (superiority hypothesis), and the primary safety end point was a composite of the 30-day postoperative rate of mortality, seizure, kidney dysfunction (stage 2 or 3 Kidney Disease: Improving Global Outcomes [KDIGO] criteria), and thrombotic events (myocardial infarction, ischemic stroke, deep vein thrombosis, and pulmonary embolism) (noninferiority hypothesis with a margin of 5%). There were 15 secondary end points, including the individual components of the primary safety end point.<h4>Results</h4>Among 3079 patients who were randomized to treatment groups (mean age, 52.8 years; 38.1% women), 3031 (98.4%) completed the trial. Allogeneic red blood cell transfusion occurred in 333 of 1525 patients (21.8%) in the high-dose group and 391 of 1506 patients (26.0%) in the low-dose group (risk difference [RD], -4.1% [1-sided 97.55% CI, -∞ to -1.1%]; relative risk, 0.84 [1-sided 97.55% CI, -∞ to 0.96; P = .004]). The composite of postoperative seizure, thrombotic events, kidney dysfunction, and death occurred in 265 patients in the high-dose group (17.6%) and 249 patients in the low-dose group (16.8%) (RD, 0.8%; 1-sided 97.55% CI, -∞ to 3.9%; P = .003 for noninferiority). Fourteen of the 15 prespecified secondary end points were not significantly different between groups, including seizure, which occurred in 15 patients (1.0%) in the high-dose group and 6 patients (0.4%) in the low-dose group (RD, 0.6%; 95% CI, -0.0% to 1.2%; P = .05).<h4>Conclusions and relevance</h4>Among patients who underwent cardiac surgery with cardiopulmonary bypass, high-dose compared with low-dose tranexamic acid infusion resulted in a modest statistically significant reduction in the proportion of patients who received allogeneic red blood cell transfusion and met criteria for noninferiority with respect to a composite primary safety end point consisting of 30-day mortality, seizure, kidney dysfunction, and thrombotic events.<h4>Trial registration</h4>ClinicalTrials.gov Identifier: NCT03782350.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 475.0
+    },
+    {
+      "pmid": "31307381",
+      "title": "Different dose regimes and administration methods of tranexamic acid in cardiac surgery: a meta-analysis of randomized trials.",
+      "journal": "BMC anesthesiology",
+      "date": "2019-07-15",
+      "authors": [
+        "Guo J",
+        "Shi J."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Background The efficacy of tranexamic acid (TXA) to reduce perioperative blood loss and allogeneic blood transfusion in cardiac surgeries has been proved in previous studies, but its adverse effects especially seizure has always been a problem of concern. This meta-analysis aims to provide information on the optimal dosage and delivery method which is effective with the least adverse outcomes. Methods We searched Cochrane Central Register of Controlled Trials, MEDLINE and EMBASE for all relevant articles published before 2018/12/31. Inclusion criteria were adult patients undergoing elective heart surgeries, and only randomized control trials comparing TXA with placebo were considered. Two authors independently assessed trial quality and extracted relevant data. Results We included 49 studies with 10,591 patients into analysis. TXA significantly reduced transfusion rate (RR 0.71, 95% CI 0.65 to 0.78, P&lt;0.00001). The overall transfusion rate was 35%(1573/4477) for patients using TXA and 49%(2190/4408) for patients in the control group. Peri-operative blood loss (MD − 246.98 ml, 95% CI − 287.89 to − 206.06 ml, P&lt;0.00001) and re-operation rate (RR 0.62, 95% CI 0.49 to 0.79, P&lt;0.0001) were also reduced significantly. TXA usage did not increase risk of mortality, myocardial infarction, stroke, pulmonary embolism and renal dysfunction, but was associated with a significantly increase in seizure attack (RR 3.21, 95% CI 1.04 to 9.90, P = 0.04).The overall rate of seizure attack was 0.62%(21/3378) for patients using TXA and 0.15%(5/3406) for patients in the control group. In subgroup analysis, TXA was effective for both on-pump and off-pump surgeries. Topical application didn’t reduce the need for transfusion requirement, while intravenous delivery no matter as bolus injection alone or bolus plus continuous infusion were effective. Intravenous high-dose TXA didn’t further decrease transfusion rate compared with low-dose regimen, and increased the risk of seizure by 4.83 times. No patients in the low-dose group had seizure attack. Conclusions TXA was effective in reducing transfusion requirement in all kinds of cardiac surgeries. Low-dose intravenous infusion was the most preferable delivery method which was as effective as high-dose regimen in reducing transfusion rate without increasing the risk of seizure. Electronic supplementary material The online version of this article (10.1186/s12871-019-0772-0) contains supplementary material, which is available to authorized users.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 475.0
+    },
+    {
+      "pmid": "9390590",
+      "title": "Drugs to minimize perioperative blood loss in cardiac surgery: meta-analyses using perioperative blood transfusion as the outcome. The International Study of Peri-operative Transfusion (ISPOT) Investigators.",
+      "journal": "Anesthesia and analgesia",
+      "date": "1997-12-01",
+      "authors": [
+        "Laupacis A",
+        "Fergusson D."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Unlabelled</h4>Concern about the side effects of allogeneic red blood cell transfusion has increased interest in methods of minimizing perioperative transfusion. We performed meta-analyses of randomized trials evaluating the efficacy and safety of aprotinin, desmopressin, tranexamic acid, and epsilon-aminocaproic acid in cardiac surgery. All identified randomized trials in cardiac surgery were included in the meta-analyses. The primary outcome was the proportion of patients who received at least one perioperative allogeneic red cell transfusion. Sixty studies were included in the meta-analyses. The largest number of patients (5808) was available for the meta-analysis of aprotinin, which significantly decreased exposure to allogeneic blood (odds ratio [OR] 0.31, 95% confidence interval [CI] 0.25-0.39; P < 0.0001). The efficacy of aprotinin was not significantly different regardless of the type of surgery (primary or reoperation), aspirin use, or reported transfusion threshold. The use of aprotinin was associated with a significant decrease in the need for reoperation because of bleeding (OR 0.44, 95% CI 0.27-0.73; P = 0.001). Desmopressin was not effective, with an OR of 0.98 (95% CI 0.64-1.50; P = 0.92). Tranexamic acid significantly decreased the proportion of patients transfused (OR 0.50, 95% CI 0.34-0.76; P = 0.0009). Epsilon-aminocaproic acid did not have a statistically significant effect on the proportion of patients transfused (OR 0.20, 95% CI 0.04-1.12; P = 0.07). There were not enough patients to exclude a small but clinically important increase in myocardial infarction or other side effects for any of the medications. We conclude that aprotinin and tranexamic acid, but not desmopressin, decrease the number of patients exposed to perioperative allogeneic transfusions in association with cardiac surgery.<h4>Implications</h4>Aprotinin, desmopressin, tranexamic acid, and epsilon-aminocaproic acid are used in cardiac surgery in an attempt to decrease the proportion of patients requiring blood transfusion. This meta-analysis of all published randomized trials provides a good estimate of the efficacy of these medications and is useful in guiding clinical practice. We conclude that aprotinin and tranexamic acid, but not desmopressin, decrease the exposure of patients to allogeneic blood transfusion perioperatively in relationship to cardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 475.0
+    },
+    {
+      "pmid": "41087930",
+      "title": "Efficacy and safety of tranexamic acid in cardiac surgery: a systematic review and network meta-analysis.",
+      "journal": "BMC anesthesiology",
+      "date": "2025-10-14",
+      "authors": [
+        "Pan X",
+        "Liang P."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background Tranexamic acid (TXA) is recommended for reducing blood loss and transfusion in cardiac surgery. However, there are concerns regarding the safety profile of TXA, especially its proconvulsant effects. We conducted this study to investigate the efficacy and safety of tranexamic acid in cardiac surgery. Methods We searched PubMed, Embase and Cochrane Central Register of Controlled Trials from inception to December 11, 2024. Randomised controlled trials assessed the hemostatic effects of TXA in cardiac surgery were included. Two authors independently selected studies and assessed the quality of eligible trials. The main endpoints were red blood cell transfusion and thrombotic outcomes. The results were calculated with pairwise and network meta-analysis. Results Data was provided by 18,141 participants from 64 trials. High-dose continuous (OR: 0.38, 95%CI: [0.31, 0.47]), low-dose continuous (OR: 0.44, 95%CI: [0.34, 0.56]), high-dose single (OR: 0.50, 95%CI: [0.43, 0.57]), and low-dose single (OR: 0.52, 95%CI: [0.40, 0.67]) TXA significantly reduce the rate of red blood cell transfusion. Furthermore, in high-risk patients, high-dose continuous administration further reduces transfusion risk compared to low-dose continuous administration (OR: 1.22, 95%CI: [1.01, 1.75]). Topical TXA does not significantly reduce the rate of red blood cell transfusion (OR: 0.80, 95%CI: [0.60, 1.07]); conversely, it is associated with a higher rate of red blood cell transfusion compared to intravenous administration. Both intravenous and topical TXA administration reduce postoperative blood loss. High-dose continuous administration further reduces the risk of reoperation (OR: 1.70, 95%CI: [1.03, 2.80]) and the need for fresh frozen plasma transfusion (OR: 1.33, 95%CI: [1.01, 1.74]) compared to low-dose continuous administration. Neither intravenous nor topical TXA increases the incidence of postoperative thrombotic complications. High-dose single administration is associated with a significantly increased risk of postoperative seizures (OR: 6.66, 95%CI: [1.85, 24.02]). Conclusions This meta-analysis further confirms that intravenous TXA administration, regardless of dose or administration regimen, significantly reduces postoperative blood loss and red blood cell transfusions in adult cardiac surgery, without increasing the incidence of serious adverse events except for seizures. Future studies should incorporate patient-specific factors, comorbidities, and bleeding risks to determine the optimal TXA dosing strategy that balances risks and benefits. Trial registration Our prespecified protocol was registered with PROSPERO (CRD42022380404). Supplementary Information The online version contains supplementary material available at 10.1186/s12871-025-03365-8. Keywords: Antifibrinolytic, Cardiac surgery, Tranexamic acid, Erythrocyte transfusion, Seizure, Fresh frozen plasma, Thromboembolic",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 465.0
+    },
+    {
+      "pmid": "31195987",
+      "title": "The safety and efficiency of intravenous administration of tranexamic acid in coronary artery bypass grafting (CABG): a meta-analysis of 28 randomized controlled trials.",
+      "journal": "BMC anesthesiology",
+      "date": "2019-06-14",
+      "authors": [
+        "Zhang Y",
+        "Chen G."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background The safety and efficiency of intravenous administration of tranexamic acid (TXA) in coronary artery bypass grafting (CABG) remains unconfirmed. Therefore, we conducted a meta-analysis on this topic. Methods We searched the Cochrane Central Register of Controlled Trials (CENTRAL), PUBMED and EMBASE for randomized controlled trials on the topic. The results of this work are synthetized and reported in accordance with the PRISMA statement. Results Twenty-eight studies met our inclusion criteria. TXA reduced the incidence of postoperative reoperation of bleeding (relative risk [RR], 0.46; 95% confidence interval [CI]; 0.31–0.68), the frequency of any allogeneic transfusion (RR, 0.64; 95% CI, 0.52–0.78) and the postoperative chest tube drainage in the first 24 h by 206 ml (95% CI − 248.23 to − 164.15). TXA did not significantly affect the incidence of postoperative cerebrovascular accident (RR, 0.93; 95%CI, 0.62–1.39), mortality (RR, 0.82; 95%CI, 0.53–1.28), myocardial infarction (RR, 0.90; 95%CI, 0.78–1.05), acute renal insufficiency (RR, 1.01; 95%CI, 0.77–1.32). However, it may increase the incidence of postoperative seizures (RR, 6.67; 95%CI, 1.77–25.20). Moreover, the subgroup analyses in on-pump and off-pump CABG, the sensitivity analyses in trials randomized more than 99 participants and sensitivity analyses that excluded the study with the largest number of participants further strengthened the above results. Conclusions TXA is effective to reduce reoperation for bleeding, blood loss and the need for allogeneic blood products in patients undergoing CABG without increasing prothrombotic complication. However, it may increase the risk of postoperative seizures. Electronic supplementary material The online version of this article (10.1186/s12871-019-0761-3) contains supplementary material, which is available to authorized users. Keywords: Coronary artery bypass, Postoperative complications, Tranexamic acid",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 465.0
+    },
+    {
+      "pmid": "36243576",
+      "title": "Tranexamic acid dose-response relationship for antifibrinolysis in postpartum haemorrhage during Caesarean delivery: TRACES, a double-blind, placebo-controlled, multicentre, dose-ranging biomarker study.",
+      "journal": "British journal of anaesthesia",
+      "date": "2022-10-13",
+      "authors": [
+        "Ducloy-Bouthors AS",
+        "TRACES working group."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Background The optimal dose of tranexamic acid to inhibit hyperfibrinolysis in postpartum haemorrhage is unclear. Tranexamic Acid to Reduce Blood Loss in Hemorrhagic Cesarean Delivery (TRACES) was a double-blind, placebo-controlled, randomised, multicentre dose-ranging study to determine the dose–effect relationship for two regimens of intravenous tranexamic acid vs placebo. Methods Women experiencing postpartum haemorrhage during Caesarean delivery were randomised to receive placebo ( n =60), tranexamic acid 0.5 g ( n =57), or tranexamic acid 1 g i.v. ( n =58). Biomarkers of fibrinolytic activation were assayed at five time points, with inhibition of hyperfibrinolysis defined as reductions in the increase over baseline in D-dimer and plasmin–antiplasmin levels and in the plasmin peak time. Results In the placebo group, hyperfibrinolysis was evidenced by a mean increase over baseline [95% confidence interval] of 93% [68–118] for D-dimer level at 120 min and 56% [25–87] for the plasmin–antiplasmin level at 30 min. A dose of tranexamic acid 1 g was associated with smaller increases over baseline (D-dimers: 38% [13–63] [ P =0.003 vs placebo]; plasmin–antiplasmin: –2% [–32 to 28] [ P =0.009 vs placebo]). A dose of tranexamic acid 0.5 g was less potent, with non-significant reductions (D-dimers: 58% [32–84] [ P =0.06 vs placebo]; plasmin–antiplasmin: 13% [18–43] [ P =0.051]). Although both tranexamic acid doses reduced the plasmin peak, reduction in plasmin peak time was significant only for the 1 g dose of tranexamic acid. Conclusions Fibrinolytic activation was significantly inhibited by a dose of intravenous tranexamic acid 1 g but not 0.5 g. Pharmacokinetic–pharmacodynamic modelling of these data might identify the best pharmacodynamic monitoring criteria and the optimal tranexamic acid dosing regimen for treatment of postpartum haemorrhage. Clinical trial registration NCT 02797119 .",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 435.0
+    },
+    {
+      "pmid": "26382761",
+      "title": "Efficacy and Safety of Antifibrinolytic Agents in Reducing Perioperative Blood Loss and Transfusion Requirements in Scoliosis Surgery: A Systematic Review and Meta-Analysis.",
+      "journal": "PloS one",
+      "date": "2015-09-18",
+      "authors": [
+        "Wang M",
+        "Jiang LS."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Background Routine use of antifibrinolytic agents in spine surgery is still an issue of debate. Objective To gather scientific evidence for the efficacy and safety of antifibrinolytic agents including aprotinin, tranexamic acid (TXA) and epsilon aminocaproic acid (EACA, traditionally known as Amicar) in reducing perioperative blood loss and transfusion requirements in scoliosis surgery. Methods We conducted a systematic review and meta-analysis for randomized controlled trials (RCTs), retrospective case-control studies, and retrospective cohort studies on the use of antifibrinolytic agents in scoliosis surgery by searching in the MEDLINE and EMBASE databases and the Cochrane Database of Systematic Reviews and Controlled Trials of papers published from January 1980 through July 2014. Safety of the antifibrinolytic agents was evaluated in all included studies, while efficacy was evaluated in RCTs. Results Eighteen papers with a total of 1,158 patients were eligible for inclusion in this study. Among them, 8 RCTs with 450 patients were included for evaluation of pharmacologic efficacy (1 RCT was excluded because of a lack of standard deviation data). Mean blood loss was reduced in patients with perioperative use of antifibrinolytic agents by 409.25 ml intraoperatively (95% confidence interval [CI], 196.57–621.94 ml), 250.30 ml postoperatively (95% CI, 35.31–465.30), and 601.40 ml overall (95% CI, 306.64–896.16 ml). The mean volume of blood transfusion was reduced by 474.98 ml (95% CI, 195.30–754.67 ml). The transfusion rate was 44.6% (108/242) in the patients with antifibrinolytic agents and 68.3% (142/208) in the patients with placebo. (OR 0.38; 95% CI; 0.25–0.58; P &lt;0.00001, I 2 = 9%). All studies were included for evaluation of safety, with a total of 8 adverse events reported overall (4 in the experimental group and 4 in the control group). Conclusion The systematic review and meta-analysis indicated that aprotinin, TXA, and EACA all significantly reduced perioperative blood loss and transfusion requirements in scoliosis surgery. There was no evidence that the use of antifibrinolytic agents was a risk factor for adverse events, especially thromboembolism, in scoliosis surgery. Results Description of Study The search identified 59 articles ( Fig 1 ), of which 27 were excluded. Excluded studies included case reports, reviews, critical articles, and articles that did not match the inclusion criteria. Of the remaining 32 articles, 12 were RCTs and 20 were retrospective studies. After a full text reading, 3 randomized controlled trials and 11 retrospective studies were further excluded because of incompatible protocol specifications, use of outcome measures that were not specified in the meta-analysis, inclusion of patients without scoliosis, no use of antifibrinolytic agents, or comparisons involving different doses of antifibrinolytic agent. 10.1371/journal.pone.0137886.g001 Fig 1 Flow diagram for study selection process in this meta-analysis. In total, 18 studies with 1,158 patients fitted the criteria and were included in the meta-analysis. Among them, there were 9 RCTs[ 17 – 25 ], 7 retrospective case-control studies[ 26 – 32 ], and 2 retrospective cohort studies[ 33 , 34 ]. One[ 17 ] of the 9 remaining RCTs lacked required data (standard deviation of blood loss and blood transfusion volume), thus 8 RCTs with 450 patients were included for evaluation of pharmacologic efficacy. All the 18 studies were included for evaluation of pharmacologic safety. Among these 18 studies, five reported the use of TXA, 4 reported EACA, 6 reported aprotinin, 1 reported both TXA and EACA, and 2 reported both TXA and aprotinin ( Table 1 ). 10.1371/journal.pone.0137886.t001 Table 1 Characteristics of the Studies Included. Author Year Age(E/C) Intervention Size (E/C) Dose(loading/ continuous infusion) Number of levels fused (E/C) Transfusion trigger Type Procedure Design Khoshhal 2003 14.5/14.1 aprotinin 43(15/28) 4mg/kg+1mg/kg/hr 10/10 Hgb &lt; 7g/dL or Hct &lt; 20% IS SF RCT Karapurkar 2002 12–25 aprotinin 49(24/25) 2*10^4 IU/kg+5*10^3 IU/kg/4hr / BEBL &lt; 90% or Hct &lt; 30% or Hgb &lt; 10g/dl KS SF RCT Lentschener 1999 46±9/51±11 aprotinin 72(35/37) 2*10^6 KIU/kg+5*10^5 KIU/kg/hr / Hct &lt; 26% AD SF RCT Cole 2003 13±4.7/12.2±3.8 aprotinin 44(21/23) 240mg/m2+56mg/m2/hr 14.5/12.2 Hgb &lt; 8.5 g/dl or Hct &lt; 27% NS SF RCT Tayyab 2008 47±15/41±15 aprotinin 82(41/41) 2*10^6KIU+5*10^5 KIU/hr 11.2/10.7 Hgb &lt; 7g/dL PS and SS SF nRCT Kasimian 2008 12.4/14.8 aprotinin 31(14/17) 2*10^5KIU/kg+5*10^4 KIU/kg/hr 14.4/15.3 Hct≤24% NS SF nRCT Xu 2012 19.1±3.2/20.4±3.1 TXA 40(20/20) 20mg/kg+10mg/kg/hr 12.7/13.1 Hgb &lt; 8g/dL AIS SF RCT Sethna 2005 13.6±1.8/14.0±2.0 TXA 44(23/21) 100mg/kg+10mg/kg/hr 14/13 Hct &lt; 25% PS and SS SF RCT Neilipovitz 2001 14.1±2.1/13.7±2.5 TXA 40(22/18) 10mg/kg+1mg/kg/hr 15 /14 Hgb &lt; 7g/dL PS and SS SF RCT Yagi 2012 15.2±2.9/15.5±3.0 TXA 106(43/63) 1g+100mg/hr 12.2/12.1 Hgb &lt; 7g/dL AIS SF nRCT Lykissas 2013 14.7(12–19)/13.5(11–16) TXA 49(25/24) 100mg+10mg/hr 10.7/12.6 Hgb &lt; 7g/dL AIS SF nRCT Pineda 2004 13.5±1.6/14.5±1.3 EACA 36(19/17) 100mg/kg+10mg/kg/hr 12/12.1 Hgb &lt; 7g/dL IS SF RCT Thompson 2008 14.0±2.4/12.3±2.8 EACA 96(62/34) 100mg/kg+10mg/kg/hr 15/14 Hgb &lt; 7g/dL NS SF nRCT Pineda 2001 14.5±1.6/13.3±1.3 EACA 59(28/31) 100mg/kg+10mg/kg/hr 12/12 Hgb &lt; 7g/dL IS SF nRCT Lorio 2013 N/A EACA 33(17/16) 100mg/kg+10mg/kg/hr / Hgb &lt; 7g/dL AIS SF with PO nRCT Verma 2014 15.3±2.4,14.6±1.9/15.0±2.4 TXAEACA 125(36,42/47) TXA:10mg/kg +1mg/kg/hrEACA:100mg/kg +10mg/kg/hr 8.8,9.5/9.0 I: Hct &lt; 25% P: Hct &lt; 22% AIS SA RCT Newton 2012 13.7 aprotininTXA 136(30,42/64) / / / PS and SS SF with VCR nRCT Khurana ★ 2012 26.3 aprotininTXA 73(28,26/17) Aprotinin:1*10^6 KIU +5*10^5 KIU/hrTXA:2g+N/A 12.3,11.9/7.1 / AD SF nRCT E/C, experimental group/control group; TXA, tranexamic acid; EACA, epsilon aminocaproic acid; I, intraoperative; P, postoperative; Hct, hematocrit; PS, primary scoliosis; SS, secondary scoliosis; AD, adult deformity; NS, neuromuscular scoliosis; AIS, adolescent idiopathic scoliosis; IS, idiopathic scoliosis; KS, Kypho scoliosis; SF, spinal fusion; VCR, vertebral column resection; PO, Ponte osteotomy; BEBL, baseline estimated blood volume; RCT, randomized control trial; nRCT, non-randomized control trial. ★the operative approach in this study was either anterior, or posterior, or combined. In the others, all posterior Discussion Effective control of perioperative blood loss helps increase the patient’s tolerance to surgery, decrease postoperative infection rate, reduce the probability of blood transfusion, shorten hospital stays and decrease medical cost. This meta-analysis indicated that the antifibrinolytic agents aprotinin, TXA and EACA could reduce perioperative blood loss and blood transfusion volume effectively in scoliosis surgery. There was no evidence that use of these agents was a risk factor to increase the incidence of adverse events. TXA and aprotinin appeared more effective than EACA according to the results of this analysis. Fibrinolysis is the liquefied process of fibrin formed in blood clotting. It consists of two elementary steps, activation of plasminogen and degradation of fibrin[ 35 – 37 ]. Aprotinin was first extracted from bovine tissues and is now also produced by recombinant technology as a serine proteinase inhibitor[ 38 , 39 ]. The drug was a pioneering antifibrinolytic agent used in surgery. It was first used in the 1960s to reduce blood loss in major cardiac surgery involving cardiopulmonary bypass[ 17 ]. In 1993, aprotinin was approved by the Food and Drug Administration (FDA) as a hemostatic and was widely used in coronary artery bypass graft procedures. However, in 2006, Mangano et al[ 40 ] performed an observational study involving 4,374 patients undergoing revascularization which investigated adverse events associated with aprotinin in cardiac surgery. This study indicated that the use of a",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 430.0
+    },
+    {
+      "pmid": "38226724",
+      "title": "Pharmacological interventions for the prevention of bleeding in people undergoing elective hip or knee surgery: a systematic review and network meta-analysis.",
+      "journal": "The Cochrane database of systematic reviews",
+      "date": "2024-01-16",
+      "authors": [
+        "Gibbs VN",
+        "Estcourt LJ."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background Hip and knee replacement surgery is a well‐established means of improving quality of life, but is associated with a significant risk of bleeding. One‐third of people are estimated to be anaemic before hip or knee replacement surgery; coupled with the blood lost during surgery, up to 90% of individuals are anaemic postoperatively. As a result, people undergoing orthopaedic surgery receive 3.9% of all packed red blood cell transfusions in the UK. Bleeding and the need for allogeneic blood transfusions has been shown to increase the risk of surgical site infection and mortality, and is associated with an increased duration of hospital stay and costs associated with surgery. Reducing blood loss during surgery may reduce the risk of allogeneic blood transfusion, reduce costs and improve outcomes following surgery. Several pharmacological interventions are available and currently employed as part of routine clinical care. Objectives To determine the relative efficacy of pharmacological interventions for preventing blood loss in elective primary or revision hip or knee replacement, and to identify optimal administration of interventions regarding timing, dose and route, using network meta‐analysis (NMA) methodology. Search methods We searched the following databases for randomised controlled trials (RCTs) and systematic reviews, from inception to 18 October 2022: CENTRAL (the Cochrane Library), MEDLINE (Ovid), Embase (Ovid), CINAHL (EBSCO host ), Transfusion Evidence Library (Evidentia), ClinicalTrials.gov and WHO International Clinical Trials Registry Platform (ICTRP). Selection criteria We included RCTs of people undergoing elective hip or knee surgery only. We excluded non‐elective or emergency procedures, and studies published since 2010 that had not been prospectively registered (Cochrane Injuries policy). There were no restrictions on gender, ethnicity or age (adults only). We excluded studies that used standard of care as the comparator. Eligible interventions included: antifibrinolytics (tranexamic acid (TXA), aprotinin, epsilon‐aminocaproic acid (EACA)), desmopressin, factor VIIa and XIII, fibrinogen, fibrin sealants and non‐fibrin sealants. Data collection and analysis We performed the review according to standard Cochrane methodology. Two authors independently assessed trial eligibility and risk of bias, and extracted data. We assessed the certainty of the evidence using CINeMA. We presented direct (pairwise) results using RevMan Web and performed the NMA using BUGSnet. We were interested in the following primary outcomes: need for allogenic blood transfusion (up to 30 days) and all‐cause mortality (deaths occurring up to 30 days after the operation), and the following secondary outcomes: mean number of transfusion episodes per person (up to 30 days), re‐operation due to bleeding (within seven days), length of hospital stay and adverse events related to the intervention received. Main results We included a total of 102 studies. Twelve studies did not report the number of included participants; the other 90 studies included 8418 participants. Trials included more women (64%) than men (36%). In the NMA for allogeneic blood transfusion, we included 47 studies (4398 participants). Most studies examined TXA (58 arms, 56%). We found that TXA, given intra‐articularly and orally at a total dose of greater than 3 g pre‐incision, intraoperatively and postoperatively, ranked the highest, with an anticipated absolute effect of 147 fewer blood transfusions per 1000 people (150 fewer to 104 fewer) (53% chance of ranking 1st) within the NMA (risk ratio (RR) 0.02, 95% credible interval (CrI) 0 to 0.31; moderate‐certainty evidence). This was followed by TXA given orally at a total dose of 3 g pre‐incision and postoperatively (RR 0.06, 95% CrI 0.00 to 1.34; low‐certainty evidence) and TXA given intravenously and orally at a total dose of greater than 3 g intraoperatively and postoperatively (RR 0.10, 95% CrI 0.02 to 0.55; low‐certainty evidence). Aprotinin (RR 0.59, 95% CrI 0.36 to 0.96; low‐certainty evidence), topical fibrin (RR 0.86, CrI 0.25 to 2.93; very low‐certainty evidence) and EACA (RR 0.60, 95% CrI 0.29 to 1.27; very low‐certainty evidence) were not shown to be as effective compared with TXA at reducing the risk of blood transfusion. We were unable to perform an NMA for our primary outcome all‐cause mortality within 30 days of surgery due to the large number of studies with zero events, or because the outcome was not reported. In the NMA for deep vein thrombosis (DVT), we included 19 studies (2395 participants). Most studies examined TXA (27 arms, 64%). No studies assessed desmopressin, EACA or topical fibrin. We found that TXA given intravenously and orally at a total dose of greater than 3 g intraoperatively and postoperatively ranked the highest, with an anticipated absolute effect of 67 fewer DVTs per 1000 people (67 fewer to 34 more) (26% chance of ranking first) within the NMA (RR 0.16, 95% CrI 0.02 to 1.43; low‐certainty evidence). This was followed by TXA given intravenously and intra‐articularly at a total dose of 2 g pre‐incision and intraoperatively (RR 0.21, 95% CrI 0.00 to 9.12; low‐certainty evidence) and TXA given intravenously and intra‐articularly, total dose greater than 3 g pre‐incision, intraoperatively and postoperatively (RR 0.13, 95% CrI 0.01 to 3.11; low‐certainty evidence). Aprotinin was not shown to be as effective compared with TXA (RR 0.67, 95% CrI 0.28 to 1.62; very low‐certainty evidence). We were unable to perform an NMA for our secondary outcomes pulmonary embolism, myocardial infarction and CVA (stroke) within 30 days, mean number of transfusion episodes per person (up to 30 days), re‐operation due to bleeding (within seven days), or length of hospital stay, due to the large number of studies with zero events, or because the outcome was not reported by enough studies to build a network. There are 30 ongoing trials planning to recruit 3776 participants, the majority examining TXA (26 trials). Authors' conclusions We found that of all the interventions studied, TXA is probably the most effective intervention for preventing bleeding in people undergoing hip or knee replacement surgery. Aprotinin and EACA may not be as effective as TXA at preventing the need for allogeneic blood transfusion. We were not able to draw strong conclusions on the optimal dose, route and timing of administration of TXA. We found that TXA given at higher doses tended to rank higher in the treatment hierarchy, and we also found that it may be more beneficial to use a mixed route of administration (oral and intra‐articular, oral and intravenous, or intravenous and intra‐articular). Oral administration may be as effective as intravenous administration of TXA. We found little to no evidence of harm associated with higher doses of tranexamic acid in the risk of DVT. However, we are not able to definitively draw these conclusions based on the trials included within this review.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 430.0
+    },
+    {
+      "pmid": "37272509",
+      "title": "Pharmacological interventions for the prevention of bleeding in people undergoing definitive fixation or joint replacement for hip, pelvic and long bone fractures.",
+      "journal": "The Cochrane database of systematic reviews",
+      "date": "2023-06-05",
+      "authors": [
+        "Gibbs VN",
+        "Estcourt LJ."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background Pelvic, hip, and long bone fractures can result in significant bleeding at the time of injury, with further blood loss if they are treated with surgical fixation. People undergoing surgery are therefore at risk of requiring a blood transfusion and may be at risk of peri‐operative anaemia. Pharmacological interventions for blood conservation may reduce the risk of requiring an allogeneic blood transfusion and associated complications. Objectives To assess the effectiveness of different pharmacological interventions for reducing blood loss in definitive surgical fixation of the hip, pelvic, and long bones. Search methods We used a predefined search strategy to search CENTRAL, MEDLINE, PubMed, Embase, CINAHL, Transfusion Evidence Library, ClinicalTrials.gov, and the WHO International Clinical Trials Registry Platform (ICTRP) from inception to 7 April 2022, without restrictions on language, year, or publication status. We handsearched reference lists of included trials to identify further relevant trials. We contacted authors of ongoing trials to acquire any unpublished data. Selection criteria We included randomised controlled trials (RCTs) of people who underwent trauma (non‐elective) surgery for definitive fixation of hip, pelvic, and long bone (pelvis, tibia, femur, humerus, radius, ulna and clavicle) fractures only. There were no restrictions on gender, ethnicity, or age. We excluded planned (elective) procedures (e.g. scheduled total hip arthroplasty), and studies published since 2010 that had not been prospectively registered. Eligible interventions included: antifibrinolytics (tranexamic acid, aprotinin, epsilon‐aminocaproic acid), desmopressin, factor VIIa and XIII, fibrinogen, fibrin sealants, and non‐fibrin sealants. Data collection and analysis Two review authors independently assessed trial eligibility and risk of bias, and extracted data. We assessed the certainty of the evidence using GRADE. We did not perform a network meta‐analysis due to lack of data. Main results We included 13 RCTs (929 participants), published between 2005 and 2021. Three trials did not report any of our predefined outcomes and so were not included in quantitative analyses (all were tranexamic acid versus placebo). We identified three comparisons of interest: intravenous tranexamic acid versus placebo; topical tranexamic acid versus placebo; and recombinant factor VIIa versus placebo. We rated the certainty of evidence as very low to low across all outcomes. Comparison 1. Intravenous tranexamic acid versus placebo Intravenous tranexamic acid compared to placebo may reduce the risk of requiring an allogeneic blood transfusion up to 30 days (RR 0.48, 95% CI 0.34 to 0.69; 6 RCTs, 457 participants; low‐certainty evidence) and may result in little to no difference in all‐cause mortality (Peto odds ratio (Peto OR) 0.38, 95% CI 0.05 to 2.77; 2 RCTs, 147 participants; low‐certainty evidence). It may result in little to no difference in risk of participants experiencing myocardial infarction (risk difference (RD) 0.00, 95% CI −0.03 to 0.03; 2 RCTs, 199 participants; low‐certainty evidence), and cerebrovascular accident/stroke (RD 0.00, 95% CI −0.02 to 0.02; 3 RCTs, 324 participants; low‐certainty evidence). We are uncertain if there is a difference between groups for risk of deep vein thrombosis (Peto OR 2.15, 95% CI 0.22 to 21.35; 4 RCTs, 329 participants, very low‐certainty evidence), pulmonary embolism (Peto OR 1.08, 95% CI 0.07 to 17.66; 4 RCTs, 329 participants; very low‐certainty evidence), and suspected serious drug reactions (RD 0.00, 95% CI −0.03 to 0.03; 2 RCTs, 185 participants; very low‐certainty evidence). No data were available for number of red blood cell units transfused, reoperation, or acute transfusion reaction. We downgraded the certainty of the evidence for imprecision (wide confidence intervals around the estimate and small sample size, particularly for rare events), and risk of bias (unclear or high risk methods of blinding and allocation concealment in the assessment of subjective measures), and upgraded the evidence for transfusion requirement for a large effect. Comparison 2. Topical tranexamic acid versus placebo We are uncertain if there is a difference between topical tranexamic acid and placebo for risk of requiring an allogeneic blood transfusion (RR 0.31, 95% CI 0.08 to 1.22; 2 RCTs, 101 participants), all‐cause mortality (RD 0.00, 95% CI −0.10 to 0.10; 1 RCT, 36 participants), risk of participants experiencing myocardial infarction (Peto OR 0.15, 95% CI 0.00 to 7.62; 1 RCT, 36 participants), cerebrovascular accident/stroke (RD 0.00, 95% CI −0.06 to 0.06; 1 RCT, 65 participants); and deep vein thrombosis (Peto OR 1.11, 95% CI 0.07 to 17.77; 2 RCTs, 101 participants). All outcomes reported were very low‐certainty evidence. No data were available for number of red blood cell units transfused, reoperation, incidence of pulmonary embolism, acute transfusion reaction, or suspected serious drug reactions. We downgraded the certainty of the evidence for imprecision (wide confidence intervals around the estimate and small sample size, particularly for rare events), inconsistency (moderate heterogeneity), and risk of bias (unclear or high risk methods of blinding and allocation concealment in the assessment of subjective measures, and high risk of attrition and reporting biases in one trial). Comparison 3. Recombinant factor VIIa versus placebo Only one RCT of 48 participants reported data for recombinant factor VIIa versus placebo, so we have not presented the results here. Authors' conclusions We cannot draw conclusions from the current evidence due to lack of data. Most published studies included in our analyses assessed the use of tranexamic acid (compared to placebo, or using different routes of administration). We identified 27 prospectively registered ongoing RCTs (total target recruitment of 4177 participants by end of 2023). The ongoing trials create six new comparisons: tranexamic acid (tablet + injection) versus placebo; intravenous tranexamic acid versus oral tranexamic acid; topical tranexamic acid versus oral tranexamic acid; different intravenous tranexamic acid dosing regimes; topical tranexamic acid versus topical fibrin glue; and fibrinogen (injection) versus placebo. Keywords: Humans; Arthroplasty, Replacement; Fibrinogen; Fractures, Bone; Fractures, Bone/surgery; Hemorrhage; Hemorrhage/chemically induced; Hemorrhage/prevention &amp; control; Hemostatics; Hemostatics/therapeutic use; Myocardial Infarction; Myocardial Infarction/drug therapy; Pulmonary Embolism; Stroke; Stroke/drug therapy; Tranexamic Acid; Tranexamic Acid/therapeutic use; Transfusion Reaction; Venous Thrombosis; Venous Thrombosis/drug therapy",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 430.0
+    },
+    {
+      "pmid": "33446219",
+      "title": "The efficacy and safety of high-dose tranexamic acid in adolescent idiopathic scoliosis: a meta-analysis.",
+      "journal": "Journal of orthopaedic surgery and research",
+      "date": "2021-01-14",
+      "authors": [
+        "Shrestha IK",
+        "Tao JP."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background This study aimed to evaluate the efficacy and safety of using high-dose intravenous tranexamic acid (TXA) to reduce blood loss in idiopathic scoliosis surgery. Methods This study was a meta-analysis, which consisted of retrospective cohort studies (RCSs) and randomized control trials (RCTs) found by searching electronic databases, namely PubMed, Web of Science, The Cochrane Central Register of Controlled Trials (CENTRAL), and the Google Scholar Database, dating from 1960 to 2019. The points of interest included total blood loss, a need for transfusion and transfusion criteria, surgery time, and the evidence of intraoperative and postoperative complications, such as seizures or thromboembolic events. The weighted mean differences (WMD) and 95% confidence interval (CI) of blood loss in the TXA intervention group compared to the control or placebo group were extracted and combined using the random effects model. Results In this meta-analysis, there was a total of three RCSs and two RCTs, which involved 334 patients. The results showed that blood loss is significantly reduced, with a weighted mean difference in the TXA group (WMD = − 525.14, P = 0.0000, CI ranged from − 839.83, − 210.44, I 2 = 82%). Heterogeneity was assessed using the random effects model. Conclusions A high dose of intravenous TXA reduced blood loss during adolescent idiopathic scoliosis surgery and did not lead to any significant thromboembolic event. Therefore, a high dose appears to be effective and safe for adolescent idiopathic scoliosis surgery. However, more high-quality research based on larger randomized controlled trials is still needed. Keywords: Scoliosis surgery, Posterior spinal fusion, Tranexamic acid, Blood loss, Thromboembolic event",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 430.0
+    },
+    {
+      "pmid": "32563378",
+      "title": "Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial.",
+      "journal": "Lancet (London, England)",
+      "date": "2020-06-01",
+      "authors": [
+        "HALT-IT Trial Collaborators."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Summary Background Tranexamic acid reduces surgical bleeding and reduces death due to bleeding in patients with trauma. Meta-analyses of small trials show that tranexamic acid might decrease deaths from gastrointestinal bleeding. We aimed to assess the effects of tranexamic acid in patients with gastrointestinal bleeding. Methods We did an international, multicentre, randomised, placebo-controlled trial in 164 hospitals in 15 countries. Patients were enrolled if the responsible clinician was uncertain whether to use tranexamic acid, were aged above the minimum age considered an adult in their country (either aged 16 years and older or aged 18 years and older), and had significant (defined as at risk of bleeding to death) upper or lower gastrointestinal bleeding. Patients were randomly assigned by selection of a numbered treatment pack from a box containing eight packs that were identical apart from the pack number. Patients received either a loading dose of 1 g tranexamic acid, which was added to 100 mL infusion bag of 0·9% sodium chloride and infused by slow intravenous injection over 10 min, followed by a maintenance dose of 3 g tranexamic acid added to 1 L of any isotonic intravenous solution and infused at 125 mg/h for 24 h, or placebo (sodium chloride 0·9%). Patients, caregivers, and those assessing outcomes were masked to allocation. The primary outcome was death due to bleeding within 5 days of randomisation; analysis excluded patients who received neither dose of the allocated treatment and those for whom outcome data on death were unavailable. This trial was registered with Current Controlled Trials, ISRCTN11225767, and ClinicalTrials.gov , NCT01658124 . Findings Between July 4, 2013, and June 21, 2019, we randomly allocated 12 009 patients to receive tranexamic acid (5994, 49·9%) or matching placebo (6015, 50·1%), of whom 11 952 (99·5%) received the first dose of the allocated treatment. Death due to bleeding within 5 days of randomisation occurred in 222 (4%) of 5956 patients in the tranexamic acid group and in 226 (4%) of 5981 patients in the placebo group (risk ratio [RR] 0·99, 95% CI 0·82–1·18). Arterial thromboembolic events (myocardial infarction or stroke) were similar in the tranexamic acid group and placebo group (42 [0·7%] of 5952 vs 46 [0·8%] of 5977; 0·92; 0·60 to 1·39). Venous thromboembolic events (deep vein thrombosis or pulmonary embolism) were higher in tranexamic acid group than in the placebo group (48 [0·8%] of 5952 vs 26 [0·4%] of 5977; RR 1·85; 95% CI 1·15 to 2·98). Interpretation We found that tranexamic acid did not reduce death from gastrointestinal bleeding. On the basis of our results, tranexamic acid should not be used for the treatment of gastrointestinal bleeding outside the context of a randomised trial. Funding UK National Institute for Health Research Health Technology Assessment Programme.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 430.0
+    },
+    {
+      "pmid": "21496253",
+      "title": "High-dose tranexamic acid reduces blood loss in postpartum haemorrhage.",
+      "journal": "Critical care (London, England)",
+      "date": "2011-04-15",
+      "authors": [
+        "Ducloy-Bouthors AS",
+        "Susen S."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Introduction Our purpose in conducting this study was to determine whether administration of high-dose tranexamic acid (TA) at the time of diagnosis of postpartum haemorrhage (PPH) could reduce blood loss. Methods This was a randomised, controlled, multicentred, open-label trial. Women with PPH &gt;800 mL following vaginal delivery were randomly assigned to receive TA (loading dose 4 g over 1 hour, then infusion of 1 g/hour over 6 hours) or not. In both groups, packed red blood cells (PRBCs) and colloids could be used according to French guidelines. The use of additional procoagulant treatments was permitted only in cases involving intractable bleeding. The primary objective was to assess the efficacy of TA in the reduction of blood loss in women with PPH, and the secondary objectives were the effect of TA on PPH duration, anaemia, transfusion and the need for invasive procedures. Results A total of 144 women fully completed the protocol (72 in each group). Blood loss between enrolment and 6 hours later was significantly lower in the TA group than in the control group (median, 173 mL; first to third quartiles, 59 to 377) than in controls (221 mL; first to third quartiles 105 to 564) ( P = 0.041). In the TA group, bleeding duration was shorter and progression to severe PPH and PRBC transfusion was less frequent than in controls ( P &lt; 0.03). Invasive procedures were performed in four women in the TA group and in seven controls ( P = NS). PPH stopped after only uterotonics and PRBC transfusion in 93% of women in the TA group versus 79% of controls ( P = 0.016). Mild, transient adverse manifestations occurred more often in the TA group than in the control group ( P = 0.03). Conclusions This study is the first to demonstrate that high-dose TA can reduce blood loss and maternal morbidity in women with PPH. Although the study was not adequately powered to address safety issues, the observed side effects were mild and transient. A larger international study is needed to investigate whether TA can decrease the need for invasive procedures and reduce maternal morbidity in women with PPH. Trial registration Controlled Trials ISRCTN09968140 .",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "23657623",
+      "title": "Is tranexamic acid effective and safe in spinal surgery? A meta-analysis of randomized controlled trials.",
+      "journal": "European spine journal : official publication of the European Spine Society, the European Spinal Deformity Society, and the European Section of the Cervical Spine Research Society",
+      "date": "2013-05-09",
+      "authors": [
+        "Li ZJ",
+        "Ma XL."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Purpose</h4>The present meta-analysis aimed at assessing the effectiveness and safety of tranexamic acid (TXA) in reducing blood loss and transfusion in spinal surgery.<h4>Methods</h4>Systematic searches of all studies published through March 2012 were identified from PubMed, EMBase, Cochrane library, Science Direct, and other databases. Only randomized controlled trials (RCTs) were included in the present study. Two independent reviewers searched and assessed the literature. Mean difference (MD) of blood loss and blood transfusions, risk ratios (RR) of transfusion rate and of deep vein thrombosis rate in the TXA-treated group versus placebo group were pooled throughout the study. The meta-analysis was conducted by RevMan 5.1 software.<h4>Results</h4>Six placebo-controlled RCTs encompassing 411 patients met the inclusion criteria for our meta-analysis. The use of TXA significantly reduced both total blood loss [MD = -285.35, 95 % CI (-507.03 to -63.67), P = 0.01] as well as the number of patients requiring blood transfusion [RR = 0.71, 95 % CI (0.54-0.92), P = 0.01]. None of the patients in the treatment group had deep-vein thrombosis (DVT) or pulmonary embolism.<h4>Conclusions</h4>Intravenous use of TXA for patients undergoing spinal surgery is effective and safe. It reduces total blood loss and the need for blood transfusion, particularly in the using of high dosage of TXA (≥ 15 mg/kg), yet does not increase the risk of postoperative DVT. Due to the limitation of the quality of the evidence currently available, high-quality RCTs are required.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "19050037",
+      "title": "The safety of aprotinin and lysine-derived antifibrinolytic drugs in cardiac surgery: a meta-analysis.",
+      "journal": "CMAJ : Canadian Medical Association journal = journal de l'Association medicale canadienne",
+      "date": "2008-12-02",
+      "authors": [
+        "Henry D",
+        "Laupacis A."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Because of recent concerns about the safety of aprotinin, we updated our 2007 Cochrane review that compared the relative benefits and risks of aprotinin and the lysine analogues tranexamic acid and epsilon aminocaproic acid.<h4>Methods</h4>We searched electronic databases, including CENTRAL, MEDLINE, EMBASE, Google and Google Scholar for trials of antifibrinolytic drugs used in adults scheduled for cardiac surgery. Searches were updated to January 2008. By comparing aprotinin and the 2 lysine analogues to control, we derived indirect head-to-head comparisons of aprotinin to the other drugs. We derived direct estimates of risks and benefits by pooling estimates from head-to-head trials of aprotinin and tranexamic acid or epsilon aminocaproic acid.<h4>Results</h4>For indirect estimates, we identified 49 trials involving 182 deaths among 7439 participants. The summary relative risk (RR) for death with aprotinin versus placebo was 0.93 (95% confidence interval [CI] 0.69-1.25). In the 19 trials that included tranexamic acid, there were 24 deaths among 1802 participants. The summary RR was 0.55 (95% CI 0.24-1.25). From the risk estimates derived for individual drugs, we calculated an indirect summary RR of death with use of aprotinin versus tranexamic acid of 1.69 (95% CI 0.70-4.10). To calculate direct estimates of death for aprotinin versus tranexamic acid, we identified 13 trials with 107 deaths among 3537 participants. The summary RR was 1.43 (95% CI 0.98-2.08). Among the 1840 participants, the calculated estimates of death for aprotinin compared directly to epsilon aminocaproic acid was 1.49 (95% CI 0.98-2.28). We found no evidence of an increased risk of myocardial infarction with use of aprotinin compared with the lysine analogues in either direct or indirect analyses. Compared with placebo or no treatment, all 3 drugs were effective in reducing the need for red blood cell transfusion. The RR of transfusion with use of aprotinin was 0.66 (95% CI 0.61-0.72). The RR of transfusion was 0.70 (95% CI 0.61-0.80) for tranexamic acid, and it was 0.75 (95% CI 0.58-0.96) for use of epsilon aminocaproic acid. Aprotinin was also effective in reducing the need for re-operation because of bleeding (RR 0.48, 95% CI 0.34-0.67).<h4>Interpretation</h4>The risk of death tended to be consistently higher with use of aprotinin than with use of lysine analogues. Aprotinin had no clear advantages to offset these harms. Either tranexamic acid or epsilon aminocaproic acid should be recommended to prevent bleeding after cardiac surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "29337665",
+      "title": "Safety of intravenous tranexamic acid in patients undergoing majororthopaedic surgery: a meta-analysis of randomised controlled trials.",
+      "journal": "Blood transfusion = Trasfusione del sangue",
+      "date": "2018-01-01",
+      "authors": [
+        "Franchini M",
+        "Liumbruno GM."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Among the various pharmacological options to decrease peri-operative bleeding, tranexamic acid appears to be one of the most interesting. Several trials have consistently documented the efficacy of this synthetic drug in reducing the risk of blood loss and the need for allogeneic blood transfusion in patients undergoing total hip and knee arthroplasty. The safety of intravenous tranexamic acid in major orthopaedic surgery, particularly regarding the risk of venous thromboembolism, was systematically analysed in this review. A systematic search of the literature identified 73 randomised controlled trials involving 4,174 patients and 2,779 controls. The raw overall incidence of venous thromboembolism was 2.1% in patients who received intravenous tranexamic acid and 2.0% in controls. A meta-analytic pooling showed that the risk of venous thromboembolism in tranexamic acid-treated patients was not significantly different from that of controls (risk difference: 0.01%, 95% confidence interval [CI]: -0.05%, 0.07%; risk ratio: 1.067, 95% CI: 0.760-1.496). Other severe drug-related adverse events occurred very rarely (0.1%). In conclusion, the results of this systematic review and meta-analysis show that intravenous tranexamic acid is a safe pharmacological treatment to reduce blood loss and transfusion requirements in patients undergoing major orthopaedic surgery.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "23881695",
+      "title": "Topical application of tranexamic acid for the reduction of bleeding.",
+      "journal": "The Cochrane database of systematic reviews",
+      "date": "2013-07-23",
+      "authors": [
+        "Ker K",
+        "Roberts I."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Intravenous tranexamic acid reduces bleeding in surgery, however, its effect on the risk of thromboembolic events is uncertain and an increased risk remains a theoretical concern. Because there is less systemic absorption following topical administration, the direct application of tranexamic acid to the bleeding surface has the potential to reduce bleeding with minimal systemic effects.<h4>Objectives</h4>To assess the effects of the topical administration of tranexamic acid in the control of bleeding.<h4>Search methods</h4>We searched the Cochrane Injuries Group Specialised Register; Cochrane Central Register of Controlled Trials (CENTRAL) in The Cochrane Library; Ovid MEDLINE®, Ovid MEDLINE® In-Process & Other Non-Indexed Citations, Ovid MEDLINE® Daily and Ovid OLDMEDLINE®; Embase Classic + Embase (OvidSP); PubMed and ISI Web of Science (including Science Citation Index Expanded and Social Science Citation Index (SCI-EXPANDED & CPCI-S)). We also searched online trials registers to identify ongoing or unpublished trials. The search was run on the 31st May 2013.<h4>Selection criteria</h4>Randomised controlled trials comparing topical tranexamic acid with no topical tranexamic acid or placebo in bleeding patients.<h4>Data collection and analysis</h4>Two authors examined the titles and abstracts of citations from the electronic databases for eligibility. Two authors extracted the data and assessed the risk of bias for each trial. Outcome measures of interest were blood loss, mortality, thromboembolic events (myocardial infarction, stroke, deep vein thrombosis and pulmonary embolism) and receipt of a blood transfusion.<h4>Main results</h4>We included 29 trials involving 2612 participants. Twenty-eight trials involved patients undergoing surgery and one trial involved patients with epistaxis (nosebleed). Tranexamic acid (TXA) reduced blood loss by 29% (pooled ratio 0.71, 95% confidence interval (CI) 0.69 to 0.72; P < 0.0001). There was uncertainty regarding the effect on death (risk ratio (RR) 0.28, 95% CI 0.06 to 1.34; P = 0.11), myocardial infarction (RR 0.33, 95% CI 0.04 to 3.08; P = 0.33), stroke (RR 0.33, 95% CI 0.01 to 7.96; P = 0.49), deep vein thrombosis (RR 0.69, 95% CI 0.31 to 1.57; P = 0.38) and pulmonary embolism (RR 0.52, 95% CI 0.09 to 3.15; P = 0.48). TXA reduced the risk of receiving a blood transfusion by a relative 45% (RR 0.55, 95% CI 0.55 to 0.46; P < 0.0001). There was substantial statistical heterogeneity between trials for the blood loss and blood transfusion outcomes.<h4>Authors' conclusions</h4>There is reliable evidence that topical application of tranexamic acid reduces bleeding and blood transfusion in surgical patients, however the effect on the risk of thromboembolic events is uncertain. The effects of topical tranexamic acid in patients with bleeding from non-surgical causes has yet to be reliably assessed. Further high-quality trials are warranted to resolve these uncertainties before topical tranexamic acid can be recommended for routine use.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "23424632",
+      "title": "Systematic review and meta-analysis of perioperative intravenous tranexamic acid use in spinal surgery.",
+      "journal": "PloS one",
+      "date": "2013-02-12",
+      "authors": [
+        "Yang B",
+        "Yang P."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background Tranexamic acid (TXA) is well-established as a versatile oral, intramuscular, and intravenous (IV) antifibrinolytic agent. However, the efficacy of IV TXA in reducing perioperative blood transfusion in spinal surgery is poorly documented. Methodology We conducted a meta-analysis of randomized controlled trials (RCTs) and quasi-randomized (qi-RCTs) trials that included patients for various spinal surgeries, such as adolescent scoliosis surgery administered with perioperative IV TXA according to Cochrane Collaboration guidelines using electronic PubMed, Cochrane Central Register of Controlled Trials, and Embase databases. Additional journal articles and conference proceedings were manually located by two independent researchers. Results Totally, nine studies were included, with a total sample size of 581 patients. Mean blood loss was decreased in patients treated with perioperative IV TXA by 128.28 ml intraoperatively (ranging from 33.84 to 222.73 ml), 98.49 ml postoperatively (ranging from 83.22 to 113.77 ml), and 389.21 ml combined (ranging from 177.83 to 600.60 ml). The mean volume of transfused packed cells were reduced by 134.55 ml (ranging 51.64 to 217.46) (95% CI; P = 0.0001). Overall, the number of patients treated with TXA who required blood transfusions was lower by 35% than that of patients treated with the comparator and who required blood transfusions (RR 0.65; 95% CI; 0.53 to 0.85; P&lt;0.0001, I 2 = 0%). A dose-independent beneficial effect of TXA was observed, and confirmed in subgroup and sensitivity analyses. A total of seven studies reported DVT data. The study containing only a single DVT case was not combined. Conclusions The blood loss was reduced in spinal surgery patients with perioperative IV TXA treatment. Also the percentage of spinal surgery patients who required blood transfusion was significantly decreased. Further evaluation is required to confirm our findings before TXA can be safely used in patients undergoing spine surgery.",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "32224739",
+      "title": "A Single Preoperative Dose of Tranexamic Acid Reduces Perioperative Blood Loss: A Meta-analysis.",
+      "journal": "Annals of surgery",
+      "date": "2021-01-01",
+      "authors": [
+        "Heyns M",
+        "Yeung JK."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Objective</h4>To review the efficacy and safety of a single dose of intravenous tranexamic acid (TXA) given preoperatively.<h4>Summary background data</h4>TXA is a synthetic antifibrinolytic that has been used in various surgical disciplines to reduce blood loss, blood transfusions, ecchymosis, and hematoma formation. However, there is no universal standard on the most effective dose and route of TXA administration, limiting its routine use in many centers. This study evaluates the current evidence for the efficacy and safety of a single preoperative dose of TXA on surgical blood loss in all surgical disciplines.<h4>Methods</h4>With the guidance of a research librarian, in accordance with the Cochrane Handbook Medline, Cochrane Central and Embase were searched in November 2018. Search terms included \"Tranexamic Acid\" AND \"Intravenous,\" with studies limited to randomized controlled trails in adult humans. Two independent reviewers and an arbitrator assessed articles for inclusion. Criteria included a single preoperative bolus dose of intravenous TXA, surgical patients, and intraoperative blood loss measurement or perioperative blood loss up to 24 hours postsurgery. Quality assessment was done using the Cochrane Collaboration risk-of-bias tool by 2 reviewers. Statistical analysis was carried out using Cochrane Review Manager 5.3. The primary outcome was surgical blood loss. Secondary outcomes included venous thromboembolic complications, transfusion requirements, and dosing.<h4>Results</h4>A total of 1906 articles were screened, 57 met inclusion criteria. The majority of included studies were orthopedic (27), followed by obstetric and gynecological (16), oral maxillofacial and otolaryngology (10), cardiac (3), and 1 plastic surgery study focusing on acute burn reconstruction. Across all surgical specialties (n = 5698), the perioperative estimated blood loss was lower in patients receiving TXA, with a standard mean difference of -153.33 mL (95% CI = -187.79 to -118.87). Overall, surgical patients with TXA had a 72% reduced odds of transfusion (odds ratio = 0.28 [95% CI = 0.22-0.36]). The most frequently used dose of TXA was 15 mg/kg. There was no difference in the incidence of venous thromboembolic events between TXA and control groups.<h4>Conclusions</h4>While there is a growing body of evidence to support benefits of perioperative TXA use, this is the first meta-analysis to identify the efficacy and safety of a single preoperative dose of IV TXA. The potential implications for expanding the use of preoperative TXA for elective day surgery procedures is substantial. Preoperative intravenous TXA reduced perioperative blood loss and transfusion requirements in a variety of surgical disciplines without increasing the risk of thromboembolic events. Therefore, it should be considered for prophylactic use in surgery to reduce operative bleeding.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "34724964",
+      "title": "Effect of tranexamic acid on thrombotic events and seizures in bleeding patients: a systematic review and meta-analysis.",
+      "journal": "Critical care (London, England)",
+      "date": "2021-11-01",
+      "authors": [
+        "Murao S",
+        "Yamakawa K."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "Abstract Background Tranexamic acid (TXA) reduces surgical bleeding and reduces death from bleeding after trauma and childbirth. However, its effects on thrombotic events and seizures are less clear. We conducted a systematic review and meta-analysis to examine the safety of TXA in bleeding patients. Methods For this systematic review and meta-analysis, we searched MEDLINE, EMBASE and the Cochrane Central Register of Controlled trials from inception until June 1, 2020. We included randomized trials comparing intravenous tranexamic acid and placebo or no intervention in bleeding patients. The primary outcomes were thrombotic events, venous thromboembolism, acute coronary syndrome, stroke and seizures. A meta-analysis was performed using a random effects model and meta-regression analysis was performed to evaluate how effects vary by dose. We assessed the certainty of evidence using the grading of recommendations, assessment, development and evaluations (GRADE) approach. Results A total of 234 studies with 102,681 patients were included in the meta-analysis. In bleeding patients, there was no evidence that TXA increased the risk of thrombotic events (RR = 1.00 [95% CI 0.93–1.08]), seizures (1.18 [0.91–1.53]), venous thromboembolism (1.04 [0.92–1.17]), acute coronary syndrome (0.88 [0.78–1.00]) or stroke (1.12 [0.98–1.27]). In a dose-by-dose sensitivity analysis, seizures were increased in patients receiving more than 2 g/day of TXA (3.05 [1.01–9.20]). Meta-regression showed an increased risk of seizures with increased dose of TXA ( p = 0.011). Conclusion Tranexamic acid did not appear to increase the risk of thrombotic events in bleeding patients. However, because there may be dose-dependent increase in the risk of seizures, very high doses should be avoided. Supplementary Information The online version contains supplementary material available at 10.1186/s13054-021-03799-9. Keywords: Tranexamic acid, Bleeding, Surgery, Thrombotic events, Seizure, Meta-analysis",
+      "provenance": "[VOLLTEXT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    },
+    {
+      "pmid": "23440847",
+      "title": "Tranexamic acid for reducing mortality in emergency and urgent surgery.",
+      "journal": "The Cochrane database of systematic reviews",
+      "date": "2013-01-31",
+      "authors": [
+        "Perel P",
+        "Roberts I."
+      ],
+      "evidenzstufe": 1,
+      "evidence_basis": "<h4>Background</h4>Emergency or urgent surgery, which can be defined as surgery which must be done promptly to save life, limb, or functional capacity, is associated with a high risk of bleeding and death. Antifibrinolytic agents, such as tranexamic acid, inhibit blood clot breakdown (fibrinolysis) and can reduce perioperative bleeding. Tranexamic acid has been shown to reduce the need for a blood transfusion in adult patients undergoing elective surgery but its effects in patients undergoing emergency or urgent surgery is unclear.  <h4>Objectives</h4>To assess the effects of tranexamic acid on mortality, blood transfusion and thromboembolic events in adults undergoing emergency or urgent surgery.<h4>Search methods</h4>We searched the following electronic databases: the Cochrane Injuries Group's Specialised Register (22 August 2012); Cochrane Central Register of Controlled Trials (2012, issue 8 of 12); MEDLINE (Ovid SP) 1950 to August Week 2, 2012; PubMed 1 June 2012 to 22 August 2012; EMBASE (Ovid SP) 1980 to 2012 Week 33; ISI Web of Science: Conference Proceedings Citation Index-Science (CPCI-S) 1990 to 22 August 2012; ISI Web of Science: Science Citation Index Expanded (SCI-EXPANDED) 1970 to 22 August 2012. We also searched online trial registers on 22 August 2012 to identify unpublished studies.<h4>Selection criteria</h4>Randomised controlled trials comparing tranexamic acid with no tranexamic acid or placebo in adults undergoing emergency or urgent surgery.<h4>Data collection and analysis</h4>Two authors examined titles, abstracts and keywords of citations from the electronic databases for eligibility and extracted data for analysis and risk of bias assessment. Outcome measures of interest were mortality, receipt of a blood transfusion, units of blood transfused, reoperation, seizures and thromboembolic events (myocardial infarction, stroke, deep vein thrombosis and pulmonary embolism).<h4>Main results</h4>We identified five trials involving 372 people that met the inclusion criteria. Three trials (260 patients) contributed data to the analyses. The effect of tranexamic acid on mortality (RR 1.01; 95% CI 0.14 to 7.3) is uncertain. However, tranexamic acid reduces the probability of receiving a blood transfusion by 30% although the estimate is imprecise (RR 0.70; 95% CI 0.52 to 0.94). The effect on deep venous thrombosis (RR 2.29; 95% CI 0.68 to 7.66), and stroke (RR 2.79; 95% CI 0.12 to 67.10) is uncertain. There were no events of pulmonary embolism or myocardial infarction. None of the trials reported units of blood transfused, reoperation, or seizure outcomes.<h4>Authors' conclusions</h4>There is evidence that tranexamic acid reduces blood transfusion in patients undergoing emergency or urgent surgery. There is a need for a large pragmatic clinical trial to assess the effects of routine use of tranexamic acid on mortality in a heterogeneous group of urgent and emergency surgical patients.",
+      "provenance": "[NUR ABSTRACT]",
+      "on_subject": true,
+      "context_guideline": false,
+      "score": 425.0
+    }
+  ],
+  "timings": {
+    "plan": 2.98,
+    "search": 12.13,
+    "rank": 0.22,
+    "enrich": 13.15,
+    "synthesis": 15.08,
+    "total": 43.57
+  }
+}
