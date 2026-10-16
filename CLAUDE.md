@@ -29,58 +29,46 @@ database: config, memory, and every brief live as files in this repo. Story:
 | Orchestrator + weekly cron | `scripts/run_weekly.py`, `.github/workflows/weekly.yml` |
 | GitHub | https://github.com/jacksoncalling/journal-watch-kustos |
 
-## Current state (Updated 2026-08-27)
+## Current state (Updated 2026-10-16)
 
-**What's working.** Both artifact types ship. **Slice 1 (Wochenbrief):** fetch,
-enrich, rank, synthesize, send, chained by `run_weekly.py`; weekly cron;
-code-reviewed, pushed. **Slice 1.5 (Praxis-Check):** on-demand dossier, reuses
-slice-1 functions by import (weekly scripts untouched), all-time search per
-question. This session added a **deterministic gate layer** to the Praxis-Check
-retrieval, tuned against a new 7-question cardiac-anaesthesia benchmark
-(`scripts/benchmark_praxis.py`, questions inline, her real domain from Interview
-1). The layers, all in `praxis_check.py` + a `## Domain-Gate` block in
-`profile.md`: (1) subject-actor gate (require the intervention term, not just
-context) with a soft on/off partition + backfill; (2) retraction gate (drop
-`Retracted Publication` / `Retraction of Publication`); (3) MeSH negative gate
-(hard-drop animal/oncology records with no cardiac MeSH; ~150 dropped across the
-7 questions, zero per-question tuning); (4) cardiac-MeSH ranking bonus (+40,
-surfaced the NEJM MYRIAD trial that earlier runs buried); (5) synthesis guards
-(zero-citation warning, dose-directive scanner) + vertrag reframe (Kernbefund
-first, evidence-attributed not advice; tangential-endpoint exclusion). Benchmark
-result: offsub 0/20, 0 phantom, 0 dose-directives, controversy present on all 7;
-tier mix now reads as honest thin-vs-thick evidence rather than false breadth.
-**Retrieval uses NO embeddings/vector store by design** (boolean Europe PMC +
-deterministic scoring + string/MeSH matching; only the query planner and
-synthesis are LLM calls). Framed in Ontology-Pipeline terms (Talisman), this is a
-deterministic **semantic layer** (controlled vocabulary + MeSH domain-gating +
-structured scoring) sitting between the raw boolean retrieval and the single
-synthesis call; it **consumes MeSH as the medical thesaurus rather than building a
-knowledge graph**, and is the reusable core for future ICM apps. Full stage
-contract: `05_praxis-check/CONTEXT.md`.
-Gaps and history: `HANDOFF.md`. `04_feedback` still lacks a `CONTEXT.md`.
+**What's working.** Both artifacts ship: Wochenbrief (weekly cron) and
+Praxis-Check (CLI plus Replit web UI with brief-first Kurzantwort). On branch
+`claim-check-screen` (commits `3528146`, `47b4ac1`; **not merged into main,
+not pushed**, so Replit still runs the old pipeline):
 
-**Known issues.** (1) **Planner nondeterminism** is now the main ceiling: the
-LLM query planner returns different queries every run (one run produced a 0-hit
-query), so the benchmark is not yet a clean regression gate. (2) **Human
-off-context leaks** survive the gates (e.g. the WOMAN obstetric TXA trial ranked
-into the TXA question): the negative gate only catches animal/oncology, so a
-human paper in the wrong specialty passes the subject gate and merely sinks. (3)
-This session's changes are **uncommitted**; `05_praxis-check/CONTEXT.md` still
-describes the pre-gate ranking and should be refreshed.
+- **Evidence per run:** `<dossier>.evidence.json` holds exactly what the model
+  saw, the raw prose with quotes, anchors and per-stage timings.
+- **Quote anchoring:** the model cites `(PMID x: "verbatim quote")`; code splits
+  quotes off before anything is shown; `check_claims.py` checks quote-in-paper
+  and number-in-own-quote. A screen, not proof (8 known failures kept in tests).
+- **Retrieval relevance:** ambiguous abbreviations expanded (`profile.md`),
+  hyphen-tolerant subject gate, 20 is a cap not a target (no padding), up to 3
+  marked context guidelines, zero matches = no dossier, under 5 = thin-evidence
+  note, planned-query clean-up.
+- **Speed:** planner thinking off; 8-question run with synthesis thinking also
+  off: about 39 s vs 65 s per dossier, 91 % of quotes verbatim (A/B gate
+  passes), no wrong numbers found by hand.
+- **Benchmark tooling:** `--only`, `--label`, `--recheck` (free),
+  `--replay-retrieval` (no LLM); frozen runs in `05_praxis-check/benchmark-runs/`.
+- Retrieval still uses no embeddings, by design (MeSH as controlled vocabulary).
 
-**What's next.** (1) **Pin the planner + add a deterministic MeSH synonym layer.**
-Set the planner to temperature 0 / fixed model for reproducibility, AND add a
-controlled-vocabulary block to `profile.md` mapping her domain's abbreviations to
-full MeSH entry terms (TCI -> target-controlled infusion; TIVA -> total
-intravenous anaesthesia; ABW -> adjusted/corrected body weight; TXA -> tranexamic
-acid; NIRS -> near-infrared spectroscopy; ...), expanded into queries before
-search. This is the "controlled vocabulary" layer of the Ontology Pipeline
-(Talisman): MeSH is already a professionally maintained medical thesaurus, so we
-consume it, we do not build a graph. Deterministic abbrev->term expansion also
-directly cuts the planner nondeterminism that is the current ceiling. (2) Commit
-the gate layer + refresh `05_praxis-check/CONTEXT.md`. (3) Optional later lever:
-targeted full-text passage extraction for OA papers (helps her timing/dosing
-questions; paywalled landmarks remain out of reach by guardrail).
+**Known issues.** (1) Setting relevance: papers that name the drug but come
+from another clinical setting still pass (pericarditis, PONV, postpartum,
+ECMO). (2) Source list still shows all selected papers, not only cited ones.
+(3) Gemini still edits about 9 % of quotes; synthesis thinking is still default
+in `profile.md` (off only in the test run). (4) Web runs save no evidence
+(Replit disk may be ephemeral). (5) "Full text" is a capped excerpt (abstract,
+results, conclusion, 8000 chars) with many EBI 500 errors. (6) Checker blind
+spots: number words, "v" for versus.
+
+**What's next.** (1) Decide setting check vs Claude Citations (recommended:
+setting check, free to test via replay). (2) Merge `claim-check-screen` into
+main so Replit gets it; decide synthesis thinking off in `profile.md`.
+(3) Clinician answer key for about 5 questions (agreed, not scheduled), then a
+claim-support judge calibrated on it.
+
+Full detail: `HANDOFF.md` (top), `05_praxis-check/PLAN-quote-anchoring.md`,
+`05_praxis-check/PLAN-retrieval-relevance.md`.
 
 ## Guardrails (non-negotiable, from build-plan §3)
 
